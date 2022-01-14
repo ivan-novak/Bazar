@@ -27,6 +27,7 @@ namespace RozetkaWebApp.Models
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
+        public virtual DbSet<ControlImage> ControlImages { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
         public virtual DbSet<PortalImage> PortalImages { get; set; }
@@ -209,6 +210,15 @@ namespace RozetkaWebApp.Models
                     .HasConstraintName("FK_Characteristics_Properties");
             });
 
+            modelBuilder.Entity<ControlImage>(entity =>
+            {
+                entity.ToTable("ControlImage");
+
+                entity.Property(e => e.Caption).HasMaxLength(500);
+
+                entity.Property(e => e.Path).HasMaxLength(500);
+            });
+
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
@@ -244,8 +254,7 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.Title)
                     .IsRequired()
-                    .HasMaxLength(500)
-                    .IsUnicode(false);
+                    .HasMaxLength(500);
             });
 
             modelBuilder.Entity<PortalImage>(entity =>

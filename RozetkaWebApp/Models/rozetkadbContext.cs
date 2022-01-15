@@ -150,9 +150,13 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
 
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
                 entity.Property(e => e.PortalId).HasColumnName("PortalID");
 
-                entity.Property(e => e.Topic)
+                entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
 
@@ -168,13 +172,17 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.CatalogImageId).HasColumnName("CatalogImageID");
 
-                entity.Property(e => e.Caption)
+                entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
+
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Path)
                     .IsRequired()
                     .HasMaxLength(500);
 
-                entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
-
-                entity.Property(e => e.Path)
+                entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
 
@@ -196,7 +204,7 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.PropertyId).HasColumnName("PropertyID");
 
-                entity.Property(e => e.TextValue).HasMaxLength(50);
+                entity.Property(e => e.TextValue).HasMaxLength(500);
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Characteristics)
@@ -214,9 +222,17 @@ namespace RozetkaWebApp.Models
             {
                 entity.ToTable("ControlImage");
 
-                entity.Property(e => e.Caption).HasMaxLength(500);
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Path).HasMaxLength(500);
+                entity.Property(e => e.Path)
+                    .IsRequired()
+                    .HasMaxLength(500);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -252,6 +268,10 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.PortalId).HasColumnName("PortalID");
 
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
@@ -263,15 +283,19 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.PortalImageId).HasColumnName("PortalImageID");
 
-                entity.Property(e => e.Caption)
+                entity.Property(e => e.Label)
                     .IsRequired()
-                    .HasMaxLength(500);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Path)
                     .IsRequired()
                     .HasMaxLength(500);
 
                 entity.Property(e => e.PortalId).HasColumnName("PortalID");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
 
                 entity.HasOne(d => d.Portal)
                     .WithMany(p => p.PortalImages)
@@ -287,13 +311,17 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
 
-                entity.Property(e => e.Name)
+                entity.Property(e => e.Label)
                     .IsRequired()
-                    .HasMaxLength(500);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Price).HasColumnType("money");
 
                 entity.Property(e => e.Quantity).HasColumnType("numeric(18, 0)");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
 
                 entity.HasOne(d => d.Catalog)
                     .WithMany(p => p.Products)
@@ -307,15 +335,19 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.ProductImageId).HasColumnName("ProductImageID");
 
-                entity.Property(e => e.Caption)
+                entity.Property(e => e.Label)
                     .IsRequired()
-                    .HasMaxLength(500);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Path)
                     .IsRequired()
                     .HasMaxLength(500);
 
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductImages)
@@ -336,6 +368,10 @@ namespace RozetkaWebApp.Models
                 entity.Property(e => e.IsNumber).HasColumnName("isNumber");
 
                 entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
 

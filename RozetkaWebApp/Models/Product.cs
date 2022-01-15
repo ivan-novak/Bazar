@@ -17,7 +17,8 @@ namespace RozetkaWebApp.Models
 
         public long ProductId { get; set; }
         public int CatalogId { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
+        public string Label { get; set; }
         public string Description { get; set; }
         public string Attributes { get; set; }
         public decimal Price { get; set; }

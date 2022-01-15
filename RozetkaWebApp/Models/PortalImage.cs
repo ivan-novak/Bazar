@@ -9,7 +9,8 @@ namespace RozetkaWebApp.Models
     {
         public int PortalImageId { get; set; }
         public int PortalId { get; set; }
-        public string Caption { get; set; }
+        public string Title { get; set; }
+        public string Label { get; set; }
         public string Path { get; set; }
 
         public virtual Portal Portal { get; set; }

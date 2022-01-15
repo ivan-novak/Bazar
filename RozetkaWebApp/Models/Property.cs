@@ -14,6 +14,7 @@ namespace RozetkaWebApp.Models
 
         public int PropertyId { get; set; }
         public int CatalogId { get; set; }
+        public string Title { get; set; }
         public string Label { get; set; }
         public string Format { get; set; }
         public bool? IsNumber { get; set; }

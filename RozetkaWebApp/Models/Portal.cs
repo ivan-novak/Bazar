@@ -15,6 +15,7 @@ namespace RozetkaWebApp.Models
 
         public int PortalId { get; set; }
         public string Title { get; set; }
+        public string Label { get; set; }
         public string Discription { get; set; }
         public string Attributes { get; set; }
 

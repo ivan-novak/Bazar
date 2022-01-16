@@ -48,7 +48,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Properties/Create
         public IActionResult Create()
         {
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId");
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", @property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 
@@ -82,7 +82,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", @property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 
@@ -118,7 +118,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", @property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 

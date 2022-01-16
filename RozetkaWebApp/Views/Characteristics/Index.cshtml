@@ -4,44 +4,39 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Характеристики</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новую характеристику</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TextValue)
+             <th>
+                Характеристика
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DigitValue)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Property)
-            </th>
+                Значение
+            </th>    
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TextValue)
+            <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Property.Label)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DigitValue)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Product.ProductId)
+                    @{
+                        if (item.Property.IsNumber == true) Html.DisplayFor(modelItem => item.DigitValue);
+                        else Html.DisplayFor(modelItem => item.TextValue);
+                    }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Property.PropertyId)
-            </td>
+         
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CharacteristicId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.CharacteristicId">Details</a> |

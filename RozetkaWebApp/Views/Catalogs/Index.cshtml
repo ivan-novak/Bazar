@@ -4,15 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Каталоги</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новый каталог</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
@@ -26,6 +26,18 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Portal)
+            </th>*@
+             <th>
+                ID
+            </th>
+            <th>
+                Заголовок
+            </th>
+            <th>
+                Ресурсы
+            </th>
+            <th>
+                Действия
             </th>
             <th></th>
         </tr>
@@ -34,12 +46,12 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.CatalogId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Label)
             </td>
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
@@ -47,6 +59,11 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Portal.Label)
+            </td>*@
+             <td>
+                <a asp-controller = "Products" asp-action="Index" asp-route-id="@item.CatalogId">Продукты</a> |
+                <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">Свойства</a> |
+                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">Изображения</a>    
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CatalogId">Edit</a> |

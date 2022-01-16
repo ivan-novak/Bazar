@@ -1,0 +1,42 @@
+﻿@model RozetkaWebApp.Models.Characteristic
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Characteristic</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TextValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TextValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DigitValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DigitValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Product)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Product.ProductId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Property)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Property.PropertyId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CharacteristicId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

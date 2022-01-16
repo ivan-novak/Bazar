@@ -18,6 +18,7 @@ namespace RozetkaWebApp.Models
         public string Label { get; set; }
         public string Format { get; set; }
         public bool? IsNumber { get; set; }
+        public string Description { get; set; }
 
         public virtual Catalog Catalog { get; set; }
         public virtual ICollection<Characteristic> Characteristics { get; set; }

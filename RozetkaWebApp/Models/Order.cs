@@ -14,6 +14,7 @@ namespace RozetkaWebApp.Models
         public decimal? Price { get; set; }
         public DateTime OrderDate { get; set; }
         public string Status { get; set; }
+        public string Description { get; set; }
 
         public virtual Product Product { get; set; }
     }

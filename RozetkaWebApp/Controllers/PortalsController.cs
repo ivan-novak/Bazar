@@ -54,7 +54,7 @@ namespace RozetkaWebApp
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PortalId,Title,Label,Discription,Attributes")] Portal portal)
+        public async Task<IActionResult> Create([Bind("PortalId,Title,Label,Description,Attributes")] Portal portal)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace RozetkaWebApp
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PortalId,Title,Label,Discription,Attributes")] Portal portal)
+        public async Task<IActionResult> Edit(int id, [Bind("PortalId,Title,Label,Description,Attributes")] Portal portal)
         {
             if (id != portal.PortalId)
             {

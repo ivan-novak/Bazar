@@ -4,25 +4,37 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Порталы</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Создать новый портал</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
+ @*           <th>
+                @Html.DisplayNameFor(model => model.PortalId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Label)
             </th>
-            <th>
+           <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Attributes)
+            </th>*@
+            <th>
+                ID
+            </th>
+            <th>
+                Заголовок
+            </th>
+            <th>
+                Ресурсы
+            </th>
+            <th>
+                Действия
             </th>
             <th></th>
         </tr>
@@ -31,18 +43,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.PortalId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Label)
             </td>
-            <td>
+ @*           <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Attributes)
-            </td>
+            </td>*@
             <td>
+                <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@item.PortalId">Каталоги</a> |
+                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.PortalId">Изображения</a> 
+            </td>
+             <td>
                 <a asp-action="Edit" asp-route-id="@item.PortalId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.PortalId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.PortalId">Delete</a>

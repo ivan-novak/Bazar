@@ -33,9 +33,10 @@
             <td>  @Html.DisplayFor(modelItem => item.Quantity)  </td>
             <td>  <a asp-controller = "ProductImages" asp-action="Index" asp-route-id="@item.CatalogId">Изображения</a> </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId"> Редактировать </a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId"> Детали </a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId"> Удалить </a>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">   <i class="fas fa-solid fa-pen-square"></i> </a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-search-location"></i> </a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-trash"></i> </a>
+                <i class="fa-solid fa-file-lines  text-dark"></i>
             </td>
         </tr>}
     </tbody>

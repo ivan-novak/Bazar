@@ -31,7 +31,7 @@
                 ID
             </th>
             <th>
-                Заголовок
+                Каталог
             </th>
             <th>
                 Ресурсы
@@ -49,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.CatalogId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Label)
+                <a asp-controller="Products" asp-action="Index" asp-route-id="@item.CatalogId">@Html.DisplayFor(modelItem => item.Label)</a>
             </td>
            @* <td>
                 @Html.DisplayFor(modelItem => item.Description)
@@ -61,14 +61,13 @@
                 @Html.DisplayFor(modelItem => item.Portal.Label)
             </td>*@
              <td>
-                <a asp-controller = "Products" asp-action="Index" asp-route-id="@item.CatalogId">Продукты</a> |
                 <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">Свойства</a> |
                 <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">Изображения</a>    
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CatalogId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CatalogId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CatalogId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.CatalogId"> Редактировать </a> |
+                <a asp-action="Details" asp-route-id="@item.CatalogId"> Детали </a> |
+                <a asp-action="Delete" asp-route-id="@item.CatalogId"> Удалить </a>
             </td>
         </tr>
 }

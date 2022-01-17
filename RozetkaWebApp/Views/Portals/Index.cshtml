@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Порталы</h1>
+<h1>Администрирование</h1>
 
 <p>
     <a asp-action="Create">Создать новый портал</a>
@@ -28,7 +28,7 @@
                 ID
             </th>
             <th>
-                Заголовок
+                Портал
             </th>
             <th>
                 Ресурсы
@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.PortalId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Label)
+                <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Label)</a>
             </td>
  @*           <td>
                 @Html.DisplayFor(modelItem => item.Description)
@@ -55,7 +55,6 @@
                 @Html.DisplayFor(modelItem => item.Attributes)
             </td>*@
             <td>
-                <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@item.PortalId">Каталоги</a> |
                 <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.PortalId">Изображения</a> 
             </td>
              <td>

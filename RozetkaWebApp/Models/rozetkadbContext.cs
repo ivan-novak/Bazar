@@ -198,13 +198,13 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.CharacteristicId).HasColumnName("CharacteristicID");
 
-                entity.Property(e => e.DigitValue).HasColumnType("numeric(18, 0)");
+                entity.Property(e => e.Dimension).HasMaxLength(50);
 
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
 
                 entity.Property(e => e.PropertyId).HasColumnName("PropertyID");
 
-                entity.Property(e => e.TextValue).HasMaxLength(500);
+                entity.Property(e => e.Value).HasMaxLength(500);
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Characteristics)
@@ -363,6 +363,8 @@ namespace RozetkaWebApp.Models
 
                 entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
 
+                entity.Property(e => e.Category).HasMaxLength(50);
+
                 entity.Property(e => e.Format).HasMaxLength(50);
 
                 entity.Property(e => e.IsNumber).HasColumnName("isNumber");
@@ -370,6 +372,8 @@ namespace RozetkaWebApp.Models
                 entity.Property(e => e.Label)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.Property(e => e.Mask).HasMaxLength(50);
 
                 entity.Property(e => e.Title)
                     .IsRequired()

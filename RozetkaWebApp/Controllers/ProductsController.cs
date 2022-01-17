@@ -22,7 +22,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Products
         public async Task<IActionResult> Index(int? id)
         {
-           // var applicationDbContext = _context.Product.Include(p => p.Catalog);
+            ViewBag.Catalog = _context.Catalog.Find(id);
             var applicationDbContext = from item in _context.Product where item.CatalogId == id || id == null select item;
             return View(await applicationDbContext.ToListAsync());
         }
@@ -47,9 +47,10 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Products/Create
-        public IActionResult Create()
+        public IActionResult Create(int? id)
         {
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label");
+            var Catalog = _context.Catalog.Find(id);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == Catalog.PortalId), "CatalogId", "Label");
             return View();
         }
 
@@ -64,9 +65,10 @@ namespace RozetkaWebApp.Controllers
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Products/Index/" + product.CatalogId);
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", product.CatalogId);
+            ViewBag.Catalog = product.Catalog;
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
 
@@ -83,7 +85,8 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", product.CatalogId);
+            ViewBag.Catalog = _context.Catalog.Find(product.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
 
@@ -117,9 +120,10 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Products/Index/" + product.CatalogId);
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", product.CatalogId);
+            ViewBag.Catalog = _context.Catalog.Find(product.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
 
@@ -148,9 +152,10 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var product = await _context.Product.FindAsync(id);
+            var CatalogId = product.CatalogId;
             _context.Product.Remove(product);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+              await _context.SaveChangesAsync();
+            return Redirect($"/Products/Index/" + CatalogId);
         }
 
         private bool ProductExists(long id)

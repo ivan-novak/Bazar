@@ -17,7 +17,13 @@
             </th>
             <th>
                 Значение
-            </th>    
+            </th>
+                <th>
+                 Размерность
+            </th> 
+            <th>
+                Действия
+            </th>  
             <th></th>
         </tr>
     </thead>
@@ -25,18 +31,14 @@
 @foreach (var item in Model) {
             <tr>
                 <td>
-                @Html.DisplayFor(modelItem => item.Property.Label)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DigitValue)
-            </td>
-            <td>
-                    @{
-                        if (item.Property.IsNumber == true) Html.DisplayFor(modelItem => item.DigitValue);
-                        else Html.DisplayFor(modelItem => item.TextValue);
-                    }
-            </td>
-         
+                    <a asp-controler="Properties" asp-action="Edit" asp-route-id="@item.Property.PropertyId">@Html.DisplayFor(modelItem => item.Property.Label)</a>
+                </td>
+                <td>
+                   @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                 <td>    
+                     @Html.DisplayFor(modelItem => item.Dimension)
+                </td>         
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CharacteristicId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.CharacteristicId">Details</a> |

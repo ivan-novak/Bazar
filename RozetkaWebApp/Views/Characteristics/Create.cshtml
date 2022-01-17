@@ -4,9 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Создать характеристику</h1>
 
-<h4>Characteristic</h4>
 <hr />
 <div class="row">
     <div class="col-md-12">
@@ -21,14 +20,14 @@
                 <select asp-for="PropertyId" class ="form-control" asp-items="ViewBag.PropertyId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="TextValue" class="control-label"></label>
-                <input asp-for="TextValue" class="form-control" />
-                <span asp-validation-for="TextValue" class="text-danger"></span>
+                <label asp-for="Value" class="control-label"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DigitValue" class="control-label"></label>
-                <input asp-for="DigitValue" class="form-control" />
-                <span asp-validation-for="DigitValue" class="text-danger"></span>
+                <label asp-for="Dimension" class="control-label"></label>
+                <input asp-for="Dimension" class="form-control" />
+                <span asp-validation-for="Dimension" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

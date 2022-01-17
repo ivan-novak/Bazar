@@ -1,63 +1,35 @@
 ﻿@model RozetkaWebApp.Models.Product
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Удалить информацию о товаре";
 }
 
-<h1>Delete</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Вы уверены что хотите удалить это?</h3>
 <div>
-    <h4>Product</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Attributes)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Attributes)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Catalog)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Catalog.CatalogId)
-        </dd class>
-    </dl>
-    
+        <dt class = "col-sm-2">   Заголовок     </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Title)         </dd>
+        <dt class = "col-sm-2">   Наименование  </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Label)         </dd>
+        <dt class = "col-sm-2">   Описание      </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Description)   </dd>
+        <dt class = "col-sm-2">   Атрибуты      </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Attributes)    </dd>
+        <dt class = "col-sm-2">   Цена          </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Price)         </dd>
+        <dt class = "col-sm-2">   Количество    </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Quantity)      </dd>
+        <dt class = "col-sm-2">   Каталог       </dt>    <dd class = "col-sm-10"> 
+           <a asp-controller = "Products" asp-action="Index" asp-route-id="@Model.CatalogId"> @Html.DisplayFor(model => model.Catalog.Label) </a> </dd>
+        <dt class = "col-sm-2">   Ресурсы       </dt>    <dd class = "col-sm-10"> 
+           <a asp-controller = "Characteristics" asp-action="Index" asp-route-id="@Model.ProductId"> Характеристики </a> |
+           <a asp-controller = "PrroductImages"  asp-action="Index" asp-route-id="@Model.ProductId">Изображения</a>   </dd>
+    <dt class = "col-sm-2"> 
     <form asp-action="Delete">
         <input type="hidden" asp-for="ProductId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <input type="submit" value="Удалить" class="btn btn-danger" />        
+    </form> 
+    </dt>   
+    </dl>
+
+    <div>
+        <a href="javascript: history.go(-1)">Вернутся назад </a> 
+    </div>
 </div>

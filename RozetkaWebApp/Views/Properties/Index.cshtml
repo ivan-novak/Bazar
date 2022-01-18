@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Property>
 
-@{
-    ViewData["Title"] = "Index";
-}
+    @if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Фильтры каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+    else 
+    {
+        ViewData["Title"] ="Каталог: "+ViewBag.Catalog.Label;
+        <h6> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
+         </h6>
+        <h1> Фильтры  </h1>
+        <p>  <a asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Создать новый фильтр </a> </p>
+    }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>

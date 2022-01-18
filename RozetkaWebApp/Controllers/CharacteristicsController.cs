@@ -20,9 +20,10 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Characteristics
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(long? id)
         {
-            var applicationDbContext = _context.Characteristic.Include(c => c.Product).Include(c => c.Property);
+            ViewBag.Product = _context.Product.Find(id);
+            var applicationDbContext = _context.Characteristic.Where(c=>c.ProductId == id || id == null).Include(c => c.Product).Include(c => c.Property);
             return View(await applicationDbContext.ToListAsync());
         }
 

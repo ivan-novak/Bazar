@@ -22,8 +22,9 @@ namespace RozetkaWebApp
         // GET: Catalogs
         public async Task<IActionResult> Index(int? id)
         {
-           //var applicationDbContext = _context.Catalog.Include(c => c.Portal);
-            var applicationDbContext = from item in _context.Catalog where item.PortalId == id || id == null select item;
+            ViewBag.Portal = _context.Portal.Find(id);
+       //     ViewBag.Portal = _context.Portal.Include(c => c.Portal).First(i => i.CatalogId == id);
+            var applicationDbContext = _context.Catalog.Where(c=>c.PortalId == id || id == null).Include(c => c.Portal);
             return View(await applicationDbContext.ToListAsync());
         }
 

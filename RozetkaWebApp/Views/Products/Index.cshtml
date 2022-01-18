@@ -2,13 +2,19 @@
 
     @if (ViewBag.Catalog == null) 
     {
-        ViewData["Title"] = "Товары";
+        ViewData["Title"] = "Товары каталога";
         <h1>@ViewData["Title"]</h1>
     }
     else 
     {
-        ViewData["Title"] =ViewBag.Catalog.Label;
-        <h1> <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewData["Title"] </a> </h1>
+        ViewData["Title"] ="Каталог: "+ViewBag.Catalog.Label;
+        <h6> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
+         </h6>
+
+        <h1> Товары </h1>
         <p>  <a asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Создать новый товар </a> </p>
     }
 
@@ -16,7 +22,7 @@
     <thead>
         <tr>
             <th> ID </th>
-            <th> Название  </th>
+            <th> Наименование  </th>
             <th> Цена  </th>
             <th> Количество </th>
             <th> Ресурсы  </th>

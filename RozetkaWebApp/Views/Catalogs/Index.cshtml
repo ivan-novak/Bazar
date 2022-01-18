@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Catalog>
 
-@{
-    ViewData["Title"] = "Index";
-}
+    @if (ViewBag.Portal == null) 
+    {
+        ViewData["Title"] = "Каталоги портала";
+        <h1>@ViewData["Title"]</h1>
+    }
+    else 
+    {
+        ViewData["Title"] ="Портал: "+ViewBag.Portal.Label;
+        <h6> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a>\
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a> 
+        </h6>
+        <h1> Каталоги  </h1>
+        <p>  <a asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Создать новый каталог </a> </p>
+    }
 
-<h1>Каталоги</h1>
 
-<p>
-    <a asp-action="Create">Создать новый каталог</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -26,12 +34,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Portal)
-            </th>*@
+            </th>
              <th>
                 ID
-            </th>
+            </th>*@
             <th>
-                Каталог
+                Наименование
             </th>
             <th>
                 Ресурсы
@@ -45,9 +53,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+@*            <td>
                 @Html.DisplayFor(modelItem => item.CatalogId)
-            </td>
+            </td>*@
             <td>
                 <a asp-controller="Products" asp-action="Index" asp-route-id="@item.CatalogId">@Html.DisplayFor(modelItem => item.Label)</a>
             </td>
@@ -61,7 +69,7 @@
                 @Html.DisplayFor(modelItem => item.Portal.Label)
             </td>*@
              <td>
-                <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">Свойства</a> |
+                <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">Фильтры</a> |
                 <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">Изображения</a>    
             </td>
             <td>

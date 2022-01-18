@@ -1,25 +1,28 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Characteristic>
 
-@{
-    ViewData["Title"] = "Index";
-}
+   @if (ViewBag.Product == null) 
+    {
+        ViewData["Title"] = "Характеристики товары";
+        <h1>@ViewData["Title"]</h1>
+    }
+    else 
+    {
+        ViewData["Title"] ="Товар: "+ViewBag.Product.Label;
+        <h1> <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.ProductId"> @ViewData["Title"] </a> </h1>
+        <p>  <a asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Создать новую характеристику </a> </p>
+    }
 
-<h1>Характеристики</h1>
-
-<p>
-    <a asp-action="Create">Создать новую характеристику</a>
-</p>
 <table class="table">
     <thead>
         <tr>
              <th>
-                Характеристика
+                Характеристики
             </th>
             <th>
                 Значение
             </th>
                 <th>
-                 Размерность
+                  Ед. измерения
             </th> 
             <th>
                 Действия
@@ -31,7 +34,7 @@
 @foreach (var item in Model) {
             <tr>
                 <td>
-                    <a asp-controler="Properties" asp-action="Edit" asp-route-id="@item.Property.PropertyId">@Html.DisplayFor(modelItem => item.Property.Label)</a>
+                    <a asp-controler="Properties" asp-action="Edit" asp-route-id="1">@Html.DisplayFor(modelItem => item.Property.Label)</a>
                 </td>
                 <td>
                    @Html.DisplayFor(modelItem => item.Value)

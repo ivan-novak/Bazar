@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Portal>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Администрирование порталов";
 }
 
-<h1>Администрирование</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create">Создать новый портал</a>
@@ -28,7 +28,7 @@
                 ID
             </th>
             <th>
-                Портал
+                Порталы
             </th>
             <th>
                 Ресурсы

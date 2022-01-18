@@ -35,9 +35,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product
-                .Include(p => p.Catalog)
-                .FirstOrDefaultAsync(m => m.ProductId == id);
+            var product = await _context.Product.Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
                 return NotFound();
@@ -47,10 +45,12 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Products/Create
-        public IActionResult Create(int? id)
+        public IActionResult Create(int? Id)
         {
-            var Catalog = _context.Catalog.Find(id);
-            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == Catalog.PortalId), "CatalogId", "Label");
+            var catalog = _context.Catalog.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id); 
+            ViewBag.Catalog = catalog;
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
+   
             return View();
         }
 
@@ -80,7 +80,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
+            var product = await _context.Product.Include(c => c.Catalog).Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id); 
             if (product == null)
             {
                 return NotFound();
@@ -122,7 +122,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Products/Index/" + product.CatalogId);
             }
-            ViewBag.Catalog = _context.Catalog.Find(product.CatalogId);
+         //   ViewBag.Catalog = _context.Catalog.Find(product.CatalogId);
             ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
@@ -136,7 +136,7 @@ namespace RozetkaWebApp.Controllers
             }
 
             var product = await _context.Product
-                .Include(p => p.Catalog)
+                .Include(p => p.Catalog.Portal)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {

@@ -1,13 +1,36 @@
 ﻿@model RozetkaWebApp.Models.Product
 
-@{
-    ViewData["Title"] = "Создать новый товар";
-}
 
-<h1>@ViewData["Title"]</h1>
+@if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Товары каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+else 
+{
 
+           ViewData["Title"] = "Каталог "+ViewBag.Catalog.Label;
+    <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
+     </p>
 
-<hr />
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link active">Добавить новый товар</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
+        </ul>  
+
+    }
+   <p></p>
+
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
@@ -50,15 +73,12 @@
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-     <a href="javascript: history.go(-1)"> Вернутся назад </a> 
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -1,12 +1,33 @@
 ﻿@model RozetkaWebApp.Models.Characteristic
 
-@{
-    ViewData["Title"] = "Create";
-}
 
-<h1>Создать характеристику</h1>
+@if (ViewBag.Product == null) 
+    {
+        ViewData["Title"] = "Редактировать продукт";
+         <h1>@ViewData["Title"]</h1>
+    }
+else 
+{
+    ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
+    <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> 
+         </p>
 
-<hr />
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Edit/@ViewBag.Product.ProductId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Delete/@ViewBag.Product.ProductId">Удалить</a> </li>
+        </ul>  
+
+    }
+ <p></p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
@@ -34,10 +55,6 @@
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

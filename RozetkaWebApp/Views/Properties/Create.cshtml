@@ -1,67 +1,86 @@
 ﻿@model RozetkaWebApp.Models.Property
 
-@{
-    ViewData["Title"] = "Create";
-}
 
-<h1>Создать свойство</h1>
+@if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Товары каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+else 
+{
 
-<hr />
+     ViewData["Title"] = "Каталог "+ViewBag.Catalog.Label;
+     <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
+     </p>
+
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
+        </ul>  
+
+    }
+   <p></p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CatalogId" class="control-label"></label>
+                <label asp-for="CatalogId" class="control-label">Каталог</label>
                 <select asp-for="CatalogId" class ="form-control" asp-items="ViewBag.CatalogId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label"></label>
+                <label asp-for="Label" class="control-label">Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Category" class="control-label"></label>
+                <label asp-for="Category" class="control-label">Категория</label>
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mask" class="control-label"></label>
+                <label asp-for="Mask" class="control-label">Маска ввода</label>
                 <input asp-for="Mask" class="form-control" />
                 <span asp-validation-for="Format" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Format" class="control-label"></label>
+                <label asp-for="Format" class="control-label">Фрпмат вывода</label>
                 <input asp-for="Format" class="form-control" />
                 <span asp-validation-for="Format" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IsNumber" class="control-label"></label>
+                <label asp-for="IsNumber" class="control-label">Это число?</label>
                 <input asp-for="IsNumber" class="form-control" />
                 <span asp-validation-for="IsNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label">Описание</label>
                 <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
                 </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

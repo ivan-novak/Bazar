@@ -7,7 +7,7 @@
     }
     else 
     {
-        ViewData["Title"] ="Портал: "+ViewBag.Portal.Label;
+        ViewData["Title"] ="Портал - "+ViewBag.Portal.Label;
         <h6> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a>\
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a> 

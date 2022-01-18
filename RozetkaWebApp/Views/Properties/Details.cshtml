@@ -1,51 +1,42 @@
 ﻿@model RozetkaWebApp.Models.Property
+@if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Товары каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+else 
+{
 
-@{
-    ViewData["Title"] = "Details";
-}
+     ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
+     <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
+     </p>
 
-<h1>Details</h1>
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link"  href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
+        </ul>  
+
+    }
+   <p></p>
 
 <div>
-    <h4>Property</h4>
-    <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Format)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Format)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Catalog)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Catalog.Label)
-        </dd>
+        <dt class = "col-sm-2"> Каталог  </dt>      <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Catalog.Label) </dd>
+        <dt class = "col-sm-2"> Заголовок  </dt>    <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Title) </dd>
+        <dt class = "col-sm-2"> Этикетка </dt>      <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Label) </dd>
+        <dt class = "col-sm-2"> Маска ввода </dt>   <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Mask) </dd>
+        <dt class = "col-sm-2"> Формат вывода </dt> <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Format) </dd>
+        <dt class = "col-sm-2"> Это число? </dt>    <dd class = "col-sm-10"> @Html.DisplayFor(model => model.IsNumber) </dd>
+        <dt class = "col-sm-2"> Описание </dt>      <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description) </dd>
     </dl>
 </div>
 <div>

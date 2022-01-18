@@ -1,45 +1,51 @@
 ﻿@model RozetkaWebApp.Models.Characteristic
 
-@{
-    ViewData["Title"] = "Delete";
-}
+    @{
+         ViewBag.Product = Model.Product;
+    }
 
-<h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+@if (ViewBag.Product == null) 
+    {
+        ViewData["Title"] = "Редактировать продкт";
+         <h1>@ViewData["Title"]</h1>
+    }
+else 
+{
+    ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
+    <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> 
+         </p>
+
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+             <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Edit/@ViewBag.Product.ProductId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Delete/@ViewBag.Product.ProductId">Удалить</a> </li>
+        </ul>  
+
+    }
+   <p></p>
+
+<h3>Вы уверены что хотите удалить это?</h3>
 <div>
-    <h4>Characteristic</h4>
+ 
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Value)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Value)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Dimension)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Dimension)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Product)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Product.ProductId)
-        </dd class>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Property)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Property.PropertyId)
-        </dd class>
+        <dt class = "col-sm-2">   Товар  </dt>        <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Product.Label)  </dd>
+        <dt class = "col-sm-2">   Харатеристика </dt> <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
+        <dt class = "col-sm-2">   Значение </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
+        <dt class = "col-sm-2">   Ед. измерения</dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="CharacteristicId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Удалить" class="btn btn-danger" /> 
     </form>
 </div>

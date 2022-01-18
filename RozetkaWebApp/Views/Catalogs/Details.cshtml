@@ -1,48 +1,51 @@
 ﻿@model RozetkaWebApp.Models.Catalog
 
-@{
-    ViewData["Title"] = "Details";
-}
+    @{
+         ViewBag.Catalog = Model;
+    }
+@if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Детали каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+    else 
+    {
+        ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
+        <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
+         </p>
 
-<h1>Details</h1>
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
+        </ul>  
+
+    }
 
 <div>
-    <h4>Catalog</h4>
-    <hr />
+    <p></p>
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Attributes)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Attributes)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Portal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Portal.Label)
-        </dd>
+        <dt class = "col-sm-2">  Заголовок  </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Title)  </dd>
+        <dt class = "col-sm-2">  Этикетка </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Label)   </dd>
+        <dt class = "col-sm-2">  Описание  </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)  </dd>
+        <dt class = "col-sm-2">  Атрибуты  </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Attributes) </dd>
+        <dt class = "col-sm-2">  Портал  </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Portal.Label) </dd>
     </dl>
 </div>
-<div>
+@*<div>
     <a asp-action="Edit" asp-route-id="@Model.CatalogId">Edit</a> |
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@

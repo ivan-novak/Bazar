@@ -7,37 +7,35 @@
     }
     else 
     {
-        ViewData["Title"] ="Каталог: "+ViewBag.Catalog.Label;
-        <h6> 
+        ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
+        <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
-            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
-         </h6>
-        <h1> Фильтры  </h1>
-        <p>  <a asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Создать новый фильтр </a> </p>
+         </p>
+
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
+        </ul>  
+
+       <a class="nav-link" asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить </a>     
     }
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Label)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Format)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Catalog)
-            </th>
+            <th> ID </th>
+            <th> Наименование  </th>
+            <th> Формат вывова </th>
+            <th> Маска ввода  </th>
+            <th> Действия </th>
             <th></th>
         </tr>
     </thead>
@@ -45,27 +43,21 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.PropertyId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Label)
+                 <a asp-controller="Properties" asp-action="Edit" asp-route-id="@item.PropertyId">@Html.DisplayFor(modelItem => item.Label) </a> 
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Format)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsNumber)
+                @Html.DisplayFor(modelItem => item.Mask)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Catalog.CatalogId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PropertyId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PropertyId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PropertyId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> |
+                <a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a> |
+                <a asp-action="Delete" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>
         </tr>
 }

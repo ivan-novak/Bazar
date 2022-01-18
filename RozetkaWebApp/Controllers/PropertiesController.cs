@@ -35,21 +35,23 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var @property = await _context.Property
+            var property = await _context.Property
                 .Include(pp => pp.Catalog)
                 .FirstOrDefaultAsync(m => m.PropertyId == id);
-            if (@property == null)
+            if (property == null)
             {
                 return NotFound();
             }
-
-            return View(@property);
+            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
+            return View(property);
         }
 
         // GET: Properties/Create
-        public IActionResult Create()
+        public IActionResult Create(int? Id)
         {
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label");
+            var catalog = _context.Catalog.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id);
+            ViewBag.Catalog = catalog;
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
             return View();
         }
 
@@ -78,13 +80,14 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var @property = await _context.Property.FindAsync(id);
-            if (@property == null)
+            var property = await _context.Property.FindAsync(id);
+            if (property == null)
             {
                 return NotFound();
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
-            return View(@property);
+            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == property.Catalog.PortalId), "CatalogId", "Label");
+            return View(property);
         }
 
         // POST: Properties/Edit/5
@@ -131,15 +134,15 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var @property = await _context.Property
+            var property = await _context.Property
                 .Include(pp => pp.Catalog)
                 .FirstOrDefaultAsync(m => m.PropertyId == id);
-            if (@property == null)
+            if (property == null)
             {
                 return NotFound();
             }
-
-            return View(@property);
+            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
+            return View(property);
         }
 
         // POST: Properties/Delete/5

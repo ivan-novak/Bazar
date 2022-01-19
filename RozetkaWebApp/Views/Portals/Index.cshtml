@@ -1,14 +1,26 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Portal>
 
-@{
+ @{
     ViewData["Title"] = "Администрирование порталов";
 }
+        <p> 
+           <a> Администрирование </a> \
+       </p>
 
 <h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Создать новый портал</a>
-</p>
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link active" href="/Portals">Порталы</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/ControlImages/Index">Изображения</a> </li>
+        </ul> 
+        
+
+ <p></p>
+       <a  class="btn btn-success" asp-action="Create" > Добавить портал </a>   
+ <p></p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -58,9 +70,10 @@
                 <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.PortalId">Изображения</a> 
             </td>
              <td>
-                <a asp-action="Edit" asp-route-id="@item.PortalId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PortalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PortalId">Delete</a>
+
+                <a asp-controller = "Catalogs"  asp-action="Index" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-action="Edit" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
 }

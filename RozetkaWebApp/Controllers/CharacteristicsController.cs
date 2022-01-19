@@ -22,7 +22,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Characteristics
         public async Task<IActionResult> Index(long? id)
         {
-            ViewBag.Product = _context.Product.Find(id);
+            if(id != null) ViewBag.Product = _context.Product.Find(id);
             var applicationDbContext = _context.Characteristic.Where(c=>c.ProductId == id || id == null).Include(c => c.Product.Catalog.Portal).Include(c => c.Property);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -65,6 +65,7 @@ namespace RozetkaWebApp.Controllers
             {
                 _context.Add(characteristic);
                 await _context.SaveChangesAsync();
+                return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
@@ -120,7 +121,8 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
+                return RedirectToAction("Index", new { id = characteristic.ProductId });
             }
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
             ViewData["PropertyId"] = new SelectList(_context.Property, "PropertyId", "Label", characteristic.PropertyId);
@@ -150,8 +152,10 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var characteristic = await _context.Characteristic.FindAsync(id);
+            id = characteristic.ProductId;
             _context.Characteristic.Remove(characteristic);
             await _context.SaveChangesAsync();
+            return Redirect($"/Characteristics/Index/" + id);
             return RedirectToAction(nameof(Index));
         }
 

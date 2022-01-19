@@ -16,7 +16,8 @@ else
     <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
-            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> 
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+           <a> @ViewBag.Product.Label </a> 
          </p>
 
         <h1>  @ViewData["Title"] </h1>
@@ -26,26 +27,25 @@ else
              <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Products/Edit/@ViewBag.Product.ProductId">Редактировать</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Products/Delete/@ViewBag.Product.ProductId">Удалить</a> </li>
         </ul>  
 
     }
-   <p></p>
 
-<h3>Вы уверены что хотите удалить это?</h3>
-<div>
- 
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">   Товар  </dt>        <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Product.Label)  </dd>
-        <dt class = "col-sm-2">   Харатеристика </dt> <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
-        <dt class = "col-sm-2">   Значение </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
-        <dt class = "col-sm-2">   Ед. измерения</dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
-    </dl>
-    
+
+<p>
+   <h4>Удалить эту характеристику?</h4>
+</p>
+<div>  
     <form asp-action="Delete">
         <input type="hidden" asp-for="CharacteristicId" />
         <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
     </form>
+    <p></p>
+    <dl class="row">
+@*        <dt class = "col-sm-2">   Товар  </dt>        <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Product.Label)  </dd>*@
+        <dt class = "col-sm-2">   Наименование </dt> <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
+        <dt class = "col-sm-2">   Значение </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
+        <dt class = "col-sm-2">   Ед. измерения</dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
+    </dl>   
 </div>

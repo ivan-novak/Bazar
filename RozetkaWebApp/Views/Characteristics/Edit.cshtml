@@ -14,7 +14,8 @@ else
     <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
-            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> 
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+           <a> @ViewBag.Product.Label </a> 
          </p>
 
         <h1>  @ViewData["Title"] </h1>
@@ -24,22 +25,22 @@ else
             <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Products/Edit/@ViewBag.Product.ProductId">Редактировать</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Products/Delete/@ViewBag.Product.ProductId">Удалить</a> </li>
         </ul>  
 
     }
- <p></p>
-<div class="row">
+ <p>
+     <h4> Изменить характеристику </h4>
+ </p>
+ <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">
+             <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" />
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button> 
+            </div>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CharacteristicId" />
-            <div class="form-group">
-                <label asp-for="ProductId" class="control-label">Товар</label>
-                <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
-                <span asp-validation-for="ProductId" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="PropertyId" class="control-label">Наименование</label>
                 <select asp-for="PropertyId" class="form-control" asp-items="ViewBag.PropertyId"></select>
@@ -54,9 +55,6 @@ else
                 <label asp-for="Dimension" class="control-label">Ед. измерения</label>
                 <input asp-for="Dimension" class="form-control" />
                 <span asp-validation-for="Dimension" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Сохранить" class="btn btn-primary" />
             </div>
         </form>
     </div>

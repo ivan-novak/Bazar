@@ -48,8 +48,10 @@ namespace RozetkaWebApp
         }
 
         // GET: Catalogs/Create
-        public IActionResult Create()
+        public IActionResult Create(int? Id)
         {
+            var catalog = _context.Portal.FirstOrDefault(m => m.PortalId == Id);
+            ViewBag.Portal = catalog;
             ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label");
             return View();
         }
@@ -65,6 +67,7 @@ namespace RozetkaWebApp
             {
                 _context.Add(catalog);
                 await _context.SaveChangesAsync();
+                return Redirect($"/Catalogs/Index/" + catalog.PortalId);
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label", catalog.PortalId);
@@ -120,6 +123,7 @@ namespace RozetkaWebApp
                         throw;
                     }
                 }
+                return Redirect($"/Catalogs/Index/" + catalog.PortalId);
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label", catalog.PortalId);
@@ -151,8 +155,11 @@ namespace RozetkaWebApp
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var catalog = await _context.Catalog.FindAsync(id);
+            var Id = catalog.PortalId;
+
             _context.Catalog.Remove(catalog);
             await _context.SaveChangesAsync();
+            return Redirect($"/Catalogs/Index/" + Id);
             return RedirectToAction(nameof(Index));
         }
 

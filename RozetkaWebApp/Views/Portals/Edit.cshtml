@@ -1,15 +1,35 @@
 ﻿@model RozetkaWebApp.Models.Portal
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] ="Портал - "+@Model.Label;
 }
+    <p> 
+               <a> Администрирование </a> 
+         <a > @Model.Label </a>  
+    </p>
 
-<h1>Изменить портал</h1>
+    <h1>@ViewData["Title"]</h1>
 
-<hr />
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Index/@Model.PortalId">Каталоги</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/PortalImages/Index/@Model.PortalId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Portals/Details/@Model.PortalId">Детали</a> </li>
+        </ul>  
+    <p> 
+         <h4>Изменить портал</h4>
+    </p>  
+
 <div class="row">
     <div class="col-sm-12">
         <form asp-action="Edit">
+
+
+             <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" />
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+            </div>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PortalId" />
             <div class="form-group">
@@ -36,16 +56,11 @@
                     <span asp-validation-for="Attributes" class="text-danger"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

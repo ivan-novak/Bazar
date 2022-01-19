@@ -11,6 +11,7 @@
         <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
+            <a> @ViewBag.Catalog.Label </a> 
          </p>
 
         <h1>  @ViewData["Title"] </h1>
@@ -21,11 +22,13 @@
             <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
         </ul>  
 
-       <a class="nav-link" asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить </a>     
+
+        <p></p>
+            <a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить фильтр </a>     
+        <p></p>
+   
     }
 
 <table class="table">
@@ -35,8 +38,8 @@
             <th> Наименование  </th>
             <th> Формат вывова </th>
             <th> Маска ввода  </th>
-            <th> Действия </th>
-            <th></th>
+            <th> Действия </th>  
+             <th></th>
         </tr>
     </thead>
     <tbody>
@@ -56,7 +59,7 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> |
-                <a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a> |
+                @*<a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a> |*@
                 <a asp-action="Delete" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>
         </tr>

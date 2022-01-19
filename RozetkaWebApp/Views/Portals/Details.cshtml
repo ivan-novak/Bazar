@@ -1,13 +1,31 @@
 ﻿@model RozetkaWebApp.Models.Portal
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] ="Портал - "+@Model.Label;
 }
+    <p> 
+         <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+         <a > @Model.Label </a>  
+    </p>
 
-<h1>Детали портала</h1>
+    <h1>@ViewData["Title"]</h1>
+
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Index/@Model.PortalId">Каталоги</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/PortalImages/Index/@Model.PortalId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Portals/Details/@Model.PortalId">Детали</a> </li>
+        </ul>  
 
 <div>
-     <hr />
+     <p></p>
+        <h4> Информация о портале</h4>
+     <p></p>
+     <div class="form-group">
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.PortalId"> Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.PortalId"> Удалить </a>     
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+      </div>
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
@@ -35,7 +53,4 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.PortalId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

@@ -22,7 +22,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Properties
         public async Task<IActionResult> Index(int? id)
         {
-            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == id);
+            if (id != null) ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == id);
             var applicationDbContext = _context.Property.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -66,7 +66,8 @@ namespace RozetkaWebApp.Controllers
             {
                 _context.Add(@property);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Properties/Index/" + @property.CatalogId);
+              //  return RedirectToAction(nameof(Index));
             }
             ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
@@ -120,7 +121,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Properties/Index/" + @property.CatalogId);
             }
             ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
@@ -151,8 +152,10 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var @property = await _context.Property.FindAsync(id);
+            id = @property.CatalogId;
             _context.Property.Remove(@property);
             await _context.SaveChangesAsync();
+            return Redirect($"/Properties/Index/" + id);
             return RedirectToAction(nameof(Index));
         }
 

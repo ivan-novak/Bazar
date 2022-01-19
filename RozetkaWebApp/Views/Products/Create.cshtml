@@ -13,6 +13,7 @@ else
     <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Label </a> 
      </p>
 
         <h1>  @ViewData["Title"] </h1>
@@ -24,8 +25,6 @@ else
             <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
         </ul>  
 
     }

@@ -13,6 +13,7 @@ else
      <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
+            <a> @ViewBag.Catalog.Label </a> 
      </p>
 
         <h1>  @ViewData["Title"] </h1>
@@ -23,15 +24,19 @@ else
             <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Edit/@ViewBag.Catalog.CatalogId">Редактировать</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Delete/@ViewBag.Catalog.CatalogId">Удалить</a> </li>
         </ul>  
 
     }
-   <p></p>
+  <p>
+     <h4> Новый фильтр </h4>
+ </p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-success" />
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+            </div> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CatalogId" class="control-label">Каталог</label>
@@ -74,9 +79,6 @@ else
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
                 </div>
-            <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-primary" />
-            </div>
         </form>
     </div>
 </div>

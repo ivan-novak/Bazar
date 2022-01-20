@@ -43,7 +43,7 @@ else
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PropertyId" />
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="CatalogId" class="control-label">Каталог</label>
                 <select asp-for="CatalogId" class="form-control" asp-items="ViewBag.CatalogId"></select>
                 <span asp-validation-for="CatalogId" class="text-danger"></span>

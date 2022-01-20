@@ -22,8 +22,8 @@ namespace RozetkaWebApp.Controllers
         // GET: Characteristics
         public async Task<IActionResult> Index(long? id)
         {
-            if(id != null) ViewBag.Product = _context.Product.Find(id);
-            var applicationDbContext = _context.Characteristic.Where(c=>c.ProductId == id || id == null).Include(c => c.Product.Catalog.Portal).Include(c => c.Property);
+            if(id != null) ViewBag.Product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
+            var applicationDbContext = _context.Characteristic.Include(c => c.Property).Where(c=>c.ProductId == id || id == null);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -45,12 +45,17 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Characteristics/Create
+
+
+
+
+
         public IActionResult Create(long? Id)
         {
             var product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             ViewBag.Product = product;
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label");
-            ViewData["PropertyId"] = new SelectList(_context.Property, "PropertyId", "Label");
+            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i => i.CatalogId == product.CatalogId), "PropertyId", "Label");
             return View();
         }
 
@@ -59,21 +64,19 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CharacteristicId,ProductId,PropertyId,TextValue,DigitValue")] Characteristic characteristic)
+        public async Task<IActionResult> Create([Bind("CharacteristicId,ProductId,PropertyId,Value,Dimension")] Characteristic characteristic)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(characteristic);
                 await _context.SaveChangesAsync();
                 return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
-                return RedirectToAction(nameof(Index));
             }
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Property, "PropertyId", "Label", characteristic.PropertyId);
+            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
 
-        // GET: Characteristics/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
@@ -81,22 +84,24 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
+
             var characteristic = await _context.Characteristic.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.CharacteristicId == id);
+            //var characteristic = await _context.Characteristic.FindAsync(id);
             if (characteristic == null)
             {
                 return NotFound();
             }
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Property, "PropertyId", "Label", characteristic.PropertyId);
+            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
 
-        // POST: Characteristics/Edit/5
+        // POST: Characteristics1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("CharacteristicId,ProductId,PropertyId,TextValue,DigitValue")] Characteristic characteristic)
+        public async Task<IActionResult> Edit(long id, [Bind("CharacteristicId,ProductId,PropertyId,Value,Dimension")] Characteristic characteristic)
         {
             if (id != characteristic.CharacteristicId)
             {
@@ -122,13 +127,12 @@ namespace RozetkaWebApp.Controllers
                     }
                 }
                 return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
-                return RedirectToAction("Index", new { id = characteristic.ProductId });
             }
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Property, "PropertyId", "Label", characteristic.PropertyId);
+            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
-
+     
         // GET: Characteristics/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {

@@ -24,5 +24,6 @@ namespace RozetkaWebApp.Data
         public DbSet<RozetkaWebApp.Models.Product> Product { get; set; }
         public DbSet<RozetkaWebApp.Models.Property> Property { get; set; }
         public DbSet<RozetkaWebApp.Models.Characteristic> Characteristic { get; set; }
+        public DbSet<RozetkaWebApp.Models.CatalogImage> CatalogImage { get; set; }
     }
 }

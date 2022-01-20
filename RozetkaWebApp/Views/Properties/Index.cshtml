@@ -25,9 +25,9 @@
         </ul>  
 
 
-        <p></p>
-            <a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить фильтр </a>     
-        <p></p>
+        <p><h4>Список фильтров</h4></p>
+                
+        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить фильтр </a> </p>
    
     }
 
@@ -43,26 +43,18 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PropertyId)
-            </td>
-            <td>
-                 <a asp-controller="Properties" asp-action="Edit" asp-route-id="@item.PropertyId">@Html.DisplayFor(modelItem => item.Label) </a> 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Format)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mask)
-            </td>
+            <td> @Html.DisplayFor(modelItem => item.PropertyId)  </td>
+            <td> <a asp-controller="Properties" asp-action="Edit" asp-route-id="@item.PropertyId">@Html.DisplayFor(modelItem => item.Label) </a> </td>
+            <td> @Html.DisplayFor(modelItem => item.Format)  </td>
+            <td>  @Html.DisplayFor(modelItem => item.Mask)  </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> |
                 @*<a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a> |*@
                 <a asp-action="Delete" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

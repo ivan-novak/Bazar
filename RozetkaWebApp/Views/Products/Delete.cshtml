@@ -6,8 +6,8 @@
 }
 
 @if (ViewBag.Product == null) 
-    {
-        ViewData["Title"] = "Редактировать продкт";
+{
+    ViewData["Title"] = "Редактировать продкт";
     <h1>@ViewData["Title"]</h1>
 }
 else 
@@ -17,30 +17,31 @@ else
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
             <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-             <a> @ViewBag.Product.Label </a> 
-         </p>
+            <a> @ViewBag.Product.Label </a> 
+    </p>
 
-        <h1>  @ViewData["Title"] </h1>
+    <h1>  @ViewData["Title"] </h1>
   
 
-        <ul class="nav nav-tabs">
+     <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link active" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
-        </ul>  
+     </ul>  
+}
 
-    }
+<p>
+    <h4>  Удалить этот товар?</h4>
+</p>
 
-     <p></p>
-        <h4>  Удалить этот товар?</h4>
-     <p></p>
-        <form asp-action="Delete">
+ <form asp-action="Delete">
         <input type="hidden" asp-for="ProductId" />
         <input type="submit" value="Удалить" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>        
-    </form> 
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+        <hr />
+ </form> 
+
 <div>
-   <p></p>
     <dl class="row">
         <dt class = "col-sm-2">   Заголовок     </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Title)         </dd>
         <dt class = "col-sm-2">   Этикетка      </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Label)         </dd>
@@ -49,7 +50,6 @@ else
         <dt class = "col-sm-2">   Цена          </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Price)         </dd>
         <dt class = "col-sm-2">   Количество    </dt>    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Quantity)      </dd>
         <dt class = "col-sm-2">   Каталог       </dt>    <dd class = "col-sm-10"> 
-           <a asp-controller = "Products" asp-action="Index" asp-route-id="@Model.CatalogId"> @Html.DisplayFor(model => model.Catalog.Label) </a> </dd> 
+        <a asp-controller = "Products" asp-action="Index" asp-route-id="@Model.CatalogId"> @Html.DisplayFor(model => model.Catalog.Label) </a> </dd> 
     </dl>
-
- </div>
+</div>

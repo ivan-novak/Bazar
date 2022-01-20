@@ -1,15 +1,14 @@
 ﻿@model RozetkaWebApp.Models.Characteristic
 
-    @{
-         ViewBag.Product = Model.Product;
-    }
-
+@{
+     ViewBag.Product = Model.Product;
+ }
 
 @if (ViewBag.Product == null) 
 {
      ViewData["Title"] = "Редактировать продкт";
      <h1>@ViewData["Title"]</h1>
- }
+}
 else 
 {
     ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
@@ -21,8 +20,7 @@ else
            <a> @ViewBag.Product.Label </a> 
     </p>
 
-    <h1>  @ViewData["Title"] </h1>
-  
+    <h1>  @ViewData["Title"] </h1> 
 
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
@@ -30,19 +28,23 @@ else
             <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
         </ul> 
 }
+
  <p>
     <h4> Информация о характеристике </h4>
  </p>
+
 <div>
+    <p>
+        <button type="button" class="btn btn-primary"   onclick= "history.go(-1)">Отменить</button>
+        <a class="btn btn-primary"  asp-action="Edit"   asp-route-id="@Model.CharacteristicId">   Редактировать  </a>
+        <a class="btn btn-primary"  asp-action="Delete" asp-route-id="@Model.CharacteristicId"> Удалить </a>  
+           <hr />
+    </p>    
     <dl class="row">
         <dt class = "col-sm-2">   Наименование </dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
         <dt class = "col-sm-2">   Значение </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
         <dt class = "col-sm-2">   Ед. измерения</dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
     </dl>
-    <p>
-        <button type="button" class="btn btn-primary"   onclick= "history.go(-1)">Отменить</button>
-        <a class="btn btn-primary"  asp-action="Edit"   asp-route-id="@Model.CharacteristicId">   Редактировать  </a>
-        <a class="btn btn-primary"  asp-action="Delete" asp-route-id="@Model.CharacteristicId"> Удалить </a>    
-    </p>               
+           
 </div>
 

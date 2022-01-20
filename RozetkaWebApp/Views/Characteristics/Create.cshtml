@@ -2,60 +2,63 @@
 
 
 @if (ViewBag.Product == null) 
-    {
+{
         ViewData["Title"] = "Редактировать продукт";
-         <h1>@ViewData["Title"]</h1>
-    }
+        <h1>@ViewData["Title"]</h1>
+}
 else 
 {
-    ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
-    <p> 
+        ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
+
+        <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
             <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-           <a> @ViewBag.Product.Label </a> 
+            <a> @ViewBag.Product.Label </a> 
          </p>
 
         <h1>  @ViewData["Title"] </h1>
   
-
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
         </ul>  
+}
 
-    }
   <p>
      <h4> Новая характеристика </h4>
  </p>
 
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create">
-             <div class="form-group">
+         <form asp-action="Create">
+
+              <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
-            </div>           <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+                   <hr />
+              </div> 
+            
+              <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+              <div class="form-group">
                 <label asp-for="ProductId" class="control-label">Товар</label>
                 <select asp-for="ProductId" class ="form-control" asp-items="ViewBag.ProductId"></select>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label asp-for="PropertyId" class="control-label">Наименование</label>
                 <select asp-for="PropertyId" class ="form-control" asp-items="ViewBag.PropertyId"></select>
-            </div>
-            <div class="form-group">
+              </div>
+             <div class="form-group">
                 <label asp-for="Value" class="control-label">Значение </label>
                 <input asp-for="Value" class="form-control" />
                 <span asp-validation-for="Value" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label asp-for="Dimension" class="control-label">Ед. измерения</label>
                 <input asp-for="Dimension" class="form-control" />
                 <span asp-validation-for="Dimension" class="text-danger"></span>
             </div>
-
         </form>
     </div>
 </div>

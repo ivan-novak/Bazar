@@ -1,21 +1,20 @@
 ﻿@model RozetkaWebApp.Models.Catalog
 
-
-    @if (ViewBag.Portal == null) 
-    {
+@if (ViewBag.Portal == null) 
+{
         ViewData["Title"] = "Каталоги портала";
         <h1>@ViewData["Title"]</h1>
-    }
-    else 
-    {
+}
+else 
+{
         ViewData["Title"] = "Портал - "+ViewBag.Portal.Label;
+
         <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
            <a > @ViewBag.Portal.Label </a> 
         </p>
 
-        <h1>  @ViewData["Title"] </h1>
-  
+        <h1>  @ViewData["Title"] </h1> 
 
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link active" href="/Products/Index/@ViewBag.Portal.PortalId">Каталог</a> </li>
@@ -28,13 +27,14 @@
      <h4> Новый каталог </h4>
  </p>
 
-
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
+           
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                   <hr />
             </div> 
 
 

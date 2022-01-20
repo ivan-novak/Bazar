@@ -26,17 +26,19 @@ else
             <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link active" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
         </ul>  
+ }
 
-    }
+ <p>
+        <h4> Информация о товаре</h4>
+ </p>
 
 <div>
-     <p></p>
-        <h4> Информация о товаре</h4>
-        <p></p>
+
      <div class="form-group">
           <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.ProductId"> Изменить </a>
           <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ProductId"> Удалить </a>     
-           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+          <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+          <hr />
       </div>
     
     <dl class="row">

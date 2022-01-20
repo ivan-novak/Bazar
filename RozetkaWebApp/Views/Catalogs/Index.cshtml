@@ -1,34 +1,31 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Catalog>
 
-
-    @if (ViewBag.Portal == null) 
-    {
+@if (ViewBag.Portal == null) 
+{
         ViewData["Title"] = "Каталоги портала";
         <h1>@ViewData["Title"]</h1>
-    }
-    else 
-    {
+}
+else 
+{
         ViewData["Title"] = "Портал - "+ViewBag.Portal.Label;
         <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a > @ViewBag.Portal.Label </a> 
          </p>
 
-        <h1>  @ViewData["Title"] </h1>
-  
+        <h1>  @ViewData["Title"] </h1>  
 
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link active" href="/Catalogs/Index/@ViewBag.Portal.PortalId">Каталоги</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Portal.PortalId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Portals/Details/@ViewBag.Portal.PortalId">Детали</a> </li>
-        </ul>  
- <p></p>
-       <a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить каталог</a>   
- <p></p>
+        </ul> 
+        
+     <p><h4>Список каталогов</h4></p>
+             
+     <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить каталог</a> </p>
 
- }
-
-
+}
 
 <table class="table">
     <thead>
@@ -46,7 +43,6 @@
                 <a asp-action="Edit" asp-route-id="@item.CatalogId">  <i class="fas fa-solid fa-pen-square"></i> </a> |
                 <a asp-action="Delete" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>
-        </tr>
-}
+        </tr>}
     </tbody>
 </table>

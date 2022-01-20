@@ -1,35 +1,35 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Characteristic>
 
 @if (ViewBag.Product == null) 
-    {
-        ViewData["Title"] = "Редактировать продкт";
+{
+    ViewData["Title"] = "Редактировать продкт";
     <h1>@ViewData["Title"]</h1>
 }
 else 
 {
-    ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
-    <p> 
-            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
+        ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
+        <p> 
+             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
              <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-           <a> @ViewBag.Product.Label </a> 
-         </p>
+             <a> @ViewBag.Product.Label </a> 
+        </p>
 
         <h1>  @ViewData["Title"] </h1>
   
-
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
         </ul>  
 
-        <p></p>
-            <a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить харакеристику</a>     
-        <p></p>
+        <p><h4>Список характеристик</h4></p>
+                 
+        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить харакеристику</a></p>
     }
 
 <table class="table">
+
     <thead>
         <tr>
              <th> Наименования</th> 
@@ -43,16 +43,13 @@ else
     <tbody>
     @foreach (var item in Model) {
         <tr>
-            <td> <a asp-controler="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">@Html.DisplayFor(modelItem => item.Property.Label)</a>   </td> 
-            <td> @Html.DisplayFor(modelItem => item.Value)   </td>
-            <td>    @Html.DisplayFor(modelItem => item.Dimension)  </td>         
+           <td> <a asp-controler="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">@Html.DisplayFor(modelItem => item.Property.Label)</a>   </td> 
+           <td> @Html.DisplayFor(modelItem => item.Value)   </td>
+           <td> @Html.DisplayFor(modelItem => item.Dimension)  </td>         
            <td>
-                <a asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square"></i> </a> |
-@*                <a asp-action="Details" asp-route-id="@item.CharacteristicId"> <i class="fas fa-solid fa-plus-square"></i> </a> |
-*@                <a asp-action="Delete" asp-route-id="@item.CharacteristicId"> <i class="fas fa-solid fa-trash"></i> </a>
-            </td>
-        </tr>
-}
+                <a asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
+                <a asp-action="Delete" asp-route-id="@item.CharacteristicId"> <i class="fas fa-solid fa-trash"></i> </a>
+           </td>
+        </tr>}
     </tbody>
-
 </table>

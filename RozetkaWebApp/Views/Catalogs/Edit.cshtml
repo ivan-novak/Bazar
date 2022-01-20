@@ -1,16 +1,16 @@
 ﻿@model RozetkaWebApp.Models.Catalog
 
-    @{
-         ViewBag.Catalog = Model;
-    }
+@{
+     ViewBag.Catalog = Model;
+}
 
 @if (ViewBag.Catalog == null) 
-    {
+{
         ViewData["Title"] = "Редактировать каталог";
         <h1>@ViewData["Title"]</h1>
-    }
-    else 
-    {
+}
+ else 
+{
         ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
         <p> 
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
@@ -18,28 +18,30 @@
             <a> @ViewBag.Catalog.Label </a> 
          </p>
 
-        <h1>  @ViewData["Title"] </h1>
-  
+        <h1>  @ViewData["Title"] </h1>  
 
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
             <li class="nav-item">  <a class="nav-link" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
             <li class="nav-item">  <a class="nav-link active" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
-
         </ul>  
+}
 
-    }
-  <p>
+<p>
      <h4> Изменить информацию о каталоге </h4>
  </p>
+
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">
+
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />
                  <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+                    <hr />
             </div>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CatalogId" />
             <div class="form-group">

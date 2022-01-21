@@ -28,6 +28,7 @@ namespace RozetkaWebApp.Models
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
         public virtual DbSet<ControlImage> ControlImages { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
         public virtual DbSet<PortalImage> PortalImages { get; set; }
@@ -170,17 +171,11 @@ namespace RozetkaWebApp.Models
             {
                 entity.ToTable("CatalogImage");
 
-                entity.Property(e => e.CatalogImageId).HasColumnName("CatalogImageID");
-
                 entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
 
                 entity.Property(e => e.Label)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.Path)
-                    .IsRequired()
-                    .HasMaxLength(500);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
@@ -209,12 +204,12 @@ namespace RozetkaWebApp.Models
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Characteristics)
                     .HasForeignKey(d => d.ProductId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Characteristics_Products");
 
                 entity.HasOne(d => d.Property)
                     .WithMany(p => p.Characteristics)
                     .HasForeignKey(d => d.PropertyId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Characteristics_Properties");
             });
 
@@ -233,6 +228,13 @@ namespace RozetkaWebApp.Models
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
+            });
+
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.ToTable("Image");
+
+                entity.Property(e => e.Title).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Order>(entity =>

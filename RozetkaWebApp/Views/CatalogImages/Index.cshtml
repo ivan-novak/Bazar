@@ -1,14 +1,35 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.CatalogImage>
 
-@{
-    ViewData["Title"] = "Index";
-}
+    @if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Фильтры каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+    else 
+    {
+        ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
+        <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
+            <a> @ViewBag.Catalog.Label </a> 
+         </p>
 
-<h1>Index</h1>
+        <h1>  @ViewData["Title"] </h1>
+  
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+        </ul>  
+
+        <p><h4>Список изображений</h4></p>
+                
+        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить изображение </a> </p>
+   
+    }
+
 <table class="table">
     <thead>
         <tr>
@@ -19,10 +40,7 @@
                 @Html.DisplayNameFor(model => model.Label)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Path)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Catalog)
+                Путь
             </th>
             <th></th>
         </tr>
@@ -37,15 +55,13 @@
                 @Html.DisplayFor(modelItem => item.Label)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Path)
+                <img src="/Catalogs/image/5" />
+                /Catalogs/image/@Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Catalog.CatalogId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CatalogImageId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CatalogImageId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CatalogImageId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

@@ -1,47 +1,74 @@
 ﻿@model RozetkaWebApp.Models.CatalogImage
 
-@{
-    ViewData["Title"] = "Edit";
-}
+@if (ViewBag.Catalog == null) 
+    {
+        ViewData["Title"] = "Изображения каталога";
+        <h1>@ViewData["Title"]</h1>
+    }
+else 
+{
 
-<h1>Edit</h1>
+     ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
+     <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
+            <a> @ViewBag.Catalog.Label </a> 
+     </p>
 
-<h4>CatalogImage</h4>
-<hr />
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
+        </ul>  
+
+    }
+<p>
+     <h4> Изменить изображение </h4>
+ </p>
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="CatalogImageId" />
+
             <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" />     
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button> 
+                <hr />
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group" style="display: none">
                 <label asp-for="CatalogId" class="control-label"></label>
                 <select asp-for="CatalogId" class="form-control" asp-items="ViewBag.CatalogId"></select>
                 <span asp-validation-for="CatalogId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label"></label>
+                <label asp-for="Label" class="control-label">Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Path" class="control-label"></label>
-                <input asp-for="Path" class="form-control" />
-                <span asp-validation-for="Path" class="text-danger"></span>
+            <div class="form-group" >
+                 <div class="editor-label">Файл изображения</div>
+                 <div class="editor-field">
+                      <input type="file" name="uploadImage" accept="image/*" />
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </form>  
+       
+    </div> 
+    <div class = "col-sm-4"> 
+                       <img src="\Catalogs\Image\@Model.Id" alt="Sample Image" width="100%" />
+        </div>
 </div>
 
 @section Scripts {

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,6 +22,9 @@ namespace RozetkaWebApp
             _context = context;
         }
 
+
+
+
         // GET: Catalogs
         public async Task<IActionResult> Index(int? id)
         {
@@ -26,6 +32,17 @@ namespace RozetkaWebApp
 
             var applicationDbContext = _context.Catalog.Where(c=>c.PortalId == id || id == null).Include(c => c.Portal);
             return View(await applicationDbContext.ToListAsync());
+        }
+
+        // GET: Catalogs/Image/5
+
+        public async Task<FileResult> Image(int? id)
+        {
+            if (id == null) return null;
+            var image = await _context.CatalogImage.FirstOrDefaultAsync(m => m.Id == id);
+            if (image == null)  return null;
+            System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
+            return new FileStreamResult(oMemoryStream, "image/*");
         }
 
         // GET: Catalogs/Details/5

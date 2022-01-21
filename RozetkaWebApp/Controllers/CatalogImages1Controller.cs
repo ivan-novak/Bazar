@@ -8,24 +8,25 @@ using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
 
-namespace RozetkaWebApp
+namespace RozetkaWebApp.Controllers
 {
-    public class ControlImagesController : Controller
+    public class CatalogImages1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ControlImagesController(ApplicationDbContext context)
+        public CatalogImages1Controller(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: ControlImages
+        // GET: CatalogImages1
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ControlImage.ToListAsync());
+            var applicationDbContext = _context.CatalogImage.Include(c => c.Catalog);
+            return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: ControlImages/Details/5
+        // GET: CatalogImages1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +34,42 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var controlImage = await _context.ControlImage
-                .FirstOrDefaultAsync(m => m.ControlImageId == id);
-            if (controlImage == null)
+            var catalogImage = await _context.CatalogImage
+                .Include(c => c.Catalog)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (catalogImage == null)
             {
                 return NotFound();
             }
 
-            return View(controlImage);
+            return View(catalogImage);
         }
 
-        // GET: ControlImages/Create
+        // GET: CatalogImages1/Create
         public IActionResult Create()
         {
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId");
             return View();
         }
 
-        // POST: ControlImages/Create
+        // POST: CatalogImages1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ControlImageId,Title,Label,Path")] ControlImage controlImage)
+        public async Task<IActionResult> Create([Bind("Id,CatalogId,Title,Label,Data")] CatalogImage catalogImage)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(controlImage);
+                _context.Add(catalogImage);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(controlImage);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", catalogImage.CatalogId);
+            return View(catalogImage);
         }
 
-        // GET: ControlImages/Edit/5
+        // GET: CatalogImages1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +77,23 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var controlImage = await _context.ControlImage.FindAsync(id);
-            if (controlImage == null)
+            var catalogImage = await _context.CatalogImage.FindAsync(id);
+            if (catalogImage == null)
             {
                 return NotFound();
             }
-            return View(controlImage);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", catalogImage.CatalogId);
+            return View(catalogImage);
         }
 
-        // POST: ControlImages/Edit/5
+        // POST: CatalogImages1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ControlImageId,Title,Label,Path")] ControlImage controlImage)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CatalogId,Title,Label")] CatalogImage catalogImage)
         {
-            if (id != controlImage.ControlImageId)
+            if (id != catalogImage.Id)
             {
                 return NotFound();
             }
@@ -97,12 +102,12 @@ namespace RozetkaWebApp
             {
                 try
                 {
-                    _context.Update(controlImage);
+                    _context.Update(catalogImage);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ControlImageExists(controlImage.ControlImageId))
+                    if (!CatalogImageExists(catalogImage.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +118,11 @@ namespace RozetkaWebApp
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(controlImage);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", catalogImage.CatalogId);
+            return View(catalogImage);
         }
 
-        // GET: ControlImages/Delete/5
+        // GET: CatalogImages1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +130,31 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var controlImage = await _context.ControlImage
-                .FirstOrDefaultAsync(m => m.ControlImageId == id);
-            if (controlImage == null)
+            var catalogImage = await _context.CatalogImage
+                .Include(c => c.Catalog)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (catalogImage == null)
             {
                 return NotFound();
             }
 
-            return View(controlImage);
+            return View(catalogImage);
         }
 
-        // POST: ControlImages/Delete/5
+        // POST: CatalogImages1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var controlImage = await _context.ControlImage.FindAsync(id);
-            _context.ControlImage.Remove(controlImage);
+            var catalogImage = await _context.CatalogImage.FindAsync(id);
+            _context.CatalogImage.Remove(catalogImage);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ControlImageExists(int id)
+        private bool CatalogImageExists(int id)
         {
-            return _context.ControlImage.Any(e => e.ControlImageId == id);
+            return _context.CatalogImage.Any(e => e.Id == id);
         }
     }
 }

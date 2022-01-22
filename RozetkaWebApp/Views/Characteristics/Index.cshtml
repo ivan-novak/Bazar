@@ -25,18 +25,17 @@ else
 
         <p><h4>Список характеристик</h4></p>
                  
-        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить харакеристику</a></p>
+        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новую</a></p>
     }
 
 <table class="table">
 
     <thead>
         <tr>
-             <th> Наименования</th> 
+             <th> Наименования характеристики</th> 
              <th> Значение </th>
              <th> Ед. измерения  </th> 
-             <th> Действия </th>  
-             <th></th>
+             <th class="text-right"> Действия </th>  
         </tr>
     </thead>
 
@@ -46,10 +45,11 @@ else
            <td> <a asp-controler="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">@Html.DisplayFor(modelItem => item.Property.Label)</a>   </td> 
            <td> @Html.DisplayFor(modelItem => item.Value)   </td>
            <td> @Html.DisplayFor(modelItem => item.Dimension)  </td>         
-           <td>
+           <td class="text-right">
                 <a asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
                 <a asp-action="Delete" asp-route-id="@item.CharacteristicId"> <i class="fas fa-solid fa-trash"></i> </a>
            </td>
-        </tr>}
+        </tr>
+        }
     </tbody>
 </table>

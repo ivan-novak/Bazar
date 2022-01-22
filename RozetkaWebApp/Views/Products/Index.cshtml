@@ -25,20 +25,19 @@ else
     
      <p><h4> Список товаров </h4></p>
             
-     <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить товар </a>  </p>
+     <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить новый </a>  </p>
 
 }
 <table class="table">
     <thead>
         <tr>
             <th> ID </th>
-            <th> Наименование  </th>
+            <th> Наименование товара </th>
             <th> Цена  </th>
             <th> Количество </th>
             <th> Ресурсы  </th>
-            <th> Действия  </th>
-            <th></th>
-        </tr>
+            <th class="text-right"> Действия  </th>
+         </tr>
     </thead>
     <tbody>
     @foreach (var item in Model) {
@@ -48,7 +47,7 @@ else
             <td>  @Html.DisplayFor(modelItem => item.Price)   </td>
             <td>  @Html.DisplayFor(modelItem => item.Quantity)  </td>
             <td>  <a asp-controller = "ProductImages" asp-action="Index" asp-route-id="@item.CatalogId">Изображения</a> </td>
-            <td>
+            <td class="text-right">
                 <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">   <i class="fas fa-solid fa-folder"></i> </a> |
                 <a asp-action="Edit" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square"></i> </a> |
                 <a asp-action="Delete" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-trash"></i> </a>

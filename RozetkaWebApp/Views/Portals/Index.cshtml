@@ -18,64 +18,32 @@
 
  <p><h4>Список порталов</h4></p>
        
- <p><a  class="btn btn-success" asp-action="Create" > Добавить портал </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
 
 
 <table class="table">
     <thead>
         <tr>
- @*           <th>
-                @Html.DisplayNameFor(model => model.PortalId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Label)
-            </th>
-           <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attributes)
-            </th>*@
-            <th>
-                ID
-            </th>
-            <th>
-                Порталы
-            </th>
-            <th>
-                Ресурсы
-            </th>
-            <th>
-                Действия
-            </th>
-            <th></th>
+            <th> ID </th>
+            <th> Наименование портала </th>
+            <th> Ресурсы </th>
+            <th class="text-right"> Действия</th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PortalId)
-            </td>
-            <td>
-                <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Label)</a>
-            </td>
- @*           <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attributes)
-            </td>*@
-            <td>
-                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.PortalId">Изображения</a> 
-            </td>
-             <td>
 
+    <tbody>
+    @foreach (var item in Model) 
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.PortalId)  </td>
+            <td> <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Label)</a> </td>
+            <td> <a asp-controller = "Portalmages" asp-action="Index" asp-route-id="@item.PortalId">Изображения</a> </td>
+            <td class="text-right">
                 <a asp-controller = "Catalogs"  asp-action="Index" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-folder"></i></a> |
                 <a asp-action="Edit" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-pen-square"></i></a> |
                 <a asp-action="Delete" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

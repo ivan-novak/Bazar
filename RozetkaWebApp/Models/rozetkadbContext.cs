@@ -187,7 +187,6 @@ namespace RozetkaWebApp.Models
                 entity.HasOne(d => d.Image)
                     .WithMany(p => p.CatalogImages)
                     .HasForeignKey(d => d.ImageId)
-                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_CatalogImage_Image");
             });
 
@@ -345,15 +344,16 @@ namespace RozetkaWebApp.Models
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.Path)
-                    .IsRequired()
-                    .HasMaxLength(500);
-
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
 
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
+
+                entity.HasOne(d => d.Image)
+                    .WithMany(p => p.ProductImages)
+                    .HasForeignKey(d => d.ImageId)
+                    .HasConstraintName("FK_ProductImage_Image");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductImages)

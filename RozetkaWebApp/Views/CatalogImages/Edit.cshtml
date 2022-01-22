@@ -32,7 +32,7 @@ else
 
 <div class="row">
     <div class="col-md-8">
-        <form asp-action="Edit">
+        <form asp-action="Edit"  method="post" enctype="multipart/form-data"  >
 
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />     
@@ -47,6 +47,11 @@ else
                 <select asp-for="CatalogId" class="form-control" asp-items="ViewBag.CatalogId"></select>
                 <span asp-validation-for="CatalogId" class="text-danger"></span>
             </div>
+            <div class="form-group" style="display: none">
+                <label asp-for="ImageId" class="control-label"></label>
+                <input asp-for="ImageId" class="form-control" />
+                <span asp-validation-for="ImageId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label">Заголовок</label>
                 <input asp-for="Title" class="form-control" />
@@ -60,15 +65,16 @@ else
             <div class="form-group" >
                  <div class="editor-label">Файл изображения</div>
                  <div class="editor-field">
-                      <input type="file" name="uploadImage" accept="image/*" />
+                    <input type="file" name="uploadImage" accept="image/*" />
                 </div>
+                <span asp-validation-for="Data" class="text-danger"></span>
             </div>
         </form>  
        
     </div> 
     <div class = "col-sm-4"> 
-                       <img src="\Catalogs\Image\@Model.Id" alt="Sample Image" width="100%" />
-        </div>
+             <img src="/Images/Index/@Model.ImageId" alt="@Model.Label" width="100%" />
+    </div>
 </div>
 
 @section Scripts {

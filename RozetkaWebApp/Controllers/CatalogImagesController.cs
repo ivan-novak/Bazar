@@ -34,26 +34,16 @@ namespace RozetkaWebApp.Controllers
         // GET: CatalogImages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var catalogImage = await _context.CatalogImage
-                .Include(c => c.Catalog)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (catalogImage == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null)  return NotFound();
+            var catalogImage = await _context.CatalogImage.Include(c => c.Catalog).FirstOrDefaultAsync(m => m.Id == id);
+            if (catalogImage == null)  return NotFound();
             return View(catalogImage);
         }
 
         // GET: CatalogImages/Create
         public IActionResult Create(int? Id)
         {
-            var catalog = _context.Catalog.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id);
+            var catalog = _context.Catalog.Where(m => m.CatalogId == Id).Include(c => c.Portal).First();
             ViewBag.Catalog = catalog;
             ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
             return View();
@@ -72,36 +62,33 @@ namespace RozetkaWebApp.Controllers
 
                 foreach (var file in Request.Form.Files)
                 {
+                    var image = new Image();
                     MemoryStream ms = new MemoryStream();
                     file.CopyTo(ms);
-                    catalogImage.Data = ms.ToArray();
+                    image.Data = ms.ToArray();
+                    image.Title = file.FileName;
+                    _context.Add(image);
+                    await _context.SaveChangesAsync();
+                    catalogImage.ImageId = image.ImageId;
                     ms.Close();
                     ms.Dispose();
                 }
 
                 _context.Add(catalogImage);
                 await _context.SaveChangesAsync();
-                return Redirect($"/CatalogImage/Index/" + catalogImage.CatalogId);
+                return Redirect($"/CatalogImages/Index/" + catalogImage.CatalogId);
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "CatalogId", catalogImage.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", catalogImage.CatalogId);
             return View(catalogImage);
         }
 
         // GET: CatalogImages/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var catalogImage = await _context.CatalogImage.FindAsync(id);
-            if (catalogImage == null)
-            {
-                return NotFound();
-            }
-
-            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == catalogImage.CatalogId);
+            if (id == null) return NotFound();
+            CatalogImage catalogImage = await _context.CatalogImage.FindAsync(id);
+            if (catalogImage == null)  return NotFound();
+            ViewBag.Catalog = _context.Catalog.Where(i => i.CatalogId == catalogImage.CatalogId).Include(i=>i.Portal).First();
             ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == catalogImage.Catalog.PortalId), "CatalogId", "Label");
 
             return View(catalogImage);
@@ -112,29 +99,20 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CatalogId,Title,Label,Data")] CatalogImage catalogImage)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CatalogId,ImageId,Title,Label,Data")] CatalogImage catalogImage)
         {
-            if (id != catalogImage.Id)
+            if (id != catalogImage.Id)  return NotFound();
+            foreach (var file in Request.Form.Files)
             {
-                return NotFound();
+                MemoryStream ms = new MemoryStream();
+                file.CopyTo(ms);
+                var image = _context.Image.Find(catalogImage.ImageId);
+                image.Data = ms.ToArray();
+                image.Title = file.FileName;
+                _context.Update(image);
+                ms.Close();
+                ms.Dispose();
             }
-
-            if (Request.Form.Files.Count == 0)
-            {
-                var old = _context.CatalogImage.Find(id);
-                old.Title = catalogImage.Title;
-                old.CatalogId = catalogImage.CatalogId;
-                old.Label = catalogImage.Label;
-                catalogImage = old;
-            } else foreach (var file in Request.Form.Files)
-            {
-                    MemoryStream ms = new MemoryStream();
-                    file.CopyTo(ms);
-                    catalogImage.Data = ms.ToArray();
-                    ms.Close();
-                    ms.Dispose();
-            }
-
             if (ModelState.IsValid)
             {
                 try
@@ -144,14 +122,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CatalogImageExists(catalogImage.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!CatalogImageExists(catalogImage.Id)) return NotFound();
+                    else  throw;
                 }
                 return Redirect($"/CatalogImages/Index/" + catalogImage.CatalogId);
             }
@@ -162,19 +134,10 @@ namespace RozetkaWebApp.Controllers
         // GET: CatalogImages/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var catalogImage = await _context.CatalogImage
-                .Include(c => c.Catalog)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (catalogImage == null)
-            {
-                return NotFound();
-            }
-            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == catalogImage.CatalogId);
+            if (id == null)  return NotFound();
+            var catalogImage = await _context.CatalogImage.Where(m => m.Id == id).FirstAsync();
+            if (catalogImage == null) return NotFound();
+            ViewBag.Catalog = _context.Catalog.Where(i => i.CatalogId == catalogImage.CatalogId).Include(c => c.Portal).First();
             return View(catalogImage);
         }
 
@@ -184,10 +147,12 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var catalogImage = await _context.CatalogImage.FindAsync(id);
+            var catalogImage = await _context.CatalogImage.Where(m => m.Id == id).Include(i=>i.Image).FirstAsync();
+            id=catalogImage.CatalogId;
             _context.CatalogImage.Remove(catalogImage);
+            _context.Image.Remove(catalogImage.Image);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/CatalogImages/Index/" + catalogImage.CatalogId);
         }
 
         private bool CatalogImageExists(int id)

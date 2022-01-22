@@ -27,43 +27,23 @@
         <p><h4>Список изображений</h4></p>
                 
         <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить изображение </a> </p>
-   
+        <hr />   
     }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Label)
-            </th>
-            <th>
-                Путь
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
+    <div class=row>
+        @foreach (var item in Model) 
+        {
+          <div class="col-md-3">
+              <div class="thumbnail">   
+              <img src="/images/Index/@item.ImageId" alt="item.Label" width="100%">    
+         </div> 
+         <div class="col-12 text-truncate h6">              
+                <a asp-action="Edit" asp-route-id="@item.Id"> <i class="fas fa-solid fa-pen-square"></i> </a> 
+                <a asp-action="Delete" asp-route-id="@item.Id"> <i class="fas fa-solid fa-trash"></i> </a>
                 @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Label)
-            </td>
-            <td>
-                <img src="/Catalogs/image/5" />
-                /Catalogs/image/@Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+          </div>
+            <p></p>  
+         </div>    
+        }
+    </div>
+

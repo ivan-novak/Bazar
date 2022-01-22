@@ -171,8 +171,6 @@ namespace RozetkaWebApp.Models
             {
                 entity.ToTable("CatalogImage");
 
-                entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
-
                 entity.Property(e => e.Label)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -185,6 +183,12 @@ namespace RozetkaWebApp.Models
                     .WithMany(p => p.CatalogImages)
                     .HasForeignKey(d => d.CatalogId)
                     .HasConstraintName("FK_CatalogImages_Catalogs");
+
+                entity.HasOne(d => d.Image)
+                    .WithMany(p => p.CatalogImages)
+                    .HasForeignKey(d => d.ImageId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_CatalogImage_Image");
             });
 
             modelBuilder.Entity<Characteristic>(entity =>

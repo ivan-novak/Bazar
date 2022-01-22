@@ -85,7 +85,7 @@ namespace RozetkaWebApp
                 _context.Add(catalog);
                 await _context.SaveChangesAsync();
                 return Redirect($"/Catalogs/Index/" + catalog.PortalId);
-                return RedirectToAction(nameof(Index));
+             //   return RedirectToAction(nameof(Index));
             }
             ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label", catalog.PortalId);
             return View(catalog);

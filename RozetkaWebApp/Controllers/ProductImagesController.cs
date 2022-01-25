@@ -23,7 +23,7 @@ namespace RozetkaWebApp.Controllers
         // GET: ProductImages
         public async Task<IActionResult> Index(int? id)
         {
-            if (id != null) ViewBag.Product = _context.Product.Include(c => c.Catalog).Include(c => c.Catalog.Portal).First(i => i.ProductId == id);
+            if (id != null) ViewBag.Product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
             var applicationDbContext = _context.ProductImage.Where(c => c.ProductId == id || id == null).Include(c => c.Product);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -51,7 +51,7 @@ namespace RozetkaWebApp.Controllers
         // GET: ProductImages/Create
         public IActionResult Create(long? Id)
         {
-            var product = _context.Product.Where(m => m.ProductId == Id).Include(c => c.Catalog).First();
+            var product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             ViewBag.Product = product;
             ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId");
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductId");
@@ -97,7 +97,7 @@ namespace RozetkaWebApp.Controllers
             if (id == null) return NotFound();
             
 
-            var productImage = await _context.ProductImage.FindAsync(id);
+            var productImage = await _context.ProductImage.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductImageId == id);
             if (productImage == null) return NotFound();
             
             ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", productImage.ImageId);
@@ -149,8 +149,8 @@ namespace RozetkaWebApp.Controllers
             if (id == null) return NotFound();
             var productImage = await _context.ProductImage
                 .Include(p => p.Image)
-                .Include(p => p.Product)
-                .FirstOrDefaultAsync(m => m.ProductImageId == id);
+                .Include(p => p.Product.Catalog.Portal)
+                .FirstOrDefaultAsync(m => m.ProductImageId == id);                          
             if (productImage == null) return NotFound();
             return View(productImage);
         }

@@ -1,36 +1,47 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.ProductImage>
 
-@{
-    ViewData["Title"] = "Index";
+@if (ViewBag.Product == null) 
+{
+    ViewData["Title"] = "Редактировать продукт";
+    <h1>@ViewData["Title"]</h1>
 }
+else 
+{
+        ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
+        <p> 
+             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
+             <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+             <a> @ViewBag.Product.Label </a> 
+        </p>
 
-<h1>Index</h1>
+        <h1>  @ViewData["Title"] </h1>
+  
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
+        </ul>  
 
-<p>
-    <a asp-action="Create" asp-route-id="@ViewBag.Product.ProductId">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th> @Html.DisplayNameFor(model => model.Title) </th>
-            <th> @Html.DisplayNameFor(model => model.Label) </th>
-            <th> @Html.DisplayNameFor(model => model.Image) </th>
-            <th class="text-right"> @Html.DisplayNameFor(model => model.Product) </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model) {
-        <tr>
-            <td> @Html.DisplayFor(modelItem => item.Title)</td>
-            <td> @Html.DisplayFor(modelItem => item.Label)</td>
-            <td> @Html.DisplayFor(modelItem => item.Image.ImageId)</td>
-            <td> @Html.DisplayFor(modelItem => item.Product.ProductId)</td>
-            <td class="text-right">
-                <a asp-action="Edit" asp-route-id="@item.ProductImageId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductImageId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductImageId">Delete</a>
-            </td>
-        </tr>
+        <p><h4>Список изображений</h4></p>
+                 
+        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новую</a></p>
     }
-    </tbody>
-</table>
+
+       <div class=row>
+     @foreach (var item in Model) 
+        {
+          <div class="col-md-3">
+              <div class="thumbnail">   
+              <img src="/images/Index/@item.ImageId" alt="item.Label" width="100%">    
+         </div> 
+         <div class="col-12 text-truncate h6">              
+                <a asp-action="Edit" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-pen-square"></i> </a> 
+                <a asp-action="Delete" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-trash"></i> </a>
+                @Html.DisplayFor(modelItem => item.Title)
+          </div>
+            <p></p>  
+         </div>    
+        }
+        </div>
+

@@ -1,15 +1,43 @@
 ﻿@model RozetkaWebApp.Models.ProductImage
-
 @{
-    ViewData["Title"] = "Delete";
+     ViewBag.Product = Model.Product;
+}
+@if (ViewBag.Product == null) 
+{
+        ViewData["Title"] = "Редактировать изображение";
+        <h1>@ViewData["Title"]</h1>
+}
+else 
+{
+        ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
+
+        <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
+            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+            <a> @ViewBag.Product.Label </a> 
+         </p>
+
+        <h1>  @ViewData["Title"] </h1>
+  
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
+        </ul>  
 }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
+  <p>
+     <h4> Удалить это изображение? </h4>
+ </p>
 <div>
-    <h4>ProductImage</h4>
-    <hr />
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProductImageId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+           <hr />
+    </form>
+     <p></p>
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
@@ -36,10 +64,5 @@
             @Html.DisplayFor(model => model.Product.ProductId)
         </dd class>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ProductImageId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+   
 </div>

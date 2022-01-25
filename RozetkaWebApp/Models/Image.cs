@@ -10,6 +10,7 @@ namespace RozetkaWebApp.Models
         public Image()
         {
             CatalogImages = new HashSet<CatalogImage>();
+            PortalImages = new HashSet<PortalImage>();
             ProductImages = new HashSet<ProductImage>();
         }
 
@@ -18,6 +19,7 @@ namespace RozetkaWebApp.Models
         public byte[] Data { get; set; }
 
         public virtual ICollection<CatalogImage> CatalogImages { get; set; }
+        public virtual ICollection<PortalImage> PortalImages { get; set; }
         public virtual ICollection<ProductImage> ProductImages { get; set; }
     }
 }

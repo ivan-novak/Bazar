@@ -32,6 +32,7 @@ namespace RozetkaWebApp.Models
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
         public virtual DbSet<PortalImage> PortalImages { get; set; }
+        public virtual DbSet<PortalImage1> PortalImages1 { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
@@ -187,7 +188,8 @@ namespace RozetkaWebApp.Models
                 entity.HasOne(d => d.Image)
                     .WithMany(p => p.CatalogImages)
                     .HasForeignKey(d => d.ImageId)
-                    .HasConstraintName("FK_CatalogImage_Image");
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CatalogImage_Image1");
             });
 
             modelBuilder.Entity<Characteristic>(entity =>
@@ -302,10 +304,36 @@ namespace RozetkaWebApp.Models
                     .IsRequired()
                     .HasMaxLength(500);
 
+                entity.HasOne(d => d.Image)
+                    .WithMany(p => p.PortalImages)
+                    .HasForeignKey(d => d.ImageId)
+                    .HasConstraintName("FK_PortalImage_Image");
+
                 entity.HasOne(d => d.Portal)
                     .WithMany(p => p.PortalImages)
                     .HasForeignKey(d => d.PortalId)
                     .HasConstraintName("FK_PortalImages_Portals");
+            });
+
+            modelBuilder.Entity<PortalImage1>(entity =>
+            {
+                entity.HasKey(e => e.PortalImageId);
+
+                entity.ToTable("PortalImages");
+
+                entity.Property(e => e.PortalImageId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("PortalImageID");
+
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.PortalId).HasColumnName("PortalID");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
             });
 
             modelBuilder.Entity<Product>(entity =>

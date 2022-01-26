@@ -193,7 +193,7 @@ namespace RozetkaWebApp
             if (catalogImage == null) return null;
             var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == catalogImage.ImageId);
             if (image == null) return null;
-            return image.ToStreem();
+            return image.ToStream();
         }
     }
 }

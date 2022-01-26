@@ -26,7 +26,7 @@ namespace RozetkaWebApp.Controllers
                 if (id == null) return null;
                 var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == id);
                 if (image == null) return null;
-                return image.ToStreem();
+                return image.ToStream();
                 //System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
                 //return new FileStreamResult(oMemoryStream, "image/*");
             }

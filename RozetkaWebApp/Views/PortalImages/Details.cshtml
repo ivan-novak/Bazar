@@ -1,0 +1,42 @@
+﻿@model RozetkaWebApp.Models.PortalImage
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PortalImage</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PortalId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PortalId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Label)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Label)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PortalImageId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

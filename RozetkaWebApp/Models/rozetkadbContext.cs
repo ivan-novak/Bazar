@@ -27,15 +27,14 @@ namespace RozetkaWebApp.Models
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
-        public virtual DbSet<ControlImage> ControlImages { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
         public virtual DbSet<PortalImage> PortalImages { get; set; }
-        public virtual DbSet<PortalImage1> PortalImages1 { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
+        public virtual DbSet<RootImage> RootImages { get; set; }
         public virtual DbSet<View> Views { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -218,23 +217,6 @@ namespace RozetkaWebApp.Models
                     .HasConstraintName("FK_Characteristics_Properties");
             });
 
-            modelBuilder.Entity<ControlImage>(entity =>
-            {
-                entity.ToTable("ControlImage");
-
-                entity.Property(e => e.Label)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Path)
-                    .IsRequired()
-                    .HasMaxLength(500);
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasMaxLength(500);
-            });
-
             modelBuilder.Entity<Image>(entity =>
             {
                 entity.ToTable("Image");
@@ -287,43 +269,6 @@ namespace RozetkaWebApp.Models
             modelBuilder.Entity<PortalImage>(entity =>
             {
                 entity.ToTable("PortalImage");
-
-                entity.Property(e => e.PortalImageId).HasColumnName("PortalImageID");
-
-                entity.Property(e => e.Label)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Path)
-                    .IsRequired()
-                    .HasMaxLength(500);
-
-                entity.Property(e => e.PortalId).HasColumnName("PortalID");
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasMaxLength(500);
-
-                entity.HasOne(d => d.Image)
-                    .WithMany(p => p.PortalImages)
-                    .HasForeignKey(d => d.ImageId)
-                    .HasConstraintName("FK_PortalImage_Image");
-
-                entity.HasOne(d => d.Portal)
-                    .WithMany(p => p.PortalImages)
-                    .HasForeignKey(d => d.PortalId)
-                    .HasConstraintName("FK_PortalImages_Portals");
-            });
-
-            modelBuilder.Entity<PortalImage1>(entity =>
-            {
-                entity.HasKey(e => e.PortalImageId);
-
-                entity.ToTable("PortalImages");
-
-                entity.Property(e => e.PortalImageId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("PortalImageID");
 
                 entity.Property(e => e.Label)
                     .IsRequired()
@@ -417,6 +362,24 @@ namespace RozetkaWebApp.Models
                     .WithMany(p => p.Properties)
                     .HasForeignKey(d => d.CatalogId)
                     .HasConstraintName("FK_Properties_Catalogs");
+            });
+
+            modelBuilder.Entity<RootImage>(entity =>
+            {
+                entity.ToTable("RootImage");
+
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(500);
+
+                entity.HasOne(d => d.Image)
+                    .WithMany(p => p.RootImages)
+                    .HasForeignKey(d => d.ImageId)
+                    .HasConstraintName("FK_RootImage_Image");
             });
 
             modelBuilder.Entity<View>(entity =>

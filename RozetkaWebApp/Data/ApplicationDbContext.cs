@@ -27,5 +27,6 @@ namespace RozetkaWebApp.Data
         public DbSet<RozetkaWebApp.Models.CatalogImage> CatalogImage { get; set; }
         public DbSet<RozetkaWebApp.Models.Image> Image { get; set; }
         public DbSet<RozetkaWebApp.Models.ProductImage> ProductImage { get; set; }
+        public DbSet<RozetkaWebApp.Models.RootImage> RootImage { get; set; }
     }
 }

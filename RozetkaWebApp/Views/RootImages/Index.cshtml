@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RozetkaWebApp.Models.RootImage>
+
+@{
+    ViewData["Title"] = "Администрирование порталов";
+}
+        <p> 
+           <a> Администрирование </a> \
+       </p>
+
+<h1>@ViewData["Title"]</h1>
+
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Portals">Порталы</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/RootImages/Index">Изображения</a> </li>
+        </ul> 
+        
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Label)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Label)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image.ImageId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RootImageId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RootImageId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RootImageId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

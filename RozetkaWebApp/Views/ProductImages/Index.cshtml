@@ -25,12 +25,12 @@ else
 
         <p><h4>Список изображений</h4></p>
                  
-        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новую</a></p>
-    }
-
-       <div class=row>
-     @foreach (var item in Model) 
-        {
+        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новое</a></p>
+}
+      <hr />
+ <div class=row>
+    @foreach (var item in Model) 
+    {
           <div class="col-md-3">
               <div class="thumbnail">   
               <img src="/images/Index/@item.ImageId" alt="item.Label" width="100%">    
@@ -40,8 +40,8 @@ else
                 <a asp-action="Delete" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-trash"></i> </a>
                 @Html.DisplayFor(modelItem => item.Title)
           </div>
-            <p></p>  
+             <p></p>  
          </div>    
-        }
-        </div>
+    }
+</div>
 

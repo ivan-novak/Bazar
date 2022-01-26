@@ -84,7 +84,6 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-
             var characteristic = await _context.Characteristic.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.CharacteristicId == id);
             //var characteristic = await _context.Characteristic.FindAsync(id);
             if (characteristic == null)

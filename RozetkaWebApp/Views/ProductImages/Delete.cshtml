@@ -2,9 +2,10 @@
 @{
      ViewBag.Product = Model.Product;
 }
+
 @if (ViewBag.Product == null) 
 {
-        ViewData["Title"] = "Редактировать изображение";
+        ViewData["Title"] = "Удалить изображение";
         <h1>@ViewData["Title"]</h1>
 }
 else 
@@ -30,39 +31,24 @@ else
   <p>
      <h4> Удалить это изображение? </h4>
  </p>
-<div>
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ProductImageId" />
-        <input type="submit" value="Удалить" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
-           <hr />
-    </form>
-     <p></p>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image.ImageId)
-        </dd class>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Product)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Product.ProductId)
-        </dd class>
-    </dl>
-   
+
+<div class="row">
+     <div class="col-md-8">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ProductImageId" />
+            <input type="submit" value="Удалить" class="btn btn-danger" /> 
+            <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+             <hr />
+        </form>
+        <p></p>
+        <dl class="row">       
+            <dt class = "col-sm-2"> Заголовок </dt> <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Title) </dd>
+            <dt class = "col-sm-2"> Этикетка </dt>  <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Label) </dd>
+        </dl> 
+    </div>
+    <div class="col-md-4"> 
+       <img src="/Images/Index/@Model.ImageId" alt=@Model.Label width="100%" />        
+    </div>
 </div>
+
+

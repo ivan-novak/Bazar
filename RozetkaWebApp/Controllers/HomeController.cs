@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -31,6 +32,42 @@ namespace RozetkaWebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Portal(int? id)
+        {
+            var portal = _context.Portal
+                .Include(p => p.Catalogs)
+                .FirstOrDefault(p => p.PortalId == id);
+            if (portal == null) return NotFound();
+            return View(portal);
+        }
+
+        public IActionResult Catalog(int? id)
+        {
+            var catalog = _context.Catalog
+                .Include(p => p.Products)
+                .Include(p => p.Portal)
+                .Include(p => p.Properties)
+                .FirstOrDefault(p => p.CatalogId == id);
+            if (catalog == null) return NotFound();
+            return View(catalog);
+        }
+
+        public async Task<IActionResult> Product(int? id)
+        {
+            var product = await _context.Product.Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id);
+
+            //var product = _context.Product
+            //    .Where(p => p.ProductId == id)
+            //    .Include(p => p.Catalog)
+            //    //.Include(p => p.Catalog.Portal)
+            //    //.Include(p => p.Characteristics)
+            //    //.Include(p => p.ProductImages)
+            //    .FirstOrDefault();// (p => p.ProductId == id);
+            if (product == null) return NotFound();
+            return View(product);
+        }
+
 
         public IActionResult Privacy()
         {

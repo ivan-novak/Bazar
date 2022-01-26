@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 #nullable disable
 
@@ -21,5 +23,12 @@ namespace RozetkaWebApp.Models
         public virtual ICollection<CatalogImage> CatalogImages { get; set; }
         public virtual ICollection<PortalImage> PortalImages { get; set; }
         public virtual ICollection<ProductImage> ProductImages { get; set; }
+
+        public FileResult ToStreem()
+        {
+            if (Data == null) return null;
+            System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(Data);
+            return new FileStreamResult(oMemoryStream, "image/*");
+        }
     }
 }

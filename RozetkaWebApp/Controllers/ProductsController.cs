@@ -28,6 +28,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Products/Details/5
+        //[HttpGet("[controller]/getDetails")]
         public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
@@ -162,5 +163,19 @@ namespace RozetkaWebApp.Controllers
         {
             return _context.Product.Any(e => e.ProductId == id);
         }
+
+
+        [HttpGet("[controller]/{id}/image/{name}")]
+        public async Task<FileResult> Image(long? id, string name)
+        {
+            if (id == null || name == null) return null;
+            var productImage = await _context.ProductImage.Where(p=> p.ProductId==id && p.Label==name).FirstOrDefaultAsync();
+            if (productImage == null) return null;
+            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == productImage.ImageId);
+            if (image == null) return null;
+            return image.ToStreem();
+        }
     }
 }
+
+

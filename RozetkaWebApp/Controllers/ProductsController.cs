@@ -173,8 +173,7 @@ namespace RozetkaWebApp.Controllers
             if (productImage == null) return null;
             var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == productImage.ImageId);
             if (image == null) return null;
-            return null;
-          //  return image.ToStreem();
+            return image.ToStream();
         }
     }
 }

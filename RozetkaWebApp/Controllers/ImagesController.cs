@@ -21,16 +21,27 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Images
-        public async Task<FileResult> Index(long? id)
+        [HttpGet("[controller]/{id}")]
+        public async Task<FileResult> Item(long? id)
         {
-                if (id == null) return null;
-                var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == id);
-                if (image == null) return null;
-                return image.ToStream();
-                //System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
-                //return new FileStreamResult(oMemoryStream, "image/*");
-            }
+            if (id == null) return null;
+            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == id);
+            if (image == null) return null;
+            return image.ToStream();
+            //System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
+            //return new FileStreamResult(oMemoryStream, "image/*");
         }
 
-        
+
+        public async Task<FileResult> Index(long? id)
+        {
+            if (id == null) return null;
+            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == id);
+            if (image == null) return null;
+            return image.ToStream();
+            //System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
+            //return new FileStreamResult(oMemoryStream, "image/*");
+        }
+
+    }     
 }

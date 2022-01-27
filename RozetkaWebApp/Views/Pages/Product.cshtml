@@ -57,21 +57,24 @@
 
 </div>  
 <div>
-    <img src="/Images/Index/4" alt="альтернативный текст"/>
+    <xmp> <img src="/Images/4" /></xmp>
+    <img src="/Images/4" width="25%"/>
 </div>
 <div>
-    <img src="/Images/Index/@Model.ProductImages.First().ImageId" alt="альтернативный текст"/>
+    <xmp><img src="/Images/@@Model.ProductImages.First().ImageId" /></xmp>
+    <img src="/Images/Index/@Model.ProductImages.First().ImageId" al width="25%"t="альтернативный текст"/>
 </div>
 <div>
-    <img src="/Images/Index/@Model.ProductImages.First(i=> i.Label =="Main").ImageId" alt="альтернативный текст"/>
+    <xmp><img src="/Images/@@Model.ProductImages.First(i=> i.Label =="Main").ImageId" /> /></xmp>
+    <img src="/Images/@Model.ProductImages.First(i=> i.Label =="Main").ImageId" a width="25%"/>
 </div>
 
 <div>
-    <img src="/Products/1/Image/Main" alt="альтернативный текст"/>
+    <xmp><img src="/Products/1/Image/Main" /></xmp>
+    <img src="/Products/1/Image/Main"  width="25%"/>
 </div>
 
-
-
 <div>
-    <img src="/Products/@Model.ProductId/Image/Main" alt="альтернативный текст"/>
+    <xmp><img src="/Products/@@Model.ProductId/Image/Main" /></xmp>
+    <img src="/Products/@Model.ProductId/Image/Main" width="25%"/>
 </div>

@@ -15,7 +15,10 @@
             <li class="nav-item">  <a class="nav-link active" href="/RootImages/Index">Изображения</a> </li>
         </ul> 
         
-<hr />
+ <p>
+     <h4> Изменить изображение </h4>
+ </p>
+
 <div class="row">
     <div class="col-md-8">
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
@@ -25,6 +28,7 @@
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button> 
                    <hr />
              </div>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="RootImageId" />
             <div class="form-group">

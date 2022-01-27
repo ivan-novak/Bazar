@@ -40,7 +40,7 @@
          <div class="col-12 text-truncate h6">              
                 <a asp-action="Edit" asp-route-id="@item.Id"> <i class="fas fa-solid fa-pen-square"></i> </a> 
                 <a asp-action="Delete" asp-route-id="@item.Id"> <i class="fas fa-solid fa-trash"></i> </a>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.Label)
           </div>
             <p></p>  
          </div>    

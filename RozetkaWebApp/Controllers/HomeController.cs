@@ -33,25 +33,7 @@ namespace RozetkaWebApp.Controllers
             return View();
         }
 
-        public IActionResult Portal(int? id)
-        {
-            var portal = _context.Portal
-                .Include(p => p.Catalogs)
-                .FirstOrDefault(p => p.PortalId == id);
-            if (portal == null) return NotFound();
-            return View(portal);
-        }
 
-        public IActionResult Catalog(int? id)
-        {
-            var catalog = _context.Catalog
-                .Include(p => p.Products)
-                .Include(p => p.Portal)
-                .Include(p => p.Properties)
-                .FirstOrDefault(p => p.CatalogId == id);
-            if (catalog == null) return NotFound();
-            return View(catalog);
-        }
 
         public async Task<IActionResult> Product(int? id)
         {

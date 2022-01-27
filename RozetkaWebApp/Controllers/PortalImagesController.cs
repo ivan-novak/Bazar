@@ -149,5 +149,16 @@ namespace RozetkaWebApp.Controllers
         {
             return _context.PortalImage.Any(e => e.PortalImageId == id);
         }
+
+        [HttpGet("[controller]/{id}/image/{name}")]
+        public async Task<FileResult> Image(long? id, string name)
+        {
+            if (id == null || name == null) return null;
+            var portalImage = await _context.PortalImage.Where(p => p.PortalId == id && p.Label == name).FirstOrDefaultAsync();
+            if (portalImage == null) return null;
+            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == portalImage.ImageId);
+            if (image == null) return null;
+            return image.ToStream();
+        }
     }
 }

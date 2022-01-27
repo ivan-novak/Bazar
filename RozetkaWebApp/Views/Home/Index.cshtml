@@ -1,17 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
- <p></p>
-    <a asp-controller = "RootImages"  asp-action="Index">RootImages</a> 
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
      <a asp-controller = "Portals" asp-action="Index">Администрирование</a> 
      <p></p>
-    <a asp-controller = "Home" asp-route-id=1  asp-action="Portal">Home\Portal\1</a> 
+    <a asp-controller = "Pages" asp-route-id=1  asp-action="Portal">Pages\Portal\1</a> 
      <p></p>
-    <a asp-controller = "Home" asp-route-id=1  asp-action="Catalog">Home\Catalog\1</a> 
+    <a asp-controller = "Pages" asp-route-id=1  asp-action="Catalog">Pages\Catalog\1</a> 
     <p></p>
-    <a asp-controller = "Pages" asp-route-id=1  asp-action="Product">Home\Product\1</a> 
+    <a asp-controller = "Pages" asp-route-id=1  asp-action="Product">Pages\Product\1</a> 
 </div>

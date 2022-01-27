@@ -1,49 +1,75 @@
 ﻿@model RozetkaWebApp.Models.PortalImage
 
-@{
-    ViewData["Title"] = "Edit";
+@if (ViewBag.Portal == null) 
+    {
+        ViewData["Title"] = "Изображения портала";
+        <h1>@ViewData["Title"]</h1>
+    }
+    else 
+    {
+        ViewData["Title"] = "Портал - "+ViewBag.Portal.Label;
+        <p> 
+            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
+            <a> @ViewBag.Portal.Label </a> 
+         </p>
+
+        <h1>  @ViewData["Title"] </h1>
+  
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Index/@ViewBag.Portal.PortalId">Каталоги</a> </li>
+            <li class="nav-item">  <a class="nav-link active" href="/PortalImages/Index/@ViewBag.Portal.PortalId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link" href="/Portals/Details/@ViewBag.Portal.PortalId">Детали</a> </li>
+        </ul>  
 }
-
-<h1>Edit</h1>
-
-<h4>PortalImage</h4>
-<hr />
+<p>
+     <h4> Изменить изображение </h4>
+ </p>
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-8">
+        <form asp-action="Edit"  method="post" enctype="multipart/form-data" >
+            
+             <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" />     
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button> 
+                <hr />
+            </div>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PortalImageId" />
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="PortalId" class="control-label"></label>
-                <input asp-for="PortalId" class="form-control" />
+                <input asp-for="PortalId" class="form-control  value=@Model.PortalId " />
                 <span asp-validation-for="PortalId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
+                <label asp-for="Title" class="control-label">Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label"></label>
+                <label asp-for="Label" class="control-label">Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="ImageId" class="control-label"></label>
                 <input asp-for="ImageId" class="form-control" />
                 <span asp-validation-for="ImageId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+           
+              <div class="form-group" >
+                 <div class="editor-label">Файл изображения</div>
+                 <div class="editor-field">
+                    <input type="file" name="uploadImage" accept="image/*" />
+                </div>
             </div>
         </form>
     </div>
+     <div class = "col-sm-4"> 
+             <img src="/Images/Index/@Model.ImageId" alt="@Model.Label" width="100%" />
+    </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

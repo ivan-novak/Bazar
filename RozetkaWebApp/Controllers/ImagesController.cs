@@ -75,5 +75,14 @@ namespace RozetkaWebApp.Controllers
 
         }
 
+        [HttpGet("[controller]/root/{name}")]
+        public async Task<FileResult> Root(string name)
+        {
+            var rootImage = await _context.RootImage.Where(p.Label == name).FirstOrDefaultAsync();
+            if (rootImage == null) return null;
+            return await Index(rootImage.ImageId);
+
+        }
+
     }     
 }

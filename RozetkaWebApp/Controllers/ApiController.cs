@@ -21,8 +21,13 @@ namespace RozetkaWebApp.Controllers
         }
 
 
+        public async Task<IActionResult> Index()
+        {
+            return View();
+        }
+
         // GET: Portals
-        [HttpGet("[controller]/portals")]
+        [HttpGet("[controller]/v1/portals")]
         public async Task<ActionResult<IEnumerable<Portal>>> Portals(string orderBy = "PortalId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int deep = 0)
         {
             var query = _context.Portal.Select(x => x);
@@ -38,7 +43,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Portal One
-        [HttpGet("[controller]/portals/{portalId}")]
+        [HttpGet("[controller]/v1/portals/{portalId}")]
         public async Task<ActionResult<Portal>> Portals(int portalId)      
         {
             // var portal = await _context.Portal.Include(x=>x.Catalogs).FirstOrDefaultAsync(x => x.PortalId == portalId);
@@ -47,8 +52,8 @@ namespace RozetkaWebApp.Controllers
             return portal;
         }
 
-        [HttpGet("[controller]/portals/{portalId}/catalogs/")]
-        [HttpGet("[controller]/catalogs")]
+        [HttpGet("[controller]/v1/portals/{portalId}/catalogs/")]
+        [HttpGet("[controller]/v1/catalogs")]
         public async Task<ActionResult<IEnumerable<Catalog>>> Catalogs(string orderBy = "CatalogId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? portalId = null)
         {
             var query = _context.Catalog.Select(x => x);
@@ -64,7 +69,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Portal One
-        [HttpGet("[controller]/catalogs/{catalogId}")]
+        [HttpGet("[controller]/v1/catalogs/{catalogId}")]
         public async Task<ActionResult<Catalog>> Catalogs(int catalogId)
         {
             var catalog = await _context.Catalog.FindAsync(catalogId);
@@ -72,8 +77,8 @@ namespace RozetkaWebApp.Controllers
             return catalog;
         }
 
-        [HttpGet("[controller]/catalogs/{catalogId}/products/")]
-        [HttpGet("[controller]/products")]
+        [HttpGet("[controller]/v1/catalogs/{catalogId}/products/")]
+        [HttpGet("[controller]/v1/products")]
         public async Task<ActionResult<IEnumerable<Product>>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? catalogId = null)
         {
             var query = _context.Product.Select(x => x);
@@ -90,7 +95,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Portal One
-        [HttpGet("[controller]/products/{productId}")]
+        [HttpGet("[controller]/v1/products/{productId}")]
         public async Task<ActionResult<Product>> Products(long productId)
         {
             var item = await _context.Product.FindAsync(productId);
@@ -98,7 +103,7 @@ namespace RozetkaWebApp.Controllers
             return item;
         }
 
-          [HttpGet("[controller]/catalogs/{catalogId}/images/")]
+          [HttpGet("[controller]/v1/catalogs/{catalogId}/images/")]
         public async Task<ActionResult<IEnumerable<CatalogImage>>> CatalogImages(string orderBy = "CatalogImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? catalogId = null)
         {
             var query = _context.CatalogImage.Select(x => x);
@@ -112,7 +117,7 @@ namespace RozetkaWebApp.Controllers
             return await query.ToListAsync();
         }
 
-        [HttpGet("[controller]/portals/{portalId}/Images/")]
+        [HttpGet("[controller]/v1/portals/{portalId}/Images/")]
         public async Task<ActionResult<IEnumerable<PortalImage>>> PortalImages(string orderBy = "PortalImagesId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? portalId = null)
         {
             var query = _context.PortalImage.Select(x => x);
@@ -128,8 +133,8 @@ namespace RozetkaWebApp.Controllers
 
 
 
-        [HttpGet("[controller]/catalogs/{catalogId}/properties/")]
-        [HttpGet("[controller]/properties")]
+        [HttpGet("[controller]/v1/catalogs/{catalogId}/properties/")]
+        [HttpGet("[controller]/v1/properties")]
         public async Task<ActionResult<IEnumerable<Property>>> Properties(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? catalogId = null)
         {
             var query = _context.Property.Select(x => x);
@@ -145,7 +150,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Portal One
-        [HttpGet("[controller]/propereties/{propertyId}")]
+        [HttpGet("[controller]/v1/propereties/{propertyId}")]
         public async Task<ActionResult<Property>> Properties(int propertyId)
         {
             var item = await _context.Property.FindAsync(propertyId);
@@ -154,7 +159,7 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpGet("[controller]/products/{productId}/images/")]
+        [HttpGet("[controller]/v1/products/{productId}/images/")]
         public async Task<ActionResult<IEnumerable<ProductImage>>> ProductImages(string orderBy = "ProductImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? productId = null)
         {
             var query = _context.ProductImage.Select(x => x);
@@ -169,8 +174,8 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpGet("[controller]/prodcuts/{productsId}/characteristics/")]
-        [HttpGet("[controller]/characteristics")]
+        [HttpGet("[controller]/v1/prodcuts/{productsId}/characteristics/")]
+        [HttpGet("[controller]/v1/characteristics")]
         public async Task<ActionResult<IEnumerable<Characteristic>>> Characteristics(string orderBy = "CharacteristicId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, long? productId = null)
         {
             var query = _context.Characteristic.Include(x=>x.Property).Select(x => x);
@@ -186,7 +191,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Portal One
-        [HttpGet("[controller]/characteristics/{characteristicId}")]
+        [HttpGet("[controller]/v1/characteristics/{characteristicId}")]
         public async Task<ActionResult<Product>> Characteristics(int characteristicId)
         {
             var item = await _context.Product.FindAsync(characteristicId);

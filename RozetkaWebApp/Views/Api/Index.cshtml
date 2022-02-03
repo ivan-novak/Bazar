@@ -1,0 +1,90 @@
+﻿
+<h4>API</h4>
+
+<table class="table">
+    <thead>
+         <tr> <th> Описание                                          </th> <th> Url                             </th><th> Параметры по умолчанию  </th>  </tr>
+    </thead>
+    <tbody> 
+ @*         <tr><td> <h5>URL страниц администрироавния</h5> </td><td>   </td> <td>     </td> </tr>
+ *@         
+        @*  <tr><td> <h6>Страницы изображения веб-сайта</h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> Управление списком рисунков веб-сайта </td><td> /RootImages   </td> <td>  -  </td></tr>
+          <tr><td> Добавление изображениея веб-сайта  </td><td> /RootImages/create   </td> <td>  -  </td></tr>
+          <tr><td> Редактирование изображения по его id   </td><td> /RootImages/edit/{id}  </td> <td>  -  </td></tr>
+          <tr><td> Удалание изображения сайта по его id  </td><td> /RootImages/delete/{id}  </td> <td>  -  </td></tr>
+          
+          <tr><td> <h6>Страницы порталов</h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> Управление списком порталов веб-сайта  </td><td> /portals   </td> <td>  -  </td></tr>
+          <tr><td> Добавление портала веб-сайта  </td><td> /portals/create   </td> <td>  -  </td></tr>
+          <tr><td> Редактирование портала по его id  </td><td> /portals/edit/{portalId}  </td> <td>  -  </td></tr>
+          <tr><td> Удалание портала по его id   </td><td> /portals/delete/portalId}  </td> <td>  -  </td></tr>
+          <tr><td> Детали портала по его id   </td><td> /portals/details/{portalId}  </td> <td>  -  </td></tr>
+
+          <tr><td> <h6>Страницы изображений портала</h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> Управление списком изображений портала </td><td> /portalImages/index/{portalid}  </td> <td>  -  </td></tr>
+          <tr><td> Добавление изображений портала  </td><td> /portalImages/create/{portalid}   </td> <td>  -  </td></tr>
+          <tr><td> Редактирование изображения портала   </td><td> /portalImages/edit/{imageId}  </td> <td>  -  </td></tr>
+          <tr><td> Удалание изображения портала  </td><td> /portalImages/delete/{imageId}  </td> <td>  -  </td></tr>
+
+           <tr><td> <h6>Страницы катологов </h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> Управление списком каталов портала  </td><td> /catalogs/{portalId}   </td> <td>  -  </td></tr>
+          <tr><td> Добавление каталога к порталу  </td><td> /catalogs/create(portalId)   </td> <td>  -  </td></tr>
+          <tr><td> Редактирование каталога по его id  </td><td> /catalogs/edit/{catalogId}  </td> <td>  -  </td></tr>
+          <tr><td> Удалание каталога по его id   </td><td> /catalogs/delete/{catalogId}  </td> <td>  -  </td></tr>
+          <tr><td> Детали каталога по его id   </td><td> /catalogs/details/{catalogId}  </td> <td>  -  </td></tr>
+
+          <tr><td> <h6>Страницы изображений каталога</h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> Управление списком изображений каталога </td><td> /catalogImages/index/{cataloglid}  </td> <td>  -  </td></tr>
+          <tr><td> Добавление изображений каталога  </td><td> /catalogImages/create/{cataloglid}   </td> <td>  -  </td></tr>
+          <tr><td> Редактирование изображения каталога   </td><td> /catalogImages/edit/{imageId}  </td> <td>  -  </td></tr>
+          <tr><td> Удалание изображения каталога  </td><td> /catalogImages/delete/{imageId}  </td> <td>  -  </td></tr>
+*@
+          
+          <tr><td> <h5>URL файлов рисунков</h5> </td><td>   </td> <td>     </td> </tr>
+          <tr><td> Получить рисунок по его ИД   </td><td> /images/{id}   </td> <td>  -  </td></tr>
+          <tr><td> Получить рисунок веб сайта по названию рисунка </td><td> /images/root/{label}   </td> <td>  -  </td></tr>
+          <tr><td> Получить рисунок портала по Id портала и названию рисунка: </td><td>  /images/portals/{Id}/{label}  </td> <td>  -  </td></tr>
+          <tr><td> Получить рисунок каталога по Id каталога и названию рисунка    </td><td>  /images/catalogs/{Id}/{label}  </td> <td>  -  </td></tr>
+          <tr><td> Получить рисунок продукта по Id продукта и названию рисунка  </td><td>  /images/products/{Id}/{label}      </td> <td>            </td></tr>
+          <tr><td> <h5>API для данных в формате JSON</h5> </td><td>   </td> <td>     </td> </tr>
+            <tr><td> <h6>Порталы</h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> Получить список порталов  </td><td>/ api/v1/portals   </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
+          <tr><td> Получить данные для портала по id портал </td><td>   /api/v1/portals/{id}    </td> <td>            </td></tr>
+          <tr><td> Получить список каталогов портала по id портала</td><td>  /api/v1/portals/{id}/catalogs  </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50     </td></tr>
+          <tr><td> Получить список рисунков портала по id портала</td><td> /api/v1/portals/{id}/images  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
+             <tr><td> <h6>Каталоги</h6> </td><td>   </td> <td>     </td></tr>      
+          <tr><td> Получить список каталогов  </td><td>/api/v1/catalogs   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
+          <tr><td> Получить данные для каталога по id каталога </td><td>   /api/v1/catalogs/{id}    </td> <td>            </td></tr>
+          <tr><td> Получить список продуктов каталога по id каталога</td><td>  /api/v1/catalogs/{id}/products  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
+          <tr><td> Получить список рисунков каталога по id каталога</td><td>  /api/v1/catalogs/{id}/images  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
+          <tr><td> Получить список свойств каталога по id каталога</td><td>  /api/v1/catalogs/{id}/properties  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
+             <tr><td> <h6>  Продукты</h6> </td><td>   </td> <td>     </td></tr>      
+          <tr><td> Получить список продуктов  </td><td> /api/v1/products   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
+          <tr><td> Получить данные для продукта по id продукта </td><td>   /api/v1/products/{id}    </td> <td>            </td></tr>
+          <tr><td> Получить список характеристик продукта по id продукта</td><td>  /api/v1/products/{id}/characteristics </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить список рисунков продукта по id продукта</td><td>  /api/v1/products/{id}/images  </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
+            <tr><td> <h6>   Свойтва продуктов</h6> </td><td>   </td> <td>     </td></tr>      
+          <tr><td> Получить список свойтв  </td><td> /api/v1/properties   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
+          <tr><td> Получить данные для свойства по id свойства </td><td>   /api/v1/properties/{id}    </td> <td>            </td></tr>
+             <tr><td> <h6>  Характеристики (значения свойств) продуктов</h6> </td><td>   </td> <td>     </td></tr>      
+          <tr><td> Получить список характеристик  </td><td> /api/v1/characteristics   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
+          <tr><td> Получить данные для характеристики по id характеристики </td><td>   /api/v1/characteristics/{id}    </td> <td>            </td></tr>
+           <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>   
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>   
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>   
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+          <tr><td>  </td><td>   </td> <td>     </td></tr>   
+          <tr><td>  </td><td>   </td> <td>     </td></tr>
+     </tbody>
+</table>
+ <tr>

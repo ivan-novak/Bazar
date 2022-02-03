@@ -185,15 +185,15 @@ namespace RozetkaWebApp
             return _context.Catalog.Any(e => e.CatalogId == id);
         }
 
-        [HttpGet("[controller]/{id}/image/{name}")]
-        public async Task<FileResult> Index(long? id, string name)
-        {
-            if (id == null || name == null) return null;
-            var catalogImage = await _context.CatalogImage.Where(p => p.CatalogId == id && p.Label == name).FirstOrDefaultAsync();
-            if (catalogImage == null) return null;
-            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == catalogImage.ImageId);
-            if (image == null) return null;
-            return image.ToStream();
-        }
+        //[HttpGet("[controller]/{id}/image/{name}")]
+        //public async Task<FileResult> Index(long? id, string name)
+        //{
+        //    if (id == null || name == null) return null;
+        //    var catalogImage = await _context.CatalogImage.Where(p => p.CatalogId == id && p.Label == name).FirstOrDefaultAsync();
+        //    if (catalogImage == null) return null;
+        //    var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == catalogImage.ImageId);
+        //    if (image == null) return null;
+        //    return image.ToStream();
+        //}
     }
 }

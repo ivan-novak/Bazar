@@ -1,0 +1,23 @@
+﻿@model IEnumerable<RozetkaWebApp.Models.Characteristic>
+
+@{
+    ViewData["Title"] = "Характеритики";
+}
+
+<h1> Характеритики </h1>
+
+
+<table class="table">
+     <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+               <p>@Html.DisplayFor(modelItem => item.Property.Label)</p>     
+               </td>
+                   <td>
+               <p>@Html.DisplayFor(modelItem => item.Value)</p>     
+               </td>
+        </tr>
+    }
+    </tbody>
+</table>

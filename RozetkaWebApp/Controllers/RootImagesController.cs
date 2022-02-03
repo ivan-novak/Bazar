@@ -185,15 +185,15 @@ namespace RozetkaWebApp.Controllers
             return _context.RootImage.Any(e => e.RootImageId == id);
         }
 
-        [HttpGet("[controller]/image/{name}")]
-        public async Task<FileResult> Image(long? id, string name)
-        {
-            if (id == null || name == null) return null;
-            var rootImage = await _context.RootImage.Where(p =>  p.Label == name).FirstOrDefaultAsync();
-            if (rootImage == null) return null;
-            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == rootImage.ImageId);
-            if (image == null) return null;
-            return image.ToStream();
-        }
+        //[HttpGet("[controller]/image/{name}")]
+        //public async Task<FileResult> Image(long? id, string name)
+        //{
+        //    if (id == null || name == null) return null;
+        //    var rootImage = await _context.RootImage.Where(p =>  p.Label == name).FirstOrDefaultAsync();
+        //    if (rootImage == null) return null;
+        //    var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == rootImage.ImageId);
+        //    if (image == null) return null;
+        //    return image.ToStream();
+        //}
     }
 }

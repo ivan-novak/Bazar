@@ -1,0 +1,20 @@
+﻿@model IEnumerable<RozetkaWebApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Catalog";
+}
+
+<h1>  Товары </h1>
+
+
+<table class="table">
+     <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-controller = "Home" asp-action="Characteristics" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.Title)</a> 
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using RozetkaWebApp.Data;
-using RozetkaWebApp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using RozetkaWebApp.Data;
+using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -21,39 +20,26 @@ namespace RozetkaWebApp.Controllers
             _context = context;
         }
 
-        //private readonly ILogger<HomeController> _logger;
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Portal.ToListAsync());
         }
 
 
-
-        public async Task<IActionResult> Product(int? id)
+        public async Task<IActionResult> Catalogs(int? id)
         {
-            var product = await _context.Product.Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id);
-
-            //var product = _context.Product
-            //    .Where(p => p.ProductId == id)
-            //    .Include(p => p.Catalog)
-            //    //.Include(p => p.Catalog.Portal)
-            //    //.Include(p => p.Characteristics)
-            //    //.Include(p => p.ProductImages)
-            //    .FirstOrDefault();// (p => p.ProductId == id);
-            if (product == null) return NotFound();
-            return View(product);
+            return View(await _context.Catalog.Where(x=>x.PortalId ==id || id ==null).Include(x=> x.Portal).ToListAsync());
         }
 
-
-        public IActionResult Privacy()
+        public async Task<IActionResult> Products(int? id)
         {
-            return View();
+            return View(await _context.Product.Where(x => x.CatalogId == id || id == null).Include(x => x.Catalog).ToListAsync());
+        }
+
+        public async Task<IActionResult> Characteristics(int? id)
+        {
+            return View(await _context.Characteristic.Where(x => x.ProductId == id || id == null).Include(x => x.Product).Include(x => x.Property).ToListAsync());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -63,4 +49,6 @@ namespace RozetkaWebApp.Controllers
         }
 
     }
+
+
 }

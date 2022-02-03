@@ -22,8 +22,8 @@ namespace RozetkaWebApp.Controllers
         // GET: Properties
         public async Task<IActionResult> Index(int? id)
         {
-            if (id != null) ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == id);
-            var applicationDbContext = _context.Property.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
+            if (id != null) ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == id);
+            var applicationDbContext = _context.Properties.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,23 +35,23 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var property = await _context.Property
+            var property = await _context.Properties
                 .Include(pp => pp.Catalog)
                 .FirstOrDefaultAsync(m => m.PropertyId == id);
             if (property == null)
             {
                 return NotFound();
             }
-            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
+            ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
             return View(property);
         }
 
         // GET: Properties/Create
         public IActionResult Create(int? Id)
         {
-            var catalog = _context.Catalog.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id);
+            var catalog = _context.Catalogs.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id);
             ViewBag.Catalog = catalog;
-            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
+            ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
             return View();
         }
 
@@ -69,7 +69,7 @@ namespace RozetkaWebApp.Controllers
                 return Redirect($"/Properties/Index/" + @property.CatalogId);
               //  return RedirectToAction(nameof(Index));
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 
@@ -81,13 +81,13 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var property = await _context.Property.FindAsync(id);
+            var property = await _context.Properties.FindAsync(id);
             if (property == null)
             {
                 return NotFound();
             }
-            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
-            ViewData["CatalogId"] = new SelectList(_context.Catalog.Where(i => i.PortalId == property.Catalog.PortalId), "CatalogId", "Label");
+            ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == property.Catalog.PortalId), "CatalogId", "Label");
             return View(property);
         }
 
@@ -123,7 +123,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Properties/Index/" + @property.CatalogId);
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalog, "CatalogId", "Label", @property.CatalogId);
+            ViewData["CatalogId"] = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 
@@ -135,14 +135,14 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var property = await _context.Property
+            var property = await _context.Properties
                 .Include(pp => pp.Catalog)
                 .FirstOrDefaultAsync(m => m.PropertyId == id);
             if (property == null)
             {
                 return NotFound();
             }
-            ViewBag.Catalog = _context.Catalog.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
+            ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
             return View(property);
         }
 
@@ -151,9 +151,9 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var @property = await _context.Property.FindAsync(id);
+            var @property = await _context.Properties.FindAsync(id);
             id = @property.CatalogId;
-            _context.Property.Remove(@property);
+            _context.Properties.Remove(@property);
             await _context.SaveChangesAsync();
             return Redirect($"/Properties/Index/" + id);
             return RedirectToAction(nameof(Index));
@@ -161,7 +161,7 @@ namespace RozetkaWebApp.Controllers
 
         private bool PropertyExists(int id)
         {
-            return _context.Property.Any(e => e.PropertyId == id);
+            return _context.Properties.Any(e => e.PropertyId == id);
         }
     }
 }

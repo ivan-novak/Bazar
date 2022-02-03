@@ -23,7 +23,7 @@ namespace RozetkaWebApp.Controllers
         // GET: RootImages
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.RootImage.Include(r => r.Image);
+            var applicationDbContext = _context.RootImages.Include(r => r.Image);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var rootImage = await _context.RootImage
+            var rootImage = await _context.RootImages
                 .Include(r => r.Image)
                 .FirstOrDefaultAsync(m => m.RootImageId == id);
             if (rootImage == null)
@@ -49,7 +49,7 @@ namespace RozetkaWebApp.Controllers
         // GET: RootImages/Create
         public IActionResult Create()
         {
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId");
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", rootImage.ImageId);
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
 
@@ -93,12 +93,12 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var rootImage = await _context.RootImage.FindAsync(id);
+            var rootImage = await _context.RootImages.FindAsync(id);
             if (rootImage == null)
             {
                 return NotFound();
             }
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", rootImage.ImageId);
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
 
@@ -118,7 +118,7 @@ namespace RozetkaWebApp.Controllers
             {
                 MemoryStream ms = new MemoryStream();
                 file.CopyTo(ms);
-                var image = _context.Image.Find(rootImage.ImageId);
+                var image = _context.Images.Find(rootImage.ImageId);
                 image.Data = ms.ToArray();
                 image.Title = file.FileName;
                 _context.Update(image);
@@ -146,7 +146,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", rootImage.ImageId);
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
 
@@ -158,7 +158,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var rootImage = await _context.RootImage
+            var rootImage = await _context.RootImages
                 .Include(r => r.Image)
                 .FirstOrDefaultAsync(m => m.RootImageId == id);
             if (rootImage == null)
@@ -174,26 +174,26 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var rootImage = await _context.RootImage.Where(m => m.RootImageId == id).FirstAsync();
-            _context.RootImage.Remove(rootImage);
+            var rootImage = await _context.RootImages.Where(m => m.RootImageId == id).FirstAsync();
+            _context.RootImages.Remove(rootImage);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool RootImageExists(int id)
         {
-            return _context.RootImage.Any(e => e.RootImageId == id);
+            return _context.RootImages.Any(e => e.RootImageId == id);
         }
 
         //[HttpGet("[controller]/image/{name}")]
         //public async Task<FileResult> Image(long? id, string name)
         //{
         //    if (id == null || name == null) return null;
-        //    var rootImage = await _context.RootImage.Where(p =>  p.Label == name).FirstOrDefaultAsync();
+        //    var rootImage = await _context.RootImages.Where(p =>  p.Label == name).FirstOrDefaultAsync();
         //    if (rootImage == null) return null;
-        //    var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == rootImage.ImageId);
+        //    var image = await _context.Images.FirstOrDefaultAsync(m => m.ImageId == rootImages.ImageId);
         //    if (image == null) return null;
-        //    return image.ToStream();
+        //    return Images.ToStream();
         //}
     }
 }

@@ -28,9 +28,9 @@ namespace RozetkaWebApp
         // GET: Catalogs
         public async Task<IActionResult> Index(int? id)
         {
-            ViewBag.Portal = _context.Portal.Find(id);
+            ViewBag.Portal = _context.Portals.Find(id);
 
-            var applicationDbContext = _context.Catalog.Where(c=>c.PortalId == id || id == null).Include(c => c.Portal);
+            var applicationDbContext = _context.Catalogs.Where(c=>c.PortalId == id || id == null).Include(c => c.Portal);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -39,7 +39,7 @@ namespace RozetkaWebApp
         public async Task<FileResult> Image(int? id)
         {
             if (id == null) return null;
-            var image = await _context.CatalogImage.FirstOrDefaultAsync(m => m.Id == id);
+            var image = await _context.CatalogImages.FirstOrDefaultAsync(m => m.Id == id);
             if (image == null)  return null;
             System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
             return new FileStreamResult(oMemoryStream, "image/*");
@@ -53,7 +53,7 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var catalog = await _context.Catalog
+            var catalog = await _context.Catalogs
                 .Include(c => c.Portal)
                 .FirstOrDefaultAsync(m => m.CatalogId == id);
             if (catalog == null)
@@ -67,9 +67,9 @@ namespace RozetkaWebApp
         // GET: Catalogs/Create
         public IActionResult Create(int? Id)
         {
-            var catalog = _context.Portal.FirstOrDefault(m => m.PortalId == Id);
+            var catalog = _context.Portals.FirstOrDefault(m => m.PortalId == Id);
             ViewBag.Portal = catalog;
-            ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label");
+            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label");
             return View();
         }
 
@@ -87,7 +87,7 @@ namespace RozetkaWebApp
                 return Redirect($"/Catalogs/Index/" + catalog.PortalId);
              //   return RedirectToAction(nameof(Index));
             }
-            ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label", catalog.PortalId);
+            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
 
@@ -99,14 +99,14 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var catalog = await _context.Catalog
+            var catalog = await _context.Catalogs
                 .Include(c => c.Portal)
                 .FirstOrDefaultAsync(m => m.CatalogId == id);
             if (catalog == null)
             {
                 return NotFound();
             }
-            ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label", catalog.PortalId);
+            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
 
@@ -143,7 +143,7 @@ namespace RozetkaWebApp
                 return Redirect($"/Catalogs/Index/" + catalog.PortalId);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PortalId"] = new SelectList(_context.Portal, "PortalId", "Label", catalog.PortalId);
+            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
 
@@ -155,7 +155,7 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var catalog = await _context.Catalog
+            var catalog = await _context.Catalogs
                 .Include(c => c.Portal)
                 .FirstOrDefaultAsync(m => m.CatalogId == id);
             if (catalog == null)
@@ -171,10 +171,10 @@ namespace RozetkaWebApp
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var catalog = await _context.Catalog.FindAsync(id);
+            var catalog = await _context.Catalogs.FindAsync(id);
             var Id = catalog.PortalId;
 
-            _context.Catalog.Remove(catalog);
+            _context.Catalogs.Remove(catalog);
             await _context.SaveChangesAsync();
             return Redirect($"/Catalogs/Index/" + Id);
             return RedirectToAction(nameof(Index));
@@ -182,18 +182,18 @@ namespace RozetkaWebApp
 
         private bool CatalogExists(int id)
         {
-            return _context.Catalog.Any(e => e.CatalogId == id);
+            return _context.Catalogs.Any(e => e.CatalogId == id);
         }
 
         //[HttpGet("[controller]/{id}/image/{name}")]
         //public async Task<FileResult> Index(long? id, string name)
         //{
         //    if (id == null || name == null) return null;
-        //    var catalogImage = await _context.CatalogImage.Where(p => p.CatalogId == id && p.Label == name).FirstOrDefaultAsync();
+        //    var catalogImage = await _context.CatalogImages.Where(p => p.CatalogId == id && p.Label == name).FirstOrDefaultAsync();
         //    if (catalogImage == null) return null;
-        //    var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == catalogImage.ImageId);
+        //    var image = await _context.Images.FirstOrDefaultAsync(m => m.ImageId == catalogImages.ImageId);
         //    if (image == null) return null;
-        //    return image.ToStream();
+        //    return Images.ToStream();
         //}
     }
 }

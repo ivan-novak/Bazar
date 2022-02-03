@@ -23,8 +23,8 @@ namespace RozetkaWebApp.Controllers
         // GET: PortalImages
         public async Task<IActionResult> Index(int? id)
         {
-            if (id != null) ViewBag.Portal = _context.Portal.Where(i => i.PortalId == id).First();
-            var applicationDbContext = _context.PortalImage.Where(c => c.PortalId == id || id == null);
+            if (id != null) ViewBag.Portal = _context.Portals.Where(i => i.PortalId == id).First();
+            var applicationDbContext = _context.PortalImages.Where(c => c.PortalId == id || id == null);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,7 +36,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var portalImage = await _context.PortalImage
+            var portalImage = await _context.PortalImages
                 .FirstOrDefaultAsync(m => m.PortalImageId == id);
             if (portalImage == null)
             {
@@ -49,7 +49,7 @@ namespace RozetkaWebApp.Controllers
         // GET: PortalImages/Create
         public IActionResult Create(int? Id)
         {
-            var portal = _context.Portal.Where(m => m.PortalId == Id).First();
+            var portal = _context.Portals.Where(m => m.PortalId == Id).First();
             ViewBag.Portal = portal;
             return View();
         }
@@ -88,9 +88,9 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
-            PortalImage portalImage = await _context.PortalImage.FindAsync(id);
+            PortalImage portalImage = await _context.PortalImages.FindAsync(id);
             if (portalImage == null) return NotFound();
-            ViewBag.Portal = _context.Portal.Where(i => i.PortalId == portalImage.PortalId).First();
+            ViewBag.Portal = _context.Portals.Where(i => i.PortalId == portalImage.PortalId).First();
             return View(portalImage);
         }
 
@@ -109,7 +109,7 @@ namespace RozetkaWebApp.Controllers
             {
                 MemoryStream ms = new MemoryStream();
                 file.CopyTo(ms);
-                var image = _context.Image.Find(portalImage.ImageId);
+                var image = _context.Images.Find(portalImage.ImageId);
                 image.Data = ms.ToArray();
                 image.Title = file.FileName;
                 _context.Update(image);
@@ -144,9 +144,9 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            var portalImage = await _context.PortalImage.FirstOrDefaultAsync(m => m.PortalImageId == id);
+            var portalImage = await _context.PortalImages.FirstOrDefaultAsync(m => m.PortalImageId == id);
             if (portalImage == null) return NotFound();
-            ViewBag.Portal = _context.Portal.Where(i => i.PortalId == portalImage.PortalId).First();
+            ViewBag.Portal = _context.Portals.Where(i => i.PortalId == portalImage.PortalId).First();
 
             return View(portalImage);
         }
@@ -156,26 +156,26 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var portalImage = await _context.PortalImage.FindAsync(id);
-            _context.PortalImage.Remove(portalImage);
+            var portalImage = await _context.PortalImages.FindAsync(id);
+            _context.PortalImages.Remove(portalImage);
             await _context.SaveChangesAsync();
             return Redirect($"/PortalImages/Index/" + portalImage.PortalId);
         }
 
         private bool PortalImageExists(int id)
         {
-            return _context.PortalImage.Any(e => e.PortalImageId == id);
+            return _context.PortalImages.Any(e => e.PortalImageId == id);
         }
 
-        [HttpGet("[controller]/{id}/image/{name}")]
-        public async Task<FileResult> Image(long? id, string name)
-        {
-            if (id == null || name == null) return null;
-            var portalImage = await _context.PortalImage.Where(p => p.PortalId == id && p.Label == name).FirstOrDefaultAsync();
-            if (portalImage == null) return null;
-            var image = await _context.Image.FirstOrDefaultAsync(m => m.ImageId == portalImage.ImageId);
-            if (image == null) return null;
-            return image.ToStream();
-        }
+        //[HttpGet("[controller]/{id}/image/{name}")]
+        //public async Task<FileResult> Image(long? id, string name)
+        //{
+        //    if (id == null || name == null) return null;
+        //    var portalImage = await _context.PortalImages.Where(p => p.PortalId == id && p.Label == name).FirstOrDefaultAsync();
+        //    if (portalImage == null) return null;
+        //    var image = await _context.Images.FirstOrDefaultAsync(m => m.ImageId == portalImages.ImageId);
+        //    if (image == null) return null;
+        //  //  return Images.ToStream();
+        //}
     }
 }

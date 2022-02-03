@@ -23,23 +23,23 @@ namespace RozetkaWebApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Portal.ToListAsync());
+            return View(await _context.Portals.ToListAsync());
         }
 
 
         public async Task<IActionResult> Catalogs(int? id)
         {
-            return View(await _context.Catalog.Where(x=>x.PortalId ==id || id ==null).Include(x=> x.Portal).ToListAsync());
+            return View(await _context.Catalogs.Where(x=>x.PortalId ==id || id ==null).Include(x=> x.Portal).ToListAsync());
         }
 
         public async Task<IActionResult> Products(int? id)
         {
-            return View(await _context.Product.Where(x => x.CatalogId == id || id == null).Include(x => x.Catalog).ToListAsync());
+            return View(await _context.Products.Where(x => x.CatalogId == id || id == null).Include(x => x.Catalog).ToListAsync());
         }
 
         public async Task<IActionResult> Characteristics(int? id)
         {
-            return View(await _context.Characteristic.Where(x => x.ProductId == id || id == null).Include(x => x.Product).Include(x => x.Property).ToListAsync());
+            return View(await _context.Characteristics.Where(x => x.ProductId == id || id == null).Include(x => x.Product).Include(x => x.Property).ToListAsync());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

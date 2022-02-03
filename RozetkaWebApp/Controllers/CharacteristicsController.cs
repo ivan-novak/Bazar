@@ -22,8 +22,8 @@ namespace RozetkaWebApp.Controllers
         // GET: Characteristics
         public async Task<IActionResult> Index(long? id)
         {
-            if(id != null) ViewBag.Product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
-            var applicationDbContext = _context.Characteristic.Include(c => c.Property).Where(c=>c.ProductId == id || id == null);
+            if(id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
+            var applicationDbContext = _context.Characteristics.Include(c => c.Property).Where(c=>c.ProductId == id || id == null);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var characteristic = await _context.Characteristic.Include(c => c.Product.Catalog.Portal).Include(c => c.Property).FirstOrDefaultAsync(m => m.CharacteristicId == id);
+            var characteristic = await _context.Characteristics.Include(c => c.Product.Catalog.Portal).Include(c => c.Property).FirstOrDefaultAsync(m => m.CharacteristicId == id);
             if (characteristic == null)
             {
                 return NotFound();
@@ -52,10 +52,10 @@ namespace RozetkaWebApp.Controllers
 
         public IActionResult Create(long? Id)
         {
-            var product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
+            var product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             ViewBag.Product = product;
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label");
-            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i => i.CatalogId == product.CatalogId), "PropertyId", "Label");
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label");
+            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i => i.CatalogId == product.CatalogId), "PropertyId", "Label");
             return View();
         }
 
@@ -72,8 +72,8 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
+            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
 
@@ -84,14 +84,14 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var characteristic = await _context.Characteristic.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.CharacteristicId == id);
-            //var characteristic = await _context.Characteristic.FindAsync(id);
+            var characteristic = await _context.Characteristics.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.CharacteristicId == id);
+            //var characteristic = await _context.Characteristics.FindAsync(id);
             if (characteristic == null)
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
+            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
 
@@ -127,8 +127,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
             }
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Property.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
+            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
      
@@ -140,7 +140,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var characteristic = await _context.Characteristic.Include(c => c.Product.Catalog.Portal).Include(c => c.Property).FirstOrDefaultAsync(m => m.CharacteristicId == id);
+            var characteristic = await _context.Characteristics.Include(c => c.Product.Catalog.Portal).Include(c => c.Property).FirstOrDefaultAsync(m => m.CharacteristicId == id);
             if (characteristic == null)
             {
                 return NotFound();
@@ -154,9 +154,9 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var characteristic = await _context.Characteristic.FindAsync(id);
+            var characteristic = await _context.Characteristics.FindAsync(id);
             id = characteristic.ProductId;
-            _context.Characteristic.Remove(characteristic);
+            _context.Characteristics.Remove(characteristic);
             await _context.SaveChangesAsync();
             return Redirect($"/Characteristics/Index/" + id);
             return RedirectToAction(nameof(Index));
@@ -164,7 +164,7 @@ namespace RozetkaWebApp.Controllers
 
         private bool CharacteristicExists(long id)
         {
-            return _context.Characteristic.Any(e => e.CharacteristicId == id);
+            return _context.Characteristics.Any(e => e.CharacteristicId == id);
         }
     }
 }

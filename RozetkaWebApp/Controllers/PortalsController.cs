@@ -22,7 +22,7 @@ namespace RozetkaWebApp
         // GET: Portals
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Portal.ToListAsync());
+            return View(await _context.Portals.ToListAsync());
         }
 
         // GET: Portals/Details/5
@@ -33,7 +33,7 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var portal = await _context.Portal
+            var portal = await _context.Portals
                 .FirstOrDefaultAsync(m => m.PortalId == id);
             if (portal == null)
             {
@@ -73,7 +73,7 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var portal = await _context.Portal.FindAsync(id);
+            var portal = await _context.Portals.FindAsync(id);
             if (portal == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var portal = await _context.Portal
+            var portal = await _context.Portals
                 .FirstOrDefaultAsync(m => m.PortalId == id);
             if (portal == null)
             {
@@ -139,15 +139,15 @@ namespace RozetkaWebApp
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var portal = await _context.Portal.FindAsync(id);
-            _context.Portal.Remove(portal);
+            var portal = await _context.Portals.FindAsync(id);
+            _context.Portals.Remove(portal);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PortalExists(int id)
         {
-            return _context.Portal.Any(e => e.PortalId == id);
+            return _context.Portals.Any(e => e.PortalId == id);
         }
     }
 }

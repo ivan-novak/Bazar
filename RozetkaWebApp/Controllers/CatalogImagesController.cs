@@ -23,8 +23,8 @@ namespace RozetkaWebApp.Controllers
         // GET: CatalogImages
         public async Task<IActionResult> Index(int? id)
         {
-            if (id != null) ViewBag.Catalog = _context.Catalog.Where(i => i.CatalogId == id).Include(c => c.Portal).First();
-            var applicationDbContext = _context.CatalogImage.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
+            if (id != null) ViewBag.Catalog = _context.Catalogs.Where(i => i.CatalogId == id).Include(c => c.Portal).First();
+            var applicationDbContext = _context.CatalogImages.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -32,7 +32,7 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)  return NotFound();
-            var catalogImage = await _context.CatalogImage.Where(m => m.Id == id).Include(c => c.Catalog).FirstAsync();
+            var catalogImage = await _context.CatalogImages.Where(m => m.Id == id).Include(c => c.Catalog).FirstAsync();
             if (catalogImage == null)  return NotFound();
             return View(catalogImage);
         }
@@ -40,7 +40,7 @@ namespace RozetkaWebApp.Controllers
         // GET: CatalogImages/Create
         public IActionResult Create(int? Id)
         {
-            var catalog = _context.Catalog.Where(m => m.CatalogId == Id).Include(c => c.Portal).First();
+            var catalog = _context.Catalogs.Where(m => m.CatalogId == Id).Include(c => c.Portal).First();
             ViewBag.Catalog = catalog;
             return View();
         }
@@ -78,9 +78,9 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
-            CatalogImage catalogImage = await _context.CatalogImage.FindAsync(id);
+            CatalogImage catalogImage = await _context.CatalogImages.FindAsync(id);
             if (catalogImage == null)  return NotFound();
-            ViewBag.Catalog = _context.Catalog.Where(i => i.CatalogId == catalogImage.CatalogId).Include(i=>i.Portal).First();
+            ViewBag.Catalog = _context.Catalogs.Where(i => i.CatalogId == catalogImage.CatalogId).Include(i=>i.Portal).First();
             return View(catalogImage);
         }
 
@@ -96,7 +96,7 @@ namespace RozetkaWebApp.Controllers
             {
                 MemoryStream ms = new MemoryStream();
                 file.CopyTo(ms);
-                var image = _context.Image.Find(catalogImage.ImageId);
+                var image = _context.Images.Find(catalogImage.ImageId);
                 image.Data = ms.ToArray();
                 image.Title = file.FileName;
                 _context.Update(image);
@@ -124,9 +124,9 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)  return NotFound();
-            var catalogImage = await _context.CatalogImage.Where(m => m.Id == id).FirstAsync();
+            var catalogImage = await _context.CatalogImages.Where(m => m.Id == id).FirstAsync();
             if (catalogImage == null) return NotFound();
-            ViewBag.Catalog = _context.Catalog.Where(i => i.CatalogId == catalogImage.CatalogId).Include(c => c.Portal).First();
+            ViewBag.Catalog = _context.Catalogs.Where(i => i.CatalogId == catalogImage.CatalogId).Include(c => c.Portal).First();
             return View(catalogImage);
         }
 
@@ -135,15 +135,15 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var catalogImage = await _context.CatalogImage.FindAsync(id);
-            _context.CatalogImage.Remove(catalogImage);
+            var catalogImage = await _context.CatalogImages.FindAsync(id);
+            _context.CatalogImages.Remove(catalogImage);
             await _context.SaveChangesAsync();
             return Redirect($"/CatalogImages/Index/" + catalogImage.CatalogId);
         }
 
         private bool CatalogImageExists(int id)
         {
-            return _context.CatalogImage.Any(e => e.Id == id);
+            return _context.CatalogImages.Any(e => e.Id == id);
         }
     }
 }

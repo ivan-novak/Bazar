@@ -23,8 +23,8 @@ namespace RozetkaWebApp.Controllers
         // GET: ProductImages
         public async Task<IActionResult> Index(int? id)
         {
-            if (id != null) ViewBag.Product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
-            var applicationDbContext = _context.ProductImage.Where(c => c.ProductId == id || id == null).Include(c => c.Product);
+            if (id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
+            var applicationDbContext = _context.ProductImages.Where(c => c.ProductId == id || id == null).Include(c => c.Product);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,7 +36,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var productImage = await _context.ProductImage
+            var productImage = await _context.ProductImages
                 .Include(p => p.Image)
                 .Include(p => p.Product)
                 .FirstOrDefaultAsync(m => m.ProductImageId == id);
@@ -51,10 +51,10 @@ namespace RozetkaWebApp.Controllers
         // GET: ProductImages/Create
         public IActionResult Create(long? Id)
         {
-            var product = _context.Product.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
+            var product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             ViewBag.Product = product;
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId");
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductId");
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId");
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId");
             return View();
         }
 
@@ -86,8 +86,8 @@ namespace RozetkaWebApp.Controllers
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
                 // return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", productImage.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductId", productImage.ProductId);
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
 
@@ -97,11 +97,11 @@ namespace RozetkaWebApp.Controllers
             if (id == null) return NotFound();
             
 
-            var productImage = await _context.ProductImage.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductImageId == id);
+            var productImage = await _context.ProductImages.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductImageId == id);
             if (productImage == null) return NotFound();
             
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", productImage.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductId", productImage.ProductId);
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
 
@@ -117,7 +117,7 @@ namespace RozetkaWebApp.Controllers
             {
                 MemoryStream ms = new MemoryStream();
                 file.CopyTo(ms);
-                var image = _context.Image.Find(productImage.ImageId);
+                var image = _context.Images.Find(productImage.ImageId);
                 image.Data = ms.ToArray();
                 image.Title = file.FileName;
                 _context.Update(image);
@@ -138,8 +138,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/ProductImages/Index/" + productImage.ProductImageId);
             }
-            ViewData["ImageId"] = new SelectList(_context.Image, "ImageId", "ImageId", productImage.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductId", productImage.ProductId);
+            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
 
@@ -147,7 +147,7 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null) return NotFound();
-            var productImage = await _context.ProductImage
+            var productImage = await _context.ProductImages
                 .Include(p => p.Image)
                 .Include(p => p.Product.Catalog.Portal)
                 .FirstOrDefaultAsync(m => m.ProductImageId == id);                          
@@ -160,15 +160,15 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var productImage = await _context.ProductImage.Where(m => m.ProductImageId == id).FirstAsync();
-            _context.ProductImage.Remove(productImage);
+            var productImage = await _context.ProductImages.Where(m => m.ProductImageId == id).FirstAsync();
+            _context.ProductImages.Remove(productImage);
             await _context.SaveChangesAsync();
             return Redirect($"/ProductImages/Index/" + productImage.ProductId);
         }
 
         private bool ProductImageExists(long id)
         {
-            return _context.ProductImage.Any(e => e.ProductImageId == id);
+            return _context.ProductImages.Any(e => e.ProductImageId == id);
         }
     }
 }

@@ -212,6 +212,20 @@ namespace RozetkaWebApp.Controllers
             return item;
         }
 
+        [HttpGet("[controller]/v1/filters")]
+        [HttpGet("[controller]/v1/catalogs/{catalogId}/filters/")]
+        public async Task<ActionResult<IEnumerable<Filter>>> Filters(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? catalogId = null)
+        {
+            var query = _context.Filters.Select(x => x);
+            if (catalogId != null) query = query.Where(x=>x.CatalogId == catalogId);
+            orderBy = orderBy.ToUpper();
+            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
+            else query = query.OrderBy(x => x.PropertyId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            return await query.ToListAsync();
+
+        }
 
 
     }     

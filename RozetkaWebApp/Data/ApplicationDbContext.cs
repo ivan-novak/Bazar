@@ -28,6 +28,7 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
+        public virtual DbSet<Filter> Filters { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
@@ -216,6 +217,21 @@ namespace RozetkaWebApp.Data
                     .HasForeignKey(d => d.PropertyId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Characteristics_Properties");
+            });
+
+            modelBuilder.Entity<Filter>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("Filters");
+
+                entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
+
+                entity.Property(e => e.Label)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.PropertyId).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<Image>(entity =>

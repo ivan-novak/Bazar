@@ -2,13 +2,13 @@
 {
     public interface iFilter
     {
+        public int PropertyId { get; set; }    
         string Label { get; set; }
         string Value { get; set; }
-        public int PropertyId { get; set; }
+
     }
     public partial class Filter : iFilter
     {
-
     }
 
     public  interface iPortal
@@ -22,12 +22,10 @@
 
     public partial class Portal : iPortal
     {
-
     }
 
     public interface iCatalog
     {
-
         public int CatalogId { get; set; }
         public string Title { get; set; }
         public string Label { get; set; }
@@ -38,7 +36,6 @@
 
     public partial class Catalog : iCatalog
     {
-
     }
 
     public interface iProduct
@@ -54,7 +51,6 @@
 
     public partial class Product : iProduct
     {
-
     }
 
     public interface iProperty
@@ -71,35 +67,29 @@
 
     public partial class Property : iProperty
     {
-
     }
 
     public interface iCharacteristic
     {
         public long CharacteristicId { get; set; }
-        public long ProductId { get; set; }
-        public int PropertyId { get; set; }
+        public string Label { get; }
         public string Value { get; set; }
         public string Dimension { get; set; }
     }
 
     public partial class Characteristic : iCharacteristic
     {
-
+        public string Label { get { return Property.Label; } }
     }
 
     public interface iImage
-    {
-      
+    {      
         public long ImageId { get; set; }
         public string Title { get; set; }
-
-   
     }
 
     public partial class Image : iImage
     {
-
     }
 
     public interface iRootImage
@@ -108,12 +98,10 @@
         public string Title { get; set; }
         public string Label { get; set; }
         public long ImageId { get; set; }
-
     }
 
     public partial class RootImage : iRootImage
     {
-
     }
 
     public interface iPortalImage
@@ -126,7 +114,6 @@
     }
     public partial class PortalImage : iPortalImage
     {
-
     }
 
     public interface iProductImage
@@ -140,7 +127,6 @@
 
     public partial class ProductImage : iProductImage
     {
-
     }
 
     public interface iCatalogImage
@@ -154,7 +140,6 @@
     }
     public partial class CatalogImage : iCatalogImage
     {
-
     }
 
 }

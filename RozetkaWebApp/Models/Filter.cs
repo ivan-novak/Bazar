@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace RozetkaWebApp.Models
 {
+
+  
+
     public partial class Filter
     {
         public int CatalogId { get; set; }
@@ -12,4 +15,9 @@ namespace RozetkaWebApp.Models
         public string Label { get; set; }
         public string Value { get; set; }
     }
+
+
+
+
+
 }

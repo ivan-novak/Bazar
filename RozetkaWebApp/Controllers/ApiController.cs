@@ -79,7 +79,7 @@ namespace RozetkaWebApp.Controllers
 
 
         [HttpGet("[controller]/v1/properties")]     
-        [HttpGet("[controller]/v1/propereties/{propertyId}")]
+        [HttpGet("[controller]/v1/properties/{propertyId}")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/properties/")]  
         public async Task<ActionResult<IEnumerable<iProperty>>> Properties(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50,  int? catalogId = null, int? propertyId =null)
         {
@@ -161,7 +161,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         [HttpGet("[controller]/v1/filters")]
-        [HttpGet("[controller]/v1/filters/{PropertyId}")]
+        [HttpGet("[controller]/v1/properties/{propertyId}/filters/")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/filters")]
         public async Task<ActionResult<IEnumerable<iFilter>>> Filters(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? catalogId = null, int? propertyId = null)
         {

@@ -224,32 +224,7 @@ namespace RozetkaWebApp.Models
                 entity.Property(e => e.Title).HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Order>(entity =>
-            {
-                entity.ToTable("Order");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.OrderDate).HasColumnType("date");
-
-                entity.Property(e => e.Price).HasColumnType("money");
-
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
-
-                entity.Property(e => e.Quantity).HasColumnType("numeric(18, 0)");
-
-                entity.Property(e => e.Status).HasMaxLength(50);
-
-                entity.Property(e => e.UserId)
-                    .IsRequired()
-                    .HasMaxLength(450)
-                    .HasColumnName("UserID");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK_Orders_Products");
-            });
+           
 
             modelBuilder.Entity<Portal>(entity =>
             {

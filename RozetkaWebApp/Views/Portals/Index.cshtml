@@ -1,20 +1,11 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Portal>
 
+
  @{
-    ViewData["Title"] = "Администрирование порталов";
+    ViewBag.PortalsTab = "active";
+    Html.RenderPartial("_RootNavigator");
 }
-        <p> 
-           <a> Администрирование </a> \
-       </p>
-
-<h1>@ViewData["Title"]</h1>
-
-
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link active" href="/Portals">Порталы</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/RootImages/Index">Изображения</a> </li>
-        </ul> 
-        
+  
 
  <p><h4>Список порталов</h4></p>
        

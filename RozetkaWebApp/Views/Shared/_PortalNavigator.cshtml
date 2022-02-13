@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] ="Портал - "+@ViewBag.Portal.Label;
+}
+    <p> 
+         <a asp-controller = "Portals" asp-action="Index" > Администрирование </a> >
+         <a > @ViewBag.Portal.Label </a>  
+    </p>
+
+    <h1>@ViewData["Title"]</h1>
+
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link @ViewBag.CatalogsTab" href="/Catalogs/Index/@ViewBag.Portal.PortalId">Каталоги</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/PortalImages/Index/@ViewBag.Portal.PortalId">Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Portals/Details/@ViewBag.Portal.PortalId">Детали</a> </li>
+        </ul>

@@ -1,32 +1,14 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.ProductImage>
 
-@if (ViewBag.Product == null) 
-{
-    ViewData["Title"] = "Редактировать продукт";
-    <h1>@ViewData["Title"]</h1>
+@{
+    ViewBag.ImagesTab = "active";
+    Html.RenderPartial("_ProductNavigator");
 }
-else 
-{
-        ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
-        <p> 
-             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
-             <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-             <a> @ViewBag.Product.Label </a> 
-        </p>
-
-        <h1>  @ViewData["Title"] </h1>
-  
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
-            <li class="nav-item">  <a class="nav-link active" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
-        </ul>  
 
         <p><h4>Список изображений</h4></p>
                  
         <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новое</a></p>
-}
+
       <hr />
  <div class=row>
     @foreach (var item in Model) 

@@ -13,5 +13,6 @@ namespace RozetkaWebApp.Models
         public string UserId { get; set; }
 
         public virtual Product Product { get; set; }
+        public virtual AspNetUser User { get; set; }
     }
 }

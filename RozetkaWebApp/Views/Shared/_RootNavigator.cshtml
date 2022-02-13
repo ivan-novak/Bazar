@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Администрирование порталов";
+}
+        <p> 
+           <a> Администрирование </a> 
+       </p>
+
+<h1>@ViewData["Title"]</h1>
+
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">  <a class="nav-link @ViewBag.PortalsTab" href="/Portals">Порталы</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/RootImages/Index">Изображения</a> </li>
+        </ul> 

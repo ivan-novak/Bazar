@@ -1,32 +1,11 @@
 ﻿@model RozetkaWebApp.Models.Property
 
 
-@if (ViewBag.Catalog == null) 
-    {
-        ViewData["Title"] = "Товары каталога";
-        <h1>@ViewData["Title"]</h1>
-    }
-else 
-{
-
-     ViewData["Title"] = "Каталог "+ViewBag.Catalog.Label;
-     <p> 
-            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> 
-            <a> @ViewBag.Catalog.Label </a> 
-     </p>
-
-        <h1>  @ViewData["Title"] </h1>
-  
-
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link active" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
-        </ul>  
-
-    }
+@{
+    ViewBag.FiltersTab = "active";
+    Html.RenderPartial("_CatologNavigator");
+}
+    
   <p>
      <h4> Новый фильтр </h4>
  </p>

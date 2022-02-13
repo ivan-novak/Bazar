@@ -1,7 +1,8 @@
 ﻿@model RozetkaWebApp.Models.RootImage
 
-@{
-    ViewData["Title"] = "Details";
+ @{
+    ViewBag.ImagesTab = "active";
+    Html.RenderPartial("_RootNavigator");
 }
 
 <h1>Details</h1>

@@ -1,30 +1,15 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Catalog>
 
-@if (ViewBag.Portal == null) 
-{
-        ViewData["Title"] = "Каталоги портала";
-        <h1>@ViewData["Title"]</h1>
+@{
+
+    ViewBag.CatalogsTab = "active";
+    Html.RenderPartial("_PortalNavigator");
 }
-else 
-{
-        ViewData["Title"] = "Портал - "+ViewBag.Portal.Label;
-        <p> 
-            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-            <a > @ViewBag.Portal.Label </a> 
-         </p>
-
-        <h1>  @ViewData["Title"] </h1>  
-
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link active" href="/Catalogs/Index/@ViewBag.Portal.PortalId">Каталоги</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/PortalImages/Index/@ViewBag.Portal.PortalId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Portals/Details/@ViewBag.Portal.PortalId">Детали</a> </li>
-        </ul> 
         
      <p><h4>Список каталогов</h4></p>
             
      <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить новый</a> </p>
-}
+
 
 <table class="table">
     <thead>

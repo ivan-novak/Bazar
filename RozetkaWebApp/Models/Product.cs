@@ -10,7 +10,7 @@ namespace RozetkaWebApp.Models
         public Product()
         {
             Characteristics = new HashSet<Characteristic>();
-            Orders = new HashSet<Order>();
+            OrderDetails = new HashSet<OrderDetail>();
             ProductImages = new HashSet<ProductImage>();
             Views = new HashSet<View>();
         }
@@ -26,7 +26,7 @@ namespace RozetkaWebApp.Models
 
         public virtual Catalog Catalog { get; set; }
         public virtual ICollection<Characteristic> Characteristics { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<ProductImage> ProductImages { get; set; }
         public virtual ICollection<View> Views { get; set; }
     }

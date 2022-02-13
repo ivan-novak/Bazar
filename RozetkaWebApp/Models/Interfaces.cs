@@ -1,4 +1,6 @@
-﻿namespace RozetkaWebApp.Models
+﻿using System;
+
+namespace RozetkaWebApp.Models
 {
     public interface iFilter
     {
@@ -111,6 +113,7 @@
         public string Title { get; set; }
         public string Label { get; set; }
         public long ImageId { get; set; }
+        public string Url { get { return "/images/" + ImageId.ToString(); } }
     }
     public partial class PortalImage : iPortalImage
     {
@@ -123,6 +126,7 @@
         public string Title { get; set; }
         public string Label { get; set; }
         public long ImageId { get; set; }
+        public string Url { get { return "/images/" + ImageId.ToString(); } }
     }
 
     public partial class ProductImage : iProductImage
@@ -136,11 +140,144 @@
         public long ImageId { get; set; }
         public string Title { get; set; }
         public string Label { get; set; }
-   
+        public string Url { get { return "/images/" + ImageId.ToString(); } }
+
     }
     public partial class CatalogImage : iCatalogImage
     {
     }
+
+
+    public interface iWallett
+    {
+        public long WalletId { get; set; }
+        public string CardNumber { get; set; }
+        public string ExpiryDate { get; set; }
+        public string Cardholder { get; set; }
+        public string CardType { get; set; }
+        public string VerificationCode { get; set; }
+        public string UserId { get; set; }
+    }
+    public partial class Wallett : iWallett
+    { 
+    }
+
+
+    public interface iAddress
+    {
+        public int AddressId { get; set; }
+        public string AddressType { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string AddressLine3 { get; set; }
+        public string UserId { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string PostalCode { get; set; }
+        public string Country { get; set; }
+        public int? ExtAddressId { get; set; }
+    }
+    public partial class Address : iAddress
+    {
+    }
+
+
+    public interface iContact
+    {
+        public int ContactId { get; set; }
+        public string ContactType { get; set; }
+        public string FullName { get; set; }
+        public string DisplayName { get; set; }
+        public string Title { get; set; }
+        public string Salutation { get; set; }
+        public string Attention { get; set; }
+        public string FirstName { get; set; }
+        public string MidName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string WebSite { get; set; }
+        public string Fax { get; set; }
+        public string FaxType { get; set; }
+        public string Phone1 { get; set; }
+        public string Phone1Type { get; set; }
+        public string Phone2 { get; set; }
+        public string Phone2Type { get; set; }
+        public string Phone3 { get; set; }
+        public string Phone3Type { get; set; }
+        public int DefAddressId { get; set; }
+        public string UserId { get; set; }
+        public DateTime? AssignDate { get; set; }
+        public int? ExtAddressId { get; set; }
+    }
+
+    public partial class Contact : iContact
+    {
+    }
+
+
+    public interface iOrder
+    {
+        public long OrderId { get; set; }
+        public string UserId { get; set; }
+        public string Description { get; set; }
+        public decimal Total { get; set; }
+        public DateTime OrderDate { get; set; }
+        public string Status { get; set; }
+        public string CardNumber { get; set; }
+        public string DeliveryAddress { get; set; }
+        public string DeliveryContact { get; set; }
+        public string DeliveryEmail { get; set; }
+        public string DeliveryPhone { get; set; }
+        public string ExtOrderNbr { get; set; }
+    }
+    public partial class Order : iOrder
+    {
+    }
+
+    public interface iOrderDetail
+    {
+        public long OrderDatailId { get; set; }
+        public long OrderId { get; set; }
+        public long ProductId { get; set; }
+        public int Quantities { get; set; }
+        public decimal UnitCost { get; set; }
+        public string Status { get; set; }
+        public string ExtOrderDetailNbr { get; set; }
+
+      
+    }
+
+    public partial class OrderDetail : iOrderDetail
+    {
+    }
+
+    public interface iAspNetUser
+    {
+        public string Id { get; set; }
+        public string UserName { get; set; }
+        public string NormalizedUserName { get; set; }
+        public string Email { get; set; }
+        public string NormalizedEmail { get; set; }
+        public bool EmailConfirmed { get; set; }
+        public string PasswordHash { get; set; }
+        public string SecurityStamp { get; set; }
+        public string ConcurrencyStamp { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool PhoneNumberConfirmed { get; set; }
+        public bool TwoFactorEnabled { get; set; }
+        public DateTimeOffset? LockoutEnd { get; set; }
+        public bool LockoutEnabled { get; set; }
+        public int AccessFailedCount { get; set; }
+    }
+
+    public partial class AspNetUser : iAspNetUser
+    {
+    }
+
+
+
+
+
 
 }
 

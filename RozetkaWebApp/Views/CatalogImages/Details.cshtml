@@ -1,8 +1,8 @@
 ﻿@model RozetkaWebApp.Models.CatalogImage
-
-@{
-    ViewData["Title"] = "Details";
-}
+    @{
+        ViewBag.ImagesTab = "active";
+        Html.RenderPartial("_CatologNavigator");
+    }
 
 <h1>Details</h1>
 

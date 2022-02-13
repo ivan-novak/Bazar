@@ -7,15 +7,26 @@ namespace RozetkaWebApp.Models
 {
     public partial class Order
     {
-        public int OrderId { get; set; }
-        public long ProductId { get; set; }
+        public Order()
+        {
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
+        public long OrderId { get; set; }
         public string UserId { get; set; }
-        public decimal? Quantity { get; set; }
-        public decimal? Price { get; set; }
+        public string Description { get; set; }
+        public decimal Total { get; set; }
         public DateTime OrderDate { get; set; }
         public string Status { get; set; }
-        public string Description { get; set; }
+        public string CardNumber { get; set; }
+        public string DeliveryAddress { get; set; }
+        public string DeliveryContact { get; set; }
+        public string DeliveryEmail { get; set; }
+        public string DeliveryPhone { get; set; }
+        public string ExtOrderNbr { get; set; }
 
-        public virtual Product Product { get; set; }
+        public virtual AspNetUser User { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
+
 }

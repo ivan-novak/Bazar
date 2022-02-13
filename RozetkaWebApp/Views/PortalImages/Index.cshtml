@@ -1,32 +1,16 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.PortalImage>
 
- @if (ViewBag.Portal == null) 
-    {
-        ViewData["Title"] = "Изображения портала";
-        <h1>@ViewData["Title"]</h1>
-    }
-    else 
-    {
-        ViewData["Title"] = "Портал - "+ViewBag.Portal.Label;
-        <p> 
-            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-            <a> @ViewBag.Portal.Label </a> 
-         </p>
+@{
 
-        <h1>  @ViewData["Title"] </h1>
-  
+    ViewBag.ImagesTab = "active";
+    Html.RenderPartial("_PortalNavigator");
+}
+ 
 
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Index/@ViewBag.Portal.PortalId">Каталоги</a> </li>
-            <li class="nav-item">  <a class="nav-link active" href="/PortalImages/Index/@ViewBag.Portal.PortalId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Portals/Details/@ViewBag.Portal.PortalId">Детали</a> </li>
-        </ul>  
-
-  <p><h4>Список изображений</h4></p>
-                
+         <p><h4>Список изображений</h4></p>                
         <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить изображение </a> </p>
         <hr /> 
-    }
+ 
     <div class=row>
         @foreach (var item in Model) 
         {

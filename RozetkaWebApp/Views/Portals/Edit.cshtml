@@ -1,21 +1,14 @@
 ﻿@model RozetkaWebApp.Models.Portal
 
+
 @{
-    ViewData["Title"] ="Портал - "+@Model.Label;
+    ViewBag.Portal = Model;
+    ViewBag.DetailsTab = "active";
+    Html.RenderPartial("_PortalNavigator");
 }
-    <p> 
-               <a> Администрирование </a> 
-         <a > @Model.Label </a>  
-    </p>
-
-    <h1>@ViewData["Title"]</h1>
 
 
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Index/@Model.PortalId">Каталоги</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/PortalImages/Index/@Model.PortalId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link active" href="/Portals/Details/@Model.PortalId">Детали</a> </li>
-        </ul>  
+
     <p> 
          <h4>Изменить портал</h4>
     </p>  

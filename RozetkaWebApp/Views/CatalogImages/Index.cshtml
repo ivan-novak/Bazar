@@ -1,34 +1,14 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.CatalogImage>
 
-    @if (ViewBag.Catalog == null) 
-    {
-        ViewData["Title"] = "Фильтры каталога";
-        <h1>@ViewData["Title"]</h1>
-    }
-    else 
-    {
-        ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
-        <p> 
-            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> \
-            <a> @ViewBag.Catalog.Label </a> 
-         </p>
-
-        <h1>  @ViewData["Title"] </h1>
-  
-
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>
-            <li class="nav-item">  <a class="nav-link active" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Properties/Index/@ViewBag.Catalog.CatalogId">Фильтры</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Детали</a> </li>
-        </ul>  
-
-        <p><h4>Список изображений</h4></p>
+@{
+    ViewBag.ImagesTab = "active";
+    Html.RenderPartial("_CatologNavigator");
+}
+           <p><h4>Список изображений</h4></p>
                 
         <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить изображение </a> </p>
         <hr />   
-    }
+
 
     <div class=row>
         @foreach (var item in Model) 

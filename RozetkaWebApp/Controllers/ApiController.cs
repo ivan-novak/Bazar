@@ -180,13 +180,198 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/portals/{portalId}/views")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/views")]
         [HttpGet("[controller]/v1/users/{userId}/views")]
-        public async Task<ActionResult<IEnumerable<Product>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
+        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
         {
             var queryView = _context.Views.Include(x => x.Product).Select(x => x);
             if (userId != null) queryView = queryView.Where(x => x.UserId == userId);
             if (catalogId != null) queryView = queryView.Where(x => x.Product.CatalogId == catalogId);
             queryView.OrderByDescending(x => x.EventDate);
-            return await queryView.Select(x => x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            return await queryView.Select(x => (iProduct)x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/orders")]
+        [HttpGet("[controller]/v1/orders/{orderId}")]
+        [HttpGet("[controller]/v1/users/{userId}/orders")]
+        public async Task<ActionResult<IEnumerable<iOrder>>> Orders(string orderMode = "Desc", string orderBy = "OrderId", int page = 0, int pageSize = 50, long? orderId = null, string userId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.Orders.Select(x => x);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (orderId != null) query = query.Where(x => x.OrderId == orderId);
+            if (orderBy == "ORDERID") query = query.OrderByDescending(x => x.OrderId);
+            if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
+            if (orderBy == "TOTAL") query = query.OrderByDescending(x => x.Total);
+            if (orderBy == "ORDERDATE") query = query.OrderByDescending(x => x.OrderDate);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iOrder)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/orderDetails")]
+        [HttpGet("[controller]/v1/orderDetail/{orderDetailId}")]
+        [HttpGet("[controller]/v1/orders/{orderId}/orderDetails")]
+        public async Task<ActionResult<IEnumerable<iOrderDetail>>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.OrderDetails.Select(x => x);
+            if (orderDetailId != null) query = query.Where(x => x.OrderDatailId == orderDetailId);
+            if (orderId != null) query = query.Where(x => x.OrderId == orderId);
+            if (orderBy == "ORDERID") query = query.OrderByDescending(x => x.OrderId);
+            if (orderBy == "ORDERDETAILID") query = query.OrderByDescending(x => x.OrderDatailId);
+            if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iOrderDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/addresses")]
+        [HttpGet("[controller]/v1/addresses/{addressId}")]
+        [HttpGet("[controller]/v1/users/{userId}/addresses")]
+        public async Task<ActionResult<IEnumerable<iAddress>>> Addresses(string orderMode = "Desc", string orderBy = "AddressID", int page = 0, int pageSize = 50, string userId = null, long? addressId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.Addresses.Select(x => x);
+            if (addressId != null) query = query.Where(x => x.AddressId == addressId);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (orderBy == "ADDRESSESID") query = query.OrderByDescending(x => x.AddressId);
+            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            if (orderBy == "ADDRESSTYPE") query = query.OrderByDescending(x => x.AddressType);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iAddress)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/walletts")]
+        [HttpGet("[controller]/v1/walletts/{walettesId}")]
+        [HttpGet("[controller]/v1/users/{userId}/wallettes")]
+        public async Task<ActionResult<IEnumerable<iWallett>>> Wallettes(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? walletteId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.Walletts.Select(x => x);
+            if (walletteId != null) query = query.Where(x => x.WalletId == walletteId);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (orderBy == "WALLETTEID") query = query.OrderByDescending(x => x.WalletId);
+            if (orderBy == "CARDTYPE") query = query.OrderByDescending(x => x.CardType);
+            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iWallett)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/contacts")]
+        [HttpGet("[controller]/v1/contacts/{contactId}")]
+        [HttpGet("[controller]/v1/users/{userId}/contacts")]
+        public async Task<ActionResult<IEnumerable<iContact>>> Contacts(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? contactId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.Contacts.Select(x => x);
+            if (contactId != null) query = query.Where(x => x.ContactId == contactId);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (orderBy == "CONTACTID") query = query.OrderByDescending(x => x.ContactId);
+            if (orderBy == "EMAIL") query = query.OrderByDescending(x => x.Email);
+            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iContact)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/comments")]
+        [HttpGet("[controller]/v1/comments/{commentId}")]
+        [HttpGet("[controller]/v1/users/{userId}/comments")]
+        [HttpGet("[controller]/v1/products/{productId}/comments")]
+
+        public async Task<ActionResult<IEnumerable<iComment>>> Comments(string orderMode = "Desc", string orderBy = "CommentId", int page = 0, int pageSize = 50, string userId = null, long? commentId = null, long? productId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.Comments.Select(x => x);
+            if (commentId != null) query = query.Where(x => x.CommentId == commentId);
+            if (productId != null) query = query.Where(x => x.ProductId == productId);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (orderBy == "COMMENTID") query = query.OrderByDescending(x => x.CommentId);
+            if (orderBy == "PRODUCTID") query = query.OrderByDescending(x => x.ProductId);
+            if (orderBy == "Score") query = query.OrderByDescending(x => x.Score);
+            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iComment)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+
+        [HttpGet("[controller]/v1/promotions")]
+        [HttpGet("[controller]/v1/promotions/{promotionsId}")]
+        public async Task<ActionResult<IEnumerable<iPromotion>>> Promotions(string orderMode = "Desc", string orderBy = "PromotionId", int page = 0, int pageSize = 50, string userId = null, long? promotionId = null, DateTime? startDate = null, DateTime? endDate = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.Promotions.Select(x => x);
+            if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
+            if (startDate != null) query = query.Where(x => x.StartDate >= startDate);
+            if (endDate != null) query = query.Where(x => x.EndDate >= endDate);
+
+            if (orderBy == "PROMOTIONID") query = query.OrderByDescending(x => x.PromotionId);
+            if (orderBy == "STARTDATE") query = query.OrderByDescending(x => x.StartDate);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iPromotion)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/promotionProducts")]
+        [HttpGet("[controller]/v1/promotionProducts/{promotionProductsId}")]
+        [HttpGet("[controller]/v1/promotions/{promotionsId}/products")] 
+        [HttpGet("[controller]/v1/products/{productId}/promotions")]
+        public async Task<ActionResult<IEnumerable<iPromotionProduct>>> PromotionProduct(string orderMode = "Desc", string orderBy = "PromotionProductId", int page = 0, int pageSize = 50, string userId = null, long? promotionId = null, long? productId = null, long? promotionProductId = null)
+        {
+            orderBy = orderBy.ToUpper();
+            var query = _context.PromotionProducts.Select(x => x);
+            if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
+            if (promotionProductId != null) query = query.Where(x => x.PromotionProductId == promotionProductId);
+            if (productId != null) query = query.Where(x => x.ProductId == productId);
+
+            if (orderBy == "PROMOTIONID") query = query.OrderByDescending(x => x.PromotionId);
+            if (orderBy == "PROMOTIONPRODUCTID") query = query.OrderByDescending(x => x.PromotionProductId);
+            if (orderBy == "PRODUCTID") query = query.OrderByDescending(x => x.ProductId);
+
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+
+            return await query.Select(x => (iPromotionProduct)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/comments/{commentId}/Images/")]
+        [HttpGet("[controller]/v1/comments/Images/{label}")]
+        public async Task<ActionResult<IEnumerable<iCommentImage>>> CommentImage(string orderBy = "CommentImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? commentImageId = null)
+        {
+            var query = _context.CommentImages.Select(x => x);
+            orderBy = orderBy.ToUpper();
+            if (commentImageId != null) query = query.Where(x => x.CommentImageId == commentImageId);
+            if (label != null) query = query.Where(x => x.Label == label);
+            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
+            else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
+            else query = query.OrderBy(x => x.CommentImageId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            return await query.Select(x => (iCommentImage)x).ToListAsync();
+        }
+
+        [HttpGet("[controller]/v1/promotions/{promotionID}/Images/")]
+        [HttpGet("[controller]/v1/promotions/Images/{imageId}")]
+        public async Task<ActionResult<IEnumerable<iPromotionImage>>> PromotionImage(string orderBy = "PromotionImage", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? promotionId = null)
+        {
+            var query = _context.PromotionImages.Select(x => x);
+            orderBy = orderBy.ToUpper();
+            if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
+            if (label != null) query = query.Where(x => x.Label == label);
+            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
+            else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
+            else query = query.OrderBy(x => x.PromotionImageId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            return await query.Select(x => (iPromotionImage)x).ToListAsync();
         }
 
 

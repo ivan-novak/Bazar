@@ -28,5 +28,4 @@ namespace RozetkaWebApp.Models
         public virtual AspNetUser User { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
-
 }

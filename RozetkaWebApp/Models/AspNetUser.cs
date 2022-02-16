@@ -14,6 +14,7 @@ namespace RozetkaWebApp.Models
             AspNetUserLogins = new HashSet<AspNetUserLogin>();
             AspNetUserRoles = new HashSet<AspNetUserRole>();
             AspNetUserTokens = new HashSet<AspNetUserToken>();
+            Comments = new HashSet<Comment>();
             Contacts = new HashSet<Contact>();
             Orders = new HashSet<Order>();
             Views = new HashSet<View>();
@@ -41,6 +42,7 @@ namespace RozetkaWebApp.Models
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual ICollection<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual ICollection<AspNetUserToken> AspNetUserTokens { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<View> Views { get; set; }

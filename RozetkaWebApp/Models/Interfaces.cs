@@ -147,7 +147,6 @@ namespace RozetkaWebApp.Models
     {
     }
 
-
     public interface iWallett
     {
         public long WalletId { get; set; }
@@ -177,6 +176,7 @@ namespace RozetkaWebApp.Models
         public string Country { get; set; }
         public int? ExtAddressId { get; set; }
     }
+
     public partial class Address : iAddress
     {
     }
@@ -229,7 +229,6 @@ namespace RozetkaWebApp.Models
         public string DeliveryEmail { get; set; }
         public string DeliveryPhone { get; set; }
         public string ExtOrderNbr { get; set; }
-
     }
     public partial class Order : iOrder
     {
@@ -243,9 +242,7 @@ namespace RozetkaWebApp.Models
         public int Quantities { get; set; }
         public decimal UnitCost { get; set; }
         public string Status { get; set; }
-        public string ExtOrderDetailNbr { get; set; }
-
-      
+        public string ExtOrderDetailNbr { get; set; }      
     }
 
     public partial class OrderDetail : iOrderDetail
@@ -260,7 +257,6 @@ namespace RozetkaWebApp.Models
         public string Email { get; set; }
         public string NormalizedEmail { get; set; }
         public bool EmailConfirmed { get; set; }
-        public string PasswordHash { get; set; }
         public string SecurityStamp { get; set; }
         public string ConcurrencyStamp { get; set; }
         public string PhoneNumber { get; set; }
@@ -275,7 +271,6 @@ namespace RozetkaWebApp.Models
     {
     }
 
-
     public interface iPromotion
     {
         public long PromotionId { get; set; }
@@ -285,37 +280,11 @@ namespace RozetkaWebApp.Models
         public string Attributes { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public long? ImageId { get; set; }
     }
 
     public partial class Promotion : iPromotion
     {
-    }
-
-    public interface iPromotionImage
-    {
-        public long PromotionImageId { get; set; }
-        public long PromotionId { get; set; }
-        public long ImageId { get; set; }
-        public string Title { get; set; }
-        public string Label { get; set; }
-        public string Url { get { return "/images/" + ImageId.ToString(); } }
-    }
-
-    public partial class PromotionImage : iPromotionImage
-    {
-       
-    }
-
-    public interface iPromotionProduct
-    {
-        public long PromotionProductId { get; set; }
-        public long PromotionId { get; set; }
-        public long ProductId { get; set; }
-    }
-
-    public partial class PromotionProduct : iPromotionProduct
-    {
-
     }
 
     public interface iComment
@@ -327,28 +296,13 @@ namespace RozetkaWebApp.Models
         public string Text { get; set; }
         public DateTime Date { get; set; }
         public decimal? Score { get; set; }
-
+        public long? ImageId { get; set; }
     }
 
     public partial class Comment : iComment
     {
-
     }
 
-
-    public interface iCommentImage
-    {
-        public long CommentImageId { get; set; }
-        public long CommentId { get; set; }
-        public long ImageId { get; set; }
-        public string Title { get; set; }
-        public string Label { get; set; }
-    }
-
-    public partial class CommentImage : iCommentImage
-    {
-
-    }
 }
 
 

@@ -13,7 +13,6 @@ namespace RozetkaWebApp.Models
             Comments = new HashSet<Comment>();
             OrderDetails = new HashSet<OrderDetail>();
             ProductImages = new HashSet<ProductImage>();
-            PromotionProducts = new HashSet<PromotionProduct>();
             Views = new HashSet<View>();
         }
 
@@ -25,13 +24,14 @@ namespace RozetkaWebApp.Models
         public string Attributes { get; set; }
         public decimal Price { get; set; }
         public decimal Quantity { get; set; }
+        public long? PromotionId { get; set; }
 
         public virtual Catalog Catalog { get; set; }
+        public virtual Promotion Promotion { get; set; }
         public virtual ICollection<Characteristic> Characteristics { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<ProductImage> ProductImages { get; set; }
-        public virtual ICollection<PromotionProduct> PromotionProducts { get; set; }
         public virtual ICollection<View> Views { get; set; }
     }
 }

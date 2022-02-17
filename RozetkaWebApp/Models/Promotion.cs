@@ -9,8 +9,7 @@ namespace RozetkaWebApp.Models
     {
         public Promotion()
         {
-            PromotionImages = new HashSet<PromotionImage>();
-            PromotionProducts = new HashSet<PromotionProduct>();
+            Products = new HashSet<Product>();
         }
 
         public long PromotionId { get; set; }
@@ -20,8 +19,9 @@ namespace RozetkaWebApp.Models
         public string Attributes { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public long? ImageId { get; set; }
 
-        public virtual ICollection<PromotionImage> PromotionImages { get; set; }
-        public virtual ICollection<PromotionProduct> PromotionProducts { get; set; }
+        public virtual Image Image { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

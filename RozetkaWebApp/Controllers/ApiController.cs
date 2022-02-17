@@ -62,12 +62,14 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/products")]
         [HttpGet("[controller]/v1/products/{productId}")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/products/")]
-        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? catalogId = null, long? productId = null)
+        [HttpGet("[controller]/v1/promotions/{promotionId}/products/")]
+        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? catalogId = null, long? productId = null, long? promotionId = null)
         {
             var query = _context.Products.Select(x => x);
             orderBy = orderBy.ToUpper();
             if (catalogId != null) query = query.Where(x => x.CatalogId == catalogId);
             if (productId != null) query = query.Where(x => x.ProductId == productId);
+            if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
             if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else if (orderBy == "PRICE") query = query.OrderBy(x => x.Price);
@@ -112,54 +114,6 @@ namespace RozetkaWebApp.Controllers
             return await query.Select(x=>(iCharacteristic)x).ToListAsync();
         }
 
-        [HttpGet("[controller]/v1/catalogs/{catalogId}/images/")]
-        [HttpGet("[controller]/v1/catalogs/Images/{imageId}")]
-        public async Task<ActionResult<IEnumerable<iCatalogImage>>> CatalogImages(string orderBy = "CatalogImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? imageId = null, long? catalogId = null)
-        {
-            var query = _context.CatalogImages.Select(x => x);
-            orderBy = orderBy.ToUpper();
-            if (imageId != null) query = query.Where(x => x.Id == imageId);
-            if (catalogId != null) query = query.Where(x => x.CatalogId == catalogId);
-            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
-            else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
-            else query = query.OrderBy(x => x.Id);
-            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iCatalogImage)x).ToListAsync();
-        }
-
-        [HttpGet("[controller]/v1/portals/{portalId}/Images/")]
-        [HttpGet("[controller]/v1/portals/Images/{imageId}")]
-        public async Task<ActionResult<IEnumerable<iPortalImage>>> PortalImages(string orderBy = "PortalImagesId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? imageId=null, int? portalId = null)
-        {
-            var query = _context.PortalImages.Select(x => x);
-            orderBy = orderBy.ToUpper();
-            if (portalId != null) query = query.Where(x => x.PortalId == portalId);
-            if (imageId != null) query = query.Where(x => x.PortalImageId == imageId);
-            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
-            else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
-            else query = query.OrderBy(x => x.PortalImageId);
-            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x=>(iPortalImage)x).ToListAsync();
-        }
-
-        [HttpGet("[controller]/v1/products/{productId}/images/")]
-        [HttpGet("[controller]/v1/products/images/{imageId}")]
-        public async Task<ActionResult<IEnumerable<iProductImage>>> ProductImages(string orderBy = "ProductImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, long? imageId = null, long? productId = null)
-        {
-            var query = _context.ProductImages.Select(x => x);
-            orderBy = orderBy.ToUpper();
-            if (productId != null) query = query.Where(x => x.ProductId == productId);
-            if (imageId != null) query = query.Where(x => x.ProductImageId == imageId);
-            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
-            else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
-            else query = query.OrderBy(x => x.ProductImageId);
-            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x=>(iProductImage)x).ToListAsync();
-        }
-
         [HttpGet("[controller]/v1/filters")]
         [HttpGet("[controller]/v1/properties/{propertyId}/filters/")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/filters")]
@@ -176,19 +130,6 @@ namespace RozetkaWebApp.Controllers
             return await query.Select(x=>(iFilter)x).ToListAsync();
         }
 
-        [HttpGet("[controller]/v1/views")]
-        [HttpGet("[controller]/v1/portals/{portalId}/views")]
-        [HttpGet("[controller]/v1/catalogs/{catalogId}/views")]
-        [HttpGet("[controller]/v1/users/{userId}/views")]
-        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
-        {
-            var queryView = _context.Views.Include(x => x.Product).Select(x => x);
-            if (userId != null) queryView = queryView.Where(x => x.UserId == userId);
-            if (catalogId != null) queryView = queryView.Where(x => x.Product.CatalogId == catalogId);
-            queryView.OrderByDescending(x => x.EventDate);
-            return await queryView.Select(x => (iProduct)x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
-        }
-
         [HttpGet("[controller]/v1/orders")]
         [HttpGet("[controller]/v1/orders/{orderId}")]
         [HttpGet("[controller]/v1/users/{userId}/orders")]
@@ -198,19 +139,17 @@ namespace RozetkaWebApp.Controllers
             var query = _context.Orders.Select(x => x);
             if (userId != null) query = query.Where(x => x.UserId == userId);
             if (orderId != null) query = query.Where(x => x.OrderId == orderId);
-            if (orderBy == "ORDERID") query = query.OrderByDescending(x => x.OrderId);
             if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
-            if (orderBy == "TOTAL") query = query.OrderByDescending(x => x.Total);
-            if (orderBy == "ORDERDATE") query = query.OrderByDescending(x => x.OrderDate);
-
+            else if (orderBy == "TOTAL") query = query.OrderByDescending(x => x.Total);
+            else if (orderBy == "ORDERDATE") query = query.OrderByDescending(x => x.OrderDate);
+            else query = query.OrderByDescending(x => x.OrderId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iOrder)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
-        [HttpGet("[controller]/v1/orderDetails")]
-        [HttpGet("[controller]/v1/orderDetail/{orderDetailId}")]
-        [HttpGet("[controller]/v1/orders/{orderId}/orderDetails")]
+        [HttpGet("[controller]/v1/orders/Details")]
+        [HttpGet("[controller]/v1/orders/Details/{orderDetailId}")]
+        [HttpGet("[controller]/v1/orders/{orderId}/Details")]
         public async Task<ActionResult<IEnumerable<iOrderDetail>>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
         {
             orderBy = orderBy.ToUpper();
@@ -218,11 +157,9 @@ namespace RozetkaWebApp.Controllers
             if (orderDetailId != null) query = query.Where(x => x.OrderDatailId == orderDetailId);
             if (orderId != null) query = query.Where(x => x.OrderId == orderId);
             if (orderBy == "ORDERID") query = query.OrderByDescending(x => x.OrderId);
-            if (orderBy == "ORDERDETAILID") query = query.OrderByDescending(x => x.OrderDatailId);
-            if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
-
+            else if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
+            else query = query.OrderByDescending(x => x.OrderDatailId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iOrderDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
@@ -235,12 +172,10 @@ namespace RozetkaWebApp.Controllers
             var query = _context.Addresses.Select(x => x);
             if (addressId != null) query = query.Where(x => x.AddressId == addressId);
             if (userId != null) query = query.Where(x => x.UserId == userId);
-            if (orderBy == "ADDRESSESID") query = query.OrderByDescending(x => x.AddressId);
             if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
-            if (orderBy == "ADDRESSTYPE") query = query.OrderByDescending(x => x.AddressType);
-
+            else if (orderBy == "ADDRESSTYPE") query = query.OrderByDescending(x => x.AddressType);
+            else query = query.OrderByDescending(x => x.AddressId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iAddress)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
@@ -253,12 +188,10 @@ namespace RozetkaWebApp.Controllers
             var query = _context.Walletts.Select(x => x);
             if (walletteId != null) query = query.Where(x => x.WalletId == walletteId);
             if (userId != null) query = query.Where(x => x.UserId == userId);
-            if (orderBy == "WALLETTEID") query = query.OrderByDescending(x => x.WalletId);
             if (orderBy == "CARDTYPE") query = query.OrderByDescending(x => x.CardType);
-            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
-
+            else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else query = query.OrderByDescending(x => x.WalletId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iWallett)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
@@ -271,12 +204,10 @@ namespace RozetkaWebApp.Controllers
             var query = _context.Contacts.Select(x => x);
             if (contactId != null) query = query.Where(x => x.ContactId == contactId);
             if (userId != null) query = query.Where(x => x.UserId == userId);
-            if (orderBy == "CONTACTID") query = query.OrderByDescending(x => x.ContactId);
             if (orderBy == "EMAIL") query = query.OrderByDescending(x => x.Email);
-            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
-
+            else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else query = query.OrderByDescending(x => x.ContactId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iContact)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
@@ -284,7 +215,6 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/comments/{commentId}")]
         [HttpGet("[controller]/v1/users/{userId}/comments")]
         [HttpGet("[controller]/v1/products/{productId}/comments")]
-
         public async Task<ActionResult<IEnumerable<iComment>>> Comments(string orderMode = "Desc", string orderBy = "CommentId", int page = 0, int pageSize = 50, string userId = null, long? commentId = null, long? productId = null)
         {
             orderBy = orderBy.ToUpper();
@@ -292,16 +222,13 @@ namespace RozetkaWebApp.Controllers
             if (commentId != null) query = query.Where(x => x.CommentId == commentId);
             if (productId != null) query = query.Where(x => x.ProductId == productId);
             if (userId != null) query = query.Where(x => x.UserId == userId);
-            if (orderBy == "COMMENTID") query = query.OrderByDescending(x => x.CommentId);
             if (orderBy == "PRODUCTID") query = query.OrderByDescending(x => x.ProductId);
-            if (orderBy == "Score") query = query.OrderByDescending(x => x.Score);
-            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
-
+            else if (orderBy == "SCORE") query = query.OrderByDescending(x => x.Score);
+            else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else query = query.OrderByDescending(x => x.CommentId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iComment)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
-
 
         [HttpGet("[controller]/v1/promotions")]
         [HttpGet("[controller]/v1/promotions/{promotionsId}")]
@@ -312,68 +239,81 @@ namespace RozetkaWebApp.Controllers
             if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
             if (startDate != null) query = query.Where(x => x.StartDate >= startDate);
             if (endDate != null) query = query.Where(x => x.EndDate >= endDate);
-
-            if (orderBy == "PROMOTIONID") query = query.OrderByDescending(x => x.PromotionId);
-            if (orderBy == "STARTDATE") query = query.OrderByDescending(x => x.StartDate);
-
+            else if (orderBy == "PROMOTIONID") query = query.OrderByDescending(x => x.PromotionId);
+            else if (orderBy == "STARTDATE") query = query.OrderByDescending(x => x.StartDate);
+            else query = query.OrderByDescending(x => x.PromotionId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
             return await query.Select(x => (iPromotion)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
-
-        [HttpGet("[controller]/v1/promotionProducts")]
-        [HttpGet("[controller]/v1/promotionProducts/{promotionProductsId}")]
-        [HttpGet("[controller]/v1/promotions/{promotionsId}/products")] 
-        [HttpGet("[controller]/v1/products/{productId}/promotions")]
-        public async Task<ActionResult<IEnumerable<iPromotionProduct>>> PromotionProduct(string orderMode = "Desc", string orderBy = "PromotionProductId", int page = 0, int pageSize = 50, string userId = null, long? promotionId = null, long? productId = null, long? promotionProductId = null)
+       
+        [HttpGet("[controller]/v1/products/{productId}/images")]
+        [HttpGet("[controller]/v1/products/{productId}/images/{label}")]
+        [HttpGet("[controller]/v1/products/images")]
+        [HttpGet("[controller]/v1/products/images/{productImageId}")]
+        public async Task<ActionResult<IEnumerable<iProductImage>>> ProductImages(string orderBy = "ProductImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, long? productId = null, long? productImageId = null)
         {
+            var query = _context.ProductImages.Select(x => x);
             orderBy = orderBy.ToUpper();
-            var query = _context.PromotionProducts.Select(x => x);
-            if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
-            if (promotionProductId != null) query = query.Where(x => x.PromotionProductId == promotionProductId);
+            if (productImageId != null) query = query.Where(x => x.ProductImageId == productImageId);
             if (productId != null) query = query.Where(x => x.ProductId == productId);
-
-            if (orderBy == "PROMOTIONID") query = query.OrderByDescending(x => x.PromotionId);
-            if (orderBy == "PROMOTIONPRODUCTID") query = query.OrderByDescending(x => x.PromotionProductId);
-            if (orderBy == "PRODUCTID") query = query.OrderByDescending(x => x.ProductId);
-
+            if (label != null) query = query.Where(x => x.Label ==label);
+            if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
+            else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
+            else query = query.OrderBy(x => x.ProductImageId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-
-            return await query.Select(x => (iPromotionProduct)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            return await query.Select(x => (iProductImage)x).ToListAsync();
         }
 
-        [HttpGet("[controller]/v1/comments/{commentId}/Images/")]
-        [HttpGet("[controller]/v1/comments/Images/{label}")]
-        public async Task<ActionResult<IEnumerable<iCommentImage>>> CommentImage(string orderBy = "CommentImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? commentImageId = null)
+        [HttpGet("[controller]/v1/portals/{portalId}/images")]
+        [HttpGet("[controller]/v1/portals/{portalId}/images/{label}")]
+        [HttpGet("[controller]/v1/portals/images")]
+        [HttpGet("[controller]/v1/portals/images/{portalImageId}")]
+        public async Task<ActionResult<IEnumerable<iPortalImage>>> PortalImages(string orderBy = "PortalImagesId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? portalId = null, int? portalImageId = null)
         {
-            var query = _context.CommentImages.Select(x => x);
+            var query = _context.PortalImages.Select(x => x);
             orderBy = orderBy.ToUpper();
-            if (commentImageId != null) query = query.Where(x => x.CommentImageId == commentImageId);
+            if (portalImageId != null) query = query.Where(x => x.PortalImageId == portalImageId);
+            if (portalId != null) query = query.Where(x => x.PortalId == portalId);
             if (label != null) query = query.Where(x => x.Label == label);
             if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
-            else query = query.OrderBy(x => x.CommentImageId);
+            else query = query.OrderBy(x => x.PortalImageId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iCommentImage)x).ToListAsync();
+            return await query.Select(x => (iPortalImage)x).ToListAsync();
         }
 
-        [HttpGet("[controller]/v1/promotions/{promotionID}/Images/")]
-        [HttpGet("[controller]/v1/promotions/Images/{imageId}")]
-        public async Task<ActionResult<IEnumerable<iPromotionImage>>> PromotionImage(string orderBy = "PromotionImage", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? promotionId = null)
+        [HttpGet("[controller]/v1/catalogs/{catalogId}/images")]
+        [HttpGet("[controller]/v1/catalogs/{catalogId}/images/{label}")]
+        [HttpGet("[controller]/v1/catalogs/Images")]
+        [HttpGet("[controller]/v1/catalogs/Images/{catalogimageId}")]
+        public async Task<ActionResult<IEnumerable<iCatalogImage>>> CatalogImages(string orderBy = "CatalogImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? catalogImageId = null, long? catalogId = null)
         {
-            var query = _context.PromotionImages.Select(x => x);
+            var query = _context.CatalogImages.Select(x => x);
             orderBy = orderBy.ToUpper();
-            if (promotionId != null) query = query.Where(x => x.PromotionId == promotionId);
+            if (catalogImageId != null) query = query.Where(x => x.Id == catalogImageId);
+            if (catalogId != null) query = query.Where(x => x.CatalogId == catalogId);
             if (label != null) query = query.Where(x => x.Label == label);
             if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
-            else query = query.OrderBy(x => x.PromotionImageId);
+            else query = query.OrderBy(x => x.Id);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iPromotionImage)x).ToListAsync();
+            return await query.Select(x => (iCatalogImage)x).ToListAsync();
         }
 
-
+        [HttpGet("[controller]/v1/views")]
+        [HttpGet("[controller]/v1/portals/{portalId}/views")]
+        [HttpGet("[controller]/v1/catalogs/{catalogId}/views")]
+        [HttpGet("[controller]/v1/users/{userId}/views")]
+        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
+        {
+            var queryView = _context.Views.Include(x => x.Product).Select(x => x);
+            if (userId != null) queryView = queryView.Where(x => x.UserId == userId);
+            if (catalogId != null) queryView = queryView.Where(x => x.Product.CatalogId == catalogId);
+            queryView.OrderByDescending(x => x.EventDate);
+            return await queryView.Select(x => (iProduct)x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
     }
 }

@@ -30,7 +30,6 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
-        public virtual DbSet<CommentImage> CommentImages { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Filter> Filters { get; set; }
         public virtual DbSet<Image> Images { get; set; }
@@ -41,8 +40,6 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<Promotion> Promotions { get; set; }
-        public virtual DbSet<PromotionImage> PromotionImages { get; set; }
-        public virtual DbSet<PromotionProduct> PromotionProducts { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
         public virtual DbSet<RootImage> RootImages { get; set; }
         public virtual DbSet<View> Views { get; set; }
@@ -282,6 +279,12 @@ namespace RozetkaWebApp.Data
                     .IsRequired()
                     .HasMaxLength(450);
 
+                entity.HasOne(d => d.Image)
+                    .WithMany(p => p.Comments)
+                    .HasForeignKey(d => d.ImageId)
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("FK_Comment_Image");
+
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Comments)
                     .HasForeignKey(d => d.ProductId)
@@ -291,29 +294,6 @@ namespace RozetkaWebApp.Data
                     .WithMany(p => p.Comments)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_Comment_AspNetUsers");
-            });
-
-            modelBuilder.Entity<CommentImage>(entity =>
-            {
-                entity.ToTable("CommentImage");
-
-                entity.Property(e => e.Label)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasMaxLength(500);
-
-                entity.HasOne(d => d.Comment)
-                    .WithMany(p => p.CommentImages)
-                    .HasForeignKey(d => d.CommentId)
-                    .HasConstraintName("FK_CommentImage_Comment");
-
-                entity.HasOne(d => d.Image)
-                    .WithMany(p => p.CommentImages)
-                    .HasForeignKey(d => d.ImageId)
-                    .HasConstraintName("FK_CommentImage_Image");
             });
 
             modelBuilder.Entity<Contact>(entity =>
@@ -525,6 +505,12 @@ namespace RozetkaWebApp.Data
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CatalogId)
                     .HasConstraintName("FK_Products_Catalogs");
+
+                entity.HasOne(d => d.Promotion)
+                    .WithMany(p => p.Products)
+                    .HasForeignKey(d => d.PromotionId)
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("FK_Product_Promotion");
             });
 
             modelBuilder.Entity<ProductImage>(entity =>
@@ -569,44 +555,12 @@ namespace RozetkaWebApp.Data
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
-            });
-
-            modelBuilder.Entity<PromotionImage>(entity =>
-            {
-                entity.ToTable("PromotionImage");
-
-                entity.Property(e => e.Label)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasMaxLength(500);
 
                 entity.HasOne(d => d.Image)
-                    .WithMany(p => p.PromotionImages)
+                    .WithMany(p => p.Promotions)
                     .HasForeignKey(d => d.ImageId)
-                    .HasConstraintName("FK_PromotionImage_Image");
-
-                entity.HasOne(d => d.Promotion)
-                    .WithMany(p => p.PromotionImages)
-                    .HasForeignKey(d => d.PromotionId)
-                    .HasConstraintName("FK_PromotionImage_Promotion");
-            });
-
-            modelBuilder.Entity<PromotionProduct>(entity =>
-            {
-                entity.ToTable("PromotionProduct");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.PromotionProducts)
-                    .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK_PromotionProduct_Product");
-
-                entity.HasOne(d => d.Promotion)
-                    .WithMany(p => p.PromotionProducts)
-                    .HasForeignKey(d => d.PromotionId)
-                    .HasConstraintName("FK_PromotionProduct_Promotion");
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("FK_Promotion_Image");
             });
 
             modelBuilder.Entity<Property>(entity =>

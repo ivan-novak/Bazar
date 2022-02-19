@@ -1,0 +1,33 @@
+﻿@model RozetkaWebApp.Models.Promotion
+
+ @{
+    ViewBag.PromotionsTab = "active";
+    Html.RenderPartial("_RootNavigator");
+}
+  
+<p>
+   <h4>Удалить эту промоакцию?</h4>
+</p>
+<div class="row">
+     <div class="col-md-8">
+     <form asp-action="Delete">
+        <input type="hidden" asp-for="PromotionId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+         <hr />
+    </form>
+      <p></p>
+
+    <dl class="row">
+        <dt class = "col-sm-2">Заголовок</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Title)</dd>
+        <dt class = "col-sm-2">Этикетка</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Label)</dd>
+        <dt class = "col-sm-2">Описание</dt><dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)</dd>
+        <dt class = "col-sm-2">Атрибуты</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Attributes)</dd>
+        <dt class = "col-sm-2">Дата начала</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.StartDate) </dd>
+        <dt class = "col-sm-2">Дата завершения </dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.EndDate)</dd>
+    </dl>
+</div>
+<div class="col-md-4"> 
+         <img src="/Images/Index/@Model.ImageId" alt=@Model.Label width="100%" />        
+</div>
+</div>

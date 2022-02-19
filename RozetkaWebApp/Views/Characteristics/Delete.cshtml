@@ -4,29 +4,10 @@
      ViewBag.Product = Model.Product;
 }
 
-@if (ViewBag.Product == null) 
-{
-        ViewData["Title"] = "Редактировать продкт";
-         <h1>@ViewData["Title"]</h1>
- }
-else 
-{
-    ViewData["Title"] = "Товар - " +ViewBag.Product.Label;
-        <p> 
-            <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
-            <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
-            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-            <a> @ViewBag.Product.Label </a> 
-        </p>
-
-        <h1>  @ViewData["Title"] </h1>
- 
-        <ul class="nav nav-tabs">
-             <li class="nav-item">  <a class="nav-link active" href="/Characteristics/Index/@ViewBag.Product.ProductId">Характеристики</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/ProductImages/Index/@ViewBag.Product.ProductId">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link" href="/Products/Details/@ViewBag.Product.ProductId">Детали</a> </li>
-        </ul>  
- }
+@{
+    ViewBag.CharacteristicsTab = "active";
+    Html.RenderPartial("_ProductNavigator");
+}
 
 <p>
    <h4>Удалить эту характеристику?</h4>

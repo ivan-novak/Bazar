@@ -49,6 +49,8 @@ namespace RozetkaWebApp.Models
         public string Attributes { get; set; }
         public decimal Price { get; set; }
         public decimal Quantity { get; set; }
+        public long? PromotionId { get; set; }
+
     }
 
     public partial class Product : iProduct

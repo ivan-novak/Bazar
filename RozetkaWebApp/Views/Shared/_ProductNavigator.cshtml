@@ -11,7 +11,7 @@ else
             <a asp-controller = "Portals" asp-action="Index"> Администрирование </a> \
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
             <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-            <a> @ViewBag.Product.Label </a> 
+            <a asp-controller = "Products" asp-action="Details" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Label </a> 
     </p>
 
     <h1>  @ViewData["Title"] </h1>

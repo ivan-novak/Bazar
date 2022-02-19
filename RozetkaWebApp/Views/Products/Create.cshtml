@@ -57,6 +57,13 @@
                 <input asp-for="Quantity" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
+             <div class="form-group" >
+                <label asp-for="CatalogId" class="control-label"> Промоакция </label>
+                  <select asp-for="PromotionId" class ="form-control" asp-items="ViewBag.PromotionId"><
+                         <option selected></option>
+                   </select>
+                  <span asp-validation-for="PromotionId" class="text-danger"></span>
+            </div>
         </form>
     </div>
 </div>

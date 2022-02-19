@@ -51,7 +51,8 @@ namespace RozetkaWebApp.Controllers
             var catalog = _context.Catalogs.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id); 
             ViewBag.Catalog = catalog;
             ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
-   
+            ViewData["PromotionId"] = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
+
             return View();
         }
 
@@ -60,7 +61,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity,PromotionId")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -69,6 +70,7 @@ namespace RozetkaWebApp.Controllers
                 return Redirect($"/Products/Index/" + product.CatalogId);
             }
             ViewBag.Catalog = product.Catalog;
+            ViewData["PromotionId"] = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
             ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
@@ -87,6 +89,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewBag.Catalog = _context.Catalogs.Find(product.CatalogId);
+            ViewData["PromotionId"] = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
             ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
@@ -96,7 +99,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity")] Product product)
+        public async Task<IActionResult> Edit(long id, [Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity,PromotionId")] Product product)
         {
             if (id != product.ProductId)
             {
@@ -125,6 +128,7 @@ namespace RozetkaWebApp.Controllers
             }
          //   ViewBag.Catalog = _context.Catalogs.Find(product.CatalogId);
             ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
+            ViewData["PromotionId"] = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
             return View(product);
         }
 

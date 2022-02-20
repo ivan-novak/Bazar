@@ -13,9 +13,9 @@ namespace RozetkaWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public HomeController(ApplicationDbContext context)
+        public HomeController(RozetkadbContext context)
         {
             _context = context;
         }

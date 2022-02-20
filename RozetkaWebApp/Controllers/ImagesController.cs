@@ -13,9 +13,9 @@ namespace RozetkaWebApp.Controllers
 {
     public class ImagesController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public ImagesController(ApplicationDbContext context)
+        public ImagesController(RozetkadbContext context)
         {
             _context = context;
         }

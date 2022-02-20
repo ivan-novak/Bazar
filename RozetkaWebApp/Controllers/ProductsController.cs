@@ -12,9 +12,9 @@ namespace RozetkaWebApp.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(RozetkadbContext context)
         {
             _context = context;
         }

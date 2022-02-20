@@ -12,9 +12,9 @@ namespace RozetkaWebApp.Controllers
 {
     public class CharacteristicsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public CharacteristicsController(ApplicationDbContext context)
+        public CharacteristicsController(RozetkadbContext context)
         {
             _context = context;
         }

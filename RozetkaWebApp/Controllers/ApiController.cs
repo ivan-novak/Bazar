@@ -13,9 +13,9 @@ namespace RozetkaWebApp.Controllers
 {
     public class ApiController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public ApiController(ApplicationDbContext context)
+        public ApiController(RozetkadbContext context)
         {
             _context = context;
         }

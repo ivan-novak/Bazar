@@ -15,9 +15,9 @@ namespace RozetkaWebApp
 {
     public class CatalogsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public CatalogsController(ApplicationDbContext context)
+        public CatalogsController(RozetkadbContext context)
         {
             _context = context;
         }

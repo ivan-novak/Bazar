@@ -12,9 +12,9 @@ namespace RozetkaWebApp
 {
     public class PortalsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public PortalsController(ApplicationDbContext context)
+        public PortalsController(RozetkadbContext context)
         {
             _context = context;
         }

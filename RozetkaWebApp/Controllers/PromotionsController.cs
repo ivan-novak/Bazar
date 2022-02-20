@@ -13,9 +13,9 @@ namespace RozetkaWebApp.Controllers
 {
     public class PromotionsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly RozetkadbContext _context;
 
-        public PromotionsController(ApplicationDbContext context)
+        public PromotionsController(RozetkadbContext context)
         {
             _context = context;
         }

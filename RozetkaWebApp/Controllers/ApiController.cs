@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -309,11 +310,27 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/users/{userId}/views")]
         public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
         {
+            // var userId1 = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var sesionId = CartId();
+
             var queryView = _context.Views.Include(x => x.Product).Select(x => x);
             if (userId != null) queryView = queryView.Where(x => x.UserId == userId);
             if (catalogId != null) queryView = queryView.Where(x => x.Product.CatalogId == catalogId);
             queryView.OrderByDescending(x => x.EventDate);
             return await queryView.Select(x => (iProduct)x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+        }
+
+
+        public string CartId()
+        {
+            if (!HttpContext.Request.Cookies.ContainsKey("cartId"))
+            {
+                var cartId = Guid.NewGuid().ToString();
+                HttpContext.Response.Cookies.Append("cartId", cartId);
+                return cartId;
+            }
+            return HttpContext.Request.Cookies["cartId"];
         }
     }
 }

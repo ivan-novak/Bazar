@@ -238,13 +238,7 @@ namespace RozetkaWebApp.Models
 
     public interface iOrderDetail
     {
-        public long OrderDatailId { get; set; }
-        public long OrderId { get; set; }
-        public long ProductId { get; set; }
-        public int Quantities { get; set; }
-        public decimal UnitCost { get; set; }
-        public string Status { get; set; }
-        public string ExtOrderDetailNbr { get; set; }      
+           
     }
 
     public partial class OrderDetail : iOrderDetail

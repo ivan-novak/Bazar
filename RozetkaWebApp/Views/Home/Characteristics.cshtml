@@ -4,7 +4,9 @@
     ViewData["Title"] = "Характеритики";
 }
 
-<h1> Характеритики </h1>
+<h1> Детально о товаре </h1>
+
+ <p><a  class="btn btn-success" asp-controller = "CartDetails" asp-action="AddToCart" asp-route-id = "@ViewBag.Product.ProductId" > Купить </a>   </p>
 
 
 <table class="table">

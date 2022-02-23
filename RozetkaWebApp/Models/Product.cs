@@ -11,7 +11,7 @@ namespace RozetkaWebApp.Models
         {
             Characteristics = new HashSet<Characteristic>();
             Comments = new HashSet<Comment>();
-            OrderDetails = new HashSet<OrderDetail>();
+            LineDetails = new HashSet<LineDetail>();
             ProductImages = new HashSet<ProductImage>();
             Views = new HashSet<View>();
         }
@@ -30,7 +30,7 @@ namespace RozetkaWebApp.Models
         public virtual Promotion Promotion { get; set; }
         public virtual ICollection<Characteristic> Characteristics { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<LineDetail> LineDetails { get; set; }
         public virtual ICollection<ProductImage> ProductImages { get; set; }
         public virtual ICollection<View> Views { get; set; }
     }

@@ -37,8 +37,10 @@ namespace RozetkaWebApp.Controllers
             return View(await _context.Products.Where(x => x.CatalogId == id || id == null).Include(x => x.Catalog).ToListAsync());
         }
 
-        public async Task<IActionResult> Characteristics(int? id)
+        public async Task<IActionResult> Characteristics(long? id)
+
         {
+            ViewBag.Product = _context.Products.Find(id);
             return View(await _context.Characteristics.Where(x => x.ProductId == id || id == null).Include(x => x.Product).Include(x => x.Property).ToListAsync());
         }
 

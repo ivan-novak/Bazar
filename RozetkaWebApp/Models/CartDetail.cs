@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace RozetkaWebApp.Models
 {
-    public partial class OrderDetail
+    public partial class CartDetail
     {
         public long OrderDatailId { get; set; }
         public long? OrderId { get; set; }

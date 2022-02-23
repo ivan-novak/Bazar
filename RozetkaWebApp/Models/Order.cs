@@ -9,7 +9,7 @@ namespace RozetkaWebApp.Models
     {
         public Order()
         {
-            OrderDetails = new HashSet<OrderDetail>();
+            LineDetails = new HashSet<LineDetail>();
         }
 
         public long OrderId { get; set; }
@@ -26,6 +26,6 @@ namespace RozetkaWebApp.Models
         public string ExtOrderNbr { get; set; }
 
         public virtual AspNetUser User { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<LineDetail> LineDetails { get; set; }
     }
 }

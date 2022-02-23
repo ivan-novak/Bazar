@@ -26,6 +26,7 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
+        public virtual DbSet<CartDetail> CartDetails { get; set; }
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
@@ -33,6 +34,7 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Filter> Filters { get; set; }
         public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<LineDetail> LineDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
@@ -189,6 +191,29 @@ namespace RozetkaWebApp.Data
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.AspNetUserTokens)
                     .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<CartDetail>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("CartDetail");
+
+                entity.Property(e => e.CartId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.CreateDate).HasColumnType("date");
+
+                entity.Property(e => e.ExtOrderDetailNbr).HasMaxLength(50);
+
+                entity.Property(e => e.OrderDatailId).ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Status).HasMaxLength(50);
+
+                entity.Property(e => e.UnitCost).HasColumnType("money");
+
+                entity.Property(e => e.UserId).HasMaxLength(450);
             });
 
             modelBuilder.Entity<Catalog>(entity =>
@@ -381,6 +406,41 @@ namespace RozetkaWebApp.Data
                 entity.Property(e => e.Title).HasMaxLength(50);
             });
 
+            modelBuilder.Entity<LineDetail>(entity =>
+            {
+                entity.HasKey(e => e.OrderDatailId)
+                    .HasName("PK_OrderDetail");
+
+                entity.ToTable("LineDetail");
+
+                entity.Property(e => e.CartId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("date")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.ExtOrderDetailNbr).HasMaxLength(50);
+
+                entity.Property(e => e.Status).HasMaxLength(50);
+
+                entity.Property(e => e.UnitCost).HasColumnType("money");
+
+                entity.Property(e => e.UserId).HasMaxLength(450);
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.LineDetails)
+                    .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_OrderDetail_Order");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.LineDetails)
+                    .HasForeignKey(d => d.ProductId)
+                    .HasConstraintName("FK_OrderDetail_Product");
+            });
+
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
@@ -419,26 +479,27 @@ namespace RozetkaWebApp.Data
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
-                entity.HasKey(e => e.OrderDatailId);
+                entity.HasNoKey();
 
-                entity.ToTable("OrderDetail");
+                entity.ToView("OrderDetail");
+
+                entity.Property(e => e.CartId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.CreateDate).HasColumnType("date");
 
                 entity.Property(e => e.ExtOrderDetailNbr).HasMaxLength(50);
+
+                entity.Property(e => e.OrderDatailId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Status).HasMaxLength(50);
 
                 entity.Property(e => e.UnitCost).HasColumnType("money");
 
-                entity.HasOne(d => d.Order)
-                    .WithMany(p => p.OrderDetails)
-                    .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK_OrderDetail_Order");
-
-                entity.HasOne(d => d.Product)
-                    .WithMany(p => p.OrderDetails)
-                    .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK_OrderDetail_Product");
+                entity.Property(e => e.UserId).HasMaxLength(450);
             });
+
 
             modelBuilder.Entity<Portal>(entity =>
             {

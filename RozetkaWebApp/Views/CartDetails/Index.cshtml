@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RozetkaWebApp.Models.LineDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Корзина</h1>
+
+ <p><a  class="btn btn-success" asp-action="Create" > Оформить заказ </a>   </p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+                Товар
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+               Цена за еденицу
+            </th>   
+            <th>
+               Дата
+            </th>  
+             <th>
+               Действия
+            </th> 
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>        
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Label)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitCost)
+            </td>       
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderDatailId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderDatailId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderDatailId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace RozetkaWebApp.Models
 {
-    public partial class OrderDetail
+    public partial class LineDetail
     {
         public long OrderDatailId { get; set; }
         public long? OrderId { get; set; }
@@ -17,5 +17,8 @@ namespace RozetkaWebApp.Models
         public string Status { get; set; }
         public string ExtOrderDetailNbr { get; set; }
         public DateTime? CreateDate { get; set; }
+
+        public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

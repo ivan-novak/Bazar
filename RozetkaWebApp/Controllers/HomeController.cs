@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -26,6 +27,17 @@ namespace RozetkaWebApp.Controllers
             return View(await _context.Portals.ToListAsync());
         }
 
+        public async Task<IActionResult> Carts()
+        {
+            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
+            var rozetkadbContext = _context.LineDetails
+                .Include(l => l.Order)
+                .Include(l => l.Product)
+                .Where(l => l.OrderId == null)
+                .Where(l => l.CartId == CartId() || (l.UserId == userid));
+            return View(await rozetkadbContext.ToListAsync());
+        }
+
 
         public async Task<IActionResult> Catalogs(int? id)
         {
@@ -48,6 +60,55 @@ namespace RozetkaWebApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> AddtoCart(long? id)
+        {
+
+
+            var lineDetail = new LineDetail();
+
+            lineDetail.CartId = CartId();
+            lineDetail.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            lineDetail.ProductId = (long)id;
+            lineDetail.Quantities = 1;
+            _context.Add(lineDetail);
+            await _context.SaveChangesAsync();
+            return Redirect($"/Home/Characteristics/" + id.ToString());
+        }
+
+        public string CartId()
+        {
+            if (!HttpContext.Request.Cookies.ContainsKey("cartId"))
+            {
+                var cartId = Guid.NewGuid().ToString();
+                HttpContext.Response.Cookies.Append("cartId", cartId);
+                return cartId;
+            }
+            return HttpContext.Request.Cookies["cartId"];
+        }
+
+        public IActionResult NewOrder()
+        {
+            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+            return View();
+        }
+
+        // POST: Orders/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> NewOrder([Bind("OrderId,UserId,Description,Total,OrderDate,Status,CardNumber,DeliveryAddress,DeliveryContact,DeliveryEmail,DeliveryPhone,ExtOrderNbr")] Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
+            return View(order);
         }
 
     }

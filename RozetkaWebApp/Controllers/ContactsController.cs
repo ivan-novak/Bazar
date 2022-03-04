@@ -163,6 +163,8 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userid == null) return Redirect($"/Identity/Account/Register");
             var contact = await _context.Contacts.FindAsync(id);
             _context.Contacts.Remove(contact);
             await _context.SaveChangesAsync();

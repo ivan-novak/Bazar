@@ -11,25 +11,25 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
-    public class ContactsController : Controller
+    public class AddressesController : Controller
     {
         private readonly RozetkadbContext _context;
 
-        public ContactsController(RozetkadbContext context)
+        public AddressesController(RozetkadbContext context)
         {
             _context = context;
         }
 
-        // GET: Contacts
+        // GET: Addresses
         public async Task<IActionResult> Index()
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
-            var rozetkadbContext = _context.Contacts.Include(a => a.User).Where(a => a.UserId == userid);
+            if(userid ==null) return Redirect($"/Identity/Account/Register");
+            var rozetkadbContext = _context.Addresses.Include(a => a.User).Where(a=>a.UserId == userid);
             return View(await rozetkadbContext.ToListAsync());
         }
 
-        // GET: Contacts/Details/5
+        // GET: Addresses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -39,18 +39,18 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var contact = await _context.Contacts
-                .Include(c => c.User)
-                .FirstOrDefaultAsync(m => m.ContactId == id);
-            if (contact == null)
+            var address = await _context.Addresses
+                .Include(a => a.User)
+                .FirstOrDefaultAsync(m => m.AddressId == id);
+            if (address == null)
             {
                 return NotFound();
             }
 
-            return View(contact);
+            return View(address);
         }
 
-        // GET: Contacts/Create
+        // GET: Addresses/Create
         public IActionResult Create()
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -59,27 +59,27 @@ namespace RozetkaWebApp.Controllers
             return View();
         }
 
-        // POST: Contacts/Create
+        // POST: Addresses/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ContactId,ContactType,FullName,DisplayName,Title,Salutation,Attention,FirstName,MidName,LastName,Email,WebSite,Fax,FaxType,Phone1,Phone1Type,Phone2,Phone2Type,Phone3,Phone3Type,DefAddressId,UserId,AssignDate,ExtAddressId")] Contact contact)
+        public async Task<IActionResult> Create([Bind("AddressId,AddressType,AddressLine1,AddressLine2,AddressLine3,UserId,City,State,PostalCode,Country,ExtAddressId")] Address address)
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userid == null) return Redirect($"/Identity/Account/Register");
             if (ModelState.IsValid)
             {
-                contact.UserId = userid;
-                _context.Add(contact);
+                address.UserId = userid;
+                _context.Add(address);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", contact.UserId);
-            return View(contact);
+            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", address.UserId);
+            return View(address);
         }
 
-        // GET: Contacts/Edit/5
+        // GET: Addresses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -89,25 +89,25 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var contact = await _context.Contacts.FindAsync(id);
-            if (contact == null)
+            var address = await _context.Addresses.FindAsync(id);
+            if (address == null)
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", contact.UserId);
-            return View(contact);
+            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", address.UserId);
+            return View(address);
         }
 
-        // POST: Contacts/Edit/5
+        // POST: Addresses/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ContactId,ContactType,FullName,DisplayName,Title,Salutation,Attention,FirstName,MidName,LastName,Email,WebSite,Fax,FaxType,Phone1,Phone1Type,Phone2,Phone2Type,Phone3,Phone3Type,DefAddressId,UserId,AssignDate,ExtAddressId")] Contact contact)
+        public async Task<IActionResult> Edit(int id, [Bind("AddressId,AddressType,AddressLine1,AddressLine2,AddressLine3,UserId,City,State,PostalCode,Country,ExtAddressId")] Address address)
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userid == null) return Redirect($"/Identity/Account/Register");
-            if (id != contact.ContactId)
+            if (id != address.AddressId)
             {
                 return NotFound();
             }
@@ -116,13 +116,13 @@ namespace RozetkaWebApp.Controllers
             {
                 try
                 {
-                    contact.UserId = userid;
-                    _context.Update(contact);
+                    address.UserId = userid;
+                    _context.Update(address);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ContactExists(contact.ContactId))
+                    if (!AddressExists(address.AddressId))
                     {
                         return NotFound();
                     }
@@ -133,11 +133,11 @@ namespace RozetkaWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", contact.UserId);
-            return View(contact);
+            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", address.UserId);
+            return View(address);
         }
 
-        // GET: Contacts/Delete/5
+        // GET: Addresses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -147,31 +147,31 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var contact = await _context.Contacts
-                .Include(c => c.User)
-                .FirstOrDefaultAsync(m => m.ContactId == id);
-            if (contact == null)
+            var address = await _context.Addresses
+                .Include(a => a.User)
+                .FirstOrDefaultAsync(m => m.AddressId == id);
+            if (address == null)
             {
                 return NotFound();
             }
 
-            return View(contact);
+            return View(address);
         }
 
-        // POST: Contacts/Delete/5
+        // POST: Addresses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var contact = await _context.Contacts.FindAsync(id);
-            _context.Contacts.Remove(contact);
+            var address = await _context.Addresses.FindAsync(id);
+            _context.Addresses.Remove(address);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ContactExists(int id)
+        private bool AddressExists(int id)
         {
-            return _context.Contacts.Any(e => e.ContactId == id);
+            return _context.Addresses.Any(e => e.AddressId == id);
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿@model RozetkaWebApp.Models.Contact
 
 @{
-    ViewData["Title"] = "Create";
+    ViewBag.ContactsTab = "active";
+    Html.RenderPartial("_ProfileNavigator");
 }
 
 <h1>Create</h1>

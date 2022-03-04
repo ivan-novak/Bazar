@@ -1,7 +1,8 @@
 ﻿@model RozetkaWebApp.Models.Contact
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewBag.ContactsTab = "active";
+    Html.RenderPartial("_ProfileNavigator");
 }
 
 <h1>Edit</h1>

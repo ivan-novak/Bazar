@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.Contact>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewBag.ContactsTab = "active";
+    Html.RenderPartial("_ProfileNavigator");
 }
 
 <h1>Index</h1>

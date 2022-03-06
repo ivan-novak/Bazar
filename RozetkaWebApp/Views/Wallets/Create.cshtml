@@ -5,52 +5,52 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Create</h1>
+ <p>
+     <h4> Новая карта </h4>
+ </p>
 
-<h4>Wallett</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
+
+             <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-success" />
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                    <hr />
+            </div> 
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CardNumber" class="control-label"></label>
+                <label asp-for="CardNumber" class="control-label">Номер карты</label>
                 <input asp-for="CardNumber" class="form-control" />
                 <span asp-validation-for="CardNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ExpiryDate" class="control-label"></label>
+                <label asp-for="ExpiryDate" class="control-label">Срок работы</label>
                 <input asp-for="ExpiryDate" class="form-control" />
                 <span asp-validation-for="ExpiryDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cardholder" class="control-label"></label>
+                <label asp-for="Cardholder" class="control-label">Имя владельца</label>
                 <input asp-for="Cardholder" class="form-control" />
                 <span asp-validation-for="Cardholder" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CardType" class="control-label"></label>
+                <label asp-for="CardType" class="control-label">Тип карты</label>
                 <input asp-for="CardType" class="form-control" />
                 <span asp-validation-for="CardType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VerificationCode" class="control-label"></label>
+                <label asp-for="VerificationCode" class="control-label">CVV код</label>
                 <input asp-for="VerificationCode" class="form-control" />
                 <span asp-validation-for="VerificationCode" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="UserId" class="control-label"></label>
                 <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

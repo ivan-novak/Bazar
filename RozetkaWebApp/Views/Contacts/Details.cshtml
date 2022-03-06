@@ -5,153 +5,107 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Details</h1>
+<p><h4>Информация о контакте</h4></p>
 
+
+    <div class="form-group">
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.ContactId"> Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ContactId"> Удалить </a>     
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+            <hr />
+      </div>   
 <div>
-    <h4>Contact</h4>
-    <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+       @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ContactType)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ContactType)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
+            Полное имя
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FullName)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DisplayName)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DisplayName)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+       @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+       @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Salutation)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Salutation)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+      @*  <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Attention)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Attention)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
+            Имя
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FirstName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MidName)
+            Отчество
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.MidName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
+            Фамилия
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LastName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+            Адрес электронной почты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WebSite)
+            Веб-сайт
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.WebSite)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fax)
+           Факс
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Fax)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FaxType)
+           Тип факса
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FaxType)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone1)
+            Мобильный телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Phone1)
-        </dd>
+        </dd>     
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone1Type)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone1Type)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone2)
+            Рабочий телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Phone2)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone2Type)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone2Type)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone3)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone3)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone3Type)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone3Type)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DefAddressId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DefAddressId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AssignDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AssignDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExtAddressId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ExtAddressId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd>
+        </dd>   
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ContactId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

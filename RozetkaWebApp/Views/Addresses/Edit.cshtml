@@ -5,75 +5,76 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Edit</h1>
+<p>
+     <h4> Изменить информацию о адресе </h4>
+ </p>
 
-<h4>Address</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Edit">
+            
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" />
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+                    <hr />
+            </div>
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AddressId" />
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="AddressType" class="control-label"></label>
                 <input asp-for="AddressType" class="form-control" />
                 <span asp-validation-for="AddressType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine1" class="control-label"></label>
+                <label asp-for="AddressLine1" class="control-label">Адрес</label>
                 <input asp-for="AddressLine1" class="form-control" />
                 <span asp-validation-for="AddressLine1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine2" class="control-label"></label>
+ @*               <label asp-for="AddressLine2" class="control-label">Дом, номер квартиры</label>*@
                 <input asp-for="AddressLine2" class="form-control" />
                 <span asp-validation-for="AddressLine2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine3" class="control-label"></label>
+@*                <label asp-for="AddressLine3" class="control-label">Дополнительно</label>*@
                 <input asp-for="AddressLine3" class="form-control" />
                 <span asp-validation-for="AddressLine3" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="UserId" class="control-label"></label>
                 <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
+                <label asp-for="City" class="control-label">Город</label>
                 <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
+                <label asp-for="State" class="control-label">Область</label>
                 <input asp-for="State" class="form-control" />
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PostalCode" class="control-label"></label>
+                <label asp-for="PostalCode" class="control-label">Почтовый индекс</label>
                 <input asp-for="PostalCode" class="form-control" />
                 <span asp-validation-for="PostalCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
+                <label asp-for="Country" class="control-label">Страна</label>
                 <input asp-for="Country" class="form-control" />
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="ExtAddressId" class="control-label"></label>
                 <input asp-for="ExtAddressId" class="form-control" />
                 <span asp-validation-for="ExtAddressId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

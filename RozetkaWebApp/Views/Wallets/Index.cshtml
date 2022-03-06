@@ -5,38 +5,26 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+ <p><h4>Список платежных карт</h4></p>
+
+ <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CardNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExpiryDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cardholder)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CardType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VerificationCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
+        <tr> 
+             <th> Тип карты </th>   
+            <th> Номер карты </th>        
+            <th> Срок действия </th>    
+            <th> Имя владельца </th>                    
+            <th class="text-right"> Действия</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardType)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CardNumber)
             </td>
@@ -45,20 +33,11 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cardholder)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VerificationCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.WalletId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.WalletId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.WalletId">Delete</a>
+            </td>         
+            <td class="text-right">
+                <a asp-action="Details" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-action="Edit" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
 }

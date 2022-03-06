@@ -5,61 +5,59 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Details</h1>
-
+ <p>
+   <h4> Информация о адресе</h4>
+ <p>
+         <div class="form-group">
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.AddressId"> Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.AddressId"> Удалить </a>     
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+            <hr />
+      </div>   
 <div>
-    <h4>Address</h4>
-    <hr />
-    <dl class="row">
+
+    <dl class="row">      
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AddressType)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AddressType)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AddressLine1)
+           Адрес
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AddressLine1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AddressLine2)
-        </dt>
+         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AddressLine2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AddressLine3)
-        </dt>
+         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AddressLine3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.City)
+            Город
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.City)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.State)
+            Область
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.State)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PostalCode)
+            Почтовый индекс
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PostalCode)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Country)
+            Страна
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Country)
         </dd>
-        <dt class = "col-sm-2">
+@*        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ExtAddressId)
         </dt>
         <dd class = "col-sm-10">
@@ -70,10 +68,7 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.User.Id)
-        </dd>
+        </dd class>*@
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.AddressId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

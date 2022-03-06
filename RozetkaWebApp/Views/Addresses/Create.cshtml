@@ -5,66 +5,69 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Create</h1>
-
-<h4>Address</h4>
-<hr />
+  <p>
+     <h4> Новый адрес </h4>
+ </p>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+
+             <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-success" />
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                    <hr />
+            </div> 
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="display: none"></div>
+            <div class="form-group" style="display: none">
                 <label asp-for="AddressType" class="control-label"></label>
                 <input asp-for="AddressType" class="form-control" />
                 <span asp-validation-for="AddressType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine1" class="control-label"></label>
+                <label asp-for="AddressLine1" class="control-label">Адрес</label>
                 <input asp-for="AddressLine1" class="form-control" />
                 <span asp-validation-for="AddressLine1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine2" class="control-label"></label>
+                @*<label asp-for="AddressLine2" class="control-label">Дом, номер квартиры</label>*@
                 <input asp-for="AddressLine2" class="form-control" />
                 <span asp-validation-for="AddressLine2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine3" class="control-label"></label>
+                @*<label asp-for="AddressLine3" class="control-label">Дополнительно</label>*@
                 <input asp-for="AddressLine3" class="form-control" />
                 <span asp-validation-for="AddressLine3" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
+            <div class="form-group" style="display: none">
+                <label asp-for="UserId" class="control-label" ></label>
                 <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
+                <label asp-for="City" class="control-label">Город</label>
                 <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
+                <label asp-for="State" class="control-label">Область</label>
                 <input asp-for="State" class="form-control" />
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PostalCode" class="control-label"></label>
+                <label asp-for="PostalCode" class="control-label">Почтовый индекс</label>
                 <input asp-for="PostalCode" class="form-control" />
                 <span asp-validation-for="PostalCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
+                <label asp-for="Country" class="control-label">Страна</label>
                 <input asp-for="Country" class="form-control" />
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ExtAddressId" class="control-label"></label>
+            <div class="form-group" style="display: none">
+                <label asp-for="ExtAddressId" class="control-label" ></label>
                 <input asp-for="ExtAddressId" class="form-control" />
                 <span asp-validation-for="ExtAddressId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+      
         </form>
     </div>
 </div>

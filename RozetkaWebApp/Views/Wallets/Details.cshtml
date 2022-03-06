@@ -4,52 +4,46 @@
     ViewBag.WalletsTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
+<p><h4>Информация о платежной карте</h4></p>
 
-<h1>Details</h1>
-
+    <div class="form-group">
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.WalletId"> Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.WalletId"> Удалить </a>     
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+            <hr />
+      </div>   
 <div>
-    <h4>Wallett</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CardNumber)
+           Номер карты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CardNumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExpiryDate)
+            Срок работы
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ExpiryDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cardholder)
+           Владедец карты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Cardholder)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CardType)
+            Тип карты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CardType)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.VerificationCode)
+            CVV-код
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.VerificationCode)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd>
+        </dd>      
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.WalletId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

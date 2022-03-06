@@ -5,84 +5,41 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Index</h1>
+ <p><h4>Список адресов доставки</h4></p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+ <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
+
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressLine1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressLine2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AddressLine3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Country)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExtAddressId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
+        <tr> 
+            <th> ID </th>        
+            <th> Улица, дом, квартира </th>        
+            <th> Город </th>
+            <th>Почтовый индекс </th>
+            <th class="text-right"> Действия</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AddressType)
+                @Html.DisplayFor(modelItem => item.AddressId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AddressLine1)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.AddressLine2)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.AddressLine3)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PostalCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExtAddressId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AddressId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AddressId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AddressId">Delete</a>
+            </td>                      
+            <td class="text-right">
+                <a asp-action="Details" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-action="Edit" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
 }

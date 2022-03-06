@@ -1,4 +1,9 @@
 ﻿@{
+    ViewBag.PersonalTab = "active";
+    Html.RenderPartial("_ProfileNavigator");
+}
+
+@{
     if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
     {
         Layout = (string)parentLayout;
@@ -9,10 +14,10 @@
     }
 }
 
-<h2>Manage your account</h2>
+<p><h4>Управление учетной записью</h4></p>
 
 <div>
-    <h4>Change your account settings</h4>
+@*    <h4>Change your account settings</h4>*@
     <hr />
     <div class="row">
         <div class="col-md-3">

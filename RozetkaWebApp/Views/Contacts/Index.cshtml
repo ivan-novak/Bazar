@@ -5,162 +5,44 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+ <p><h4>Список контактов</h4></p>
+
+ <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
+
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ContactType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DisplayName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Salutation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Attention)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MidName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WebSite)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fax)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FaxType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone1Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone2Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone3)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone3Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DefAddressId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AssignDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExtAddressId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th></th>
+        <tr> 
+            <th> ID </th>     
+            <th> Полное имя </th>        
+            <th> Адрес электронной почты </th>    
+            <th> Факс </th>          
+            <th> Мобильный телефон </th>          
+            <th class="text-right"> Действия</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactType)
+             <td>
+                @Html.DisplayFor(modelItem => item.ContactId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Salutation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Attention)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MidName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
+            </td>                   
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WebSite)
-            </td>
+            </td>         
             <td>
                 @Html.DisplayFor(modelItem => item.Fax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FaxType)
-            </td>
+            </td>          
             <td>
                 @Html.DisplayFor(modelItem => item.Phone1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone1Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone2Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone3)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone3Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DefAddressId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssignDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExtAddressId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ContactId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ContactId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ContactId">Delete</a>
+            </td>          
+            <td class="text-right">
+                <a asp-action="Details" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-action="Edit" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
 }

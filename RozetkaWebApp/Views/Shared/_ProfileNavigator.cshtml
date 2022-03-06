@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] ="Реквезиты";
+    ViewData["Title"] ="Реквизиты";
 }
     <p> 
-         <a asp-controller = "Portals" asp-action="Index" > Профиль </a> >
+         <a asp-controller = "Portals" asp-action="Index" > Персональные данные </a> >
         @* <a asp-controller = "Portals" asp-action="Details" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a>*@ 
     </p>
 
@@ -10,7 +10,7 @@
 
 
         <ul class="nav nav-tabs">
-          @*  <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Catalogs/Index/@ViewBag.Portal.PortalId">Персональные данные</a> </li>*@
+            <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage">Учетная запись</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.AddressesTab" href="/Addresses/Index">Адреса доставки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index">Контакты</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index">Кошельки</a> </li>

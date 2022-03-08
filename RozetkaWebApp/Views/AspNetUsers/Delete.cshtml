@@ -1,0 +1,53 @@
+﻿@model RozetkaWebApp.Models.AspNetUser
+
+@{
+    ViewData["Title"] ="Аккаунт - "+@Model.UserName;
+}
+
+ <p> 
+        <h4>Вы хотиту удалить этот аккаунт?</h4>
+    </p>
+
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+         <hr />
+    </form>
+<div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Имя пользователя
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+      
+        <dt class = "col-sm-2">
+            Адрес электронной почты
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    
+       
+        <dt class = "col-sm-2">
+            Телефон
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+       
+       
+        <dt class = "col-sm-2">
+            Блокировка
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LockoutEnabled)
+        </dd>
+       
+    </dl>
+    
+</div>

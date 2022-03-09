@@ -8,7 +8,7 @@
 
  <p><h4>Список платежных карт</h4></p>
 
- <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> Добавить новую </a>   </p>
 <table class="table">
     <thead>
         <tr> 
@@ -26,7 +26,9 @@
                 @Html.DisplayFor(modelItem => item.CardType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CardNumber)
+                 <a asp-action="Details" asp-route-id="@item.WalletId">
+                      @Html.DisplayFor(modelItem => item.CardNumber)
+                </a> 
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ExpiryDate)

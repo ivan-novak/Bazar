@@ -41,6 +41,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            
 
             Username = userName;
 
@@ -48,6 +49,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             {
                 PhoneNumber = phoneNumber
             };
+            ViewData["User"] = user;
         }
 
         public async Task<IActionResult> OnGetAsync()

@@ -60,6 +60,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             };
 
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
+            ViewData["User"] = user;
         }
 
         public async Task<IActionResult> OnGetAsync()

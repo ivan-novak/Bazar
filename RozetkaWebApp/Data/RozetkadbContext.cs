@@ -26,7 +26,6 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
-        public virtual DbSet<CartDetail> CartDetails { get; set; }
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<CatalogImage> CatalogImages { get; set; }
         public virtual DbSet<Characteristic> Characteristics { get; set; }
@@ -36,7 +35,6 @@ namespace RozetkaWebApp.Data
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<LineDetail> LineDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Portal> Portals { get; set; }
         public virtual DbSet<PortalImage> PortalImages { get; set; }
         public virtual DbSet<Product> Products { get; set; }
@@ -191,29 +189,6 @@ namespace RozetkaWebApp.Data
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.AspNetUserTokens)
                     .HasForeignKey(d => d.UserId);
-            });
-
-            modelBuilder.Entity<CartDetail>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("CartDetail");
-
-                entity.Property(e => e.CartId)
-                    .IsRequired()
-                    .HasMaxLength(450);
-
-                entity.Property(e => e.CreateDate).HasColumnType("date");
-
-                entity.Property(e => e.ExtOrderDetailNbr).HasMaxLength(50);
-
-                entity.Property(e => e.OrderDatailId).ValueGeneratedOnAdd();
-
-                entity.Property(e => e.Status).HasMaxLength(50);
-
-                entity.Property(e => e.UnitCost).HasColumnType("money");
-
-                entity.Property(e => e.UserId).HasMaxLength(450);
             });
 
             modelBuilder.Entity<Catalog>(entity =>
@@ -477,11 +452,11 @@ namespace RozetkaWebApp.Data
                     .HasConstraintName("FK_Order_AspNetUsers");
             });
 
-            modelBuilder.Entity<OrderDetail>(entity =>
+            modelBuilder.Entity<OrderDetail1>(entity =>
             {
                 entity.HasNoKey();
 
-                entity.ToView("OrderDetail");
+                entity.ToView("OrderDetail1");
 
                 entity.Property(e => e.CartId)
                     .IsRequired()
@@ -499,7 +474,6 @@ namespace RozetkaWebApp.Data
 
                 entity.Property(e => e.UserId).HasMaxLength(450);
             });
-
 
             modelBuilder.Entity<Portal>(entity =>
             {

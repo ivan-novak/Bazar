@@ -1,17 +1,30 @@
 ﻿@{
-    ViewData["Title"] =@User.Identity.Name;
+     ViewData["Title"] = "Пользователь - "+ViewBag.User.UserName;
+    if (ViewBag.User.UserName != User.Identity.Name)
+    {
+        <p>  
+            <a asp-controller = "Portals" asp-action="Index" > Администрирование </a> >
+            <a asp-controller = "AspNetUsers" asp-action="Index" > Пользователи </a> 
+        </p>
+    }
+    else
+    {              
+         <p>        
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" > Персональные данные </a> >
+         </p>
+    }
 }
-    <p> 
-         <a asp-controller = "Portals" asp-action="Index" > Персональные данные </a> >
-        @* <a asp-controller = "Portals" asp-action="Details" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a>*@ 
-    </p>
-
     <h1>@ViewData["Title"]</h1>
 
-
         <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage">Учетная запись</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.AddressesTab" href="/Addresses/Index">Адреса доставки</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index">Контакты</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index">Кошельки</a> </li>
+            @if(ViewBag.User.UserName == User.Identity.Name) 
+            {
+                <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage/">Учетная запись</a> </li>
+            }
+            <li class="nav-item">  <a class="nav-link @ViewBag.AddressesTab" href="/Addresses/Index/@ViewBag.User.Id">Адреса доставки</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index/@ViewBag.User.Id">Контакты</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index/@ViewBag.User.Id">Кошельки</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.OrdersTab" href="/Orders/Index/@ViewBag.User.Id">Покупки</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ViewsTab" href="/Views/Index/@ViewBag.User.Id">Просмотры</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.CommetsTab" href="/Wallets/Index/@ViewBag.User.Id">Отзывы</a> </li>
         </ul>

@@ -21,41 +21,39 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Walletts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
-            var rozetkadbContext = _context.Walletts.Include(a => a.User).Where(a => a.UserId == userid);
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["User"] = _context.AspNetUsers.Find(id);
+            var rozetkadbContext = _context.Walletts.Include(a => a.User).Where(a => a.UserId == id);
             return View(await rozetkadbContext.ToListAsync());
         }
 
         // GET: Walletts/Details/5
         public async Task<IActionResult> Details(long? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
+           
             if (id == null)
             {
                 return NotFound();
             }
 
             var wallett = await _context.Walletts
-                .Include(w => w.User).Where(a => a.UserId == userid)
+                .Include(w => w.User)
                 .FirstOrDefaultAsync(m => m.WalletId == id);
             if (wallett == null)
             {
                 return NotFound();
             }
-
+            ViewData["User"] = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
         }
 
         // GET: Walletts/Create
-        public IActionResult Create()
+        public IActionResult Create(string id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["User"] = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -68,22 +66,16 @@ namespace RozetkaWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-                if (userid == null) return Redirect($"/Identity/Account/Register");
-                wallett.UserId = userid;
                 _context.Add(wallett);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Wallets/Index/" + wallett.UserId);
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", wallett.UserId);
-            return View(wallett);
+            return Redirect($"/Wallets/Index/" + wallett.UserId);
         }
 
         // GET: Walletts/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id == null)
             {
                 return NotFound();
@@ -94,7 +86,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", wallett.UserId);
+            ViewData["User"] = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
         }
 
@@ -105,8 +97,6 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("WalletId,CardNumber,ExpiryDate,Cardholder,CardType,VerificationCode,UserId")] Wallett wallett)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id != wallett.WalletId)
             {
                 return NotFound();
@@ -116,7 +106,6 @@ namespace RozetkaWebApp.Controllers
             {
                 try
                 {
-                    wallett.UserId = userid;
                     _context.Update(wallett);
                     await _context.SaveChangesAsync();
                 }
@@ -131,17 +120,14 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Wallets/Index/" + wallett.UserId);
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", wallett.UserId);
-            return View(wallett);
+            return Redirect($"/Wallets/Index/" + wallett.UserId);
         }
 
         // GET: Walletts/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id == null)
             {
                 return NotFound();
@@ -154,8 +140,9 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["User"] = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
+
         }
 
         // POST: Walletts/Delete/5
@@ -166,7 +153,7 @@ namespace RozetkaWebApp.Controllers
             var wallett = await _context.Walletts.FindAsync(id);
             _context.Walletts.Remove(wallett);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/Wallets/Index/" + wallett.UserId);
         }
 
         private bool WallettExists(long id)

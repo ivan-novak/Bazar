@@ -1,7 +1,7 @@
 ﻿@model RozetkaWebApp.Models.AspNetUser
-
-@{
-    ViewData["Title"] ="Аккаунт - "+@Model.UserName;
+ @{
+    ViewBag.UsersTab = "active";
+    Html.RenderPartial("_RootNavigator");
 }
 
  <p> 

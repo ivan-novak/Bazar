@@ -27,7 +27,7 @@ namespace RozetkaWebApp.Models
         public string Phone2Type { get; set; }
         public string Phone3 { get; set; }
         public string Phone3Type { get; set; }
-        public int DefAddressId { get; set; }
+        public int? DefAddressId { get; set; }
         public string UserId { get; set; }
         public DateTime? AssignDate { get; set; }
         public int? ExtAddressId { get; set; }

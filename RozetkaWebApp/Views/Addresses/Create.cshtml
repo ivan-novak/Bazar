@@ -9,7 +9,7 @@
      <h4> Новый адрес </h4>
  </p>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <form asp-action="Create">
 
              <div class="form-group">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group" style="display: none">
                 <label asp-for="UserId" class="control-label" ></label>
-                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+                 <input asp-for="UserId" class="form-control" value=@ViewBag.User.Id />
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label">Город</label>

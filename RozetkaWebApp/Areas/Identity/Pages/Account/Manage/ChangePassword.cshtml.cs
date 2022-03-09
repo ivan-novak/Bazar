@@ -22,7 +22,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _logger = logger;
+            _logger = logger;           
         }
 
         [BindProperty]
@@ -63,7 +63,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             {
                 return RedirectToPage("./SetPassword");
             }
-
+            ViewData["User"] = user;
             return Page();
         }
 
@@ -75,6 +75,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             }
 
             var user = await _userManager.GetUserAsync(User);
+            ViewData["User"] = user;
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");

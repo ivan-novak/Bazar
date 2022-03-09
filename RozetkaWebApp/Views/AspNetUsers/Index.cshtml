@@ -7,7 +7,7 @@
   
 <p><h4>Список пользователей</h4></p>
        
- <p><a  class="btn btn-success" href="/Identity/Account/Register"> Добавить пользователя </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
 
 
 
@@ -26,7 +26,18 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.UserName)
+                @if (item.UserName == User.Identity.Name) 
+                {
+                   <a href="/Identity/Account/Manage"> 
+                       @Html.DisplayFor(modelItem => item.UserName)
+                   </a>
+                }
+                else
+                {
+                   <a href="/Addresses/Index/@item.Id">                
+                      @Html.DisplayFor(modelItem => item.UserName)
+                   </a> 
+                }
             </td>
 
             <td>
@@ -38,8 +49,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LockoutEnabled)
             <td class="text-right">
-                <a href="/Identity/Account/Manage"><i class="fas fa-solid fa-pen-square"></i></a> |
-                <a href="/Identity/Account/Manage" ><i class="fas fa-solid fa-folder"></i></a> |
+                @if (item.UserName == User.Identity.Name) 
+                {
+                   <a href="/Identity/Account/Manage"><i class="fas fa-solid fa-pen-square"></i> </a> <i>|</i>
+                }
+                <a href="/Addresses/Index/@item.Id" ><i class="fas fa-solid fa-folder"></i></a> |
                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>

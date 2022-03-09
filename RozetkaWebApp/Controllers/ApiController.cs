@@ -154,7 +154,7 @@ namespace RozetkaWebApp.Controllers
         public async Task<ActionResult<IEnumerable<iOrderDetail>>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
         {
             orderBy = orderBy.ToUpper();
-            var query = _context.OrderDetails.Select(x => x);
+            var query = _context.LineDetails.Select(x => x);
             if (orderDetailId != null) query = query.Where(x => x.OrderDatailId == orderDetailId);
             if (orderId != null) query = query.Where(x => x.OrderId == orderId);
             if (orderBy == "ORDERID") query = query.OrderByDescending(x => x.OrderId);

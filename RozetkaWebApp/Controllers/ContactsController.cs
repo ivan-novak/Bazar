@@ -21,19 +21,18 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Contacts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
-            var rozetkadbContext = _context.Contacts.Include(a => a.User).Where(a => a.UserId == userid);
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["User"] = _context.AspNetUsers.Find(id);
+            var rozetkadbContext = _context.Contacts.Include(a => a.User).Where(a => a.UserId == id);
             return View(await rozetkadbContext.ToListAsync());
         }
 
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
+           
             if (id == null)
             {
                 return NotFound();
@@ -46,16 +45,15 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["User"] = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
 
         // GET: Contacts/Create
-        public IActionResult Create()
+        public IActionResult Create(string id = null)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["User"] = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -66,24 +64,19 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ContactId,ContactType,FullName,DisplayName,Title,Salutation,Attention,FirstName,MidName,LastName,Email,WebSite,Fax,FaxType,Phone1,Phone1Type,Phone2,Phone2Type,Phone3,Phone3Type,DefAddressId,UserId,AssignDate,ExtAddressId")] Contact contact)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (ModelState.IsValid)
             {
-                contact.UserId = userid;
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Contacts/Index/" + contact.UserId);
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", contact.UserId);
-            return View(contact);
+            return Redirect($"/Contacts/Index/" + contact.UserId);
+
         }
 
         // GET: Contacts/Edit/5
         public async Task<IActionResult> Edit(int? id)
-        {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
+        {           
             if (id == null)
             {
                 return NotFound();
@@ -94,7 +87,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", contact.UserId);
+            ViewData["User"] = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
 
@@ -105,8 +98,7 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ContactId,ContactType,FullName,DisplayName,Title,Salutation,Attention,FirstName,MidName,LastName,Email,WebSite,Fax,FaxType,Phone1,Phone1Type,Phone2,Phone2Type,Phone3,Phone3Type,DefAddressId,UserId,AssignDate,ExtAddressId")] Contact contact)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
+           
             if (id != contact.ContactId)
             {
                 return NotFound();
@@ -116,7 +108,6 @@ namespace RozetkaWebApp.Controllers
             {
                 try
                 {
-                    contact.UserId = userid;
                     _context.Update(contact);
                     await _context.SaveChangesAsync();
                 }
@@ -131,17 +122,15 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Contacts/Index/" + contact.UserId);
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", contact.UserId);
-            return View(contact);
+            return Redirect($"/Contacts/Index/" + contact.UserId);
+
         }
 
         // GET: Contacts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id == null)
             {
                 return NotFound();
@@ -154,7 +143,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["User"] = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
 
@@ -163,12 +152,10 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             var contact = await _context.Contacts.FindAsync(id);
             _context.Contacts.Remove(contact);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/Contacts/Index/" + contact.UserId);
         }
 
         private bool ContactExists(int id)

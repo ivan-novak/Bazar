@@ -21,19 +21,19 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Addresses
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if(userid ==null) return Redirect($"/Identity/Account/Register");
-            var rozetkadbContext = _context.Addresses.Include(a => a.User).Where(a=>a.UserId == userid);
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["User"] = _context.AspNetUsers.Find(id);
+            var rozetkadbContext = _context.Addresses.Include(a => a.User).Where(a=>a.UserId == id);
             return View(await rozetkadbContext.ToListAsync());
         }
 
         // GET: Addresses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
+            //var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id == null)
             {
                 return NotFound();
@@ -46,16 +46,15 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["User"] = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
 
         // GET: Addresses/Create
-        public IActionResult Create()
+        public IActionResult Create(string id = null)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewData["User"] = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -66,24 +65,18 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AddressId,AddressType,AddressLine1,AddressLine2,AddressLine3,UserId,City,State,PostalCode,Country,ExtAddressId")] Address address)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (ModelState.IsValid)
             {
-                address.UserId = userid;
                 _context.Add(address);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Addresses/Index/" + address.UserId);
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", address.UserId);
-            return View(address);
+            return Redirect($"/Addresses/Index/" + address.UserId);
         }
 
         // GET: Addresses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id == null)
             {
                 return NotFound();
@@ -94,7 +87,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", address.UserId);
+            ViewData["User"] = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
 
@@ -105,8 +98,6 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AddressId,AddressType,AddressLine1,AddressLine2,AddressLine3,UserId,City,State,PostalCode,Country,ExtAddressId")] Address address)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id != address.AddressId)
             {
                 return NotFound();
@@ -116,7 +107,6 @@ namespace RozetkaWebApp.Controllers
             {
                 try
                 {
-                    address.UserId = userid;
                     _context.Update(address);
                     await _context.SaveChangesAsync();
                 }
@@ -131,17 +121,14 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Addresses/Index/" + address.UserId);
             }
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", address.UserId);
-            return View(address);
+            return Redirect($"/Addresses/Index/" + address.UserId);
         }
 
         // GET: Addresses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (userid == null) return Redirect($"/Identity/Account/Register");
             if (id == null)
             {
                 return NotFound();
@@ -154,7 +141,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["User"] = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
 
@@ -166,7 +153,7 @@ namespace RozetkaWebApp.Controllers
             var address = await _context.Addresses.FindAsync(id);
             _context.Addresses.Remove(address);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/Addresses/Index/" + address.UserId);
         }
 
         private bool AddressExists(int id)

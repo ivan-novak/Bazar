@@ -16,7 +16,7 @@ namespace RozetkaWebApp.Models
         public string UserId { get; set; }
         public string Description { get; set; }
         public decimal Total { get; set; }
-        public DateTime OrderDate { get; set; }
+        public DateTime OrderDate { get; set; } = System.DateTime.Today;
         public string Status { get; set; }
         public string CardNumber { get; set; }
         public string DeliveryAddress { get; set; }

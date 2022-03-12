@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RozetkaWebApp.Models
 {
@@ -181,6 +182,18 @@ namespace RozetkaWebApp.Models
 
     public partial class Address : iAddress
     {
+        public string FullAddress { get { return String.Join(",", new List<string>() { AddressLine1 + " " + AddressLine2 + " " + AddressLine3, City, State, PostalCode }); } }
+
+    }
+
+    public interface iLineDetail
+    {
+        
+    }
+
+    public partial class LineDetail : iLineDetail
+    {
+        public decimal LineTotal { get { return Quantities * UnitCost; } }
     }
 
 

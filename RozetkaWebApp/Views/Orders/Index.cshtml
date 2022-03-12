@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RozetkaWebApp.Models.Order>
+
+@{
+    ViewBag.OrdersTab = "active";
+    Html.RenderPartial("_ProfileNavigator");
+}
+ <p><h4>Список заказов</h4></p>
+
+ <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> Добавить новый </a>   </p>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Описание
+            </th>
+            <th>
+                Сумма
+            </th>
+            <th>
+               Дата заказа
+            </th>
+@*            <th>
+                Статус
+            </th>  *@       
+          <th>
+                Адрес доставки
+            </th>
+           
+  @*            <th>
+               Телефон получателя
+            </th>  *@                    
+            <th>
+                Действия
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>  *@       
+        <td>
+                @Html.DisplayFor(modelItem => item.DeliveryAddress)
+            </td>                   
+ @*               <td>
+                @Html.DisplayFor(modelItem => item.DeliveryPhone)
+            </td>*@           
+            <td class="text-right">
+                <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RozetkaWebApp.Models.AspNetRole>
+
+ @{
+    ViewBag.ManagerTab = "active";
+    Html.RenderPartial("_RootNavigator");
+}
+  
+
+ <p><h4>Список ролей</h4></p>
+       
+ <p><a  class="btn btn-success" asp-action="Create" > Добавить новую </a>   </p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Название
+            </th>
+
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+               <a asp-controller="AspNetUserRoles" asp-action="Index" asp-route-id="@item.Id">
+ 
+                @Html.DisplayFor(modelItem => item.Name)</a>
+            </td>          
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

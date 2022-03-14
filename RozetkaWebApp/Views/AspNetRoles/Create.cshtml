@@ -1,0 +1,50 @@
+﻿@model RozetkaWebApp.Models.AspNetRole
+
+@{
+    ViewBag.ManagerTab = "active";
+    Html.RenderPartial("_RootNavigator");
+}
+
+  <p>
+     <h4> Новая роль </h4>
+ </p>
+<div class="row">
+    <div class="col-md-4">
+
+
+
+        <form asp-action="Create">
+                     <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-success" />
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                    <hr />
+            </div> 
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group"  style="display: none">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" value="@Guid.NewGuid().ToString()"/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Название</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group"  style="display: none">
+                <label asp-for="NormalizedName" class="control-label"></label>
+                <input asp-for="NormalizedName" class="form-control" />
+                <span asp-validation-for="NormalizedName" class="text-danger"></span>
+            </div>
+            <div class="form-group"  style="display: none">
+                <label asp-for="ConcurrencyStamp" class="control-label"></label>
+                <input asp-for="ConcurrencyStamp" class="form-control" />
+                <span asp-validation-for="ConcurrencyStamp" class="text-danger"></span>
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

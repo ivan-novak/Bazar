@@ -57,7 +57,7 @@ namespace RozetkaWebApp.Controllers
             }
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
 
-            return View(order);
+            return Redirect($"/Orders/Index/" + order.UserId);
         }
 
         // GET: Orders/Create
@@ -112,10 +112,10 @@ namespace RozetkaWebApp.Controllers
                 }
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Orders/Index/" + order.UserId);
             }
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
-            return View(order);
+            return Redirect($"/Orders/Index/" + order.UserId);
         }
 
         // GET: Orders/Edit/5
@@ -166,7 +166,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Orders/Index/" + order.UserId);
             }
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             return Redirect($"/Orders/Index/" + order.UserId);
@@ -188,7 +188,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
-            return View(order);
+            return Redirect($"/Orders/Index/" + order.UserId);
         }
 
         // POST: Orders/Delete/5

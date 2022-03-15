@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.CreateDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.OrderDatailId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OrderDatailId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderDatailId">Delete</a>
+                <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
 }

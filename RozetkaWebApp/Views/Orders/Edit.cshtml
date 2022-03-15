@@ -14,57 +14,57 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="OrderId" />
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="UserId" class="control-label"></label>
                 <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+            <div class="form-group" >
+                <label asp-for="Description" class="control-label">Описание</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Total" class="control-label"></label>
+                <label asp-for="Total" class="control-label">Сумма заказа</label>
                 <input asp-for="Total" class="form-control" />
                 <span asp-validation-for="Total" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="OrderDate" class="control-label"></label>
                 <input asp-for="OrderDate" class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
+                <label asp-for="Status" class="control-label">Статус</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="CardNumber" class="control-label"></label>
                 <input asp-for="CardNumber" class="form-control" />
                 <span asp-validation-for="CardNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="DeliveryAddress" class="control-label"></label>
                 <input asp-for="DeliveryAddress" class="form-control" />
                 <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="DeliveryContact" class="control-label"></label>
                 <input asp-for="DeliveryContact" class="form-control" />
                 <span asp-validation-for="DeliveryContact" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryEmail" class="control-label"></label>
+                <label asp-for="DeliveryEmail" class="control-label">Адрес электронной почты заказчика</label>
                 <input asp-for="DeliveryEmail" class="form-control" />
                 <span asp-validation-for="DeliveryEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryPhone" class="control-label"></label>
+                <label asp-for="DeliveryPhone" class="control-label">Телефон заказчика</label>
                 <input asp-for="DeliveryPhone" class="form-control" />
                 <span asp-validation-for="DeliveryPhone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="ExtOrderNbr" class="control-label"></label>
                 <input asp-for="ExtOrderNbr" class="form-control" />
                 <span asp-validation-for="ExtOrderNbr" class="text-danger"></span>

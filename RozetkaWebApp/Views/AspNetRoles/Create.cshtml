@@ -6,18 +6,15 @@
 }
 
   <p>
-     <h4> Новая роль </h4>
+     <h4> Новая группы безопасности </h4>
  </p>
 <div class="row">
     <div class="col-md-4">
-
-
-
         <form asp-action="Create">
-                     <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
-                    <hr />
+                <hr />
             </div> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group"  style="display: none">
@@ -30,8 +27,8 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group"  style="display: none">
-                <label asp-for="NormalizedName" class="control-label"></label>
+            <div class="form-group" >
+                <label asp-for="NormalizedName" class="control-label">Индикатор</label>
                 <input asp-for="NormalizedName" class="form-control" />
                 <span asp-validation-for="NormalizedName" class="text-danger"></span>
             </div>

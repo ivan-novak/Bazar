@@ -4,13 +4,18 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+     <p></p>
+        <h4> Информация о товаре</h4>
+     <p></p>
 <div>
-    <h4>LineDetail</h4>
-    <hr />
+    <div class="form-group">
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.OrderDatailId"> Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.OrderDatailId"> Удалить </a>     
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+            <hr />
+      </div>   
     <dl class="row">
-        <dt class = "col-sm-2">
+       @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.UserId)
         </dt>
         <dd class = "col-sm-10">
@@ -21,20 +26,20 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CartId)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantities)
+            Количество
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Quantities)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UnitCost)
+            Цена
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UnitCost)
         </dd>
-        <dt class = "col-sm-2">
+       @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Status)
         </dt>
         <dd class = "col-sm-10">
@@ -57,7 +62,7 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Order.DeliveryAddress)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Product)
         </dt>
@@ -66,7 +71,4 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.OrderDatailId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

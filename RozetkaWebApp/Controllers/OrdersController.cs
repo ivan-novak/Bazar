@@ -57,7 +57,7 @@ namespace RozetkaWebApp.Controllers
             }
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
 
-            return Redirect($"/Orders/Index/" + order.UserId);
+            return View(order);
         }
 
         // GET: Orders/Create
@@ -188,7 +188,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
-            return Redirect($"/Orders/Index/" + order.UserId);
+            return View(order);
         }
 
         // POST: Orders/Delete/5

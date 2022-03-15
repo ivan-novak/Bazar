@@ -7,7 +7,7 @@
 
 
 <p> 
-        <h4>Изменить роль</h4>
+        <h4>Изменить группу безопасности</h4>
 </p>  
 <div class="row">
     <div class="col-md-4">
@@ -26,8 +26,8 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display: none">
-                <label asp-for="NormalizedName" class="control-label"></label>
+            <div class="form-group" >
+                <label asp-for="NormalizedName" class="control-label">Индикатор</label>
                 <input asp-for="NormalizedName" class="form-control" />
                 <span asp-validation-for="NormalizedName" class="text-danger"></span>
             </div>

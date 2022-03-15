@@ -4,8 +4,8 @@
     ViewBag.WalletsTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
+<p><h4>Вы хотите удалить эту платежную карту?</h4></p>
 
-<h1>Удалить карту</h1>
 
 <form asp-action="Delete">
         <input type="hidden" asp-for="WalletId" />

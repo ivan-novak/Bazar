@@ -37,7 +37,7 @@ namespace RozetkaWebApp.Controllers
             var lineDetail = await _context.LineDetails
                 .Include(l => l.Order)
                 .Include(l => l.Product)
-                .FirstOrDefaultAsync(m => m.OrderDatailId == id);
+                .FirstOrDefaultAsync(m => m.OrderDatailId ==  id);
             if (lineDetail == null)
             {
                 return NotFound();

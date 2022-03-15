@@ -5,7 +5,7 @@
     Html.RenderPartial("_RootNavigator");
 }
 
-<p><h4>Список членов группы</h4></p>
+<p><h4>Члены группы "@ViewBag.Role.Name"</h4></p>
        
  <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Role.Id"> Добавить пользователя </a>   </p>
 
@@ -14,28 +14,21 @@
 <table class="table">
     <thead>
         <tr>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Role)
-            </th>*@
-            <th>
-                Пользователь
-            </th>
-            <th>Действия</th>
+            <th> Имя пользователя  </th>
+            <th class="text-right">Действия</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-            var id = item.UserId + item.RoleId;
-            <tr>
-           @* <td>
-                @Html.DisplayFor(modelItem => item.Role.Id)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.User.UserName)
-            </td>
-           <td>
-                <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
+    @foreach (var item in Model) 
+    {
+         var id = item.UserId + item.RoleId;
+        <tr>
+             <td> 
+                <a asp-controller = "Addresses" asp-action="Index" asp-route-id="@item.User.Id"> 
+                    @Html.DisplayFor(modelItem => item.User.UserName) 
+                </a>  
+             </td>
+             <td class="text-right">  <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash"></i>  </a>  </td>
         </tr>
 }
     </tbody>

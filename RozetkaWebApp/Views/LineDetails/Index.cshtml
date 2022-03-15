@@ -1,81 +1,53 @@
 ﻿@model IEnumerable<RozetkaWebApp.Models.LineDetail>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewBag.ManagerTab = "active";
+    Html.RenderPartial("_CartNavigator");
 }
 
-<h1>Index</h1>
+<p><h4>Список выбраных товаров</h4></p>
+       
+ <p><a  class="btn btn-success" asp-controller="Home" asp-action="NewOrder" > Оформить заказ </a>   </p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CartId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantities)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExtOrderDetailNbr)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreateDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product)
-            </th>
-            <th></th>
+             <th> Название </th>
+            <th> Описание </th>
+           <th> Цена </th>
+            <th> Количество  </th>
+    @*         <th> Дата  </th>  *@
+             <th>  Сумма </th> 
+ <th>  Действия </th> 
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+    @foreach (var item in Model) 
+    {
+        <tr>        
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.Product.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CartId)
+                @Html.DisplayFor(modelItem => item.Product.Description)
             </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.UnitCost)
+            </td>       
             <td>
                 @Html.DisplayFor(modelItem => item.Quantities)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UnitCost)
+                @Html.DisplayFor(modelItem => item.LineTotal)
             </td>
+@*             <td>
+                @(((DateTime)item.CreateDate).ToString("dd/MM/yyyy"))
+            </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExtOrderDetailNbr)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order.DeliveryAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Label)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.OrderDatailId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OrderDatailId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OrderDatailId">Delete</a>
+                <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>
 }

@@ -1,12 +1,12 @@
 ﻿@model RozetkaWebApp.Models.LineDetail
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewBag.ManagerTab = "active";
+    Html.RenderPartial("_CartNavigator");
 }
 
-<p> 
-    <h4>Изменить товары</h4>
-</p>  
+<p><h4>Изменить количество товара</h4></p>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -19,7 +19,7 @@
             <input type="hidden" asp-for="OrderDatailId" />
             <div class="form-group" style="display: none">
                 <label asp-for="OrderId" class="control-label"></label>
-                <select asp-for="OrderId" class="form-control" asp-items="ViewBag.OrderId"></select>
+                <input asp-for="OrderId" class="form-control" ></input>
                 <span asp-validation-for="OrderId" class="text-danger"></span>
             </div>
             <div class="form-group" style="display: none">

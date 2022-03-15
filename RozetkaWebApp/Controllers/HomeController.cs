@@ -65,13 +65,14 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> AddtoCart(long? id)
         {
 
-
+            var product = _context.Products.Find(id);
             var lineDetail = new LineDetail();
 
             lineDetail.CartId = CartId();
             lineDetail.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             lineDetail.ProductId = (long)id;
             lineDetail.Quantities = 1;
+            lineDetail.UnitCost = product.Price;
             _context.Add(lineDetail);
             await _context.SaveChangesAsync();
             return Redirect($"/Home/Characteristics/" + id.ToString());

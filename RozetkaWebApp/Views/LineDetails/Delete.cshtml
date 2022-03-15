@@ -1,11 +1,12 @@
 ﻿@model RozetkaWebApp.Models.LineDetail
 
 @{
-    ViewData["Title"] = "Удалить товар из корзины";
+    ViewBag.ManagerTab = "active";
+    Html.RenderPartial("_CartNavigator");
 }
 
 <p> 
-    <h4>Вы хотите удалить этот товар?</h4>
+    <h4>Вы хотите удалить этот товар из корзины?</h4>
 </p>
 
     <form asp-action="Delete">
@@ -16,19 +17,25 @@
     </form>
 <div>
    
-    <dl class="row">
-       @* <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
+    <dl class="row">       
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CartId)
+            Название
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CartId)
-        </dd>*@
+            @Html.DisplayFor(model => model.Product.Title)
+        </dd >
+        <dt class  = "col-sm-2">
+            Описание
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Product.Description)
+        </dd class>
+      <dt class = "col-sm-2">
+            Цена
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitCost)
+            </dd>
         <dt class = "col-sm-2">
             Количество
         </dt>
@@ -36,41 +43,12 @@
             @Html.DisplayFor(model => model.Quantities)
         </dd>
         <dt class = "col-sm-2">
-            Цена
+            Сумма
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UnitCost)
+         <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LineTotal)
         </dd>
-       @* <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExtOrderDetailNbr)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ExtOrderDetailNbr)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreateDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreateDate)
-        </dd>*@
-@*        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Order)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Order.DeliveryAddress)
-        </dd class>*@
-        <dt class = "col-sm-2">
-            Товар
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Product.Label)
-        </dd class>
+        
     </dl>
  
 </div>

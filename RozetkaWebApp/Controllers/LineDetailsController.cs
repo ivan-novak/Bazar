@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,11 +20,27 @@ namespace RozetkaWebApp.Controllers
             _context = context;
         }
 
+        public string CartId()
+        {
+            if (!HttpContext.Request.Cookies.ContainsKey("cartId"))
+            {
+                var cartId = Guid.NewGuid().ToString();
+                HttpContext.Response.Cookies.Append("cartId", cartId);
+                return cartId;
+            }
+            return HttpContext.Request.Cookies["cartId"];
+        }
         // GET: LineDetails
         public async Task<IActionResult> Index()
         {
-            var rozetkadbContext = _context.LineDetails.Include(l => l.Order).Include(l => l.Product);
+            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
+            var rozetkadbContext = _context.LineDetails
+                .Include(l => l.Order)
+                .Include(l => l.Product)
+                .Where(l => l.OrderId == null)
+                .Where(l => l.CartId == CartId() || (l.UserId == userid));
             return View(await rozetkadbContext.ToListAsync());
+
         }
 
         // GET: LineDetails/Details/5
@@ -85,7 +102,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["OrderId"] = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
+         //   ViewData["OrderId"] = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
             ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }

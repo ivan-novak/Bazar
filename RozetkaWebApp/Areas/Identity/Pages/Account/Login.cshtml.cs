@@ -85,7 +85,18 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+
+
+                    //var cart = _context.LineDetails.Where(a => (a.CartId == CartId() && a.UserId == null) && a.OrderId == null).ToList();
+                    //  foreach (var i in cart)
+                    //  {
+                    //      i.UserId = User.Identity.Name;
+                    //      _context.Update(i);
+                    //  }
+                    //await _context.SaveChangesAsync();
+
+                    // return LocalRedirect(returnUrl);
+                    return Redirect("/LineDetails/CopyCart");
                 }
                 if (result.RequiresTwoFactor)
                 {

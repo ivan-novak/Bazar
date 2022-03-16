@@ -36,7 +36,7 @@ namespace RozetkaWebApp.Controllers
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewData["User"] = _context.AspNetUsers.Find(id);
-            var rozetkadbContext = _context.Orders.Include(o => o.User);
+            var rozetkadbContext = _context.Orders.Where(x=>x.UserId==id).Include(o => o.User);
             return View(await rozetkadbContext.ToListAsync());
         }
 
@@ -68,7 +68,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["WalletId"] = new SelectList(_context.Walletts.Where(a=>a.UserId == id), "WalletId", "CardNumber");
             ViewData["ContactId"] = new SelectList(_context.Contacts.Where(a => a.UserId == id), "ContactId", "FullName");
             ViewData["AddressId"] = new SelectList(_context.Addresses.Where(a => a.UserId == id), "AddressId", "FullAddress");
-            ViewData["Cart"] = _context.LineDetails.Where(a => (a.CartId == CartId() || a.UserId == id ) && a.OrderId == null).Include(x=>x.Product).ToList();
+            ViewData["Cart"] = _context.LineDetails.Where(a => a.UserId == id && a.OrderId == null).Include(x=>x.Product).ToList();
             var a = ViewData["Cart"];
             ViewData["User"] = _context.AspNetUsers.Find(id);
             return View();

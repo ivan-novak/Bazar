@@ -33,14 +33,29 @@ namespace RozetkaWebApp.Controllers
         // GET: LineDetails
         public async Task<IActionResult> Index()
         {
-            var userid = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
             var rozetkadbContext = _context.LineDetails
                 .Include(l => l.Order)
                 .Include(l => l.Product)
                 .Where(l => l.OrderId == null)
-                .Where(l => l.CartId == CartId() || (l.UserId == userid));
+                .Where(l => l.CartId == CartId() || (l.UserId == userId));
+            ViewData["User"] = await _context.AspNetUsers.FindAsync(userId);    
             return View(await rozetkadbContext.ToListAsync());
 
+        }
+
+        public async Task<IActionResult> CopyCart()
+        {
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
+            var lines = _context.LineDetails.Where(l => l.CartId == CartId() && (l.UserId == null)).Select(l=>l);
+            foreach (var i in lines)
+            {
+                i.UserId = userId;
+                _context.Update(i);
+            }
+            await _context.SaveChangesAsync();
+            HttpContext.Response.Cookies.Delete("cartId");
+            return Redirect("/");
         }
 
         // GET: LineDetails/Details/5

@@ -16,72 +16,62 @@
     </form>
 <div>
     <dl class="row">
-        <dt class = "col-sm-2">
-            Описание
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            Стоимость заказа
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Total)
-        </dd>
-       @* <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OrderDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OrderDate)
-        </dd>*@
-      @*  <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CardNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CardNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DeliveryAddress)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DeliveryAddress)
-        </dd>*@
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DeliveryContact)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DeliveryContact)
-        </dd>*@
-       @* <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DeliveryEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DeliveryEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DeliveryPhone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DeliveryPhone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExtOrderNbr)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ExtOrderNbr)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd class>*@
+        <dt class = "col-sm-2">  Номер заказа </dt>             <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderId) </dd>
+        <dt class = "col-sm-2">  Дата заказ </dt>               <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderDate)  </dd>
+        <dt class = "col-sm-2">  Адрес доставки   </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryAddress) </dd>
+        <dt class = "col-sm-2">  Контактное лицо  </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryContact) </dd>
+        <dt class = "col-sm-2">  Электронный адрес</dt>   <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryEmail)  </dd>
+        <dt class = "col-sm-2">  Телефон заказчик  </dt>        <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryPhone) </dd>
+        <dt class = "col-sm-2">  Сумма </dt>                    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Total) </dd>
+        <dt class = "col-sm-2">  Банковская карта </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.CardNumber)  </dd>
+
     </dl>
-    
 </div>
+
+
+
+<p>
+    <h4>Список товаров </h4>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+             <th> Название </th>
+            <th> Описание </th>
+           <th> Цена </th>
+            <th> Количество  </th>
+             <th>  Сумма </th> 
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (LineDetail item in ViewBag.Lines) 
+    {
+        <tr>        
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Description)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.UnitCost)
+            </td>       
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineTotal)
+            </td>
+@*             <td>
+                @(((DateTime)item.CreateDate).ToString("dd/MM/yyyy"))
+            </td>*@
+            <td>
+@*                <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
+*@            </td>
+        </tr>
+}
+    </tbody>
+</table>

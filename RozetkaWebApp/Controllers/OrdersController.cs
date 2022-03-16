@@ -56,7 +56,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
-
+            ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
 
@@ -131,8 +131,10 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
+
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
+            ViewData["Lines"] = _context.LineDetails.Where(x=>x.OrderId==order.OrderId).Include(x=>x.Product).Select(x=>x);
             return View(order);
         }
 
@@ -168,6 +170,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Orders/Index/" + order.UserId);
             }
+            ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             return Redirect($"/Orders/Index/" + order.UserId);
         }
@@ -188,6 +191,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
+            ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
 

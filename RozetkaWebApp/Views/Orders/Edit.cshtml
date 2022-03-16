@@ -12,6 +12,13 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
+
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success" />
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <hr />
+            </div> 
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="OrderId" />
             <div class="form-group" style="display: none">
@@ -29,28 +36,28 @@
                 <input asp-for="Total" class="form-control" />
                 <span asp-validation-for="Total" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display: none">
-                <label asp-for="OrderDate" class="control-label"></label>
+            <div class="form-group" >
+                <label asp-for="OrderDate" class="control-label">Дата заказа</label>
                 <input asp-for="OrderDate" class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="display: none">
                 <label asp-for="Status" class="control-label">Статус</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display: none">
-                <label asp-for="CardNumber" class="control-label"></label>
+            <div class="form-group">
+                <label asp-for="CardNumber" class="control-label">Платежные реквизиты</label>
                 <input asp-for="CardNumber" class="form-control" />
                 <span asp-validation-for="CardNumber" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display: none">
-                <label asp-for="DeliveryAddress" class="control-label"></label>
+            <div class="form-group">
+                <label asp-for="DeliveryAddress" class="control-label">Адрес доставки</label>
                 <input asp-for="DeliveryAddress" class="form-control" />
                 <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display: none">
-                <label asp-for="DeliveryContact" class="control-label"></label>
+            <div class="form-group">
+                <label asp-for="DeliveryContact" class="control-label">Контактое лицо</label>
                 <input asp-for="DeliveryContact" class="form-control" />
                 <span asp-validation-for="DeliveryContact" class="text-danger"></span>
             </div>
@@ -69,12 +76,57 @@
                 <input asp-for="ExtOrderNbr" class="form-control" />
                 <span asp-validation-for="ExtOrderNbr" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
         </form>
     </div>
 </div>
+
+<p>
+    <h4>Список товаров </h4>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+             <th> Название </th>
+            <th> Описание </th>
+           <th> Цена </th>
+            <th> Количество  </th>
+    @*         <th> Дата  </th>  *@
+             <th>  Сумма </th> 
+ <th>  Действия </th> 
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (LineDetail item in ViewBag.Lines) 
+    {
+        <tr>        
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Description)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.UnitCost)
+            </td>       
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineTotal)
+            </td>
+@*             <td>
+                @(((DateTime)item.CreateDate).ToString("dd/MM/yyyy"))
+            </td>*@
+            <td>
+                <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> |
+                <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
 
 
 @section Scripts {

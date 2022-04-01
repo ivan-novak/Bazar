@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using RozetkaWebApp.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RozetkaWebApp
@@ -43,6 +45,24 @@ namespace RozetkaWebApp
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<IdentityDbContext>();
                 services.AddControllersWithViews();
+
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Owner", policy =>
+                    policy.RequireAssertion(context =>
+                    {
+                        if (context.Resource is HttpContext httpContext)
+                        {
+                            object Id = "";
+                            if (!httpContext.Request.RouteValues.TryGetValue("Id", out Id)) return false;
+                            var Id1 = httpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                            return Id.ToString() ==Id1.ToString() ;
+                        }
+                        return false;
+                    }));
+          
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

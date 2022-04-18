@@ -21,6 +21,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Images
+        [HttpGet("[controller]/{id}")]
         [HttpGet("[controller]/v1/{id}")]
         public async Task<FileResult> Item(long? id)
         {

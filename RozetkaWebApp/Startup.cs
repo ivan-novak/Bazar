@@ -31,6 +31,7 @@ namespace RozetkaWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddDbContext<RozetkadbContext>(options =>  
                 options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
@@ -68,6 +69,7 @@ namespace RozetkaWebApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+           // app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -83,7 +85,7 @@ namespace RozetkaWebApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod());
             app.UseAuthentication();
             app.UseAuthorization();
 

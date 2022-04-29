@@ -47,7 +47,7 @@ namespace RozetkaWebApp.Controllers
             return new FileStreamResult(oMemoryStream, "image/" + ext);
         }
 
-        [HttpGet("[controller]/v1/products/{id}/{name}")]
+        [HttpGet("[controller]/products/{id}/{name}")]
         public async Task<FileResult> Product(long? id, string name)
         {
             if (id == null || name == null) return null;
@@ -56,7 +56,7 @@ namespace RozetkaWebApp.Controllers
             return await Index(productImage.ImageId);
         }
 
-        [HttpGet("[controller]/v1/catalogs/{id}/{name}")]
+        [HttpGet("[controller]/catalogs/{id}/{name}")]
         public async Task<FileResult> Catalog(long? id, string name)
         {
             if (id == null || name == null) return null;
@@ -66,7 +66,7 @@ namespace RozetkaWebApp.Controllers
 
         }
 
-        [HttpGet("[controller]/v1/portals/{id}/{name}")]
+        [HttpGet("[controller]/portals/{id}/{name}")]
         public async Task<FileResult> Portal(long? id, string name)
         {
             if (id == null || name == null) return null;
@@ -76,7 +76,7 @@ namespace RozetkaWebApp.Controllers
 
         }
 
-        [HttpGet("[controller]/v1/root/{name}")]
+        [HttpGet("[controller]/root/{name}")]
         public async Task<FileResult> Root(string name)
         {
             var rootImage = await _context.RootImages.Where(p => p.Label == name).FirstOrDefaultAsync();

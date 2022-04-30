@@ -66,14 +66,30 @@ namespace RozetkaWebApp.Controllers
         {
 
             var product = _context.Products.Find(id);
-            var lineDetail = new LineDetail();
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var cartId = CartId();
 
-            lineDetail.CartId = CartId();
-            lineDetail.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            lineDetail.ProductId = (long)id;
-            lineDetail.Quantities = 1;
-            lineDetail.UnitCost = product.Price;
-            _context.Add(lineDetail);
+            var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
+            if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
+            else query = query.Where(x => x.CartId == cartId);
+
+            LineDetail lineDetail = query.Where(x=> x.ProductId == id).FirstOrDefault();
+           if (lineDetail == null)
+           {
+                lineDetail = new LineDetail();
+                lineDetail.CartId = CartId();
+                lineDetail.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                lineDetail.ProductId = (long)id;
+                lineDetail.Quantities = 1;
+                lineDetail.UnitCost = product.Price;
+                _context.Add(lineDetail);
+            }
+            else
+            {
+                lineDetail.Quantities++;
+                _context.Update(lineDetail);
+            }
+
             await _context.SaveChangesAsync();
             return Redirect($"/Home/Characteristics/" + id.ToString());
         }

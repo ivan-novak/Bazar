@@ -321,6 +321,22 @@ namespace RozetkaWebApp.Controllers
             return await queryView.Select(x => (iProduct)x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
+        [HttpGet("[controller]/v1/cart")]
+        public async Task<ActionResult<IEnumerable<iLineDetail>>> LineDetail(int page = 0, int pageSize = 50)
+        {
+            // var userId1 = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var cartId = CartId();
+
+            var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
+            if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
+            else query = query.Where(x => x.CartId == cartId);
+            query.OrderByDescending(x => x.CreateDate);
+            return await query.Select(x => (iLineDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+
+        }
+
+
 
         public string CartId()
         {

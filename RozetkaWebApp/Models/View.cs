@@ -11,6 +11,7 @@ namespace RozetkaWebApp.Models
         public long? ProductId { get; set; }
         public DateTime EventDate { get; set; }
         public string UserId { get; set; }
+        public string CartId { get; set; }
 
         public virtual Product Product { get; set; }
         public virtual AspNetUser User { get; set; }

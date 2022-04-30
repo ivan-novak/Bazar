@@ -49,7 +49,7 @@
           <tr><td> Получить рисунок продукта по названию рисунка </td><td><a  href="/images/products/1/Main"    >/images/products/{Id}/{label}</a>  </td> <td>            </td></tr>
           <tr><td> <h5>API для данных в формате JSON</h5> </td><td>   </td> <td>     </td> </tr>
 
-            <tr><td> <h6>Порталы</h6> </td><td>   </td> <td>     </td></tr>
+          <tr><td> <h6>Порталы</h6> </td><td>   </td> <td>     </td></tr>
           <tr><td> Получить список порталов  </td><td> <a href="/api/v1/portals" rel="external"> /api/v1/portals</a> </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
           <tr><td> Получить данные для портала </td><td> <a href="/api/v1/portals/1" > /api/v1/portals/{id} </a>   </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
           <tr><td> Получить список каталогов портала</td><td>   <a href="/api/v1/portals/1/catalogs" > /api/v1/portals/{id}/catalogs </a>  </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50     </td></tr>
@@ -84,18 +84,16 @@
           <tr><td> Получить список ордеров  </td><td> <a href="/api/v1/orders" > /api/v1/orders </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
           <tr><td> Получить данные для ордера </td><td>   <a href="/api/v1/orders/5" > /api/v1/orders/{id} </a>    </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
           <tr><td> Получить список деталей ордера</td><td> <a href="/api/v1/orders/5/details" >   /api/v1/orders/{id}/details </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-         
 
           <tr><td> <h6>  Пользователи</h6> </td><td>   </td> <td>     </td></tr>  
           <tr><td> Получить список пользователей </td><td> <a href="/api/v1/users" >   /api/v1/users </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить данные пользователя </td><td> <a href="/api/v1/users/sfsd-sdfdsf-sdgsd-98-00" >   /api/v1/users/{id} </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить данные пользователя </td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc" >   /api/v1/users/{id} </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
           <tr><td> Получить список отзывов пользователя</td><td> <a href="/api/v1/users/1/comments" > /api/v1/users/{id}/comments </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список ордеров пользователя</td><td> <a href="/api/v1/users/1/orders" > /api/v1/users/{id}/orders </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список адресов пользователя</td><td> <a href="/api/v1/users/1/addresses" > /api/v1/users/{id}/addresses </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список контактов пользователя</td><td> <a href="/api/v1/users/1/contacts" > /api/v1/users/{id}/contacts </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список кошельков пользователя</td><td> <a href="/api/v1/users/1/wallettes" > /api/v1/users/{id}/wallettes</a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список ролей пользователя</td><td> <a href="/api/v1/users/1/roles" > /api/v1/users/{id}/roles </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-
+          <tr><td> Получить список ордеров пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/orders" > /api/v1/users/{id}/orders </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить список адресов пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/addresses" > /api/v1/users/{id}/addresses </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить список контактов пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/contacts" > /api/v1/users/{id}/contacts </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить список кошельков пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/wallettes" > /api/v1/users/{id}/wallettes</a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить список ролей пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/roles" > /api/v1/users/{id}/roles </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
   
           <tr><td> <h6>   Свойтва продуктов</h6> </td><td>   </td> <td>     </td></tr>      
           <tr><td> Получить список свойтв  </td><td> <a href="/api/v1/properties" > /api/v1/properties </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
@@ -115,9 +113,13 @@
           <tr><td> Получить список адрессов  </td><td> <a href="/api/v1/addresses" > /api/v1/addresses </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
           <tr><td> Получить данные для адресса  </td><td>   <a href="/api/v1/addresses/1" > /api/v1/addresses/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
 
-            <tr><td> <h6>   Свойтва кошельков</h6> </td><td>   </td> <td>     </td></tr>      
+          <tr><td> <h6>   Свойтва кошельков</h6> </td><td>   </td> <td>     </td></tr>      
           <tr><td> Получить список кошельков  </td><td> <a href="/api/v1/walletts" > /api/v1/walletts </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для кошелька  </td><td>   <a href="/api/v1/walletts/1" > /api/v1/walletts/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
+          <tr><td> Получить данные для кошелька  </td><td>   <a href="/api/v1/walletts/2" > /api/v1/walletts/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
+
+          <tr><td> <h6>   Свойтва комментариев</h6> </td><td>   </td> <td>     </td></tr>      
+          <tr><td> Получить список комментариев  </td><td> <a href="/api/v1/comments" > /api/v1/comments </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
+          <tr><td> Получить данные для комментария  </td><td>   <a href="/api/v1/comments/1" > /api/v1/comments/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
 
            
  @*         <tr><td> <h6>  Просмотры продуктов</h6> </td><td>   </td> <td>     </td></tr>      

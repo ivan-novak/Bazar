@@ -629,9 +629,11 @@ namespace RozetkaWebApp.Data
 
                 entity.Property(e => e.ViewId).HasColumnName("ViewID");
 
-                entity.Property(e => e.EventDate)
-                    .HasColumnType("datetime")
-                    .HasComputedColumnSql("(getdate())", false);
+                entity.Property(e => e.CartId)
+                    .IsRequired()
+                    .HasMaxLength(450);
+
+                entity.Property(e => e.EventDate).HasColumnType("datetime");
 
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
 

@@ -66,6 +66,30 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/promotions/{promotionId}/products/")]
         public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? catalogId = null, long? productId = null, long? promotionId = null)
         {
+            if(productId!= null)
+            {
+                var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var cartId = CartId();
+                IQueryable<View> queryView = null;
+                if (user_Id != null) queryView = _context.Views.Where(x => x.UserId == user_Id);
+                else queryView = _context.Views.Where(x => x.CartId == cartId);
+                View lineView = queryView.Where(x => x.ProductId == productId).FirstOrDefault();
+                if (lineView == null)
+                {
+                    lineView = new View();
+                    lineView.CartId = CartId();
+                    lineView.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    lineView.ProductId = productId;
+                    lineView.EventDate = DateTime.Now;
+                    _context.Add(lineView);
+                }
+                else
+                {
+                    lineView.EventDate = DateTime.Now;
+                    _context.Update(lineView);
+                }
+                await _context.SaveChangesAsync();
+            }
             var query = _context.Products.Select(x => x);
             orderBy = orderBy.ToUpper();
             if (catalogId != null) query = query.Where(x => x.CatalogId == catalogId);
@@ -79,7 +103,6 @@ namespace RozetkaWebApp.Controllers
             query = query.Skip(page * pageSize).Take(pageSize);
             return await query.Select(x => (iProduct)x).ToListAsync();
         }
-
 
         [HttpGet("[controller]/v1/properties")]     
         [HttpGet("[controller]/v1/properties/{propertyId}")]
@@ -181,7 +204,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         [HttpGet("[controller]/v1/walletts")]
-        [HttpGet("[controller]/v1/walletts/{walettesId}")]
+        [HttpGet("[controller]/v1/walletts/{walletteId}")]
         [HttpGet("[controller]/v1/users/{userId}/wallettes")]
         public async Task<ActionResult<IEnumerable<iWallett>>> Wallettes(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? walletteId = null)
         {
@@ -310,10 +333,8 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/users/{userId}/views")]
         public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
         {
-            // var userId1 = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var sesionId = CartId();
-
             var queryView = _context.Views.Include(x => x.Product).Select(x => x);
             if (userId != null) queryView = queryView.Where(x => x.UserId == userId);
             if (catalogId != null) queryView = queryView.Where(x => x.Product.CatalogId == catalogId);
@@ -324,19 +345,14 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/cart")]
         public async Task<ActionResult<IEnumerable<iLineDetail>>> LineDetail(int page = 0, int pageSize = 50)
         {
-            // var userId1 = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var cartId = CartId();
-
             var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
             if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
             else query = query.Where(x => x.CartId == cartId);
             query.OrderByDescending(x => x.CreateDate);
             return await query.Select(x => (iLineDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
-
         }
-
-
 
         public string CartId()
         {

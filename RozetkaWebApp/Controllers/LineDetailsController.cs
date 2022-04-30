@@ -50,7 +50,14 @@ namespace RozetkaWebApp.Controllers
         {
             var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
             var lines = _context.LineDetails.Where(l => l.CartId == CartId() && (l.UserId == null)).Select(l=>l);
+            var views = _context.Views.Where(l => l.CartId == CartId() && (l.UserId == null)).Select(l => l);
+
             foreach (var i in lines)
+            {
+                i.UserId = userId;
+                _context.Update(i);
+            }
+            foreach (var i in views)
             {
                 i.UserId = userId;
                 _context.Update(i);

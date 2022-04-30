@@ -52,6 +52,27 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Characteristics(long? id)
 
         {
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var cartId = CartId();
+            IQueryable<View> queryView = null;
+            if (user_Id != null) queryView = _context.Views.Where(x => x.UserId == user_Id);
+            else queryView = _context.Views.Where(x => x.CartId == cartId);
+            View lineView = queryView.Where(x => x.ProductId == id).FirstOrDefault();
+            if (lineView == null)
+            {
+                lineView = new View();
+                lineView.CartId = CartId();
+                lineView.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                lineView.ProductId = id;
+                lineView.EventDate = DateTime.Now;
+                _context.Add(lineView);
+            }
+            else
+            {
+                lineView.EventDate = DateTime.Now;
+                _context.Update(lineView);
+            }
+            await _context.SaveChangesAsync();
             ViewBag.Product = _context.Products.Find(id);
             return View(await _context.Characteristics.Where(x => x.ProductId == id || id == null).Include(x => x.Product).Include(x => x.Property).ToListAsync());
         }
@@ -62,17 +83,15 @@ namespace RozetkaWebApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> AddtoCart(long? id)
+        public async Task<IActionResult> AddToCart(long? id)
         {
 
             var product = _context.Products.Find(id);
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var cartId = CartId();
-
             var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
             if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
             else query = query.Where(x => x.CartId == cartId);
-
             LineDetail lineDetail = query.Where(x=> x.ProductId == id).FirstOrDefault();
            if (lineDetail == null)
            {
@@ -89,7 +108,6 @@ namespace RozetkaWebApp.Controllers
                 lineDetail.Quantities++;
                 _context.Update(lineDetail);
             }
-
             await _context.SaveChangesAsync();
             return Redirect($"/Home/Characteristics/" + id.ToString());
         }
@@ -127,7 +145,6 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             return View(order);
         }
-
     }
 
 

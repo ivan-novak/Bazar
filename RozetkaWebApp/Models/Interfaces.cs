@@ -313,6 +313,17 @@ namespace RozetkaWebApp.Models
     {
     }
 
+    public interface iView
+    {
+        public long ViewId { get; set; }
+        public DateTime EventDate { get; set; }
+        public string UserId { get; set; }
+        public string CartId { get; set; }
+    }
+
+    public partial class View : iView
+    {
+    }
 }
 
 

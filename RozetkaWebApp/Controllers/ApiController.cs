@@ -151,7 +151,7 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/orders/Details")]
         [HttpGet("[controller]/v1/orders/Details/{orderDetailId}")]
         [HttpGet("[controller]/v1/orders/{orderId}/Details")]
-        public async Task<ActionResult<IEnumerable<iOrderDetail>>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
+        public async Task<ActionResult<IEnumerable<iLineDetail>>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.LineDetails.Select(x => x);
@@ -161,7 +161,7 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
             else query = query.OrderByDescending(x => x.OrderDatailId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iOrderDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            return await query.Select(x => (iLineDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
         }
 
         [HttpGet("[controller]/v1/addresses")]

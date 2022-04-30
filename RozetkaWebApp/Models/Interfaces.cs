@@ -188,12 +188,22 @@ namespace RozetkaWebApp.Models
 
     public interface iLineDetail
     {
-        
+        public long OrderDatailId { get; set; }
+        public long? OrderId { get; set; }
+        public string UserId { get; set; }
+        public string CartId { get; set; }
+        public long ProductId { get; set; }
+        public int Quantities { get; set; }
+        public decimal UnitCost { get; set; }
+        public string Status { get; set; }
+        public string ExtOrderDetailNbr { get; set; }
+        public DateTime? CreateDate { get; set; }
+
     }
 
     public partial class LineDetail : iLineDetail
     {
-        public decimal LineTotal { get { return Quantities * UnitCost; } }
+        public decimal LineTotal { get { return Quantities * UnitCost; } } //
     }
 
 
@@ -246,15 +256,6 @@ namespace RozetkaWebApp.Models
         public string ExtOrderNbr { get; set; }
     }
     public partial class Order : iOrder
-    {
-    }
-
-    public interface iOrderDetail
-    {
-           
-    }
-
-    public partial class OrderDetail : iOrderDetail
     {
     }
 

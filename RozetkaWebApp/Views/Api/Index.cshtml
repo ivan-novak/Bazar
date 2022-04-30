@@ -42,11 +42,11 @@
 *@
           
           <tr><td> <h5>URL файлов рисунков</h5> </td><td>   </td> <td>     </td> </tr>
-          <tr><td> Получить рисунок    </td><td> /images/{id}  </td> <td>    </td></tr>
-          <tr><td> Получить рисунок веб сайта по названию рисунка </td><td> /images/root/{label}   </td> <td>    </td></tr>
-          <tr><td> Получить рисунок портала по названию рисунка </td><td>  /images/portals/{Id}/{label}  </td> <td>    </td></tr>
-          <tr><td> Получить рисунок каталога по названию рисунка  </td><td>  /images/catalogs/{Id}/{label}  </td> <td>    </td></tr>
-          <tr><td> Получить рисунок продукта по названию рисунка </td><td>  /images/products/{Id}/{label}      </td> <td>            </td></tr>
+          <tr><td> Получить рисунок    </td><td> <a href="/images/34" >/images/{id}</a> </td> <td>    </td></tr>
+          <tr><td> Получить рисунок веб сайта по названию рисунка </td><td><a href="/images/root/Logo" > /images/root/{label} </a>  </td> <td>    </td></tr>
+          <tr><td> Получить рисунок портала по названию рисунка </td><td><a href="/images/portals/1/MainLogo" >  /images/portals/{Id}/{label} </a>  </td> <td>    </td></tr>
+          <tr><td> Получить рисунок каталога по названию рисунка  </td><td><a href="/images/catalogs/1/BigLogo" >  /images/catalogs/{Id}/{label} </a>  </td> <td>    </td></tr>
+          <tr><td> Получить рисунок продукта по названию рисунка </td><td><a  href="/images/products/1/Main"    >/images/products/{Id}/{label}</a>  </td> <td>            </td></tr>
           <tr><td> <h5>API для данных в формате JSON</h5> </td><td>   </td> <td>     </td> </tr>
 
             <tr><td> <h6>Порталы</h6> </td><td>   </td> <td>     </td></tr>
@@ -54,7 +54,7 @@
           <tr><td> Получить данные для портала </td><td> <a href="/api/v1/portals/1" > /api/v1/portals/{id} </a>   </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
           <tr><td> Получить список каталогов портала</td><td>   <a href="/api/v1/portals/1/catalogs" > /api/v1/portals/{id}/catalogs </a>  </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50     </td></tr>
           <tr><td> Получить список рисунков портала</td><td>    <a href="/api/v1/portals/1/images" > /api/v1/portals/{id}/images </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить данные рисунков портала по имени</td><td>    <a href="/api/v1/portals/1/images/Main" > /api/v1/portals/{id}/images/{label} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
+          <tr><td> Получить данные рисунков портала по имени</td><td>    <a href="/api/v1/portals/1/images/MainLogo" > /api/v1/portals/{id}/images/{label} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
           <tr><td> Получить список просмотров для портала </td><td>  <a href="/api/v1/portals/1/views" >  /api/v1/portals/{id}/views </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50        </td></tr>
              
           <tr><td> <h6>Каталоги</h6> </td><td>   </td> <td>     </td></tr>             
@@ -62,7 +62,7 @@
           <tr><td> Получить данные каталога </td><td>  <a href="/api/v1/catalogs/1" > /api/v1/catalogs/{id} </a>   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50            </td></tr>
           <tr><td> Получить список продуктов каталога</td><td>  <a href="/api/v1/catalogs/1/products" > /api/v1/catalogs/{id}/products </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
           <tr><td> Получить список рисунков каталога </td><td>  <a href="/api/v1/catalogs/1/images" > /api/v1/catalogs/{id}/images </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить рисунок каталога по имени</td><td>  <a href="/api/v1/catalogs/1/images/Main" > /api/v1/catalogs/{id}/images/{label} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr> 
+          <tr><td> Получить рисунок каталога по имени</td><td>  <a href="/api/v1/catalogs/1/images/BigLogo" > /api/v1/catalogs/{id}/images/{label} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr> 
           <tr><td> Получить список свойств каталога</td><td> <a href="/api/v1/catalogs/1/properties" > /api/v1/catalogs/{id}/properties </a> </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
           <tr><td> Получить список фильтров каталога </td><td>  <a href="/api/v1/catalogs/1/filters" >  /api/v1/catalogs/{id}/filters </a> </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
           <tr><td> Получить список просмотров каталога </td><td>  <a href="/api/v1/catalogs/1/views" >  /api/v1/catalogs/{id}/views </a> </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
@@ -82,8 +82,8 @@
          
           <tr><td> <h6>   Ордера</h6> </td><td>   </td> <td>     </td></tr>      
           <tr><td> Получить список ордеров  </td><td> <a href="/api/v1/orders" > /api/v1/orders </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для ордера </td><td>   <a href="/api/v1/orders/1" > /api/v1/orders/{id} </a>    </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
-          <tr><td> Получить список деталей ордера</td><td> <a href="/api/v1/orders/1/details" >   /api/v1/orders/{id}/details </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
+          <tr><td> Получить данные для ордера </td><td>   <a href="/api/v1/orders/5" > /api/v1/orders/{id} </a>    </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
+          <tr><td> Получить список деталей ордера</td><td> <a href="/api/v1/orders/5/details" >   /api/v1/orders/{id}/details </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
          
 
           <tr><td> <h6>  Пользователи</h6> </td><td>   </td> <td>     </td></tr>  
@@ -104,7 +104,7 @@
 
           <tr><td> <h6>  Характеристики (значения свойств) продуктов</h6> </td><td>   </td> <td>     </td></tr>      
           <tr><td> Получить список характеристик  </td><td> <a href="/api/v1/characteristics" > /api/v1/api/v1/characteristics </a>   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          <tr><td> Получить данные для характеристики  </td><td> <a href="/api/v1/characteristics/1" > /api/v1/api/v1/characteristics/{id} </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50          </td></tr>
+          <tr><td> Получить данные для характеристики  </td><td> <a href="/api/v1/characteristics/2" > /api/v1/api/v1/characteristics/{id} </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50          </td></tr>
           <tr><td>  </td><td>   </td> <td>     </td></tr>
            
  @*         <tr><td> <h6>  Просмотры продуктов</h6> </td><td>   </td> <td>     </td></tr>      

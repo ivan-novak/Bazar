@@ -452,29 +452,6 @@ namespace RozetkaWebApp.Data
                     .HasConstraintName("FK_Order_AspNetUsers");
             });
 
-            modelBuilder.Entity<OrderDetail1>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("OrderDetail1");
-
-                entity.Property(e => e.CartId)
-                    .IsRequired()
-                    .HasMaxLength(450);
-
-                entity.Property(e => e.CreateDate).HasColumnType("date");
-
-                entity.Property(e => e.ExtOrderDetailNbr).HasMaxLength(50);
-
-                entity.Property(e => e.OrderDatailId).ValueGeneratedOnAdd();
-
-                entity.Property(e => e.Status).HasMaxLength(50);
-
-                entity.Property(e => e.UnitCost).HasColumnType("money");
-
-                entity.Property(e => e.UserId).HasMaxLength(450);
-            });
-
             modelBuilder.Entity<Portal>(entity =>
             {
                 entity.ToTable("Portal");

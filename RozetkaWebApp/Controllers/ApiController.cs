@@ -46,7 +46,7 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/catalogs")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}")]
         [HttpGet("[controller]/v1/portals/{portalId}/catalogs/")]
-        public async Task<ActionResult<IEnumerable<iCatalog>>> Catalogs(string orderBy = "CatalogId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? portalId = null, int? catalogId = null)
+        public async Task<ApiResult<iCatalog>> Catalogs(string orderBy = "CatalogId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? portalId = null, int? catalogId = null)
         {
             var query = _context.Catalogs.Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -56,15 +56,17 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else query = query.OrderBy(x => x.CatalogId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x=>(iCatalog)x).ToListAsync();
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iCatalog>{ TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/products")]
         [HttpGet("[controller]/v1/products/{productId}")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/products/")]
         [HttpGet("[controller]/v1/promotions/{promotionId}/products/")]
-        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? catalogId = null, long? productId = null, long? promotionId = null)
+        public async Task<ApiResult<iProduct>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? catalogId = null, long? productId = null, long? promotionId = null)
         {
             if(productId!= null)
             {
@@ -100,14 +102,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "PRICE") query = query.OrderBy(x => x.Price);
             else query = query.OrderBy(x => x.ProductId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iProduct)x).ToListAsync();
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iProduct> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/properties")]     
         [HttpGet("[controller]/v1/properties/{propertyId}")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/properties/")]  
-        public async Task<ActionResult<IEnumerable<iProperty>>> Properties(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50,  int? catalogId = null, int? propertyId =null)
+        public async Task<ApiResult<iProperty>> Properties(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50,  int? catalogId = null, int? propertyId =null)
         {
             var query = _context.Properties.Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -117,14 +121,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else query = query.OrderBy(x => x.PropertyId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x=>(iProperty)x).ToListAsync();
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iProperty> { TotalCount = totalCount, Values = values };
         }       
         
         [HttpGet("[controller]/v1/products/{productId}/characteristics/")]
         [HttpGet("[controller]/v1/characteristics/{characteristicId}")]
         [HttpGet("[controller]/v1/characteristics")]
-        public async Task<ActionResult<IEnumerable<iCharacteristic>>> Characteristics(string orderBy = "CharacteristicId", string orderMode = "Desc", int page = 0, int pageSize = 50,  long? productId = null, long? characteristicId =null)
+        public async Task<ApiResult<iCharacteristic>> Characteristics(string orderBy = "CharacteristicId", string orderMode = "Desc", int page = 0, int pageSize = 50,  long? productId = null, long? characteristicId =null)
         {
             var query = _context.Characteristics.Include(x=>x.Property).Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -134,14 +140,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Property.Title);
             else query = query.OrderBy(x => x.ProductId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x=>(iCharacteristic)x).ToListAsync();
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iCharacteristic> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/filters")]
         [HttpGet("[controller]/v1/properties/{propertyId}/filters/")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/filters")]
-        public async Task<ActionResult<IEnumerable<iFilter>>> Filters(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? catalogId = null, int? propertyId = null)
+        public async Task<ApiResult<iFilter>> Filters(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? catalogId = null, int? propertyId = null)
         {
             var query = _context.Filters.Select(x => x);
             if (catalogId != null) query = query.Where(x=>x.CatalogId == catalogId);
@@ -150,14 +158,16 @@ namespace RozetkaWebApp.Controllers
             if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
             else query = query.OrderBy(x => x.PropertyId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            query = query.Skip(page * pageSize).Take(pageSize);         
-            return await query.Select(x=>(iFilter)x).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iFilter> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/orders")]
         [HttpGet("[controller]/v1/orders/{orderId}")]
         [HttpGet("[controller]/v1/users/{userId}/orders")]
-        public async Task<ActionResult<IEnumerable<iOrder>>> Orders(string orderMode = "Desc", string orderBy = "OrderId", int page = 0, int pageSize = 50, long? orderId = null, string userId = null)
+        public async Task<ApiResult<iOrder>> Orders(string orderMode = "Desc", string orderBy = "OrderId", int page = 0, int pageSize = 50, long? orderId = null, string userId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.Orders.Select(x => x);
@@ -168,13 +178,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "ORDERDATE") query = query.OrderByDescending(x => x.OrderDate);
             else query = query.OrderByDescending(x => x.OrderId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iOrder)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iOrder> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/orders/Details")]
         [HttpGet("[controller]/v1/orders/Details/{orderDetailId}")]
         [HttpGet("[controller]/v1/orders/{orderId}/Details")]
-        public async Task<ActionResult<IEnumerable<iLineDetail>>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
+        public async Task<ApiResult<iLineDetail>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.LineDetails.Select(x => x);
@@ -184,13 +197,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "STATUS") query = query.OrderByDescending(x => x.Status);
             else query = query.OrderByDescending(x => x.OrderDatailId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iLineDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iLineDetail> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/addresses")]
         [HttpGet("[controller]/v1/addresses/{addressId}")]
         [HttpGet("[controller]/v1/users/{userId}/addresses")]
-        public async Task<ActionResult<IEnumerable<iAddress>>> Addresses(string orderMode = "Desc", string orderBy = "AddressID", int page = 0, int pageSize = 50, string userId = null, long? addressId = null)
+        public async Task<ApiResult<iAddress>> Addresses(string orderMode = "Desc", string orderBy = "AddressID", int page = 0, int pageSize = 50, string userId = null, long? addressId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.Addresses.Select(x => x);
@@ -200,13 +216,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "ADDRESSTYPE") query = query.OrderByDescending(x => x.AddressType);
             else query = query.OrderByDescending(x => x.AddressId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iAddress)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iAddress> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/walletts")]
         [HttpGet("[controller]/v1/walletts/{walletteId}")]
         [HttpGet("[controller]/v1/users/{userId}/wallettes")]
-        public async Task<ActionResult<IEnumerable<iWallett>>> Wallettes(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? walletteId = null)
+        public async Task<ApiResult<iWallett>> Wallettes(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? walletteId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.Walletts.Select(x => x);
@@ -216,13 +235,16 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
             else query = query.OrderByDescending(x => x.WalletId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iWallett)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iWallett> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/contacts")]
         [HttpGet("[controller]/v1/contacts/{contactId}")]
         [HttpGet("[controller]/v1/users/{userId}/contacts")]
-        public async Task<ActionResult<IEnumerable<iContact>>> Contacts(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? contactId = null)
+        public async Task<ApiResult<iContact>> Contacts(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50, string userId = null, long? contactId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.Contacts.Select(x => x);
@@ -232,14 +254,17 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
             else query = query.OrderByDescending(x => x.ContactId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iContact)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iContact> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/comments")]
         [HttpGet("[controller]/v1/comments/{commentId}")]
         [HttpGet("[controller]/v1/users/{userId}/comments")]
         [HttpGet("[controller]/v1/products/{productId}/comments")]
-        public async Task<ActionResult<IEnumerable<iComment>>> Comments(string orderMode = "Desc", string orderBy = "CommentId", int page = 0, int pageSize = 50, string userId = null, long? commentId = null, long? productId = null)
+        public async Task<ApiResult<iComment>> Comments(string orderMode = "Desc", string orderBy = "CommentId", int page = 0, int pageSize = 50, string userId = null, long? commentId = null, long? productId = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.Comments.Select(x => x);
@@ -251,12 +276,15 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
             else query = query.OrderByDescending(x => x.CommentId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iComment)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iComment> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/promotions")]
         [HttpGet("[controller]/v1/promotions/{promotionsId}")]
-        public async Task<ActionResult<IEnumerable<iPromotion>>> Promotions(string orderMode = "Desc", string orderBy = "PromotionId", int page = 0, int pageSize = 50, string userId = null, long? promotionId = null, DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<ApiResult<iPromotion>> Promotions(string orderMode = "Desc", string orderBy = "PromotionId", int page = 0, int pageSize = 50, string userId = null, long? promotionId = null, DateTime? startDate = null, DateTime? endDate = null)
         {
             orderBy = orderBy.ToUpper();
             var query = _context.Promotions.Select(x => x);
@@ -267,14 +295,17 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "STARTDATE") query = query.OrderByDescending(x => x.StartDate);
             else query = query.OrderByDescending(x => x.PromotionId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            return await query.Select(x => (iPromotion)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iPromotion> { TotalCount = totalCount, Values = values };
         }
        
         [HttpGet("[controller]/v1/products/{productId}/images")]
         [HttpGet("[controller]/v1/products/{productId}/images/{label}")]
         [HttpGet("[controller]/v1/products/images")]
         [HttpGet("[controller]/v1/products/images/{productImageId}")]
-        public async Task<ActionResult<IEnumerable<iProductImage>>> ProductImages(string orderBy = "ProductImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, long? productId = null, long? productImageId = null)
+        public async Task<ApiResult<iProductImage>> ProductImages(string orderBy = "ProductImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, long? productId = null, long? productImageId = null)
         {
             var query = _context.ProductImages.Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -286,14 +317,17 @@ namespace RozetkaWebApp.Controllers
             else query = query.OrderBy(x => x.ProductImageId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iProductImage)x).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iProductImage> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/portals/{portalId}/images")]
         [HttpGet("[controller]/v1/portals/{portalId}/images/{label}")]
         [HttpGet("[controller]/v1/portals/images")]
         [HttpGet("[controller]/v1/portals/images/{portalImageId}")]
-        public async Task<ActionResult<IEnumerable<iPortalImage>>> PortalImages(string orderBy = "PortalImagesId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? portalId = null, int? portalImageId = null)
+        public async Task<ApiResult<iPortalImage>> PortalImages(string orderBy = "PortalImagesId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? portalId = null, int? portalImageId = null)
         {
             var query = _context.PortalImages.Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -305,14 +339,17 @@ namespace RozetkaWebApp.Controllers
             else query = query.OrderBy(x => x.PortalImageId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iPortalImage)x).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iPortalImage> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/catalogs/{catalogId}/images")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/images/{label}")]
         [HttpGet("[controller]/v1/catalogs/Images")]
         [HttpGet("[controller]/v1/catalogs/Images/{catalogimageId}")]
-        public async Task<ActionResult<IEnumerable<iCatalogImage>>> CatalogImages(string orderBy = "CatalogImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? catalogImageId = null, long? catalogId = null)
+        public async Task<ApiResult<iCatalogImage>> CatalogImages(string orderBy = "CatalogImageId", string orderMode = "Desc", int page = 0, int pageSize = 50, string label = null, int? catalogImageId = null, long? catalogId = null)
         {
             var query = _context.CatalogImages.Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -324,26 +361,32 @@ namespace RozetkaWebApp.Controllers
             else query = query.OrderBy(x => x.Id);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             query = query.Skip(page * pageSize).Take(pageSize);
-            return await query.Select(x => (iCatalogImage)x).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iCatalogImage> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/views")]
         [HttpGet("[controller]/v1/portals/{portalId}/views")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/views")]
         [HttpGet("[controller]/v1/users/{userId}/views")]
-        public async Task<ActionResult<IEnumerable<iProduct>>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
+        public async Task<ApiResult<iProduct>> Products(string orderBy = "ProductId", int page = 0, int pageSize = 50, int? catalogId = null, string userId = null)
         {
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var sesionId = CartId();
-            var queryView = _context.Views.Include(x => x.Product).Select(x => x);
-            if (userId != null) queryView = queryView.Where(x => x.UserId == userId);
-            if (catalogId != null) queryView = queryView.Where(x => x.Product.CatalogId == catalogId);
-            queryView.OrderByDescending(x => x.EventDate);
-            return await queryView.Select(x => (iProduct)x.Product).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var query = _context.Views.Include(x => x.Product).Select(x => x);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (catalogId != null) query = query.Where(x => x.Product.CatalogId == catalogId);
+            query.OrderByDescending(x => x.EventDate);
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x.Product).ToListAsync();
+            return new ApiResult<iProduct> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/cart")]
-        public async Task<ActionResult<IEnumerable<iLineDetail>>> LineDetail(int page = 0, int pageSize = 50)
+        public async Task<ApiResult<iLineDetail>> LineDetail(int page = 0, int pageSize = 50)
         {
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var cartId = CartId();
@@ -351,7 +394,10 @@ namespace RozetkaWebApp.Controllers
             if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
             else query = query.Where(x => x.CartId == cartId);
             query.OrderByDescending(x => x.CreateDate);
-            return await query.Select(x => (iLineDetail)x).Distinct().Skip(page * pageSize).Take(pageSize).ToListAsync();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iLineDetail> { TotalCount = totalCount, Values = values };
         }
 
         public string CartId()

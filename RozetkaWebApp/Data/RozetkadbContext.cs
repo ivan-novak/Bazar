@@ -72,19 +72,15 @@ namespace RozetkaWebApp.Data
 
                 entity.Property(e => e.AddressType).HasMaxLength(100);
 
-                entity.Property(e => e.City).HasMaxLength(100);
+                entity.Property(e => e.City).HasMaxLength(50);
 
-                entity.Property(e => e.Country)
-                    .HasMaxLength(109)
-                    .IsFixedLength(true);
+                entity.Property(e => e.Country).HasMaxLength(50);
 
                 entity.Property(e => e.ExtAddressId).HasColumnName("ExtAddressID");
 
-                entity.Property(e => e.PostalCode)
-                    .HasMaxLength(50)
-                    .IsFixedLength(true);
+                entity.Property(e => e.PostalCode).HasMaxLength(50);
 
-                entity.Property(e => e.State).HasMaxLength(100);
+                entity.Property(e => e.State).HasMaxLength(50);
 
                 entity.Property(e => e.UserId)
                     .IsRequired()

@@ -57,7 +57,9 @@ namespace RozetkaWebApp
                         {
                             object Id = "";
                             if (!httpContext.Request.RouteValues.TryGetValue("Id", out Id)) return false;
-                            var Id1 = httpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                            var User = httpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+                            if (User == null) return false;
+                            var Id1 = User.Value;
                             return Id.ToString() ==Id1.ToString() ;
                         }
                         return false;

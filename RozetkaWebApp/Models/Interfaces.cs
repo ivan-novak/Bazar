@@ -23,6 +23,12 @@ namespace RozetkaWebApp.Models
         public string Attributes { get; set; }
     }
 
+    public partial class ApiResult<T>
+    {
+        public Int64 TotalCount { get; set; }
+        public IEnumerable<T> Values { get; set; }
+    }
+
     public partial class Portal : iPortal
     {
     }

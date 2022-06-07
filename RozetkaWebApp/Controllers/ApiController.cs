@@ -30,7 +30,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Portals
         [HttpGet("[controller]/v1/portals")]
         [HttpGet("[controller]/v1/portals/{portalId}")]
-        public async Task<ActionResult<IEnumerable<iPortal>>> Portals(string orderBy = "PortalId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? portalId = null)
+        public async Task<ApiResult<iPortal>> Portals(string orderBy = "PortalId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, int? portalId = null)
         {
             var query = _context.Portals.Select(x => x);
             orderBy = orderBy.ToUpper();
@@ -39,8 +39,11 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else query = query.OrderBy(x => x.PortalId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
-            query = query.Skip(page*pageSize).Take(pageSize);
-            return await query.Select(x=>(iPortal)x).ToListAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iPortal> { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/catalogs")]

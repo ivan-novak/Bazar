@@ -96,7 +96,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,CatalogId,Title,Label,Format,IsNumber,Description")] Property @property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,CatalogId,Title,Label, Category, Format, Mask, IsNumber,Description")] Property @property)
         {
             if (id != @property.PropertyId)
             {

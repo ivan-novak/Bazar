@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -21,7 +23,7 @@ namespace RozetkaWebApp.Controllers
             _context = context;
         }
 
-
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Portals.ToListAsync());

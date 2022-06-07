@@ -20,10 +20,13 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int? id, string Filter = null)
         {
             ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == id);
-            var applicationDbContext = _context.Products.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
+            ViewBag.Filter = Filter;
+            var applicationDbContext = _context.Products.Where(c => c.CatalogId == id || id == null)
+                .Where(x => Filter == null || x.Label.Contains(Filter))
+                .Include(c => c.Catalog);
             return View(await applicationDbContext.ToListAsync());
         }
 

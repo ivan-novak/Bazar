@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,20 @@ namespace RozetkaWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/account/google-login";
+                })
+                .AddGoogle(options =>
+                {
+                    options.ClientId = "616532040396-8a5g66ots6ombdmavimbvscvqi1qt5g3.apps.googleusercontent.com";
+                    options.ClientSecret = "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";
+                });
+
             services.AddCors();
             services.AddDbContext<RozetkadbContext>(options =>  
                 options.UseSqlServer(
@@ -85,7 +100,7 @@ namespace RozetkaWebApp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod());
             app.UseAuthentication();

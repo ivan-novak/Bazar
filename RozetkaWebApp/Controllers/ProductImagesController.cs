@@ -136,7 +136,7 @@ namespace RozetkaWebApp.Controllers
                     if (!ProductImageExists(productImage.ProductImageId)) return NotFound();                   
                     else throw;                   
                 }
-                return Redirect($"/ProductImages/Index/" + productImage.ProductImageId);
+                return Redirect($"/ProductImages/Index/" + productImage.ProductId);
             }
             ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
             ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);

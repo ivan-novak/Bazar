@@ -13,16 +13,16 @@
  <div class=row>
     @foreach (var item in Model) 
     {
-          <div class="col-md-3">
+          <div class="col-md-3"> 
+              <div class="col-12 text-truncate h6">              
+                    <a asp-action="Edit" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-pen-square"></i> </a> 
+                    <a asp-action="Delete" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-trash"></i> </a>
+                    @Html.DisplayFor(modelItem => item.Title)
+              </div> 
               <div class="thumbnail">   
-              <img src="/images/Index/@item.ImageId" alt="item.Label" width="100%">    
-         </div> 
-         <div class="col-12 text-truncate h6">              
-                <a asp-action="Edit" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-pen-square"></i> </a> 
-                <a asp-action="Delete" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-trash"></i> </a>
-                @Html.DisplayFor(modelItem => item.Title)
-          </div>
-             <p></p>  
+                    <img src="/images/Index/@item.ImageId" alt="item.Label" width = "100%" >    
+              </div> 
+              <p></p>  
          </div>    
     }
 </div>

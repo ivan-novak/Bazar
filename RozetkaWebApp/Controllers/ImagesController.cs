@@ -30,7 +30,7 @@ namespace RozetkaWebApp.Controllers
             if (image == null) return null;
         //    return Images.ToStream();
             System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
-            var ext = Path.GetExtension(image.Title).Substring(1);
+            var ext = Path.GetExtension(image.Title).Substring(1).Replace("svg", "svg+xml");
             return new FileStreamResult(oMemoryStream, "image/" + ext);
         }
 
@@ -43,7 +43,7 @@ namespace RozetkaWebApp.Controllers
           //  return Images.ToStream();
             if (image.Data == null) return null;
             System.IO.MemoryStream oMemoryStream = new System.IO.MemoryStream(image.Data);
-            var ext = Path.GetExtension(image.Title).Substring(1);
+            var ext = Path.GetExtension(image.Title).Substring(1).Replace("svg", "svg+xml");
             return new FileStreamResult(oMemoryStream, "image/" + ext);
         }
 

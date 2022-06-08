@@ -51,3 +51,38 @@
         </tr>}
     </tbody>
 </table>
+ @{ViewBag.path = "/Products/Index/"+ViewBag.Catalog.CatalogId+"?Filter="+ViewBag.Filter+"&pageSize="+ViewBag.PageSize+"&page=";}
+
+@{
+    int pagesCount = (ViewBag.TotalCount-1)/ViewBag.PageSize+1;
+    int size = 10;
+    int first = ViewBag.Page/size;
+    int last = first+size;
+    if (last > pagesCount) last = pagesCount;
+    string back = "<";
+    string next = ">";
+   
+}
+<div class="text-center">
+   
+
+    @if(first != 0)
+    {
+        <a class="btn btn-outline-dark" href=@ViewBag.path+@(first-1)>@back</a>
+    }
+    @for (int i=first; i<last; i++)     
+    @if(i == ViewBag.Page)
+    {
+        <a class="btn btn-outline-warning" href=@ViewBag.path+@i>@(i+1)</a>
+    }
+    else
+    {
+        <a class="btn btn-outline-dark" href=@ViewBag.path+@i>@(i+1)</a>    
+    }
+    @if(last < pagesCount)
+    {
+        <a class="btn btn-outline-dark" href=@ViewBag.path+@last>@next</a>
+    }
+</div>
+
+

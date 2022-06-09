@@ -21,11 +21,17 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: PortalImages
-        public async Task<IActionResult> Index(int? id)
+           public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id != null) ViewBag.Portal = _context.Portals.Where(i => i.PortalId == id).First();
             var applicationDbContext = _context.PortalImages.Where(c => c.PortalId == id || id == null);
-            return View(await applicationDbContext.ToListAsync());
+            
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: PortalImages/Details/5

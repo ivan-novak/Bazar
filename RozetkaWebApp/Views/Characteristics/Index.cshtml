@@ -7,9 +7,13 @@
 
 
        <p><h4>Список характеристик</h4></p>
-                 
-        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новую</a></p>
-<table class="table">
+          @{  
+    Html.RenderPartial("_FilterNavigator");
+}
+
+       
+@*        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новую</a></p>
+*@<table class="table">
 
     <thead>
         <tr>
@@ -34,3 +38,6 @@
         }
     </tbody>
 </table>
+ @{
+     Html.RenderPartial("_PageNavigator");
+ }

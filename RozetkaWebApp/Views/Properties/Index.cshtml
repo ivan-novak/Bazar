@@ -7,8 +7,12 @@
 
     <p><h4>Список фильтров</h4></p>
                 
-     <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить новый </a> </p>
-   
+@*     <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить новый </a> </p>
+*@   
+     @{  
+    Html.RenderPartial("_FilterNavigator");
+}
+
 
 
 <table class="table">
@@ -38,3 +42,8 @@
     }
     </tbody>
 </table>
+
+ @{
+     Html.RenderPartial("_PageNavigator");
+ }
+

@@ -49,10 +49,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LockoutEnabled)
             <td class="text-right">
-                @if (item.UserName == User.Identity.Name) 
-                {
-                   <a href="/Identity/Account/Manage"><i class="fas fa-solid fa-pen-square"></i> </a> <i>|</i>
-                }
+                <a href="/Identity/Account/Manage"><i class="fas fa-solid fa-pen-square"></i> </a> <i>|</i>
                 <a href="/Addresses/Index/@item.Id" ><i class="fas fa-solid fa-folder"></i></a> |
                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
             </td>

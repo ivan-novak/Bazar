@@ -20,17 +20,17 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 1)
+        public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
+            ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == id);
+            var applicationDbContext = _context.Products.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
+
+            ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
-            ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == id);
-            ViewBag.Filter = Filter;
-            var applicationDbContext = _context.Products.Where(c => c.CatalogId == id || id == null)
-                .Where(x => Filter == null || x.Label.Contains(Filter)).Include(c => c.Catalog);
-            ViewBag.TotalCount = applicationDbContext.Count();
-            var query = applicationDbContext.Skip(pageSize*page).Take(pageSize);
-            return View(await query.ToListAsync());
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: Products/Details/5

@@ -33,8 +33,8 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Orders
-        [Authorize(Policy = "Owner")]
-        public async Task<IActionResult> Index(string id)
+        //  [Authorize(Policy = "Owner")]
+           public async Task<IActionResult> Index(string id)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewData["User"] = _context.AspNetUsers.Find(id);

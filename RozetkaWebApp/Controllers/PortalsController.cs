@@ -20,9 +20,17 @@ namespace RozetkaWebApp
         }
 
         // GET: Portals
-        public async Task<IActionResult> Index()
+        [HttpGet("[controller]/Index")]
+        public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
-            return View(await _context.Portals.ToListAsync());
+            var applicationDbContext = _context.Portals;
+
+           ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: Portals/Details/5

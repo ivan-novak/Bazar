@@ -20,11 +20,18 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Characteristics
-        public async Task<IActionResult> Index(long? id)
+        [HttpGet("[controller]/Index")]
+        public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
-            if(id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
+            if (id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
             var applicationDbContext = _context.Characteristics.Include(c => c.Property).Where(c=>c.ProductId == id || id == null);
-            return View(await applicationDbContext.ToListAsync());
+            
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Property.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Property.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: Characteristics/Details/5

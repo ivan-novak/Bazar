@@ -24,7 +24,7 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Index(string id)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             var rozetkadbContext = _context.Addresses.Include(a => a.User).Where(a=>a.UserId == id);
             return View(await rozetkadbContext.ToListAsync());
         }
@@ -46,7 +46,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(address.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
 
@@ -54,7 +54,7 @@ namespace RozetkaWebApp.Controllers
         public IActionResult Create(string id = null)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -87,7 +87,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(address.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
 
@@ -141,7 +141,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(address.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
 

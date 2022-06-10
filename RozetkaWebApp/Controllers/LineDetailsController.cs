@@ -41,7 +41,7 @@ namespace RozetkaWebApp.Controllers
                 .Include(l => l.Product)
                 .Where(l => l.OrderId == null)
                 .Where(l => l.CartId == CartId() || (l.UserId == userId));
-            ViewData["User"] = await _context.AspNetUsers.FindAsync(userId);    
+            ViewBag.User = await _context.AspNetUsers.FindAsync(userId);    
             return View(await rozetkadbContext.ToListAsync());
 
         }
@@ -90,8 +90,8 @@ namespace RozetkaWebApp.Controllers
         // GET: LineDetails/Create
         public IActionResult Create()
         {
-            ViewData["OrderId"] = new SelectList(_context.Orders, "OrderId", "DeliveryAddress");
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label");
+            ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress");
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label");
             return View();
         }
 
@@ -108,8 +108,8 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OrderId"] = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
+            ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
 
@@ -126,8 +126,8 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-         //   ViewData["OrderId"] = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
+         //   ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
 
@@ -163,8 +163,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OrderId"] = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
+            ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
 

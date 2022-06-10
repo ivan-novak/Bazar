@@ -1,12 +1,12 @@
 ﻿@page
 @model Disable2faModel
 @{
-    ViewData["Title"] = "Отключить двухфакторную аутентификацию (2FA)";
-    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+    ViewBag.Title= "Отключить двухфакторную аутентификацию (2FA)";
+    ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />
-<h2>@ViewData["Title"]</h2>
+<h2>@ViewBag.Title</h2>
 
 <div class="alert alert-warning" role="alert">
     <p>

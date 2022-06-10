@@ -1,20 +1,20 @@
 ﻿
 @if (ViewBag.Catalog == null) 
     {
-        ViewData["Title"] = "Товары каталога";
-        <h1>@ViewData["Title"]</h1>
+        ViewBag.Title= "Товары каталога";
+        <h1>@ViewBag.Title</h1>
     }
 else 
 {
 
-        ViewData["Title"] = "Каталог - "+ViewBag.Catalog.Label;
+        ViewBag.Title= "Каталог - "+ViewBag.Catalog.Label;
         <p> 
             <a asp-controller = "Portals" asp-action="Index" > Администрирование </a> >
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
             <a asp-controller = "Catalogs" asp-action="Details" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
          </p>
 
-        <h1>  @ViewData["Title"] </h1>  
+        <h1>  @ViewBag.Title</h1>  
 
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link @ViewBag.ProductsTab" href="/Products/Index/@ViewBag.Catalog.CatalogId">Товары</a> </li>

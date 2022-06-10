@@ -5,10 +5,11 @@
     Html.RenderPartial("_ProfileNavigator");
 }
 
-
  <p><h4>Список платежных карт</h4></p>
 
- <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> Добавить новую </a>   </p>
+ @{  
+    Html.RenderPartial("_FilterNavigator");
+}
 <table class="table">
     <thead>
         <tr> 
@@ -45,3 +46,7 @@
 }
     </tbody>
 </table>
+
+ @{
+     Html.RenderPartial("_PageNavigator");
+ }

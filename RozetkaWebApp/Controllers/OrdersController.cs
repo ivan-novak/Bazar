@@ -37,7 +37,7 @@ namespace RozetkaWebApp.Controllers
            public async Task<IActionResult> Index(string id)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             var rozetkadbContext = _context.Orders.Where(x=>x.UserId==id).Include(o => o.User);
             return View(await rozetkadbContext.ToListAsync());
         }
@@ -57,7 +57,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(order.UserId);
             ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
@@ -72,7 +72,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["AddressId"] = new SelectList(_context.Addresses.Where(a => a.UserId == id), "AddressId", "FullAddress");
             ViewData["Cart"] = _context.LineDetails.Where(a => a.UserId == id && a.OrderId == null).Include(x=>x.Product).ToList();
             var a = ViewData["Cart"];
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -135,7 +135,7 @@ namespace RozetkaWebApp.Controllers
             }
 
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
-            ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(order.UserId);
             ViewData["Lines"] = _context.LineDetails.Where(x=>x.OrderId==order.OrderId).Include(x=>x.Product).Select(x=>x);
             return View(order);
         }
@@ -192,7 +192,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(order.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(order.UserId);
             ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }

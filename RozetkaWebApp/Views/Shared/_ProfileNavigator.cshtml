@@ -1,5 +1,5 @@
 ﻿@{
-     ViewData["Title"] = "Пользователь - "+ViewBag.User.UserName;
+     ViewBag.Title= "Пользователь - "+ViewBag.User.UserName;
     if (ViewBag.User.UserName != User.Identity.Name)
     {
         <p>  
@@ -14,7 +14,7 @@
          </p>
     }
 }
-    <h1>@ViewData["Title"]</h1>
+    <h1>@ViewBag.Title</h1>
 
         <ul class="nav nav-tabs">
             @if(ViewBag.User.UserName == User.Identity.Name) 

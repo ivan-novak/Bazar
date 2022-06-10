@@ -20,7 +20,6 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Characteristics
-        [HttpGet("[controller]/Index")]
         public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
@@ -61,8 +60,8 @@ namespace RozetkaWebApp.Controllers
         {
             var product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             ViewBag.Product = product;
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label");
-            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i => i.CatalogId == product.CatalogId), "PropertyId", "Label");
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label");
+            ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == product.CatalogId), "PropertyId", "Label");
             return View();
         }
 
@@ -79,8 +78,8 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
+            ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
 
@@ -97,8 +96,8 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
+            ViewBag.PropertyId = new SelectList(_context.Properties.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
 
@@ -134,8 +133,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
-            ViewData["PropertyId"] = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
+            ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
      

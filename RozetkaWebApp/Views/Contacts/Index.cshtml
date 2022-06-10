@@ -8,8 +8,9 @@
 
  <p><h4>Список контактов</h4></p>
 
- <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> Добавить новый </a>   </p>
-
+@{  
+    Html.RenderPartial("_FilterNavigator");
+}
 <table class="table">
     <thead>
         <tr> 
@@ -53,3 +54,6 @@
 }
     </tbody>
 </table>
+ @{
+     Html.RenderPartial("_PageNavigator");
+ }

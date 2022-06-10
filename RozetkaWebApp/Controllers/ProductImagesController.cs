@@ -21,11 +21,16 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: ProductImages
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
             var applicationDbContext = _context.ProductImages.Where(c => c.ProductId == id || id == null).Include(c => c.Product);
-            return View(await applicationDbContext.ToListAsync());
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: ProductImages/Details/5
@@ -53,8 +58,8 @@ namespace RozetkaWebApp.Controllers
         {
             var product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             ViewBag.Product = product;
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId");
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId");
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId");
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId");
             return View();
         }
 
@@ -86,8 +91,8 @@ namespace RozetkaWebApp.Controllers
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
                 // return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
 
@@ -100,8 +105,8 @@ namespace RozetkaWebApp.Controllers
             var productImage = await _context.ProductImages.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductImageId == id);
             if (productImage == null) return NotFound();
             
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
 
@@ -138,8 +143,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
 

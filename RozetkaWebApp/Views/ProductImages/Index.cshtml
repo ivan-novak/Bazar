@@ -7,8 +7,9 @@
 
         <p><h4>Список изображений</h4></p>
                  
-        <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Product.ProductId"> Добавить новое</a></p>
-
+@{  
+    Html.RenderPartial("_FilterNavigator");
+}
       <hr />
  <div class=row>
     @foreach (var item in Model) 
@@ -27,3 +28,6 @@
     }
 </div>
 
+ @{
+     Html.RenderPartial("_PageNavigator");
+ }

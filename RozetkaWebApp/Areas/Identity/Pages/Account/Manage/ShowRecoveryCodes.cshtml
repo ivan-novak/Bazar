@@ -1,12 +1,12 @@
 ﻿@page
 @model ShowRecoveryCodesModel
 @{
-    ViewData["Title"] = "Коды восстановления";
-    ViewData["ActivePage"] = "TwoFactorAuthentication";
+    ViewBag.Title= "Коды восстановления";
+    ViewBag.ActivePage = "TwoFactorAuthentication";
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />
-<h4>@ViewData["Title"]</h4>
+<h4>@ViewBag.Title</h4>
 <div class="alert alert-warning" role="alert">
     <p>
         <strong>Сбросить приложение аутентификатора.</strong>

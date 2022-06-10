@@ -56,7 +56,7 @@ namespace RozetkaWebApp.Controllers
         {
             var catalog = _context.Catalogs.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id);
             ViewBag.Catalog = catalog;
-            ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
+            ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
             return View();
         }
 
@@ -74,7 +74,7 @@ namespace RozetkaWebApp.Controllers
                 return Redirect($"/Properties/Index/" + @property.CatalogId);
               //  return RedirectToAction(nameof(Index));
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
+            ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 
@@ -92,7 +92,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
-            ViewData["CatalogId"] = new SelectList(_context.Catalogs.Where(i => i.PortalId == property.Catalog.PortalId), "CatalogId", "Label");
+            ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == property.Catalog.PortalId), "CatalogId", "Label");
             return View(property);
         }
 
@@ -128,7 +128,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Properties/Index/" + @property.CatalogId);
             }
-            ViewData["CatalogId"] = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
+            ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
 

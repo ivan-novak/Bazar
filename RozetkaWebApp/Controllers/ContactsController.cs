@@ -21,13 +21,20 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Contacts
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             var rozetkadbContext = _context.Contacts.Include(a => a.User).Where(a => a.UserId == id);
-            return View(await rozetkadbContext.ToListAsync());
+            
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = rozetkadbContext.Where(x => Filter == null || x.FullName.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.FullName).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
+    
 
         // GET: Contacts/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -45,7 +52,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(contact.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
 
@@ -53,7 +60,7 @@ namespace RozetkaWebApp.Controllers
         public IActionResult Create(string id = null)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -87,7 +94,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(contact.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
 
@@ -143,7 +150,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(contact.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
 

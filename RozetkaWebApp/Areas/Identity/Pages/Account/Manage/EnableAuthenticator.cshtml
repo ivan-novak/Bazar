@@ -1,12 +1,12 @@
 ﻿@page
 @model EnableAuthenticatorModel
 @{
-    ViewData["Title"] = "Configure authenticator app";
-    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+    ViewBag.Title= "Configure authenticator app";
+    ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />
-<h4>@ViewData["Title"]</h4>
+<h4>@ViewBag.Title</h4>
 <div>
     <p>To use an authenticator app go through the following steps:</p>
     <ol class="list">

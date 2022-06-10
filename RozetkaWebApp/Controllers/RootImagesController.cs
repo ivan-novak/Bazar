@@ -49,7 +49,7 @@ namespace RozetkaWebApp.Controllers
         // GET: RootImages/Create
         public IActionResult Create()
         {
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId");
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
 
@@ -98,7 +98,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
 
@@ -146,7 +146,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
 

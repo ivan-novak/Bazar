@@ -49,7 +49,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Promotions/Create
         public IActionResult Create()
         {
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId");
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId");
             return View();
         }
 
@@ -79,7 +79,7 @@ namespace RozetkaWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);
             return View(promotion);
         }
 
@@ -96,7 +96,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);
             return View(promotion);
         }
 
@@ -143,7 +143,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);
+            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);
             return View(promotion);
         }
 

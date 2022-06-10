@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="App_Data\RozetkaWebApp_ml.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="App_Data\RozetkaWebApp_ml.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.0.0" />
     <PackageReference Include="Azure.Identity" Version="1.4.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />

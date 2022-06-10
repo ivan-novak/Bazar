@@ -21,13 +21,20 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Walletts
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             var rozetkadbContext = _context.Walletts.Include(a => a.User).Where(a => a.UserId == id);
-            return View(await rozetkadbContext.ToListAsync());
+            
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = rozetkadbContext.Where(x => Filter == null || x.CardNumber.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.CardNumber).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
+
 
         // GET: Walletts/Details/5
         public async Task<IActionResult> Details(long? id)
@@ -45,7 +52,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(wallett.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
         }
 
@@ -53,7 +60,7 @@ namespace RozetkaWebApp.Controllers
         public IActionResult Create(string id)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            ViewData["User"] = _context.AspNetUsers.Find(id);
+            ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
 
@@ -86,7 +93,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(wallett.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
         }
 
@@ -140,7 +147,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["User"] = _context.AspNetUsers.Find(wallett.UserId);
+            ViewBag.User = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
 
         }

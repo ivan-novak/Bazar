@@ -75,7 +75,7 @@ namespace RozetkaWebApp
         {
             var catalog = _context.Portals.FirstOrDefault(m => m.PortalId == Id);
             ViewBag.Portal = catalog;
-            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label");
+            ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label");
             return View();
         }
 
@@ -93,7 +93,7 @@ namespace RozetkaWebApp
                 return Redirect($"/Catalogs/Index/" + catalog.PortalId);
              //   return RedirectToAction(nameof(Index));
             }
-            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
+            ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
 
@@ -112,7 +112,7 @@ namespace RozetkaWebApp
             {
                 return NotFound();
             }
-            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
+            ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
 
@@ -149,7 +149,7 @@ namespace RozetkaWebApp
                 return Redirect($"/Catalogs/Index/" + catalog.PortalId);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PortalId"] = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
+            ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
 

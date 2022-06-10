@@ -106,25 +106,7 @@
     <StringID>35</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>36</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>37</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>38</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>39</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>40</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>41</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>42</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>43</StringID>
@@ -233,9 +215,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>78</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>79</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>80</StringID>
@@ -508,9 +487,6 @@
     <StringID>169</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>170</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>171</StringID>
   </GeneralIds>
   <GeneralIds>
@@ -644,9 +620,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>215</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>216</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>217</StringID>
@@ -950,9 +923,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>317</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>318</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>319</StringID>
@@ -1355,45 +1325,9 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>36</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>a asp-controller = "AspNetUsers" asp-action="Index" /a/ppa asp-area="Identity" asp-page="/Account/Manage/Index" /a/ph1/h1ul class="nav nav-tabs"li class="nav-item"a class="nav-link</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>37</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>" href="/Identity/Account/Manage/"/a/lili class="nav-item"a class="nav-link</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>38</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>" href="/Addresses/Index/</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>39</StringID>
     <LanguageID>9</LanguageID>
     <LanguageText>"/a/lili class="nav-item"a class="nav-link</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>40</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>" href="/Contacts/Index/</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>41</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>" href="/Wallets/Index/</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>42</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>" href="/Orders/Index/</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -1405,8 +1339,8 @@
   <GeneralTexts>
     <StringID>44</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Пользователь - </LanguageText>
-    <Status>1</Status>
+    <LanguageText>Пользователь</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>45</StringID>
@@ -1417,8 +1351,8 @@
   <GeneralTexts>
     <StringID>46</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Товар - </LanguageText>
-    <Status>1</Status>
+    <LanguageText>Товар</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>47</StringID>
@@ -1495,8 +1429,8 @@
   <GeneralTexts>
     <StringID>59</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Добавить</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>60</StringID>
@@ -1507,8 +1441,8 @@
   <GeneralTexts>
     <StringID>61</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Каталог - </LanguageText>
-    <Status>1</Status>
+    <LanguageText>Каталог</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>62</StringID>
@@ -1519,8 +1453,8 @@
   <GeneralTexts>
     <StringID>63</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Добавить новое</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Добавить</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>64</StringID>
@@ -1537,8 +1471,8 @@
   <GeneralTexts>
     <StringID>66</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Заголовок</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Наименование</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>67</StringID>
@@ -1592,7 +1526,7 @@
     <StringID>75</StringID>
     <LanguageID>9</LanguageID>
     <LanguageText>Формат вывода</LanguageText>
-    <Status>1</Status>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>76</StringID>
@@ -1613,12 +1547,6 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>79</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>_ValidationScriptsPartial</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>80</StringID>
     <LanguageID>9</LanguageID>
     <LanguageText>Каталог</LanguageText>
@@ -1627,8 +1555,8 @@
   <GeneralTexts>
     <StringID>81</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Звголовок</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Наименование</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>82</StringID>
@@ -1639,8 +1567,8 @@
   <GeneralTexts>
     <StringID>83</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Это число ?</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Это число?</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>84</StringID>
@@ -1669,8 +1597,8 @@
   <GeneralTexts>
     <StringID>88</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Фрпмат вывода</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Формат вывода</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>89</StringID>
@@ -1681,8 +1609,8 @@
   <GeneralTexts>
     <StringID>90</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Добавить новый</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Добавить</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>91</StringID>
@@ -1903,8 +1831,8 @@
   <GeneralTexts>
     <StringID>127</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Контактое лицо</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Контактное лицо</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>128</StringID>
@@ -1921,8 +1849,8 @@
   <GeneralTexts>
     <StringID>130</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Название</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Наименование</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>131</StringID>
@@ -2131,8 +2059,8 @@
   <GeneralTexts>
     <StringID>165</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Характеритики</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Характеристики</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>166</StringID>
@@ -2156,12 +2084,6 @@
     <StringID>169</StringID>
     <LanguageID>9</LanguageID>
     <LanguageText>Каталоги</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>170</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>dd/MM/yyyy</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -2383,8 +2305,8 @@
   <GeneralTexts>
     <StringID>207</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Добавить изображение</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Добавить</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>208</StringID>
@@ -2395,8 +2317,8 @@
   <GeneralTexts>
     <StringID>209</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Загловок</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Наименование</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>210</StringID>
@@ -2435,12 +2357,6 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>216</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>"</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>217</StringID>
     <LanguageID>9</LanguageID>
     <LanguageText>active</LanguageText>
@@ -2461,8 +2377,8 @@
   <GeneralTexts>
     <StringID>220</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Добавить пользователя</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Добавить</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>221</StringID>
@@ -2509,8 +2425,8 @@
   <GeneralTexts>
     <StringID>228</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Добавить новую</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Добавить</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>229</StringID>
@@ -2659,8 +2575,8 @@
   <GeneralTexts>
     <StringID>253</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Сбросьте пароль.</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Сбросить пароль</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>254</StringID>
@@ -2876,8 +2792,8 @@
   <GeneralTexts>
     <StringID>289</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Сбросить приложение аутентификатора.</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Сбросить приложение-аутентификатор</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>290</StringID>
@@ -2907,8 +2823,8 @@
   <GeneralTexts>
     <StringID>294</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Новы пароль</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Новый пароль</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>295</StringID>
@@ -3048,12 +2964,6 @@
     <StringID>317</StringID>
     <LanguageID>9</LanguageID>
     <LanguageText>login-provider-{login.LoginProvider}</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>318</StringID>
-    <LanguageID>9</LanguageID>
-    <LanguageText>remove-login-{login.LoginProvider}</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -3479,7 +3389,7 @@
     <Name>res</Name>
     <Selected>false</Selected>
     <ResourceName>res</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -3710,43 +3620,42 @@
     <Name>_href_Orders_Index</Name>
     <Selected>false</Selected>
     <ResourceName>_href_Orders_Index</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>_a_lili_class_nav_item_a_class</Name>
-    <StringID>39</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>_a_lili_class_nav_item_a_class</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>_href_Wallets_Index</Name>
     <Selected>false</Selected>
     <ResourceName>_href_Wallets_Index</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>_href_Contacts_Index</Name>
     <Selected>false</Selected>
     <ResourceName>_href_Contacts_Index</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>_href_Addresses_Index</Name>
     <Selected>false</Selected>
     <ResourceName>_href_Addresses_Index</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>_href_Identity_Account_Manage_</Name>
     <Selected>false</Selected>
     <ResourceName>_href_Identity_Account_Manage_</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -3785,7 +3694,7 @@
     <Name>res0</Name>
     <Selected>false</Selected>
     <ResourceName>res0</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -4040,7 +3949,7 @@
     <Name>_ValidationScriptsPartial</Name>
     <Selected>false</Selected>
     <ResourceName>_ValidationScriptsPartial</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -4215,7 +4124,7 @@
     <Name>_FilterNavigator</Name>
     <Selected>false</Selected>
     <ResourceName>_FilterNavigator</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -4766,7 +4675,7 @@
     <Name>dd_MM_yyyy</Name>
     <Selected>false</Selected>
     <ResourceName>dd_MM_yyyy</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -5133,22 +5042,21 @@
     <Name>res1</Name>
     <Selected>false</Selected>
     <ResourceName>res1</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>active</Name>
-    <StringID>217</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>active</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>_RootNavigator</Name>
     <Selected>false</Selected>
     <ResourceName>_RootNavigator</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -5619,7 +5527,7 @@
     <Name>res2</Name>
     <Selected>false</Selected>
     <ResourceName>res2</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -5938,7 +5846,7 @@
     <Name>remove_login_login_LoginProvid</Name>
     <Selected>false</Selected>
     <ResourceName>remove_login_login_LoginProvid</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -6057,7 +5965,7 @@
     <Name>res3</Name>
     <Selected>false</Selected>
     <ResourceName>res3</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>

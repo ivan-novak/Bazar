@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="_a_lili_class_nav_item_a_class" xml:space="preserve">
-    <value>"/a/lili class="nav-item"a class="nav-link</value>
-  </data>
   <data name="_and" xml:space="preserve">
     <value>and</value>
   </data>
@@ -140,9 +137,6 @@
   </data>
   <data name="_Remove" xml:space="preserve">
     <value>Remove</value>
-  </data>
-  <data name="active" xml:space="preserve">
-    <value>active</value>
   </data>
   <data name="An_error_occurred_while_proces" xml:space="preserve">
     <value>An error occurred while processing your request.</value>
@@ -521,22 +515,22 @@
     <value>Детально о товаре</value>
   </data>
   <data name="Добавить_изображение" xml:space="preserve">
-    <value>Добавить изображение</value>
+    <value>Добавить</value>
   </data>
   <data name="Добавить_новое" xml:space="preserve">
-    <value>Добавить новое</value>
+    <value>Добавить</value>
   </data>
   <data name="Добавить_новую" xml:space="preserve">
-    <value>Добавить новую</value>
+    <value>Добавить</value>
   </data>
   <data name="Добавить_новый" xml:space="preserve">
-    <value>Добавить новый</value>
+    <value>Добавить</value>
   </data>
   <data name="Добавить_пользователя" xml:space="preserve">
-    <value>Добавить пользователя</value>
+    <value>Добавить</value>
   </data>
   <data name="Додати" xml:space="preserve">
-    <value>Додати</value>
+    <value>Добавить</value>
   </data>
   <data name="Ед_измерения" xml:space="preserve">
     <value>Ед. измерения</value>
@@ -560,10 +554,10 @@
     <value>Забыть этот браузер</value>
   </data>
   <data name="Загловок" xml:space="preserve">
-    <value>Загловок</value>
+    <value>Наименование</value>
   </data>
   <data name="Заголовок" xml:space="preserve">
-    <value>Заголовок</value>
+    <value>Наименование</value>
   </data>
   <data name="Загрузить" xml:space="preserve">
     <value>Загрузить</value>
@@ -572,7 +566,7 @@
     <value>Запомнить меня</value>
   </data>
   <data name="Звголовок" xml:space="preserve">
-    <value>Звголовок</value>
+    <value>Наименование</value>
   </data>
   <data name="Значание" xml:space="preserve">
     <value>Значание</value>
@@ -681,7 +675,7 @@
     Обычно это будет отправлено по электронной почте:</value>
   </data>
   <data name="Каталог" xml:space="preserve">
-    <value>Каталог - </value>
+    <value>Каталог</value>
   </data>
   <data name="Каталог0" xml:space="preserve">
     <value>Каталог</value>
@@ -702,7 +696,7 @@
     <value>Контактное лицо</value>
   </data>
   <data name="Контактое_лицо" xml:space="preserve">
-    <value>Контактое лицо</value>
+    <value>Контактное лицо</value>
   </data>
   <data name="Контакты_заказчика" xml:space="preserve">
     <value>Контакты заказчика</value>
@@ -726,7 +720,7 @@
     <value>нажмите здесь для входа</value>
   </data>
   <data name="Название" xml:space="preserve">
-    <value>Название</value>
+    <value>Наименование</value>
   </data>
   <data name="Название_группы" xml:space="preserve">
     <value>Название группы</value>
@@ -771,7 +765,7 @@
     <value>Новое изображение</value>
   </data>
   <data name="Новы_пароль" xml:space="preserve">
-    <value>Новы пароль</value>
+    <value>Новый пароль</value>
   </data>
   <data name="Новый_адрес" xml:space="preserve">
     <value>Новый адрес</value>
@@ -889,7 +883,7 @@
     <value>Пользователи</value>
   </data>
   <data name="Пользователь" xml:space="preserve">
-    <value>Пользователь - </value>
+    <value>Пользователь</value>
   </data>
   <data name="Пользователь0" xml:space="preserve">
     <value>Пользователь</value>
@@ -958,10 +952,10 @@
     <value>Сбросить приложение-аутентификатор</value>
   </data>
   <data name="Сбросить_приложение_аутентифик0" xml:space="preserve">
-    <value>Сбросить приложение аутентификатора.</value>
+    <value>Сбросить приложение-аутентификатор</value>
   </data>
   <data name="Сбросьте_пароль" xml:space="preserve">
-    <value>Сбросьте пароль.</value>
+    <value>Сбросить пароль</value>
   </data>
   <data name="Скачайть_ваши_данные" xml:space="preserve">
     <value>Скачайть ваши данные</value>
@@ -1076,7 +1070,7 @@
     <value>Тип факса</value>
   </data>
   <data name="Товар" xml:space="preserve">
-    <value>Товар - </value>
+    <value>Товар</value>
   </data>
   <data name="Товар0" xml:space="preserve">
     <value>Товар</value>
@@ -1176,13 +1170,13 @@
     <value>Формат вывода</value>
   </data>
   <data name="Фрпмат_вывода" xml:space="preserve">
-    <value>Фрпмат вывода</value>
+    <value>Формат вывода</value>
   </data>
   <data name="Характеристики" xml:space="preserve">
     <value>Характеристики</value>
   </data>
   <data name="Характеритики" xml:space="preserve">
-    <value>Характеритики</value>
+    <value>Характеристики</value>
   </data>
   <data name="Цена" xml:space="preserve">
     <value>Цена</value>
@@ -1203,7 +1197,7 @@
     <value>Это действие отключает только 2FA.</value>
   </data>
   <data name="Это_число" xml:space="preserve">
-    <value>Это число ?</value>
+    <value>Это число?</value>
   </data>
   <data name="Это_число0" xml:space="preserve">
     <value>Это число?</value>
@@ -1211,6 +1205,12 @@
   <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
     <value>Этот процесс отключает 2FA до тех пор, пока вы не подтвердите свое приложение-аутентификатор.
         Если вы не завершите настройку приложения для проверки подлинности, вы можете потерять доступ к своей учетной записи.</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>active</value>
+  </data>
+  <data name="_a_lili_class_nav_item_a_class" xml:space="preserve">
+    <value>"/a/lili class="nav-item"a class="nav-link</value>
   </data>
   <data name="dd_MM_yyyy" xml:space="preserve">
     <value>dd/MM/yyyy</value>

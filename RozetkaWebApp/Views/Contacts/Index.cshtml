@@ -1,4 +1,5 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Contact>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Contact>
 
 @{
     ViewBag.ContactsTab = "active";
@@ -6,20 +7,20 @@
 }
 
 
- <p><h4>Список контактов</h4></p>
+ <p><h4>@Resources.Список_контактов</h4></p>
 
 @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial(Resources._FilterNavigator);
 }
 <table class="table">
     <thead>
         <tr> 
-            <th> ID </th>     
-            <th> Полное имя </th>        
-            <th> Адрес электронной почты </th>    
-            <th> Факс </th>          
-            <th> Мобильный телефон </th>          
-            <th class="text-right"> Действия</th>
+            <th> @Resources.ID </th>     
+            <th> @Resources.Полное_имя </th>        
+            <th> @Resources.Адрес_электронной_почты </th>    
+            <th> @Resources.Факс </th>          
+            <th> @Resources.Мобильный_телефон </th>          
+            <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>

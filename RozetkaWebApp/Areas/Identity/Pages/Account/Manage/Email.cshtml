@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model EmailModel
 @{
-    ViewBag.Title= "Управление элетронным адресов";
+    ViewBag.Title= Resources.Управление_элетронным_адресов;
     ViewBag.ActivePage = ManageNavPages.Email;
 }
 
@@ -18,22 +19,22 @@
                     <div class="input-group">
                         <input asp-for="Email" class="form-control" disabled />
                         <div class="input-group-append">
-                            <span class="input-group-text text-success font-weight-bold">✓</span>
+                            <span class="input-group-text text-success font-weight-bold">@Resources.res3</span>
                         </div>
                     </div>
                 }
                  else
                 {
                     <input asp-for="Email" class="form-control" disabled />
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Отправить письмо с подтверждением</button>
+                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">@Resources.Отправить_письмо_с_подтвержден</button>
                 }
             </div>
             <div class="form-group">
-                <label asp-for="Input.NewEmail">Новый электронный адрес</label>
+                <label asp-for="Input.NewEmail">@Resources.Новый_электронный_адрес</label>
                 <input asp-for="Input.NewEmail" class="form-control" />
                 <span asp-validation-for="Input.NewEmail" class="text-danger"></span>
             </div>
-            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="btn btn-primary">Сменить электронный адрес</button>
+            <button id="change-email-button" type="submit" asp-page-handler="ChangeEmail" class="btn btn-primary">@Resources.Сменить_электронный_адрес</button>
         </form>
     </div>
 </div>

@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model Disable2faModel
 @{
-    ViewBag.Title= "Отключить двухфакторную аутентификацию (2FA)";
+    ViewBag.Title= Resources.Отключить_двухфакторную_аутент0;
     ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
@@ -10,16 +11,15 @@
 
 <div class="alert alert-warning" role="alert">
     <p>
-        <strong>Это действие отключает только 2FA.</strong>
+        <strong>@Resources.Это_действие_отключает_только_</strong>
     </p>
     <p>
-       Отключение 2FA не изменяет ключи, используемые в приложениях для аутентификации. Если вы хотите сменить ключ
-        используется в приложении для проверки подлинности, вы должны <a asp-page="./ResetAuthenticator">сбросить ключи аутентификатора.</a>
+       @Resources.Отключение_2FA_не_изменяет_клю <a asp-page="./ResetAuthenticator">@Resources.сбросить_ключи_аутентификатора</a>
     </p>
 </div>
 
 <div>
     <form method="post" class="form-group">
-        <button class="btn btn-danger" type="submit">Отключить 2FA</button>
+        <button class="btn btn-danger" type="submit">@Resources.Отключить_2FA</button>
     </form>
 </div>

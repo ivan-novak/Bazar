@@ -1,17 +1,18 @@
-﻿@model RozetkaWebApp.Models.Contact
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Contact
 
 @{
     ViewBag.ContactsTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
 
-<p><h4>Информация о контакте</h4></p>
+<p><h4>@Resources.Информация_о_контакте</h4></p>
 
 
     <div class="form-group">
           <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.ContactId"> Изменить </a>
           <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.ContactId"> Удалить </a>     
-           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>  
             <hr />
       </div>   
 <div>
@@ -23,7 +24,7 @@
             @Html.DisplayFor(model => model.ContactType)
         </dd>*@
         <dt class = "col-sm-2">
-            Полное имя
+            @Resources.Полное_имя
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FullName)
@@ -53,55 +54,55 @@
             @Html.DisplayFor(model => model.Attention)
         </dd>*@
         <dt class = "col-sm-2">
-            Имя
+            @Resources.Имя
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FirstName)
         </dd>
         <dt class = "col-sm-2">
-            Отчество
+            @Resources.Отчество
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.MidName)
         </dd>
         <dt class = "col-sm-2">
-            Фамилия
+            @Resources.Фамилия
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LastName)
         </dd>
         <dt class = "col-sm-2">
-            Адрес электронной почты
+            @Resources.Адрес_электронной_почты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            Веб-сайт
+            @Resources.Веб_сайт
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.WebSite)
         </dd>
         <dt class = "col-sm-2">
-           Факс
+           @Resources.Факс
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Fax)
         </dd>
         <dt class = "col-sm-2">
-           Тип факса
+           @Resources.Тип_факса
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FaxType)
         </dd>
         <dt class = "col-sm-2">
-            Мобильный телефон
+            @Resources.Мобильный_телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Phone1)
         </dd>     
         <dt class = "col-sm-2">
-            Рабочий телефон
+            @Resources.Рабочий_телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Phone2)

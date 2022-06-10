@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Catalog
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Catalog
 
 
 @{
@@ -7,7 +8,7 @@
     Html.RenderPartial("_PortalNavigator");
 }
  <p>
-     <h4> Новый каталог </h4>
+     <h4> @Resources.Новый_каталог </h4>
  </p>
 
 <div class="row">
@@ -16,7 +17,7 @@
            
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                    <hr />
             </div> 
 

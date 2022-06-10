@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Order
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Order
 
 @{
     ViewBag.OrdersTab = "active";
@@ -6,24 +7,24 @@
 }
 
 <p>
-   <h4>Удалить этот заказ?</h4>
+   <h4>@Resources.Удалить_этот_заказ</h4>
 </p>
 <form asp-action="Delete">
         <input type="hidden" asp-for="OrderId" />
         <input type="submit" value="Удалить" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
 <div>
     <dl class="row">
-        <dt class = "col-sm-2">  Номер заказа </dt>             <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderId) </dd>
-        <dt class = "col-sm-2">  Дата заказ </dt>               <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderDate)  </dd>
-        <dt class = "col-sm-2">  Адрес доставки   </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryAddress) </dd>
-        <dt class = "col-sm-2">  Контактное лицо  </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryContact) </dd>
-        <dt class = "col-sm-2">  Электронный адрес</dt>   <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryEmail)  </dd>
-        <dt class = "col-sm-2">  Телефон заказчик  </dt>        <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryPhone) </dd>
-        <dt class = "col-sm-2">  Сумма </dt>                    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Total) </dd>
-        <dt class = "col-sm-2">  Банковская карта </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.CardNumber)  </dd>
+        <dt class = "col-sm-2">  @Resources.Номер_заказа </dt>             <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderId) </dd>
+        <dt class = "col-sm-2">  @Resources.Дата_заказ </dt>               <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderDate)  </dd>
+        <dt class = "col-sm-2">  @Resources.Адрес_доставки   </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryAddress) </dd>
+        <dt class = "col-sm-2">  @Resources.Контактное_лицо  </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryContact) </dd>
+        <dt class = "col-sm-2">  @Resources.Электронный_адрес</dt>   <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryEmail)  </dd>
+        <dt class = "col-sm-2">  @Resources.Телефон_заказчик  </dt>        <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryPhone) </dd>
+        <dt class = "col-sm-2">  @Resources.Сумма </dt>                    <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Total) </dd>
+        <dt class = "col-sm-2">  @Resources.Банковская_карта </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.CardNumber)  </dd>
 
     </dl>
 </div>
@@ -31,17 +32,17 @@
 
 
 <p>
-    <h6>Список товаров </h6>
+    <h6>@Resources.Список_товаров </h6>
 </p>
 
 <table class="table">
     <thead>
         <tr>
-             <th> Название </th>
-            <th> Описание </th>
-           <th> Цена </th>
-            <th> Количество  </th>
-             <th>  Сумма </th> 
+             <th> @Resources.Название </th>
+            <th> @Resources.Описание </th>
+           <th> @Resources.Цена </th>
+            <th> @Resources.Количество  </th>
+             <th>  @Resources.Сумма </th> 
         </tr>
     </thead>
     <tbody>

@@ -1,28 +1,28 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model EnableAuthenticatorModel
 @{
-    ViewBag.Title= "Configure authenticator app";
+    ViewBag.Title= Resources.Configure_authenticator_app;
     ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
 <partial name="_StatusMessage" for="StatusMessage" />
 <h4>@ViewBag.Title</h4>
 <div>
-    <p>To use an authenticator app go through the following steps:</p>
+    <p>@Resources.To_use_an_authenticator_app_go</p>
     <ol class="list">
         <li>
             <p>
-                Download a two-factor authenticator app like Microsoft Authenticator for
-                <a href="https://go.microsoft.com/fwlink/?Linkid=825072">Android</a> and
-                <a href="https://go.microsoft.com/fwlink/?Linkid=825073">iOS</a> or
-                Google Authenticator for
-                <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Android</a> and
-                <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8">iOS</a>.
+                @Resources.Download_a_two_factor_authenti
+                <a href="https://go.microsoft.com/fwlink/?Linkid=825072">@Resources.Android</a> @Resources._and
+                <a href="https://go.microsoft.com/fwlink/?Linkid=825073">@Resources.iOS</a> @Resources.or_Google_Authenticator_for
+                <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">@Resources.Android</a> @Resources._and
+                <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8">@Resources.iOS</a>.
             </p>
         </li>
         <li>
-            <p>Scan the QR Code or enter this key <kbd>@Model.SharedKey</kbd> into your two factor authenticator app. Spaces and casing do not matter.</p>
-            <div class="alert alert-info">Learn how to <a href="https://go.microsoft.com/fwlink/?Linkid=852423">enable QR code generation</a>.</div>
+            <p>@Resources.Scan_the_QR_Code_or_enter_this <kbd>@Model.SharedKey</kbd> into your two factor authenticator app. Spaces and casing do not matter.</p>
+            <div class="alert alert-info">@Resources.Learn_how_to <a href="https://go.microsoft.com/fwlink/?Linkid=852423">@Resources.enable_QR_code_generation</a>.</div>
             <div id="qrCode"></div>
             <div id="qrCodeData" data-url="@Html.Raw(@Model.AuthenticatorUri)"></div>
         </li>

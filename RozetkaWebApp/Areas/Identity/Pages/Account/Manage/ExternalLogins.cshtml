@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model ExternalLoginsModel
 @{
-    ViewBag.Title= "Управляйте своими внешними логинами";
+    ViewBag.Title= Resources.Управляйте_своими_внешними_лог;
     ViewBag.ActivePage = ManageNavPages.ExternalLogins;
 }
 
@@ -22,7 +23,7 @@
                                 <div>
                                     <input asp-for="@login.LoginProvider" name="LoginProvider" type="hidden" />
                                     <input asp-for="@login.ProviderKey" name="ProviderKey" type="hidden" />
-                                    <button type="submit" class="btn btn-primary" title="Удалить этот @login.ProviderDisplayName логин из вашего аккаунта">Remove</button>
+                                    <button type="submit" class="btn btn-primary" title="Удалить этот @login.ProviderDisplayName логин из вашего аккаунта">@Resources._Remove</button>
                                 </div>
                             </form>
                         }

@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model ResetAuthenticatorModel
 @{
-    ViewBag.Title= "Сбросить ключ аутентификатора.";
+    ViewBag.Title= Resources.Сбросить_ключ_аутентификатора;
     ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
@@ -10,15 +11,14 @@
 <div class="alert alert-warning" role="alert">
     <p>
         <span class="glyphicon glyphicon-warning-sign"></span>
-        <strong>Если вы сбросите свой ключ аутентификатора, ваше приложение аутентификатора не будет работать, пока вы не перенастроите его.</strong>
+        <strong>@Resources.Если_вы_сбросите_свой_ключ_аут</strong>
     </p>
     <p>
-        Этот процесс отключает 2FA до тех пор, пока вы не подтвердите свое приложение-аутентификатор.
-        Если вы не завершите настройку приложения для проверки подлинности, вы можете потерять доступ к своей учетной записи.
+        @Resources.Этот_процесс_отключает_2FA_до_
     </p>
 </div>
 <div>
     <form id="reset-authenticator-form" method="post" class="form-group">
-        <button id="reset-authenticator-button" class="btn btn-danger" type="submit">Сбросить ключ аутентификатора.</button>
+        <button id="reset-authenticator-button" class="btn btn-danger" type="submit">@Resources.Сбросить_ключ_аутентификатора</button>
     </form>
 </div>

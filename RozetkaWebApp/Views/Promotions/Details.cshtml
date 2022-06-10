@@ -1,14 +1,15 @@
-﻿@model RozetkaWebApp.Models.Promotion
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Promotion
 
  @{
     ViewBag.PromotionsTab = "active";
     Html.RenderPartial("_RootNavigator");
 }
   
-<h1>Details</h1>
+<h1>@Resources.Details</h1>
 
 <div>
-    <h4>Promotion</h4>
+    <h4>@Resources.Promotion</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -57,5 +58,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.PromotionId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Resources.Back_to_List</a>
 </div>

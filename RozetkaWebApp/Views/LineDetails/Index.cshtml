@@ -1,32 +1,33 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.LineDetail>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.LineDetail>
 
 @{
     ViewBag.ManagerTab = "active";
     Html.RenderPartial("_CartNavigator");
 }
 
-<p><h4>Список выбраных товаров</h4></p>
+<p><h4>@Resources.Список_выбраных_товаров</h4></p>
      
 
 @if (ViewBag.User == null)
 {
-    <p><a  class="btn btn-success" asp-area="Identity" asp-page="/Account/Login">Оформить заказ</a>   </p>
+    <p><a  class="btn btn-success" asp-area="Identity" asp-page="/Account/Login">@Resources.Оформить_заказ</a>   </p>
 }
 else
 {
-     <p><a  class="btn btn-success" asp-controller="Orders" asp-action="Create" asp-route-id="@ViewBag.User.Id"> Оформить заказ </a>   </p>
+     <p><a  class="btn btn-success" asp-controller="Orders" asp-action="Create" asp-route-id="@ViewBag.User.Id"> @Resources.Оформить_заказ </a>   </p>
 }
 
 <table class="table">
     <thead>
         <tr>
-             <th> Название </th>
-            <th> Описание </th>
-           <th> Цена </th>
-            <th> Количество  </th>
+             <th> @Resources.Название </th>
+            <th> @Resources.Описание </th>
+           <th> @Resources.Цена </th>
+            <th> @Resources.Количество  </th>
     @*         <th> Дата  </th>  *@
-             <th>  Сумма </th> 
- <th>  Действия </th> 
+             <th>  @Resources.Сумма </th> 
+ <th>  @Resources.Действия </th> 
         </tr>
     </thead>
     <tbody>

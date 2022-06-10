@@ -1,12 +1,13 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model LoginWith2faModel
 @{
-    ViewBag.Title= "Двух-факторноая авторизация";
+    ViewBag.Title= Resources.Двух_факторноая_авторизация;
 }
 
 <h1>@ViewBag.Title</h1>
 <hr />
-<p>Ваш логин защищен приложением-аутентификатором. Введите код аутентификатора ниже.</p>
+<p>@Resources.Ваш_логин_защищен_приложением_</p>
 <div class="row">
     <div class="col-md-4">
         <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
@@ -26,13 +27,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Log in</button>
+                <button type="submit" class="btn btn-primary">@Resources.Log_in</button>
             </div>
         </form>
     </div>
 </div>
 <p>
-    У вас нет доступа к вашему устройству аутентификации? Вы можете 
+    @Resources.У_вас_нет_доступа_к_вашему_уст
     <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">войти с кодом восстановления</a>.
 </p>
 

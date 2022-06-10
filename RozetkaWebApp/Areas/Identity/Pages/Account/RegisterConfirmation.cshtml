@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model RegisterConfirmationModel
 @{
-    ViewBag.Title= "Register confirmation";
+    ViewBag.Title= Resources.Register_confirmation;
 }
 
 <h1>@ViewBag.Title</h1>
@@ -9,14 +10,13 @@
     if (@Model.DisplayConfirmAccountLink)
     {
 <p>
-    В настоящее время в этом приложении не зарегистрирован реальный отправитель электронной почты, см. <a href="https://aka.ms/aspaccountconf">эти документы</a> как настроить реального отправителя электронной почты.
-    Обычно это будет отправлено по электронной почте: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Нажмите здесь, чтобы подтвердить свою учетную запись</a>
+    @Resources.В_настоящее_время_в_этом_прило <a href="https://aka.ms/aspaccountconf">@Resources.эти_документы</a> @Resources.как_настроить_реального_отправ <a id="confirm-link" href="@Model.EmailConfirmationUrl">Нажмите здесь, чтобы подтвердить свою учетную запись</a>
 </p>
     }
     else
     {
 <p>
-        Пожалуйста, проверьте свою электронную почту, чтобы подтвердить свою учетную запись.
+        @Resources.Пожалуйста_проверьте_свою_элек
 </p>
     }
 }

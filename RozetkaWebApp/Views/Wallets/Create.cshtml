@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Wallett
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Wallett
 
 @{
     ViewBag.WalletsTab = "active";
@@ -6,7 +7,7 @@
 }
 
  <p>
-     <h4> Новая карта </h4>
+     <h4> @Resources.Новая_карта </h4>
  </p>
 
 <div class="row">
@@ -15,33 +16,33 @@
 
              <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                     <hr />
             </div> 
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CardNumber" class="control-label">Номер карты</label>
+                <label asp-for="CardNumber" class="control-label">@Resources.Номер_карты</label>
                 <input asp-for="CardNumber" class="form-control" />
                 <span asp-validation-for="CardNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ExpiryDate" class="control-label">Срок работы</label>
+                <label asp-for="ExpiryDate" class="control-label">@Resources.Срок_работы</label>
                 <input asp-for="ExpiryDate" class="form-control" />
                 <span asp-validation-for="ExpiryDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cardholder" class="control-label">Имя владельца</label>
+                <label asp-for="Cardholder" class="control-label">@Resources.Имя_владельца</label>
                 <input asp-for="Cardholder" class="form-control" />
                 <span asp-validation-for="Cardholder" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CardType" class="control-label">Тип карты</label>
+                <label asp-for="CardType" class="control-label">@Resources.Тип_карты</label>
                 <input asp-for="CardType" class="form-control" />
                 <span asp-validation-for="CardType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VerificationCode" class="control-label">CVV код</label>
+                <label asp-for="VerificationCode" class="control-label">@Resources.CVV_код0</label>
                 <input asp-for="VerificationCode" class="form-control" />
                 <span asp-validation-for="VerificationCode" class="text-danger"></span>
             </div>

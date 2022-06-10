@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Property
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Property
 
 
 @{
@@ -7,54 +8,54 @@
 }
     
   <p>
-     <h4> Новый фильтр </h4>
+     <h4> @Resources.Новый_фильтр </h4>
  </p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                     <hr />
             </div> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="display: none">
-                <label asp-for="CatalogId" class="control-label">Каталог</label>
+                <label asp-for="CatalogId" class="control-label">@Resources.Каталог0</label>
 @*              <select asp-for="CatalogId" class ="form-control" asp-items="ViewBag.CatalogId"></select>*@
                 <input asp-for="CatalogId" class="form-control" value=@ViewBag.Catalog.CatalogId /> 
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label">Заголовок</label>
+                <label asp-for="Title" class="control-label">@Resources.Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label">Этикетка</label>
+                <label asp-for="Label" class="control-label">@Resources.Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Category" class="control-label">Категория</label>
+                <label asp-for="Category" class="control-label">@Resources.Категория</label>
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Mask" class="control-label">Маска ввода</label>
+                <label asp-for="Mask" class="control-label">@Resources.Маска_ввода</label>
                 <input asp-for="Mask" class="form-control" />
                 <span asp-validation-for="Format" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Format" class="control-label">Фрпмат вывода</label>
+                <label asp-for="Format" class="control-label">@Resources.Фрпмат_вывода</label>
                 <input asp-for="Format" class="form-control" />
                 <span asp-validation-for="Format" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IsNumber" class="control-label">Это число?</label>
+                <label asp-for="IsNumber" class="control-label">@Resources.Это_число0</label>
                 <input asp-for="IsNumber" class="form-control" />
                 <span asp-validation-for="IsNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label">Описание</label>
+                <label asp-for="Description" class="control-label">@Resources.Описание</label>
                 <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>

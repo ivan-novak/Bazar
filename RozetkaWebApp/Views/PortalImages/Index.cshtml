@@ -1,4 +1,5 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.PortalImage>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.PortalImage>
 
 @{
 
@@ -8,7 +9,7 @@
 
 
 
-         <p><h4>Список изображений</h4></p>                
+         <p><h4>@Resources.Список_изображений</h4></p>                
     @{  
     Html.RenderPartial("_FilterNavigator");
 }   

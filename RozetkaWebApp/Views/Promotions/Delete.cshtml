@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Promotion
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Promotion
 
  @{
     ViewBag.PromotionsTab = "active";
@@ -6,25 +7,25 @@
 }
   
 <p>
-   <h4>Удалить эту промоакцию?</h4>
+   <h4>@Resources.Удалить_эту_промоакцию</h4>
 </p>
 <div class="row">
      <div class="col-md-8">
      <form asp-action="Delete">
         <input type="hidden" asp-for="PromotionId" />
         <input type="submit" value="Удалить" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
       <p></p>
 
     <dl class="row">
-        <dt class = "col-sm-2">Заголовок</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Title)</dd>
-        <dt class = "col-sm-2">Этикетка</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Label)</dd>
-        <dt class = "col-sm-2">Описание</dt><dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)</dd>
-        <dt class = "col-sm-2">Атрибуты</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Attributes)</dd>
-        <dt class = "col-sm-2">Дата начала</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.StartDate) </dd>
-        <dt class = "col-sm-2">Дата завершения </dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.EndDate)</dd>
+        <dt class = "col-sm-2">@Resources.Заголовок</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Title)</dd>
+        <dt class = "col-sm-2">@Resources.Этикетка</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Label)</dd>
+        <dt class = "col-sm-2">@Resources.Описание</dt><dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)</dd>
+        <dt class = "col-sm-2">@Resources.Атрибуты</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Attributes)</dd>
+        <dt class = "col-sm-2">@Resources.Дата_начала</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.StartDate) </dd>
+        <dt class = "col-sm-2">@Resources.Дата_завершения </dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.EndDate)</dd>
     </dl>
 </div>
 <div class="col-md-4"> 

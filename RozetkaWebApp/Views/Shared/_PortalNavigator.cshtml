@@ -1,8 +1,9 @@
-﻿@{
-    ViewBag.Title="Портал - "+@ViewBag.Portal.Label;
+﻿@using RozetkaWebApp.App_GlobalResources;
+@{
+    ViewBag.Title=Resources.Портал+@ViewBag.Portal.Label;
 }
     <p> 
-         <a asp-controller = "Portals" asp-action="Index" > Администрирование </a> >
+         <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
          <a asp-controller = "Portals" asp-action="Details" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a> 
     </p>
 

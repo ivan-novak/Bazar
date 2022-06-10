@@ -1,4 +1,5 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.RootImage>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.RootImage>
 
  @{
     ViewBag.ImagesTab = "active";
@@ -6,9 +7,9 @@
 }
  
    
-     <p><h4> Список изображений </h4></p>
+     <p><h4> @Resources.Список_изображений </h4></p>
             
-     <p><a  class="btn btn-success" asp-action="Create" > Добавить новое </a>  </p>
+     <p><a  class="btn btn-success" asp-action="Create" > @Resources.Добавить_новое </a>  </p>
          <hr />   
 
 

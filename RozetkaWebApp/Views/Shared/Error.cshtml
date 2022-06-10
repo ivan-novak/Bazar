@@ -1,25 +1,25 @@
-﻿@model ErrorViewModel
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model ErrorViewModel
 @{
-    ViewBag.Title= "Error";
+    ViewBag.Title= Resources.Error0;
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">@Resources._Error</h1>
+<h2 class="text-danger">@Resources.An_error_occurred_while_proces</h2>
 
 @if (Model.ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        <strong>@Resources.Request_ID</strong> <code>@Model.RequestId</code>
     </p>
 }
 
-<h3>Development Mode</h3>
+<h3>@Resources.Development_Mode</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    @Resources.Swapping_to <strong>@Resources.Development</strong> @Resources.environment_will_display_more_
 </p>
 <p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
+    <strong>@Resources.The_Development_environment_sh</strong>
+    @Resources.It_can_result_in_displaying_se <strong>@Resources.Development</strong> @Resources.environment_by_setting_the <strong>@Resources.ASPNETCORE_ENVIRONMENT</strong> @Resources.environment_variable_to <strong>@Resources.Development</strong>
+    @Resources.and_restarting_the_app
 </p>

@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Order
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Order
 
 @{
     ViewBag.AddressesTab = "active";
@@ -6,7 +7,7 @@
 }
 
 <p>
-     <h4> Изменить информацию о заказе </h4>
+     <h4> @Resources.Изменить_информацию_о_заказе </h4>
  </p>
 
 <div class="row">
@@ -15,7 +16,7 @@
 
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div> 
 
@@ -27,47 +28,47 @@
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group" >
-                <label asp-for="Description" class="control-label">Описание</label>
+                <label asp-for="Description" class="control-label">@Resources.Описание</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Total" class="control-label">Сумма заказа</label>
+                <label asp-for="Total" class="control-label">@Resources.Сумма_заказа</label>
                 <input asp-for="Total" class="form-control" />
                 <span asp-validation-for="Total" class="text-danger"></span>
             </div>
             <div class="form-group" >
-                <label asp-for="OrderDate" class="control-label">Дата заказа</label>
+                <label asp-for="OrderDate" class="control-label">@Resources.Дата_заказа</label>
                 <input asp-for="OrderDate" class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
             <div class="form-group" style="display: none">
-                <label asp-for="Status" class="control-label">Статус</label>
+                <label asp-for="Status" class="control-label">@Resources.Статус</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CardNumber" class="control-label">Платежные реквизиты</label>
+                <label asp-for="CardNumber" class="control-label">@Resources.Платежные_реквизиты</label>
                 <input asp-for="CardNumber" class="form-control" />
                 <span asp-validation-for="CardNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryAddress" class="control-label">Адрес доставки</label>
+                <label asp-for="DeliveryAddress" class="control-label">@Resources.Адрес_доставки</label>
                 <input asp-for="DeliveryAddress" class="form-control" />
                 <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryContact" class="control-label">Контактое лицо</label>
+                <label asp-for="DeliveryContact" class="control-label">@Resources.Контактое_лицо</label>
                 <input asp-for="DeliveryContact" class="form-control" />
                 <span asp-validation-for="DeliveryContact" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryEmail" class="control-label">Адрес электронной почты заказчика</label>
+                <label asp-for="DeliveryEmail" class="control-label">@Resources.Адрес_электронной_почты_заказч</label>
                 <input asp-for="DeliveryEmail" class="form-control" />
                 <span asp-validation-for="DeliveryEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryPhone" class="control-label">Телефон заказчика</label>
+                <label asp-for="DeliveryPhone" class="control-label">@Resources.Телефон_заказчика</label>
                 <input asp-for="DeliveryPhone" class="form-control" />
                 <span asp-validation-for="DeliveryPhone" class="text-danger"></span>
             </div>
@@ -81,19 +82,19 @@
 </div>
 
 <p>
-    <h6>Список товаров </h6>
+    <h6>@Resources.Список_товаров </h6>
 </p>
 
 <table class="table">
     <thead>
         <tr>
-             <th> Название </th>
-            <th> Описание </th>
-           <th> Цена </th>
-            <th> Количество  </th>
+             <th> @Resources.Название </th>
+            <th> @Resources.Описание </th>
+           <th> @Resources.Цена </th>
+            <th> @Resources.Количество  </th>
     @*         <th> Дата  </th>  *@
-             <th>  Сумма </th> 
- <th>  Действия </th> 
+             <th>  @Resources.Сумма </th> 
+ <th>  @Resources.Действия </th> 
         </tr>
     </thead>
     <tbody>

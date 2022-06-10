@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Portal
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Portal
 
 @{
     ViewBag.Title="Портал - "+@Model.Label;
@@ -10,38 +11,38 @@
 }
 
     <p> 
-        <h4>Вы хотиту удалить это портал?</h4>
+        <h4>@Resources.Вы_хотиту_удалить_это_портал</h4>
     </p>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="PortalId" />
         <input type="submit" value="Удалить" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
 
 <div>  
     <dl class="row">
         <dt class = "col-sm-2">
-            Заголовок
+            @Resources.Заголовок
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
         <dt class = "col-sm-2">
-            Этикетка
+            @Resources.Этикетка
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Label)
         </dd>
         <dt class = "col-sm-2">
-            Описание
+            @Resources.Описание
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            Атрибуты
+            @Resources.Атрибуты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Attributes)

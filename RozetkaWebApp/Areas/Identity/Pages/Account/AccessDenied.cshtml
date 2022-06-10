@@ -1,10 +1,11 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model AccessDeniedModel
 @{
-    ViewBag.Title= "Отказано в доступе";
+    ViewBag.Title= Resources.Отказано_в_доступе;
 }
 
 <header>
     <h1 class="text-danger">@ViewBag.Title</h1>
-    <p class="text-danger">You do not have access to this resource.</p>
+    <p class="text-danger">@Resources.You_do_not_have_access_to_this</p>
 </header>

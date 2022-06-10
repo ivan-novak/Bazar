@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Portal
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Portal
 
 @{
 
@@ -8,7 +9,7 @@
   
 
   <p>
-     <h4> Новый портал </h4>
+     <h4> @Resources.Новый_портал </h4>
  </p>
 <div class="row">
     <div class="col-md-12">
@@ -17,7 +18,7 @@
 
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                     <hr />
             </div> 
 
@@ -26,24 +27,24 @@
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label">Заголовок</label>
+                <label asp-for="Title" class="control-label">@Resources.Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label">Этикетка</label>
+                <label asp-for="Label" class="control-label">@Resources.Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label">Описание</label>
+                <label asp-for="Description" class="control-label">@Resources.Описание</label>
                 <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div> 
             </div>
             <div class="form-group">
-                <label asp-for="Attributes" class="control-label">Атрибуты</label>
+                <label asp-for="Attributes" class="control-label">@Resources.Атрибуты</label>
                 <div>
                     <textarea asp-for="Attributes" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Attributes" class="text-danger"></span>

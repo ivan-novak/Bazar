@@ -1,13 +1,14 @@
-﻿@model RozetkaWebApp.Models.AspNetUserRole
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.AspNetUserRole
 
 @{
-    ViewBag.Title= "Details";
+    ViewBag.Title= Resources.Details;
 }
 
-<h1>Details</h1>
+<h1>@Resources.Details</h1>
 
 <div>
-    <h4>AspNetUserRole</h4>
+    <h4>@Resources.AspNetUserRole</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -25,6 +26,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    @Html.ActionLink(Resources.Edit, Resources.Edit, new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">@Resources.Back_to_List</a>
 </div>

@@ -1,18 +1,19 @@
-﻿@{
-    ViewBag.Title= "Администрирование";
+﻿@using RozetkaWebApp.App_GlobalResources;
+@{
+    ViewBag.Title= Resources.Администрирование;
 }
         <p> 
-           <a href="/portals"> Администрирование </a> 
+           <a href="/portals"> @Resources.Администрирование </a> 
        </p>
 
 <h1>@ViewBag.Title</h1>
 
 
         <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.PortalsTab" href="/Portals/Index">Порталы</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.PromotionsTab" href="/Promotions/Index">Промоакции</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/RootImages/Index">Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ManagerTab" href="/AspNetRoles/Index">Групп безопасности</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.UsersTab" href="/AspNetUsers/Index">Пользователи</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.PortalsTab" href="/Portals/Index">@Resources.Порталы</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.PromotionsTab" href="/Promotions/Index">@Resources.Промоакции</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/RootImages/Index">@Resources.Изображения</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ManagerTab" href="/AspNetRoles/Index">@Resources.Групп_безопасности</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.UsersTab" href="/AspNetUsers/Index">@Resources.Пользователи</a> </li>
 
         </ul> 

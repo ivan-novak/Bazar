@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.AspNetUserRole
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.AspNetUserRole
 
 @{
     ViewBag.ManagerTab = "active";
@@ -6,19 +7,19 @@
 }
 
   <p>
-     <h4> Добавить пользователя </h4>
+     <h4> @Resources.Добавить_пользователя </h4>
  </p>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                     <hr />
             </div> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UserId" class="control-label">Пользователи</label>
+                <label asp-for="UserId" class="control-label">@Resources.Пользователи</label>
                 <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
             </div>
             <div class="form-group" style="display: none">

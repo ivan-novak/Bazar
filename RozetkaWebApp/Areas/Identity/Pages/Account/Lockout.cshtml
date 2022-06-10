@@ -1,10 +1,11 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model LockoutModel
 @{
-    ViewBag.Title= "Заблокировано";
+    ViewBag.Title= Resources.Заблокировано;
 }
 
 <header>
     <h1 class="text-danger">@ViewBag.Title</h1>
-    <p class="text-danger">This account has been locked out, please try again later.</p>
+    <p class="text-danger">@Resources.This_account_has_been_locked_o</p>
 </header>

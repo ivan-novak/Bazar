@@ -1,12 +1,13 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Order>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Order>
 
 @{
     ViewBag.OrdersTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
- <p><h4>Список заказов</h4></p>
+ <p><h4>@Resources.Список_заказов</h4></p>
 
- <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> Добавить новый </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> @Resources.Добавить_новый </a>   </p>
 
 
 
@@ -17,26 +18,26 @@
                 ID
             </th>
             <th>
-                Описание
+                @Resources.Описание
             </th>
             <th>
-                Сумма
+                @Resources.Сумма
             </th>
             <th>
-               Дата заказа
+               @Resources.Дата_заказа
             </th>
 @*            <th>
                 Статус
             </th>  *@       
           <th>
-                Адрес доставки
+                @Resources.Адрес_доставки
             </th>
            
   @*            <th>
                Телефон получателя
             </th>  *@                    
             <th class="text-right">
-                Действия
+                @Resources.Действия
             </th>
         </tr>
     </thead>
@@ -65,8 +66,8 @@
                 @Html.DisplayFor(modelItem => item.DeliveryPhone)
             </td>*@           
             <td class="text-right">
-                <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> |
-                <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res
+                <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res
                 <a asp-action="Delete" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>

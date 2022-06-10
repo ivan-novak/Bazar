@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model DeletePersonalDataModel
 @{
-    ViewBag.Title= "Delete Personal Data";
+    ViewBag.Title= Resources.Delete_Personal_Data;
     ViewBag.ActivePage = ManageNavPages.PersonalData;
 }
 
@@ -9,7 +10,7 @@
 
 <div class="alert alert-warning" role="alert">
     <p>
-        <strong>Удаление этих данных навсегда удалит вашу учетную запись, и это невозможно восстановить.</strong>
+        <strong>@Resources.Удаление_этих_данных_навсегда_</strong>
     </p>
 </div>
 
@@ -19,12 +20,12 @@
         @if (Model.RequirePassword)
         {
             <div class="form-group">
-                <label asp-for="Input.Password">Пароль</label>
+                <label asp-for="Input.Password">@Resources.Пароль</label>
                 <input asp-for="Input.Password" class="form-control" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
         }
-        <button class="btn btn-danger" type="submit">Удалить данные и мой аккаунт</button>
+        <button class="btn btn-danger" type="submit">@Resources.Удалить_данные_и_мой_аккаунт</button>
     </form>
 </div>
 

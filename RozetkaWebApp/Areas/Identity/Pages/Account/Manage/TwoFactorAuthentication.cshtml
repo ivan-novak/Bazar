@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model TwoFactorAuthenticationModel
 @{
-    ViewBag.Title= "Двухфакторная аутентификация (2FA)";
+    ViewBag.Title= Resources.Двухфакторная_аутентификация_2;
     ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
@@ -12,44 +13,44 @@
     if (Model.RecoveryCodesLeft == 0)
     {
         <div class="alert alert-danger">
-            <strong>У вас не осталось кодов восстановления.</strong>
-            <p>Вы должны<a asp-page="./GenerateRecoveryCodes"> создать новый набор кодов восстановления</a> прежде чем вы сможете войти в систему с кодом восстановления.</p>
+            <strong>@Resources.У_вас_не_осталось_кодов_восста</strong>
+            <p>@Resources.Вы_должны<a asp-page="./GenerateRecoveryCodes"> @Resources.создать_новый_набор_кодов_восс</a> @Resources.прежде_чем_вы_сможете_войти_в_</p>
         </div>
     }
     else if (Model.RecoveryCodesLeft == 1)
     {
         <div class="alert alert-danger">
-            <strong>У вас остался 1 код восстановления.</strong>
-            <p>Вы можете<a asp-page="./GenerateRecoveryCodes"> создать новый набор кодов восстановления</a>.</p>
+            <strong>@Resources.У_вас_остался_1_код_восстановл</strong>
+            <p>@Resources.Вы_можете<a asp-page="./GenerateRecoveryCodes"> @Resources.создать_новый_набор_кодов_восс</a>@Resources.res2</p>
         </div>
     }
     else if (Model.RecoveryCodesLeft <= 3)
     {
         <div class="alert alert-warning">
-            <strong>Вы имеете @Model.RecoveryCodesLeft оставшихся кодов восстановления.</strong>
-            <p>Вам следует <a asp-page="./GenerateRecoveryCodes">создать новый набор кодов восстановления</a>.</p>
+            <strong>@Resources.Вы_имеете @Model.RecoveryCodesLeft оставшихся кодов восстановления.</strong>
+            <p>@Resources.Вам_следует <a asp-page="./GenerateRecoveryCodes">@Resources.создать_новый_набор_кодов_восс</a>@Resources.res2</p>
         </div>
     }
 
     if (Model.IsMachineRemembered)
     {
         <form method="post" style="display: inline-block">
-            <button type="submit" class="btn btn-default">Забыть этот браузер</button>
+            <button type="submit" class="btn btn-default">@Resources.Забыть_этот_браузер</button>
         </form>
     }
-    <a asp-page="./Disable2fa" class="btn btn-default">Отключить двухфакторную аутентификацию</a>
-    <a asp-page="./GenerateRecoveryCodes" class="btn btn-default">Сбросить коды восстановления</a>
+    <a asp-page="./Disable2fa" class="btn btn-default">@Resources.Отключить_двухфакторную_аутент</a>
+    <a asp-page="./GenerateRecoveryCodes" class="btn btn-default">@Resources.Сбросить_коды_восстановления</a>
 }
 
-<h5>Приложение для аутентификации</h5>
+<h5>@Resources.Приложение_для_аутентификации</h5>
 @if (!Model.HasAuthenticator)
 {
     <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-default">Добавить приложение для проверки подлинности</a>
 }
 else
 {
-    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-default">Настроить приложение для проверки подлинности</a>
-    <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-default">Сбросить приложение-аутентификатор</a>
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-default">@Resources.Настроить_приложение_для_прове</a>
+    <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-default">@Resources.Сбросить_приложение_аутентифик</a>
 }
 
 @section Scripts {

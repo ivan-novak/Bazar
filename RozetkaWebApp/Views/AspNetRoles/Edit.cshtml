@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.AspNetRole
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.AspNetRole
 
 @{
     ViewBag.ManagerTab = "active";
@@ -7,7 +8,7 @@
 
 
 <p> 
-        <h4>Изменить группу безопасности</h4>
+        <h4>@Resources.Изменить_группу_безопасности</h4>
 </p>  
 <div class="row">
     <div class="col-md-4">
@@ -15,19 +16,19 @@
         <form asp-action="Edit">
                       <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div>  
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label">Название</label>
+                <label asp-for="Name" class="control-label">@Resources.Название</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group" >
-                <label asp-for="NormalizedName" class="control-label">Индикатор</label>
+                <label asp-for="NormalizedName" class="control-label">@Resources.Индикатор</label>
                 <input asp-for="NormalizedName" class="form-control" />
                 <span asp-validation-for="NormalizedName" class="text-danger"></span>
             </div>

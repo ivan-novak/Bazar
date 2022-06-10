@@ -1,4 +1,5 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Catalog>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Catalog>
 
 @{
 
@@ -6,7 +7,7 @@
     Html.RenderPartial("_PortalNavigator");
 }
         
-     <p><h4>Список каталогов</h4></p>
+     <p><h4>@Resources.Список_каталогов</h4></p>
     
      @{  
     Html.RenderPartial("_FilterNavigator");
@@ -17,10 +18,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th> ID </th>
-            <th> Наименование каталога     </th>
-            <th> Ресурсы </th>
-            <th class="text-right"> Действия  </th>
+            <th> @Resources.ID </th>
+            <th> @Resources.Наименование_каталога     </th>
+            <th> @Resources.Ресурсы </th>
+            <th class="text-right"> @Resources.Действия  </th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +30,8 @@
             <td> @Html.DisplayFor(modelItem => item.CatalogId)  </td>
             <td>  <a asp-controller="Products" asp-action="Index" asp-route-id="@item.CatalogId">@Html.DisplayFor(modelItem => item.Label)</a>  </td>
             <td> 
-                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">Изображения</a> |
-                <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">Фильтры</a> 
+                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Изображения</a> |
+                <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Фильтры</a> 
             </td>
             <td class="text-right">
                 <a asp-controller = "Products" asp-action="Index" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-folder"></i> </a> |

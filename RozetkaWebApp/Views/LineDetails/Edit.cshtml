@@ -1,18 +1,19 @@
-﻿@model RozetkaWebApp.Models.LineDetail
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.LineDetail
 
 @{
     ViewBag.ManagerTab = "active";
     Html.RenderPartial("_CartNavigator");
 }
 
-<p><h4>Изменить количество товара</h4></p>
+<p><h4>@Resources.Изменить_количество_товара</h4></p>
 
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
                 <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div>  
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -33,17 +34,17 @@
                 <span asp-validation-for="CartId" class="text-danger"></span>
             </div>
             <div class="form-group" >
-                <label asp-for="ProductId" class="control-label">Товар</label>
+                <label asp-for="ProductId" class="control-label">@Resources.Товар0</label>
                 <select ReadOnly="false" asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
                 <span asp-validation-for="ProductId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Quantities" class="control-label">Количество</label>
+                <label asp-for="Quantities" class="control-label">@Resources.Количество</label>
                 <input asp-for="Quantities" class="form-control" />
                 <span asp-validation-for="Quantities" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UnitCost" class="control-label">Цена</label>
+                <label asp-for="UnitCost" class="control-label">@Resources.Цена</label>
                 <input ReadOnly="false" asp-for="UnitCost" class="form-control" />
                 <span asp-validation-for="UnitCost" class="text-danger"></span>
             </div>

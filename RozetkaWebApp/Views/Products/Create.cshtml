@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Product
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Product
 
 @{
     ViewBag.ProductsTab = "active";
@@ -6,7 +7,7 @@
 }
 
  <p>
-     <h4> Новый товар </h4>
+     <h4> @Resources.Новый_товар </h4>
  </p>
 
 <div class="row">
@@ -14,51 +15,51 @@
         <form asp-action="Create">
              <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div> 
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group"  style="display: none">
-                <label asp-for="CatalogId" class="control-label"> Каталог </label>
+                <label asp-for="CatalogId" class="control-label"> @Resources.Каталог0 </label>
 @*                <select asp-for="CatalogId" class ="form-control" asp-items="ViewBag.CatalogId"></select>*@
                   <input asp-for="CatalogId" class="form-control" value=@ViewBag.Catalog.CatalogId /> 
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"> Заголовок </label>
+                <label asp-for="Title" class="control-label"> @Resources.Заголовок </label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group"> 
-                <label asp-for="Label" class="control-label"> Этикетка </label>
+                <label asp-for="Label" class="control-label"> @Resources.Этикетка </label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"> Описание </label>
+                <label asp-for="Description" class="control-label"> @Resources.Описание </label>
                <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="Attributes" class="control-label"> Атрибуты </label>
+                <label asp-for="Attributes" class="control-label"> @Resources.Атрибуты </label>
                 <div>
                     <textarea asp-for="Attributes" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Attributes" class="text-danger"></span>
                 </div>  </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"> Цена </label>
+                <label asp-for="Price" class="control-label"> @Resources.Цена </label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Quantity" class="control-label"> Количество </label>
+                <label asp-for="Quantity" class="control-label"> @Resources.Количество </label>
                 <input asp-for="Quantity" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
              <div class="form-group" >
-                <label asp-for="CatalogId" class="control-label"> Промоакция </label>
+                <label asp-for="CatalogId" class="control-label"> @Resources.Промоакция </label>
                   <select asp-for="PromotionId" class ="form-control" asp-items="ViewBag.PromotionId"><
                          <option selected></option>
                    </select>

@@ -1,11 +1,12 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Wallett>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Wallett>
 
 @{
     ViewBag.WalletsTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
 
- <p><h4>Список платежных карт</h4></p>
+ <p><h4>@Resources.Список_платежных_карт</h4></p>
 
  @{  
     Html.RenderPartial("_FilterNavigator");
@@ -13,11 +14,11 @@
 <table class="table">
     <thead>
         <tr> 
-             <th> Тип карты </th>   
-            <th> Номер карты </th>        
-            <th> Срок действия </th>    
-            <th> Имя владельца </th>                    
-            <th class="text-right"> Действия</th>
+             <th> @Resources.Тип_карты </th>   
+            <th> @Resources.Номер_карты </th>        
+            <th> @Resources.Срок_действия </th>    
+            <th> @Resources.Имя_владельца </th>                    
+            <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>

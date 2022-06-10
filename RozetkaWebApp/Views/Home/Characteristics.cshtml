@@ -1,12 +1,13 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Characteristic>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Characteristic>
 
 @{
-    ViewBag.Title= "Характеритики";
+    ViewBag.Title= Resources.Характеритики;
 }
 
-<h1> Детально о товаре </h1>
+<h1> @Resources.Детально_о_товаре </h1>
 
- <p><a  class="btn btn-success" asp-controller = "Home" asp-action="AddToCart" asp-route-id = "@ViewBag.Product.ProductId" > Купить </a>   </p>
+ <p><a  class="btn btn-success" asp-controller = "Home" asp-action="AddToCart" asp-route-id = "@ViewBag.Product.ProductId" > @Resources.Купить </a>   </p>
 
 
 <table class="table">

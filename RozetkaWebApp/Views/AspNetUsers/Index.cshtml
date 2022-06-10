@@ -1,24 +1,25 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.AspNetUser>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.AspNetUser>
 
  @{
     ViewBag.UsersTab = "active";
     Html.RenderPartial("_RootNavigator");
 }
   
-<p><h4>Список пользователей</h4></p>
+<p><h4>@Resources.Список_пользователей</h4></p>
        
- <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" > @Resources.Добавить_новый </a>   </p>
 
 
 
 <table class="table">
        <thead>
         <tr>
-            <th> Имя пользователя </th>
-            <th> Адрес электронной почты </th>
-            <th> Телефон </th>
-            <th> Блокировка </th>
-            <th class="text-right"> Действия</th>
+            <th> @Resources.Имя_пользователя </th>
+            <th> @Resources.Адрес_электронной_почты </th>
+            <th> @Resources.Телефон </th>
+            <th> @Resources.Блокировка </th>
+            <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
 

@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Promotion
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Promotion
 
  @{
     ViewBag.PromotionsTab = "active";
@@ -6,36 +7,36 @@
 }
   
   <p>
-     <h4> Новая промоакция </h4>
+     <h4> @Resources.Новая_промоакция </h4>
  </p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="submit" value="Создать" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label">Заголовок</label>
+                <label asp-for="Title" class="control-label">@Resources.Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label">Этикетка</label>
+                <label asp-for="Label" class="control-label">@Resources.Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label">Описание</label>
+                <label asp-for="Description" class="control-label">@Resources.Описание</label>
                 <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div> 
             </div>
             <div class="form-group">
-                <label asp-for="Attributes" class="control-label">Атрибуты</label>
+                <label asp-for="Attributes" class="control-label">@Resources.Атрибуты</label>
                 <div>
                     <textarea asp-for="Attributes" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Attributes" class="text-danger"></span>
@@ -43,12 +44,12 @@
             </div>
             <div class="row col-md-4">
                 <div class="form-group">
-                    <label asp-for="StartDate" class="control-label">Дата начала</label>
+                    <label asp-for="StartDate" class="control-label">@Resources.Дата_начала</label>
                     <input asp-for="StartDate" class="form-control" />
                     <span asp-validation-for="StartDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="EndDate" class="control-label">Дата окончания</label>
+                    <label asp-for="EndDate" class="control-label">@Resources.Дата_окончания</label>
                     <input asp-for="EndDate" class="form-control" />
                     <span asp-validation-for="EndDate" class="text-danger"></span>
                 </div>
@@ -58,7 +59,7 @@
                 <select asp-for="ImageId" class ="form-control" asp-items="ViewBag.ImageId"></select>
             </div>
             <div class="form-group" >
-               <div class="editor-label">Файл изображения</div>
+               <div class="editor-label">@Resources.Файл_изображения</div>
                <div class="editor-field">
                     <input type="file" name="uploadImage" accept="image/*" />
                </div>

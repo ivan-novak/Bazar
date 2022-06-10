@@ -1,9 +1,10 @@
-﻿@{
-     ViewBag.Title= "Пользователь - "+ViewBag.User.UserName;
+﻿@using RozetkaWebApp.App_GlobalResources;
+@{
+     ViewBag.Title= Resources.Пользователь+ViewBag.User.UserName;
     if (ViewBag.User.UserName != User.Identity.Name)
     {
         <p>  
-            <a asp-controller = "Portals" asp-action="Index" > Администрирование </a> >
+            <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
             <a asp-controller = "AspNetUsers" asp-action="Index" > Пользователи </a> 
         </p>
     }

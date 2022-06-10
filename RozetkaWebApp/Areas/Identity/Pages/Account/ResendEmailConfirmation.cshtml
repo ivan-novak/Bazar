@@ -1,22 +1,23 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model ResendEmailConfirmationModel
 @{
-    ViewBag.Title= "Resend email confirmation";
+    ViewBag.Title= Resources.Resend_email_confirmation;
 }
 
 <h1>@ViewBag.Title</h1>
-<h4>Enter your email.</h4>
+<h4>@Resources.Enter_your_email</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Input.Email">Адрес электронной почты</label>
+                <label asp-for="Input.Email">@Resources.Адрес_электронной_почты</label>
                 <input asp-for="Input.Email" class="form-control" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Отправить</button>
+            <button type="submit" class="btn btn-primary">@Resources.Отправить</button>
         </form>
     </div>
 </div>

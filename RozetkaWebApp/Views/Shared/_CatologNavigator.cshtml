@@ -1,15 +1,16 @@
-﻿
+﻿@using RozetkaWebApp.App_GlobalResources;
+
 @if (ViewBag.Catalog == null) 
     {
-        ViewBag.Title= "Товары каталога";
+        ViewBag.Title= Resources.Товары_каталога;
         <h1>@ViewBag.Title</h1>
     }
 else 
 {
 
-        ViewBag.Title= "Каталог - "+ViewBag.Catalog.Label;
+        ViewBag.Title= Resources.Каталог+ViewBag.Catalog.Label;
         <p> 
-            <a asp-controller = "Portals" asp-action="Index" > Администрирование </a> >
+            <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
             <a asp-controller = "Catalogs" asp-action="Details" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
          </p>

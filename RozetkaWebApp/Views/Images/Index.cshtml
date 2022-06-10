@@ -1,13 +1,14 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Image>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Image>
 
 @{
     ViewBag.Title= "Index";
 }
 
-<h1>Index</h1>
+<h1>@Resources.Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">@Resources.Create_New</a>
 </p>
 <table class="table">
     <thead>
@@ -28,12 +29,12 @@
     <input type="file" id="file1" 
            name="file1" 
            multiple="multiple" />
-    <button type="submit">Upload File(s)</button>
+    <button type="submit">@Resources.Upload_File_s</button>
 </form>
 <form asp-action="RetrieveImage" 
       asp-controller="Images" 
       method="post">
-    <button type="submit">Show Latest Image</button>
+    <button type="submit">@Resources.Show_Latest_Image</button>
 </form>
 
 

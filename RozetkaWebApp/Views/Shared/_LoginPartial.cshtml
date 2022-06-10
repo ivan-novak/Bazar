@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using RozetkaWebApp.App_GlobalResources;
+@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
@@ -6,24 +7,24 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@Resources.Hello @User.Identity.Name!</a>
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Выйти</button>
+            <button  type="submit" class="nav-link btn btn-link text-dark">@Resources.Выйти</button>
         </form>
     </li>
 }
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Регистрация</a>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">@Resources.Регистрация</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Войти</a>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">@Resources.Войти</a>
     </li>
 }
     <li class="nav-item">
-       <a class="nav-link text-dark"  asp-controller="LineDetails" asp-action="Index">Корзина</a>
+       <a class="nav-link text-dark"  asp-controller="LineDetails" asp-action="Index">@Resources.Корзина</a>
     </li>                    
 </ul>

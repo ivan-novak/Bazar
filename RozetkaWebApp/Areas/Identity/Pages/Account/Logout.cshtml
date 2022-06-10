@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model LogoutModel
 @{
-    ViewBag.Title= "Выход";
+    ViewBag.Title= Resources.Выход;
 }
 
 <header>
@@ -10,12 +11,12 @@
         if (User.Identity.IsAuthenticated)
         {
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                <button type="submit" class="nav-link btn btn-link text-dark">@Resources.Click_here_to_Logout</button>
             </form>
         }
         else
         {
-            <p>Вы успешно вышли из приложения.</p>
+            <p>@Resources.Вы_успешно_вышли_из_приложения</p>
         }
     }
 </header>

@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Address
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Address
 
 @{
     ViewBag.AddressesTab = "active";
@@ -6,19 +7,19 @@
 }
 
  <p>
-   <h4> Информация о адресе</h4>
+   <h4> @Resources.Информация_о_адресе</h4>
  <p>
          <div class="form-group">
           <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.AddressId"> Изменить </a>
           <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.AddressId"> Удалить </a>     
-           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>  
             <hr />
       </div>   
 <div>
 
     <dl class="row">      
         <dt class = "col-sm-2">
-           Адрес
+           @Resources.Адрес
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AddressLine1)
@@ -34,25 +35,25 @@
             @Html.DisplayFor(model => model.AddressLine3)
         </dd>
         <dt class = "col-sm-2">
-            Город
+            @Resources.Город
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.City)
         </dd>
         <dt class = "col-sm-2">
-            Область
+            @Resources.Область
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.State)
         </dd>
         <dt class = "col-sm-2">
-            Почтовый индекс
+            @Resources.Почтовый_индекс
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PostalCode)
         </dd>
         <dt class = "col-sm-2">
-            Страна
+            @Resources.Страна
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Country)

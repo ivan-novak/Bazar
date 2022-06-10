@@ -1,12 +1,13 @@
-﻿@model RozetkaWebApp.Models.Order
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Order
 
 @{
-    ViewBag.Title= "Create";
+    ViewBag.Title= Resources.Create;
 }
 
-<h1>Create</h1>
+<h1>@Resources.Create</h1>
 
-<h4>Order</h4>
+<h4>@Resources._Order</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -74,7 +75,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Resources.Back_to_List</a>
 </div>
 
 @section Scripts {

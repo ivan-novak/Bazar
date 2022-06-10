@@ -1,15 +1,16 @@
-﻿@model RozetkaWebApp.Models.CatalogImage
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.CatalogImage
 
     @{
         ViewBag.ImagesTab = "active";
         Html.RenderPartial("_CatologNavigator");
     }
-    <p><h4>Список изображений</h4></p>                
-    <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить изображение </a> </p>
+    <p><h4>@Resources.Список_изображений</h4></p>                
+    <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> @Resources.Добавить_изображение </a> </p>
     <hr />  
 
 <p>
-     <h4> Изменить изображение </h4>
+     <h4> @Resources.Изменить_изображение </h4>
  </p>
 
 <div class="row">
@@ -18,7 +19,7 @@
 
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />     
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button> 
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button> 
                 <hr />
             </div>
 
@@ -36,17 +37,17 @@
                 <span asp-validation-for="ImageId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label">Заголовок</label>
+                <label asp-for="Title" class="control-label">@Resources.Заголовок</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Label" class="control-label">Этикетка</label>
+                <label asp-for="Label" class="control-label">@Resources.Этикетка</label>
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
             <div class="form-group" >
-                 <div class="editor-label">Файл изображения</div>
+                 <div class="editor-label">@Resources.Файл_изображения</div>
                  <div class="editor-field">
                     <input type="file" name="uploadImage" accept="image/*" />
                 </div>

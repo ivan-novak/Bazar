@@ -1,23 +1,24 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Promotion>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Promotion>
 
  @{
     ViewBag.PromotionsTab = "active";
     Html.RenderPartial("_RootNavigator");
 }
   
- <p><h4>Список промоакций</h4></p>
+ <p><h4>@Resources.Список_промоакций</h4></p>
        
- <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" > @Resources.Добавить_новый </a>   </p>
 
 
 <table class="table">
      <thead>
         <tr>
-            <th> ID </th>
-            <th> Наименование акции </th>
-            <th> Дата начала </th> 
-            <th> Дата завершения </th>
-            <th class="text-right"> Действия</th>
+            <th> @Resources.ID </th>
+            <th> @Resources.Наименование_акции </th>
+            <th> @Resources.Дата_начала </th> 
+            <th> @Resources.Дата_завершения </th>
+            <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>

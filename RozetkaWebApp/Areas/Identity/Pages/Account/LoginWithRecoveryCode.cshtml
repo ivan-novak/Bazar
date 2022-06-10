@@ -1,14 +1,14 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model LoginWithRecoveryCodeModel
 @{
-    ViewBag.Title= "Проверка кода восстановления";
+    ViewBag.Title= Resources.Проверка_кода_восстановления;
 }
 
 <h1>@ViewBag.Title</h1>
 <hr />
 <p>
-   Вы запросили вход с кодом восстановления. Этот логин не будет запомнен, пока вы не предоставите
-    код приложения-аутентификатора при входе в систему или отключите 2FA и снова войдите в систему.
+   @Resources.Вы_запросили_вход_с_кодом_восс
 </p>
 <div class="row">
     <div class="col-md-4">
@@ -19,7 +19,7 @@
                 <input asp-for="Input.RecoveryCode" class="form-control" autocomplete="off" />
                 <span asp-validation-for="Input.RecoveryCode" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Вход</button>
+            <button type="submit" class="btn btn-primary">@Resources.Вход</button>
         </form>
     </div>
 </div>

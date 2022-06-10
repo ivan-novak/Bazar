@@ -1,14 +1,15 @@
-﻿@model RozetkaWebApp.Models.PortalImage
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.PortalImage
 
 @{
     ViewBag.ImagesTab = "active";
     Html.RenderPartial("_PortalNavigator");
 }
 
-<h1>Details</h1>
+<h1>@Resources.Details</h1>
 
 <div>
-    <h4>PortalImage</h4>
+    <h4>@Resources.PortalImage</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -39,5 +40,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.PortalImageId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Resources.Back_to_List</a>
 </div>

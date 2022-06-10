@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.AspNetRole
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.AspNetRole
 
 
 @{
@@ -7,20 +8,20 @@
 }
 
      <p></p>
-        <h4> Информация о группе безопасности</h4>
+        <h4> @Resources.Информация_о_группе_безопаснос</h4>
      <p></p>
 <div>
       <div class="form-group">
           <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.Id"> Изменить </a>
           <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id"> Удалить </a>     
-           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>  
             <hr />
       </div>   
 
     <dl class="row">
-        <dt class = "col-sm-2"> Название </dt>
+        <dt class = "col-sm-2"> @Resources.Название </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Name) </dd>
-        <dt class = "col-sm-2">  Индикатор  </dt>
+        <dt class = "col-sm-2">  @Resources.Индикатор  </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.NormalizedName) </dd>
        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ConcurrencyStamp)

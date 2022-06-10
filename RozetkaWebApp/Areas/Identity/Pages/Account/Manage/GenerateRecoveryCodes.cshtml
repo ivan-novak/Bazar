@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model GenerateRecoveryCodesModel
 @{
-    ViewBag.Title= "Создание кодов восстановления двухфакторной аутентификации (2FA)";
+    ViewBag.Title= Resources.Создание_кодов_восстановления_;
     ViewBag.ActivePage = ManageNavPages.TwoFactorAuthentication;
 }
 
@@ -10,18 +11,17 @@
 <div class="alert alert-warning" role="alert">
     <p>
         <span class="glyphicon glyphicon-warning-sign"></span>
-        <strong>Поместите эти коды в безопасное место.</strong>
+        <strong>@Resources.Поместите_эти_коды_в_безопасно</strong>
     </p>
     <p>
-        Если вы потеряете свое устройство и у вас не будет кодов восстановления, вы потеряете доступ к своей учетной записи.
+        @Resources.Если_вы_потеряете_свое_устройс
     </p>
     <p>
-        Создание новых кодов восстановления не изменяет ключи, используемые в приложениях для проверки подлинности. Если вы хотите сменить ключ
-        используется в приложении для проверки подлинности, вы должны <a asp-page="./ResetAuthenticator">сбросить ключи аутентификатора.</a>
+        @Resources.Создание_новых_кодов_восстанов <a asp-page="./ResetAuthenticator">@Resources.сбросить_ключи_аутентификатора</a>
     </p>
 </div>
 <div>
     <form method="post" class="form-group">
-        <button class="btn btn-danger" type="submit">Генерация кодов восстановления</button>
+        <button class="btn btn-danger" type="submit">@Resources.Генерация_кодов_восстановления</button>
     </form>
 </div>

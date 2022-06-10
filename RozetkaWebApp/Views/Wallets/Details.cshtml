@@ -1,48 +1,49 @@
-﻿@model RozetkaWebApp.Models.Wallett
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Wallett
 
 @{
     ViewBag.WalletsTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
 <p> 
-    <h4>Информация о платежной карте?</h4>
+    <h4>@Resources.Информация_о_платежной_карте</h4>
 </p>
 
 
     <div class="form-group">
           <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.WalletId"> Изменить </a>
           <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.WalletId"> Удалить </a>     
-           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>  
             <hr />
       </div>   
 <div>
     <dl class="row">
         <dt class = "col-sm-2">
-           Номер карты
+           @Resources.Номер_карты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CardNumber)
         </dd>
         <dt class = "col-sm-2">
-            Срок работы
+            @Resources.Срок_работы
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ExpiryDate)
         </dd>
         <dt class = "col-sm-2">
-           Владедец карты
+           @Resources.Владедец_карты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Cardholder)
         </dd>
         <dt class = "col-sm-2">
-            Тип карты
+            @Resources.Тип_карты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CardType)
         </dd>
         <dt class = "col-sm-2">
-            CVV-код
+            @Resources.CVV_код
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.VerificationCode)

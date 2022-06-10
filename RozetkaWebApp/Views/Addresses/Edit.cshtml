@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.Address
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Address
 
 @{
     ViewBag.AddressesTab = "active";
@@ -6,7 +7,7 @@
 }
 
 <p>
-     <h4> Изменить информацию о адресе </h4>
+     <h4> @Resources.Изменить_информацию_о_адресе </h4>
  </p>
 
 <div class="row">
@@ -15,7 +16,7 @@
             
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>   
+                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>   
                     <hr />
             </div>
 
@@ -27,7 +28,7 @@
                 <span asp-validation-for="AddressType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AddressLine1" class="control-label">Адрес</label>
+                <label asp-for="AddressLine1" class="control-label">@Resources.Адрес</label>
                 <input asp-for="AddressLine1" class="form-control" />
                 <span asp-validation-for="AddressLine1" class="text-danger"></span>
             </div>
@@ -47,22 +48,22 @@
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="City" class="control-label">Город</label>
+                <label asp-for="City" class="control-label">@Resources.Город</label>
                 <input asp-for="City" class="form-control" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="State" class="control-label">Область</label>
+                <label asp-for="State" class="control-label">@Resources.Область</label>
                 <input asp-for="State" class="form-control" />
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PostalCode" class="control-label">Почтовый индекс</label>
+                <label asp-for="PostalCode" class="control-label">@Resources.Почтовый_индекс</label>
                 <input asp-for="PostalCode" class="form-control" />
                 <span asp-validation-for="PostalCode" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Country" class="control-label">Страна</label>
+                <label asp-for="Country" class="control-label">@Resources.Страна</label>
                 <input asp-for="Country" class="form-control" />
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>

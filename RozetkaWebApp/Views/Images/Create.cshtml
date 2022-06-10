@@ -1,12 +1,13 @@
-﻿@model RozetkaWebApp.Models.Image
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Image
 
 @{
     ViewBag.Title= "Create";
 }
 
-<h1>Create</h1>
+<h1>@Resources.Create</h1>
 
-<h4>Image</h4>
+<h4>@Resources.Image</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,7 +24,7 @@
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
                         <div class="form-group">
-                <label class="control-label">Файл</label>
+                <label class="control-label">@Resources.Файл</label>
 
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
@@ -34,7 +35,7 @@
     </div>
 </div>
 
-<label class="form-label" for="customFile">Default file input example</label>
+<label class="form-label" for="customFile">@Resources.Default_file_input_example</label>
 <input type="file" class="form-control" id="customFile" />
 
 
@@ -46,7 +47,7 @@
 
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Resources.Back_to_List</a>
 </div>
 
 @section Scripts {

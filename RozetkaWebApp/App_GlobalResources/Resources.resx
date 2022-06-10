@@ -1,0 +1,1263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_a_lili_class_nav_item_a_class" xml:space="preserve">
+    <value>"/a/lili class="nav-item"a class="nav-link</value>
+  </data>
+  <data name="_and" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="_and_restarting_the_applicatio" xml:space="preserve">
+    <value>, and restarting the application.</value>
+  </data>
+  <data name="_as_it_can_result_in_sensitive" xml:space="preserve">
+    <value>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the</value>
+  </data>
+  <data name="_copy_2022_RozetkaWebApp" xml:space="preserve">
+    <value>&amp;copy; 2022 - RozetkaWebApp -</value>
+  </data>
+  <data name="_Error" xml:space="preserve">
+    <value>Error.</value>
+  </data>
+  <data name="_Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>active</value>
+  </data>
+  <data name="An_error_occurred_while_proces" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="and_restarting_the_app" xml:space="preserve">
+    <value>and restarting the app.</value>
+  </data>
+  <data name="Android" xml:space="preserve">
+    <value>Android</value>
+  </data>
+  <data name="Are_you_sure_you_want_to_delet" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="ASPNETCORE_ENVIRONMENT" xml:space="preserve">
+    <value>ASPNETCORE_ENVIRONMENT</value>
+  </data>
+  <data name="AspNetUser" xml:space="preserve">
+    <value>AspNetUser</value>
+  </data>
+  <data name="AspNetUserRole" xml:space="preserve">
+    <value>AspNetUserRole</value>
+  </data>
+  <data name="Associate_your" xml:space="preserve">
+    <value>Associate your</value>
+  </data>
+  <data name="Back_to_List" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="Catalog" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="CatalogImage" xml:space="preserve">
+    <value>CatalogImage</value>
+  </data>
+  <data name="Click_here_to_Logout" xml:space="preserve">
+    <value>Click here to Logout</value>
+  </data>
+  <data name="Configure_authenticator_app" xml:space="preserve">
+    <value>Configure authenticator app</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Create_New" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="CVV_код" xml:space="preserve">
+    <value>CVV-код</value>
+  </data>
+  <data name="CVV_код0" xml:space="preserve">
+    <value>CVV код</value>
+  </data>
+  <data name="danger" xml:space="preserve">
+    <value>danger</value>
+  </data>
+  <data name="Default_file_input_example" xml:space="preserve">
+    <value>Default file input example</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Delete_Personal_Data" xml:space="preserve">
+    <value>Delete Personal Data</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Development" xml:space="preserve">
+    <value>Development</value>
+  </data>
+  <data name="Development_environment_should" xml:space="preserve">
+    <value>Development environment should not be enabled in deployed applications</value>
+  </data>
+  <data name="Development_Mode" xml:space="preserve">
+    <value>Development Mode</value>
+  </data>
+  <data name="Download_a_two_factor_authenti" xml:space="preserve">
+    <value>Download a two-factor authenticator app like Microsoft Authenticator for</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="enable_QR_code_generation" xml:space="preserve">
+    <value>enable QR code generation</value>
+  </data>
+  <data name="Enter_your_email" xml:space="preserve">
+    <value>Enter your email.</value>
+  </data>
+  <data name="environment_by_setting_the" xml:space="preserve">
+    <value>environment by setting the</value>
+  </data>
+  <data name="environment_variable_to" xml:space="preserve">
+    <value>environment variable to</value>
+  </data>
+  <data name="environment_will_display_more_" xml:space="preserve">
+    <value>environment will display more detailed information about the error that occurred.</value>
+  </data>
+  <data name="Error0" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="External_logins" xml:space="preserve">
+    <value>External logins</value>
+  </data>
+  <data name="for_details_on_setting_up_this" xml:space="preserve">
+    <value>for details on setting up this ASP.NET application to support logging in via external services.</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="iOS" xml:space="preserve">
+    <value>iOS</value>
+  </data>
+  <data name="It_can_result_in_displaying_se" xml:space="preserve">
+    <value>It can result in displaying sensitive information from exceptions to end users.
+    For local debugging, enable the</value>
+  </data>
+  <data name="Learn_how_to" xml:space="preserve">
+    <value>Learn how to</value>
+  </data>
+  <data name="Log_in" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="login_provider_login_LoginProv" xml:space="preserve">
+    <value>login-provider-{login.LoginProvider}</value>
+  </data>
+  <data name="or_Google_Authenticator_for" xml:space="preserve">
+    <value>or
+                Google Authenticator for</value>
+  </data>
+  <data name="ParentLayout" xml:space="preserve">
+    <value>ParentLayout</value>
+  </data>
+  <data name="Personal_Data" xml:space="preserve">
+    <value>Personal Data</value>
+  </data>
+  <data name="Please_check_your_email_to_res" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="Please_enter_an_email_address_" xml:space="preserve">
+    <value>Please enter an email address for this site below and click the Register button to finish
+    logging in.</value>
+  </data>
+  <data name="Portal" xml:space="preserve">
+    <value>Portal</value>
+  </data>
+  <data name="PortalImage" xml:space="preserve">
+    <value>PortalImage</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="Privacy_Policy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>ProductImage</value>
+  </data>
+  <data name="Promotion" xml:space="preserve">
+    <value>Promotion</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Register_confirmation" xml:space="preserve">
+    <value>Register confirmation</value>
+  </data>
+  <data name="Request_ID" xml:space="preserve">
+    <value>Request ID:</value>
+  </data>
+  <data name="Resend_email_confirmation" xml:space="preserve">
+    <value>Resend email confirmation</value>
+  </data>
+  <data name="RootImage" xml:space="preserve">
+    <value>RootImage</value>
+  </data>
+  <data name="Scan_the_QR_Code_or_enter_this" xml:space="preserve">
+    <value>Scan the QR Code or enter this key</value>
+  </data>
+  <data name="sdfsdfs" xml:space="preserve">
+    <value>sdfsdfs</value>
+  </data>
+  <data name="Set_your_password" xml:space="preserve">
+    <value>Set your password</value>
+  </data>
+  <data name="Show_Latest_Image" xml:space="preserve">
+    <value>Show Latest Image</value>
+  </data>
+  <data name="SignInManager" xml:space="preserve">
+    <value>SignInManager</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="Swapping_to" xml:space="preserve">
+    <value>Swapping to</value>
+  </data>
+  <data name="The_Development_environment_sh" xml:space="preserve">
+    <value>The Development environment shouldn't be enabled for deployed applications.</value>
+  </data>
+  <data name="There_are_no_external_authenti" xml:space="preserve">
+    <value>There are no external authentication services configured. See</value>
+  </data>
+  <data name="This_account_has_been_locked_o" xml:space="preserve">
+    <value>This account has been locked out, please try again later.</value>
+  </data>
+  <data name="this_article" xml:space="preserve">
+    <value>this article</value>
+  </data>
+  <data name="To_use_an_authenticator_app_go" xml:space="preserve">
+    <value>To use an authenticator app go through the following steps:</value>
+  </data>
+  <data name="TwoFactorAuthentication" xml:space="preserve">
+    <value>TwoFactorAuthentication</value>
+  </data>
+  <data name="Upload_File_s" xml:space="preserve">
+    <value>Upload File(s)</value>
+  </data>
+  <data name="Use_this_page_to_detail_your_s" xml:space="preserve">
+    <value>Use this page to detail your site's privacy policy.</value>
+  </data>
+  <data name="You_do_not_have_access_to_this" xml:space="preserve">
+    <value>You do not have access to this resource.</value>
+  </data>
+  <data name="You_ve_successfully_authentica" xml:space="preserve">
+    <value>You've successfully authenticated with</value>
+  </data>
+  <data name="Администрирование" xml:space="preserve">
+    <value>Администрирование</value>
+  </data>
+  <data name="Адрес" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Адрес_доставки" xml:space="preserve">
+    <value>Адрес доставки</value>
+  </data>
+  <data name="Адрес_электронной_почты" xml:space="preserve">
+    <value>Адрес электронной почты</value>
+  </data>
+  <data name="Адрес_электронной_почты_заказч" xml:space="preserve">
+    <value>Адрес электронной почты заказчика</value>
+  </data>
+  <data name="Атрибуты" xml:space="preserve">
+    <value>Атрибуты</value>
+  </data>
+  <data name="Банковская_карта" xml:space="preserve">
+    <value>Банковская карта</value>
+  </data>
+  <data name="Блокировка" xml:space="preserve">
+    <value>Блокировка</value>
+  </data>
+  <data name="В_настоящее_время_в_этом_прило" xml:space="preserve">
+    <value>В настоящее время в этом приложении не зарегистрирован реальный отправитель электронной почты, см.</value>
+  </data>
+  <data name="Вам_следует" xml:space="preserve">
+    <value>Вам следует</value>
+  </data>
+  <data name="Ваш_логин_защищен_приложением_" xml:space="preserve">
+    <value>Ваш логин защищен приложением-аутентификатором. Введите код аутентификатора ниже.</value>
+  </data>
+  <data name="Ваш_пароль_был_сброшен_Пожалуй" xml:space="preserve">
+    <value>Ваш пароль был сброшен. Пожалуйста</value>
+  </data>
+  <data name="Ваша_учетная_запись_содержит_п" xml:space="preserve">
+    <value>Ваша учетная запись содержит персональные данные, которые вы нам предоставили. Эта страница позволяет вам загружать или удалять эти данные.</value>
+  </data>
+  <data name="Веб_сайт" xml:space="preserve">
+    <value>Веб-сайт</value>
+  </data>
+  <data name="Владедец_карты" xml:space="preserve">
+    <value>Владедец карты</value>
+  </data>
+  <data name="Войти" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="Вход" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="Вы_должны" xml:space="preserve">
+    <value>Вы должны</value>
+  </data>
+  <data name="Вы_запросили_вход_с_кодом_восс" xml:space="preserve">
+    <value>Вы запросили вход с кодом восстановления. Этот логин не будет запомнен, пока вы не предоставите
+    код приложения-аутентификатора при входе в систему или отключите 2FA и снова войдите в систему.</value>
+  </data>
+  <data name="Вы_имеете" xml:space="preserve">
+    <value>Вы имеете</value>
+  </data>
+  <data name="Вы_можете" xml:space="preserve">
+    <value>Вы можете</value>
+  </data>
+  <data name="Вы_успешно_вышли_из_приложения" xml:space="preserve">
+    <value>Вы успешно вышли из приложения.</value>
+  </data>
+  <data name="Вы_хотите_удалить_этого_пользо" xml:space="preserve">
+    <value>Вы хотите удалить этого пользователя из группы?</value>
+  </data>
+  <data name="Вы_хотите_удалить_этот_товар_и" xml:space="preserve">
+    <value>Вы хотите удалить этот товар из корзины?</value>
+  </data>
+  <data name="Вы_хотите_удалить_эту_группу" xml:space="preserve">
+    <value>Вы хотите удалить эту группу?</value>
+  </data>
+  <data name="Вы_хотите_удалить_эту_платежну" xml:space="preserve">
+    <value>Вы хотите удалить эту платежную карту?</value>
+  </data>
+  <data name="Вы_хотиту_удалить_это_портал" xml:space="preserve">
+    <value>Вы хотиту удалить это портал?</value>
+  </data>
+  <data name="Вы_хотиту_удалить_этот_аккаунт" xml:space="preserve">
+    <value>Вы хотиту удалить этот аккаунт?</value>
+  </data>
+  <data name="Выйти" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="Выход" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="Генерация_кодов_восстановления" xml:space="preserve">
+    <value>Генерация кодов восстановления</value>
+  </data>
+  <data name="Город" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="Групп_безопасности" xml:space="preserve">
+    <value>Групп безопасности</value>
+  </data>
+  <data name="Группы_безопасности" xml:space="preserve">
+    <value>Группы безопасности</value>
+  </data>
+  <data name="Дата" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Дата_завершения" xml:space="preserve">
+    <value>Дата завершения</value>
+  </data>
+  <data name="Дата_заказ" xml:space="preserve">
+    <value>Дата заказ</value>
+  </data>
+  <data name="Дата_заказа" xml:space="preserve">
+    <value>Дата заказа</value>
+  </data>
+  <data name="Дата_начала" xml:space="preserve">
+    <value>Дата начала</value>
+  </data>
+  <data name="Дата_окончания" xml:space="preserve">
+    <value>Дата окончания</value>
+  </data>
+  <data name="Двух_факторная_авторизаия" xml:space="preserve">
+    <value>Двух-факторная авторизаия</value>
+  </data>
+  <data name="Двух_факторноая_авторизация" xml:space="preserve">
+    <value>Двух-факторноая авторизация</value>
+  </data>
+  <data name="Двухфакторная_аутентификация_2" xml:space="preserve">
+    <value>Двухфакторная аутентификация (2FA)</value>
+  </data>
+  <data name="Действия" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="Детали" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="Детально_о_товаре" xml:space="preserve">
+    <value>Детально о товаре</value>
+  </data>
+  <data name="Добавить_изображение" xml:space="preserve">
+    <value>Добавить изображение</value>
+  </data>
+  <data name="Добавить_новое" xml:space="preserve">
+    <value>Добавить новое</value>
+  </data>
+  <data name="Добавить_новую" xml:space="preserve">
+    <value>Добавить новую</value>
+  </data>
+  <data name="Добавить_новый" xml:space="preserve">
+    <value>Добавить новый</value>
+  </data>
+  <data name="Добавить_пользователя" xml:space="preserve">
+    <value>Добавить пользователя</value>
+  </data>
+  <data name="Додати" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="Ед_измерения" xml:space="preserve">
+    <value>Ед. измерения</value>
+  </data>
+  <data name="Електронная_почта" xml:space="preserve">
+    <value>Електронная почта</value>
+  </data>
+  <data name="Если_вы_потеряете_свое_устройс" xml:space="preserve">
+    <value>Если вы потеряете свое устройство и у вас не будет кодов восстановления, вы потеряете доступ к своей учетной записи.</value>
+  </data>
+  <data name="Если_вы_сбросите_свой_ключ_аут" xml:space="preserve">
+    <value>Если вы сбросите свой ключ аутентификатора, ваше приложение аутентификатора не будет работать, пока вы не перенастроите его.</value>
+  </data>
+  <data name="Заблокировано" xml:space="preserve">
+    <value>Заблокировано</value>
+  </data>
+  <data name="Забыли_пароль" xml:space="preserve">
+    <value>Забыли пароль?</value>
+  </data>
+  <data name="Забыть_этот_браузер" xml:space="preserve">
+    <value>Забыть этот браузер</value>
+  </data>
+  <data name="Загловок" xml:space="preserve">
+    <value>Загловок</value>
+  </data>
+  <data name="Заголовок" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="Загрузить" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="Запомнить_меня" xml:space="preserve">
+    <value>Запомнить меня</value>
+  </data>
+  <data name="Звголовок" xml:space="preserve">
+    <value>Звголовок</value>
+  </data>
+  <data name="Значание" xml:space="preserve">
+    <value>Значание</value>
+  </data>
+  <data name="Значение" xml:space="preserve">
+    <value>Значение</value>
+  </data>
+  <data name="Изменить_группу_безопасности" xml:space="preserve">
+    <value>Изменить группу безопасности</value>
+  </data>
+  <data name="Изменить_изображение" xml:space="preserve">
+    <value>Изменить изображение</value>
+  </data>
+  <data name="Изменить_информацию_о_адресе" xml:space="preserve">
+    <value>Изменить информацию о адресе</value>
+  </data>
+  <data name="Изменить_информацию_о_заказе" xml:space="preserve">
+    <value>Изменить информацию о заказе</value>
+  </data>
+  <data name="Изменить_информацию_о_карте" xml:space="preserve">
+    <value>Изменить информацию о карте</value>
+  </data>
+  <data name="Изменить_информацию_о_каталоге" xml:space="preserve">
+    <value>Изменить информацию о каталоге</value>
+  </data>
+  <data name="Изменить_информацию_о_контакта" xml:space="preserve">
+    <value>Изменить информацию о контактах</value>
+  </data>
+  <data name="Изменить_информацию_о_товаре" xml:space="preserve">
+    <value>Изменить информацию о товаре</value>
+  </data>
+  <data name="Изменить_количество_товара" xml:space="preserve">
+    <value>Изменить количество товара</value>
+  </data>
+  <data name="Изменить_пользователя" xml:space="preserve">
+    <value>Изменить пользователя</value>
+  </data>
+  <data name="Изменить_портал" xml:space="preserve">
+    <value>Изменить портал</value>
+  </data>
+  <data name="Изменить_промоакцию" xml:space="preserve">
+    <value>Изменить промоакцию</value>
+  </data>
+  <data name="Изменить_фильтр" xml:space="preserve">
+    <value>Изменить фильтр</value>
+  </data>
+  <data name="Изменить_характеристику" xml:space="preserve">
+    <value>Изменить характеристику</value>
+  </data>
+  <data name="Изображения" xml:space="preserve">
+    <value>Изображения</value>
+  </data>
+  <data name="Имя" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Имя_владельца" xml:space="preserve">
+    <value>Имя владельца</value>
+  </data>
+  <data name="Имя_пользователя" xml:space="preserve">
+    <value>Имя пользователя</value>
+  </data>
+  <data name="Индикатор" xml:space="preserve">
+    <value>Индикатор</value>
+  </data>
+  <data name="Информация_о_адресе" xml:space="preserve">
+    <value>Информация о адресе</value>
+  </data>
+  <data name="Информация_о_группе_безопаснос" xml:space="preserve">
+    <value>Информация о группе безопасности</value>
+  </data>
+  <data name="Информация_о_каталоге" xml:space="preserve">
+    <value>Информация о каталоге</value>
+  </data>
+  <data name="Информация_о_контакте" xml:space="preserve">
+    <value>Информация о контакте</value>
+  </data>
+  <data name="Информация_о_платежной_карте" xml:space="preserve">
+    <value>Информация о платежной карте?</value>
+  </data>
+  <data name="Информация_о_покупке" xml:space="preserve">
+    <value>Информация о покупке</value>
+  </data>
+  <data name="Информация_о_портале" xml:space="preserve">
+    <value>Информация о портале</value>
+  </data>
+  <data name="Информация_о_товаре" xml:space="preserve">
+    <value>Информация о товаре</value>
+  </data>
+  <data name="Информация_о_товаре_из_корзины" xml:space="preserve">
+    <value>Информация о товаре из корзины?</value>
+  </data>
+  <data name="Информация_о_характеристике" xml:space="preserve">
+    <value>Информация о характеристике</value>
+  </data>
+  <data name="Используйте_другой_сервис_для_" xml:space="preserve">
+    <value>Используйте другой сервис для регистрации.</value>
+  </data>
+  <data name="Используйте_другой_сервис_для_0" xml:space="preserve">
+    <value>Используйте другой сервис для входа.</value>
+  </data>
+  <data name="Используйте_локальную_учетную_" xml:space="preserve">
+    <value>Используйте локальную учетную запись для входа.</value>
+  </data>
+  <data name="как_настроить_реального_отправ" xml:space="preserve">
+    <value>как настроить реального отправителя электронной почты.
+    Обычно это будет отправлено по электронной почте:</value>
+  </data>
+  <data name="Каталог" xml:space="preserve">
+    <value>Каталог - </value>
+  </data>
+  <data name="Каталог0" xml:space="preserve">
+    <value>Каталог</value>
+  </data>
+  <data name="Каталоги" xml:space="preserve">
+    <value>Каталоги</value>
+  </data>
+  <data name="Категория" xml:space="preserve">
+    <value>Категория</value>
+  </data>
+  <data name="Коды_восстановления" xml:space="preserve">
+    <value>Коды восстановления</value>
+  </data>
+  <data name="Количество" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="Контактное_лицо" xml:space="preserve">
+    <value>Контактное лицо</value>
+  </data>
+  <data name="Контактое_лицо" xml:space="preserve">
+    <value>Контактое лицо</value>
+  </data>
+  <data name="Контакты_заказчика" xml:space="preserve">
+    <value>Контакты заказчика</value>
+  </data>
+  <data name="Корзина" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="Купить" xml:space="preserve">
+    <value>Купить</value>
+  </data>
+  <data name="Магазин" xml:space="preserve">
+    <value>Магазин</value>
+  </data>
+  <data name="Маска_ввода" xml:space="preserve">
+    <value>Маска ввода</value>
+  </data>
+  <data name="Мобильный_телефон" xml:space="preserve">
+    <value>Мобильный телефон</value>
+  </data>
+  <data name="нажмите_здесь_для_входа" xml:space="preserve">
+    <value>нажмите здесь для входа</value>
+  </data>
+  <data name="Название" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="Название_группы" xml:space="preserve">
+    <value>Название группы</value>
+  </data>
+  <data name="Наименование" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="Наименование_акции" xml:space="preserve">
+    <value>Наименование акции</value>
+  </data>
+  <data name="Наименование_каталога" xml:space="preserve">
+    <value>Наименование каталога</value>
+  </data>
+  <data name="Наименование_портала" xml:space="preserve">
+    <value>Наименование портала</value>
+  </data>
+  <data name="Наименование_товара" xml:space="preserve">
+    <value>Наименование товара</value>
+  </data>
+  <data name="Наименование_фильтра" xml:space="preserve">
+    <value>Наименование фильтра</value>
+  </data>
+  <data name="Наименования_характеристики" xml:space="preserve">
+    <value>Наименования характеристики</value>
+  </data>
+  <data name="Настроить_приложение_для_прове" xml:space="preserve">
+    <value>Настроить приложение для проверки подлинности</value>
+  </data>
+  <data name="Новая_группы_безопасности" xml:space="preserve">
+    <value>Новая группы безопасности</value>
+  </data>
+  <data name="Новая_карта" xml:space="preserve">
+    <value>Новая карта</value>
+  </data>
+  <data name="Новая_промоакция" xml:space="preserve">
+    <value>Новая промоакция</value>
+  </data>
+  <data name="Новая_характеристика" xml:space="preserve">
+    <value>Новая характеристика</value>
+  </data>
+  <data name="Новое_изображение" xml:space="preserve">
+    <value>Новое изображение</value>
+  </data>
+  <data name="Новы_пароль" xml:space="preserve">
+    <value>Новы пароль</value>
+  </data>
+  <data name="Новый_адрес" xml:space="preserve">
+    <value>Новый адрес</value>
+  </data>
+  <data name="Новый_заказ" xml:space="preserve">
+    <value>Новый заказ</value>
+  </data>
+  <data name="Новый_каталог" xml:space="preserve">
+    <value>Новый каталог</value>
+  </data>
+  <data name="Новый_контакт" xml:space="preserve">
+    <value>Новый контакт</value>
+  </data>
+  <data name="Новый_пароль" xml:space="preserve">
+    <value>Новый пароль</value>
+  </data>
+  <data name="Новый_портал" xml:space="preserve">
+    <value>Новый портал</value>
+  </data>
+  <data name="Новый_товар" xml:space="preserve">
+    <value>Новый товар</value>
+  </data>
+  <data name="Новый_фильтр" xml:space="preserve">
+    <value>Новый фильтр</value>
+  </data>
+  <data name="Новый_электронный_адрес" xml:space="preserve">
+    <value>Новый электронный адрес</value>
+  </data>
+  <data name="Номер_заказа" xml:space="preserve">
+    <value>Номер заказа</value>
+  </data>
+  <data name="Номер_карты" xml:space="preserve">
+    <value>Номер карты</value>
+  </data>
+  <data name="Номер_телефона" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="Область" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="Описание" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Отказано_в_доступе" xml:space="preserve">
+    <value>Отказано в доступе</value>
+  </data>
+  <data name="Отключение_2FA_не_изменяет_клю" xml:space="preserve">
+    <value>Отключение 2FA не изменяет ключи, используемые в приложениях для аутентификации. Если вы хотите сменить ключ
+        используется в приложении для проверки подлинности, вы должны</value>
+  </data>
+  <data name="Отключить_2FA" xml:space="preserve">
+    <value>Отключить 2FA</value>
+  </data>
+  <data name="Отключить_двухфакторную_аутент" xml:space="preserve">
+    <value>Отключить двухфакторную аутентификацию</value>
+  </data>
+  <data name="Отключить_двухфакторную_аутент0" xml:space="preserve">
+    <value>Отключить двухфакторную аутентификацию (2FA)</value>
+  </data>
+  <data name="Отменить" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="Отправить" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="Отправить_письмо_с_подтвержден" xml:space="preserve">
+    <value>Отправить письмо с подтверждением</value>
+  </data>
+  <data name="Отчество" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="Оформить_заказ" xml:space="preserve">
+    <value>Оформить заказ</value>
+  </data>
+  <data name="Пароль" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="Платежная_карта" xml:space="preserve">
+    <value>Платежная карта</value>
+  </data>
+  <data name="Платежные_реквизиты" xml:space="preserve">
+    <value>Платежные реквизиты</value>
+  </data>
+  <data name="Повторно_отправить_подтвержден" xml:space="preserve">
+    <value>Повторно отправить подтверждение по электронной почте</value>
+  </data>
+  <data name="Подтвеждение_электронного_адре" xml:space="preserve">
+    <value>Подтвеждение электронного адреса</value>
+  </data>
+  <data name="Подтвердить" xml:space="preserve">
+    <value>Подтвердить</value>
+  </data>
+  <data name="Подтвердить_пароль" xml:space="preserve">
+    <value>Подтвердить пароль</value>
+  </data>
+  <data name="Подтверждение_изменения_пароля" xml:space="preserve">
+    <value>Подтверждение изменения пароля</value>
+  </data>
+  <data name="Подтверждение_изменения_электр" xml:space="preserve">
+    <value>Подтверждение изменения электронного адреса</value>
+  </data>
+  <data name="Подтверждение_пароля" xml:space="preserve">
+    <value>Подтверждение пароля</value>
+  </data>
+  <data name="Подтверждение_сброса_пароля" xml:space="preserve">
+    <value>Подтверждение сброса пароля</value>
+  </data>
+  <data name="Пожалуйста_проверьте_свою_элек" xml:space="preserve">
+    <value>Пожалуйста, проверьте свою электронную почту, чтобы подтвердить свою учетную запись.</value>
+  </data>
+  <data name="Полное_имя" xml:space="preserve">
+    <value>Полное имя</value>
+  </data>
+  <data name="Пользователи" xml:space="preserve">
+    <value>Пользователи</value>
+  </data>
+  <data name="Пользователь" xml:space="preserve">
+    <value>Пользователь - </value>
+  </data>
+  <data name="Пользователь0" xml:space="preserve">
+    <value>Пользователь</value>
+  </data>
+  <data name="Поместите_эти_коды_в_безопасно" xml:space="preserve">
+    <value>Поместите эти коды в безопасное место.</value>
+  </data>
+  <data name="Портал" xml:space="preserve">
+    <value>Портал - </value>
+  </data>
+  <data name="Портал0" xml:space="preserve">
+    <value>Портал</value>
+  </data>
+  <data name="Порталы" xml:space="preserve">
+    <value>Порталы</value>
+  </data>
+  <data name="Почтовый_индекс" xml:space="preserve">
+    <value>Почтовый индекс</value>
+  </data>
+  <data name="прежде_чем_вы_сможете_войти_в_" xml:space="preserve">
+    <value>прежде чем вы сможете войти в систему с кодом восстановления.</value>
+  </data>
+  <data name="Приложение_для_аутентификации" xml:space="preserve">
+    <value>Приложение для аутентификации</value>
+  </data>
+  <data name="Проверка_кода_восстановления" xml:space="preserve">
+    <value>Проверка кода восстановления</value>
+  </data>
+  <data name="Промоакции" xml:space="preserve">
+    <value>Промоакции</value>
+  </data>
+  <data name="Промоакция" xml:space="preserve">
+    <value>Промоакция</value>
+  </data>
+  <data name="Профиль" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="Рабочий_телефон" xml:space="preserve">
+    <value>Рабочий телефон</value>
+  </data>
+  <data name="Регистрация" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="Редактировать_продкт" xml:space="preserve">
+    <value>Редактировать продкт</value>
+  </data>
+  <data name="Ресурсы" xml:space="preserve">
+    <value>Ресурсы</value>
+  </data>
+  <data name="Сбросить" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="Сбросить_ключ_аутентификатора" xml:space="preserve">
+    <value>Сбросить ключ аутентификатора.</value>
+  </data>
+  <data name="сбросить_ключи_аутентификатора" xml:space="preserve">
+    <value>сбросить ключи аутентификатора.</value>
+  </data>
+  <data name="Сбросить_коды_восстановления" xml:space="preserve">
+    <value>Сбросить коды восстановления</value>
+  </data>
+  <data name="Сбросить_пароль" xml:space="preserve">
+    <value>Сбросить пароль</value>
+  </data>
+  <data name="Сбросить_приложение_аутентифик" xml:space="preserve">
+    <value>Сбросить приложение-аутентификатор</value>
+  </data>
+  <data name="Сбросить_приложение_аутентифик0" xml:space="preserve">
+    <value>Сбросить приложение аутентификатора.</value>
+  </data>
+  <data name="Сбросьте_пароль" xml:space="preserve">
+    <value>Сбросьте пароль.</value>
+  </data>
+  <data name="Скачайть_ваши_данные" xml:space="preserve">
+    <value>Скачайть ваши данные</value>
+  </data>
+  <data name="Смена_пароля" xml:space="preserve">
+    <value>Смена пароля</value>
+  </data>
+  <data name="Сменить_пароль" xml:space="preserve">
+    <value>Сменить пароль</value>
+  </data>
+  <data name="Сменить_электронный_адрес" xml:space="preserve">
+    <value>Сменить электронный адрес</value>
+  </data>
+  <data name="Создание_кодов_восстановления_" xml:space="preserve">
+    <value>Создание кодов восстановления двухфакторной аутентификации (2FA)</value>
+  </data>
+  <data name="Создание_новых_кодов_восстанов" xml:space="preserve">
+    <value>Создание новых кодов восстановления не изменяет ключи, используемые в приложениях для проверки подлинности. Если вы хотите сменить ключ
+        используется в приложении для проверки подлинности, вы должны</value>
+  </data>
+  <data name="создать_новый_набор_кодов_восс" xml:space="preserve">
+    <value>создать новый набор кодов восстановления</value>
+  </data>
+  <data name="Создаь_новый_аккаунт" xml:space="preserve">
+    <value>Создаь новый аккаунт.</value>
+  </data>
+  <data name="Сохранить" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Список_адресов_доставки" xml:space="preserve">
+    <value>Список адресов доставки</value>
+  </data>
+  <data name="Список_выбраных_товаров" xml:space="preserve">
+    <value>Список выбраных товаров</value>
+  </data>
+  <data name="Список_групп_безопасности" xml:space="preserve">
+    <value>Список групп безопасности</value>
+  </data>
+  <data name="Список_заказов" xml:space="preserve">
+    <value>Список заказов</value>
+  </data>
+  <data name="Список_изображений" xml:space="preserve">
+    <value>Список изображений</value>
+  </data>
+  <data name="Список_каталогов" xml:space="preserve">
+    <value>Список каталогов</value>
+  </data>
+  <data name="Список_контактов" xml:space="preserve">
+    <value>Список контактов</value>
+  </data>
+  <data name="Список_платежных_карт" xml:space="preserve">
+    <value>Список платежных карт</value>
+  </data>
+  <data name="Список_пользователей" xml:space="preserve">
+    <value>Список пользователей</value>
+  </data>
+  <data name="Список_порталов" xml:space="preserve">
+    <value>Список порталов</value>
+  </data>
+  <data name="Список_промоакций" xml:space="preserve">
+    <value>Список промоакций</value>
+  </data>
+  <data name="Список_товаров" xml:space="preserve">
+    <value>Список товаров</value>
+  </data>
+  <data name="Список_фильтров" xml:space="preserve">
+    <value>Список фильтров</value>
+  </data>
+  <data name="Список_характеристик" xml:space="preserve">
+    <value>Список характеристик</value>
+  </data>
+  <data name="Срок_действия" xml:space="preserve">
+    <value>Срок действия</value>
+  </data>
+  <data name="Срок_работы" xml:space="preserve">
+    <value>Срок работы</value>
+  </data>
+  <data name="Старый_пароль" xml:space="preserve">
+    <value>Старый пароль</value>
+  </data>
+  <data name="Статус" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="Стационарный_телефон" xml:space="preserve">
+    <value>Стационарный телефон</value>
+  </data>
+  <data name="Страна" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="Сумма" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="Сумма_заказа" xml:space="preserve">
+    <value>Сумма заказа</value>
+  </data>
+  <data name="Телефон" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Телефон_заказчик" xml:space="preserve">
+    <value>Телефон заказчик</value>
+  </data>
+  <data name="Телефон_заказчика" xml:space="preserve">
+    <value>Телефон заказчика</value>
+  </data>
+  <data name="Тип_карты" xml:space="preserve">
+    <value>Тип карты</value>
+  </data>
+  <data name="Тип_контакта" xml:space="preserve">
+    <value>Тип контакта</value>
+  </data>
+  <data name="Тип_факса" xml:space="preserve">
+    <value>Тип факса</value>
+  </data>
+  <data name="Товар" xml:space="preserve">
+    <value>Товар - </value>
+  </data>
+  <data name="Товар0" xml:space="preserve">
+    <value>Товар</value>
+  </data>
+  <data name="Товары" xml:space="preserve">
+    <value>Товары</value>
+  </data>
+  <data name="Товары_каталога" xml:space="preserve">
+    <value>Товары каталога</value>
+  </data>
+  <data name="У_вас_не_осталось_кодов_восста" xml:space="preserve">
+    <value>У вас не осталось кодов восстановления.</value>
+  </data>
+  <data name="У_вас_нет_доступа_к_вашему_уст" xml:space="preserve">
+    <value>У вас нет доступа к вашему устройству аутентификации? Вы можете</value>
+  </data>
+  <data name="У_вас_нет_локального_имени_пол" xml:space="preserve">
+    <value>У вас нет локального имени пользователя/пароля для этого сайта. Добавить местный
+    учетную запись, чтобы вы могли войти в систему без внешнего входа.</value>
+  </data>
+  <data name="У_вас_остался_1_код_восстановл" xml:space="preserve">
+    <value>У вас остался 1 код восстановления.</value>
+  </data>
+  <data name="Удаление_этих_данных_навсегда_" xml:space="preserve">
+    <value>Удаление этих данных навсегда удалит вашу учетную запись, и это невозможно восстановить.</value>
+  </data>
+  <data name="Удаление_этих_данных_приведет_" xml:space="preserve">
+    <value>Удаление этих данных приведет к безвозвратному удалению вашей учетной записи, и это невозможно восстановить.</value>
+  </data>
+  <data name="Удалить" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Удалить_данные_и_мой_аккаунт" xml:space="preserve">
+    <value>Удалить данные и мой аккаунт</value>
+  </data>
+  <data name="Удалить_члена_группы" xml:space="preserve">
+    <value>Удалить члена группы</value>
+  </data>
+  <data name="Удалить_это_изображение" xml:space="preserve">
+    <value>Удалить это изображение?</value>
+  </data>
+  <data name="Удалить_этот_адрес" xml:space="preserve">
+    <value>Удалить этот адрес?</value>
+  </data>
+  <data name="Удалить_этот_заказ" xml:space="preserve">
+    <value>Удалить этот заказ?</value>
+  </data>
+  <data name="Удалить_этот_каталог" xml:space="preserve">
+    <value>Удалить этот каталог?</value>
+  </data>
+  <data name="Удалить_этот_контакт" xml:space="preserve">
+    <value>Удалить этот контакт?</value>
+  </data>
+  <data name="Удалить_этот_товар" xml:space="preserve">
+    <value>Удалить этот товар?</value>
+  </data>
+  <data name="Удалить_этот_фильтр" xml:space="preserve">
+    <value>Удалить этот фильтр?</value>
+  </data>
+  <data name="Удалить_эту_промоакцию" xml:space="preserve">
+    <value>Удалить эту промоакцию?</value>
+  </data>
+  <data name="Удалить_эту_характеристику" xml:space="preserve">
+    <value>Удалить эту характеристику?</value>
+  </data>
+  <data name="Улица_дом_квартира" xml:space="preserve">
+    <value>Улица, дом, квартира</value>
+  </data>
+  <data name="Управление_учетной_записью" xml:space="preserve">
+    <value>Управление учетной записью</value>
+  </data>
+  <data name="Управление_элетронным_адресов" xml:space="preserve">
+    <value>Управление элетронным адресов</value>
+  </data>
+  <data name="Управляйте_своими_внешними_лог" xml:space="preserve">
+    <value>Управляйте своими внешними логинами</value>
+  </data>
+  <data name="Установка_пароля" xml:space="preserve">
+    <value>Установка пароля</value>
+  </data>
+  <data name="Файл" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="Файл_изображения" xml:space="preserve">
+    <value>Файл изображения</value>
+  </data>
+  <data name="Факс" xml:space="preserve">
+    <value>Факс</value>
+  </data>
+  <data name="Фамилия" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Фильтры" xml:space="preserve">
+    <value>Фильтры</value>
+  </data>
+  <data name="Формат_вывода" xml:space="preserve">
+    <value>Формат вывода</value>
+  </data>
+  <data name="Фрпмат_вывода" xml:space="preserve">
+    <value>Фрпмат вывода</value>
+  </data>
+  <data name="Характеристики" xml:space="preserve">
+    <value>Характеристики</value>
+  </data>
+  <data name="Характеритики" xml:space="preserve">
+    <value>Характеритики</value>
+  </data>
+  <data name="Цена" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="Члены_группы" xml:space="preserve">
+    <value>Члены группы "</value>
+  </data>
+  <data name="Электронный_адрес" xml:space="preserve">
+    <value>Электронный адрес</value>
+  </data>
+  <data name="эти_документы" xml:space="preserve">
+    <value>эти документы</value>
+  </data>
+  <data name="Этикетка" xml:space="preserve">
+    <value>Этикетка</value>
+  </data>
+  <data name="Это_действие_отключает_только_" xml:space="preserve">
+    <value>Это действие отключает только 2FA.</value>
+  </data>
+  <data name="Это_число" xml:space="preserve">
+    <value>Это число ?</value>
+  </data>
+  <data name="Это_число0" xml:space="preserve">
+    <value>Это число?</value>
+  </data>
+  <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
+    <value>Этот процесс отключает 2FA до тех пор, пока вы не подтвердите свое приложение-аутентификатор.
+        Если вы не завершите настройку приложения для проверки подлинности, вы можете потерять доступ к своей учетной записи.</value>
+  </data>
+  <data name="dd_MM_yyyy" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="_times" xml:space="preserve">
+    <value>&amp;times;</value>
+  </data>
+  <data name="_RootNavigator" xml:space="preserve">
+    <value>_RootNavigator</value>
+  </data>
+  <data name="_FilterNavigator" xml:space="preserve">
+    <value>_FilterNavigator</value>
+  </data>
+  <data name="_ValidationScriptsPartial" xml:space="preserve">
+    <value>_ValidationScriptsPartial</value>
+  </data>
+  <data name="_href_Addresses_Index" xml:space="preserve">
+    <value>" href="/Addresses/Index/</value>
+  </data>
+  <data name="_href_Contacts_Index" xml:space="preserve">
+    <value>" href="/Contacts/Index/</value>
+  </data>
+  <data name="_href_Identity_Account_Manage_" xml:space="preserve">
+    <value>" href="/Identity/Account/Manage/"/a/lili class="nav-item"a class="nav-link</value>
+  </data>
+  <data name="_href_Orders_Index" xml:space="preserve">
+    <value>" href="/Orders/Index/</value>
+  </data>
+  <data name="_href_Wallets_Index" xml:space="preserve">
+    <value>" href="/Wallets/Index/</value>
+  </data>
+  <data name="remove_login_login_LoginProvid" xml:space="preserve">
+    <value>remove-login-{login.LoginProvider}</value>
+  </data>
+  <data name="res" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="res3" xml:space="preserve">
+    <value>✓</value>
+  </data>
+  <data name="res2" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="res0" xml:space="preserve">
+    <value>\</value>
+  </data>
+  <data name="res1" xml:space="preserve">
+    <value>"</value>
+  </data>
+</root>

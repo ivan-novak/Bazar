@@ -1,4 +1,5 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.AspNetRole>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.AspNetRole>
 
  @{
     ViewBag.ManagerTab = "active";
@@ -6,16 +7,16 @@
 }
   
 
- <p><h4>Список групп безопасности</h4></p>
+ <p><h4>@Resources.Список_групп_безопасности</h4></p>
        
- <p><a  class="btn btn-success" asp-action="Create" > Добавить новую </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" > @Resources.Добавить_новую </a>   </p>
 
 
 <table class="table">
     <thead>
         <tr>
-            <th>  Название группы</th>
-            <th class="text-right"> Действия</th>
+            <th>  @Resources.Название_группы</th>
+            <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>

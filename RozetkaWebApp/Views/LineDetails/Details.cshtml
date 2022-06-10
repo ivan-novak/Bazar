@@ -1,4 +1,5 @@
-﻿@model RozetkaWebApp.Models.LineDetail
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.LineDetail
 
 @{
     ViewBag.ManagerTab = "active";
@@ -6,44 +7,44 @@
 }
 
 <p> 
-    <h4>Информация о товаре из корзины?</h4>
+    <h4>@Resources.Информация_о_товаре_из_корзины</h4>
 </p>
 
 <div>
     <div class="form-group">
           <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.OrderDatailId"> Изменить </a>
           <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.OrderDatailId"> Удалить </a>     
-           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>  
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>  
             <hr />
       </div>   
     <dl class="row">
                <dt class = "col-sm-2">
-            Название
+            @Resources.Название
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Product.Title)
         </dd >
         <dt class  = "col-sm-2">
-            Описание
+            @Resources.Описание
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Product.Description)
         </dd class>
 
         <dt class = "col-sm-2">
-            Цена
+            @Resources.Цена
         </dt>
          <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UnitCost)
         </dd>
         <dt class = "col-sm-2">
-            Количество
+            @Resources.Количество
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Quantities)
         </dd> 
         <dt class = "col-sm-2">
-            Сумма
+            @Resources.Сумма
         </dt>
          <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LineTotal)

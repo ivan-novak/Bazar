@@ -1,7 +1,8 @@
 ﻿@page
+@using RozetkaWebApp.App_GlobalResources;
 @model PersonalDataModel
 @{
-    ViewBag.Title= "Personal Data";
+    ViewBag.Title= Resources.Personal_Data;
     ViewBag.ActivePage = ManageNavPages.PersonalData;
 }
 
@@ -9,15 +10,15 @@
 
 <div class="row">
     <div class="col-md-6">
-        <p>Ваша учетная запись содержит персональные данные, которые вы нам предоставили. Эта страница позволяет вам загружать или удалять эти данные.</p>
+        <p>@Resources.Ваша_учетная_запись_содержит_п</p>
         <p>
-            <strong>Удаление этих данных приведет к безвозвратному удалению вашей учетной записи, и это невозможно восстановить.</strong>
+            <strong>@Resources.Удаление_этих_данных_приведет_</strong>
         </p>
         <form id="download-data" asp-page="DownloadPersonalData" method="post" class="form-group">
-            <button class="btn btn-primary" type="submit">Загрузить</button>
+            <button class="btn btn-primary" type="submit">@Resources.Загрузить</button>
         </form>
         <p>
-            <a id="delete" asp-page="DeletePersonalData" class="btn btn-secondary">Удалить</a>
+            <a id="delete" asp-page="DeletePersonalData" class="btn btn-secondary">@Resources.Удалить</a>
         </p>
     </div>
 </div>

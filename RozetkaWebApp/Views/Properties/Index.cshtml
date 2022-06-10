@@ -1,11 +1,12 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Property>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Property>
 
     @{
       ViewBag.FiltersTab = "active";
       Html.RenderPartial("_CatologNavigator");
     }
 
-    <p><h4>Список фильтров</h4></p>
+    <p><h4>@Resources.Список_фильтров</h4></p>
                 
 @*     <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить новый </a> </p>
 *@   
@@ -18,11 +19,11 @@
 <table class="table">
     <thead>
         <tr>
-            <th> ID </th>
-            <th> Наименование фильтра </th>
-            <th> Формат вывода </th>
-            <th> Маска ввода  </th>
-            <th class="text-right"> Действия </th>  
+            <th> @Resources.ID </th>
+            <th> @Resources.Наименование_фильтра </th>
+            <th> @Resources.Формат_вывода </th>
+            <th> @Resources.Маска_ввода  </th>
+            <th class="text-right"> @Resources.Действия </th>  
         </tr>
     </thead>
     <tbody>
@@ -34,7 +35,7 @@
             <td> @Html.DisplayFor(modelItem => item.Format)  </td>
             <td>  @Html.DisplayFor(modelItem => item.Mask)  </td>
             <td class="text-right">
-                <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> |
+                <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> @Resources.res
                 @*<a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a> |*@
                 <a asp-action="Delete" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>

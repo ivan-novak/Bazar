@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿//MLHIDEFILE
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RozetkaWebApp.Data.Migrations
 {

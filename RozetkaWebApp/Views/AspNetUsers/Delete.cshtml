@@ -1,32 +1,33 @@
-﻿@model RozetkaWebApp.Models.AspNetUser
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.AspNetUser
  @{
     ViewBag.UsersTab = "active";
     Html.RenderPartial("_RootNavigator");
 }
 
  <p> 
-        <h4>Вы хотиту удалить этот аккаунт?</h4>
+        <h4>@Resources.Вы_хотиту_удалить_этот_аккаунт</h4>
     </p>
 
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Удалить" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">Отменить</button>
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
 <div>
 
     <dl class="row">
         <dt class = "col-sm-2">
-            Имя пользователя
+            @Resources.Имя_пользователя
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UserName)
         </dd>
       
         <dt class = "col-sm-2">
-            Адрес электронной почты
+            @Resources.Адрес_электронной_почты
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
@@ -34,7 +35,7 @@
     
        
         <dt class = "col-sm-2">
-            Телефон
+            @Resources.Телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PhoneNumber)
@@ -42,7 +43,7 @@
        
        
         <dt class = "col-sm-2">
-            Блокировка
+            @Resources.Блокировка
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.LockoutEnabled)

@@ -1,22 +1,23 @@
-﻿@model IEnumerable<RozetkaWebApp.Models.Address>
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Address>
 
 @{
     ViewBag.AddressesTab = "active";
     Html.RenderPartial("_ProfileNavigator");
 }
 
- <p><h4>Список адресов доставки</h4></p>
+ <p><h4>@Resources.Список_адресов_доставки</h4></p>
 
- <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> Добавить новый </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> @Resources.Добавить_новый </a>   </p>
 
 <table class="table">
     <thead>
         <tr> 
-            <th> ID </th>        
-            <th> Улица, дом, квартира </th>        
-            <th> Город </th>
-            <th>Почтовый индекс </th>
-            <th class="text-right"> Действия</th>
+            <th> @Resources.ID </th>        
+            <th> @Resources.Улица_дом_квартира </th>        
+            <th> @Resources.Город </th>
+            <th>@Resources.Почтовый_индекс </th>
+            <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>

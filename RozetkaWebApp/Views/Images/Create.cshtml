@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.Image
 
 @{
-    ViewBag.Title= "Create";
+    ViewBag.Title= (("Create"));
 }
 
 <h1>@Resources.Create</h1>
@@ -51,5 +51,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

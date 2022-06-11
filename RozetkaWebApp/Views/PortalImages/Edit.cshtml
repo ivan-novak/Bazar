@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.PortalImage
 
 @{
-    ViewBag.ImagesTab = "active";
-    Html.RenderPartial("_PortalNavigator");
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_PortalNavigator")));
 }
 <p>
      <h4> @Resources.Изменить_изображение </h4>
@@ -54,5 +54,5 @@
     </div>
 </div>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

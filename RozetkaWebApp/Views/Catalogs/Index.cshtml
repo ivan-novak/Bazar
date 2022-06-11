@@ -3,14 +3,14 @@
 
 @{
 
-    ViewBag.CatalogsTab = "active";
-    Html.RenderPartial("_PortalNavigator");
+    ViewBag.CatalogsTab = (("active"));
+    Html.RenderPartial((("_PortalNavigator")));
 }
         
      <p><h4>@Resources.Список_каталогов</h4></p>
     
      @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
 @*     <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить новый</a> </p>
 *@
@@ -42,5 +42,5 @@
     </tbody>
 </table>
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

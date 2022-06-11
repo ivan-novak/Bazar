@@ -2,8 +2,8 @@
 @model IEnumerable<RozetkaWebApp.Models.Contact>
 
 @{
-    ViewBag.ContactsTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.ContactsTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
 
@@ -56,5 +56,5 @@
     </tbody>
 </table>
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

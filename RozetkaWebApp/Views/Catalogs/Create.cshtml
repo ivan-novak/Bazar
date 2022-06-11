@@ -4,8 +4,8 @@
 
 @{
 
-    ViewBag.CatalogsTab = "active";
-    Html.RenderPartial("_PortalNavigator");
+    ViewBag.CatalogsTab = (("active"));
+    Html.RenderPartial((("_PortalNavigator")));
 }
  <p>
      <h4> @Resources.Новый_каталог </h4>
@@ -55,5 +55,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

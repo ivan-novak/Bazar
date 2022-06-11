@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.RootImage
 
  @{
-    ViewBag.ImagesTab = "active";
-    Html.RenderPartial("_RootNavigator");
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
 }
 
 <p>
@@ -47,5 +47,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

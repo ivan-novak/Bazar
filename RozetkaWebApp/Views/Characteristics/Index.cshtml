@@ -2,14 +2,14 @@
 @model IEnumerable<RozetkaWebApp.Models.Characteristic>
 
 @{
-    ViewBag.CharacteristicsTab = "active";
-    Html.RenderPartial("_ProductNavigator");
+    ViewBag.CharacteristicsTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
 }
 
 
        <p><h4>@Resources.Список_характеристик</h4></p>
           @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
 
        
@@ -40,5 +40,5 @@
     </tbody>
 </table>
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

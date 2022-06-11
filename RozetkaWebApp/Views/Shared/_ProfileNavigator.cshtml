@@ -1,31 +1,26 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @{
-     ViewBag.Title= Resources.Пользователь+ViewBag.User.UserName;
+    ViewBag.Title= @Resources.Пользователь+ViewBag.User.UserName;
     if (ViewBag.User.UserName != User.Identity.Name)
     {
         <p>  
-            <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
-            <a asp-controller = "AspNetUsers" asp-action="Index" > Пользователи </a> 
+            <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> 
+            <a asp-controller = "AspNetUsers" asp-action="Index" > @Resources.Пользователи0 </a> 
         </p>
     }
     else
     {              
          <p>        
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" > Мой профиль </a> 
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" > @Resources.Мой_профиль </a> 
          </p>
     }
 }
     <h1>@ViewBag.Title</h1>
 
         <ul class="nav nav-tabs">
-            @if(ViewBag.User.UserName == User.Identity.Name) 
-            {
-                <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage/">Учетная запись</a> </li>
-            }
-            <li class="nav-item">  <a class="nav-link @ViewBag.AddressesTab" href="/Addresses/Index/@ViewBag.User.Id">Адреса доставки</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index/@ViewBag.User.Id">Контакты</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index/@ViewBag.User.Id">Кошельки</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.OrdersTab" href="/Orders/Index/@ViewBag.User.Id">Заказы</a> </li>
-         @*   <li class="nav-item">  <a class="nav-link @ViewBag.ViewsTab" href="/Views/Index/@ViewBag.User.Id">Просмотры</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.CommetsTab" href="/Wallets/Index/@ViewBag.User.Id">Отзывы</a> </li>*@
+            <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage/">@Resources.Учетная_запись</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.AddressesTab" href="/Addresses/Index/@ViewBag.User.Id">@Resources.Адрес_доставки</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index/@ViewBag.User.Id">@Resources.Контакты</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index/@ViewBag.User.Id">@Resources.Кошельки</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.OrdersTab" href="/Orders/Index/@ViewBag.User.Id">@Resources.Заказы</a> </li>
         </ul>

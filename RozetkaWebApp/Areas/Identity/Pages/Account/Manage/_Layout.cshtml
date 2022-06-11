@@ -1,7 +1,7 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @{
-    ViewBag.PersonalTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.PersonalTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
 @{
@@ -11,7 +11,7 @@
     }
     else
     {
-        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+        Layout = (("/Areas/Identity/Pages/_Layout.cshtml"));
     }
 }
 
@@ -31,5 +31,5 @@
 </div>
 
 @section Scripts {
-    @RenderSection("Scripts", required: false)
+    @RenderSection((("Scripts")), required: false)
 }

@@ -3,15 +3,15 @@
 
 @{
 
-    ViewBag.ImagesTab = "active";
-    Html.RenderPartial("_PortalNavigator");
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_PortalNavigator")));
 }
 
 
 
          <p><h4>@Resources.Список_изображений</h4></p>                
     @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }   
 @*<p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить изображение </a> </p>
 *@        <hr /> 
@@ -34,5 +34,5 @@
     </div>
 
      @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

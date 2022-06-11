@@ -3,8 +3,8 @@
 
 
 @{
-    ViewBag.OrdersTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.OrdersTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
   <p>
@@ -130,5 +130,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

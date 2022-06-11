@@ -6,8 +6,8 @@
 }
 
 @{
-    ViewBag.ImagesTab = "active";
-    Html.RenderPartial("_ProductNavigator");
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
 }
 
 <p>
@@ -61,5 +61,5 @@
  </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

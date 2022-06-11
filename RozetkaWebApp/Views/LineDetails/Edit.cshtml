@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.LineDetail
 
 @{
-    ViewBag.ManagerTab = "active";
-    Html.RenderPartial("_CartNavigator");
+    ViewBag.ManagerTab = (("active"));
+    Html.RenderPartial((("_CartNavigator")));
 }
 
 <p><h4>@Resources.Изменить_количество_товара</h4></p>
@@ -70,5 +70,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

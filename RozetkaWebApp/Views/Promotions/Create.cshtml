@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.Promotion
 
  @{
-    ViewBag.PromotionsTab = "active";
-    Html.RenderPartial("_RootNavigator");
+    ViewBag.PromotionsTab = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
 }
   
   <p>
@@ -70,5 +70,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

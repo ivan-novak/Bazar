@@ -2,12 +2,12 @@
 @model RozetkaWebApp.Models.Portal
 
 @{
-    ViewBag.Title="Портал - "+@Model.Label;
+    ViewBag.Title=(("Портал - "))+@Model.Label;
 }
 @{
     ViewBag.Portal = Model;
-    ViewBag.DetailsTab = "active";
-    Html.RenderPartial("_PortalNavigator");
+    ViewBag.DetailsTab = (("active"));
+    Html.RenderPartial((("_PortalNavigator")));
 }
 
     <p> 

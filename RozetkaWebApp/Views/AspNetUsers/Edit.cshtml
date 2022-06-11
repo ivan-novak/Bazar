@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.AspNetUser
 
 @{
-    ViewBag.Title= "Edit";
+    ViewBag.Title= (("Edit"));
 }
 
 <h1>@Resources.Edit</h1>
@@ -96,5 +96,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

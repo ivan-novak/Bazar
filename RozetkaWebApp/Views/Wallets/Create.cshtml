@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.Wallett
 
 @{
-    ViewBag.WalletsTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.WalletsTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
  <p>
@@ -58,5 +58,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

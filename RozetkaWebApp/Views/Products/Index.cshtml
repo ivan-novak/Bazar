@@ -2,12 +2,12 @@
 @model IEnumerable<RozetkaWebApp.Models.Product>
 
 @{
-    ViewBag.ProductsTab = "active";
-    Html.RenderPartial("_CatologNavigator");
+    ViewBag.ProductsTab = (("active"));
+    Html.RenderPartial((("_CatologNavigator")));
  }   
      <p><h4> @Resources.Список_товаров </h4></p>
 @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
 
 
@@ -55,7 +55,7 @@
 </table>
 
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }
 
 

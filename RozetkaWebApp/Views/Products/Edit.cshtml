@@ -6,8 +6,8 @@
 }
 
 @{
-    ViewBag.DelailsTab = "active";
-    Html.RenderPartial("_ProductNavigator");
+    ViewBag.DelailsTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
 }
 
 
@@ -79,5 +79,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

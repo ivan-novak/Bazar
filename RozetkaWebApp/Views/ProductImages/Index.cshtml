@@ -2,14 +2,14 @@
 @model IEnumerable<RozetkaWebApp.Models.ProductImage>
 
 @{
-    ViewBag.ImagesTab = "active";
-    Html.RenderPartial("_ProductNavigator");
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
 }
 
         <p><h4>@Resources.Список_изображений</h4></p>
                  
 @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
       <hr />
  <div class=row>
@@ -30,5 +30,5 @@
 </div>
 
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.CatalogImage
 
 @{
-    ViewBag.ImagesTab = "active";
-    Html.RenderPartial("_CatologNavigator");
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_CatologNavigator")));
 }
   <p>
      <h4> @Resources.Новое_изображение </h4>
@@ -46,5 +46,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

@@ -3,8 +3,8 @@
 
 
  @{
-    ViewBag.PortalsTab = "active";
-    Html.RenderPartial("_RootNavigator");
+    ViewBag.PortalsTab = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
 }
  
 
@@ -13,7 +13,7 @@
        
 @* <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
 *@@{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
 
 <table class="table">
@@ -43,5 +43,5 @@
     </tbody>
 </table>
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

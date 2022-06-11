@@ -2,8 +2,8 @@
 @model IEnumerable<RozetkaWebApp.Models.Property>
 
     @{
-      ViewBag.FiltersTab = "active";
-      Html.RenderPartial("_CatologNavigator");
+      ViewBag.FiltersTab = (("active"));
+      Html.RenderPartial((("_CatologNavigator")));
     }
 
     <p><h4>@Resources.Список_фильтров</h4></p>
@@ -11,7 +11,7 @@
 @*     <p><a  class="btn btn-success"  asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить новый </a> </p>
 *@   
      @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
 
 
@@ -45,6 +45,6 @@
 </table>
 
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }
 

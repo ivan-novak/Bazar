@@ -2,14 +2,14 @@
 @model IEnumerable<RozetkaWebApp.Models.Wallett>
 
 @{
-    ViewBag.WalletsTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.WalletsTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
  <p><h4>@Resources.Список_платежных_карт</h4></p>
 
  @{  
-    Html.RenderPartial("_FilterNavigator");
+    Html.RenderPartial((("_FilterNavigator")));
 }
 <table class="table">
     <thead>
@@ -49,5 +49,5 @@
 </table>
 
  @{
-     Html.RenderPartial("_PageNavigator");
+     Html.RenderPartial((("_PageNavigator")));
  }

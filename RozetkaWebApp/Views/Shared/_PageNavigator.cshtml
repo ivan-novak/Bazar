@@ -4,7 +4,7 @@
     int first = ViewBag.Page/size;
     int last = first+size;
     if (last > pagesCount) last = pagesCount;
-    string path = Context.Request.Path+"?Filter="+ViewBag.Filter+"&pageSize="+ViewBag.PageSize+"&page=";   
+    string path = Context.Request.Path+(("?Filter="))+ViewBag.Filter+(("&pageSize="))+ViewBag.PageSize+(("&page="));   
 }
 <div class="text-center">   
 

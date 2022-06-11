@@ -2,8 +2,8 @@
 @model IEnumerable<RozetkaWebApp.Models.AspNetUser>
 
  @{
-    ViewBag.UsersTab = "active";
-    Html.RenderPartial("_RootNavigator");
+    ViewBag.UsersTab = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
 }
   
 <p><h4>@Resources.Список_пользователей</h4></p>

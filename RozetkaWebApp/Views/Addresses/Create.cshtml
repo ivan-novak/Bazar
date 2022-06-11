@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.Address
 
 @{
-    ViewBag.AddressesTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.AddressesTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
   <p>
@@ -78,5 +78,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

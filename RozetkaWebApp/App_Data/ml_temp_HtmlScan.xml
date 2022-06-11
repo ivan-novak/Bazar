@@ -1,2 +1,8 @@
 <?xml version="1.0" standalone="yes"?>
-<HtmlScanResultsCache xmlns="http://tempuri.org/HtmlScanResults.xsd" />
+<HtmlScanResultsCache xmlns="http://tempuri.org/HtmlScanResults.xsd">
+  <HtmlScanResults>
+    <NodeName>SelectLanguage.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+</HtmlScanResultsCache>

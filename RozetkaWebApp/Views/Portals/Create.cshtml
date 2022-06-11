@@ -3,8 +3,8 @@
 
 @{
 
-    ViewBag.PortalsTab = "active";
-    Html.RenderPartial("_RootNavigator");
+    ViewBag.PortalsTab = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
 }
   
 
@@ -56,5 +56,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

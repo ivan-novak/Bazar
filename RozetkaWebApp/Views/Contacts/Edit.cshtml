@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.Contact
 
 @{
-    ViewBag.ContactsTab = "active";
-    Html.RenderPartial("_ProfileNavigator");
+    ViewBag.ContactsTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
 
@@ -145,5 +145,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

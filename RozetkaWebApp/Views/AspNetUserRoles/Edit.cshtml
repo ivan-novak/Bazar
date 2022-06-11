@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.AspNetUserRole
 
 @{
-    ViewBag.ManagerTab = "active";
-    Html.RenderPartial("_RootNavigator");
+    ViewBag.ManagerTab = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
 }
 
 
@@ -32,5 +32,5 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

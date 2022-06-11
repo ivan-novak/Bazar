@@ -152,15 +152,6 @@
   <data name="Are_you_sure_you_want_to_delet" xml:space="preserve">
     <value>Справді видалити це?</value>
   </data>
-  <data name="ASPNETCORE_ENVIRONMENT" xml:space="preserve">
-    <value>ASPNETCORE_ENVIRONMENT</value>
-  </data>
-  <data name="AspNetUser" xml:space="preserve">
-    <value>AspNetUser</value>
-  </data>
-  <data name="AspNetUserRole" xml:space="preserve">
-    <value>AspNetUserRole</value>
-  </data>
   <data name="Associate_your" xml:space="preserve">
     <value>Зв'яжіть свій</value>
   </data>
@@ -189,9 +180,6 @@
     <comment>Previous text: Create New</comment>
   </data>
   <data name="CVV_код" xml:space="preserve">
-    <value>CVV код</value>
-  </data>
-  <data name="CVV_код0" xml:space="preserve">
     <value>CVV код</value>
   </data>
   <data name="danger" xml:space="preserve">
@@ -267,9 +255,6 @@
     <value>Індекс</value>
     <comment>Previous text: Index</comment>
   </data>
-  <data name="iOS" xml:space="preserve">
-    <value>iOS</value>
-  </data>
   <data name="It_can_result_in_displaying_se" xml:space="preserve">
     <value>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.
     Для локального налагодження увімкніть</value>
@@ -303,17 +288,11 @@
   <data name="Portal" xml:space="preserve">
     <value>Портал</value>
   </data>
-  <data name="PortalImage" xml:space="preserve">
-    <value>PortalImage</value>
-  </data>
   <data name="Privacy" xml:space="preserve">
     <value>Приватність</value>
   </data>
   <data name="Privacy_Policy" xml:space="preserve">
     <value>Політика конфіденційності</value>
-  </data>
-  <data name="ProductImage" xml:space="preserve">
-    <value>ProductImage</value>
   </data>
   <data name="Promotion" xml:space="preserve">
     <value>Просування</value>
@@ -337,19 +316,12 @@
     <value>Відскануйте QR-код або введіть цей ключ</value>
     <comment>Previous text: Scan the QR Code or enter this key</comment>
   </data>
-  <data name="sdfsdfs" xml:space="preserve">
-    <value>sdfsdfs</value>
-  </data>
   <data name="Set_your_password" xml:space="preserve">
     <value>Установлення пароля</value>
   </data>
   <data name="Show_Latest_Image" xml:space="preserve">
     <value>Показати останнє зображення</value>
     <comment>Previous text: Show Latest Image</comment>
-  </data>
-  <data name="SignInManager" xml:space="preserve">
-    <value />
-    <comment>Previous text: SignInManager</comment>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Представити</value>
@@ -435,9 +407,6 @@
   <data name="Ваша_учетная_запись_содержит_п" xml:space="preserve">
     <value>Ваша початкова запис містить персональні дані, які ви нам надали. Ця сторінка дозволяє вам загружати або видалити ці дані.</value>
   </data>
-  <data name="Веб_сайт" xml:space="preserve">
-    <value>Веб-сайт</value>
-  </data>
   <data name="Владедец_карты" xml:space="preserve">
     <value>Владелец карти</value>
   </data>
@@ -502,9 +471,6 @@
   </data>
   <data name="Группы_безопасности" xml:space="preserve">
     <value>Групи безпеки</value>
-  </data>
-  <data name="Дата" xml:space="preserve">
-    <value>Дата</value>
   </data>
   <data name="Дата_завершения" xml:space="preserve">
     <value>Дата завершення</value>
@@ -594,6 +560,9 @@
   </data>
   <data name="Загрузить" xml:space="preserve">
     <value>Завантажити</value>
+  </data>
+  <data name="Заказы" xml:space="preserve">
+    <value>Замовлення</value>
   </data>
   <data name="Запомнить_меня" xml:space="preserve">
     <value>Запомнить мене</value>
@@ -712,15 +681,6 @@
     <value>як налаштувати реального відправника електронної пошти.
     Зазвичай це буде надіслано на електронну пошту:</value>
   </data>
-  <data name="Каталог" xml:space="preserve">
-    <value>Каталог</value>
-  </data>
-  <data name="Каталог0" xml:space="preserve">
-    <value>Каталог</value>
-  </data>
-  <data name="Каталоги" xml:space="preserve">
-    <value>Каталоги</value>
-  </data>
   <data name="Категория" xml:space="preserve">
     <value>Категорія</value>
   </data>
@@ -744,9 +704,6 @@
   <data name="Контакты_заказчика" xml:space="preserve">
     <value>Контакти клієнта</value>
   </data>
-  <data name="Корзина" xml:space="preserve">
-    <value>Корзина</value>
-  </data>
   <data name="Кошельки" xml:space="preserve">
     <value>Гаманці</value>
   </data>
@@ -755,7 +712,6 @@
   </data>
   <data name="Магазин" xml:space="preserve">
     <value>Крамниця</value>
-    <comment>Previous text: Цех</comment>
   </data>
   <data name="Маска_ввода" xml:space="preserve">
     <value>Маска вводу</value>
@@ -863,9 +819,6 @@
   <data name="Номер_телефона" xml:space="preserve">
     <value>Номер телефону</value>
   </data>
-  <data name="Область" xml:space="preserve">
-    <value>Область</value>
-  </data>
   <data name="Описание" xml:space="preserve">
     <value>Опис</value>
     <comment>Previous text: Описание</comment>
@@ -902,9 +855,6 @@
   <data name="Оформить_заказ" xml:space="preserve">
     <value>Касі</value>
     <comment>Previous text: Оформить заказ</comment>
-  </data>
-  <data name="Пароль" xml:space="preserve">
-    <value>Пароль</value>
   </data>
   <data name="Платежная_карта" xml:space="preserve">
     <value>Платежна карта</value>
@@ -948,6 +898,9 @@
     <value>Користувачів</value>
     <comment>Previous text: Пользователи</comment>
   </data>
+  <data name="Пользователи0" xml:space="preserve">
+    <value>Користувачів</value>
+  </data>
   <data name="Пользователь" xml:space="preserve">
     <value>Користувач - </value>
   </data>
@@ -960,9 +913,6 @@
   <data name="Портал" xml:space="preserve">
     <value>Портал -</value>
     <comment>Previous text: Портал - </comment>
-  </data>
-  <data name="Портал0" xml:space="preserve">
-    <value>Портал</value>
   </data>
   <data name="Порталы" xml:space="preserve">
     <value>Портали</value>
@@ -1138,9 +1088,6 @@
     <value>Сума замовлення</value>
     <comment>Previous text: Сумма заказа</comment>
   </data>
-  <data name="Телефон" xml:space="preserve">
-    <value>Телефон</value>
-  </data>
   <data name="Телефон_заказчик" xml:space="preserve">
     <value>Телефонний клієнт</value>
   </data>
@@ -1245,9 +1192,6 @@
   <data name="Учетная_запись" xml:space="preserve">
     <value>Обліковий запис</value>
   </data>
-  <data name="Файл" xml:space="preserve">
-    <value>Файл</value>
-  </data>
   <data name="Файл_изображения" xml:space="preserve">
     <value>Файл зображення</value>
   </data>
@@ -1267,12 +1211,6 @@
   </data>
   <data name="Фрпмат_вывода" xml:space="preserve">
     <value>Формат виводу</value>
-  </data>
-  <data name="Характеристики" xml:space="preserve">
-    <value>Характеристики</value>
-  </data>
-  <data name="Характеритики" xml:space="preserve">
-    <value>Характеристики</value>
   </data>
   <data name="Цена" xml:space="preserve">
     <value>Ціна</value>
@@ -1302,72 +1240,5 @@
   <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
     <value>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.
         Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</value>
-  </data>
-  <data name="a_asp_controller_AspNetUsers_a" xml:space="preserve">
-    <value>a asp-controller = "AspNetUsers" asp-action="Index" /a/ppa asp-area="Identity" asp-page="/Account/Manage/Index" /a/ph1/h1ul class="nav nav-tabs"li class="nav-item"a class="nav-link</value>
-  </data>
-  <data name="Заказы" xml:space="preserve">
-    <value>Замовлення</value>
-  </data>
-  <data name="Пользователи0" xml:space="preserve">
-    <value>Користувачів</value>
-    <comment>Previous text: Користувачів</comment>
-  </data>
-  <data name="login_provider_login_LoginProv" xml:space="preserve">
-    <value>login-provider-{login. LoginProvider}</value>
-  </data>
-  <data name="active" xml:space="preserve">
-    <value>active</value>
-  </data>
-  <data name="_a_lili_class_nav_item_a_class" xml:space="preserve">
-    <value>"/a/lili class="nav-item"a class="nav-link</value>
-  </data>
-  <data name="dd_MM_yyyy" xml:space="preserve">
-    <value>dd/MM/yyyy</value>
-  </data>
-  <data name="_times" xml:space="preserve">
-    <value>&amp;times;</value>
-  </data>
-  <data name="_RootNavigator" xml:space="preserve">
-    <value>_RootNavigator</value>
-  </data>
-  <data name="_FilterNavigator" xml:space="preserve">
-    <value>_FilterNavigator</value>
-  </data>
-  <data name="_ValidationScriptsPartial" xml:space="preserve">
-    <value>_ValidationScriptsPartial</value>
-  </data>
-  <data name="_href_Addresses_Index" xml:space="preserve">
-    <value>" href="/Addresses/Index/</value>
-  </data>
-  <data name="_href_Contacts_Index" xml:space="preserve">
-    <value>" href="/Contacts/Index/</value>
-  </data>
-  <data name="_href_Identity_Account_Manage_" xml:space="preserve">
-    <value>" href="/Identity/Account/Manage/"/a/lili class="nav-item"a class="nav-link</value>
-  </data>
-  <data name="_href_Orders_Index" xml:space="preserve">
-    <value>" href="/Orders/Index/</value>
-  </data>
-  <data name="_href_Wallets_Index" xml:space="preserve">
-    <value>" href="/Wallets/Index/</value>
-  </data>
-  <data name="remove_login_login_LoginProvid" xml:space="preserve">
-    <value>remove-login-{login.LoginProvider}</value>
-  </data>
-  <data name="res" xml:space="preserve">
-    <value>|</value>
-  </data>
-  <data name="res3" xml:space="preserve">
-    <value>✓</value>
-  </data>
-  <data name="res2" xml:space="preserve">
-    <value>.</value>
-  </data>
-  <data name="res0" xml:space="preserve">
-    <value>\</value>
-  </data>
-  <data name="res1" xml:space="preserve">
-    <value>"</value>
   </data>
 </root>

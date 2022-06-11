@@ -2,8 +2,8 @@
 @model IEnumerable<RozetkaWebApp.Models.LineDetail>
 
 @{
-    ViewBag.ManagerTab = "active";
-    Html.RenderPartial("_CartNavigator");
+    ViewBag.ManagerTab = (("active"));
+    Html.RenderPartial((("_CartNavigator")));
 }
 
 <p><h4>@Resources.Список_выбраных_товаров</h4></p>

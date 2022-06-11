@@ -70,7 +70,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to and.
+        ///   Looks up a localized string similar to і.
         /// </summary>
         public static string _and {
             get {
@@ -79,7 +79,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to , and restarting the application..
+        ///   Looks up a localized string similar to і перезавантажте програму..
         /// </summary>
         public static string _and_restarting_the_applicatio {
             get {
@@ -88,7 +88,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to , as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the.
+        ///   Looks up a localized string similar to , оскільки це може призвести до того, що конфіденційна інформація від винятків відображається кінцевим користувачам. Для локального налагодження середовище розробки можна ввімкнути, встановивши.
         /// </summary>
         public static string _as_it_can_result_in_sensitive {
             get {
@@ -97,7 +97,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;copy; 2022 - RozetkaWebApp -.
+        ///   Looks up a localized string similar to копіювати; 2022 - RozetkaWebApp -.
         /// </summary>
         public static string _copy_2022_RozetkaWebApp {
             get {
@@ -106,7 +106,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error..
+        ///   Looks up a localized string similar to Помилка..
         /// </summary>
         public static string _Error {
             get {
@@ -169,7 +169,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Order.
+        ///   Looks up a localized string similar to Замовлення.
         /// </summary>
         public static string _Order {
             get {
@@ -178,7 +178,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove.
+        ///   Looks up a localized string similar to Видалити.
         /// </summary>
         public static string _Remove {
             get {
@@ -214,6 +214,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to a asp-controller = &quot;AspNetUsers&quot; asp-action=&quot;Index&quot; /a/ppa asp-area=&quot;Identity&quot; asp-page=&quot;/Account/Manage/Index&quot; /a/ph1/h1ul class=&quot;nav nav-tabs&quot;li class=&quot;nav-item&quot;a class=&quot;nav-link.
+        /// </summary>
+        public static string a_asp_controller_AspNetUsers_a {
+            get {
+                return ResourceManager.GetString("a_asp_controller_AspNetUsers_a", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to active.
         /// </summary>
         public static string active {
@@ -223,7 +232,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An error occurred while processing your request..
+        ///   Looks up a localized string similar to Під час обробки запиту сталася помилка..
         /// </summary>
         public static string An_error_occurred_while_proces {
             get {
@@ -232,7 +241,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to and restarting the app..
+        ///   Looks up a localized string similar to і перезапустіть додаток..
         /// </summary>
         public static string and_restarting_the_app {
             get {
@@ -241,7 +250,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Android.
+        ///   Looks up a localized string similar to Андроїд.
         /// </summary>
         public static string Android {
             get {
@@ -250,7 +259,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete this?.
+        ///   Looks up a localized string similar to Справді видалити це?.
         /// </summary>
         public static string Are_you_sure_you_want_to_delet {
             get {
@@ -286,7 +295,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Associate your.
+        ///   Looks up a localized string similar to Зв&apos;яжіть свій.
         /// </summary>
         public static string Associate_your {
             get {
@@ -295,7 +304,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Back to List.
+        ///   Looks up a localized string similar to Повернутися до списку.
         /// </summary>
         public static string Back_to_List {
             get {
@@ -304,7 +313,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catalog.
+        ///   Looks up a localized string similar to Каталог.
         /// </summary>
         public static string Catalog {
             get {
@@ -313,7 +322,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CatalogImage.
+        ///   Looks up a localized string similar to КаталогІмаж.
         /// </summary>
         public static string CatalogImage {
             get {
@@ -322,7 +331,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click here to Logout.
+        ///   Looks up a localized string similar to Натисніть тут, щоб вийти.
         /// </summary>
         public static string Click_here_to_Logout {
             get {
@@ -331,7 +340,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Configure authenticator app.
+        ///   Looks up a localized string similar to Настроювання програми-автентифікатора.
         /// </summary>
         public static string Configure_authenticator_app {
             get {
@@ -340,7 +349,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create.
+        ///   Looks up a localized string similar to Творити.
         /// </summary>
         public static string Create {
             get {
@@ -349,7 +358,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create New.
+        ///   Looks up a localized string similar to Створити новий.
         /// </summary>
         public static string Create_New {
             get {
@@ -358,7 +367,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CVV-код.
+        ///   Looks up a localized string similar to CVV код.
         /// </summary>
         public static string CVV_код {
             get {
@@ -376,7 +385,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to danger.
+        ///   Looks up a localized string similar to небезпека.
         /// </summary>
         public static string danger {
             get {
@@ -394,7 +403,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default file input example.
+        ///   Looks up a localized string similar to Приклад введення файлу за промовчанням.
         /// </summary>
         public static string Default_file_input_example {
             get {
@@ -403,7 +412,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Видалити.
         /// </summary>
         public static string Delete {
             get {
@@ -412,7 +421,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Personal Data.
+        ///   Looks up a localized string similar to Видалення персональних даних.
         /// </summary>
         public static string Delete_Personal_Data {
             get {
@@ -421,7 +430,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Details.
+        ///   Looks up a localized string similar to Деталі.
         /// </summary>
         public static string Details {
             get {
@@ -430,7 +439,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Development.
+        ///   Looks up a localized string similar to Розробка.
         /// </summary>
         public static string Development {
             get {
@@ -439,7 +448,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Development environment should not be enabled in deployed applications.
+        ///   Looks up a localized string similar to Середовище розробки не повинно вмикатися в розгорнутих додатках.
         /// </summary>
         public static string Development_environment_should {
             get {
@@ -448,7 +457,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Development Mode.
+        ///   Looks up a localized string similar to Режим розробки.
         /// </summary>
         public static string Development_Mode {
             get {
@@ -457,7 +466,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download a two-factor authenticator app like Microsoft Authenticator for.
+        ///   Looks up a localized string similar to Завантажте двофакторну програму-автентифікатор, наприклад Microsoft Authenticator для.
         /// </summary>
         public static string Download_a_two_factor_authenti {
             get {
@@ -466,7 +475,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to Редагувати.
         /// </summary>
         public static string Edit {
             get {
@@ -475,7 +484,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to enable QR code generation.
+        ///   Looks up a localized string similar to увімкнути генерацію QR-коду.
         /// </summary>
         public static string enable_QR_code_generation {
             get {
@@ -484,7 +493,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your email..
+        ///   Looks up a localized string similar to Введіть свою електронну пошту..
         /// </summary>
         public static string Enter_your_email {
             get {
@@ -493,7 +502,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to environment by setting the.
+        ///   Looks up a localized string similar to навколишнього середовища, встановивши.
         /// </summary>
         public static string environment_by_setting_the {
             get {
@@ -502,7 +511,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to environment variable to.
+        ///   Looks up a localized string similar to змінна середовища до.
         /// </summary>
         public static string environment_variable_to {
             get {
@@ -511,7 +520,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to environment will display more detailed information about the error that occurred..
+        ///   Looks up a localized string similar to середовище відображатиме більш детальну інформацію про помилку, що сталася..
         /// </summary>
         public static string environment_will_display_more_ {
             get {
@@ -520,7 +529,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to Помилка.
         /// </summary>
         public static string Error0 {
             get {
@@ -529,7 +538,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to External logins.
+        ///   Looks up a localized string similar to Зовнішні логіни.
         /// </summary>
         public static string External_logins {
             get {
@@ -538,7 +547,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to for details on setting up this ASP.NET application to support logging in via external services..
+        ///   Looks up a localized string similar to для отримання детальної інформації про налаштування цієї програми ASP.NET для підтримки входу через зовнішні служби..
         /// </summary>
         public static string for_details_on_setting_up_this {
             get {
@@ -547,7 +556,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello.
+        ///   Looks up a localized string similar to Привіт.
         /// </summary>
         public static string Hello {
             get {
@@ -556,7 +565,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ID.
+        ///   Looks up a localized string similar to Ідентифікатор.
         /// </summary>
         public static string ID {
             get {
@@ -565,7 +574,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image.
+        ///   Looks up a localized string similar to Образ.
         /// </summary>
         public static string Image {
             get {
@@ -574,7 +583,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Index.
+        ///   Looks up a localized string similar to Індекс.
         /// </summary>
         public static string Index {
             get {
@@ -592,8 +601,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It can result in displaying sensitive information from exceptions to end users.
-        ///    For local debugging, enable the.
+        ///   Looks up a localized string similar to Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.
+        ///    Для локального налагодження увімкніть.
         /// </summary>
         public static string It_can_result_in_displaying_se {
             get {
@@ -602,7 +611,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Learn how to.
+        ///   Looks up a localized string similar to Дізнайтеся, як.
         /// </summary>
         public static string Learn_how_to {
             get {
@@ -611,7 +620,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Log in.
+        ///   Looks up a localized string similar to Ввійти.
         /// </summary>
         public static string Log_in {
             get {
@@ -620,7 +629,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to login-provider-{login.LoginProvider}.
+        ///   Looks up a localized string similar to login-provider-{login. LoginProvider}.
         /// </summary>
         public static string login_provider_login_LoginProv {
             get {
@@ -629,8 +638,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to or
-        ///                Google Authenticator for.
+        ///   Looks up a localized string similar to або
+        ///                Google Автентифікатор для.
         /// </summary>
         public static string or_Google_Authenticator_for {
             get {
@@ -639,7 +648,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ParentLayout.
+        ///   Looks up a localized string similar to Батьківський проміжок.
         /// </summary>
         public static string ParentLayout {
             get {
@@ -648,7 +657,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal Data.
+        ///   Looks up a localized string similar to Персональні дані.
         /// </summary>
         public static string Personal_Data {
             get {
@@ -657,7 +666,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please check your email to reset your password..
+        ///   Looks up a localized string similar to Будь ласка, перевірте свою електронну пошту, щоб скинути пароль..
         /// </summary>
         public static string Please_check_your_email_to_res {
             get {
@@ -666,8 +675,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter an email address for this site below and click the Register button to finish
-        ///    logging in..
+        ///   Looks up a localized string similar to Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити
+        ///    вхід..
         /// </summary>
         public static string Please_enter_an_email_address_ {
             get {
@@ -676,7 +685,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portal.
+        ///   Looks up a localized string similar to Портал.
         /// </summary>
         public static string Portal {
             get {
@@ -694,7 +703,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Privacy.
+        ///   Looks up a localized string similar to Приватність.
         /// </summary>
         public static string Privacy {
             get {
@@ -703,7 +712,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Privacy Policy.
+        ///   Looks up a localized string similar to Політика конфіденційності.
         /// </summary>
         public static string Privacy_Policy {
             get {
@@ -721,7 +730,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Promotion.
+        ///   Looks up a localized string similar to Просування.
         /// </summary>
         public static string Promotion {
             get {
@@ -730,7 +739,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register.
+        ///   Looks up a localized string similar to Зареєструватися.
         /// </summary>
         public static string Register {
             get {
@@ -739,7 +748,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register confirmation.
+        ///   Looks up a localized string similar to Підтвердження реєстрації.
         /// </summary>
         public static string Register_confirmation {
             get {
@@ -757,7 +766,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Request ID:.
+        ///   Looks up a localized string similar to Ідентифікатор запиту:.
         /// </summary>
         public static string Request_ID {
             get {
@@ -811,7 +820,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Resend email confirmation.
+        ///   Looks up a localized string similar to Повторне надсилання підтвердження електронною поштою.
         /// </summary>
         public static string Resend_email_confirmation {
             get {
@@ -820,7 +829,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RootImage.
+        ///   Looks up a localized string similar to Кореневий псевдонім.
         /// </summary>
         public static string RootImage {
             get {
@@ -829,7 +838,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scan the QR Code or enter this key.
+        ///   Looks up a localized string similar to Відскануйте QR-код або введіть цей ключ.
         /// </summary>
         public static string Scan_the_QR_Code_or_enter_this {
             get {
@@ -847,7 +856,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set your password.
+        ///   Looks up a localized string similar to Установлення пароля.
         /// </summary>
         public static string Set_your_password {
             get {
@@ -856,7 +865,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Latest Image.
+        ///   Looks up a localized string similar to Показати останнє зображення.
         /// </summary>
         public static string Show_Latest_Image {
             get {
@@ -865,7 +874,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SignInManager.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string SignInManager {
             get {
@@ -874,7 +883,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Submit.
+        ///   Looks up a localized string similar to Представити.
         /// </summary>
         public static string Submit {
             get {
@@ -883,7 +892,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to success.
+        ///   Looks up a localized string similar to успіх.
         /// </summary>
         public static string success {
             get {
@@ -892,7 +901,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Swapping to.
+        ///   Looks up a localized string similar to Заміна на.
         /// </summary>
         public static string Swapping_to {
             get {
@@ -901,7 +910,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Development environment shouldn&apos;t be enabled for deployed applications..
+        ///   Looks up a localized string similar to Середовище розробки не слід вмикати для розгорнутих застосунків..
         /// </summary>
         public static string The_Development_environment_sh {
             get {
@@ -910,7 +919,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no external authentication services configured. See.
+        ///   Looks up a localized string similar to Служби зовнішньої автентифікації не настроєно. Бачити.
         /// </summary>
         public static string There_are_no_external_authenti {
             get {
@@ -919,7 +928,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This account has been locked out, please try again later..
+        ///   Looks up a localized string similar to Цей обліковий запис заблоковано, спробуйте ще раз пізніше..
         /// </summary>
         public static string This_account_has_been_locked_o {
             get {
@@ -928,7 +937,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to this article.
+        ///   Looks up a localized string similar to ця стаття.
         /// </summary>
         public static string this_article {
             get {
@@ -937,7 +946,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to To use an authenticator app go through the following steps:.
+        ///   Looks up a localized string similar to Щоб скористатися програмою-автентифікатором, виконайте такі дії:.
         /// </summary>
         public static string To_use_an_authenticator_app_go {
             get {
@@ -946,7 +955,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TwoFactorAuthentication.
+        ///   Looks up a localized string similar to Двофакторна підтримка.
         /// </summary>
         public static string TwoFactorAuthentication {
             get {
@@ -955,7 +964,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload File(s).
+        ///   Looks up a localized string similar to Завантажити файли.
         /// </summary>
         public static string Upload_File_s {
             get {
@@ -964,7 +973,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use this page to detail your site&apos;s privacy policy..
+        ///   Looks up a localized string similar to Використовуйте цю сторінку, щоб деталізувати політику конфіденційності вашого сайту..
         /// </summary>
         public static string Use_this_page_to_detail_your_s {
             get {
@@ -973,7 +982,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You do not have access to this resource..
+        ///   Looks up a localized string similar to Ви не маєте доступу до цього ресурсу..
         /// </summary>
         public static string You_do_not_have_access_to_this {
             get {
@@ -982,7 +991,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You&apos;ve successfully authenticated with.
+        ///   Looks up a localized string similar to Ви успішно пройшли автентифікацію за допомогою.
         /// </summary>
         public static string You_ve_successfully_authentica {
             get {
@@ -991,7 +1000,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Администрирование.
+        ///   Looks up a localized string similar to Адміністрування.
         /// </summary>
         public static string Администрирование {
             get {
@@ -1000,7 +1009,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес.
+        ///   Looks up a localized string similar to Адреса.
         /// </summary>
         public static string Адрес {
             get {
@@ -1009,7 +1018,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес доставки.
+        ///   Looks up a localized string similar to Адреса доставки.
         /// </summary>
         public static string Адрес_доставки {
             get {
@@ -1018,7 +1027,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес электронной почты.
+        ///   Looks up a localized string similar to Адреса електронної пошти.
         /// </summary>
         public static string Адрес_электронной_почты {
             get {
@@ -1027,7 +1036,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Адрес электронной почты заказчика.
+        ///   Looks up a localized string similar to Адреса електронної пошти заказчика.
         /// </summary>
         public static string Адрес_электронной_почты_заказч {
             get {
@@ -1036,7 +1045,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Атрибуты.
+        ///   Looks up a localized string similar to Атрибути.
         /// </summary>
         public static string Атрибуты {
             get {
@@ -1045,7 +1054,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Банковская карта.
+        ///   Looks up a localized string similar to Банківська картка.
         /// </summary>
         public static string Банковская_карта {
             get {
@@ -1054,7 +1063,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Блокировка.
+        ///   Looks up a localized string similar to Блокування.
         /// </summary>
         public static string Блокировка {
             get {
@@ -1063,7 +1072,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to В настоящее время в этом приложении не зарегистрирован реальный отправитель электронной почты, см..
+        ///   Looks up a localized string similar to В даний час в цьому додатку не зареєстровано реальний відправник електронної пошти, см..
         /// </summary>
         public static string В_настоящее_время_в_этом_прило {
             get {
@@ -1072,7 +1081,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вам следует.
+        ///   Looks up a localized string similar to Вам слід.
         /// </summary>
         public static string Вам_следует {
             get {
@@ -1081,7 +1090,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ваш логин защищен приложением-аутентификатором. Введите код аутентификатора ниже..
+        ///   Looks up a localized string similar to Ваш логін захищений додатком-аутентифікатором. Введіть код аутентифікатора нижче..
         /// </summary>
         public static string Ваш_логин_защищен_приложением_ {
             get {
@@ -1090,7 +1099,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ваш пароль был сброшен. Пожалуйста.
+        ///   Looks up a localized string similar to Ваш пароль був сброшен. Пожалуйста.
         /// </summary>
         public static string Ваш_пароль_был_сброшен_Пожалуй {
             get {
@@ -1099,7 +1108,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ваша учетная запись содержит персональные данные, которые вы нам предоставили. Эта страница позволяет вам загружать или удалять эти данные..
+        ///   Looks up a localized string similar to Ваша початкова запис містить персональні дані, які ви нам надали. Ця сторінка дозволяє вам загружати або видалити ці дані..
         /// </summary>
         public static string Ваша_учетная_запись_содержит_п {
             get {
@@ -1117,7 +1126,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Владедец карты.
+        ///   Looks up a localized string similar to Владелец карти.
         /// </summary>
         public static string Владедец_карты {
             get {
@@ -1126,7 +1135,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Войти.
+        ///   Looks up a localized string similar to Ввійти.
         /// </summary>
         public static string Войти {
             get {
@@ -1135,7 +1144,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вход.
+        ///   Looks up a localized string similar to Вхід.
         /// </summary>
         public static string Вход {
             get {
@@ -1144,7 +1153,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы должны.
+        ///   Looks up a localized string similar to Ви повинні.
         /// </summary>
         public static string Вы_должны {
             get {
@@ -1153,8 +1162,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы запросили вход с кодом восстановления. Этот логин не будет запомнен, пока вы не предоставите
-        ///    код приложения-аутентификатора при входе в систему или отключите 2FA и снова войдите в систему..
+        ///   Looks up a localized string similar to Ви запросили вхід з кодом відновлення. Цей логін не буде запомнений, поки ви не надасте
+        ///    код додатків-аутентифікаторів при вході в систему або відключіть 2FA і знову входьте в систему..
         /// </summary>
         public static string Вы_запросили_вход_с_кодом_восс {
             get {
@@ -1163,7 +1172,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы имеете.
+        ///   Looks up a localized string similar to Вы маєте.
         /// </summary>
         public static string Вы_имеете {
             get {
@@ -1172,7 +1181,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы можете.
+        ///   Looks up a localized string similar to Ви можете.
         /// </summary>
         public static string Вы_можете {
             get {
@@ -1181,7 +1190,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы успешно вышли из приложения..
+        ///   Looks up a localized string similar to Ви успішно вийшли з додатків..
         /// </summary>
         public static string Вы_успешно_вышли_из_приложения {
             get {
@@ -1190,7 +1199,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы хотите удалить этого пользователя из группы?.
+        ///   Looks up a localized string similar to Ви хочете видалити цього користувача з групи?.
         /// </summary>
         public static string Вы_хотите_удалить_этого_пользо {
             get {
@@ -1199,7 +1208,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы хотите удалить этот товар из корзины?.
+        ///   Looks up a localized string similar to Хочете видалити цей товар з корзини?.
         /// </summary>
         public static string Вы_хотите_удалить_этот_товар_и {
             get {
@@ -1208,7 +1217,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы хотите удалить эту группу?.
+        ///   Looks up a localized string similar to Хочете видалити цю групу?.
         /// </summary>
         public static string Вы_хотите_удалить_эту_группу {
             get {
@@ -1217,7 +1226,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы хотите удалить эту платежную карту?.
+        ///   Looks up a localized string similar to Ви хочете видалити цю платіжну карту?.
         /// </summary>
         public static string Вы_хотите_удалить_эту_платежну {
             get {
@@ -1226,7 +1235,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы хотиту удалить это портал?.
+        ///   Looks up a localized string similar to Ви хотіту удалить це портал?.
         /// </summary>
         public static string Вы_хотиту_удалить_это_портал {
             get {
@@ -1235,7 +1244,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы хотиту удалить этот аккаунт?.
+        ///   Looks up a localized string similar to Ви хочете видалити цей обліковий запис?.
         /// </summary>
         public static string Вы_хотиту_удалить_этот_аккаунт {
             get {
@@ -1244,7 +1253,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Выйти.
+        ///   Looks up a localized string similar to Вийти.
         /// </summary>
         public static string Выйти {
             get {
@@ -1253,7 +1262,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Выход.
+        ///   Looks up a localized string similar to Виход.
         /// </summary>
         public static string Выход {
             get {
@@ -1262,7 +1271,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Генерация кодов восстановления.
+        ///   Looks up a localized string similar to Генерація кодів відновлення.
         /// </summary>
         public static string Генерация_кодов_восстановления {
             get {
@@ -1271,7 +1280,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Город.
+        ///   Looks up a localized string similar to місто.
         /// </summary>
         public static string Город {
             get {
@@ -1280,7 +1289,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Групп безопасности.
+        ///   Looks up a localized string similar to Групп безпеки.
         /// </summary>
         public static string Групп_безопасности {
             get {
@@ -1289,7 +1298,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Группы безопасности.
+        ///   Looks up a localized string similar to Групи безпеки.
         /// </summary>
         public static string Группы_безопасности {
             get {
@@ -1307,7 +1316,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дата завершения.
+        ///   Looks up a localized string similar to Дата завершення.
         /// </summary>
         public static string Дата_завершения {
             get {
@@ -1316,7 +1325,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дата заказ.
+        ///   Looks up a localized string similar to Дата заказу.
         /// </summary>
         public static string Дата_заказ {
             get {
@@ -1325,7 +1334,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дата заказа.
+        ///   Looks up a localized string similar to Дата замовлення.
         /// </summary>
         public static string Дата_заказа {
             get {
@@ -1334,7 +1343,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дата начала.
+        ///   Looks up a localized string similar to Дата початку.
         /// </summary>
         public static string Дата_начала {
             get {
@@ -1343,7 +1352,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Дата окончания.
+        ///   Looks up a localized string similar to Дата закінчення.
         /// </summary>
         public static string Дата_окончания {
             get {
@@ -1352,7 +1361,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Двух-факторная авторизаия.
+        ///   Looks up a localized string similar to Двофакторний дозвіл.
         /// </summary>
         public static string Двух_факторная_авторизаия {
             get {
@@ -1361,7 +1370,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Двух-факторноая авторизация.
+        ///   Looks up a localized string similar to Двух-факторная авторизация.
         /// </summary>
         public static string Двух_факторноая_авторизация {
             get {
@@ -1370,7 +1379,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Двухфакторная аутентификация (2FA).
+        ///   Looks up a localized string similar to Двухфакторна аутентифікація (2FA).
         /// </summary>
         public static string Двухфакторная_аутентификация_2 {
             get {
@@ -1379,7 +1388,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Действия.
+        ///   Looks up a localized string similar to Дії.
         /// </summary>
         public static string Действия {
             get {
@@ -1388,7 +1397,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Детали.
+        ///   Looks up a localized string similar to Деталі.
         /// </summary>
         public static string Детали {
             get {
@@ -1397,7 +1406,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Детально о товаре.
+        ///   Looks up a localized string similar to Детально про товари.
         /// </summary>
         public static string Детально_о_товаре {
             get {
@@ -1406,7 +1415,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Добавить_изображение {
             get {
@@ -1415,7 +1424,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Добавить_новое {
             get {
@@ -1424,7 +1433,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Добавить_новую {
             get {
@@ -1433,7 +1442,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Добавить_новый {
             get {
@@ -1442,7 +1451,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Добавить_пользователя {
             get {
@@ -1451,7 +1460,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Добавить.
+        ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Додати {
             get {
@@ -1460,7 +1469,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ед. измерения.
+        ///   Looks up a localized string similar to Ед. вимірювання.
         /// </summary>
         public static string Ед_измерения {
             get {
@@ -1469,7 +1478,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Електронная почта.
+        ///   Looks up a localized string similar to Електронна пошта.
         /// </summary>
         public static string Електронная_почта {
             get {
@@ -1478,7 +1487,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Если вы потеряете свое устройство и у вас не будет кодов восстановления, вы потеряете доступ к своей учетной записи..
+        ///   Looks up a localized string similar to Якщо ви втратите своє пристрій і у вас не буде відновлення кодів, ви втратите доступ до своєї початкової запису..
         /// </summary>
         public static string Если_вы_потеряете_свое_устройс {
             get {
@@ -1487,7 +1496,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Если вы сбросите свой ключ аутентификатора, ваше приложение аутентификатора не будет работать, пока вы не перенастроите его..
+        ///   Looks up a localized string similar to Якщо ви сбросите свій ключ аутентифікатора, ваше додаток аутентифікатора не буде працювати, поки ви не перенастроите його..
         /// </summary>
         public static string Если_вы_сбросите_свой_ключ_аут {
             get {
@@ -1496,7 +1505,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Заблокировано.
+        ///   Looks up a localized string similar to Заблоковано.
         /// </summary>
         public static string Заблокировано {
             get {
@@ -1505,7 +1514,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Забыли пароль?.
+        ///   Looks up a localized string similar to Забули пароль?.
         /// </summary>
         public static string Забыли_пароль {
             get {
@@ -1514,7 +1523,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Забыть этот браузер.
+        ///   Looks up a localized string similar to Забудьте про цей браузер.
         /// </summary>
         public static string Забыть_этот_браузер {
             get {
@@ -1523,7 +1532,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование.
+        ///   Looks up a localized string similar to Ім&apos;я.
         /// </summary>
         public static string Загловок {
             get {
@@ -1532,7 +1541,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование.
+        ///   Looks up a localized string similar to Ім&apos;я.
         /// </summary>
         public static string Заголовок {
             get {
@@ -1541,7 +1550,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Загрузить.
+        ///   Looks up a localized string similar to Завантажити.
         /// </summary>
         public static string Загрузить {
             get {
@@ -1550,7 +1559,16 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Запомнить меня.
+        ///   Looks up a localized string similar to Замовлення.
+        /// </summary>
+        public static string Заказы {
+            get {
+                return ResourceManager.GetString("Заказы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Запомнить мене.
         /// </summary>
         public static string Запомнить_меня {
             get {
@@ -1559,7 +1577,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование.
+        ///   Looks up a localized string similar to Ім&apos;я.
         /// </summary>
         public static string Звголовок {
             get {
@@ -1568,7 +1586,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Значание.
+        ///   Looks up a localized string similar to Значение.
         /// </summary>
         public static string Значание {
             get {
@@ -1577,7 +1595,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Значение.
+        ///   Looks up a localized string similar to Значення.
         /// </summary>
         public static string Значение {
             get {
@@ -1586,7 +1604,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить группу безопасности.
+        ///   Looks up a localized string similar to Змінити групу безпеки.
         /// </summary>
         public static string Изменить_группу_безопасности {
             get {
@@ -1595,7 +1613,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить изображение.
+        ///   Looks up a localized string similar to Змінити зображення.
         /// </summary>
         public static string Изменить_изображение {
             get {
@@ -1604,7 +1622,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить информацию о адресе.
+        ///   Looks up a localized string similar to Змінити інформацію про адресу.
         /// </summary>
         public static string Изменить_информацию_о_адресе {
             get {
@@ -1613,7 +1631,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить информацию о заказе.
+        ///   Looks up a localized string similar to Змінити інформацію про заказе.
         /// </summary>
         public static string Изменить_информацию_о_заказе {
             get {
@@ -1622,7 +1640,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить информацию о карте.
+        ///   Looks up a localized string similar to Змінити інформацію про карту.
         /// </summary>
         public static string Изменить_информацию_о_карте {
             get {
@@ -1631,7 +1649,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить информацию о каталоге.
+        ///   Looks up a localized string similar to Змінити інформацію про каталог.
         /// </summary>
         public static string Изменить_информацию_о_каталоге {
             get {
@@ -1640,7 +1658,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить информацию о контактах.
+        ///   Looks up a localized string similar to Змінити інформацію про контактах.
         /// </summary>
         public static string Изменить_информацию_о_контакта {
             get {
@@ -1649,7 +1667,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить информацию о товаре.
+        ///   Looks up a localized string similar to Змінити інформацію про товари.
         /// </summary>
         public static string Изменить_информацию_о_товаре {
             get {
@@ -1658,7 +1676,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить количество товара.
+        ///   Looks up a localized string similar to Змінити кількість товару.
         /// </summary>
         public static string Изменить_количество_товара {
             get {
@@ -1667,7 +1685,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить пользователя.
+        ///   Looks up a localized string similar to Змінити користувача.
         /// </summary>
         public static string Изменить_пользователя {
             get {
@@ -1676,7 +1694,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить портал.
+        ///   Looks up a localized string similar to Змінити портал.
         /// </summary>
         public static string Изменить_портал {
             get {
@@ -1685,7 +1703,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить промоакцию.
+        ///   Looks up a localized string similar to Змінити промоакцию.
         /// </summary>
         public static string Изменить_промоакцию {
             get {
@@ -1694,7 +1712,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить фильтр.
+        ///   Looks up a localized string similar to Змінити фільтр.
         /// </summary>
         public static string Изменить_фильтр {
             get {
@@ -1703,7 +1721,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изменить характеристику.
+        ///   Looks up a localized string similar to Змінити характеристику.
         /// </summary>
         public static string Изменить_характеристику {
             get {
@@ -1712,7 +1730,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Изображения.
+        ///   Looks up a localized string similar to Зображення.
         /// </summary>
         public static string Изображения {
             get {
@@ -1721,7 +1739,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Имя.
+        ///   Looks up a localized string similar to Імя.
         /// </summary>
         public static string Имя {
             get {
@@ -1730,7 +1748,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Имя владельца.
+        ///   Looks up a localized string similar to Ім&apos;я власника.
         /// </summary>
         public static string Имя_владельца {
             get {
@@ -1739,7 +1757,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Имя пользователя.
+        ///   Looks up a localized string similar to Імя користувача.
         /// </summary>
         public static string Имя_пользователя {
             get {
@@ -1748,7 +1766,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Индикатор.
+        ///   Looks up a localized string similar to Індикатор.
         /// </summary>
         public static string Индикатор {
             get {
@@ -1757,7 +1775,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о адресе.
+        ///   Looks up a localized string similar to Інформація про адресу.
         /// </summary>
         public static string Информация_о_адресе {
             get {
@@ -1766,7 +1784,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о группе безопасности.
+        ///   Looks up a localized string similar to Інформація про групу безпеки.
         /// </summary>
         public static string Информация_о_группе_безопаснос {
             get {
@@ -1775,7 +1793,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о каталоге.
+        ///   Looks up a localized string similar to Інформація про каталоге.
         /// </summary>
         public static string Информация_о_каталоге {
             get {
@@ -1784,7 +1802,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о контакте.
+        ///   Looks up a localized string similar to Інформація про контакт.
         /// </summary>
         public static string Информация_о_контакте {
             get {
@@ -1793,7 +1811,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о платежной карте?.
+        ///   Looks up a localized string similar to Інформація про платіжну карту?.
         /// </summary>
         public static string Информация_о_платежной_карте {
             get {
@@ -1802,7 +1820,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о покупке.
+        ///   Looks up a localized string similar to Інформація про покупку.
         /// </summary>
         public static string Информация_о_покупке {
             get {
@@ -1811,7 +1829,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о портале.
+        ///   Looks up a localized string similar to Інформація о портале.
         /// </summary>
         public static string Информация_о_портале {
             get {
@@ -1820,7 +1838,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о товаре.
+        ///   Looks up a localized string similar to Інформація про товари.
         /// </summary>
         public static string Информация_о_товаре {
             get {
@@ -1829,7 +1847,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о товаре из корзины?.
+        ///   Looks up a localized string similar to Інформація про товари з корзини?.
         /// </summary>
         public static string Информация_о_товаре_из_корзины {
             get {
@@ -1838,7 +1856,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Информация о характеристике.
+        ///   Looks up a localized string similar to Інформація про характеристики.
         /// </summary>
         public static string Информация_о_характеристике {
             get {
@@ -1847,7 +1865,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Используйте другой сервис для регистрации..
+        ///   Looks up a localized string similar to Використовуйте інший сервіс для реєстрації..
         /// </summary>
         public static string Используйте_другой_сервис_для_ {
             get {
@@ -1856,7 +1874,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Используйте другой сервис для входа..
+        ///   Looks up a localized string similar to Використовуйте інший сервіс для входу..
         /// </summary>
         public static string Используйте_другой_сервис_для_0 {
             get {
@@ -1865,7 +1883,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Используйте локальную учетную запись для входа..
+        ///   Looks up a localized string similar to Використовуйте локальну учетну запис для входу..
         /// </summary>
         public static string Используйте_локальную_учетную_ {
             get {
@@ -1874,8 +1892,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to как настроить реального отправителя электронной почты.
-        ///    Обычно это будет отправлено по электронной почте:.
+        ///   Looks up a localized string similar to як налаштувати реального відправника електронної пошти.
+        ///    Зазвичай це буде надіслано на електронну пошту:.
         /// </summary>
         public static string как_настроить_реального_отправ {
             get {
@@ -1911,7 +1929,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Категория.
+        ///   Looks up a localized string similar to Категорія.
         /// </summary>
         public static string Категория {
             get {
@@ -1920,7 +1938,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Коды восстановления.
+        ///   Looks up a localized string similar to Коды відновлення.
         /// </summary>
         public static string Коды_восстановления {
             get {
@@ -1929,7 +1947,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Количество.
+        ///   Looks up a localized string similar to Кількість.
         /// </summary>
         public static string Количество {
             get {
@@ -1938,7 +1956,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Контактное лицо.
+        ///   Looks up a localized string similar to Контакт.
         /// </summary>
         public static string Контактное_лицо {
             get {
@@ -1947,7 +1965,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Контактное лицо.
+        ///   Looks up a localized string similar to Контакт.
         /// </summary>
         public static string Контактое_лицо {
             get {
@@ -1956,7 +1974,16 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Контакты заказчика.
+        ///   Looks up a localized string similar to Контакти.
+        /// </summary>
+        public static string Контакты {
+            get {
+                return ResourceManager.GetString("Контакты", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Контакти клієнта.
         /// </summary>
         public static string Контакты_заказчика {
             get {
@@ -1974,7 +2001,16 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Купить.
+        ///   Looks up a localized string similar to Гаманці.
+        /// </summary>
+        public static string Кошельки {
+            get {
+                return ResourceManager.GetString("Кошельки", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Купити.
         /// </summary>
         public static string Купить {
             get {
@@ -1983,7 +2019,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Магазин.
+        ///   Looks up a localized string similar to Крамниця.
         /// </summary>
         public static string Магазин {
             get {
@@ -1992,7 +2028,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Маска ввода.
+        ///   Looks up a localized string similar to Маска вводу.
         /// </summary>
         public static string Маска_ввода {
             get {
@@ -2001,7 +2037,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Мобильный телефон.
+        ///   Looks up a localized string similar to Мобільний телефон.
         /// </summary>
         public static string Мобильный_телефон {
             get {
@@ -2010,7 +2046,16 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to нажмите здесь для входа.
+        ///   Looks up a localized string similar to Мій профіль.
+        /// </summary>
+        public static string Мой_профиль {
+            get {
+                return ResourceManager.GetString("Мой_профиль", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to натисніть тут для входу.
         /// </summary>
         public static string нажмите_здесь_для_входа {
             get {
@@ -2019,7 +2064,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование.
+        ///   Looks up a localized string similar to Ім&apos;я.
         /// </summary>
         public static string Название {
             get {
@@ -2028,7 +2073,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Название группы.
+        ///   Looks up a localized string similar to Назва групи.
         /// </summary>
         public static string Название_группы {
             get {
@@ -2037,7 +2082,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование.
+        ///   Looks up a localized string similar to Ім&apos;я.
         /// </summary>
         public static string Наименование {
             get {
@@ -2046,7 +2091,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование акции.
+        ///   Looks up a localized string similar to Ім&apos;я спільного ресурсу.
         /// </summary>
         public static string Наименование_акции {
             get {
@@ -2055,7 +2100,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование каталога.
+        ///   Looks up a localized string similar to Назва каталогу.
         /// </summary>
         public static string Наименование_каталога {
             get {
@@ -2064,7 +2109,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование портала.
+        ///   Looks up a localized string similar to Назва порталу.
         /// </summary>
         public static string Наименование_портала {
             get {
@@ -2073,7 +2118,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование товара.
+        ///   Looks up a localized string similar to Назва продукту.
         /// </summary>
         public static string Наименование_товара {
             get {
@@ -2082,7 +2127,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименование фильтра.
+        ///   Looks up a localized string similar to Ім&apos;я фільтра.
         /// </summary>
         public static string Наименование_фильтра {
             get {
@@ -2091,7 +2136,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Наименования характеристики.
+        ///   Looks up a localized string similar to Характерні назви.
         /// </summary>
         public static string Наименования_характеристики {
             get {
@@ -2100,7 +2145,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Настроить приложение для проверки подлинности.
+        ///   Looks up a localized string similar to Настроить додаток для перевірки довжини.
         /// </summary>
         public static string Настроить_приложение_для_прове {
             get {
@@ -2109,7 +2154,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новая группы безопасности.
+        ///   Looks up a localized string similar to Новая група безпеки.
         /// </summary>
         public static string Новая_группы_безопасности {
             get {
@@ -2118,7 +2163,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новая карта.
+        ///   Looks up a localized string similar to Нова карта.
         /// </summary>
         public static string Новая_карта {
             get {
@@ -2127,7 +2172,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новая промоакция.
+        ///   Looks up a localized string similar to Новая промоакція.
         /// </summary>
         public static string Новая_промоакция {
             get {
@@ -2136,7 +2181,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новая характеристика.
+        ///   Looks up a localized string similar to Нова функція.
         /// </summary>
         public static string Новая_характеристика {
             get {
@@ -2145,7 +2190,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новое изображение.
+        ///   Looks up a localized string similar to Новое зображення.
         /// </summary>
         public static string Новое_изображение {
             get {
@@ -2154,7 +2199,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый пароль.
+        ///   Looks up a localized string similar to Новий пароль.
         /// </summary>
         public static string Новы_пароль {
             get {
@@ -2163,7 +2208,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый адрес.
+        ///   Looks up a localized string similar to Новий адрес.
         /// </summary>
         public static string Новый_адрес {
             get {
@@ -2172,7 +2217,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый заказ.
+        ///   Looks up a localized string similar to Нове замовлення.
         /// </summary>
         public static string Новый_заказ {
             get {
@@ -2181,7 +2226,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый каталог.
+        ///   Looks up a localized string similar to Новий каталог.
         /// </summary>
         public static string Новый_каталог {
             get {
@@ -2190,7 +2235,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый контакт.
+        ///   Looks up a localized string similar to Новий контакт.
         /// </summary>
         public static string Новый_контакт {
             get {
@@ -2199,7 +2244,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый пароль.
+        ///   Looks up a localized string similar to Новий пароль.
         /// </summary>
         public static string Новый_пароль {
             get {
@@ -2208,7 +2253,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый портал.
+        ///   Looks up a localized string similar to Новий портал.
         /// </summary>
         public static string Новый_портал {
             get {
@@ -2217,7 +2262,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый товар.
+        ///   Looks up a localized string similar to Новий продукт.
         /// </summary>
         public static string Новый_товар {
             get {
@@ -2226,7 +2271,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый фильтр.
+        ///   Looks up a localized string similar to Новий фільтр.
         /// </summary>
         public static string Новый_фильтр {
             get {
@@ -2235,7 +2280,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новый электронный адрес.
+        ///   Looks up a localized string similar to Нові адреси електронної пошти.
         /// </summary>
         public static string Новый_электронный_адрес {
             get {
@@ -2244,7 +2289,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Номер заказа.
+        ///   Looks up a localized string similar to Номер замовлення.
         /// </summary>
         public static string Номер_заказа {
             get {
@@ -2253,7 +2298,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Номер карты.
+        ///   Looks up a localized string similar to Номер карти.
         /// </summary>
         public static string Номер_карты {
             get {
@@ -2262,7 +2307,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Номер телефона.
+        ///   Looks up a localized string similar to Номер телефону.
         /// </summary>
         public static string Номер_телефона {
             get {
@@ -2280,7 +2325,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Описание.
+        ///   Looks up a localized string similar to Опис.
         /// </summary>
         public static string Описание {
             get {
@@ -2289,7 +2334,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отказано в доступе.
+        ///   Looks up a localized string similar to Показано в доступе.
         /// </summary>
         public static string Отказано_в_доступе {
             get {
@@ -2298,8 +2343,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключение 2FA не изменяет ключи, используемые в приложениях для аутентификации. Если вы хотите сменить ключ
-        ///        используется в приложении для проверки подлинности, вы должны.
+        ///   Looks up a localized string similar to Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ
+        ///        використовується в додатку для перевірки довжини, ви повинні.
         /// </summary>
         public static string Отключение_2FA_не_изменяет_клю {
             get {
@@ -2308,7 +2353,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить 2FA.
+        ///   Looks up a localized string similar to Відключити 2FA.
         /// </summary>
         public static string Отключить_2FA {
             get {
@@ -2317,7 +2362,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить двухфакторную аутентификацию.
+        ///   Looks up a localized string similar to Відключити двухфакторную аутентифікацію.
         /// </summary>
         public static string Отключить_двухфакторную_аутент {
             get {
@@ -2326,7 +2371,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отключить двухфакторную аутентификацию (2FA).
+        ///   Looks up a localized string similar to Відключити двухфакторную аутентифікацію (2FA).
         /// </summary>
         public static string Отключить_двухфакторную_аутент0 {
             get {
@@ -2335,7 +2380,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отменить.
+        ///   Looks up a localized string similar to Відмінити.
         /// </summary>
         public static string Отменить {
             get {
@@ -2344,7 +2389,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отправить.
+        ///   Looks up a localized string similar to Відправити.
         /// </summary>
         public static string Отправить {
             get {
@@ -2353,7 +2398,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отправить письмо с подтверждением.
+        ///   Looks up a localized string similar to Відправити письмо з підтвердженням.
         /// </summary>
         public static string Отправить_письмо_с_подтвержден {
             get {
@@ -2362,7 +2407,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отчество.
+        ///   Looks up a localized string similar to По батькові.
         /// </summary>
         public static string Отчество {
             get {
@@ -2371,7 +2416,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Оформить заказ.
+        ///   Looks up a localized string similar to Касі.
         /// </summary>
         public static string Оформить_заказ {
             get {
@@ -2389,7 +2434,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Платежная карта.
+        ///   Looks up a localized string similar to Платежна карта.
         /// </summary>
         public static string Платежная_карта {
             get {
@@ -2398,7 +2443,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Платежные реквизиты.
+        ///   Looks up a localized string similar to Платежні реквизиты.
         /// </summary>
         public static string Платежные_реквизиты {
             get {
@@ -2407,7 +2452,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Повторно отправить подтверждение по электронной почте.
+        ///   Looks up a localized string similar to Повторно відправляти підтвердження на електронну пошту.
         /// </summary>
         public static string Повторно_отправить_подтвержден {
             get {
@@ -2416,7 +2461,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтвеждение электронного адреса.
+        ///   Looks up a localized string similar to Підтвердження електронної адреси.
         /// </summary>
         public static string Подтвеждение_электронного_адре {
             get {
@@ -2425,7 +2470,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтвердить.
+        ///   Looks up a localized string similar to Підтвердити.
         /// </summary>
         public static string Подтвердить {
             get {
@@ -2434,7 +2479,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтвердить пароль.
+        ///   Looks up a localized string similar to Підтвердити пароль.
         /// </summary>
         public static string Подтвердить_пароль {
             get {
@@ -2443,7 +2488,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтверждение изменения пароля.
+        ///   Looks up a localized string similar to Підтвердження зміни пароля.
         /// </summary>
         public static string Подтверждение_изменения_пароля {
             get {
@@ -2452,7 +2497,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтверждение изменения электронного адреса.
+        ///   Looks up a localized string similar to Підтвердження зміни електронної адреси.
         /// </summary>
         public static string Подтверждение_изменения_электр {
             get {
@@ -2461,7 +2506,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтверждение пароля.
+        ///   Looks up a localized string similar to Підтвердження пароля.
         /// </summary>
         public static string Подтверждение_пароля {
             get {
@@ -2470,7 +2515,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Подтверждение сброса пароля.
+        ///   Looks up a localized string similar to Підтвердження скидання пароля.
         /// </summary>
         public static string Подтверждение_сброса_пароля {
             get {
@@ -2479,7 +2524,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Пожалуйста, проверьте свою электронную почту, чтобы подтвердить свою учетную запись..
+        ///   Looks up a localized string similar to Будь ласка, перевірте свою електронну пошту, щоб підтвердити свою початкову запис..
         /// </summary>
         public static string Пожалуйста_проверьте_свою_элек {
             get {
@@ -2488,7 +2533,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Полное имя.
+        ///   Looks up a localized string similar to Полное ім&apos;я.
         /// </summary>
         public static string Полное_имя {
             get {
@@ -2497,7 +2542,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Пользователи.
+        ///   Looks up a localized string similar to Користувачів.
         /// </summary>
         public static string Пользователи {
             get {
@@ -2506,7 +2551,16 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Пользователь.
+        ///   Looks up a localized string similar to Користувачів.
+        /// </summary>
+        public static string Пользователи0 {
+            get {
+                return ResourceManager.GetString("Пользователи0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Користувач - .
         /// </summary>
         public static string Пользователь {
             get {
@@ -2515,7 +2569,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Пользователь.
+        ///   Looks up a localized string similar to Користувач.
         /// </summary>
         public static string Пользователь0 {
             get {
@@ -2524,7 +2578,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Поместите эти коды в безопасное место..
+        ///   Looks up a localized string similar to Помістіть ці коди в безпечне місце..
         /// </summary>
         public static string Поместите_эти_коды_в_безопасно {
             get {
@@ -2533,7 +2587,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Портал - .
+        ///   Looks up a localized string similar to Портал -.
         /// </summary>
         public static string Портал {
             get {
@@ -2551,7 +2605,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Порталы.
+        ///   Looks up a localized string similar to Портали.
         /// </summary>
         public static string Порталы {
             get {
@@ -2560,7 +2614,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Почтовый индекс.
+        ///   Looks up a localized string similar to Почтовий індекс.
         /// </summary>
         public static string Почтовый_индекс {
             get {
@@ -2569,7 +2623,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to прежде чем вы сможете войти в систему с кодом восстановления..
+        ///   Looks up a localized string similar to прежде чем ви можете входити в систему з кодом відновлення..
         /// </summary>
         public static string прежде_чем_вы_сможете_войти_в_ {
             get {
@@ -2578,7 +2632,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Приложение для аутентификации.
+        ///   Looks up a localized string similar to Додаток для аутентифікації.
         /// </summary>
         public static string Приложение_для_аутентификации {
             get {
@@ -2587,7 +2641,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Проверка кода восстановления.
+        ///   Looks up a localized string similar to Проверка кода відновлення.
         /// </summary>
         public static string Проверка_кода_восстановления {
             get {
@@ -2596,7 +2650,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Промоакции.
+        ///   Looks up a localized string similar to Промоакції.
         /// </summary>
         public static string Промоакции {
             get {
@@ -2605,7 +2659,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Промоакция.
+        ///   Looks up a localized string similar to Промоакція.
         /// </summary>
         public static string Промоакция {
             get {
@@ -2614,7 +2668,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Профиль.
+        ///   Looks up a localized string similar to Профіль.
         /// </summary>
         public static string Профиль {
             get {
@@ -2623,7 +2677,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Рабочий телефон.
+        ///   Looks up a localized string similar to Робочий телефон.
         /// </summary>
         public static string Рабочий_телефон {
             get {
@@ -2632,7 +2686,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Регистрация.
+        ///   Looks up a localized string similar to Реєстрація.
         /// </summary>
         public static string Регистрация {
             get {
@@ -2641,7 +2695,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Редактировать продкт.
+        ///   Looks up a localized string similar to Редактувати продкт.
         /// </summary>
         public static string Редактировать_продкт {
             get {
@@ -2650,7 +2704,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ресурсы.
+        ///   Looks up a localized string similar to Ресурси.
         /// </summary>
         public static string Ресурсы {
             get {
@@ -2659,7 +2713,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить.
+        ///   Looks up a localized string similar to Скинути.
         /// </summary>
         public static string Сбросить {
             get {
@@ -2668,7 +2722,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить ключ аутентификатора..
+        ///   Looks up a localized string similar to Сбросить ключ аутентифікатора..
         /// </summary>
         public static string Сбросить_ключ_аутентификатора {
             get {
@@ -2677,7 +2731,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to сбросить ключи аутентификатора..
+        ///   Looks up a localized string similar to сбросить ключі аутентифікатора..
         /// </summary>
         public static string сбросить_ключи_аутентификатора {
             get {
@@ -2686,7 +2740,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить коды восстановления.
+        ///   Looks up a localized string similar to Сбросить коди відновлення.
         /// </summary>
         public static string Сбросить_коды_восстановления {
             get {
@@ -2695,7 +2749,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить пароль.
+        ///   Looks up a localized string similar to Скинути пароль.
         /// </summary>
         public static string Сбросить_пароль {
             get {
@@ -2704,7 +2758,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить приложение-аутентификатор.
+        ///   Looks up a localized string similar to Сбросить додаток-аутентифікатор.
         /// </summary>
         public static string Сбросить_приложение_аутентифик {
             get {
@@ -2713,7 +2767,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить приложение-аутентификатор.
+        ///   Looks up a localized string similar to Сбросить додаток-аутентифікатор.
         /// </summary>
         public static string Сбросить_приложение_аутентифик0 {
             get {
@@ -2722,7 +2776,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сбросить пароль.
+        ///   Looks up a localized string similar to Скинути пароль.
         /// </summary>
         public static string Сбросьте_пароль {
             get {
@@ -2731,7 +2785,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Скачайть ваши данные.
+        ///   Looks up a localized string similar to Скачайте ваші дані.
         /// </summary>
         public static string Скачайть_ваши_данные {
             get {
@@ -2740,7 +2794,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Смена пароля.
+        ///   Looks up a localized string similar to Змінення пароля.
         /// </summary>
         public static string Смена_пароля {
             get {
@@ -2749,7 +2803,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сменить пароль.
+        ///   Looks up a localized string similar to Змінити пароль.
         /// </summary>
         public static string Сменить_пароль {
             get {
@@ -2758,7 +2812,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сменить электронный адрес.
+        ///   Looks up a localized string similar to Змінити електронний адрес.
         /// </summary>
         public static string Сменить_электронный_адрес {
             get {
@@ -2767,7 +2821,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Создание кодов восстановления двухфакторной аутентификации (2FA).
+        ///   Looks up a localized string similar to Створення кодів відновлення двохфакторної аутентифікації (2FA).
         /// </summary>
         public static string Создание_кодов_восстановления_ {
             get {
@@ -2776,8 +2830,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Создание новых кодов восстановления не изменяет ключи, используемые в приложениях для проверки подлинности. Если вы хотите сменить ключ
-        ///        используется в приложении для проверки подлинности, вы должны.
+        ///   Looks up a localized string similar to Створення нових кодів відновлення не змінює ключі, використовувані в додатках для перевірки довжини. Якщо ви хочете змінити ключ
+        ///        використовується в додатку для перевірки довжини, ви повинні.
         /// </summary>
         public static string Создание_новых_кодов_восстанов {
             get {
@@ -2786,7 +2840,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to создать новый набор кодов восстановления.
+        ///   Looks up a localized string similar to створити новий набір кодів відновлення.
         /// </summary>
         public static string создать_новый_набор_кодов_восс {
             get {
@@ -2795,7 +2849,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Создаь новый аккаунт..
+        ///   Looks up a localized string similar to Створи новий аккаунт..
         /// </summary>
         public static string Создаь_новый_аккаунт {
             get {
@@ -2804,7 +2858,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сохранить.
+        ///   Looks up a localized string similar to Рятувати.
         /// </summary>
         public static string Сохранить {
             get {
@@ -2813,7 +2867,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список адресов доставки.
+        ///   Looks up a localized string similar to Список адресів доставки.
         /// </summary>
         public static string Список_адресов_доставки {
             get {
@@ -2822,7 +2876,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список выбраных товаров.
+        ///   Looks up a localized string similar to Список вибраних товарів.
         /// </summary>
         public static string Список_выбраных_товаров {
             get {
@@ -2831,7 +2885,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список групп безопасности.
+        ///   Looks up a localized string similar to Список груп безпеки.
         /// </summary>
         public static string Список_групп_безопасности {
             get {
@@ -2840,7 +2894,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список заказов.
+        ///   Looks up a localized string similar to Список замовлень.
         /// </summary>
         public static string Список_заказов {
             get {
@@ -2849,7 +2903,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список изображений.
+        ///   Looks up a localized string similar to Список зображень.
         /// </summary>
         public static string Список_изображений {
             get {
@@ -2858,7 +2912,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список каталогов.
+        ///   Looks up a localized string similar to Список каталогів.
         /// </summary>
         public static string Список_каталогов {
             get {
@@ -2867,7 +2921,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список контактов.
+        ///   Looks up a localized string similar to Список контактів.
         /// </summary>
         public static string Список_контактов {
             get {
@@ -2876,7 +2930,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список платежных карт.
+        ///   Looks up a localized string similar to Список платежних карт.
         /// </summary>
         public static string Список_платежных_карт {
             get {
@@ -2885,7 +2939,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список пользователей.
+        ///   Looks up a localized string similar to Список користувачів.
         /// </summary>
         public static string Список_пользователей {
             get {
@@ -2894,7 +2948,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список порталов.
+        ///   Looks up a localized string similar to Список порталів.
         /// </summary>
         public static string Список_порталов {
             get {
@@ -2903,7 +2957,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список промоакций.
+        ///   Looks up a localized string similar to Список промоакцій.
         /// </summary>
         public static string Список_промоакций {
             get {
@@ -2912,7 +2966,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список товаров.
+        ///   Looks up a localized string similar to Список товарів.
         /// </summary>
         public static string Список_товаров {
             get {
@@ -2921,7 +2975,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список фильтров.
+        ///   Looks up a localized string similar to Список фільтрів.
         /// </summary>
         public static string Список_фильтров {
             get {
@@ -2930,7 +2984,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Список характеристик.
+        ///   Looks up a localized string similar to Список функцій.
         /// </summary>
         public static string Список_характеристик {
             get {
@@ -2939,7 +2993,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Срок действия.
+        ///   Looks up a localized string similar to Термін дії.
         /// </summary>
         public static string Срок_действия {
             get {
@@ -2948,7 +3002,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Срок работы.
+        ///   Looks up a localized string similar to Життя.
         /// </summary>
         public static string Срок_работы {
             get {
@@ -2957,7 +3011,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Старый пароль.
+        ///   Looks up a localized string similar to Старий пароль.
         /// </summary>
         public static string Старый_пароль {
             get {
@@ -2966,7 +3020,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Статус.
+        ///   Looks up a localized string similar to статус.
         /// </summary>
         public static string Статус {
             get {
@@ -2975,7 +3029,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Стационарный телефон.
+        ///   Looks up a localized string similar to Стаціонарний телефон.
         /// </summary>
         public static string Стационарный_телефон {
             get {
@@ -2984,7 +3038,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Страна.
+        ///   Looks up a localized string similar to Країна.
         /// </summary>
         public static string Страна {
             get {
@@ -2993,7 +3047,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сумма.
+        ///   Looks up a localized string similar to Сума.
         /// </summary>
         public static string Сумма {
             get {
@@ -3002,7 +3056,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сумма заказа.
+        ///   Looks up a localized string similar to Сума замовлення.
         /// </summary>
         public static string Сумма_заказа {
             get {
@@ -3020,7 +3074,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Телефон заказчик.
+        ///   Looks up a localized string similar to Телефонний клієнт.
         /// </summary>
         public static string Телефон_заказчик {
             get {
@@ -3029,7 +3083,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Телефон заказчика.
+        ///   Looks up a localized string similar to Номер телефону клієнта.
         /// </summary>
         public static string Телефон_заказчика {
             get {
@@ -3038,7 +3092,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Тип карты.
+        ///   Looks up a localized string similar to Тип карти.
         /// </summary>
         public static string Тип_карты {
             get {
@@ -3047,7 +3101,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Тип контакта.
+        ///   Looks up a localized string similar to Тип контакту.
         /// </summary>
         public static string Тип_контакта {
             get {
@@ -3056,7 +3110,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Тип факса.
+        ///   Looks up a localized string similar to Тип факсу.
         /// </summary>
         public static string Тип_факса {
             get {
@@ -3065,7 +3119,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Товар.
+        ///   Looks up a localized string similar to Продукт.
         /// </summary>
         public static string Товар {
             get {
@@ -3074,7 +3128,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Товар.
+        ///   Looks up a localized string similar to Продукт.
         /// </summary>
         public static string Товар0 {
             get {
@@ -3083,7 +3137,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Товары.
+        ///   Looks up a localized string similar to Товари.
         /// </summary>
         public static string Товары {
             get {
@@ -3092,7 +3146,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Товары каталога.
+        ///   Looks up a localized string similar to Каталог продукції.
         /// </summary>
         public static string Товары_каталога {
             get {
@@ -3101,7 +3155,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to У вас не осталось кодов восстановления..
+        ///   Looks up a localized string similar to У вас не залишилося кодів відновлення..
         /// </summary>
         public static string У_вас_не_осталось_кодов_восста {
             get {
@@ -3110,7 +3164,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to У вас нет доступа к вашему устройству аутентификации? Вы можете.
+        ///   Looks up a localized string similar to У вас немає доступу до вашого пристрою аутентифікації? Ви можете.
         /// </summary>
         public static string У_вас_нет_доступа_к_вашему_уст {
             get {
@@ -3119,8 +3173,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to У вас нет локального имени пользователя/пароля для этого сайта. Добавить местный
-        ///    учетную запись, чтобы вы могли войти в систему без внешнего входа..
+        ///   Looks up a localized string similar to У вас немає локального імені користувача/пароля для цього сайту. Добавить местный
+        ///    учетную запис, щоб ви могли ввійти в систему без зовнішнього входу..
         /// </summary>
         public static string У_вас_нет_локального_имени_пол {
             get {
@@ -3129,7 +3183,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to У вас остался 1 код восстановления..
+        ///   Looks up a localized string similar to У вас залишився 1 код відновлення..
         /// </summary>
         public static string У_вас_остался_1_код_восстановл {
             get {
@@ -3138,7 +3192,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удаление этих данных навсегда удалит вашу учетную запись, и это невозможно восстановить..
+        ///   Looks up a localized string similar to Удалення цих даних навсегда видаляє вашу учетну запис, і це неможливо відновити..
         /// </summary>
         public static string Удаление_этих_данных_навсегда_ {
             get {
@@ -3147,7 +3201,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удаление этих данных приведет к безвозвратному удалению вашей учетной записи, и это невозможно восстановить..
+        ///   Looks up a localized string similar to Удалення цих даних приводить до безповоротного видалення вашої початкової запису, і це неможливо відновити..
         /// </summary>
         public static string Удаление_этих_данных_приведет_ {
             get {
@@ -3156,7 +3210,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить.
+        ///   Looks up a localized string similar to Видалити.
         /// </summary>
         public static string Удалить {
             get {
@@ -3165,7 +3219,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить данные и мой аккаунт.
+        ///   Looks up a localized string similar to Видалити дані і мій обліковий запис.
         /// </summary>
         public static string Удалить_данные_и_мой_аккаунт {
             get {
@@ -3174,7 +3228,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить члена группы.
+        ///   Looks up a localized string similar to Удалить члена групи.
         /// </summary>
         public static string Удалить_члена_группы {
             get {
@@ -3183,7 +3237,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить это изображение?.
+        ///   Looks up a localized string similar to Видалити це зображення?.
         /// </summary>
         public static string Удалить_это_изображение {
             get {
@@ -3192,7 +3246,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить этот адрес?.
+        ///   Looks up a localized string similar to Видалити цей адрес?.
         /// </summary>
         public static string Удалить_этот_адрес {
             get {
@@ -3201,7 +3255,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить этот заказ?.
+        ///   Looks up a localized string similar to Видалити це замовлення?.
         /// </summary>
         public static string Удалить_этот_заказ {
             get {
@@ -3210,7 +3264,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить этот каталог?.
+        ///   Looks up a localized string similar to Удалить цей каталог?.
         /// </summary>
         public static string Удалить_этот_каталог {
             get {
@@ -3219,7 +3273,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить этот контакт?.
+        ///   Looks up a localized string similar to Видалити цей контакт?.
         /// </summary>
         public static string Удалить_этот_контакт {
             get {
@@ -3228,7 +3282,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить этот товар?.
+        ///   Looks up a localized string similar to Удалить цей товар?.
         /// </summary>
         public static string Удалить_этот_товар {
             get {
@@ -3237,7 +3291,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить этот фильтр?.
+        ///   Looks up a localized string similar to Удалить цей фильтр?.
         /// </summary>
         public static string Удалить_этот_фильтр {
             get {
@@ -3246,7 +3300,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить эту промоакцию?.
+        ///   Looks up a localized string similar to Видалити цю акцію?.
         /// </summary>
         public static string Удалить_эту_промоакцию {
             get {
@@ -3255,7 +3309,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Удалить эту характеристику?.
+        ///   Looks up a localized string similar to Видалити цю функцію?.
         /// </summary>
         public static string Удалить_эту_характеристику {
             get {
@@ -3264,7 +3318,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Улица, дом, квартира.
+        ///   Looks up a localized string similar to Вулиця, будинок, квартира.
         /// </summary>
         public static string Улица_дом_квартира {
             get {
@@ -3273,7 +3327,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Управление учетной записью.
+        ///   Looks up a localized string similar to Управління початковою запискою.
         /// </summary>
         public static string Управление_учетной_записью {
             get {
@@ -3282,7 +3336,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Управление элетронным адресов.
+        ///   Looks up a localized string similar to Управління електронними адресами.
         /// </summary>
         public static string Управление_элетронным_адресов {
             get {
@@ -3291,7 +3345,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Управляйте своими внешними логинами.
+        ///   Looks up a localized string similar to Управляйте своїми зовнішніми логінами.
         /// </summary>
         public static string Управляйте_своими_внешними_лог {
             get {
@@ -3300,11 +3354,20 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Установка пароля.
+        ///   Looks up a localized string similar to Установлення пароля.
         /// </summary>
         public static string Установка_пароля {
             get {
                 return ResourceManager.GetString("Установка_пароля", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обліковий запис.
+        /// </summary>
+        public static string Учетная_запись {
+            get {
+                return ResourceManager.GetString("Учетная_запись", resourceCulture);
             }
         }
         
@@ -3318,7 +3381,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Файл изображения.
+        ///   Looks up a localized string similar to Файл зображення.
         /// </summary>
         public static string Файл_изображения {
             get {
@@ -3327,7 +3390,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Факс.
+        ///   Looks up a localized string similar to факс.
         /// </summary>
         public static string Факс {
             get {
@@ -3336,7 +3399,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Фамилия.
+        ///   Looks up a localized string similar to Фамілія.
         /// </summary>
         public static string Фамилия {
             get {
@@ -3345,7 +3408,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Фильтры.
+        ///   Looks up a localized string similar to Фільтри.
         /// </summary>
         public static string Фильтры {
             get {
@@ -3354,7 +3417,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Формат вывода.
+        ///   Looks up a localized string similar to Формат виводу.
         /// </summary>
         public static string Формат_вывода {
             get {
@@ -3363,7 +3426,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Формат вывода.
+        ///   Looks up a localized string similar to Формат виводу.
         /// </summary>
         public static string Фрпмат_вывода {
             get {
@@ -3390,7 +3453,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Цена.
+        ///   Looks up a localized string similar to Ціна.
         /// </summary>
         public static string Цена {
             get {
@@ -3399,7 +3462,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Члены группы &quot;.
+        ///   Looks up a localized string similar to Члени групи .
         /// </summary>
         public static string Члены_группы {
             get {
@@ -3408,7 +3471,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Электронный адрес.
+        ///   Looks up a localized string similar to Електронний адрес.
         /// </summary>
         public static string Электронный_адрес {
             get {
@@ -3417,7 +3480,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to эти документы.
+        ///   Looks up a localized string similar to ці документи.
         /// </summary>
         public static string эти_документы {
             get {
@@ -3426,7 +3489,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Этикетка.
+        ///   Looks up a localized string similar to Мітка.
         /// </summary>
         public static string Этикетка {
             get {
@@ -3435,7 +3498,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Это действие отключает только 2FA..
+        ///   Looks up a localized string similar to Це дію відключає тільки 2FA..
         /// </summary>
         public static string Это_действие_отключает_только_ {
             get {
@@ -3444,7 +3507,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Это число?.
+        ///   Looks up a localized string similar to Це число?.
         /// </summary>
         public static string Это_число {
             get {
@@ -3453,7 +3516,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Это число?.
+        ///   Looks up a localized string similar to Це число?.
         /// </summary>
         public static string Это_число0 {
             get {
@@ -3462,8 +3525,8 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Этот процесс отключает 2FA до тех пор, пока вы не подтвердите свое приложение-аутентификатор.
-        ///        Если вы не завершите настройку приложения для проверки подлинности, вы можете потерять доступ к своей учетной записи..
+        ///   Looks up a localized string similar to Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.
+        ///        Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи..
         /// </summary>
         public static string Этот_процесс_отключает_2FA_до_ {
             get {

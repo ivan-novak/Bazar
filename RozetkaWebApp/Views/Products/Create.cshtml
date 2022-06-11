@@ -2,8 +2,8 @@
 @model RozetkaWebApp.Models.Product
 
 @{
-    ViewBag.ProductsTab = "active";
-    Html.RenderPartial("_CatologNavigator");
+    ViewBag.ProductsTab = (("active"));
+    Html.RenderPartial((("_CatologNavigator")));
 }
 
  <p>
@@ -71,5 +71,5 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
 }

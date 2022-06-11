@@ -20,20 +20,20 @@
 <form asp-action="Delete">
    
         <input type="hidden" asp-for="@Id" />
-        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
         <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
 <div>
     <dl class="row">
         <dt class = "col-sm-2">
-            @Resources.Группы_безопасности
+            @Resources.Групп_безопасности
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Role.Name)
         </dd class>
         <dt class = "col-sm-2">
-           @Resources.Пользователь0
+           @Resources.AspNetUser
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.User.UserName)

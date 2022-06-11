@@ -1,124 +1,16 @@
 <?xml version="1.0" standalone="yes"?>
 <MdbTranslationStore xmlns="http://tempuri.org/MdbTranslationStore.xsd">
   <GeneralIds>
-    <StringID>1</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>2</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>3</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>4</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>5</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>6</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>7</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>8</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>9</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>10</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>11</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>12</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>13</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>14</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>15</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>16</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>17</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>18</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>19</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>20</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>21</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>22</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>23</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>24</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>25</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>26</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>27</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>28</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>29</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>30</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>31</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>32</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>33</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>34</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>35</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>39</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>43</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>44</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>45</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>46</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>47</StringID>
@@ -127,363 +19,34 @@
     <StringID>48</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>49</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>50</StringID>
-    <Comment>Previous text: Портал - </Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>51</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>52</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>53</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>54</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>55</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>56</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>57</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>58</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>59</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>60</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>61</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>62</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>63</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>64</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>65</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>66</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>67</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>68</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>69</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>70</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>71</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>72</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>73</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>74</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>75</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>76</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>77</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>78</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>80</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>81</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>82</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>83</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>84</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>85</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>86</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>87</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>88</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>89</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>90</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>91</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>92</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>93</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>94</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>95</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>96</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>97</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>98</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>99</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>100</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>101</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>102</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>103</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>104</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>105</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>106</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>107</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>108</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>109</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>110</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>111</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>112</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>113</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>114</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>115</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>116</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>117</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>118</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>119</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>120</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>121</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>122</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>123</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>124</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>125</StringID>
-    <Comment>Previous text: Статус</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>126</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>127</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>128</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>129</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>130</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>131</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>132</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>133</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>134</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>135</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>136</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>137</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>138</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>139</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>140</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>141</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>142</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>143</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>144</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>145</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>146</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>147</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>148</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>149</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>150</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>151</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>152</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>153</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>154</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>155</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>156</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>157</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>158</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>159</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>160</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>161</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>162</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>163</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>164</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>165</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>166</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>167</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>168</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>169</StringID>
@@ -492,137 +55,16 @@
     <StringID>171</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>172</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>173</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>174</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>175</StringID>
-    <Comment>Previous text: Факс</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>176</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>177</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>178</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>179</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>180</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>181</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>182</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>183</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>184</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>185</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>186</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>187</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>188</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>189</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>190</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>191</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>192</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>193</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>194</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>195</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>196</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>197</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>198</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>199</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>200</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>201</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>202</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>203</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>204</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>205</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>206</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>207</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>208</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>209</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>210</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>211</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>212</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>213</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>214</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>215</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>217</StringID>
@@ -631,489 +73,28 @@
     <StringID>218</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>219</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>220</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>221</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>222</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>223</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>224</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>225</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>226</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>227</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>228</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>229</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>230</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>231</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>232</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>233</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>234</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>235</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>236</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>237</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>238</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>239</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>240</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>241</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>242</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>243</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>244</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>245</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>246</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>247</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>248</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>249</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>250</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>251</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>252</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>253</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>254</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>255</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>256</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>257</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>258</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>259</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>260</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>261</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>262</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>263</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>264</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>265</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>266</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>267</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>268</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>269</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>270</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>271</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>272</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>273</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>274</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>275</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>276</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>277</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>278</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>279</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>280</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>281</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>282</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>283</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>284</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>285</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>286</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>287</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>288</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>289</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>290</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>291</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>292</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>293</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>294</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>295</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>296</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>297</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>298</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>299</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>300</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>301</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>302</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>303</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>304</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>305</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>306</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>307</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>308</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>309</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>310</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>311</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>312</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>313</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>314</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>315</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>316</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>317</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>319</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>320</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>321</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>322</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>323</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>324</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>325</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>326</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>327</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>328</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>329</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>330</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>331</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>332</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>333</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>334</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>335</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>336</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>337</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>338</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>339</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>340</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>341</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>342</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>343</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>344</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>345</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>346</StringID>
-    <Comment>Previous text: SignInManager</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>347</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>348</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>349</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>350</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>351</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>352</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>353</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>354</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>355</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>356</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>357</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>358</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>359</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>360</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>361</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>362</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>363</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>364</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>365</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>366</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>367</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>368</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>369</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>370</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>371</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>372</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>373</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>374</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>375</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>376</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>377</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>378</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>379</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>380</StringID>
-    <Comment>Previous text: and</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>381</StringID>
@@ -1123,12 +104,10 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>383</StringID>
+    <Comment>Previous text: © 2021 BAZAR. All Rights Reserved</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>384</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>385</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>386</StringID>
@@ -1141,7 +120,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>389</StringID>
-    <Comment>Previous text: Android</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>390</StringID>
@@ -1151,10 +129,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>392</StringID>
-    <Comment>Previous text: Back to List</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>393</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>394</StringID>
@@ -1164,17 +138,9 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>396</StringID>
-    <Comment>Previous text: Configure authenticator app</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>397</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>398</StringID>
-    <Comment>Previous text: Create New</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>399</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>400</StringID>
@@ -1183,14 +149,10 @@
     <StringID>401</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>402</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>403</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>404</StringID>
-    <Comment>Previous text: Details</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>405</StringID>
@@ -1203,15 +165,12 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>408</StringID>
-    <Comment>Previous text: Download a two-factor authenticator app like Microsoft Authenticator for</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>409</StringID>
-    <Comment>Previous text: Edit</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>410</StringID>
-    <Comment>Previous text: enable QR code generation</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>411</StringID>
@@ -1236,33 +195,27 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>418</StringID>
-    <Comment>Previous text: Hello</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>419</StringID>
-    <Comment>Previous text: ID</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>420</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>421</StringID>
-    <Comment>Previous text: Index</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>422</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>423</StringID>
-    <Comment>Previous text: Learn how to</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>424</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>425</StringID>
-    <Comment>Previous text: or
-                Google Authenticator for</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>426</StringID>
@@ -1277,10 +230,8 @@
     <StringID>429</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>430</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>431</StringID>
+    <Comment>Previous text: Політика конфіденційності</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>432</StringID>
@@ -1305,14 +256,12 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>439</StringID>
-    <Comment>Previous text: Scan the QR Code or enter this key</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>440</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>441</StringID>
-    <Comment>Previous text: Show Latest Image</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>442</StringID>
@@ -1337,14 +286,12 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>449</StringID>
-    <Comment>Previous text: To use an authenticator app go through the following steps:</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>450</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>451</StringID>
-    <Comment>Previous text: Upload File(s)</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>452</StringID>
@@ -1357,21 +304,19 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>455</StringID>
+    <Comment>Previous text: Адміністрування</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>456</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>457</StringID>
-    <Comment>Previous text: Адрес доставки</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>458</StringID>
-    <Comment>Previous text: Адрес электронной почты</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>459</StringID>
-    <Comment>Previous text: Адрес электронной почты заказчика</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>460</StringID>
@@ -1381,7 +326,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>462</StringID>
-    <Comment>Previous text: Блокировка</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>463</StringID>
@@ -1400,10 +344,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>468</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>469</StringID>
-    <Comment>Previous text: Войти</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>470</StringID>
@@ -1428,7 +368,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>477</StringID>
-    <Comment>Previous text: Вы хотите удалить этот товар из корзины?</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>478</StringID>
@@ -1444,7 +383,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>482</StringID>
-    <Comment>Previous text: Выйти</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>483</StringID>
@@ -1454,48 +392,24 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>485</StringID>
-    <Comment>Previous text: Город</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>486</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>487</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>488</StringID>
-    <Comment>Previous text: Дата завершения</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>489</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>490</StringID>
-    <Comment>Previous text: Дата заказа</Comment>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>491</StringID>
-    <Comment>Previous text: Дата начала</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>492</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>493</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>494</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>495</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>496</StringID>
-    <Comment>Previous text: Действия</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>497</StringID>
-    <Comment>Previous text: Детали</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>498</StringID>
@@ -1504,25 +418,7 @@
     <StringID>499</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>500</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>501</StringID>
-    <Comment>Previous text: Добавить</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>502</StringID>
-    <Comment>Previous text: Добавить</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>503</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>504</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>505</StringID>
-    <Comment>Previous text: Ед. измерения</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>506</StringID>
@@ -1546,23 +442,13 @@
     <StringID>512</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>513</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>514</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>515</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>516</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>517</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>518</StringID>
-    <Comment>Previous text: Значение</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>519</StringID>
@@ -1575,7 +461,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>522</StringID>
-    <Comment>Previous text: Изменить информацию о заказе</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>523</StringID>
@@ -1585,9 +470,11 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>525</StringID>
+    <Comment>Previous text: Змінити інформацію про контактах</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>526</StringID>
+    <Comment>Previous text: Змінити інформацію про товари</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>527</StringID>
@@ -1606,10 +493,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>532</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>533</StringID>
-    <Comment>Previous text: Изображения</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>534</StringID>
@@ -1633,6 +516,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>540</StringID>
+    <Comment>Previous text: Інформація про каталоге</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>541</StringID>
@@ -1645,6 +529,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>544</StringID>
+    <Comment>Previous text: Інформація о портале</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>545</StringID>
@@ -1668,9 +553,6 @@
     <StringID>551</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>552</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>553</StringID>
   </GeneralIds>
   <GeneralIds>
@@ -1678,14 +560,9 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>555</StringID>
-    <Comment>Previous text: Количество</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>556</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>557</StringID>
-    <Comment>Previous text: Контактное лицо</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>558</StringID>
@@ -1695,50 +572,37 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>560</StringID>
+    <Comment>Previous text: Интернет крамниця Bazar</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>561</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>562</StringID>
-    <Comment>Previous text: Мобильный телефон</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>563</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>564</StringID>
-    <Comment>Previous text: Наименование</Comment>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>565</StringID>
-    <Comment>Previous text: Название группы</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>566</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>567</StringID>
-    <Comment>Previous text: Наименование акции</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>568</StringID>
-    <Comment>Previous text: Наименование каталога</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>569</StringID>
-    <Comment>Previous text: Наименование портала</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>570</StringID>
-    <Comment>Previous text: Наименование товараНазва продукту</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>571</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>572</StringID>
-    <Comment>Previous text: Наименования характеристики</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>573</StringID>
@@ -1751,7 +615,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>576</StringID>
-    <Comment>Previous text: Новая промоакція</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>577</StringID>
@@ -1775,13 +638,11 @@
     <StringID>583</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>584</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>585</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>586</StringID>
+    <Comment>Previous text: Новий продукт</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>587</StringID>
@@ -1794,14 +655,12 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>590</StringID>
-    <Comment>Previous text: Номер карты</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>591</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>592</StringID>
-    <Comment>Previous text: Описание</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>593</StringID>
@@ -1816,31 +675,22 @@
     <StringID>596</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>597</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>598</StringID>
-    <Comment>Previous text: Отменить</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>599</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>600</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>601</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>602</StringID>
-    <Comment>Previous text: Оформить заказ</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>603</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>604</StringID>
-    <Comment>Previous text: Платежные реквизиты</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>605</StringID>
@@ -1871,17 +721,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>614</StringID>
-    <Comment>Previous text: Полное имя</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>615</StringID>
-    <Comment>Previous text: Пользователи</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>616</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>617</StringID>
+    <Comment>Previous text: Полное ім'я</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>618</StringID>
@@ -1891,7 +731,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>620</StringID>
-    <Comment>Previous text: Почтовый индекс</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>621</StringID>
@@ -1910,21 +749,16 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>626</StringID>
+    <Comment>Previous text: Профіль</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>627</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>628</StringID>
-    <Comment>Previous text: Регистрация</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>629</StringID>
-    <Comment>Previous text: Редактировать продкт</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>630</StringID>
-    <Comment>Previous text: Ресурсы</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>631</StringID>
@@ -1945,22 +779,10 @@
     <StringID>636</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>637</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>638</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>639</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>640</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>641</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>642</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>643</StringID>
@@ -1979,64 +801,48 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>648</StringID>
-    <Comment>Previous text: Список адресов доставки</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>649</StringID>
-    <Comment>Previous text: Список выбраных товаров</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>650</StringID>
-    <Comment>Previous text: Список групп безопасности</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>651</StringID>
-    <Comment>Previous text: Список заказов</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>652</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>653</StringID>
-    <Comment>Previous text: Список каталогов</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>654</StringID>
-    <Comment>Previous text: Список контактов</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>655</StringID>
-    <Comment>Previous text: Список платежных карт</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>656</StringID>
-    <Comment>Previous text: Список пользователей</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>657</StringID>
-    <Comment>Previous text: Список порталов</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>658</StringID>
-    <Comment>Previous text: Список промоакций</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>659</StringID>
-    <Comment>Previous text: Список товаров</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>660</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>661</StringID>
-    <Comment>Previous text: Список характеристик</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>662</StringID>
-    <Comment>Previous text: Срок действия</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>663</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>664</StringID>
@@ -2049,22 +855,15 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>667</StringID>
-    <Comment>Previous text: Сумма</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>668</StringID>
-    <Comment>Previous text: Сумма заказа</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>669</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>670</StringID>
-    <Comment>Previous text: Телефон заказчика</Comment>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>671</StringID>
-    <Comment>Previous text: Тип карты</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>672</StringID>
@@ -2074,10 +873,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>674</StringID>
-    <Comment>Previous text: Товар</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>675</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>676</StringID>
@@ -2102,9 +897,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>683</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>684</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>685</StringID>
@@ -2141,19 +933,12 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>696</StringID>
-    <Comment>Previous text: Улица, дом, квартира</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>697</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>698</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>699</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>700</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>701</StringID>
@@ -2163,17 +948,12 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>703</StringID>
-    <Comment>Previous text: Фильтры</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>704</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>705</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>706</StringID>
-    <Comment>Previous text: Цена</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>707</StringID>
@@ -2186,6 +966,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>710</StringID>
+    <Comment>Previous text: Мітка</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>711</StringID>
@@ -2194,19 +975,7 @@
     <StringID>712</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>713</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>714</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>715</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>716</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>717</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>718</StringID>
@@ -2216,9 +985,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>720</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>721</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>722</StringID>
@@ -2245,94 +1011,10 @@
     <ColumnNumber>0</ColumnNumber>
   </Languages>
   <GeneralTexts>
-    <StringID>1</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список платіжних карток</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>2</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Тип картки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>3</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Номер картки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>4</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Термін дії</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>5</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я власника</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>6</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дії</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>7</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>|</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>8</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення відомостей про карту</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>9</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скасувати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>10</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Життя</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>11</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>CVV код</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>12</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Інформація про платіжну картку?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>13</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Власник картки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>14</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цю платіжну картку?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>15</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нова карта</LanguageText>
-    <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>16</StringID>
@@ -2341,149 +1023,16 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>17</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Помилка.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>18</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Під час обробки запиту сталася помилка.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>19</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ідентифікатор запиту:</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>20</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Режим розробки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>21</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Заміна на</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>22</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Розробка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>23</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>середовище відображатиме більш детальну інформацію про помилку, що сталася.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>24</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Середовище розробки не слід вмикати для розгорнутих застосунків.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>25</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.
-    Для локального налагодження увімкніть</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>26</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>навколишнього середовища, встановивши</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>27</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>ASPNETCORE_ENVIRONMENT</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>28</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>змінна середовища до</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>29</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>і перезапустіть додаток.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>30</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Адміністрування</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>31</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Портали</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>32</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Акції</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>33</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зображення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>34</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Групи безпеки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>35</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Користувачів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>39</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>"/a/lili class="nav-item"a class="nav-link</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>43</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Помилка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>44</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Користувач - </LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>45</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити продукт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>46</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Продукт</LanguageText>
-    <Status>8</Status>
+    <LanguageText>Користувачі</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>47</StringID>
@@ -2498,40 +1047,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>49</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Деталі</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>50</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Портал -</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>51</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Привіт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>52</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вийти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>53</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зареєструватися</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>54</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ввійти</LanguageText>
-    <Status>8</Status>
+    <LanguageText>Портал</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>55</StringID>
@@ -2540,268 +1059,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>56</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Крамниця</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>57</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Приватність</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>58</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>копіювати; 2022 - RozetkaWebApp -</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>59</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>60</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Каталог продукції</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>61</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Каталог - </LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>62</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список зображень</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>63</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>64</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити зображення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>65</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Файл зображення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>66</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>67</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Мітка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>68</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Деталі</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>69</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Кореневий псевдонім</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>70</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Повернутися до списку</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>71</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити це зображення?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>72</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нове зображення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>73</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ідентифікатор</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>74</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я фільтра</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>75</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Формат виводу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>76</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Маска вводу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>77</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список фільтрів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>78</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити фільтр</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>80</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Каталог</LanguageText>
     <Status>2</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>81</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>82</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Категорія</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>83</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Це число?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>84</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Опис</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>85</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Це число?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>86</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей фільтр?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>87</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий фільтр</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>88</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Формат виводу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>89</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список акцій</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>90</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>91</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я спільного ресурсу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>92</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дата початку</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>93</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дата завершення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>94</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити просування</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>95</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Атрибути</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>96</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Просування</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>97</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цю акцію?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>98</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нова акція</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>99</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дата закінчення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>100</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список товарів</LanguageText>
-    <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>101</StringID>
@@ -2810,100 +1071,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>102</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Назва продукту</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>103</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ціна</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>104</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Кількість</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>105</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ресурси</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>106</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення відомостей про продукт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>107</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Просування</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>108</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відомості про продукт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>109</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей елемент?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>110</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий продукт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>111</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>ProductImage</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>112</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Назва порталу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>113</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список порталів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>114</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити портал</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>115</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Інформація про портал</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>116</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей портал?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>117</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий портал</LanguageText>
-    <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>118</StringID>
@@ -2912,214 +1083,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>119</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список замовлень</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>120</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Сума</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>121</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дата замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>122</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Адреса доставки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>123</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення відомостей про замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>124</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Сума замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>125</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>статус</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>126</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Платіжні реквізити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>127</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Контакт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>128</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Адреса електронної пошти клієнта</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>129</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Номер телефону клієнта</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>130</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>131</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Інформація про покупку</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>132</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Номер замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>133</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дата замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>134</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Контакт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>135</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Адреса електронної пошти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>136</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Телефонний клієнт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>137</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Банківська картка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>138</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити це замовлення?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>139</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нове замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>140</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Контакти клієнта</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>141</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Платіжна картка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>142</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список вибраних товарів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>143</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Касі</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>144</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зміна кількості товарів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>145</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Продукт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>146</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Інформація про товар з кошика для покупок?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>147</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей товар із кошика для покупок?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>148</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Індекс</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>149</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Створити новий</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>150</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Завантажити файли</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>151</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Показати останнє зображення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>152</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Редагувати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>153</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Образ</LanguageText>
-    <Status>8</Status>
+    <LanguageText>Статус</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>154</StringID>
@@ -3128,87 +1095,15 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>155</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>156</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Справді видалити це?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>157</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Творити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>158</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Файл</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>159</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Приклад введення файлу за промовчанням</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>160</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Товари</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>161</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Використовуйте цю сторінку, щоб деталізувати політику конфіденційності вашого сайту.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>162</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Політика конфіденційності</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>163</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Портал</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>164</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Замовлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>165</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Характеристики</LanguageText>
-    <Status>2</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>166</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Детальна інформація про продукт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>167</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Купити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>168</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Каталог</LanguageText>
     <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -3224,58 +1119,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>172</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список контактів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>173</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Повне ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>174</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Адреса електронної пошти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>175</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>факс</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>176</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Мобільний телефон</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>177</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення контактної інформації</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>178</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>179</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>По батькові</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>180</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Прізвище</LanguageText>
-    <Status>8</Status>
+    <LanguageText>Факс</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>181</StringID>
@@ -3284,214 +1131,22 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>182</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Тип факсу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>183</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Стаціонарний телефон</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>184</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Контактна інформація</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>185</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Робочий телефон</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>186</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей контакт?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>187</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий контакт</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>188</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Тип контакту</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>189</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список функцій</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>190</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Характерні назви</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>191</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Значення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>192</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Одиниць. Вимірювання</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>193</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити специфікацію</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>194</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>195</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Значення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>196</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відомості про функції</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>197</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цю функцію?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>198</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нова функція</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>199</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Назва каталогу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>200</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список каталогів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>201</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Фільтри</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>202</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення відомостей про каталог</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>203</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Портал</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>204</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Інформація про каталог</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>205</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей каталог?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>206</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий каталог</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>207</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>208</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>КаталогІмаж</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>209</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>210</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список користувачів</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>211</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я користувача</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>212</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Телефон</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>213</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Блокування</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>214</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>AspNetUser</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>215</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цей обліковий запис?</LanguageText>
-    <Status>8</Status>
+    <LanguageText>Користувач</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>217</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>активний</LanguageText>
-    <Status>5</Status>
+    <LanguageText>active</LanguageText>
+    <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>218</StringID>
@@ -3500,136 +1155,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>219</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Члени групи "</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>220</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>221</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити користувача</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>222</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>AspNetUserRole</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>223</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цього користувача з групи?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>224</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Групи безпеки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>225</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Користувач</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>226</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалення учасника групи</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>227</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список груп безпеки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>228</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>229</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Назва групи</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>230</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити групу безпеки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>231</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Показник</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>232</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відомості про групу безпеки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>233</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цю групу?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>234</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нові групи безпеки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>235</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Список адрес доставки</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>236</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вулиця, будинок, квартира</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>237</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Місто</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>238</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Поштовий індекс</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>239</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення відомостей про адресу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>240</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Адреса</LanguageText>
-    <Status>8</Status>
+    <LanguageText>Роль користувача</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>241</StringID>
@@ -3638,221 +1167,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>242</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Країна</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>243</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відомості про адресу</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>244</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цю адресу?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>245</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нова адреса</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>246</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>і перезавантажте програму.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>247</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Середовище розробки не повинно вмикатися в розгорнутих додатках</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>248</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>, оскільки це може призвести до того, що конфіденційна інформація від винятків відображається кінцевим користувачам. Для локального налагодження середовище розробки можна ввімкнути, встановивши</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>249</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердження скидання пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>250</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>натисніть тут, щоб увійти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>251</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Пароль скинуто. Будь ласка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>252</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скинути пароль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>253</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скинути пароль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>254</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Пароль</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>255</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>256</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скинути</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>257</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Повторне надсилання підтвердження електронною поштою</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>258</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Введіть свою електронну пошту.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>259</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Надіслати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>260</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердження реєстрації</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>261</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>В даний час в цьому додатку немає реального відправника електронної пошти.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>262</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>ці документи</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>263</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Як налаштувати справжнього відправника електронної пошти.
-    Це, як правило, надсилається електронною поштою:</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>264</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Будь ласка, перевірте свою електронну пошту, щоб підтвердити свій обліковий запис.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>265</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Створіть новий обліковий запис.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>266</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердження пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>267</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Використовуйте іншу послугу для реєстрації.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>268</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Служби зовнішньої автентифікації не настроєно. Бачити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>269</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>ця стаття</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>270</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>для отримання детальної інформації про налаштування цієї програми ASP.NET для підтримки входу через зовнішні служби.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>271</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Двофакторна аутентифікація</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>272</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>У вас не залишилося кодів відновлення.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>273</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ви повинні</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>274</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>створення нового набору кодів відновлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>275</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>перш ніж ви зможете увійти за допомогою коду відновлення.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>276</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>У вас залишився 1 код відновлення.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>277</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ти можеш</LanguageText>
-    <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>278</StringID>
@@ -3861,313 +1179,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>279</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>У вас є</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>280</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ви повинні</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>281</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Забудьте про цей браузер</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>282</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вимкнення двофакторної автентифікації</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>283</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скидання кодів відновлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>284</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Застосунок автентифікації</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>285</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Настроювання застосунку для автентифікації</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>286</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скидання програми-автентифікатора</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>287</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Коди відновлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>288</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Двофакторна підтримка</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>289</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скидання програми-автентифікатора</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>290</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Якщо ви втратите пристрій і не маєте кодів відновлення, ви втратите доступ до свого облікового запису.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>291</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Установлення пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>292</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Установлення пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>293</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>У вас немає локального імені користувача / пароля для цього сайту. Додати локальний
-    Обліковий запис, щоб можна було ввійти без зовнішнього входу в систему.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>294</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий пароль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>295</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердження пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>296</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скиньте ключ автентифікатора.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>297</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Якщо скинути ключ автентифікатора, програма-автентифікатор не працюватиме, доки ви не перенастроєте його.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>298</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Цей процес вимикає 2FA, доки ви не підтвердите додаток-автентифікатор.
-        Якщо програму не буде завершено, можливо, ви втратите доступ до свого облікового запису.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>299</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Персональні дані</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>300</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ваш обліковий запис містить персональні дані, які ви надали нам. Ця сторінка дозволяє завантажувати або видаляти ці дані.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>301</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалення цих даних призведе до остаточного видалення вашого облікового запису, і це не вдасться відновити.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>302</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Завантажити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>303</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>304</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Профіль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>305</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Номер телефону</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>306</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Рятувати</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>307</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Створення двофакторних кодів відновлення автентифікації (2FA)</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>308</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Розмістіть ці коди в безпечному місці.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>309</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Генерування нових кодів відновлення не змінює ключів, що використовуються в додатках для автентифікації. Якщо ви хочете змінити ключ     використовується в додатку для автентифікації, ви повинні</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>310</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скиньте ключі автентифікатора.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>311</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Генерація кодів відновлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>312</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Старий пароль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>313</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>314</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий пароль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>315</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінити пароль</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>316</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Керування зовнішніми логінами</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>317</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>login-provider-{login. LoginProvider}</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>319</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>320</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Настроювання програми-автентифікатора</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>321</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Щоб скористатися програмою-автентифікатором, виконайте такі дії:</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>322</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Завантажте двофакторну програму-автентифікатор, наприклад Microsoft Authenticator для</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>323</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Андроїд</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>324</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>і</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>325</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>iOS</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>326</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>або
-                Google Автентифікатор для</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>327</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відскануйте QR-код або введіть цей ключ</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>328</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дізнайтеся, як</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>329</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>увімкнути генерацію QR-коду</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>330</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Керування адресами електронної пошти</LanguageText>
-    <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>331</StringID>
@@ -4176,294 +1191,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>332</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Надіслати електронний лист із підтвердженням</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>333</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Нова адреса електронної пошти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>334</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення адреси електронної пошти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>335</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Завантаження даних</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>336</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вимкнення двофакторної автентифікації (2FA)</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>337</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ця дія вимикає лише 2FA.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>338</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вимкнення 2FA не змінює ключі, які використовуються в програмах автентифікації. Якщо ви хочете змінити ключ що використовується в додатку для автентифікації, ви повинні</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>339</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вимкнути 2FA</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>340</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалення персональних даних</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>341</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалення цих даних призведе до остаточного видалення вашого облікового запису, і його не можна буде відновити.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>342</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалення даних і мого облікового запису</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>343</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>небезпека</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>344</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>успіх</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>345</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>разів;</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>346</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText />
+    <LanguageText>&amp;times;</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>347</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Електронна пошта</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>348</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зовнішні логіни</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>349</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Двофакторний дозвіл</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>350</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Батьківський проміжок</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>351</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Керування обліковим записом</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>352</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вийти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>353</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Натисніть тут, щоб вийти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>354</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ви успішно вийшли з програми.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>355</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Перевірка коду відновлення</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>356</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Вхід</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>357</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ви запросили логін з кодом відновлення. Цей логін не запам'ятається, поки ви не надасте
-    Ідентифікатор програми-автентифікатора під час входу або вимкнення 2FA та повторного входу.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>358</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Двофакторна аутентифікація</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>359</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ваш логін захищений програмою-автентифікатором. Введіть код автентифікатора нижче.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>360</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Не маєте доступу до пристрою автентифікації? Ти можеш</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>361</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ввійти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>362</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Для входу використовуйте локальний обліковий запис.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>363</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Запам'ятати мене</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>364</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Забули пароль?</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>365</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Повторно надіслати підтвердження електронною поштою</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>366</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Для входу скористайтеся іншою службою.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>367</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Заблоковано</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>368</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Цей обліковий запис заблоковано, спробуйте ще раз пізніше.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>369</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердження зміни пароля</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>370</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Будь ласка, перевірте свою електронну пошту, щоб скинути пароль.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>371</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Представити</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>372</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зв'яжіть свій</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>373</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ви успішно пройшли автентифікацію за допомогою</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>374</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити
-    вхід.</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>375</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зареєструватися</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>376</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердження зміни адреси електронної пошти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>377</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Підтвердьте свою адресу електронної пошти</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>378</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відмовлено в доступі</LanguageText>
-    <Status>8</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>379</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ви не маєте доступу до цього ресурсу.</LanguageText>
-    <Status>8</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>380</StringID>
@@ -4486,19 +1217,13 @@
   <GeneralTexts>
     <StringID>383</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>копіювати; 2022 - RozetkaWebApp -</LanguageText>
-    <Status>5</Status>
+    <LanguageText>© BAZAR 2022</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>384</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Помилка.</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>385</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Замовлення</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -4544,12 +1269,6 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>393</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Каталог</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>394</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>КаталогІмаж</LanguageText>
@@ -4570,20 +1289,8 @@
   <GeneralTexts>
     <StringID>397</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Творити</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>398</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Створити новий</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>399</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>CVV код</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Створити</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>400</StringID>
@@ -4595,12 +1302,6 @@
     <StringID>401</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Приклад введення файлу за промовчанням</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>402</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -4702,14 +1403,14 @@
   <GeneralTexts>
     <StringID>419</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Ідентифікатор</LanguageText>
-    <Status>1</Status>
+    <LanguageText>ID</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>420</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Образ</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Зображення</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>421</StringID>
@@ -4720,9 +1421,8 @@
   <GeneralTexts>
     <StringID>422</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.
-    Для локального налагодження увімкніть</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.  Для локального налагодження увімкніть</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>423</StringID>
@@ -4739,9 +1439,8 @@
   <GeneralTexts>
     <StringID>425</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>або
-                Google Автентифікатор для</LanguageText>
-    <Status>1</Status>
+    <LanguageText>або Google Автентифікатор для</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>426</StringID>
@@ -4764,21 +1463,14 @@
   <GeneralTexts>
     <StringID>429</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити
-    вхід.</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>430</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Портал</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити вхід.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>431</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Приватність</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Конфіденційність</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>432</StringID>
@@ -4789,8 +1481,8 @@
   <GeneralTexts>
     <StringID>433</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Просування</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Заохочення</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>434</StringID>
@@ -4891,8 +1583,8 @@
   <GeneralTexts>
     <StringID>450</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Двофакторна підтримка</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Двухфакторна аутентифікація (2FA)</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>451</StringID>
@@ -4921,8 +1613,8 @@
   <GeneralTexts>
     <StringID>455</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Адміністрування</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Управління контентом</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>456</StringID>
@@ -4945,8 +1637,8 @@
   <GeneralTexts>
     <StringID>459</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Адреса електронної пошти заказчика</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Адреса електронної пошти замовника</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>460</StringID>
@@ -5003,12 +1695,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>469</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ввійти</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>470</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Вхід</LanguageText>
@@ -5023,15 +1709,14 @@
   <GeneralTexts>
     <StringID>472</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Ви запросили вхід з кодом відновлення. Цей логін не буде запомнений, поки ви не надасте
-    код додатків-аутентифікаторів при вході в систему або відключіть 2FA і знову входьте в систему.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Ви запросили вхід з кодом відновлення. Цей логін не буде запомнений, поки ви не надасте код додатків-аутентифікаторів при вході в систему або відключіть 2FA і знову входьте в систему.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>473</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Вы маєте</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Ви маєте</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>474</StringID>
@@ -5054,14 +1739,14 @@
   <GeneralTexts>
     <StringID>477</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Хочете видалити цей товар з корзини?</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Вм хочете видалити цей товар з корзини?</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>478</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Хочете видалити цю групу?</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Ви хочете видалити цю групу?</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>479</StringID>
@@ -5090,8 +1775,8 @@
   <GeneralTexts>
     <StringID>483</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Виход</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Вихід</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>484</StringID>
@@ -5102,20 +1787,14 @@
   <GeneralTexts>
     <StringID>485</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>місто</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Місто</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>486</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Групп безпеки</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>487</StringID>
-    <LanguageID>25</LanguageID>
     <LanguageText>Групи безпеки</LanguageText>
-    <Status>5</Status>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>488</StringID>
@@ -5126,14 +1805,8 @@
   <GeneralTexts>
     <StringID>489</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Дата заказу</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>490</StringID>
-    <LanguageID>25</LanguageID>
     <LanguageText>Дата замовлення</LanguageText>
-    <Status>1</Status>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>491</StringID>
@@ -5142,28 +1815,10 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>492</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Дата закінчення</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>493</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Двофакторний дозвіл</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>494</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Двух-факторная авторизация</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>495</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Двухфакторна аутентифікація (2FA)</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Двухфакторная авторизация</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>496</StringID>
@@ -5172,49 +1827,13 @@
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>497</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Деталі</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>498</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Детально про товари</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Детально про товар</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>499</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>500</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>501</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>502</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>503</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>504</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Додати</LanguageText>
     <Status>5</Status>
@@ -5264,14 +1883,8 @@
   <GeneralTexts>
     <StringID>512</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>513</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Заголовок</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>514</StringID>
@@ -5286,22 +1899,10 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>516</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>517</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Значение</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>518</StringID>
-    <LanguageID>25</LanguageID>
     <LanguageText>Значення</LanguageText>
-    <Status>1</Status>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>519</StringID>
@@ -5342,14 +1943,14 @@
   <GeneralTexts>
     <StringID>525</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Змінити інформацію про контактах</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Змінити інформацію про контакт</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>526</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Змінити інформацію про товари</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Змінити інформацію про товар</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>527</StringID>
@@ -5386,12 +1987,6 @@
     <LanguageID>25</LanguageID>
     <LanguageText>Змінити характеристику</LanguageText>
     <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>533</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Зображення</LanguageText>
-    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>534</StringID>
@@ -5432,8 +2027,8 @@
   <GeneralTexts>
     <StringID>540</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Інформація про каталоге</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Інформація про каталог</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>541</StringID>
@@ -5456,8 +2051,8 @@
   <GeneralTexts>
     <StringID>544</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Інформація о портале</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Інформація про портал</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>545</StringID>
@@ -5498,15 +2093,8 @@
   <GeneralTexts>
     <StringID>551</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>як налаштувати реального відправника електронної пошти.
-    Зазвичай це буде надіслано на електронну пошту:</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>552</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Каталог</LanguageText>
-    <Status>1</Status>
+    <LanguageText>як налаштувати реального відправника електронної пошти.  Зазвичай це буде надіслано на електронну пошту:</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>553</StringID>
@@ -5533,12 +2121,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>557</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Контакт</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>558</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Контакти клієнта</LanguageText>
@@ -5553,7 +2135,7 @@
   <GeneralTexts>
     <StringID>560</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Крамниця</LanguageText>
+    <LanguageText>Интернет крамниця</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -5575,28 +2157,16 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>564</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>565</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Назва групи</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>566</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>567</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Ім'я спільного ресурсу</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Назва промоакції</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>568</StringID>
@@ -5695,12 +2265,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>584</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Новий пароль</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>585</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Новий портал</LanguageText>
@@ -5709,8 +2273,8 @@
   <GeneralTexts>
     <StringID>586</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Новий продукт</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Новий товар</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>587</StringID>
@@ -5757,9 +2321,8 @@
   <GeneralTexts>
     <StringID>594</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ
-        використовується в додатку для перевірки довжини, ви повинні</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ  використовується в додатку для перевірки довжини, ви повинні</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>595</StringID>
@@ -5771,12 +2334,6 @@
     <StringID>596</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Відключити двухфакторную аутентифікацію</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>597</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Відключити двухфакторную аутентифікацію (2FA)</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -5792,12 +2349,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>600</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Отправить письмо с подтверждением</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>601</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>По батькові</LanguageText>
@@ -5806,20 +2357,20 @@
   <GeneralTexts>
     <StringID>602</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Касі</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Оформити замовлення</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>603</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Платежна карта</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Платіжна картка</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>604</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Платежні реквизиты</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Платіжні реквизиты</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>605</StringID>
@@ -5878,26 +2429,8 @@
   <GeneralTexts>
     <StringID>614</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Полное ім'я</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>615</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Користувачів</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>616</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Користувач - </LanguageText>
-    <Status>6</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>617</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Користувач</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Повне ім'я</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>618</StringID>
@@ -5920,8 +2453,8 @@
   <GeneralTexts>
     <StringID>621</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>прежде чем ви можете входити в систему з кодом відновлення.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>перш ніж ви можете входити в систему з кодом відновлення.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>622</StringID>
@@ -5950,8 +2483,8 @@
   <GeneralTexts>
     <StringID>626</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Профіль</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Профіль користувача</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>627</StringID>
@@ -5963,12 +2496,6 @@
     <StringID>628</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Реєстрація</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>629</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Редактувати продкт</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -5992,14 +2519,14 @@
   <GeneralTexts>
     <StringID>633</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>сбросить ключі аутентифікатора.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Скинути ключі аутентифікатора.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>634</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Сбросить коди відновлення</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Скинути коди відновлення</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>635</StringID>
@@ -6014,18 +2541,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>637</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Сбросить додаток-аутентифікатор</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>638</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Скинути пароль</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>639</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Скачайте ваші дані</LanguageText>
@@ -6034,20 +2549,8 @@
   <GeneralTexts>
     <StringID>640</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Змінення пароля</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>641</StringID>
-    <LanguageID>25</LanguageID>
     <LanguageText>Змінити пароль</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>642</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Сменить электронный адрес</LanguageText>
-    <Status>1</Status>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>643</StringID>
@@ -6077,8 +2580,8 @@
   <GeneralTexts>
     <StringID>647</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Рятувати</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Зберигти</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>648</StringID>
@@ -6171,12 +2674,6 @@
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>663</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Життя</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>664</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Старий пароль</LanguageText>
@@ -6209,14 +2706,8 @@
   <GeneralTexts>
     <StringID>669</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Телефонний клієнт</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>670</StringID>
-    <LanguageID>25</LanguageID>
     <LanguageText>Номер телефону клієнта</LanguageText>
-    <Status>1</Status>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>671</StringID>
@@ -6241,12 +2732,6 @@
     <LanguageID>25</LanguageID>
     <LanguageText>Продукт</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>675</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Продукт</LanguageText>
-    <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>676</StringID>
@@ -6295,12 +2780,6 @@
     <StringID>683</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Удалення цих даних приводить до безповоротного видалення вашої початкової запису, і це неможливо відновити.</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>684</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Видалити</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -6378,25 +2857,13 @@
   <GeneralTexts>
     <StringID>697</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Управління початковою запискою</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>698</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Управление элетронным адресов</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Управління обліковим записом</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>699</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Управляйте своїми зовнішніми логінами</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>700</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Установлення пароля</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -6419,12 +2886,6 @@
   </GeneralTexts>
   <GeneralTexts>
     <StringID>704</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Формат виводу</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>705</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Формат виводу</LanguageText>
     <Status>5</Status>
@@ -6456,14 +2917,14 @@
   <GeneralTexts>
     <StringID>710</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Мітка</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Етикетка</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>711</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Це дію відключає тільки 2FA.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Ця дію відключає тільки 2FA.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>712</StringID>
@@ -6472,35 +2933,10 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>713</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Це число?</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>714</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.
-        Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>715</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Керування адресами електронної пошти</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>716</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Надіслати електронний лист із підтвердженням</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>717</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Змінення адреси електронної пошти</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>718</StringID>
@@ -6543,7 +2979,7 @@
     <LanguageID>34</LanguageID>
     <LanguageText>Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити
     вхід.</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>434</StringID>
@@ -6639,7 +3075,7 @@
     <StringID>345</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>разів;</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>403</StringID>
@@ -6724,7 +3160,7 @@
     <StringID>450</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Двофакторна підтримка</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>435</StringID>
@@ -6832,13 +3268,13 @@
     <StringID>217</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>активний</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>397</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Творити</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>394</StringID>
@@ -6847,28 +3283,10 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>393</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Каталог</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>421</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Індекс</LanguageText>
     <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>385</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Замовлення</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>430</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Портал</LanguageText>
-    <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>432</StringID>
@@ -6886,7 +3304,7 @@
     <StringID>420</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Образ</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>401</StringID>
@@ -6895,22 +3313,10 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>402</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Видалити</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>390</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Справді видалити це?</LanguageText>
     <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>398</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Створити новий</LanguageText>
-    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>451</StringID>
@@ -6928,7 +3334,7 @@
     <StringID>433</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Просування</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>438</StringID>
@@ -6940,13 +3346,13 @@
     <StringID>383</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>копіювати; 2022 - RozetkaWebApp -</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>431</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Приватність</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>418</StringID>
@@ -6965,7 +3371,7 @@
     <LanguageID>34</LanguageID>
     <LanguageText>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.
     Для локального налагодження увімкніть</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>412</StringID>
@@ -7052,12 +3458,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>494</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Двух-факторная авторизация</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>465</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Ваш логін захищений додатком-аутентифікатором. Введіть код аутентифікатора нижче.</LanguageText>
@@ -7080,13 +3480,13 @@
     <LanguageID>34</LanguageID>
     <LanguageText>Ви запросили вхід з кодом відновлення. Цей логін не буде запомнений, поки ви не надасте
     код додатків-аутентифікаторів при вході в систему або відключіть 2FA і знову входьте в систему.</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>483</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Виход</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>475</StringID>
@@ -7098,13 +3498,13 @@
     <StringID>697</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Управління початковою запискою</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>626</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Профіль</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>506</StringID>
@@ -7116,12 +3516,6 @@
     <StringID>611</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Підтвердження пароля</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>641</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Змінити пароль</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7137,29 +3531,23 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>597</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Відключити двухфакторную аутентифікацію (2FA)</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>711</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Це дію відключає тільки 2FA.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Ця дію відключає тільки 2FA.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>594</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ
         використовується в додатку для перевірки довжини, ви повинні</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>633</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>сбросить ключі аутентифікатора.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Скинутисбросить ключі аутентифікатора.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>595</StringID>
@@ -7255,8 +3643,8 @@
   <GeneralTexts>
     <StringID>632</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Сбросить ключ аутентифікатора.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Скинути ключ аутентифікатора.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>508</StringID>
@@ -7267,9 +3655,8 @@
   <GeneralTexts>
     <StringID>714</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.
-        Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>680</StringID>
@@ -7288,18 +3675,6 @@
     <StringID>554</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Коды відновлення</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>637</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Сбросить додаток-аутентифікатор</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>495</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Двухфакторна аутентифікація (2FA)</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7323,8 +3698,8 @@
   <GeneralTexts>
     <StringID>621</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>прежде чем ви можете входити в систему з кодом відновлення.</LanguageText>
-    <Status>5</Status>
+    <LanguageText>перш ніж ви можете входити в систему з кодом відновлення.</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>681</StringID>
@@ -7342,7 +3717,7 @@
     <StringID>473</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Вы маєте</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>464</StringID>
@@ -7359,8 +3734,8 @@
   <GeneralTexts>
     <StringID>634</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Сбросить коди відновлення</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Скинутикоди відновлення</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>622</StringID>
@@ -7409,7 +3784,7 @@
     <LanguageID>34</LanguageID>
     <LanguageText>як налаштувати реального відправника електронної пошти.
     Зазвичай це буде надіслано на електронну пошту:</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>613</StringID>
@@ -7490,12 +3865,6 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>502</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>574</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Новая група безпеки</LanguageText>
@@ -7511,7 +3880,7 @@
     <StringID>478</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Хочете видалити цю групу?</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>539</StringID>
@@ -7532,22 +3901,10 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>501</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>565</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Назва групи</LanguageText>
     <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>503</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>686</StringID>
@@ -7559,12 +3916,6 @@
     <StringID>476</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Ви хочете видалити цього користувача з групи?</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>487</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Групи безпеки</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7649,7 +4000,7 @@
     <StringID>540</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Інформація про каталоге</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>524</StringID>
@@ -7667,12 +4018,6 @@
     <StringID>703</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Фільтри</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>518</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Значення</LanguageText>
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7697,7 +4042,7 @@
     <StringID>517</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Значение</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>614</StringID>
@@ -7745,7 +4090,7 @@
     <StringID>525</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Змінити інформацію про контактах</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>649</StringID>
@@ -7769,7 +4114,7 @@
     <StringID>498</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Детально про товари</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>559</StringID>
@@ -7805,7 +4150,7 @@
     <StringID>603</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Платежна карта</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>659</StringID>
@@ -7823,7 +4168,7 @@
     <StringID>489</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Дата заказу</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>708</StringID>
@@ -7841,12 +4186,6 @@
     <StringID>522</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Змінити інформацію про заказе</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>490</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Дата замовлення</LanguageText>
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7877,7 +4216,7 @@
     <StringID>544</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Інформація о портале</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>529</StringID>
@@ -7907,19 +4246,13 @@
     <StringID>526</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Змінити інформацію про товари</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>576</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Новая промоакція</LanguageText>
     <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>492</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Дата закінчення</LanguageText>
-    <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>530</StringID>
@@ -7937,12 +4270,6 @@
     <StringID>553</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Категорія</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>705</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Формат виводу</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7964,28 +4291,10 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>500</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>455</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Адміністрування</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>497</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Деталі</LanguageText>
     <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>504</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Додати</LanguageText>
-    <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>482</StringID>
@@ -8000,12 +4309,6 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>629</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Редактувати продкт</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>624</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Промоакції</LanguageText>
@@ -8015,7 +4318,7 @@
     <StringID>486</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Групп безпеки</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>590</StringID>
@@ -8069,24 +4372,18 @@
     <StringID>493</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Двофакторний дозвіл</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>640</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Змінення пароля</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Змінити пароль</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>664</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Старий пароль</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>584</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Новий пароль</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -8098,26 +4395,14 @@
   <GeneralTexts>
     <StringID>647</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Рятувати</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Зберигти</LanguageText>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>514</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Завантажити</LanguageText>
     <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>684</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Видалити</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>700</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Установлення пароля</LanguageText>
-    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>579</StringID>
@@ -8133,12 +4418,6 @@
   </GeneralTexts>
   <GeneralTexts>
     <StringID>635</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Скинути пароль</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>638</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Скинути пароль</LanguageText>
     <Status>5</Status>
@@ -8180,24 +4459,6 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>564</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>615</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Користувачів</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>617</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Користувач</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>462</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Блокування</LanguageText>
@@ -8207,19 +4468,13 @@
     <StringID>512</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>710</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Мітка</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>513</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>582</StringID>
@@ -8240,27 +4495,9 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>533</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Зображення</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>577</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Нова функція</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>675</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Продукт</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>566</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -8326,8 +4563,8 @@
   <GeneralTexts>
     <StringID>602</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Касі</LanguageText>
-    <Status>7</Status>
+    <LanguageText>Оформити замовлення</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>676</StringID>
@@ -8374,8 +4611,8 @@
   <GeneralTexts>
     <StringID>669</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Телефонний клієнт</LanguageText>
-    <Status>5</Status>
+    <LanguageText>Номер телефону клієнта</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>461</StringID>
@@ -8387,18 +4624,6 @@
     <StringID>668</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Сума замовлення</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>557</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Контакт</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>670</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Номер телефону клієнта</LanguageText>
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -8429,7 +4654,7 @@
     <StringID>586</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Новий продукт</LanguageText>
-    <Status>5</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>570</StringID>
@@ -8474,18 +4699,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>713</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Це число?</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>516</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Ім'я</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>712</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Це число?</LanguageText>
@@ -8513,12 +4726,6 @@
     <StringID>560</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Крамниця</LanguageText>
-    <Status>2</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>469</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Ввійти</LanguageText>
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -8528,21 +4735,9 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>616</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Користувач - </LanguageText>
-    <Status>6</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>575</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Нова карта</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>663</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Життя</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -8552,22 +4747,10 @@
     <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>399</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>CVV код</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>662</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Термін дії</LanguageText>
     <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>721</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>a asp-controller = "AspNetUsers" asp-action="Index" /a/ppa asp-area="Identity" asp-page="/Account/Manage/Index" /a/ph1/h1ul class="nav nav-tabs"li class="nav-item"a class="nav-link</LanguageText>
-    <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>722</StringID>
@@ -8620,14 +4803,20 @@
   <GeneralTexts>
     <StringID>35</StringID>
     <LanguageID>34</LanguageID>
-    <LanguageText>Користувачів</LanguageText>
-    <Status>6</Status>
+    <LanguageText>Користувачі</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>725</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Обліковий запис</LanguageText>
     <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>214</StringID>
+    <LanguageID>34</LanguageID>
+    <LanguageText>Користувач</LanguageText>
+    <Status>3</Status>
   </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>
@@ -8703,22 +4892,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Срок_работы</Name>
-    <StringID>663</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Срок_работы</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>CVV_код</Name>
-    <StringID>399</StringID>
-    <Selected>true</Selected>
-    <ResourceName>CVV_код</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Владедец_карты</Name>
     <StringID>468</StringID>
     <Selected>true</Selected>
@@ -8743,10 +4916,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>CVV_код0</Name>
+    <Name>CVV_код1</Name>
     <StringID>16</StringID>
     <Selected>true</Selected>
-    <ResourceName>CVV_код0</ResourceName>
+    <ResourceName>CVV_код1</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -8863,26 +5036,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Пользователи</Name>
-    <StringID>615</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Пользователи</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Групп_безопасности</Name>
     <StringID>486</StringID>
     <Selected>true</Selected>
     <ResourceName>Групп_безопасности</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Изображения</Name>
-    <StringID>533</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Изображения</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -8961,22 +5118,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Пользователь</Name>
-    <StringID>616</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Пользователь</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Детали</Name>
-    <StringID>497</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Детали</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Характеристики</Name>
     <StringID>48</StringID>
     <Selected>true</Selected>
@@ -8997,14 +5138,6 @@
     <StringID>674</StringID>
     <Selected>true</Selected>
     <ResourceName>Товар</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Редактировать_продкт</Name>
-    <StringID>629</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Редактировать_продкт</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9041,14 +5174,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Войти</Name>
-    <StringID>469</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Войти</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Корзина</Name>
     <StringID>55</StringID>
     <Selected>true</Selected>
@@ -9081,14 +5206,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Додати</Name>
-    <StringID>504</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Додати</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Товары_каталога</Name>
     <StringID>677</StringID>
     <Selected>true</Selected>
@@ -9097,26 +5214,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Каталог</Name>
-    <StringID>552</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Каталог</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Список_изображений</Name>
     <StringID>652</StringID>
     <Selected>true</Selected>
     <ResourceName>Список_изображений</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Добавить_новое</Name>
-    <StringID>500</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Добавить_новое</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9145,18 +5246,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Заголовок</Name>
-    <StringID>513</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Заголовок</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Details</Name>
+    <Name>Детали0</Name>
     <StringID>404</StringID>
     <Selected>true</Selected>
-    <ResourceName>Details</ResourceName>
+    <ResourceName>Детали0</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9272,14 +5365,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Звголовок</Name>
-    <StringID>516</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Звголовок</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Каталог0</Name>
     <StringID>80</StringID>
     <Selected>true</Selected>
@@ -9289,10 +5374,9 @@
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Это_число0</Name>
-    <StringID>713</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>Это_число0</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -9300,14 +5384,6 @@
     <StringID>693</StringID>
     <Selected>true</Selected>
     <ResourceName>Удалить_этот_фильтр</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Фрпмат_вывода</Name>
-    <StringID>705</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Фрпмат_вывода</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9352,14 +5428,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Добавить_новый</Name>
-    <StringID>502</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Добавить_новый</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Атрибуты</Name>
     <StringID>460</StringID>
     <Selected>true</Selected>
@@ -9388,14 +5456,6 @@
     <StringID>694</StringID>
     <Selected>true</Selected>
     <ResourceName>Удалить_эту_промоакцию</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Дата_окончания</Name>
-    <StringID>492</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Дата_окончания</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9498,9 +5558,9 @@
     <Component>Resources.resx</Component>
     <Name>ProductImage</Name>
     <StringID>111</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>ProductImage</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -9554,9 +5614,9 @@
     <Component>Resources.resx</Component>
     <Name>PortalImage</Name>
     <StringID>118</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>PortalImage</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -9576,14 +5636,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Дата_заказа</Name>
-    <StringID>490</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Дата_заказа</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Сумма</Name>
     <StringID>667</StringID>
     <Selected>true</Selected>
@@ -9592,34 +5644,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Название</Name>
-    <StringID>564</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Название</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Телефон_заказчика</Name>
-    <StringID>670</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Телефон_заказчика</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Адрес_электронной_почты_заказч</Name>
     <StringID>459</StringID>
     <Selected>true</Selected>
     <ResourceName>Адрес_электронной_почты_заказч</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Контактое_лицо</Name>
-    <StringID>557</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Контактое_лицо</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9760,14 +5788,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Товар0</Name>
-    <StringID>675</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Товар0</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Изменить_количество_товара</Name>
     <StringID>527</StringID>
     <Selected>true</Selected>
@@ -9800,18 +5820,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Upload_File_s</Name>
+    <Name>Занрузить_файл</Name>
     <StringID>451</StringID>
     <Selected>true</Selected>
-    <ResourceName>Upload_File_s</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Create_New</Name>
-    <StringID>398</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Create_New</ResourceName>
+    <ResourceName>Занрузить_файл</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9832,17 +5844,17 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Edit</Name>
+    <Name>Изменить</Name>
     <StringID>409</StringID>
     <Selected>true</Selected>
-    <ResourceName>Edit</ResourceName>
+    <ResourceName>Изменить</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>sdfsdfs</Name>
     <StringID>154</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>sdfsdfs</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
@@ -9852,14 +5864,6 @@
     <StringID>390</StringID>
     <Selected>true</Selected>
     <ResourceName>Are_you_sure_you_want_to_delet</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Delete</Name>
-    <StringID>402</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Delete</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -9912,19 +5916,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Portal</Name>
-    <StringID>430</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Portal</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>_Order</Name>
-    <StringID>385</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>_Order</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -9945,10 +5940,9 @@
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Характеритики</Name>
-    <StringID>165</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>Характеритики</ResourceName>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -9956,14 +5950,6 @@
     <StringID>169</StringID>
     <Selected>true</Selected>
     <ResourceName>Каталоги</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Catalog</Name>
-    <StringID>393</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Catalog</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10143,26 +6129,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Значение</Name>
-    <StringID>518</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Значение</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Значание</Name>
     <StringID>517</StringID>
     <Selected>true</Selected>
     <ResourceName>Значание</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Наименование</Name>
-    <StringID>566</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Наименование</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10231,14 +6201,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Портал0</Name>
-    <StringID>203</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Портал0</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Информация_о_каталоге</Name>
     <StringID>540</StringID>
     <Selected>true</Selected>
@@ -10273,16 +6235,16 @@
     <Component>Resources.resx</Component>
     <Name>CatalogImage</Name>
     <StringID>394</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>CatalogImage</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Загловок</Name>
+    <Name>Заголовок0</Name>
     <StringID>512</StringID>
     <Selected>true</Selected>
-    <ResourceName>Загловок</ResourceName>
+    <ResourceName>Заголовок0</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10366,14 +6328,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Добавить_пользователя</Name>
-    <StringID>503</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Добавить_пользователя</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Изменить_пользователя</Name>
     <StringID>528</StringID>
     <Selected>true</Selected>
@@ -10386,22 +6340,6 @@
     <StringID>222</StringID>
     <Selected>true</Selected>
     <ResourceName>AspNetUserRole</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Пользователь0</Name>
-    <StringID>617</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Пользователь0</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Группы_безопасности</Name>
-    <StringID>487</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Группы_безопасности</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10426,14 +6364,6 @@
     <StringID>565</StringID>
     <Selected>true</Selected>
     <ResourceName>Название_группы</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Добавить_новую</Name>
-    <StringID>501</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Добавить_новую</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10642,14 +6572,6 @@
     <StringID>254</StringID>
     <Selected>true</Selected>
     <ResourceName>Пароль</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Сбросьте_пароль</Name>
-    <StringID>638</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Сбросьте_пароль</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10894,14 +6816,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Двухфакторная_аутентификация_2</Name>
-    <StringID>495</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Двухфакторная_аутентификация_2</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Коды_восстановления</Name>
     <StringID>554</StringID>
     <Selected>true</Selected>
@@ -10918,26 +6832,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Сбросить_приложение_аутентифик0</Name>
-    <StringID>637</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Сбросить_приложение_аутентифик0</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Если_вы_потеряете_свое_устройс</Name>
     <StringID>507</StringID>
     <Selected>true</Selected>
     <ResourceName>Если_вы_потеряете_свое_устройс</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Установка_пароля</Name>
-    <StringID>700</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Установка_пароля</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -10994,14 +6892,6 @@
     <StringID>508</StringID>
     <Selected>true</Selected>
     <ResourceName>Если_вы_сбросите_свой_ключ_аут</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Удалить</Name>
-    <StringID>684</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Удалить</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -11118,22 +7008,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Сменить_пароль</Name>
-    <StringID>641</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Сменить_пароль</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Новый_пароль</Name>
-    <StringID>584</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Новый_пароль</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>_Remove</Name>
     <StringID>386</StringID>
     <Selected>true</Selected>
@@ -11146,13 +7020,6 @@
     <Selected>false</Selected>
     <ResourceName>remove_login_login_LoginProvid</ResourceName>
     <Hidden>true</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>login_provider_login_LoginProv</Name>
-    <Selected>false</Selected>
-    <ResourceName>login_provider_login_LoginProv</ResourceName>
-    <Hidden>false</Hidden>
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
@@ -11268,10 +7135,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>Управление_элетронным_адресов</Name>
+    <Name>Управление_элетронным_адресом</Name>
     <StringID>720</StringID>
     <Selected>true</Selected>
-    <ResourceName>Управление_элетронным_адресов</ResourceName>
+    <ResourceName>Управление_элетронным_адресом</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -11312,14 +7179,6 @@
     <StringID>711</StringID>
     <Selected>true</Selected>
     <ResourceName>Это_действие_отключает_только_</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Отключить_двухфакторную_аутент0</Name>
-    <StringID>597</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Отключить_двухфакторную_аутент0</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -11366,7 +7225,7 @@
     <Component>Resources.resx</Component>
     <Name>danger</Name>
     <StringID>400</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>danger</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
@@ -11396,26 +7255,10 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>SignInManager</Name>
-    <StringID>346</StringID>
-    <Selected>true</Selected>
-    <ResourceName>SignInManager</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Управление_учетной_записью</Name>
     <StringID>697</StringID>
     <Selected>true</Selected>
     <ResourceName>Управление_учетной_записью</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>ParentLayout</Name>
-    <StringID>426</StringID>
-    <Selected>true</Selected>
-    <ResourceName>ParentLayout</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -11464,14 +7307,6 @@
     <StringID>472</StringID>
     <Selected>true</Selected>
     <ResourceName>Вы_запросили_вход_с_кодом_восс</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
-    <Name>Двух_факторноая_авторизация</Name>
-    <StringID>494</StringID>
-    <Selected>true</Selected>
-    <ResourceName>Двух_факторноая_авторизация</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <Properties>
@@ -11644,13 +7479,6 @@
   </Properties>
   <Properties>
     <Component>Resources.resx</Component>
-    <Name>a_asp_controller_AspNetUsers_a</Name>
-    <Selected>false</Selected>
-    <ResourceName>a_asp_controller_AspNetUsers_a</ResourceName>
-    <Hidden>false</Hidden>
-  </Properties>
-  <Properties>
-    <Component>Resources.resx</Component>
     <Name>Заказы</Name>
     <StringID>164</StringID>
     <Selected>true</Selected>
@@ -11704,7 +7532,7 @@
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>StatusHash</Name>
-    <TextValue>om5iBp23p8d4b5VA5/M2nxZ3KZk=</TextValue>
+    <TextValue>sP5so5T5RzRu2FBIuzvBvyWbCbY=</TextValue>
     <NumValue>0</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>

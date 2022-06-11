@@ -17,14 +17,14 @@
 
 <div>
      <div class="form-group">
-          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.CatalogId"> Изменить </a>
-          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.CatalogId"> Удалить </a>     
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.CatalogId"> @Resources.Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.CatalogId"> @Resources._Remove </a>     
            <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>   
            <hr />
       </div>
 
     <dl class="row">
-        <dt class = "col-sm-2">  @Resources.Заголовок  </dt>
+        <dt class = "col-sm-2">  @Resources.Заголовок0  </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Title)  </dd>
         <dt class = "col-sm-2">  @Resources.Этикетка </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Label)   </dd>
@@ -32,7 +32,7 @@
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)  </dd>
         <dt class = "col-sm-2">  @Resources.Атрибуты  </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Attributes) </dd>
-        <dt class = "col-sm-2">  @Resources.Портал0  </dt>
+        <dt class = "col-sm-2">  @Resources.Портал  </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Portal.Label) </dd>
     </dl>
 </div>

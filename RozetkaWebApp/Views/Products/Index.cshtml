@@ -11,20 +11,6 @@
 }
 
 
-@*     <p>
-        <div class="row">      
-            <div class="col-sm-2">
-                 <a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Catalog.CatalogId"> Добавить новый </a> 
-            </div>
-            <div class="col-sm-10 ">
-                <form asp-action="Index" method="get" enctype="multipart/form-data">
-                    <input type="submit" value="Поиск" class="btn btn-info float-right" />
-                    <input name="Filter" class="form-control float-right" style="width:300px" value = "@ViewBag.Filter" />       
-                </form>
-            </div>
-        </div>  
-    </p>*@
-
 <table class="table">
     <thead>
         <tr>
@@ -43,7 +29,7 @@
             <td>  <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.Label)</a> </td>
             <td>  @Html.DisplayFor(modelItem => item.Price)   </td>
             <td>  @Html.DisplayFor(modelItem => item.Quantity)  </td>
-            <td>  <a asp-controller = "ProductImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Изображения</a> </td>
+            <td>  <a asp-controller = "ProductImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Image</a> </td>
             <td class="text-right">
                 <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">   <i class="fas fa-solid fa-folder"></i> </a> |
                 <a asp-action="Edit" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square"></i> </a> |
@@ -57,37 +43,4 @@
  @{
      Html.RenderPartial((("_PageNavigator")));
  }
-
-
-@*@{
-    int pagesCount = (ViewBag.TotalCount-1)/ViewBag.PageSize+1;
-    int size = 10;
-    int first = ViewBag.Page/size;
-    int last = first+size;
-    if (last > pagesCount) last = pagesCount;
-    string back = "<";
-    string next = ">";
-    string path = Context.Request.Path+"?Filter="+ViewBag.Filter+"&pageSize="+ViewBag.PageSize+"&page=";   
-}
-<div class="text-center">   
-
-    @if(first != 0)
-    {
-        <a class="btn btn-outline-dark" href=@(path+(first-1))>@back</a>
-    }
-    @for (int i=first; i<last; i++)
-        @if(i == ViewBag.Page)
-        {
-            <a class="btn btn-outline-warning" href=@(path+i)>@(i+1)</a>
-        }
-        else
-        {
-            <a class="btn btn-outline-dark" href=@(path+i)>@(i+1)</a>    
-        }
-    @if(last < pagesCount)
-    {
-        <a class="btn btn-outline-dark" href=@path+@last>@next</a>
-    }
-</div>*@
-
 

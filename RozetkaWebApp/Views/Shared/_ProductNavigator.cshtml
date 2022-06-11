@@ -2,12 +2,12 @@
 
 @if (ViewBag.Product == null) 
 {
-    ViewBag.Title= Resources.Редактировать_продкт;
+    ViewBag.Title= Resources.Изменить;
     <h1>@ViewBag.Title</h1>
 }
 else 
 {
-    ViewBag.Title= Resources.Товар +ViewBag.Product.Label;
+    ViewBag.Title= Resources.Товар+" - "+ViewBag.Product.Label;
     <p> 
             <a asp-controller = "Portals" asp-action="Index"> @Resources.Администрирование </a> @Resources.res0
             <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
@@ -20,7 +20,7 @@ else
 
      <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link @ViewBag.CharacteristicsTab" href="/Characteristics/Index/@ViewBag.Product.ProductId">@Resources.Характеристики</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/ProductImages/Index/@ViewBag.Product.ProductId">@Resources.Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">@Resources.Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/ProductImages/Index/@ViewBag.Product.ProductId">@Resources.Image</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">@Resources.Детали0</a> </li>
      </ul>  
 }

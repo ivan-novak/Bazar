@@ -1,24 +1,19 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
+@using System.Security.Claims
 @{
-    ViewBag.Title= @Resources.Пользователь+ViewBag.User.UserName;
-    if (ViewBag.User.UserName != User.Identity.Name)
-    {
-        <p>  
-            <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> 
-            <a asp-controller = "AspNetUsers" asp-action="Index" > @Resources.Пользователи0 </a> 
-        </p>
-    }
-    else
-    {              
-         <p>        
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" > @Resources.Мой_профиль </a> 
-         </p>
-    }
-}
+   ViewBag.Title = Resources.AspNetUser+ " - " + ViewBag.User.UserName;
+}        
+<p>    
+     <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a>  >
+     <a asp-controller = "AspNetUsers" asp-action="Index" > @Resources.Пользователи0 </a> 
+ </p>
     <h1>@ViewBag.Title</h1>
 
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage/">@Resources.Учетная_запись</a> </li>
+        <ul class="nav nav-tabs" >
+            @if  (User.Identity.Name == @ViewBag.User.UserName)
+            {
+                <li class="nav-item">  <a class="nav-link @ViewBag.PersonalTab" href="/Identity/Account/Manage">@Resources.Учетная_запись</a> </li>
+            }
             <li class="nav-item">  <a class="nav-link @ViewBag.AddressesTab" href="/Addresses/Index/@ViewBag.User.Id">@Resources.Адрес_доставки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index/@ViewBag.User.Id">@Resources.Контакты</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index/@ViewBag.User.Id">@Resources.Кошельки</a> </li>

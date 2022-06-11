@@ -13,14 +13,14 @@
      <div class="col-md-8">
      <form asp-action="Delete">
         <input type="hidden" asp-for="PromotionId" />
-        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
         <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
       <p></p>
 
     <dl class="row">
-        <dt class = "col-sm-2">@Resources.Заголовок</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Title)</dd>
+        <dt class = "col-sm-2">@Resources.Заголовок0</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Title)</dd>
         <dt class = "col-sm-2">@Resources.Этикетка</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Label)</dd>
         <dt class = "col-sm-2">@Resources.Описание</dt><dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)</dd>
         <dt class = "col-sm-2">@Resources.Атрибуты</dt><dd class = "col-sm-10">@Html.DisplayFor(model => model.Attributes)</dd>

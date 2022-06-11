@@ -30,7 +30,7 @@
             <td> @Html.DisplayFor(modelItem => item.CatalogId)  </td>
             <td>  <a asp-controller="Products" asp-action="Index" asp-route-id="@item.CatalogId">@Html.DisplayFor(modelItem => item.Label)</a>  </td>
             <td> 
-                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Изображения</a> |
+                <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Image</a> |
                 <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Фильтры</a> 
             </td>
             <td class="text-right">

@@ -16,24 +16,24 @@
          <form asp-action="Create">
 
               <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-success" />
+                <input type="submit" value="@Resources.Create" class="btn btn-success" />
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                    <hr />
               </div> 
             
               <div asp-validation-summary="ModelOnly" class="text-danger"></div>
               <div class="form-group"  style="display: none">
-                <label asp-for="ProductId" class="control-label">@Resources.Товар0</label>
+                <label asp-for="ProductId" class="control-label">@Resources.Товар</label>
 @*                <select asp-for="ProductId" class ="form-control" asp-items="ViewBag.ProductId"></select>
 *@                 <input asp-for="ProductId" class="form-control" value=@ViewBag.Product.ProductId />           
 
                 </div>
               <div class="form-group">
-                <label asp-for="PropertyId" class="control-label">@Resources.Наименование</label>
+                <label asp-for="PropertyId" class="control-label">@Resources.Заголовок0</label>
                 <select asp-for="PropertyId" class ="form-control" asp-items="ViewBag.PropertyId"></select>
               </div>
              <div class="form-group">
-                <label asp-for="Value" class="control-label">@Resources.Значение </label>
+                <label asp-for="Value" class="control-label">@Resources.Значание </label>
                 <input asp-for="Value" class="form-control" />
                 <span asp-validation-for="Value" class="text-danger"></span>
               </div>

@@ -15,7 +15,7 @@
 
         <form asp-action="Edit">
                       <div class="form-group">
-                <input type="submit" value="Сохранить" class="btn btn-success" />
+                <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
                  <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div>  
@@ -23,7 +23,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label">@Resources.Название</label>
+                <label asp-for="Name" class="control-label">@Resources.Заголовок0</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>

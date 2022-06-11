@@ -1,5 +1,5 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
-@model RozetkaWebApp.Models.Order
+@model RozetkaWebApp.Models.Order;
 
 @{
     ViewBag.OrdersTab = (("active"));
@@ -11,7 +11,7 @@
 </p>
 <form asp-action="Delete">
         <input type="hidden" asp-for="OrderId" />
-        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
         <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>
@@ -38,7 +38,7 @@
 <table class="table">
     <thead>
         <tr>
-             <th> @Resources.Название </th>
+             <th> @Resources.Заголовок0 </th>
             <th> @Resources.Описание </th>
            <th> @Resources.Цена </th>
             <th> @Resources.Количество  </th>

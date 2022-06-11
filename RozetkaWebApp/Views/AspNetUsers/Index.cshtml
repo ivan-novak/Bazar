@@ -8,7 +8,7 @@
   
 <p><h4>@Resources.Список_пользователей</h4></p>
        
- <p><a  class="btn btn-success" asp-action="Create" > @Resources.Добавить_новый </a>   </p>
+ <p><a  class="btn btn-success" asp-action="Create" > @Resources.Добавить_изображение </a>   </p>
 
 
 
@@ -50,7 +50,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LockoutEnabled)
             <td class="text-right">
-                <a href="/Identity/Account/Manage"><i class="fas fa-solid fa-pen-square"></i> </a> <i>|</i>
                 <a href="/Addresses/Index/@item.Id" ><i class="fas fa-solid fa-folder"></i></a> |
                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
             </td>

@@ -1,50 +1,32 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @model IEnumerable<RozetkaWebApp.Models.Image>
 
-@{
-    ViewBag.Title= (("Index"));
-}
+@{ ViewBag.Title= (("Index"));}
 
 <h1>@Resources.Index</h1>
 
-<p>
-    <a asp-action="Create">@Resources.Create_New</a>
-</p>
+<p> <a asp-action="Create">@Resources.Create</a> </p>
+
 <table class="table">
+
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
-           @* <th>
-                @Html.DisplayNameFor(model => model.Data)
-            </th>*@
             <th></th>
         </tr>
     </thead>
-<form asp-action="UploadImage" 
-      asp-controller="Images" 
-      method="post" 
-      enctype="multipart/form-data">
-    <input type="file" id="file1" 
-           name="file1" 
-           multiple="multiple" />
-    <button type="submit">@Resources.Upload_File_s</button>
-</form>
-<form asp-action="RetrieveImage" 
-      asp-controller="Images" 
-      method="post">
-    <button type="submit">@Resources.Show_Latest_Image</button>
-</form>
 
-
+    <form asp-action="UploadImage" asp-controller="Images"  method="post" enctype="multipart/form-data">
+        <input type="file" id="file1" name="file1" multiple="multiple" />
+        <button type="submit">@Resources.Занрузить_файл</button>
+    </form>
+    <form asp-action="RetrieveImage" asp-controller="Images" method="post">
+        <button type="submit">@Resources.Show_Latest_Image</button>
+    </form>
 
     <h1>@ViewBag.Message</h1>
-<h1>@ViewBag.ImageTitle</h1>
-
-<img src="@ViewBag.ImageDataUrl" />
-
-
-
-
+    <h1>@ViewBag.ImageTitle</h1>
+    <img src="@ViewBag.ImageDataUrl" />
 </table>

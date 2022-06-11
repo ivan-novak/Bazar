@@ -10,8 +10,8 @@
    <h4> @Resources.Информация_о_адресе</h4>
  <p>
          <div class="form-group">
-          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.AddressId"> Изменить </a>
-          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.AddressId"> Удалить </a>     
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.AddressId"> @Resources.Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.AddressId"> @Resources._Remove </a>     
            <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>  
             <hr />
       </div>   

@@ -1,6 +1,6 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @{
-    ViewBag.Title=Resources.Портал+@ViewBag.Portal.Label;
+    ViewBag.Title=Resources.Портал+" - "+ViewBag.Portal.Label;
 }
     <p> 
          <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
@@ -12,6 +12,6 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item">  <a class="nav-link @ViewBag.CatalogsTab" href="/Catalogs/Index/@ViewBag.Portal.PortalId">@Resources.Каталоги</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/PortalImages/Index/@ViewBag.Portal.PortalId">@Resources.Изображения</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Portals/Details/@ViewBag.Portal.PortalId">@Resources.Детали</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/PortalImages/Index/@ViewBag.Portal.PortalId">@Resources.Image</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Portals/Details/@ViewBag.Portal.PortalId">@Resources.Детали0</a> </li>
         </ul>

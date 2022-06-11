@@ -6,7 +6,7 @@
     Html.RenderPartial((("_RootNavigator")));
 }
 
-<h1>@Resources.Details</h1>
+<h1>@Resources.Детали0</h1>
 
 <div>
     <h4>@Resources.RootImage</h4>
@@ -33,6 +33,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.RootImageId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.RootImageId">@Resources.Изменить</a> |
     <a asp-action="Index">@Resources.Back_to_List</a>
 </div>

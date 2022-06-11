@@ -14,7 +14,7 @@
     <div class="col-md-12">
         <form asp-action="Create">
             <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-success" />
+                <input type="submit" value="@Resources.Create" class="btn btn-success" />
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                     <hr />
             </div> 
@@ -25,7 +25,7 @@
                 <input asp-for="CatalogId" class="form-control" value=@ViewBag.Catalog.CatalogId /> 
             </div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label">@Resources.Заголовок</label>
+                <label asp-for="Title" class="control-label">@Resources.Заголовок0</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
@@ -45,12 +45,12 @@
                 <span asp-validation-for="Format" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Format" class="control-label">@Resources.Фрпмат_вывода</label>
+                <label asp-for="Format" class="control-label">@Resources.Формат_вывода</label>
                 <input asp-for="Format" class="form-control" />
                 <span asp-validation-for="Format" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IsNumber" class="control-label">@Resources.Это_число0</label>
+                <label asp-for="IsNumber" class="control-label">@Resources.Это_число</label>
                 <input asp-for="IsNumber" class="form-control" />
                 <span asp-validation-for="IsNumber" class="text-danger"></span>
             </div>

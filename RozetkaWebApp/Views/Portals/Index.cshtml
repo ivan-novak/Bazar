@@ -32,7 +32,7 @@
         <tr>
             <td> @Html.DisplayFor(modelItem => item.PortalId)  </td>
             <td> <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Label)</a> </td>
-            <td> <a asp-controller = "PortalImages" asp-action="Index" asp-route-id="@item.PortalId">@Resources.Изображения</a> </td>
+            <td> <a asp-controller = "PortalImages" asp-action="Index" asp-route-id="@item.PortalId">@Resources.Image</a> </td>
             <td class="text-right">
                 <a asp-controller = "Catalogs"  asp-action="Index" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-folder"></i></a> |
                 <a asp-action="Edit" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-pen-square"></i></a> |

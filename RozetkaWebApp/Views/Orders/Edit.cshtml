@@ -15,7 +15,7 @@
         <form asp-action="Edit">
 
             <div class="form-group">
-                <input type="submit" value="Сохранить" class="btn btn-success" />
+                <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
                  <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div> 
@@ -38,7 +38,7 @@
                 <span asp-validation-for="Total" class="text-danger"></span>
             </div>
             <div class="form-group" >
-                <label asp-for="OrderDate" class="control-label">@Resources.Дата_заказа</label>
+                <label asp-for="OrderDate" class="control-label">@Resources.Дата_заказ</label>
                 <input asp-for="OrderDate" class="form-control" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
@@ -58,7 +58,7 @@
                 <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryContact" class="control-label">@Resources.Контактое_лицо</label>
+                <label asp-for="DeliveryContact" class="control-label">@Resources.Контактное_лицо</label>
                 <input asp-for="DeliveryContact" class="form-control" />
                 <span asp-validation-for="DeliveryContact" class="text-danger"></span>
             </div>
@@ -68,7 +68,7 @@
                 <span asp-validation-for="DeliveryEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeliveryPhone" class="control-label">@Resources.Телефон_заказчика</label>
+                <label asp-for="DeliveryPhone" class="control-label">@Resources.Телефон_заказчик</label>
                 <input asp-for="DeliveryPhone" class="form-control" />
                 <span asp-validation-for="DeliveryPhone" class="text-danger"></span>
             </div>
@@ -88,7 +88,7 @@
 <table class="table">
     <thead>
         <tr>
-             <th> @Resources.Название </th>
+             <th> @Resources.Заголовок0 </th>
             <th> @Resources.Описание </th>
            <th> @Resources.Цена </th>
             <th> @Resources.Количество  </th>

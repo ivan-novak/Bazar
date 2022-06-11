@@ -119,7 +119,6 @@
   </resheader>
   <data name="_and" xml:space="preserve">
     <value>і</value>
-    <comment>Previous text: and</comment>
   </data>
   <data name="_and_restarting_the_applicatio" xml:space="preserve">
     <value>і перезавантажте програму.</value>
@@ -128,13 +127,11 @@
     <value>, оскільки це може призвести до того, що конфіденційна інформація від винятків відображається кінцевим користувачам. Для локального налагодження середовище розробки можна ввімкнути, встановивши</value>
   </data>
   <data name="_copy_2022_RozetkaWebApp" xml:space="preserve">
-    <value>копіювати; 2022 - RozetkaWebApp -</value>
+    <value>© BAZAR 2022</value>
+    <comment>Previous text: © 2021 BAZAR. All Rights Reserved</comment>
   </data>
   <data name="_Error" xml:space="preserve">
     <value>Помилка.</value>
-  </data>
-  <data name="_Order" xml:space="preserve">
-    <value>Замовлення</value>
   </data>
   <data name="_Remove" xml:space="preserve">
     <value>Видалити</value>
@@ -147,7 +144,6 @@
   </data>
   <data name="Android" xml:space="preserve">
     <value>Андроїд</value>
-    <comment>Previous text: Android</comment>
   </data>
   <data name="Are_you_sure_you_want_to_delet" xml:space="preserve">
     <value>Справді видалити це?</value>
@@ -156,59 +152,34 @@
     <value>ASPNETCORE_ENVIRONMENT</value>
   </data>
   <data name="AspNetUser" xml:space="preserve">
-    <value>AspNetUser</value>
+    <value>Користувач</value>
   </data>
   <data name="AspNetUserRole" xml:space="preserve">
-    <value>AspNetUserRole</value>
+    <value>Роль користувача</value>
   </data>
   <data name="Associate_your" xml:space="preserve">
     <value>Зв'яжіть свій</value>
   </data>
   <data name="Back_to_List" xml:space="preserve">
     <value>Повернутися до списку</value>
-    <comment>Previous text: Back to List</comment>
-  </data>
-  <data name="Catalog" xml:space="preserve">
-    <value>Каталог</value>
-  </data>
-  <data name="CatalogImage" xml:space="preserve">
-    <value>КаталогІмаж</value>
   </data>
   <data name="Click_here_to_Logout" xml:space="preserve">
     <value>Натисніть тут, щоб вийти</value>
   </data>
   <data name="Configure_authenticator_app" xml:space="preserve">
     <value>Настроювання програми-автентифікатора</value>
-    <comment>Previous text: Configure authenticator app</comment>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Творити</value>
+    <value>Створити</value>
   </data>
-  <data name="Create_New" xml:space="preserve">
-    <value>Створити новий</value>
-    <comment>Previous text: Create New</comment>
-  </data>
-  <data name="CVV_код" xml:space="preserve">
+  <data name="CVV_код1" xml:space="preserve">
     <value>CVV код</value>
-  </data>
-  <data name="CVV_код0" xml:space="preserve">
-    <value>CVV код</value>
-  </data>
-  <data name="danger" xml:space="preserve">
-    <value>небезпека</value>
   </data>
   <data name="Default_file_input_example" xml:space="preserve">
     <value>Приклад введення файлу за промовчанням</value>
   </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Видалити</value>
-  </data>
   <data name="Delete_Personal_Data" xml:space="preserve">
     <value>Видалення персональних даних</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>Деталі</value>
-    <comment>Previous text: Details</comment>
   </data>
   <data name="Development" xml:space="preserve">
     <value>Розробка</value>
@@ -221,15 +192,9 @@
   </data>
   <data name="Download_a_two_factor_authenti" xml:space="preserve">
     <value>Завантажте двофакторну програму-автентифікатор, наприклад Microsoft Authenticator для</value>
-    <comment>Previous text: Download a two-factor authenticator app like Microsoft Authenticator for</comment>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Редагувати</value>
-    <comment>Previous text: Edit</comment>
   </data>
   <data name="enable_QR_code_generation" xml:space="preserve">
     <value>увімкнути генерацію QR-коду</value>
-    <comment>Previous text: enable QR code generation</comment>
   </data>
   <data name="Enter_your_email" xml:space="preserve">
     <value>Введіть свою електронну пошту.</value>
@@ -254,41 +219,30 @@
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Привіт</value>
-    <comment>Previous text: Hello</comment>
   </data>
   <data name="ID" xml:space="preserve">
-    <value>Ідентифікатор</value>
-    <comment>Previous text: ID</comment>
+    <value>ID</value>
   </data>
   <data name="Image" xml:space="preserve">
-    <value>Образ</value>
+    <value>Зображення</value>
   </data>
   <data name="Index" xml:space="preserve">
     <value>Індекс</value>
-    <comment>Previous text: Index</comment>
   </data>
   <data name="iOS" xml:space="preserve">
     <value>iOS</value>
   </data>
   <data name="It_can_result_in_displaying_se" xml:space="preserve">
-    <value>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.
-    Для локального налагодження увімкніть</value>
+    <value>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.  Для локального налагодження увімкніть</value>
   </data>
   <data name="Learn_how_to" xml:space="preserve">
     <value>Дізнайтеся, як</value>
-    <comment>Previous text: Learn how to</comment>
   </data>
   <data name="Log_in" xml:space="preserve">
     <value>Ввійти</value>
   </data>
   <data name="or_Google_Authenticator_for" xml:space="preserve">
-    <value>або
-                Google Автентифікатор для</value>
-    <comment>Previous text: or
-                Google Authenticator for</comment>
-  </data>
-  <data name="ParentLayout" xml:space="preserve">
-    <value>Батьківський проміжок</value>
+    <value>або Google Автентифікатор для</value>
   </data>
   <data name="Personal_Data" xml:space="preserve">
     <value>Персональні дані</value>
@@ -297,26 +251,17 @@
     <value>Будь ласка, перевірте свою електронну пошту, щоб скинути пароль.</value>
   </data>
   <data name="Please_enter_an_email_address_" xml:space="preserve">
-    <value>Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити
-    вхід.</value>
-  </data>
-  <data name="Portal" xml:space="preserve">
-    <value>Портал</value>
-  </data>
-  <data name="PortalImage" xml:space="preserve">
-    <value>PortalImage</value>
+    <value>Будь ласка, введіть адресу електронної пошти для цього сайту нижче і натисніть кнопку Зареєструватися, щоб закінчити вхід.</value>
   </data>
   <data name="Privacy" xml:space="preserve">
-    <value>Приватність</value>
+    <value>Конфіденційність</value>
+    <comment>Previous text: Політика конфіденційності</comment>
   </data>
   <data name="Privacy_Policy" xml:space="preserve">
     <value>Політика конфіденційності</value>
   </data>
-  <data name="ProductImage" xml:space="preserve">
-    <value>ProductImage</value>
-  </data>
   <data name="Promotion" xml:space="preserve">
-    <value>Просування</value>
+    <value>Заохочення</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Зареєструватися</value>
@@ -335,21 +280,12 @@
   </data>
   <data name="Scan_the_QR_Code_or_enter_this" xml:space="preserve">
     <value>Відскануйте QR-код або введіть цей ключ</value>
-    <comment>Previous text: Scan the QR Code or enter this key</comment>
-  </data>
-  <data name="sdfsdfs" xml:space="preserve">
-    <value>sdfsdfs</value>
   </data>
   <data name="Set_your_password" xml:space="preserve">
     <value>Установлення пароля</value>
   </data>
   <data name="Show_Latest_Image" xml:space="preserve">
     <value>Показати останнє зображення</value>
-    <comment>Previous text: Show Latest Image</comment>
-  </data>
-  <data name="SignInManager" xml:space="preserve">
-    <value />
-    <comment>Previous text: SignInManager</comment>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Представити</value>
@@ -374,14 +310,9 @@
   </data>
   <data name="To_use_an_authenticator_app_go" xml:space="preserve">
     <value>Щоб скористатися програмою-автентифікатором, виконайте такі дії:</value>
-    <comment>Previous text: To use an authenticator app go through the following steps:</comment>
   </data>
   <data name="TwoFactorAuthentication" xml:space="preserve">
-    <value>Двофакторна підтримка</value>
-  </data>
-  <data name="Upload_File_s" xml:space="preserve">
-    <value>Завантажити файли</value>
-    <comment>Previous text: Upload File(s)</comment>
+    <value>Двухфакторна аутентифікація (2FA)</value>
   </data>
   <data name="Use_this_page_to_detail_your_s" xml:space="preserve">
     <value>Використовуйте цю сторінку, щоб деталізувати політику конфіденційності вашого сайту.</value>
@@ -393,22 +324,20 @@
     <value>Ви успішно пройшли автентифікацію за допомогою</value>
   </data>
   <data name="Администрирование" xml:space="preserve">
-    <value>Адміністрування</value>
+    <value>Управління контентом</value>
+    <comment>Previous text: Адміністрування</comment>
   </data>
   <data name="Адрес" xml:space="preserve">
     <value>Адреса</value>
   </data>
   <data name="Адрес_доставки" xml:space="preserve">
     <value>Адреса доставки</value>
-    <comment>Previous text: Адрес доставки</comment>
   </data>
   <data name="Адрес_электронной_почты" xml:space="preserve">
     <value>Адреса електронної пошти</value>
-    <comment>Previous text: Адрес электронной почты</comment>
   </data>
   <data name="Адрес_электронной_почты_заказч" xml:space="preserve">
-    <value>Адреса електронної пошти заказчика</value>
-    <comment>Previous text: Адрес электронной почты заказчика</comment>
+    <value>Адреса електронної пошти замовника</value>
   </data>
   <data name="Атрибуты" xml:space="preserve">
     <value>Атрибути</value>
@@ -418,7 +347,6 @@
   </data>
   <data name="Блокировка" xml:space="preserve">
     <value>Блокування</value>
-    <comment>Previous text: Блокировка</comment>
   </data>
   <data name="В_настоящее_время_в_этом_прило" xml:space="preserve">
     <value>В даний час в цьому додатку не зареєстровано реальний відправник електронної пошти, см.</value>
@@ -441,10 +369,6 @@
   <data name="Владедец_карты" xml:space="preserve">
     <value>Владелец карти</value>
   </data>
-  <data name="Войти" xml:space="preserve">
-    <value>Ввійти</value>
-    <comment>Previous text: Войти</comment>
-  </data>
   <data name="Вход" xml:space="preserve">
     <value>Вхід</value>
   </data>
@@ -452,11 +376,10 @@
     <value>Ви повинні</value>
   </data>
   <data name="Вы_запросили_вход_с_кодом_восс" xml:space="preserve">
-    <value>Ви запросили вхід з кодом відновлення. Цей логін не буде запомнений, поки ви не надасте
-    код додатків-аутентифікаторів при вході в систему або відключіть 2FA і знову входьте в систему.</value>
+    <value>Ви запросили вхід з кодом відновлення. Цей логін не буде запомнений, поки ви не надасте код додатків-аутентифікаторів при вході в систему або відключіть 2FA і знову входьте в систему.</value>
   </data>
   <data name="Вы_имеете" xml:space="preserve">
-    <value>Вы маєте</value>
+    <value>Ви маєте</value>
   </data>
   <data name="Вы_можете" xml:space="preserve">
     <value>Ви можете</value>
@@ -468,11 +391,10 @@
     <value>Ви хочете видалити цього користувача з групи?</value>
   </data>
   <data name="Вы_хотите_удалить_этот_товар_и" xml:space="preserve">
-    <value>Хочете видалити цей товар з корзини?</value>
-    <comment>Previous text: Вы хотите удалить этот товар из корзины?</comment>
+    <value>Вм хочете видалити цей товар з корзини?</value>
   </data>
   <data name="Вы_хотите_удалить_эту_группу" xml:space="preserve">
-    <value>Хочете видалити цю групу?</value>
+    <value>Ви хочете видалити цю групу?</value>
   </data>
   <data name="Вы_хотите_удалить_эту_платежну" xml:space="preserve">
     <value>Ви хочете видалити цю платіжну карту?</value>
@@ -485,22 +407,17 @@
   </data>
   <data name="Выйти" xml:space="preserve">
     <value>Вийти</value>
-    <comment>Previous text: Выйти</comment>
   </data>
   <data name="Выход" xml:space="preserve">
-    <value>Виход</value>
+    <value>Вихід</value>
   </data>
   <data name="Генерация_кодов_восстановления" xml:space="preserve">
     <value>Генерація кодів відновлення</value>
   </data>
   <data name="Город" xml:space="preserve">
-    <value>місто</value>
-    <comment>Previous text: Город</comment>
+    <value>Місто</value>
   </data>
   <data name="Групп_безопасности" xml:space="preserve">
-    <value>Групп безпеки</value>
-  </data>
-  <data name="Группы_безопасности" xml:space="preserve">
     <value>Групи безпеки</value>
   </data>
   <data name="Дата" xml:space="preserve">
@@ -508,65 +425,30 @@
   </data>
   <data name="Дата_завершения" xml:space="preserve">
     <value>Дата завершення</value>
-    <comment>Previous text: Дата завершения</comment>
   </data>
   <data name="Дата_заказ" xml:space="preserve">
-    <value>Дата заказу</value>
-  </data>
-  <data name="Дата_заказа" xml:space="preserve">
     <value>Дата замовлення</value>
-    <comment>Previous text: Дата заказа</comment>
   </data>
   <data name="Дата_начала" xml:space="preserve">
     <value>Дата початку</value>
-    <comment>Previous text: Дата начала</comment>
-  </data>
-  <data name="Дата_окончания" xml:space="preserve">
-    <value>Дата закінчення</value>
   </data>
   <data name="Двух_факторная_авторизаия" xml:space="preserve">
-    <value>Двофакторний дозвіл</value>
-  </data>
-  <data name="Двух_факторноая_авторизация" xml:space="preserve">
-    <value>Двух-факторная авторизация</value>
-  </data>
-  <data name="Двухфакторная_аутентификация_2" xml:space="preserve">
-    <value>Двухфакторна аутентифікація (2FA)</value>
+    <value>Двухфакторная авторизация</value>
   </data>
   <data name="Действия" xml:space="preserve">
     <value>Дії</value>
-    <comment>Previous text: Действия</comment>
   </data>
-  <data name="Детали" xml:space="preserve">
+  <data name="Детали0" xml:space="preserve">
     <value>Деталі</value>
-    <comment>Previous text: Детали</comment>
   </data>
   <data name="Детально_о_товаре" xml:space="preserve">
-    <value>Детально про товари</value>
+    <value>Детально про товар</value>
   </data>
   <data name="Добавить_изображение" xml:space="preserve">
     <value>Додати</value>
   </data>
-  <data name="Добавить_новое" xml:space="preserve">
-    <value>Додати</value>
-  </data>
-  <data name="Добавить_новую" xml:space="preserve">
-    <value>Додати</value>
-    <comment>Previous text: Добавить</comment>
-  </data>
-  <data name="Добавить_новый" xml:space="preserve">
-    <value>Додати</value>
-    <comment>Previous text: Добавить</comment>
-  </data>
-  <data name="Добавить_пользователя" xml:space="preserve">
-    <value>Додати</value>
-  </data>
-  <data name="Додати" xml:space="preserve">
-    <value>Додати</value>
-  </data>
   <data name="Ед_измерения" xml:space="preserve">
     <value>Ед. вимірювання</value>
-    <comment>Previous text: Ед. измерения</comment>
   </data>
   <data name="Електронная_почта" xml:space="preserve">
     <value>Електронна пошта</value>
@@ -586,27 +468,23 @@
   <data name="Забыть_этот_браузер" xml:space="preserve">
     <value>Забудьте про цей браузер</value>
   </data>
-  <data name="Загловок" xml:space="preserve">
-    <value>Ім'я</value>
-  </data>
-  <data name="Заголовок" xml:space="preserve">
-    <value>Ім'я</value>
+  <data name="Заголовок0" xml:space="preserve">
+    <value>Заголовок</value>
   </data>
   <data name="Загрузить" xml:space="preserve">
     <value>Завантажити</value>
   </data>
+  <data name="Занрузить_файл" xml:space="preserve">
+    <value>Завантажити файли</value>
+  </data>
   <data name="Запомнить_меня" xml:space="preserve">
     <value>Запомнить мене</value>
   </data>
-  <data name="Звголовок" xml:space="preserve">
-    <value>Ім'я</value>
-  </data>
   <data name="Значание" xml:space="preserve">
-    <value>Значение</value>
-  </data>
-  <data name="Значение" xml:space="preserve">
     <value>Значення</value>
-    <comment>Previous text: Значение</comment>
+  </data>
+  <data name="Изменить" xml:space="preserve">
+    <value>Редагувати</value>
   </data>
   <data name="Изменить_группу_безопасности" xml:space="preserve">
     <value>Змінити групу безпеки</value>
@@ -619,7 +497,6 @@
   </data>
   <data name="Изменить_информацию_о_заказе" xml:space="preserve">
     <value>Змінити інформацію про заказе</value>
-    <comment>Previous text: Изменить информацию о заказе</comment>
   </data>
   <data name="Изменить_информацию_о_карте" xml:space="preserve">
     <value>Змінити інформацію про карту</value>
@@ -628,10 +505,12 @@
     <value>Змінити інформацію про каталог</value>
   </data>
   <data name="Изменить_информацию_о_контакта" xml:space="preserve">
-    <value>Змінити інформацію про контактах</value>
+    <value>Змінити інформацію про контакт</value>
+    <comment>Previous text: Змінити інформацію про контактах</comment>
   </data>
   <data name="Изменить_информацию_о_товаре" xml:space="preserve">
-    <value>Змінити інформацію про товари</value>
+    <value>Змінити інформацію про товар</value>
+    <comment>Previous text: Змінити інформацію про товари</comment>
   </data>
   <data name="Изменить_количество_товара" xml:space="preserve">
     <value>Змінити кількість товару</value>
@@ -650,10 +529,6 @@
   </data>
   <data name="Изменить_характеристику" xml:space="preserve">
     <value>Змінити характеристику</value>
-  </data>
-  <data name="Изображения" xml:space="preserve">
-    <value>Зображення</value>
-    <comment>Previous text: Изображения</comment>
   </data>
   <data name="Имя" xml:space="preserve">
     <value>Імя</value>
@@ -676,7 +551,8 @@
     <value>Інформація про групу безпеки</value>
   </data>
   <data name="Информация_о_каталоге" xml:space="preserve">
-    <value>Інформація про каталоге</value>
+    <value>Інформація про каталог</value>
+    <comment>Previous text: Інформація про каталоге</comment>
   </data>
   <data name="Информация_о_контакте" xml:space="preserve">
     <value>Інформація про контакт</value>
@@ -688,7 +564,8 @@
     <value>Інформація про покупку</value>
   </data>
   <data name="Информация_о_портале" xml:space="preserve">
-    <value>Інформація о портале</value>
+    <value>Інформація про портал</value>
+    <comment>Previous text: Інформація о портале</comment>
   </data>
   <data name="Информация_о_товаре" xml:space="preserve">
     <value>Інформація про товари</value>
@@ -709,11 +586,7 @@
     <value>Використовуйте локальну учетну запис для входу.</value>
   </data>
   <data name="как_настроить_реального_отправ" xml:space="preserve">
-    <value>як налаштувати реального відправника електронної пошти.
-    Зазвичай це буде надіслано на електронну пошту:</value>
-  </data>
-  <data name="Каталог" xml:space="preserve">
-    <value>Каталог</value>
+    <value>як налаштувати реального відправника електронної пошти.  Зазвичай це буде надіслано на електронну пошту:</value>
   </data>
   <data name="Каталог0" xml:space="preserve">
     <value>Каталог</value>
@@ -729,14 +602,9 @@
   </data>
   <data name="Количество" xml:space="preserve">
     <value>Кількість</value>
-    <comment>Previous text: Количество</comment>
   </data>
   <data name="Контактное_лицо" xml:space="preserve">
     <value>Контакт</value>
-  </data>
-  <data name="Контактое_лицо" xml:space="preserve">
-    <value>Контакт</value>
-    <comment>Previous text: Контактное лицо</comment>
   </data>
   <data name="Контакты" xml:space="preserve">
     <value>Контакти</value>
@@ -754,15 +622,14 @@
     <value>Купити</value>
   </data>
   <data name="Магазин" xml:space="preserve">
-    <value>Крамниця</value>
-    <comment>Previous text: Цех</comment>
+    <value>Интернет крамниця</value>
+    <comment>Previous text: Интернет крамниця Bazar</comment>
   </data>
   <data name="Маска_ввода" xml:space="preserve">
     <value>Маска вводу</value>
   </data>
   <data name="Мобильный_телефон" xml:space="preserve">
     <value>Мобільний телефон</value>
-    <comment>Previous text: Мобильный телефон</comment>
   </data>
   <data name="Мой_профиль" xml:space="preserve">
     <value>Мій профіль</value>
@@ -770,39 +637,26 @@
   <data name="нажмите_здесь_для_входа" xml:space="preserve">
     <value>натисніть тут для входу</value>
   </data>
-  <data name="Название" xml:space="preserve">
-    <value>Ім'я</value>
-    <comment>Previous text: Наименование</comment>
-  </data>
   <data name="Название_группы" xml:space="preserve">
     <value>Назва групи</value>
-    <comment>Previous text: Название группы</comment>
-  </data>
-  <data name="Наименование" xml:space="preserve">
-    <value>Ім'я</value>
   </data>
   <data name="Наименование_акции" xml:space="preserve">
-    <value>Ім'я спільного ресурсу</value>
-    <comment>Previous text: Наименование акции</comment>
+    <value>Назва промоакції</value>
   </data>
   <data name="Наименование_каталога" xml:space="preserve">
     <value>Назва каталогу</value>
-    <comment>Previous text: Наименование каталога</comment>
   </data>
   <data name="Наименование_портала" xml:space="preserve">
     <value>Назва порталу</value>
-    <comment>Previous text: Наименование портала</comment>
   </data>
   <data name="Наименование_товара" xml:space="preserve">
     <value>Назва продукту</value>
-    <comment>Previous text: Наименование товараНазва продукту</comment>
   </data>
   <data name="Наименование_фильтра" xml:space="preserve">
     <value>Ім'я фільтра</value>
   </data>
   <data name="Наименования_характеристики" xml:space="preserve">
     <value>Характерні назви</value>
-    <comment>Previous text: Наименования характеристики</comment>
   </data>
   <data name="Настроить_приложение_для_прове" xml:space="preserve">
     <value>Настроить додаток для перевірки довжини</value>
@@ -815,7 +669,6 @@
   </data>
   <data name="Новая_промоакция" xml:space="preserve">
     <value>Новая промоакція</value>
-    <comment>Previous text: Новая промоакція</comment>
   </data>
   <data name="Новая_характеристика" xml:space="preserve">
     <value>Нова функція</value>
@@ -838,14 +691,12 @@
   <data name="Новый_контакт" xml:space="preserve">
     <value>Новий контакт</value>
   </data>
-  <data name="Новый_пароль" xml:space="preserve">
-    <value>Новий пароль</value>
-  </data>
   <data name="Новый_портал" xml:space="preserve">
     <value>Новий портал</value>
   </data>
   <data name="Новый_товар" xml:space="preserve">
-    <value>Новий продукт</value>
+    <value>Новий товар</value>
+    <comment>Previous text: Новий продукт</comment>
   </data>
   <data name="Новый_фильтр" xml:space="preserve">
     <value>Новий фільтр</value>
@@ -858,7 +709,6 @@
   </data>
   <data name="Номер_карты" xml:space="preserve">
     <value>Номер карти</value>
-    <comment>Previous text: Номер карты</comment>
   </data>
   <data name="Номер_телефона" xml:space="preserve">
     <value>Номер телефону</value>
@@ -868,14 +718,12 @@
   </data>
   <data name="Описание" xml:space="preserve">
     <value>Опис</value>
-    <comment>Previous text: Описание</comment>
   </data>
   <data name="Отказано_в_доступе" xml:space="preserve">
     <value>Показано в доступе</value>
   </data>
   <data name="Отключение_2FA_не_изменяет_клю" xml:space="preserve">
-    <value>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ
-        використовується в додатку для перевірки довжини, ви повинні</value>
+    <value>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ  використовується в додатку для перевірки довжини, ви повинні</value>
   </data>
   <data name="Отключить_2FA" xml:space="preserve">
     <value>Відключити 2FA</value>
@@ -883,12 +731,8 @@
   <data name="Отключить_двухфакторную_аутент" xml:space="preserve">
     <value>Відключити двухфакторную аутентифікацію</value>
   </data>
-  <data name="Отключить_двухфакторную_аутент0" xml:space="preserve">
-    <value>Відключити двухфакторную аутентифікацію (2FA)</value>
-  </data>
   <data name="Отменить" xml:space="preserve">
     <value>Відмінити</value>
-    <comment>Previous text: Отменить</comment>
   </data>
   <data name="Отправить" xml:space="preserve">
     <value>Відправити</value>
@@ -900,18 +744,16 @@
     <value>По батькові</value>
   </data>
   <data name="Оформить_заказ" xml:space="preserve">
-    <value>Касі</value>
-    <comment>Previous text: Оформить заказ</comment>
+    <value>Оформити замовлення</value>
   </data>
   <data name="Пароль" xml:space="preserve">
     <value>Пароль</value>
   </data>
   <data name="Платежная_карта" xml:space="preserve">
-    <value>Платежна карта</value>
+    <value>Платіжна картка</value>
   </data>
   <data name="Платежные_реквизиты" xml:space="preserve">
-    <value>Платежні реквизиты</value>
-    <comment>Previous text: Платежные реквизиты</comment>
+    <value>Платіжні реквизиты</value>
   </data>
   <data name="Повторно_отправить_подтвержден" xml:space="preserve">
     <value>Повторно відправляти підтвердження на електронну пошту</value>
@@ -941,27 +783,16 @@
     <value>Будь ласка, перевірте свою електронну пошту, щоб підтвердити свою початкову запис.</value>
   </data>
   <data name="Полное_имя" xml:space="preserve">
-    <value>Полное ім'я</value>
-    <comment>Previous text: Полное имя</comment>
+    <value>Повне ім'я</value>
+    <comment>Previous text: Полное ім'я</comment>
   </data>
-  <data name="Пользователи" xml:space="preserve">
-    <value>Користувачів</value>
-    <comment>Previous text: Пользователи</comment>
-  </data>
-  <data name="Пользователь" xml:space="preserve">
-    <value>Користувач - </value>
-  </data>
-  <data name="Пользователь0" xml:space="preserve">
-    <value>Користувач</value>
+  <data name="Пользователи0" xml:space="preserve">
+    <value>Користувачі</value>
   </data>
   <data name="Поместите_эти_коды_в_безопасно" xml:space="preserve">
     <value>Помістіть ці коди в безпечне місце.</value>
   </data>
   <data name="Портал" xml:space="preserve">
-    <value>Портал -</value>
-    <comment>Previous text: Портал - </comment>
-  </data>
-  <data name="Портал0" xml:space="preserve">
     <value>Портал</value>
   </data>
   <data name="Порталы" xml:space="preserve">
@@ -969,10 +800,9 @@
   </data>
   <data name="Почтовый_индекс" xml:space="preserve">
     <value>Почтовий індекс</value>
-    <comment>Previous text: Почтовый индекс</comment>
   </data>
   <data name="прежде_чем_вы_сможете_войти_в_" xml:space="preserve">
-    <value>прежде чем ви можете входити в систему з кодом відновлення.</value>
+    <value>перш ніж ви можете входити в систему з кодом відновлення.</value>
   </data>
   <data name="Приложение_для_аутентификации" xml:space="preserve">
     <value>Додаток для аутентифікації</value>
@@ -987,22 +817,17 @@
     <value>Промоакція</value>
   </data>
   <data name="Профиль" xml:space="preserve">
-    <value>Профіль</value>
+    <value>Профіль користувача</value>
+    <comment>Previous text: Профіль</comment>
   </data>
   <data name="Рабочий_телефон" xml:space="preserve">
     <value>Робочий телефон</value>
   </data>
   <data name="Регистрация" xml:space="preserve">
     <value>Реєстрація</value>
-    <comment>Previous text: Регистрация</comment>
-  </data>
-  <data name="Редактировать_продкт" xml:space="preserve">
-    <value>Редактувати продкт</value>
-    <comment>Previous text: Редактировать продкт</comment>
   </data>
   <data name="Ресурсы" xml:space="preserve">
     <value>Ресурси</value>
-    <comment>Previous text: Ресурсы</comment>
   </data>
   <data name="Сбросить" xml:space="preserve">
     <value>Скинути</value>
@@ -1011,10 +836,10 @@
     <value>Сбросить ключ аутентифікатора.</value>
   </data>
   <data name="сбросить_ключи_аутентификатора" xml:space="preserve">
-    <value>сбросить ключі аутентифікатора.</value>
+    <value>Скинути ключі аутентифікатора.</value>
   </data>
   <data name="Сбросить_коды_восстановления" xml:space="preserve">
-    <value>Сбросить коди відновлення</value>
+    <value>Скинути коди відновлення</value>
   </data>
   <data name="Сбросить_пароль" xml:space="preserve">
     <value>Скинути пароль</value>
@@ -1022,19 +847,10 @@
   <data name="Сбросить_приложение_аутентифик" xml:space="preserve">
     <value>Сбросить додаток-аутентифікатор</value>
   </data>
-  <data name="Сбросить_приложение_аутентифик0" xml:space="preserve">
-    <value>Сбросить додаток-аутентифікатор</value>
-  </data>
-  <data name="Сбросьте_пароль" xml:space="preserve">
-    <value>Скинути пароль</value>
-  </data>
   <data name="Скачайть_ваши_данные" xml:space="preserve">
     <value>Скачайте ваші дані</value>
   </data>
   <data name="Смена_пароля" xml:space="preserve">
-    <value>Змінення пароля</value>
-  </data>
-  <data name="Сменить_пароль" xml:space="preserve">
     <value>Змінити пароль</value>
   </data>
   <data name="Сменить_электронный_адрес" xml:space="preserve">
@@ -1054,75 +870,58 @@
     <value>Створи новий аккаунт.</value>
   </data>
   <data name="Сохранить" xml:space="preserve">
-    <value>Рятувати</value>
+    <value>Зберигти</value>
   </data>
   <data name="Список_адресов_доставки" xml:space="preserve">
     <value>Список адресів доставки</value>
-    <comment>Previous text: Список адресов доставки</comment>
   </data>
   <data name="Список_выбраных_товаров" xml:space="preserve">
     <value>Список вибраних товарів</value>
-    <comment>Previous text: Список выбраных товаров</comment>
   </data>
   <data name="Список_групп_безопасности" xml:space="preserve">
     <value>Список груп безпеки</value>
-    <comment>Previous text: Список групп безопасности</comment>
   </data>
   <data name="Список_заказов" xml:space="preserve">
     <value>Список замовлень</value>
-    <comment>Previous text: Список заказов</comment>
   </data>
   <data name="Список_изображений" xml:space="preserve">
     <value>Список зображень</value>
   </data>
   <data name="Список_каталогов" xml:space="preserve">
     <value>Список каталогів</value>
-    <comment>Previous text: Список каталогов</comment>
   </data>
   <data name="Список_контактов" xml:space="preserve">
     <value>Список контактів</value>
-    <comment>Previous text: Список контактов</comment>
   </data>
   <data name="Список_платежных_карт" xml:space="preserve">
     <value>Список платежних карт</value>
-    <comment>Previous text: Список платежных карт</comment>
   </data>
   <data name="Список_пользователей" xml:space="preserve">
     <value>Список користувачів</value>
-    <comment>Previous text: Список пользователей</comment>
   </data>
   <data name="Список_порталов" xml:space="preserve">
     <value>Список порталів</value>
-    <comment>Previous text: Список порталов</comment>
   </data>
   <data name="Список_промоакций" xml:space="preserve">
     <value>Список промоакцій</value>
-    <comment>Previous text: Список промоакций</comment>
   </data>
   <data name="Список_товаров" xml:space="preserve">
     <value>Список товарів</value>
-    <comment>Previous text: Список товаров</comment>
   </data>
   <data name="Список_фильтров" xml:space="preserve">
     <value>Список фільтрів</value>
   </data>
   <data name="Список_характеристик" xml:space="preserve">
     <value>Список функцій</value>
-    <comment>Previous text: Список характеристик</comment>
   </data>
   <data name="Срок_действия" xml:space="preserve">
     <value>Термін дії</value>
-    <comment>Previous text: Срок действия</comment>
-  </data>
-  <data name="Срок_работы" xml:space="preserve">
-    <value>Життя</value>
   </data>
   <data name="Старый_пароль" xml:space="preserve">
     <value>Старий пароль</value>
   </data>
   <data name="Статус" xml:space="preserve">
-    <value>статус</value>
-    <comment>Previous text: Статус</comment>
+    <value>Статус</value>
   </data>
   <data name="Стационарный_телефон" xml:space="preserve">
     <value>Стаціонарний телефон</value>
@@ -1132,25 +931,18 @@
   </data>
   <data name="Сумма" xml:space="preserve">
     <value>Сума</value>
-    <comment>Previous text: Сумма</comment>
   </data>
   <data name="Сумма_заказа" xml:space="preserve">
     <value>Сума замовлення</value>
-    <comment>Previous text: Сумма заказа</comment>
   </data>
   <data name="Телефон" xml:space="preserve">
     <value>Телефон</value>
   </data>
   <data name="Телефон_заказчик" xml:space="preserve">
-    <value>Телефонний клієнт</value>
-  </data>
-  <data name="Телефон_заказчика" xml:space="preserve">
     <value>Номер телефону клієнта</value>
-    <comment>Previous text: Телефон заказчика</comment>
   </data>
   <data name="Тип_карты" xml:space="preserve">
     <value>Тип карти</value>
-    <comment>Previous text: Тип карты</comment>
   </data>
   <data name="Тип_контакта" xml:space="preserve">
     <value>Тип контакту</value>
@@ -1159,10 +951,6 @@
     <value>Тип факсу</value>
   </data>
   <data name="Товар" xml:space="preserve">
-    <value>Продукт</value>
-    <comment>Previous text: Товар</comment>
-  </data>
-  <data name="Товар0" xml:space="preserve">
     <value>Продукт</value>
   </data>
   <data name="Товары" xml:space="preserve">
@@ -1189,9 +977,6 @@
   </data>
   <data name="Удаление_этих_данных_приведет_" xml:space="preserve">
     <value>Удалення цих даних приводить до безповоротного видалення вашої початкової запису, і це неможливо відновити.</value>
-  </data>
-  <data name="Удалить" xml:space="preserve">
-    <value>Видалити</value>
   </data>
   <data name="Удалить_данные_и_мой_аккаунт" xml:space="preserve">
     <value>Видалити дані і мій обліковий запис</value>
@@ -1228,19 +1013,15 @@
   </data>
   <data name="Улица_дом_квартира" xml:space="preserve">
     <value>Вулиця, будинок, квартира</value>
-    <comment>Previous text: Улица, дом, квартира</comment>
   </data>
   <data name="Управление_учетной_записью" xml:space="preserve">
-    <value>Управління початковою запискою</value>
+    <value>Управління обліковим записом</value>
   </data>
-  <data name="Управление_элетронным_адресов" xml:space="preserve">
+  <data name="Управление_элетронным_адресом" xml:space="preserve">
     <value>Управління електронними адресами</value>
   </data>
   <data name="Управляйте_своими_внешними_лог" xml:space="preserve">
     <value>Управляйте своїми зовнішніми логінами</value>
-  </data>
-  <data name="Установка_пароля" xml:space="preserve">
-    <value>Установлення пароля</value>
   </data>
   <data name="Учетная_запись" xml:space="preserve">
     <value>Обліковий запис</value>
@@ -1252,31 +1033,22 @@
     <value>Файл зображення</value>
   </data>
   <data name="Факс" xml:space="preserve">
-    <value>факс</value>
-    <comment>Previous text: Факс</comment>
+    <value>Факс</value>
   </data>
   <data name="Фамилия" xml:space="preserve">
     <value>Фамілія</value>
   </data>
   <data name="Фильтры" xml:space="preserve">
     <value>Фільтри</value>
-    <comment>Previous text: Фильтры</comment>
   </data>
   <data name="Формат_вывода" xml:space="preserve">
-    <value>Формат виводу</value>
-  </data>
-  <data name="Фрпмат_вывода" xml:space="preserve">
     <value>Формат виводу</value>
   </data>
   <data name="Характеристики" xml:space="preserve">
     <value>Характеристики</value>
   </data>
-  <data name="Характеритики" xml:space="preserve">
-    <value>Характеристики</value>
-  </data>
   <data name="Цена" xml:space="preserve">
     <value>Ціна</value>
-    <comment>Previous text: Цена</comment>
   </data>
   <data name="Члены_группы" xml:space="preserve">
     <value>Члени групи </value>
@@ -1288,33 +1060,44 @@
     <value>ці документи</value>
   </data>
   <data name="Этикетка" xml:space="preserve">
-    <value>Мітка</value>
+    <value>Етикетка</value>
+    <comment>Previous text: Мітка</comment>
   </data>
   <data name="Это_действие_отключает_только_" xml:space="preserve">
-    <value>Це дію відключає тільки 2FA.</value>
+    <value>Ця дію відключає тільки 2FA.</value>
   </data>
   <data name="Это_число" xml:space="preserve">
     <value>Це число?</value>
   </data>
+  <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
+    <value>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</value>
+  </data>
+  <data name="CatalogImage" xml:space="preserve">
+    <value>КаталогІмаж</value>
+  </data>
+  <data name="danger" xml:space="preserve">
+    <value>небезпека</value>
+  </data>
+  <data name="PortalImage" xml:space="preserve">
+    <value>PortalImage</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>ProductImage</value>
+  </data>
+  <data name="sdfsdfs" xml:space="preserve">
+    <value>sdfsdfs</value>
+  </data>
+  <data name="_Order" xml:space="preserve">
+    <value>Замовлення</value>
+  </data>
+  <data name="Характеритики" xml:space="preserve">
+    <value>Характеристики</value>
+  </data>
   <data name="Это_число0" xml:space="preserve">
     <value>Це число?</value>
   </data>
-  <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
-    <value>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.
-        Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</value>
-  </data>
-  <data name="a_asp_controller_AspNetUsers_a" xml:space="preserve">
-    <value>a asp-controller = "AspNetUsers" asp-action="Index" /a/ppa asp-area="Identity" asp-page="/Account/Manage/Index" /a/ph1/h1ul class="nav nav-tabs"li class="nav-item"a class="nav-link</value>
-  </data>
   <data name="Заказы" xml:space="preserve">
     <value>Замовлення</value>
-  </data>
-  <data name="Пользователи0" xml:space="preserve">
-    <value>Користувачів</value>
-    <comment>Previous text: Користувачів</comment>
-  </data>
-  <data name="login_provider_login_LoginProv" xml:space="preserve">
-    <value>login-provider-{login. LoginProvider}</value>
   </data>
   <data name="active" xml:space="preserve">
     <value>active</value>

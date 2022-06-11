@@ -1,11 +1,11 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @{
     ViewBag.PersonalTab = (("active"));
-    Html.RenderPartial((("_ProfileNavigator")));
+    Html.RenderPartial("_ProfileNavigator");
 }
 
 @{
-    if (ViewData.TryGetValue(Resources.ParentLayout, out var parentLayout))
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
     {
         Layout = (string)parentLayout;
     }
@@ -14,12 +14,8 @@
         Layout = (("/Areas/Identity/Pages/_Layout.cshtml"));
     }
 }
-
-<p><h4>@Resources.Управление_учетной_записью</h4></p>
-
 <div>
-@*    <h4>Change your account settings</h4>*@
-    <hr />
+    <p />
     <div class="row">
         <div class="col-md-3">
             <partial name="_ManageNav" />

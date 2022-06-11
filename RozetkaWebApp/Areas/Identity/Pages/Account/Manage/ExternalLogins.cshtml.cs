@@ -39,7 +39,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             {
                 return NotFound($"Unable to load user with ID 'user.Id'.");
             }
-
+            ViewData["User"] = user;
             CurrentLogins = await _userManager.GetLoginsAsync(user);
             OtherLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync())
                 .Where(auth => CurrentLogins.All(ul => auth.Name != ul.LoginProvider))
@@ -47,7 +47,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             ShowRemoveButton = user.PasswordHash != null || CurrentLogins.Count > 1;
             return Page();
         }
-
+      
         public async Task<IActionResult> OnPostRemoveLoginAsync(string loginProvider, string providerKey)
         {
             var user = await _userManager.GetUserAsync(User);

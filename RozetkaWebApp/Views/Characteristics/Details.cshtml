@@ -17,13 +17,13 @@
 <div>
     <p>
         <button type="button" class="btn btn-primary"   onclick= "history.go(-1)">@Resources.Отменить</button>
-        <a class="btn btn-primary"  asp-action="Edit"   asp-route-id="@Model.CharacteristicId">   Редактировать  </a>
-        <a class="btn btn-primary"  asp-action="Delete" asp-route-id="@Model.CharacteristicId"> Удалить </a>  
+        <a class="btn btn-primary"  asp-action="Edit"   asp-route-id="@Model.CharacteristicId">   @Resources.Изменить  </a>
+        <a class="btn btn-primary"  asp-action="Delete" asp-route-id="@Model.CharacteristicId"> @Resources._Remove </a>  
            <hr />
     </p>    
     <dl class="row">
-        <dt class = "col-sm-2">   @Resources.Наименование </dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
-        <dt class = "col-sm-2">   @Resources.Значение </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
+        <dt class = "col-sm-2">   @Resources.Заголовок0 </dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
+        <dt class = "col-sm-2">   @Resources.Значание </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
         <dt class = "col-sm-2">   @Resources.Ед_измерения</dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
     </dl>
            

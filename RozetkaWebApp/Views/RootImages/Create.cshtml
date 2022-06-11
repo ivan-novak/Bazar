@@ -15,14 +15,14 @@
         <form asp-action="Create" method="post" enctype="multipart/form-data">
             
             <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-success" />
+                <input type="submit" value="@Resources.Create" class="btn btn-success" />
                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
                    <hr />
               </div> 
             
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label">@Resources.Заголовок</label>
+                <label asp-for="Title" class="control-label">@Resources.Заголовок0</label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>

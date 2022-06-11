@@ -4,16 +4,14 @@
 @{
     ViewBag.ContactsTab = (("active"));
     Html.RenderPartial((("_ProfileNavigator")));
-}
-
-
+ }
 
 <p>
    <h4>@Resources.Удалить_этот_контакт</h4>
 </p>
     <form asp-action="Delete">
         <input type="hidden" asp-for="ContactId" />
-        <input type="submit" value="Удалить" class="btn btn-danger" /> 
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
         <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
          <hr />
     </form>

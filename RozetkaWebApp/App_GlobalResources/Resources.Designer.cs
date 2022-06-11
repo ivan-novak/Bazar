@@ -97,7 +97,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to © BAZAR 2022.
+        ///   Looks up a localized string similar to © BAZAR 2022  |  Дипломна робота Івана Новака.
         /// </summary>
         public static string _copy_2022_RozetkaWebApp {
             get {
@@ -1771,7 +1771,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Интернет крамниця.
+        ///   Looks up a localized string similar to Інтернет крамниця.
         /// </summary>
         public static string Магазин {
             get {

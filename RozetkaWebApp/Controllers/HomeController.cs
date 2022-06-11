@@ -27,6 +27,11 @@ namespace RozetkaWebApp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
+            return View();
+        }
+
+        public async Task<IActionResult> Portals()
+        {
             return View(await _context.Portals.ToListAsync());
         }
 

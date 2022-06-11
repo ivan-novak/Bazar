@@ -127,8 +127,8 @@
     <value>, оскільки це може призвести до того, що конфіденційна інформація від винятків відображається кінцевим користувачам. Для локального налагодження середовище розробки можна ввімкнути, встановивши</value>
   </data>
   <data name="_copy_2022_RozetkaWebApp" xml:space="preserve">
-    <value>© BAZAR 2022</value>
-    <comment>Previous text: © 2021 BAZAR. All Rights Reserved</comment>
+    <value>© BAZAR 2022  |  Дипломна робота Івана Новака</value>
+    <comment>Previous text: © BAZAR 2022</comment>
   </data>
   <data name="_Error" xml:space="preserve">
     <value>Помилка.</value>
@@ -622,8 +622,8 @@
     <value>Купити</value>
   </data>
   <data name="Магазин" xml:space="preserve">
-    <value>Интернет крамниця</value>
-    <comment>Previous text: Интернет крамниця Bazar</comment>
+    <value>Інтернет крамниця</value>
+    <comment>Previous text: Интернет крамниця</comment>
   </data>
   <data name="Маска_ввода" xml:space="preserve">
     <value>Маска вводу</value>

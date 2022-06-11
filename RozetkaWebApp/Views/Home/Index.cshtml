@@ -5,9 +5,33 @@
     ViewBag.Title= Resources.Index;
 }
 
-<h1>@Resources.Порталы</h1>
+    <div
+      class="bg-image text-center text-white"
+      style="background-image: url('@Url.Content("~/Images/root/background")');
+      background-size: cover; 
+      height: 80vh
+      ">
+        <div class="d-flex justify-content-center align-items-center h-100 vertical-align: middle "> 
+            <div  style="width: 90%"  class="text-left">
+                <h1 class="display-2 font-weight-bold font-weight-bolder">   BAZAR™ </h1>
+                <p class="display-9 fw-bold fw-bolder"> Управління інтернет крамницею  </p>
+                <br />
+                <h1> <a type="button" class="btn btn-primary border border-white" 
+                        asp-area="" asp-controller="Portals" asp-action="Index">Управління веб контентом</a>
+                     <a type="button" class="btn btn-outline-primary border border-white text-white" 
+                        asp-area="" asp-controller="Portals" asp-action="Index">Робота з ERP системою</a>                    
+                </h1>
+               
+          </div>
+      </div>
+</div>
 
 
+@*<h1>@Resources.Порталы</h1>
+
+<section class="hero-wrap" 
+   style="background-image: url('@Url.Content("~/Images/root/background")');" >
+  <span class="subheading">Hi There!</span>
 <table class="table">
      <tbody>
     @foreach (var item in Model) {
@@ -19,3 +43,5 @@
     }
     </tbody>
 </table>
+</section>
+*@

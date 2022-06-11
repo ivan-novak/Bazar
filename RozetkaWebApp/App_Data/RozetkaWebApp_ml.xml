@@ -104,7 +104,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>383</StringID>
-    <Comment>Previous text: © BAZAR 2022</Comment>
+    <Comment>Previous text: © BAZAR 2022  |  Дипломна робота Івана Новака</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>384</StringID>
@@ -1217,7 +1217,7 @@
   <GeneralTexts>
     <StringID>383</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>© BAZAR 2022  |  Дипломна робота Івана Новака</LanguageText>
+    <LanguageText>© BAZAR-CMS 2022  |  Дипломна робота Івана Новака</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>

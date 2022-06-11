@@ -127,8 +127,8 @@
     <value>, оскільки це може призвести до того, що конфіденційна інформація від винятків відображається кінцевим користувачам. Для локального налагодження середовище розробки можна ввімкнути, встановивши</value>
   </data>
   <data name="_copy_2022_RozetkaWebApp" xml:space="preserve">
-    <value>© BAZAR 2022  |  Дипломна робота Івана Новака</value>
-    <comment>Previous text: © BAZAR 2022</comment>
+    <value>© BAZAR-CMS 2022  |  Дипломна робота Івана Новака</value>
+    <comment>Previous text: © BAZAR 2022  |  Дипломна робота Івана Новака</comment>
   </data>
   <data name="_Error" xml:space="preserve">
     <value>Помилка.</value>

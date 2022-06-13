@@ -304,6 +304,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BAZAR™ |.
+        /// </summary>
+        public static string BAZAR_nbsp {
+            get {
+                return ResourceManager.GetString("BAZAR_nbsp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to КаталогІмаж.
         /// </summary>
         public static string CatalogImage {
@@ -318,6 +327,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Click_here_to_Logout {
             get {
                 return ResourceManager.GetString("Click_here_to_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CLOUD-сервіси.
+        /// </summary>
+        public static string CLOUD_сервіси {
+            get {
+                return ResourceManager.GetString("CLOUD_сервіси", resourceCulture);
             }
         }
         
@@ -462,6 +480,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string environment_will_display_more_ {
             get {
                 return ResourceManager.GetString("environment_will_display_more_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERP-система.
+        /// </summary>
+        public static string ERP_система {
+            get {
+                return ResourceManager.GetString("ERP_система", resourceCulture);
             }
         }
         
@@ -732,6 +759,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Resend_email_confirmation {
             get {
                 return ResourceManager.GetString("Resend_email_confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REST-API.
+        /// </summary>
+        public static string REST_API {
+            get {
+                return ResourceManager.GetString("REST_API", resourceCulture);
             }
         }
         

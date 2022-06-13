@@ -998,6 +998,18 @@
   <GeneralIds>
     <StringID>725</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>727</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>728</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>729</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>730</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>34</LanguageID>
     <LanguageName>Ukrainian</LanguageName>
@@ -4818,6 +4830,30 @@
     <LanguageText>Користувач</LanguageText>
     <Status>3</Status>
   </GeneralTexts>
+  <GeneralTexts>
+    <StringID>727</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>BAZAR™ |</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>728</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>ERP-система</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>729</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>REST-API</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>730</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>CLOUD-сервіси</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Список_платежных_карт</Name>
@@ -7523,6 +7559,38 @@
     <StringID>725</StringID>
     <Selected>true</Selected>
     <ResourceName>Учетная_запись</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>BAZAR_nbsp</Name>
+    <StringID>727</StringID>
+    <Selected>true</Selected>
+    <ResourceName>BAZAR_nbsp</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>ERP_система</Name>
+    <StringID>728</StringID>
+    <Selected>true</Selected>
+    <ResourceName>ERP_система</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>REST_API</Name>
+    <StringID>729</StringID>
+    <Selected>true</Selected>
+    <ResourceName>REST_API</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>CLOUD_сервіси</Name>
+    <StringID>730</StringID>
+    <Selected>true</Selected>
+    <ResourceName>CLOUD_сервіси</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <GeneralAttributes>

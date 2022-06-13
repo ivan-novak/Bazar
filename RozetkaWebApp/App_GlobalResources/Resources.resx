@@ -163,8 +163,14 @@
   <data name="Back_to_List" xml:space="preserve">
     <value>Повернутися до списку</value>
   </data>
+  <data name="BAZAR_nbsp" xml:space="preserve">
+    <value>BAZAR™ |</value>
+  </data>
   <data name="Click_here_to_Logout" xml:space="preserve">
     <value>Натисніть тут, щоб вийти</value>
+  </data>
+  <data name="CLOUD_сервіси" xml:space="preserve">
+    <value>CLOUD-сервіси</value>
   </data>
   <data name="Configure_authenticator_app" xml:space="preserve">
     <value>Настроювання програми-автентифікатора</value>
@@ -207,6 +213,9 @@
   </data>
   <data name="environment_will_display_more_" xml:space="preserve">
     <value>середовище відображатиме більш детальну інформацію про помилку, що сталася.</value>
+  </data>
+  <data name="ERP_система" xml:space="preserve">
+    <value>ERP-система</value>
   </data>
   <data name="Error0" xml:space="preserve">
     <value>Помилка</value>
@@ -274,6 +283,9 @@
   </data>
   <data name="Resend_email_confirmation" xml:space="preserve">
     <value>Повторне надсилання підтвердження електронною поштою</value>
+  </data>
+  <data name="REST_API" xml:space="preserve">
+    <value>REST-API</value>
   </data>
   <data name="RootImage" xml:space="preserve">
     <value>Кореневий псевдонім</value>

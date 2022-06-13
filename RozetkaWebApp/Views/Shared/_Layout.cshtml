@@ -19,8 +19,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                                           <div class="navbar-header">
-                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> BAZAR™ |</a> 
+                       <div class="navbar-header" style="width:120px">
+                            <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index"> @Resources.BAZAR_nbsp</a> 
                         </div>
                     <ul class="navbar-nav flex-grow-1 nav navbar-nav">
                         <li class="nav-item">
@@ -30,15 +30,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Portals" asp-action="Index" >@Resources.Администрирование</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Portals" asp-action="Index" >ERP-система</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Portals" asp-action="Index" >@Resources.ERP_система</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Api" asp-action="Index">REST-API</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Api" asp-action="Index">@Resources.REST_API</a>
+@*                            <a class="nav-link text-dark" target="_blank" href="https://docs.google.com/spreadsheets/d/1jxrUGaapuhQVoh6dxyObiJpJzw9QG6iYVOtA2dBOGhQ/edit?usp=sharing">@Resources.REST_API</a>
+*@ 
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://portal.azure.com/#home">CLOUD-сервіси</a>
+                            <a class="nav-link text-dark" href="https://portal.azure.com/#home">@Resources.CLOUD_сервіси</a>
                         </li>
                       </ul>
                     <partial name="_LoginPartial" />

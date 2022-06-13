@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp
 {
+    [Authorize(Roles = "Користувачі")]
+
     public class CatalogsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -71,6 +74,8 @@ namespace RozetkaWebApp
             return View(catalog);
         }
 
+        [Authorize(Roles = "Маркетологи")]
+
         // GET: Catalogs/Create
         public IActionResult Create(int? Id)
         {
@@ -98,6 +103,8 @@ namespace RozetkaWebApp
             return View(catalog);
         }
 
+        [Authorize(Roles = "Маркетологи")]
+
         // GET: Catalogs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -116,6 +123,8 @@ namespace RozetkaWebApp
             ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
         }
+
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Catalogs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -154,6 +163,9 @@ namespace RozetkaWebApp
             return View(catalog);
         }
 
+
+        [Authorize(Roles = "Маркетологи")]
+
         // GET: Catalogs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -172,6 +184,9 @@ namespace RozetkaWebApp
 
             return View(catalog);
         }
+
+
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Catalogs/Delete/5
         [HttpPost, ActionName("Delete")]

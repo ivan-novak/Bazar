@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,8 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
+
     public class ContactsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -56,6 +59,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Contacts/Create
         public IActionResult Create(string id = null)
@@ -64,6 +68,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Contacts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -81,6 +86,7 @@ namespace RozetkaWebApp.Controllers
             return Redirect($"/Contacts/Index/" + contact.UserId);
 
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Contacts/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -98,6 +104,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Contacts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -135,6 +142,7 @@ namespace RozetkaWebApp.Controllers
             return Redirect($"/Contacts/Index/" + contact.UserId);
 
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Contacts/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -154,6 +162,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(contact.UserId);
             return View(contact);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]

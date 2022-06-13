@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class CatalogImagesController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -34,6 +36,7 @@ namespace RozetkaWebApp.Controllers
             return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
+
         // GET: CatalogImages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -43,6 +46,7 @@ namespace RozetkaWebApp.Controllers
             return View(catalogImage);
         }
 
+        [Authorize(Roles = "Маркетологи")]
         // GET: CatalogImages/Create
         public IActionResult Create(int? Id)
         {
@@ -50,6 +54,8 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Catalog = catalog;
             return View();
         }
+
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: CatalogImages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -80,6 +86,8 @@ namespace RozetkaWebApp.Controllers
             return View(catalogImage);
         }
 
+        [Authorize(Roles = "Маркетологи")]
+
         // GET: CatalogImages/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -89,6 +97,9 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Catalog = _context.Catalogs.Where(i => i.CatalogId == catalogImage.CatalogId).Include(i=>i.Portal).First();
             return View(catalogImage);
         }
+
+
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: CatalogImages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -126,6 +137,9 @@ namespace RozetkaWebApp.Controllers
             return View(catalogImage);
         }
 
+
+        [Authorize(Roles = "Маркетологи")]
+
         // GET: CatalogImages/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -136,6 +150,8 @@ namespace RozetkaWebApp.Controllers
             return View(catalogImage);
         }
 
+
+        [Authorize(Roles = "Маркетологи")]
         // POST: CatalogImages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,8 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
+
     public class ProductsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -51,6 +54,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(product);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: Products/Create
         public IActionResult Create(int? Id)
@@ -62,6 +66,7 @@ namespace RozetkaWebApp.Controllers
 
             return View();
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -81,6 +86,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -100,6 +106,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             return View(product);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -138,6 +145,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.PromotionId = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
             return View(product);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(long? id)
@@ -157,6 +165,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(product);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]

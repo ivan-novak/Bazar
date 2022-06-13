@@ -15,7 +15,9 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
-   // [AllowAnonymous, Route("account")]
+    [Authorize(Roles = "Користувачі")]
+
+    // [AllowAnonymous, Route("account")]
     public class AspNetUsersController : Controller
     {
         private readonly RozetkadbContext _context;

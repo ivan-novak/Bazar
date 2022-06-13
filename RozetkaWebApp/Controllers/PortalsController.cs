@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp
 {
+    [Authorize(Roles = "Користувачі")]
     public class PortalsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -53,6 +55,7 @@ namespace RozetkaWebApp
         }
 
         // GET: Portals/Create
+        [Authorize(Roles = "Маркетологи")]
         public IActionResult Create()
         {
             return View();
@@ -74,6 +77,7 @@ namespace RozetkaWebApp
             return View(portal);
         }
 
+        [Authorize(Roles = "Маркетологи")]
         // GET: Portals/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -93,6 +97,7 @@ namespace RozetkaWebApp
         // POST: Portals/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Маркетологи")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PortalId,Title,Label,Description,Attributes")] Portal portal)
@@ -125,6 +130,7 @@ namespace RozetkaWebApp
             return View(portal);
         }
 
+        [Authorize(Roles = "Маркетологи")]
         // GET: Portals/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -143,6 +149,7 @@ namespace RozetkaWebApp
             return View(portal);
         }
 
+        [Authorize(Roles = "Маркетологи")]
         // POST: Portals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

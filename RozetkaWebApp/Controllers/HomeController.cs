@@ -14,8 +14,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
-    //[Authorize]
-    public class HomeController : Controller
+      public class HomeController : Controller
     {
         private readonly RozetkadbContext _context;
 

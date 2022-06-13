@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class AddressesController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -50,7 +52,8 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
-
+        [Authorize(Roles = "Продавці")]
+        
         // GET: Addresses/Create
         public IActionResult Create(string id = null)
         {
@@ -58,6 +61,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Addresses/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -74,6 +78,7 @@ namespace RozetkaWebApp.Controllers
             }
             return Redirect($"/Addresses/Index/" + address.UserId);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Addresses/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -91,6 +96,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Addresses/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -126,6 +132,7 @@ namespace RozetkaWebApp.Controllers
             }
             return Redirect($"/Addresses/Index/" + address.UserId);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Addresses/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -145,6 +152,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(address.UserId);
             return View(address);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Addresses/Delete/5
         [HttpPost, ActionName("Delete")]

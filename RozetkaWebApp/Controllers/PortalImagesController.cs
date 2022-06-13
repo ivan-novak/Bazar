@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,8 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
+
     public class PortalImagesController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -52,6 +55,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(portalImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: PortalImages/Create
         public IActionResult Create(int? Id)
@@ -60,6 +64,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Portal = portal;
             return View();
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: PortalImages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -90,6 +95,7 @@ namespace RozetkaWebApp.Controllers
             }
             return View(portalImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: PortalImages/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -100,6 +106,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Portal = _context.Portals.Where(i => i.PortalId == portalImage.PortalId).First();
             return View(portalImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: PortalImages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -146,6 +153,7 @@ namespace RozetkaWebApp.Controllers
             }
             return View(portalImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: PortalImages/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -157,6 +165,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(portalImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: PortalImages/Delete/5
         [HttpPost, ActionName("Delete")]

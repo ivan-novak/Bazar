@@ -13,6 +13,8 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
+
     public class LineDetailsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -87,6 +89,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(lineDetail);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: LineDetails/Create
         public IActionResult Create()
@@ -95,6 +98,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label");
             return View();
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: LineDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -113,6 +117,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: LineDetails/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -131,6 +136,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: LineDetails/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -168,6 +174,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: LineDetails/Delete/5
         public async Task<IActionResult> Delete(long? id)
@@ -188,6 +195,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(lineDetail);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: LineDetails/Delete/5
         [HttpPost, ActionName("Delete")]

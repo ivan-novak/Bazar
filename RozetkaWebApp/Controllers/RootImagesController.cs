@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class RootImagesController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -46,6 +48,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(rootImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: RootImages/Create
         public IActionResult Create()
@@ -85,6 +88,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: RootImages/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -102,6 +106,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: RootImages/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -150,6 +155,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", rootImage.ImageId);
             return View(rootImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: RootImages/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -169,6 +175,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(rootImage);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: RootImages/Delete/5
         [HttpPost, ActionName("Delete")]

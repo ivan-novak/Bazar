@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,8 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
+
     public class CharacteristicsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -56,6 +59,7 @@ namespace RozetkaWebApp.Controllers
 
 
 
+        [Authorize(Roles = "Маркетологи")]
 
         public IActionResult Create(long? Id)
         {
@@ -65,6 +69,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == product.CatalogId), "PropertyId", "Label");
             return View();
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Characteristics/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -83,6 +88,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         public async Task<IActionResult> Edit(long? id)
         {
@@ -101,6 +107,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.PropertyId = new SelectList(_context.Properties.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Characteristics1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -138,7 +145,8 @@ namespace RozetkaWebApp.Controllers
             ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
-     
+        [Authorize(Roles = "Маркетологи")]
+
         // GET: Characteristics/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
@@ -155,6 +163,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(characteristic);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Characteristics/Delete/5
         [HttpPost, ActionName("Delete")]

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class AspNetUserRolesController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -47,6 +49,7 @@ namespace RozetkaWebApp.Controllers
 
             return View(aspNetUserRole);
         }
+        [Authorize(Roles = "Адміністратори")]
 
         // GET: AspNetUserRoles/Create
         public IActionResult Create(string Id)
@@ -56,6 +59,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "UserName");
             return View();
         }
+        [Authorize(Roles = "Адміністратори")]
 
         // POST: AspNetUserRoles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -75,6 +79,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", aspNetUserRole.UserId);
             return Redirect($"/AspNetUserRoles/Index/" + aspNetUserRole.RoleId);
         }
+        [Authorize(Roles = "Адміністратори")]
 
         // GET: AspNetUserRoles/Edit/5
         public async Task<IActionResult> Edit(string Id)
@@ -93,6 +98,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", aspNetUserRole.UserId);
             return View(aspNetUserRole);
         }
+        [Authorize(Roles = "Адміністратори")]
 
         // POST: AspNetUserRoles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -130,6 +136,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", aspNetUserRole.UserId);
             return View(aspNetUserRole);
         }
+        [Authorize(Roles = "Адміністратори")]
 
         // GET: AspNetUserRoles/Delete/5
         public async Task<IActionResult> Delete(string id)
@@ -150,6 +157,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["Role"] = _context.AspNetRoles.Find(aspNetUserRole.RoleId);
             return View(aspNetUserRole);
         }
+        [Authorize(Roles = "Адміністратори")]
 
         // POST: AspNetUserRoles/Delete/5
         [HttpPost, ActionName("Delete")]

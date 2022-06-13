@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class PropertiesController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -51,6 +53,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
             return View(property);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: Properties/Create
         public IActionResult Create(int? Id)
@@ -60,6 +63,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
             return View();
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Properties/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -78,6 +82,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: Properties/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -96,6 +101,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == property.Catalog.PortalId), "CatalogId", "Label");
             return View(property);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Properties/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -132,6 +138,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // GET: Properties/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -151,6 +158,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == property.CatalogId);
             return View(property);
         }
+        [Authorize(Roles = "Маркетологи")]
 
         // POST: Properties/Delete/5
         [HttpPost, ActionName("Delete")]

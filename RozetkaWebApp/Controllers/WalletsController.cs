@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class WalletsController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -56,6 +58,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Walletts/Create
         public IActionResult Create(string id)
@@ -64,6 +67,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Walletts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -80,6 +84,7 @@ namespace RozetkaWebApp.Controllers
             }
             return Redirect($"/Wallets/Index/" + wallett.UserId);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Walletts/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -97,6 +102,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(wallett.UserId);
             return View(wallett);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Walletts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -132,6 +138,7 @@ namespace RozetkaWebApp.Controllers
             }
             return Redirect($"/Wallets/Index/" + wallett.UserId);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Walletts/Delete/5
         public async Task<IActionResult> Delete(long? id)
@@ -152,6 +159,7 @@ namespace RozetkaWebApp.Controllers
             return View(wallett);
 
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Walletts/Delete/5
         [HttpPost, ActionName("Delete")]

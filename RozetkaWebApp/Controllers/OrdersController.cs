@@ -13,6 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Roles = "Користувачі")]
     public class OrdersController : Controller
     {
         private readonly RozetkadbContext _context;
@@ -62,6 +63,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Orders/Create
         public IActionResult Create(string id = null)
@@ -76,6 +78,7 @@ namespace RozetkaWebApp.Controllers
             ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Orders/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -120,6 +123,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             return Redirect($"/Orders/Index/" + order.UserId);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(long? id)
@@ -140,6 +144,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["Lines"] = _context.LineDetails.Where(x=>x.OrderId==order.OrderId).Include(x=>x.Product).Select(x=>x);
             return View(order);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Orders/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -177,6 +182,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             return Redirect($"/Orders/Index/" + order.UserId);
         }
+        [Authorize(Roles = "Продавці")]
 
         // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(long? id)
@@ -197,6 +203,7 @@ namespace RozetkaWebApp.Controllers
             ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
+        [Authorize(Roles = "Продавці")]
 
         // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]

@@ -66,17 +66,17 @@ namespace RozetkaWebApp.Controllers
             return new ApiResult<iCatalog>{ TotalCount = totalCount, Values = values };
         }
 
-
-        [HttpPost("[controller]/v1/catalogs/{catalogId}/products/")]
-        public async Task<ApiResult<iProduct>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null,
+       [HttpPut("[controller]/v1/catalogs/{catalogId}/products/")]
+       [HttpPost("[controller]/v1/catalogs/{catalogId}/products/")]
+        public async Task<ApiResult<iProduct>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50,
                  int? catalogId = null,  long? promotionId = null, [FromBody] Filter[] filters = null)
         {
             IQueryable<Product> query;
             if (filters != null)
             {
                 var query1 = _context.Characteristics.Select(x => x);
-                foreach(var i in filters) query1 = query1.Where(x => x.PropertyId == i.PropertyId && i.Value.Contains(x.Value));
-                query = query1.Include(x => x.Product).Select(x => x.Product).Distinct();
+                foreach(var i in filters) if (i.Value != null) query1 = query1.Where(x => x.PropertyId == i.PropertyId && i.Value.Contains(x.Value));
+                query = query1.Include(x => x.Product).Where(x => x.Product.CatalogId == catalogId).Select(x => x.Product).Distinct();
             }
             else
             {
@@ -97,13 +97,11 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-
-
         [HttpGet("[controller]/v1/products")]
         [HttpGet("[controller]/v1/products/{productId}")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/products/")]
         [HttpGet("[controller]/v1/promotions/{promotionId}/products/")]
-        public async Task<ApiResult<iProduct>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, 
+        public async Task<ApiResult<iProduct>> Products(string orderBy = "ProductId", string orderMode = "Desc", int page = 0, int pageSize = 50, 
             int? catalogId = null, long? productId = null, long? promotionId = null)
         {
             if(productId!= null)

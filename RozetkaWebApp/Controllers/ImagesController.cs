@@ -13,8 +13,7 @@ using RozetkaWebApp.Models;
 
 namespace RozetkaWebApp.Controllers
 {
-    [Authorize(Roles = "Користувачі")]
-    public class ImagesController : Controller
+     public class ImagesController : Controller
     {
         private readonly RozetkadbContext _context;
 

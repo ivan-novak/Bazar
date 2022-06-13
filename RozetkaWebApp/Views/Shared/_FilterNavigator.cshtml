@@ -4,6 +4,81 @@
             <div class="col-sm-2">
                 <a class="btn btn-success" href=@(Context.Request.Path.ToString().Replace((("Index")),(("Create"))))> @Resources.Добавить_изображение</a>
             </div>
+            <div class="col-sm-10">
+                <div style="text-align: right"> 
+                    <form asp-action="Index" method="get" enctype="multipart/form-data">
+
+                        <div class="input-group">
+                 @{
+                    int pagesCount = (ViewBag.TotalCount-1)/ViewBag.PageSize+1;
+                    int size = 10;
+                    int first = ViewBag.Page/size;
+                    int last = first+size;
+                    if (last > pagesCount) last = pagesCount;
+                    string path = Context.Request.Path+(("?Filter="))+ViewBag.Filter+(("&pageSize="))+ViewBag.PageSize+(("&page="));   
+                }
+    
+                    @if(first != 0)
+                    {
+                        <a class="btn btn-outline-dark" href=@(path+(first-1))>
+                             <i class="fas fa-arrow-left"></i>
+                        </a>
+                    }
+                    @for (int i=first; i<last; i++)
+                        @if(i == ViewBag.Page)
+                        {
+                            <a class="btn btn-outline-warning" href=@(path+i)>
+                               @(i+1)
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-dark" href=@(path+i)>
+                                @(i+1)
+                            </a>    
+                        }
+                    @if(last < pagesCount)
+                    {
+                        <a class="btn btn-outline-dark" href=@(path+last)>
+                                <i class="fas fa-arrow-right"></i>
+                        </a>
+                    }            
+
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Текст для пошуку"
+    aria-describedby="button-addon2"
+    name = "Filter" 
+     value = "@ViewBag.Filter"
+   />
+  <button class="btn btn-primary " type="submit" data-mdb-ripple-color="dark">
+     <i class="fas fa-search"></i>
+  </button>
+</div>    
+
+
+
+
+                     
+                    
+              
+                </form>
+            </div>
+            </div>
+        </div>  
+    </p>
+
+
+
+
+
+@*@using RozetkaWebApp.App_GlobalResources;
+    <p>
+        <div class="row">      
+            <div class="col-sm-2">
+                <a class="btn btn-success" href=@(Context.Request.Path.ToString().Replace((("Index")),(("Create"))))> @Resources.Добавить_изображение</a>
+            </div>
             <div class="col-sm-10 ">
                 <form asp-action="Index" method="get" enctype="multipart/form-data">
                     <button type="submit" class="btn btn-primary float-right">
@@ -14,3 +89,4 @@
             </div>
         </div>  
     </p>
+*@

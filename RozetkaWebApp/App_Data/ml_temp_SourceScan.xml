@@ -172,7 +172,7 @@
     <LineNumber>21</LineNumber>
     <ColumnNumber>127</ColumnNumber>
     <StringID>703</StringID>
-    <OriginalText>Номенклатура властивостей</OriginalText>
+    <OriginalText>Властивості</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>-1</IndexOnLine>
     <StartOfStatement>21</StartOfStatement>
@@ -1870,7 +1870,7 @@
     <SourceScanID>92</SourceScanID>
     <ModuleName>_RootNavigator.cshtml</ModuleName>
     <LineNumber>5</LineNumber>
-    <ColumnNumber>31</ColumnNumber>
+    <ColumnNumber>37</ColumnNumber>
     <StringID>455</StringID>
     <OriginalText>Управління контентом</OriginalText>
     <IsHidden>false</IsHidden>
@@ -1879,7 +1879,7 @@
     <EndOfStatement>5</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>HTML Text (5,31)</CodeElement>
+    <CodeElement>HTML Text (5,37)</CodeElement>
     <RelativeLineNumber>-1</RelativeLineNumber>
     <NamedResource>Администрирование</NamedResource>
     <IsHiddenString>false</IsHiddenString>
@@ -27379,7 +27379,7 @@
     <LineNumber>8</LineNumber>
     <ColumnNumber>11</ColumnNumber>
     <StringID>660</StringID>
-    <OriginalText>Номенклатура споживчих властивостей</OriginalText>
+    <OriginalText>Номенклатура властивостей</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>-1</IndexOnLine>
     <StartOfStatement>8</StartOfStatement>
@@ -32776,7 +32776,7 @@
     <LineNumber>33</LineNumber>
     <ColumnNumber>99</ColumnNumber>
     <StringID>703</StringID>
-    <OriginalText>Номенклатура властивостей</OriginalText>
+    <OriginalText>Властивості</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>-1</IndexOnLine>
     <StartOfStatement>33</StartOfStatement>

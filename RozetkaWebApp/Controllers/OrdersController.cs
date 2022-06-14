@@ -108,7 +108,7 @@ namespace RozetkaWebApp.Controllers
                 var description = String.Join(",", cart.Select(s => s.Product.Label));
                 order.Description = description; 
                 order.Total = cart.Sum(x => x.LineTotal);  
-                _context.Add(order);
+                _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
 
                 foreach(var i in cart)

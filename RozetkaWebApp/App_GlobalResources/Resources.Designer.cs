@@ -268,7 +268,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AspNetUser.
+        ///   Looks up a localized string similar to Користувачі.
         /// </summary>
         public static string AspNetUser {
             get {

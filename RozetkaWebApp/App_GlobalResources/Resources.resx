@@ -153,8 +153,8 @@
     <value>ASPNETCORE_ENVIRONMENT</value>
   </data>
   <data name="AspNetUser" xml:space="preserve">
-    <value>AspNetUser</value>
-    <comment>Previous text: Користувач</comment>
+    <value>Користувачі</value>
+    <comment>Previous text: AspNetUser</comment>
   </data>
   <data name="AspNetUserRole" xml:space="preserve">
     <value>AspNetUserRole</value>

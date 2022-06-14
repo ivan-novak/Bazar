@@ -65,7 +65,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>214</StringID>
-    <Comment>Previous text: Користувач</Comment>
+    <Comment>Previous text: AspNetUser</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>217</StringID>
@@ -1215,7 +1215,7 @@
   <GeneralTexts>
     <StringID>214</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>AspNetUser</LanguageText>
+    <LanguageText>Користувачі</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>

@@ -7,12 +7,9 @@
     Html.RenderPartial((("_RootNavigator")));
 }
  
-
-
  <p><h4>@Resources.Список_порталов</h4></p>
        
-@* <p><a  class="btn btn-success" asp-action="Create" > Добавить новый </a>   </p>
-*@@{  
+@{  
     Html.RenderPartial((("_FilterNavigator")));
 }
 
@@ -42,6 +39,3 @@
     }
     </tbody>
 </table>
- @{
-     Html.RenderPartial((("_PageNavigator")));
- }

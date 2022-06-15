@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\API-help.htm" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.0.0" />
     <PackageReference Include="Azure.Identity" Version="1.4.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
@@ -45,6 +49,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Resource\" />
   </ItemGroup>
 
 </Project>

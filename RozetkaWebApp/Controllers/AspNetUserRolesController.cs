@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,11 +24,18 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: AspNetUserRoles
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string id, string Filter = null, int page = 0, int pageSize = 20)
         {
+            if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewData["Role"] = _context.AspNetRoles.Find(id);
-            var rozetkadbContext = _context.AspNetUserRoles.Where(a=>a.RoleId == id).Include(a => a.Role).Include(a => a.User);
-            return View(await rozetkadbContext.ToListAsync());
+            var rozetkadbContext = _context.AspNetUserRoles.Include(a => a.User).Where(a => a.RoleId == id);
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = rozetkadbContext.Where(x => Filter == null || x.User.UserName.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.User.UserName).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: AspNetUserRoles/Details/5

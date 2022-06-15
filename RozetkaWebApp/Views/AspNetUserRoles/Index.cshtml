@@ -6,11 +6,12 @@
     Html.RenderPartial(Resources._RootNavigator);
 }
 
-<p><h4>@Resources.Члены_группы@ViewBag.Role.Name"</h4></p>
+<p><h4>@Resources.Члены_группы@ViewBag.Role.Name</h4></p>
        
- <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Role.Id"> @Resources.Добавить_изображение </a>   </p>
-
-
+       
+@{  
+    Html.RenderPartial((("_FilterNavigator")));
+}
 
 <table class="table">
     <thead>

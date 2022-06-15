@@ -51,9 +51,18 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: AspNetUsers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
-            return View(await _context.AspNetUsers.ToListAsync());
+          //  return View(await _context.AspNetUsers.ToListAsync());
+
+
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = _context.AspNetUsers.Where(x => Filter == null || x.UserName.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.UserName).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: AspNetUsers/Details/5

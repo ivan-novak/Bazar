@@ -36,12 +36,18 @@ namespace RozetkaWebApp.Controllers
 
         // GET: Orders
         //  [Authorize(Policy = "Owner")]
-           public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.User = _context.AspNetUsers.Find(id);
-            var rozetkadbContext = _context.Orders.Where(x=>x.UserId==id).Include(o => o.User);
-            return View(await rozetkadbContext.ToListAsync());
+            var rozetkadbContext = _context.Orders.Include(a => a.User).Where(a => a.UserId == id);
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = rozetkadbContext.Where(x => Filter == null || x.Description.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Description).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: Orders/Details/5

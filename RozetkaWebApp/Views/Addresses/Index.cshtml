@@ -8,7 +8,9 @@
 
  <p><h4>@Resources.Список_адресов_доставки</h4></p>
 
- <p><a  class="btn btn-success" asp-action="Create" asp-route-id=@ViewBag.User.Id> @Resources.Добавить_изображение </a>   </p>
+@{  
+    Html.RenderPartial((("_FilterNavigator")));
+}
 
 <table class="table">
     <thead>

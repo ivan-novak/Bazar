@@ -226,7 +226,7 @@ namespace RozetkaWebApp.Controllers
         public async Task<ApiResult<iLineDetail>> OrderDetails(string orderMode = "Desc", string orderBy = "OrderDetailId", int page = 0, int pageSize = 50, long? orderId = null, long? orderDetailId = null)
         {
             orderBy = orderBy.ToUpper();
-            var query = _context.LineDetails.Select(x => x);
+            var query = _context.LineDetails.Select(x => x).Where(x=>x.OrderId != null);
             if (orderDetailId != null) query = query.Where(x => x.OrderDatailId == orderDetailId);
             if (orderId != null) query = query.Where(x => x.OrderId == orderId);
             if (orderBy == "ORDERID") query = query.OrderByDescending(x => x.OrderId);
@@ -435,6 +435,26 @@ namespace RozetkaWebApp.Controllers
             var values = await query.Select(x => x).ToListAsync();
             return new ApiResult<iLineDetail> { TotalCount = totalCount, Values = values };
         }
+
+        // GET: Portals
+        [HttpGet("[controller]/v1/users")]
+        [HttpGet("[controller]/v1/users/{Id}")]
+        public async Task<ApiResult<iAspNetUser>> Users(string orderBy = "Id", string orderMode = "Desc", int page = 0, int pageSize = 50, string searchTerm = null, string Id = null)
+        {
+            var query = _context.AspNetUsers.Select(x => x);
+            orderBy = orderBy.ToUpper();
+            if (Id != null) query = query.Where(x => x.Id == Id);
+            if (orderBy == "Email") query = query.OrderBy(x => x.Email);
+            else if (orderBy == "UserName") query = query.OrderBy(x => x.UserName);
+            else query = query.OrderBy(x => x.Id);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iAspNetUser> { TotalCount = totalCount, Values = values };
+        }
+
 
         public string CartId()
         {

@@ -1,151 +1,2078 @@
-﻿
-<h4>API</h4>
+﻿<div class="WordSection1">
 
-<table class="table">
-    <thead>
-         <tr> <th> Описание                                          </th> <th> Url                             </th><th> Параметры по умолчанию  </th>  </tr>
-    </thead>
-    <tbody> 
- @*         <tr><td> <h5>URL страниц администрироавния</h5> </td><td>   </td> <td>     </td> </tr>
- *@         
-        @*  <tr><td> <h6>Страницы изображения веб-сайта</h6> </td><td>   </td> <td>     </td></tr>
-          <tr><td> Управление списком рисунков веб-сайта </td><td> /RootImages   </td> <td>  -  </td></tr>
-          <tr><td> Добавление изображениея веб-сайта  </td><td> /RootImages/create   </td> <td>  -  </td></tr>
-          <tr><td> Редактирование изображения по его id   </td><td> /RootImages/edit/{id}  </td> <td>  -  </td></tr>
-          <tr><td> Удалание изображения сайта по его id  </td><td> /RootImages/delete/{id}  </td> <td>  -  </td></tr>
-          
-          <tr><td> <h6>Страницы порталов</h6> </td><td>   </td> <td>     </td></tr>
-          <tr><td> Управление списком порталов веб-сайта  </td><td> /portals   </td> <td>  -  </td></tr>
-          <tr><td> Добавление портала веб-сайта  </td><td> /portals/create   </td> <td>  -  </td></tr>
-          <tr><td> Редактирование портала по его id  </td><td> /portals/edit/{portalId}  </td> <td>  -  </td></tr>
-          <tr><td> Удалание портала по его id   </td><td> /portals/delete/portalId}  </td> <td>  -  </td></tr>
-          <tr><td> Детали портала по его id   </td><td> /portals/details/{portalId}  </td> <td>  -  </td></tr>
-
-          <tr><td> <h6>Страницы изображений портала</h6> </td><td>   </td> <td>     </td></tr>
-          <tr><td> Управление списком изображений портала </td><td> /portalImages/index/{portalid}  </td> <td>  -  </td></tr>
-          <tr><td> Добавление изображений портала  </td><td> /portalImages/create/{portalid}   </td> <td>  -  </td></tr>
-          <tr><td> Редактирование изображения портала   </td><td> /portalImages/edit/{imageId}  </td> <td>  -  </td></tr>
-          <tr><td> Удалание изображения портала  </td><td> /portalImages/delete/{imageId}  </td> <td>  -  </td></tr>
-
-           <tr><td> <h6>Страницы катологов </h6> </td><td>   </td> <td>     </td></tr>
-          <tr><td> Управление списком каталов портала  </td><td> /catalogs/{portalId}   </td> <td>  -  </td></tr>
-          <tr><td> Добавление каталога к порталу  </td><td> /catalogs/create(portalId)   </td> <td>  -  </td></tr>
-          <tr><td> Редактирование каталога по его id  </td><td> /catalogs/edit/{catalogId}  </td> <td>  -  </td></tr>
-          <tr><td> Удалание каталога по его id   </td><td> /catalogs/delete/{catalogId}  </td> <td>  -  </td></tr>
-          <tr><td> Детали каталога по его id   </td><td> /catalogs/details/{catalogId}  </td> <td>  -  </td></tr>
-
-          <tr><td> <h6>Страницы изображений каталога</h6> </td><td>   </td> <td>     </td></tr>
-          <tr><td> Управление списком изображений каталога </td><td> /catalogImages/index/{cataloglid}  </td> <td>  -  </td></tr>
-          <tr><td> Добавление изображений каталога  </td><td> /catalogImages/create/{cataloglid}   </td> <td>  -  </td></tr>
-          <tr><td> Редактирование изображения каталога   </td><td> /catalogImages/edit/{imageId}  </td> <td>  -  </td></tr>
-          <tr><td> Удалание изображения каталога  </td><td> /catalogImages/delete/{imageId}  </td> <td>  -  </td></tr>
-*@
-          
-          <tr><td> <h5>URL файлов рисунков</h5> </td><td>   </td> <td>     </td> </tr>
-          <tr><td> Получить рисунок    </td><td> <a href="/images/34" >/images/{id}</a> </td> <td>    </td></tr>
-          <tr><td> Получить рисунок веб сайта по названию рисунка </td><td><a href="/images/root/Logo" > /images/root/{label} </a>  </td> <td>    </td></tr>
-          <tr><td> Получить рисунок портала по названию рисунка </td><td><a href="/images/portals/1/MainLogo" >  /images/portals/{Id}/{label} </a>  </td> <td>    </td></tr>
-          <tr><td> Получить рисунок каталога по названию рисунка  </td><td><a href="/images/catalogs/1/BigLogo" >  /images/catalogs/{Id}/{label} </a>  </td> <td>    </td></tr>
-          <tr><td> Получить рисунок продукта по названию рисунка </td><td><a  href="/images/products/1/Main"    >/images/products/{Id}/{label}</a>  </td> <td>            </td></tr>
-          <tr><td> <h5>API для данных в формате JSON</h5> </td><td>   </td> <td>     </td> </tr>
-
-          <tr><td> <h6>Порталы</h6> </td><td>   </td> <td>     </td></tr>
-          <tr><td> Получить список порталов  </td><td> <a href="/api/v1/portals" rel="external"> /api/v1/portals</a> </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          <tr><td> Получить данные для портала </td><td> <a href="/api/v1/portals/1" > /api/v1/portals/{id} </a>   </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
-          <tr><td> Получить список каталогов портала</td><td>   <a href="/api/v1/portals/1/catalogs" > /api/v1/portals/{id}/catalogs </a>  </td> <td> orderBy="Id",orderMode="Desc",page=0,pageSize=50     </td></tr>
-          <tr><td> Получить список рисунков портала</td><td>    <a href="/api/v1/portals/1/images" > /api/v1/portals/{id}/images </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить данные рисунков портала по имени</td><td>    <a href="/api/v1/portals/1/images/MainLogo" > /api/v1/portals/{id}/images/{label} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить список просмотров для портала </td><td>  <a href="/api/v1/portals/1/views" >  /api/v1/portals/{id}/views </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50        </td></tr>
-             
-          <tr><td> <h6>Каталоги</h6> </td><td>   </td> <td>     </td></tr>             
-          <tr><td> Получить список каталогов  </td><td>  <a href="/api/v1/catalogs" > /api/v1/catalogs </a>   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          <tr><td> Получить данные каталога </td><td>  <a href="/api/v1/catalogs/1" > /api/v1/catalogs/{id} </a>   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50            </td></tr>
-          <tr><td> Получить список продуктов каталога</td><td>  <a href="/api/v1/catalogs/1/products" > /api/v1/catalogs/{id}/products </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить список рисунков каталога </td><td>  <a href="/api/v1/catalogs/1/images" > /api/v1/catalogs/{id}/images </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить рисунок каталога по имени</td><td>  <a href="/api/v1/catalogs/1/images/BigLogo" > /api/v1/catalogs/{id}/images/{label} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr> 
-          <tr><td> Получить список свойств каталога</td><td> <a href="/api/v1/catalogs/1/properties" > /api/v1/catalogs/{id}/properties </a> </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50    </td></tr>
-          <tr><td> Получить список фильтров каталога </td><td>  <a href="/api/v1/catalogs/1/filters" >  /api/v1/catalogs/{id}/filters </a> </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          <tr><td> Получить список просмотров каталога </td><td>  <a href="/api/v1/catalogs/1/views" >  /api/v1/catalogs/{id}/views </a> </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          
-          <tr><td> <h6>  Продукты</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список продуктов  </td><td> <a href="/api/v1/products" > /api/v1/products </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для продукта </td><td> <a href="/api/v1/products/1" > /api/v1/products/{id} </a>  </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
-          <tr><td> Получить список рисунков продукта </td><td>   <a href="/api/v1/products/1/images" > /api/v1/products/{id}/images </a> </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          <tr><td> Получить данные рисунка продукта по названию </td><td> <a href="/api/v1/products/1/images/main" >   /api/v1/products/{id}/images/{label} </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список характеристик продукта</td><td> <a href="/api/v1/products/1/characteristics" > /api/v1/products/{id}/characteristics </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список отзывов</td><td> <a href="/api/v1/products/1/Comments" > /api/v1/products/{id}/comments </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
- 
-          <tr><td> <h6>   Акций</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список акций  </td><td> <a href="/api/v1/promotions" > /api/v1/promotions </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для акции </td><td>   <a href="/api/v1/promotions/1" > /api/v1/promotions/{id} </a>    </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
-          <tr><td> Получить список продуктов акций </td><td> <a href="/api/v1/promotions/1/products" >   /api/v1/promotions/{id}/products </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-         
-          <tr><td> <h6>   Ордера</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список ордеров  </td><td> <a href="/api/v1/orders" > /api/v1/orders </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для ордера </td><td>   <a href="/api/v1/orders/5" > /api/v1/orders/{id} </a>    </td> <td>    orderBy="Id",orderMode="Desc",page=0,pageSize=50         </td></tr>
-          <tr><td> Получить список деталей ордера</td><td> <a href="/api/v1/orders/5/details" >   /api/v1/orders/{id}/details </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-
-          <tr><td> <h6>  Пользователи</h6> </td><td>   </td> <td>     </td></tr>  
-          <tr><td> Получить список пользователей </td><td> <a href="/api/v1/users" >   /api/v1/users </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить данные пользователя </td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc" >   /api/v1/users/{id} </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список отзывов пользователя</td><td> <a href="/api/v1/users/1/comments" > /api/v1/users/{id}/comments </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список ордеров пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/orders" > /api/v1/users/{id}/orders </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список адресов пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/addresses" > /api/v1/users/{id}/addresses </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список контактов пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/contacts" > /api/v1/users/{id}/contacts </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список кошельков пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/wallettes" > /api/v1/users/{id}/wallettes</a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-          <tr><td> Получить список ролей пользователя</td><td> <a href="/api/v1/users/1b3fe0f9-5ff4-401d-96e5-3a6c5bb8b8bc/roles" > /api/v1/users/{id}/roles </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50   </td></tr>
-  
-          <tr><td> <h6>   Свойтва продуктов</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список свойтв  </td><td> <a href="/api/v1/properties" > /api/v1/properties </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для свойства  </td><td>   <a href="/api/v1/properties/1" > /api/v1/properties/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-          <tr><td> Получить список фильтров для свойства </td><td> <a href="/api/v1/properties/3/filters" >   /api/v1/properties/{id}/filters </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-
-          <tr><td> <h6>  Характеристики (значения свойств) продуктов</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список характеристик  </td><td> <a href="/api/v1/characteristics" > /api/v1/api/v1/characteristics </a>   </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50  </td></tr>
-          <tr><td> Получить данные для характеристики  </td><td> <a href="/api/v1/characteristics/2" > /api/v1/api/v1/characteristics/{id} </a>  </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50          </td></tr>
-
-          <tr><td> <h6>   Свойтва контактов</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список контактов  </td><td> <a href="/api/v1/contacts" > /api/v1/contacts </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для контакта  </td><td>   <a href="/api/v1/contacts/1" > /api/v1/contacts/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-
-          <tr><td> <h6>   Свойтва адрессов</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список адрессов  </td><td> <a href="/api/v1/addresses" > /api/v1/addresses </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для адресса  </td><td>   <a href="/api/v1/addresses/1" > /api/v1/addresses/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-
-          <tr><td> <h6>   Свойтва кошельков</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список кошельков  </td><td> <a href="/api/v1/walletts" > /api/v1/walletts </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для кошелька  </td><td>   <a href="/api/v1/walletts/2" > /api/v1/walletts/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-
-          <tr><td> <h6>   Свойтва комментариев</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список комментариев  </td><td> <a href="/api/v1/comments" > /api/v1/comments </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для комментария  </td><td>   <a href="/api/v1/comments/1" > /api/v1/comments/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-
-            <tr><td> <h6>   Свойтва продукта</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список продуктов  </td><td> <a href="/api/v1/products" > /api/v1/products </a>   </td> <td>   orderBy="Id",orderMode="Desc",page=0,pageSize=50 </td></tr>
-          <tr><td> Получить данные для продукта  </td><td>   <a href="/api/v1/products/1" > /api/v1/products/{id} </a>    </td> <td>  orderBy="Id",orderMode="Desc",page=0,pageSize=50           </td></tr>
-
-           
- @*         <tr><td> <h6>  Просмотры продуктов</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список просмотров  </td><td> <a href="/api/v1/views" >  /api/v1/views </a>  </td> <td>  page=0,pageSize=50  </td></tr>  
-                        
-          <tr><td> <h6>  Просмотры фильтров</h6> </td><td>   </td> <td>     </td></tr>      
-          <tr><td> Получить список фильтров  </td><td> <a href="/api/v1/filters" >  /api/v1/filters </a>  </td> <td>  page=0,pageSize=50  </td></tr> 
-       
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>   
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>   
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>   
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>
-          <tr><td>  </td><td>   </td> <td>     </td></tr>   
-          <tr><td>  </td><td>   </td> <td>     </td></tr>*@
-     </tbody>
-</table>
+<table class="MsoTable15Grid2Accent3" border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse;border:none">
+ <tbody><tr style="height:17.15pt">
+  <td width="668" valign="top" style="width:501.25pt;border:none;border-bottom:
+  solid #C9C9C9 1.5pt;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:17.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#333F50">Опис</span></b></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border:none;border-bottom:solid #C9C9C9 1.5pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt;height:17.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#333F50">Заголовок</span></b></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border:none;border-bottom:solid #C9C9C9 1.5pt;
+  background:white;padding:0cm 5.4pt 0cm 5.4pt;height:17.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#333F50">Метод</span></b></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.5pt;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:17.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#333F50">Params , body {}</span></b></p>
+  </td>
+ </tr>
  <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#44546A">URL-адреса файлів зображень</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати
+  зображення</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/images/34" target="_blank">/images/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримайте
+  зображення веб-сайту за назвою зображення</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/images/root/Logo" target="_blank">/images/root/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати
+  зображення порталу за назвою картинки</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/images/portals/1/Advertising-0" target="_blank">/images/portals/{Id}/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання
+  зображення каталогу за назвою зображення</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/images/catalogs/1/Banner" target="_blank">/images/catalogs/{Id}/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання
+  креслення продукту за назвою зображення</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/images/products/1/View-0" target="_blank">/images/products/{Id}/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Портали</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  порталів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/portals" target="_blank">/api/v1/portals</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання даних
+  для порталу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/portals/1" target="_blank">/api/v1/portals/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  каталогів порталу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/portals/1/catalogs" target="_blank">/api/v1/portals/{id}/catalogs</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  зображень порталу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/portals/1/images" target="_blank">/api/v1/portals/{id}/images</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання даних
+  зображення порталу за іменем</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/portals/1/images/Advertising-0" target="_blank">/api/v1/portals/{id}/images/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  &nbsp;оглядів для порталу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/portals/1/views" target="_blank">/api/v1/portals/{id}/views</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Каталоги</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  каталогів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/catalogs" target="_blank">/api/v1/catalogs</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання даних
+  каталогу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/catalogs/1" target="_blank">/api/v1/catalogs/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  продуктів каталогу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/catalogs/1/products" target="_blank">/api/v1/catalogs/{id}/products</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr style="height:16.3pt">
+  <td width="668" rowspan="3" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.3pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Список продуктів
+  каталогу фільтрів</span></p>
+  </td>
+  <td width="346" rowspan="3" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:16.3pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/catalogs/1/products" target="_blank">/api/v1/catalogs/{id}/products</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:16.3pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT </span></p>
+  </td>
+  <td width="756" rowspan="3" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:16.3pt">
+  <p class="MsoNormal" style="margin-bottom:12.0pt;line-height:normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50<br>
+  [ {"propertyId": "int", "value":
+  "string"} ]</span></p>
+  </td>
+ </tr>
+ <tr style="height:1.15pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:1.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+ </tr>
+ <tr style="height:1.1pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.1pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  зображень каталогу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/catalogs/1/images" target="_blank">/api/v1/catalogs/{id}/images</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання
+  зображення каталогу за назвою</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/catalogs/1/images/Banner" target="_blank">/api/v1/catalogs/{id}/images/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  властивостей каталогу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/catalogs/1/properties" target="_blank">/api/v1/catalogs/{id}/properties</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  фільтрів каталогу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/catalogs/1/filters" target="_blank">/api/v1/catalogs/{id}/filters</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  оглядів каталогу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/catalogs/1/views" target="_blank">/api/v1/catalogs/{id}/views</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Товари</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  товарів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/products" target="_blank">/api/v1/products</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання даних
+  для продукту</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/products/1" target="_blank">/api/v1/products/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  зображень продуктів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/products/1/images" target="_blank">/api/v1/products/{id}/images</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання даних
+  про зображення продукту за назвою</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/products/1/images/View-0" target="_blank">/api/v1/products/{id}/images/{label}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання списку
+  функцій продукту</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/products/1/characteristics" target="_blank">/api/v1/products/{id}/characteristics</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  відгуків</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/products/1/Comments" target="_blank">/api/v1/products/{id}/comments</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Промоакції</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  промоакцій</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/promotions" target="_blank">/api/v1/promotions</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання даних
+  для промоакцій</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/promotions/1" target="_blank">/api/v1/promotions/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  акційних товарів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/promotions/1/products" target="_blank">/api/v1/promotions/{id}/products</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Номенклатура властивостей </span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання
+  номенклатури властивостей продуктів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/properties" target="_blank">/api/v1/properties</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати даних
+  для властивості продуктів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/properties/1" target="_blank">/api/v1/properties/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  значень фільтрів для властивості продуктів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/properties/3/filters" target="_blank">/api/v1/properties/{id}/filters</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Характеристики продукту (значення властивостей)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати список
+  характеристик товарів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/characteristics" target="_blank">/api/v1/api/v1/characteristics</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати
+  інформацію для характеристики товарів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:black"><a href="/api/v1/characteristics/2" target="_blank">/api/v1/api/v1/characteristics/{id}</a></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="RU" style="font-size:12.0pt;
+  color:#212529">Адрес</span></b><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">и користувача</span></b></p>
+  </td>
+ </tr>
+ <tr style="height:18.6pt">
+  <td width="668" rowspan="3" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:18.6pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створити,
+  оновити адресу</span></p>
+  </td>
+  <td width="346" rowspan="3" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:18.6pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/address/">/api/v1/account/address/</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:18.6pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" rowspan="3" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;
+  height:18.6pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{<br>
+  "AddressId" : 0,<br>
+  "AddressType" : "string",<br>
+  "AddressLine1" : "string",<br>
+  "AddressLine2" : "string",<br>
+  "AddressLine3" : "string",<br>
+  "City" : "string",<br>
+  "PostalCode" "string",<br>
+  "Country" : "string"</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">}</span></p>
+  </td>
+ </tr>
+ <tr style="height:19.5pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:19.5pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+ </tr>
+ <tr style="height:4.0pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:4.0pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Видалити адресу</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/address/0">/api/v1/account/address/{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#C00000;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">DELETE</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Оптимати перелік
+  адрес</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/address/">/api/v1/account/address/</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Оптимати вказану
+  адресу </span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/address/0">/api/v1/account/address/{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr style="height:19.15pt">
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;
+  height:19.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Коментарі користувача</span></b></p>
+  </td>
+ </tr>
+ <tr style="height:19.15pt">
+  <td width="668" rowspan="3" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створити,
+  оновити коментар</span></p>
+  </td>
+  <td width="346" rowspan="3" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/comments">/api/v1/account/comments</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" rowspan="3" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"CommentId
+  " : 0,</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"ProductId
+  " : "string",</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"Text
+  " : "string",</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"Date
+  " : 20/12/2022,</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"Score
+  " : 5,</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"ImageId
+  " : 0</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">}</span></p>
+  </td>
+ </tr>
+ <tr style="height:19.3pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:19.3pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+ </tr>
+ <tr style="height:3.25pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:3.25pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Видалити
+  коментар</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/comments/0">/api/v1/account/comments/{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#C00000;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">DELETE</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати перелік
+  коментарів</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/comments">/api/v1/account/comments</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати
+  вказаний коментар</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/comments/0">/api/v1/account/comments/{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr style="height:9.5pt">
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:9.5pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Контакти користувача</span></b></p>
+  </td>
+ </tr>
+ <tr style="height:9.5pt">
+  <td width="668" rowspan="3" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:9.5pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створити,
+  оновити контакт</span></p>
+  </td>
+  <td width="346" rowspan="3" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:9.5pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/contacts">/api/v1/account/contacts</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:9.5pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" rowspan="3" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;
+  height:9.5pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{</span></p>
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">"ContactId"
+  : 0,<br>
+  "ContactType" : "string",<br>
+  "FullName" : "string",<br>
+  "DisplayName" : "string",<br>
+  "Title" : "string",<br>
+  "Salutation" : "string",<br>
+  "Attention" : "string",<br>
+  "FirstName" : "string",<br>
+  "MidName" : "string",<br>
+  "LastName" : "string",<br>
+  "Email " : "string",<br>
+  "WebSite" : "string",<br>
+  "Fax" : "string",<br>
+  "FaxType" : "string",<br>
+  "Phone1" : "string",<br>
+  "Phone1Type" : "string",<br>
+  "Phone2" : "string",<br>
+  "Phone2Type" : "string",<br>
+  "Phone3" : "string",<br>
+  "Phone3Type" : "string",<br>
+  "DefAddressId" : "string",<br>
+  "AssignDate" : "string"<br>
+  }</span></p>
+  </td>
+ </tr>
+ <tr style="height:9.5pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:9.5pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+ </tr>
+ <tr style="height:9.5pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:9.5pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Видалити контакт</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/contacts/0">/api/v1/account/contacts{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#C00000;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">DELETE</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати перелік
+  контактів </span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/contacts">/api/v1/account/contacts</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати
+  вказаний контакт</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/contacts/0">/api/v1/account/contacts{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Гаманьці користувача</span></b></p>
+  </td>
+ </tr>
+ <tr style="height:2.75pt">
+  <td width="668" rowspan="3" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:2.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створити,
+  оновити&nbsp; гаманець</span></p>
+  </td>
+  <td width="346" rowspan="3" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:2.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/wallets">/api/v1/account/wallets</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:2.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" rowspan="3" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{<br>
+  "WalletId" : "sting",<br>
+  "CardNumber" : "sting",<br>
+  "ExpiryDate" : 28/12/2022,<br>
+  "Cardholder" : "sting",<br>
+  "CardType" : "sting"<br>
+  }</span></p>
+  </td>
+ </tr>
+ <tr style="height:2.75pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:2.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+ </tr>
+ <tr style="height:2.75pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:2.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Видалити
+  гаманець користувача</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/wallets/0">/api/v1/account/wallets/{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#C00000;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">DELETE</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Оптимати перелік
+  гаманців користувача</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/wallets">/api/v1/account/wallets</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Оптимати
+  вказаний гаманець користувача</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/wallets/0">/api/v1/account/wallets/{d}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Обліковій запис користувача</span></b></p>
+  </td>
+ </tr>
+ <tr style="height:3.75pt">
+  <td width="668" rowspan="2" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Реєстрація
+  нового облікового запису</span></p>
+  </td>
+  <td width="346" rowspan="2" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/signon">/api/v1/account/signon</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+  <td width="756" rowspan="2" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;
+  height:3.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{<br>
+  "Email" : "string",<br>
+  "UserName" : "string",<br>
+  "Password" : "string",<br>
+  "PhoneNumber" : "string",<br>
+  "TwoFactorEnabled": false<br>
+  }</span></p>
+  </td>
+ </tr>
+ <tr style="height:3.75pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style="height:2.65pt">
+  <td width="668" rowspan="2" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:2.65pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Вхід користувача</span></p>
+  </td>
+  <td width="346" rowspan="2" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:2.65pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/login">/api/v1/account/login</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2F5496;padding:0cm 5.4pt 0cm 5.4pt;height:2.65pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+  <td width="756" rowspan="2" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;
+  height:2.65pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{ <br>
+  "Email" : "string", <br>
+  "Password" : "string", <br>
+  "RememberMe": true <br>
+  }</span></p>
+  </td>
+ </tr>
+ <tr style="height:2.6pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:2.6pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style="height:3.75pt">
+  <td width="668" rowspan="2" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створити
+  обліковий запису користувача</span></p>
+  </td>
+  <td width="346" rowspan="2" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/update">/api/v1/account/update</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" rowspan="2" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;
+  height:3.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">{<br>
+  "Email" : "string",<br>
+  "UserName" : "string",<br>
+  "Password" : "string",<br>
+  "PhoneNumber" : "string",<br>
+  "TwoFactorEnabled": false<br>
+  }</span></p>
+  </td>
+ </tr>
+ <tr style="height:3.75pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt;height:3.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Вихід
+  користувача </span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/logout">/api/v1/account/logout</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Видалення
+  облікового запису користувача </span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/signoff">/api/v1/account/signoff</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#C00000;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">DELETE</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt"></td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><b><span lang="UK" style="font-size:12.0pt;
+  color:#212529">Кошик користувача</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання вмісту
+  кошика для покупок користувача</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/cart/details">/api/v1/account/cart/details</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">orderBy="Id",
+  orderMode="Desc", page=0, pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримання
+  вказаний вмісту кошика користувача</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/cart/details/0">/api/v1/account/cart/details/{Id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style="height:1.75pt">
+  <td width="668" rowspan="3" valign="top" style="width:501.25pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створення,
+  оновлення товару в кошику</span></p>
+  </td>
+  <td width="346" rowspan="3" valign="top" style="width:259.7pt;border-top:none;
+  border-left:none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.75pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/cart" target="_blank">/api/v1/account/cart/</a>details/</span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt;height:1.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST </span></p>
+  </td>
+  <td width="756" rowspan="3" valign="top" style="width:567.15pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:1.75pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%;
+  color:#212529">{ <br>
+  "ProductId" : "string", <br>
+  "Quantities" : 10 <br>
+  }</span></p>
+  </td>
+ </tr>
+ <tr style="height:1.75pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#2E74B5;padding:0cm 5.4pt 0cm 5.4pt;height:1.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">PUT</span></p>
+  </td>
+ </tr>
+ <tr style="height:1.75pt">
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:1.75pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Створення,
+  оновлення, видалення товару в кошику</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/cart" target="_blank">/api/v1/account/cart/</a>details/{id}</span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#C00000;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">DELETE</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%;
+  color:#212529">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Замовити товари
+  з кошика</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/order/">/api/v1/account/order/</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#538135;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#E7E6E6">POST</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="1843" colspan="4" valign="top" style="width:1382.25pt;border:none;
+  border-bottom:solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b><span lang="UK" style="font-size:12.0pt;line-height:105%;color:#212529">Замовлення
+  користувача</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати перелік
+  замовлень </span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/orders/" target="_blank">/api/v1/account/orders/</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%;
+  color:#212529">orderBy="Id", orderMode="Desc", page=0,
+  pageSize=50</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати
+  інформацію про замовлення</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/orders/10" target="_blank">/api/v1/account/orders/{id}</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;background:#EDEDED;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="668" valign="top" style="width:501.25pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span lang="UK" style="font-size:12.0pt;color:#212529">Отримати деталі
+  замовлень</span></p>
+  </td>
+  <td width="346" valign="top" style="width:259.7pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span class="MsoHyperlink"><span lang="UK" style="font-size:12.0pt"><a href="/api/v1/account/orders/10%7d/details" target="_blank">/api/v1/account/orders/{id}/details</a></span></span></p>
+  </td>
+  <td width="72" valign="top" style="width:54.15pt;border-top:none;border-left:
+  none;border-bottom:solid #C9C9C9 1.0pt;border-right:solid #C9C9C9 1.0pt;
+  background:#FFD966;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal"><span lang="UK" style="font-size:12.0pt;
+  color:#212529">GET</span></p>
+  </td>
+  <td width="756" valign="top" style="width:567.15pt;border:none;border-bottom:
+  solid #C9C9C9 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><span lang="UK" style="font-size:12.0pt;line-height:105%;
+  color:#212529">orderBy="Id", orderMode="Desc", page=0,
+  pageSize=50</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span lang="UK" style="font-size:14.0pt;line-height:105%;
+color:white">&nbsp;</span></p>
+
+</div>

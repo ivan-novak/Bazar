@@ -24,11 +24,18 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Promotions
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
+            
             var applicationDbContext = _context.Promotions.Include(p => p.Image);
-            return View(await applicationDbContext.ToListAsync());
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
+
 
         // GET: Promotions/Details/5
         public async Task<IActionResult> Details(long? id)

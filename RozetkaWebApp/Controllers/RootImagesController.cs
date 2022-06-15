@@ -24,10 +24,16 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: RootImages
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
             var applicationDbContext = _context.RootImages.Include(r => r.Image);
-            return View(await applicationDbContext.ToListAsync());
+            
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: RootImages/Details/5

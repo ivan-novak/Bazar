@@ -25,15 +25,16 @@ namespace RozetkaWebApp.Controllers
         public readonly SignInManager<IdentityUser> _signInManager;
 
 
-        public AccountController(RozetkadbContext context, UserManager<IdentityUser> userManager)
+        public AccountController(RozetkadbContext context, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
             _context = context;
+            _signInManager = signInManager;
         }
 
 
-        [HttpPost("api/v1/users/{Id}/address/")]
-        public async Task<ActionResult<iAddress>> PostAddress(string Id, [FromBody] Address address)
+        [HttpPost("api/v1/account/address/")]
+        public async Task<ActionResult<iAddress>> PostAddress([FromBody] Address address)
         {
             var newItem = new Address
             {
@@ -41,7 +42,7 @@ namespace RozetkaWebApp.Controllers
                 AddressLine1 = address.AddressLine1,
                 AddressLine2 = address.AddressLine2,
                 AddressLine3 = address.AddressLine3,
-                UserId = Id,
+                UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier),
                 City = address.City,
                 State = address.State,
                 PostalCode = address.PostalCode,
@@ -53,16 +54,17 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpPut("api/v1/users/{Id}/Address/")]
-        public async Task<ActionResult> PutAddress(string Id, [FromBody] Address address)
+        [HttpPut("api/v1/account/Address/")]
+        public async Task<ActionResult> PutAddress([FromBody] Address address)
         {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Addresses.FindAsync(address.AddressId);
             if (newItem == null || newItem.UserId != Id)   return NotFound();  
             newItem.AddressType = address.AddressType?.ToString();
             newItem.AddressLine1 = address.AddressLine1?.ToString();
             newItem.AddressLine2 = address.AddressLine2?.ToString();
             newItem.AddressLine3 = address.AddressLine3?.ToString();  
-            newItem.UserId = Id?.ToString();
+            newItem.UserId = Id;
             newItem.City = address.City?.ToString();      
             newItem.State = address.State?.ToString();        
             newItem.PostalCode = address.PostalCode?.ToString();       
@@ -72,18 +74,40 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpDelete("api/v1/users/{Id}/Address/")]
-        public async Task<IActionResult> DeleteAddress(string Id,  Address address)
+        [HttpDelete("api/v1/account/Address/{Id}")]
+        public async Task<IActionResult> DeleteAddress(long Id)
         {
-            var newItem = await _context.Addresses.FindAsync(address.AddressId);
-            if (newItem == null || newItem.UserId != Id) return NotFound();
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.Addresses.FindAsync(Id);
+            if (newItem == null || newItem.UserId != user_Id) return NotFound();
             _context.Addresses.Remove(newItem);
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
+
+        [HttpGet("api/v1/account/Address/")]
+        [HttpGet("api/v1/account/Address/{Id}")]
+        public async Task<ApiResult<iAddress>> Addresses(string orderMode = "Desc", string orderBy = "addressId", int page = 0, int pageSize = 50, long? Id = null)
+        {
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            orderBy = orderBy.ToUpper();
+            var query = _context.Addresses.Select(x => x);
+            if (Id != null) query = query.Where(x => x.AddressId == Id);
+            if (userId != null) query = query.Where(x => x.UserId == userId);
+            if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else if (orderBy == "ADDRESSTYPE") query = query.OrderByDescending(x => x.AddressType);
+            else query = query.OrderByDescending(x => x.AddressId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iAddress> { TotalCount = totalCount, Values = values };
+        }
+
+
         [HttpPost("api/v1/users/{Id}/Contact/")]
-        public async Task<ActionResult<iContact>> PostContact(string Id, [FromBody] Contact contact)
+        public async Task<ActionResult<iContact>> PostContact([FromBody] Contact contact)
         {
             var newItem = new Contact
             {
@@ -92,7 +116,7 @@ namespace RozetkaWebApp.Controllers
                 FullName = contact.FullName,
                 Title = contact.Title,
                 Salutation = contact.Salutation,
-                UserId = Id,
+                UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier),
                 Attention = contact.Attention,
                 FirstName = contact.FirstName,
                 LastName = contact.LastName,
@@ -116,9 +140,10 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpPut("api/v1/users/{Id}/Contact/")]
-        public async Task<ActionResult> PutContact(string Id, [FromBody] Contact contact)
+        [HttpPut("api/v1/account/Contact/")]
+        public async Task<ActionResult> PutContact([FromBody] Contact contact)
         {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Contacts.FindAsync(contact.ContactId);
             if (newItem == null || newItem.UserId != Id)  return NotFound();
             newItem.ContactType = contact.ContactType?.ToString(); 
@@ -146,20 +171,41 @@ namespace RozetkaWebApp.Controllers
             return NoContent();
         }
 
-        [HttpDelete("api/v1/users/{Id}/Contact/")]
-        public async Task<IActionResult> DeleteContact(string Id, Contact Contact)
+        [HttpDelete("api/v1/account/Contact/")]
+        public async Task<IActionResult> DeleteContact(long Id)
         {
-            var newItem = await _context.Contacts.FindAsync(Contact.ContactId);
-            if (newItem == null || newItem.UserId != Id) return NotFound();
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.Contacts.FindAsync(Id);
+            if (newItem == null || newItem.UserId != userId) return NotFound();
             _context.Contacts.Remove(newItem);
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
-
-        [HttpPost("api/v1/users/{Id}/Wallett/")]
-        public async Task<ActionResult<iWallett>> PostWallett(string Id, [FromBody] Wallett wallet)
+        [HttpGet("api/v1/account/contacts")]
+        [HttpGet("api/v1/account/contacts/{Id}")]
+        public async Task<ApiResult<iContact>> Contacts(string orderMode = "Desc", string orderBy = "ContactId", int page = 0, int pageSize = 50,  long? Id = null)
         {
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            orderBy = orderBy.ToUpper();
+            var query = _context.Contacts.Select(x => x);
+            if (Id != null) query = query.Where(x => x.ContactId == Id);
+            query = query.Where(x => x.UserId == userId);
+            if (orderBy == "EMAIL") query = query.OrderByDescending(x => x.Email);
+            else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else query = query.OrderByDescending(x => x.ContactId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iContact> { TotalCount = totalCount, Values = values };
+        }
+
+
+        [HttpPost("api/v1/account/wallets/")]
+        public async Task<ActionResult<iWallett>> PostWallett([FromBody] Wallett wallet)
+        {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = new Wallett
             {
                 CardType = wallet.CardType,
@@ -174,9 +220,10 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpPut("api/v1/users/{Id}/Wallett/")]
-        public async Task<ActionResult> PutWallett(string Id, [FromBody] Wallett Wallett)
+        [HttpPut("api/v1/account/wallets/")]
+        public async Task<ActionResult> PutWallett([FromBody] Wallett Wallett)
         {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Walletts.FindAsync(Wallett.WalletId);
             if (newItem == null || newItem.UserId != Id) return NotFound();
             newItem.CardType = Wallett.CardType?.ToString();
@@ -189,18 +236,39 @@ namespace RozetkaWebApp.Controllers
         }
 
 
-        [HttpDelete("api/v1/users/{Id}/Wallett/")]
-        public async Task<IActionResult> DeleteWallett(string Id, Wallett Wallett)
+        [HttpDelete("api/v1/account/wallets/{Id}")]
+        public async Task<IActionResult> DeleteWallett(long Id)
         {
-            var newItem = await _context.Walletts.FindAsync(Wallett.WalletId);
-            if (newItem == null || newItem.UserId != Id) return NotFound();
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.Walletts.FindAsync(Id);
+            if (newItem == null || newItem.UserId != userId) return NotFound();
             _context.Walletts.Remove(newItem);
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
-        [HttpPost("api/v1/users/{Id}/Comment/")]
-        public async Task<ActionResult<iComment>> PostComment(string Id, [FromBody] Comment Comment)
+
+        [HttpGet("api/v1/account/wallets/")]
+        [HttpGet("api/v1/account/wallets/{Id}")]
+        public async Task<ApiResult<iWallett>> Wallettes(string orderMode = "Desc", string orderBy = "WalletteId", int page = 0, int pageSize = 50,  long? Id = null)
+        {
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            orderBy = orderBy.ToUpper();
+            var query = _context.Walletts.Select(x => x);
+            if (Id != null) query = query.Where(x => x.WalletId == Id);
+            query = query.Where(x => x.UserId == userId);
+            if (orderBy == "CARDTYPE") query = query.OrderByDescending(x => x.CardType);
+            else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else query = query.OrderByDescending(x => x.WalletId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iWallett> { TotalCount = totalCount, Values = values };
+        }
+
+        [HttpPost("api/v1/account/comments/")]
+        public async Task<ActionResult<iComment>> PostComment( [FromBody] Comment Comment)
         {
             var newItem = new Comment
             {
@@ -209,111 +277,63 @@ namespace RozetkaWebApp.Controllers
                 Date = Comment.Date,
                 Score = Comment.Score,
                 ImageId = Comment.ImageId,
-                UserId = Id
-            };
+                UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)
+        };
             _context.Comments.Add(newItem);
             await _context.SaveChangesAsync();
             return newItem;
         }
 
 
-        [HttpPut("api/v1/users/{Id}/Comment/")]
-        public async Task<ActionResult> PutComment(string Id, [FromBody] Comment Comment)
+        [HttpPut("api/v1/account/comments/")]
+        public async Task<ActionResult> PutComment([FromBody] Comment Comment)
         {
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Comments.FindAsync(Comment.CommentId);
-            if (newItem == null || newItem.UserId != Id)  return NotFound();
+            if (newItem == null || newItem.UserId != userId)  return NotFound();
             newItem.ProductId = Comment.ProductId;
             newItem.Text = Comment.Text?.ToString();
             newItem.Date = Comment.Date;
             newItem.Score = Comment.Score;
             newItem.ImageId = Comment.ImageId;
-            newItem.UserId = Id;
+            newItem.UserId = userId;
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
 
-        [HttpDelete("api/v1/users/{Id}/Comment/")]
-        public async Task<IActionResult> DeleteComment(string Id, Comment Comment)
+        [HttpDelete("api/v1/account/comments/{Id}")]
+        public async Task<IActionResult> DeleteComment(long Id)
         {
-            var newItem = await _context.Comments.FindAsync(Comment.CommentId);
-            if (newItem == null || newItem.UserId != Id) return NotFound();
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.Comments.FindAsync(Id);
+            if (newItem == null || newItem.UserId != userId) return NotFound();
             _context.Comments.Remove(newItem);
             await _context.SaveChangesAsync();
             return NoContent();
         }
 
-
-        [HttpPost("api/v1/users/{Id}/LineDetail/")]
-        public async Task<ActionResult<iLineDetail>> PostLineDetail(string Id, [FromBody] LineDetail LineDetail)
+        [HttpGet("api/v1/account/comments/")]
+        [HttpGet("api/v1/account/comments/{Id}")]
+        public async Task<ApiResult<iComment>> Comments(string orderMode = "Desc", string orderBy = "CommentId", int page = 0, int pageSize = 50, long? Id = null, long? productId = null)
         {
-            var newItem = new LineDetail
-            {
-                ProductId = LineDetail.ProductId,
-                CartId = CartId(),
-                Quantities = LineDetail.Quantities,
-                UnitCost = _context.Products.Find(LineDetail.ProductId).Price,
-                CreateDate = DateTime.Now,
-                UserId = Id
-            };
-            _context.LineDetails.Add(newItem);
-            await _context.SaveChangesAsync();
-            return newItem;
+            var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            orderBy = orderBy.ToUpper();
+            var query = _context.Comments.Select(x => x);
+            if (Id != null) query = query.Where(x => x.CommentId == Id);
+            if (productId != null) query = query.Where(x => x.ProductId == productId);
+            query = query.Where(x => x.UserId == userId);
+            if (orderBy == "PRODUCTID") query = query.OrderByDescending(x => x.ProductId);
+            else if (orderBy == "SCORE") query = query.OrderByDescending(x => x.Score);
+            else if (orderBy == "USERID") query = query.OrderByDescending(x => x.UserId);
+            else query = query.OrderByDescending(x => x.CommentId);
+            if (orderMode.ToUpper() == "ASC") query = query.Reverse();
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iComment> { TotalCount = totalCount, Values = values };
         }
 
-
-        [HttpPut("api/v1/users/{Id}/LineDetail/")]
-        public async Task<ActionResult> PutLineDetail(string Id, [FromBody] LineDetail LineDetail)
-        {
-            var newItem = await _context.LineDetails.FindAsync(LineDetail.OrderDatailId);
-            if (newItem == null || newItem.UserId != Id) return NotFound();
-            newItem.ProductId = LineDetail.ProductId;
-            newItem.Quantities = LineDetail.Quantities;
-            newItem.UnitCost = _context.Products.Find(LineDetail.ProductId).Price;
-            newItem.UserId = Id;
-            await _context.SaveChangesAsync();
-            return NoContent();
-        }
-
-
-        [HttpDelete("api/v1/users/{Id}/LineDetail/")]
-        public async Task<IActionResult> DeleteLineDetail(string Id, LineDetail LineDetail)
-        {
-            var newItem = await _context.LineDetails.FindAsync(LineDetail.OrderDatailId);
-            if (newItem == null || newItem.UserId != Id) return NotFound();
-            _context.LineDetails.Remove(newItem);
-            await _context.SaveChangesAsync();
-            return NoContent();
-        }
-
-        [HttpPost("api/v1/users/{Id}/Order/")]
-        public async Task<ActionResult<iOrder>> PostOrder(string Id, [FromBody] Order Order)
-        {
-            var newItem = new Order
-            {
-                Description = Order.Description,
-                Total = Order.Total,
-                OrderDate = DateTime.Now,
-                CardNumber = Order.CardNumber,
-                DeliveryAddress = Order.DeliveryAddress,
-                DeliveryContact = Order.DeliveryContact,
-                DeliveryEmail = Order.DeliveryEmail,
-                DeliveryPhone = Order.DeliveryPhone,
-                UserId = Id
-            };
-            var cart = _context.LineDetails.Where(a => (a.CartId == CartId() || a.UserId == Id) && a.OrderId == null).Include(a => a.Product).ToList();
-            if (Order.Description == null) newItem.Description = String.Join(",", cart.Select(s => s.Product.Label));
-            newItem.Total = cart.Sum(x => x.LineTotal);
-            _context.Orders.Add(newItem);
-            await _context.SaveChangesAsync();
-            foreach (var i in cart)
-            {
-                i.OrderId = newItem.OrderId;
-                _context.Update(i);
-            }
-            await _context.SaveChangesAsync();
-            return newItem; 
-        }
 
         public string CartId()
         {
@@ -336,11 +356,12 @@ namespace RozetkaWebApp.Controllers
             public string PhoneNumber { get; set; }
             public bool? PhoneNumberConfirmed { get; set; }
             public bool? TwoFactorEnabled { get; set; }
+           public bool? RememberMe { get; set; }
         }
    
 
-        [HttpPost("api/v1/users/account")]
-        public async Task<ActionResult<UserModel>> PostAspNetUser(string Id, [FromBody] UserModel Input)
+        [HttpPost("api/v1/account/signon")]
+        public async Task<ActionResult<UserModel>> PostAspNetUser([FromBody] UserModel Input)
         {
             var user = new IdentityUser { UserName = Input.Email, Email = Input.Email, EmailConfirmed = true };
             var result = await _userManager.CreateAsync(user, Input.Password);
@@ -353,11 +374,12 @@ namespace RozetkaWebApp.Controllers
             return Input;
         }
 
-        [HttpPut("api/v1/users/{Id}/account/")]
-        public async Task<ActionResult<UserModel>> PutAspNetUser(string Id, [FromBody] UserModel Input)
+        [HttpPut("api/v1/account/update/")]
+        public async Task<ActionResult<UserModel>> PutAspNetUser([FromBody] UserModel Input)
         {
-            var newItem = await _context.AspNetUsers.FindAsync(Input.Id);
-            if (newItem == null || newItem.Id != Id) return NotFound();
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.AspNetUsers.FindAsync(Id);
+            if (newItem == null) return NotFound();
             newItem.UserName = Input.UserName?.ToString();
             newItem.PhoneNumber = Input.PhoneNumber?.ToString();
             if (Input.TwoFactorEnabled != null) newItem.TwoFactorEnabled = (bool)Input.TwoFactorEnabled;
@@ -372,16 +394,159 @@ namespace RozetkaWebApp.Controllers
             }
             Input.Id = Id;
             return Input;
-        }         
+        }
 
-        [HttpDelete("api/v1/users/{Id}/account/")]
-        public async Task<IActionResult> DeleteAspNetUser(string Id, UserModel user)
+        [HttpDelete("api/v1/account/logout/")]
+        public async Task<IActionResult> DeleteAspNetLogOut()
         {
-            var newItem = await _context.AspNetUsers.FindAsync(user.Id);
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.AspNetUsers.FindAsync(Id);
+            if (newItem == null || newItem.Id != Id) return NotFound();
+            return NoContent();
+        }
+
+        [HttpDelete("api/v1/account/signoff/")]
+        public async Task<IActionResult> DeleteAspNetUser()
+        {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.AspNetUsers.FindAsync(Id);
             if (newItem == null || newItem.Id != Id)return NotFound();
             _context.AspNetUsers.Remove(newItem);
             await _context.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpPost("api/v1/account/Login/")]
+        public async Task<IActionResult> Login([FromBody] UserModel user)
+        {
+            var result = await _signInManager.PasswordSignInAsync(user.Email,
+            user.Password, (bool)user.RememberMe, lockoutOnFailure: true);
+            return NoContent();
+        }
+
+        [HttpGet("api/v1/account/cart/details")]
+        [HttpGet("api/v1/account/cart/details/{Id}")]
+        public async Task<ApiResult<iLineDetail>> CartDetail(long? Id = null, int page = 0, int pageSize = 50)
+        {
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var cartId = CartId();
+            var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
+            if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
+            else query = query.Where(x => x.CartId == cartId);
+            if (Id != null) query = query.Where(x => x.OrderDatailId == Id);
+            query.OrderByDescending(x => x.CreateDate);
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iLineDetail> { TotalCount = totalCount, Values = values };
+        }
+
+
+        [HttpPost("api/v1/account/cart/details/")]
+        public async Task<ActionResult<iLineDetail>> PostLineDetail([FromBody] LineDetail LineDetail)
+        {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = new LineDetail
+            {
+                ProductId = LineDetail.ProductId,
+                CartId = CartId(),
+                Quantities = LineDetail.Quantities,
+                UnitCost = _context.Products.Find(LineDetail.ProductId).Price,
+                CreateDate = DateTime.Now,
+                UserId = Id
+            };
+            _context.LineDetails.Add(newItem);
+            await _context.SaveChangesAsync();
+            return newItem;
+        }
+
+
+        [HttpPut("api/v1/account/cart/details/{Id}")]
+        public async Task<ActionResult> PutLineDetail(string Id, [FromBody] LineDetail LineDetail)
+        {
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.LineDetails.FindAsync(LineDetail.OrderDatailId);
+            if (newItem == null || newItem.UserId != user_Id) return NotFound();
+            newItem.ProductId = LineDetail.ProductId;
+            newItem.Quantities = LineDetail.Quantities;
+            newItem.UnitCost = _context.Products.Find(LineDetail.ProductId).Price;
+            newItem.UserId = user_Id;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+
+        [HttpDelete("api/v1/account/cart/details/{Id}")]
+        public async Task<IActionResult> DeleteLineDetail(string Id, LineDetail LineDetail)
+        {
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var newItem = await _context.LineDetails.FindAsync(LineDetail.OrderDatailId);
+            if (newItem == null || newItem.UserId != user_Id) return NotFound();
+            _context.LineDetails.Remove(newItem);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+
+        [HttpPost("api/v1/account/order/")]
+        public async Task<ActionResult<iOrder>> PostOrder([FromBody] Order Order)
+        {
+            var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (Id == null) return NotFound();
+            var newItem = new Order
+            {
+                Description = Order.Description,
+                Total = Order.Total,
+                OrderDate = DateTime.Now,
+                CardNumber = Order.CardNumber,
+                DeliveryAddress = Order.DeliveryAddress,
+                DeliveryContact = Order.DeliveryContact,
+                DeliveryEmail = Order.DeliveryEmail,
+                DeliveryPhone = Order.DeliveryPhone,
+                UserId = Id
+            };
+            var cart = _context.LineDetails.Where(a => (a.CartId == CartId() || a.UserId == Id) && a.OrderId == null).Include(a => a.Product).ToList();
+            if (cart.Count ==0) return NotFound();
+            if (Order.Description == null) newItem.Description = String.Join(",", cart.Select(s => s.Product.Label));
+            newItem.Total = cart.Sum(x => x.LineTotal);
+            _context.Orders.Add(newItem);
+            await _context.SaveChangesAsync();
+            foreach (var i in cart)
+            {
+                i.OrderId = newItem.OrderId;
+                _context.Update(i);
+            }
+            await _context.SaveChangesAsync();
+            return newItem;
+        }
+
+
+        [HttpGet("api/v1/account/orders/")]
+        [HttpGet("api/v1/account/orders/{Id}")]
+        public async Task<ApiResult<iOrder>> Orders(long? Id=null, int page = 0, int pageSize = 50)
+        {
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var query = _context.Orders.Where(x => x.UserId == user_Id);
+            if (Id != null) query = query.Where(x => x.OrderId == Id);
+            query.OrderByDescending(x => x.OrderDate);
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iOrder> { TotalCount = totalCount, Values = values };
+        }
+
+        [HttpGet("api/v1/account/orders/{Id}/details")]
+        public async Task<ApiResult<iLineDetail>> OrderDetail(long? Id=null, int page = 0, int pageSize = 50)
+        {
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId != null && x.UserId == user_Id);
+            if (Id != null) query = query.Where(x => x.OrderId == Id);
+            query.OrderByDescending(x => x.CreateDate);
+            var totalCount = await query.CountAsync();
+            query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => x).ToListAsync();
+            return new ApiResult<iLineDetail> { TotalCount = totalCount, Values = values };
+        }
+
     }
 }

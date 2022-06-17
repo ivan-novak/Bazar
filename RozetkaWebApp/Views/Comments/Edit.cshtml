@@ -16,7 +16,7 @@
  </p>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Edit">
 
               <div class="form-group">
@@ -29,26 +29,36 @@
             <input type="hidden" asp-for="CommentId" />
             <div class="form-group"  style="display: none">
                 <label asp-for="UserId" class="control-label"></label>
-                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <input asp-for="UserId" class="form-control" ></input>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group"  style="display: none">
                 <label asp-for="ProductId" class="control-label"></label>
-                <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                <input asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></input>
                 <span asp-validation-for="ProductId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Text" class="control-label">Текст</label>
+                <label asp-for="Text" class="control-label">@Resources.Коментар</label>
                 <input asp-for="Text" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
-            <div class="form-group"   style="display: none">
+           <div class="form-group">
+                <label asp-for="Pros" class="control-label">@Resources.Переваги</label>
+                <input asp-for="Pros" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cons" class="control-label">@Resources.Недоліки</label>
+                <input asp-for="Cons" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+ @*           <div class="form-group"   style="display: none">
                 <label asp-for="Date" class="control-label"></label>
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <label asp-for="Score" class="control-label">Оцінка</label>
+                <label asp-for="Score" class="control-label">@Resources.Оцінка</label>
                 <input asp-for="Score" class="form-control" />
                 <span asp-validation-for="Score" class="text-danger"></span>
             </div>

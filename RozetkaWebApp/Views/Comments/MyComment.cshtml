@@ -3,26 +3,24 @@
 
 @{
     ViewBag.CommentTab = (("active"));
-    Html.RenderPartial((("_ProductNavigator")));
+    ViewBag.DisableCreate = false;
+    Html.RenderPartial((("_ProfileNavigator")));
 }
 
-       <p><h4>@Resources.Відгуки_користувачів</h4></p>
-          @{  
+<p><h4>@Resources.Відгуки_про_товар</h4></p>
+
+@{  
     Html.RenderPartial((("_FilterNavigator")));
 }
-
-
  
 @foreach (var item in Model) {
    
         <table style = "width:100%">
             <hr /> <tbody> 
                 <tr>
-            <td>  
-                <a asp-controller="Addresses" asp-action= "Index" asp-route-id="@item.UserId">
-                    <h5 class="text-primary"> 
-                      @item.User.UserName.Split('@')[0]
-                    </h5>
+            <td> 
+                <a asp-controller="Characteristics" asp-action= "Index" asp-route-id="@item.ProductId">
+                     <h5 class="text-primary">  @item.Product.Label  </h5>
                 </a>
             </td>
             <td >

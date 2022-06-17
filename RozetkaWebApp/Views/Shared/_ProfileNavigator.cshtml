@@ -1,7 +1,7 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @using System.Security.Claims
 @{
-   ViewBag.Title = Resources.AspNetUser+ " - " + ViewBag.User.UserName;
+   ViewBag.Title = "Користувач"+ " - " + ViewBag.User.UserName;
 }        
 <p>    
      <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a>  >
@@ -18,4 +18,5 @@
             <li class="nav-item">  <a class="nav-link @ViewBag.ContactsTab" href="/Contacts/Index/@ViewBag.User.Id">@Resources.Контакты</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.WalletsTab" href="/Wallets/Index/@ViewBag.User.Id">@Resources.Кошельки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.OrdersTab" href="/Orders/Index/@ViewBag.User.Id">@Resources.Заказы</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.CommentsTab" href="/Comments/MyComment/@ViewBag.User.Id">Відгуки</a> </li>
         </ul>

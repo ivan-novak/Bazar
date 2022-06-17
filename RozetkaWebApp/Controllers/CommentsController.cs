@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
 
+
 namespace RozetkaWebApp.Controllers
 {
     public class CommentsController : Controller
@@ -26,6 +27,21 @@ namespace RozetkaWebApp.Controllers
             if (id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
 
             var rozetkadbContext = _context.Comments.Include(c => c.Image).Include(c => c.Product).Include(c => c.User).Where(c => c.ProductId == id);
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = rozetkadbContext.Where(x => Filter == null || x.Text.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderByDescending(x => x.Date).Skip(pageSize * page).Take(pageSize).ToListAsync());
+        }
+
+        public async Task<IActionResult> MyComment(string id, string Filter = null, int page = 0, int pageSize = 20)
+        {
+            if (id != null) ViewBag.User = _context.AspNetUsers.Find(id);
+
+            var rozetkadbContext = _context.Comments.Include(c => c.Image)
+                .Include(c => c.Product).Include(c => c.User).Where(c => c.UserId== id);
 
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
@@ -57,11 +73,9 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: Comments/Create
-        public IActionResult Create()
+        public IActionResult Create(long? Id)
         {
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId");
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label");
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
+            ViewBag.Product=_context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             return View();
         }
 
@@ -70,17 +84,17 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CommentId,UserId,ProductId,Text,Date,Score,ImageId")] Comment comment)
+        public async Task<IActionResult> Create([Bind("CommentId,UserId,ProductId,Pros,Cons,Text,Date,Score,ImageId")] Comment comment)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && comment.Text != null)
             {
+                comment.Date = DateTime.Now;
+                comment.UserId=_context.AspNetUsers.Where(x=>x.Email == User.Identity.Name).First().Id;
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/Comments/Index/" + comment.ProductId);
             }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", comment.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", comment.ProductId);
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", comment.UserId);
+            ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == comment.ProductId);
             return View(comment);
         }
 
@@ -96,13 +110,8 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            var characteristic = await _context.Characteristics.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.CharacteristicId == id);
             var comment = await _context.Comments.Include( x => x.Product).Include( x=> x.Product.Catalog).Include(x => x.Product.Catalog.Portal).FirstOrDefaultAsync(x => x.CommentId == id);
 
-
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", comment.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", comment.ProductId);
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", comment.UserId);
             return View(comment);
         }
 
@@ -111,7 +120,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("CommentId,UserId,ProductId,Text,Date,Score,ImageId")] Comment comment)
+        public async Task<IActionResult> Edit(long id, [Bind("CommentId,UserId,ProductId,Pros,Cons,Text,Date,Score,ImageId")] Comment comment)
         {
             if (id != comment.CommentId)
             {
@@ -122,6 +131,7 @@ namespace RozetkaWebApp.Controllers
             {
                 try
                 {
+                    comment.Date = DateTime.Now;
                     _context.Update(comment);
                     await _context.SaveChangesAsync();
                 }
@@ -136,11 +146,8 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["ImageId"] = new SelectList(_context.Images, "ImageId", "ImageId", comment.ImageId);
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "Label", comment.ProductId);
-            ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", comment.UserId);
+                return Redirect($"/Comments/Index/" + comment.ProductId);
+             }
             return View(comment);
         }
 
@@ -152,7 +159,8 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var comment = await _context.Comments.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.CommentId == id);
+            var comment = await _context.Comments.Include(c => c.Product.Catalog.Portal).
+                Include(c => c.User).FirstOrDefaultAsync(m => m.CommentId == id);
 
 
             //var comment = await _context.Comments
@@ -176,7 +184,7 @@ namespace RozetkaWebApp.Controllers
             var comment = await _context.Comments.FindAsync(id);
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/Comments/Index/" + comment.ProductId);
         }
 
         private bool CommentExists(long id)

@@ -38,7 +38,7 @@
 <table class="table">
     <thead>
         <tr>
-             <th> @Resources.Заголовок0 </th>
+             <th> @Resources.Товар </th>
             <th> @Resources.Описание </th>
            <th> @Resources.Цена </th>
             <th> @Resources.Количество  </th>
@@ -50,7 +50,8 @@
     {
         <tr>        
             <td>
-                @Html.DisplayFor(modelItem => item.Product.Title)
+                 <a asp-controller="Characteristics" asp-action= "Index" asp-route-id="@item.ProductId">
+                @Html.DisplayFor(modelItem => item.Product.Title) </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.Description)

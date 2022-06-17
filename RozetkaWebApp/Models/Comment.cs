@@ -14,6 +14,8 @@ namespace RozetkaWebApp.Models
         public DateTime Date { get; set; }
         public decimal? Score { get; set; }
         public long? ImageId { get; set; }
+        public string Pros { get; set; }
+        public string Cons { get; set; }
 
         public virtual Image Image { get; set; }
         public virtual Product Product { get; set; }

@@ -64,10 +64,6 @@
     <StringID>212</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>214</StringID>
-    <Comment>Previous text: AspNetUser</Comment>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>217</StringID>
   </GeneralIds>
   <GeneralIds>
@@ -219,9 +215,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>425</StringID>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>426</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>427</StringID>
@@ -777,9 +770,6 @@
     <Comment>Previous text: Промоакції</Comment>
   </GeneralIds>
   <GeneralIds>
-    <StringID>625</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>626</StringID>
     <Comment>Previous text: Профіль</Comment>
   </GeneralIds>
@@ -876,10 +866,6 @@
   <GeneralIds>
     <StringID>657</StringID>
     <Comment>Previous text: Список порталів</Comment>
-  </GeneralIds>
-  <GeneralIds>
-    <StringID>658</StringID>
-    <Comment>Previous text: Список промоакцій</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>659</StringID>
@@ -1074,6 +1060,33 @@
   <GeneralIds>
     <StringID>730</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>731</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>732</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>733</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>735</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>736</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>737</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>738</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>739</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>740</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>34</LanguageID>
     <LanguageName>Ukrainian</LanguageName>
@@ -1211,12 +1224,6 @@
     <LanguageID>25</LanguageID>
     <LanguageText>Телефон</LanguageText>
     <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>214</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Користувачі</LanguageText>
-    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>217</StringID>
@@ -1517,12 +1524,6 @@
     <LanguageID>25</LanguageID>
     <LanguageText>або Google Автентифікатор для</LanguageText>
     <Status>2</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>426</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Батьківський проміжок</LanguageText>
-    <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>427</StringID>
@@ -2551,12 +2552,6 @@
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>625</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Промоакція</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>626</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Профіль користувача</LanguageText>
@@ -2716,12 +2711,6 @@
     <StringID>657</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Перелік порталів</LanguageText>
-    <Status>2</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>658</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>Перелік промоакцій</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -3113,12 +3102,6 @@
     <StringID>395</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Натисніть тут, щоб вийти</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>426</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Батьківський проміжок</LanguageText>
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -4299,12 +4282,6 @@
     <Status>5</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>625</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Промоакція</LanguageText>
-    <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>692</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Удалить цей товар?</LanguageText>
@@ -4333,12 +4310,6 @@
     <LanguageID>34</LanguageID>
     <LanguageText>Змінити промоакцию</LanguageText>
     <Status>5</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>658</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Список промоакцій</LanguageText>
-    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>553</StringID>
@@ -4887,12 +4858,6 @@
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
-    <StringID>214</StringID>
-    <LanguageID>34</LanguageID>
-    <LanguageText>Користувач</LanguageText>
-    <Status>7</Status>
-  </GeneralTexts>
-  <GeneralTexts>
     <StringID>727</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>BAZAR™ |</LanguageText>
@@ -4914,6 +4879,66 @@
     <StringID>730</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>CLOUD-сервіси</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>731</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Коментар</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>732</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Переваги</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>733</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Недоліки</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>735</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Оцінка</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>736</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Користувач</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>736</StringID>
+    <LanguageID>34</LanguageID>
+    <LanguageText>Користувач</LanguageText>
+    <Status>3</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>737</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Переваги:</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>738</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Недоліки:</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>739</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Відгуки користувачів</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>740</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Відгуки про товар</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <Properties>
@@ -5495,8 +5520,7 @@
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Список_промоакций</Name>
-    <StringID>658</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>Список_промоакций</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
@@ -5615,8 +5639,7 @@
   <Properties>
     <Component>Resources.resx</Component>
     <Name>Промоакция</Name>
-    <StringID>625</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>Промоакция</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
@@ -6380,8 +6403,7 @@
   <Properties>
     <Component>Resources.resx</Component>
     <Name>AspNetUser</Name>
-    <StringID>214</StringID>
-    <Selected>true</Selected>
+    <Selected>false</Selected>
     <ResourceName>AspNetUser</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
@@ -7655,6 +7677,85 @@
     <ResourceName>CLOUD_сервіси</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Коментар</Name>
+    <StringID>731</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Коментар</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Переваги</Name>
+    <StringID>732</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Переваги</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Недоліки</Name>
+    <StringID>733</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Недоліки</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Текст</Name>
+    <Selected>false</Selected>
+    <ResourceName>Текст</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Оцінка</Name>
+    <StringID>735</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Оцінка</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Користувач</Name>
+    <StringID>736</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Користувач</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Переваги0</Name>
+    <StringID>737</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Переваги0</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Недоліки0</Name>
+    <StringID>738</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Недоліки0</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Відгуки_користувачів</Name>
+    <StringID>739</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Відгуки_користувачів</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Відгуки_про_товар</Name>
+    <StringID>740</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Відгуки_про_товар</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
   <GeneralAttributes>
     <Name>XmlDatabaseVersion</Name>
     <TextValue>1</TextValue>
@@ -7843,9 +7944,6 @@
   </IgnoredModules>
   <IgnoredModules>
     <ModuleName>HomeController.cs</ModuleName>
-  </IgnoredModules>
-  <IgnoredModules>
-    <ModuleName>Controller.cs</ModuleName>
   </IgnoredModules>
   <IgnoredModules>
     <ModuleName>ContactsController.cs</ModuleName>

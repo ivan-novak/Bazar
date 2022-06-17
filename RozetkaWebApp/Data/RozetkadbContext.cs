@@ -263,7 +263,11 @@ namespace RozetkaWebApp.Data
             {
                 entity.ToTable("Comment");
 
+                entity.Property(e => e.Cons).HasMaxLength(500);
+
                 entity.Property(e => e.Date).HasColumnType("date");
+
+                entity.Property(e => e.Pros).HasMaxLength(500);
 
                 entity.Property(e => e.Score).HasColumnType("decimal(18, 0)");
 

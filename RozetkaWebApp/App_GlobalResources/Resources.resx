@@ -385,6 +385,12 @@
   <data name="Веб_сайт" xml:space="preserve">
     <value>Веб-сайт</value>
   </data>
+  <data name="Відгуки_користувачів" xml:space="preserve">
+    <value>Відгуки користувачів</value>
+  </data>
+  <data name="Відгуки_про_товар" xml:space="preserve">
+    <value>Відгуки про товар</value>
+  </data>
   <data name="Владедец_карты" xml:space="preserve">
     <value>Власник карти</value>
     <comment>Previous text: Владелец карти</comment>
@@ -637,6 +643,9 @@
   <data name="Количество" xml:space="preserve">
     <value>Кількість</value>
   </data>
+  <data name="Коментар" xml:space="preserve">
+    <value>Коментар</value>
+  </data>
   <data name="Контактное_лицо" xml:space="preserve">
     <value>Контакт</value>
   </data>
@@ -648,6 +657,9 @@
   </data>
   <data name="Корзина" xml:space="preserve">
     <value>Кошик</value>
+  </data>
+  <data name="Користувач" xml:space="preserve">
+    <value>Користувач</value>
   </data>
   <data name="Кошельки" xml:space="preserve">
     <value>Гаманці</value>
@@ -698,6 +710,12 @@
   <data name="Настроить_приложение_для_прове" xml:space="preserve">
     <value>Налаштувати додаток для перевірки довжини</value>
     <comment>Previous text: Настроить додаток для перевірки довжини</comment>
+  </data>
+  <data name="Недоліки" xml:space="preserve">
+    <value>Недоліки</value>
+  </data>
+  <data name="Недоліки0" xml:space="preserve">
+    <value>Недоліки:</value>
   </data>
   <data name="Новая_группы_безопасности" xml:space="preserve">
     <value>Новая група безпеки</value>
@@ -788,8 +806,17 @@
   <data name="Оформить_заказ" xml:space="preserve">
     <value>Оформити замовлення</value>
   </data>
+  <data name="Оцінка" xml:space="preserve">
+    <value>Оцінка</value>
+  </data>
   <data name="Пароль" xml:space="preserve">
     <value>Пароль</value>
+  </data>
+  <data name="Переваги" xml:space="preserve">
+    <value>Переваги</value>
+  </data>
+  <data name="Переваги0" xml:space="preserve">
+    <value>Переваги:</value>
   </data>
   <data name="Платежная_карта" xml:space="preserve">
     <value>Платіжна картка</value>
@@ -997,6 +1024,9 @@
   </data>
   <data name="Сумма_заказа" xml:space="preserve">
     <value>Сума замовлення</value>
+  </data>
+  <data name="Текст" xml:space="preserve">
+    <value>Коментар</value>
   </data>
   <data name="Телефон" xml:space="preserve">
     <value>Телефон</value>

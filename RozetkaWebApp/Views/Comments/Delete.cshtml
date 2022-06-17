@@ -1,0 +1,67 @@
+﻿@using RozetkaWebApp.App_GlobalResources
+@model RozetkaWebApp.Models.Comment
+
+@{
+     ViewBag.Product = Model.Product;
+}
+
+@{
+    ViewBag.CommentTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
+}
+
+<p>
+   <h4>Видалити цій відгук</h4>
+</p>
+
+<div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CommentId" />
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
+        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+           <hr />
+    </form>
+   
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Текст
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+        <dt class = "col-sm-2">
+           Дата
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            Оцінка
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Image.ImageId)
+        </dd class>
+        <dt class = "col-sm-2">
+           Товар
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Product.Label)
+        </dd class>
+        <dt class = "col-sm-2">
+           Користувач
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd class>
+    </dl>
+
+    
+    
+</div>

@@ -88,6 +88,8 @@ namespace RozetkaWebApp.Controllers
             if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else if (orderBy == "PRICE") query = query.OrderBy(x => x.Price);
+            else if (orderBy == "VIEWDATE") query = query.OrderBy(x => x.ViewDate);
+            else if (orderBy == "CHOISEDATA") query = query.OrderBy(x => x.ChioseData);
             else query = query.OrderBy(x => x.ProductId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             var totalCount = await query.CountAsync();
@@ -185,7 +187,7 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/filters")]
         [HttpGet("[controller]/v1/properties/{propertyId}/filters/")]
         [HttpGet("[controller]/v1/catalogs/{catalogId}/filters")]
-        public async Task<ApiResult<iFilter>> Filters(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? catalogId = null, int? propertyId = null)
+        public async Task<IEnumerable<iFilter>> Filters(string orderBy = "PropertyId", string orderMode = "Desc", int page = 0, int pageSize = 50, int? catalogId = null, int? propertyId = null)
         {
             var query = _context.Filters.Select(x => x);
             if (catalogId != null) query = query.Where(x=>x.CatalogId == catalogId);
@@ -195,9 +197,9 @@ namespace RozetkaWebApp.Controllers
             else query = query.OrderBy(x => x.PropertyId);
             if (orderMode.ToUpper() == "ASC") query = query.Reverse();
             var totalCount = await query.CountAsync();
-            query = query.Skip(page * pageSize).Take(pageSize);
-            var values = await query.Select(x => x).ToListAsync();
-            return new ApiResult<iFilter> { TotalCount = totalCount, Values = values };
+        //    query = query.Skip(page * pageSize).Take(pageSize);
+            var values = await query.Select(x => (iFilter)x).ToListAsync();
+            return values; // new Filter { TotalCount = totalCount, Values = values };
         }
 
         [HttpGet("[controller]/v1/orders")]

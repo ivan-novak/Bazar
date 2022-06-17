@@ -1,5 +1,4 @@
-﻿//MLHIDEFILE
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using RozetkaWebApp.Models;
@@ -498,6 +497,8 @@ namespace RozetkaWebApp.Data
 
                 entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
 
+                entity.Property(e => e.ChioseData).HasColumnType("datetime");
+
                 entity.Property(e => e.Label)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -509,6 +510,8 @@ namespace RozetkaWebApp.Data
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasMaxLength(500);
+
+                entity.Property(e => e.ViewDate).HasColumnType("datetime");
 
                 entity.HasOne(d => d.Catalog)
                     .WithMany(p => p.Products)
@@ -670,16 +673,13 @@ namespace RozetkaWebApp.Data
 
                 entity.Property(e => e.ExpiryDate)
                     .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.UserId)
                     .IsRequired()
                     .HasMaxLength(450);
 
-                entity.Property(e => e.VerificationCode)
-                    .HasMaxLength(10)
-                    .IsFixedLength(true);
+                entity.Property(e => e.VerificationCode).HasMaxLength(50);
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Walletts)

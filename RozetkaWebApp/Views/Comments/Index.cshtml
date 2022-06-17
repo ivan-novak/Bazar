@@ -1,0 +1,48 @@
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Comment>
+
+@{
+    ViewBag.CommentTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
+}
+
+       <p><h4>Перелік відгуків користувачів</h4></p>
+          @{  
+    Html.RenderPartial((("_FilterNavigator")));
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+             <th> Текст</th> 
+             <th> Оцінка </th>
+             <th> Користувач  </th> 
+              <th> Дата </th> 
+             <th class="text-right"> @Resources.Действия </th>  
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>                     
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
+                <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

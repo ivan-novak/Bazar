@@ -1,0 +1,67 @@
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model RozetkaWebApp.Models.Comment
+
+@{
+    ViewBag.Product = Model.Product;
+}
+
+@{
+    ViewBag.CommentTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
+}
+
+
+ <p>
+     <h4>Редагувати відгук</h4>
+ </p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+              <div class="form-group">
+                <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button> 
+                   <hr />
+             </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CommentId" />
+            <div class="form-group"  style="display: none">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group"  style="display: none">
+                <label asp-for="ProductId" class="control-label"></label>
+                <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label">Текст</label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group"   style="display: none">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Score" class="control-label">Оцінка</label>
+                <input asp-for="Score" class="form-control" />
+                <span asp-validation-for="Score" class="text-danger"></span>
+            </div>
+            <div class="form-group"   style="display: none">
+                <label asp-for="ImageId" class="control-label"></label>
+                <select asp-for="ImageId" class="form-control" asp-items="ViewBag.ImageId"></select>
+                <span asp-validation-for="ImageId" class="text-danger"></span>
+            </div>           
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

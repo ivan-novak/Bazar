@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -183,6 +184,52 @@ namespace RozetkaWebApp.Controllers
         {
             return _context.Products.Any(e => e.ProductId == id);
         }
+
+
+        public async Task<IActionResult> AddToCart(long? id)
+        {
+
+            var product = _context.Products.Find(id);
+            var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var cartId = CartId();
+            var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
+            if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
+            else query = query.Where(x => x.CartId == cartId);
+            LineDetail lineDetail = query.Where(x => x.ProductId == id).FirstOrDefault();
+            if (lineDetail == null)
+            {
+                lineDetail = new LineDetail();
+                lineDetail.CartId = CartId();
+                lineDetail.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                lineDetail.ProductId = (long)id;
+                lineDetail.Quantities = 1;
+                lineDetail.UnitCost = product.Price;
+                _context.Add(lineDetail);
+            }
+            else
+            {
+                lineDetail.Quantities++;
+                _context.Update(lineDetail);
+            }
+            await _context.SaveChangesAsync();
+            return Redirect(HttpContext.Request.Headers["Referer"]);
+            return Redirect($"/Home/Characteristics/" + id.ToString());
+        }
+
+        public string CartId()
+        {
+            if (!HttpContext.Request.Cookies.ContainsKey("cartId"))
+            {
+                var cartId = Guid.NewGuid().ToString();
+                HttpContext.Response.Cookies.Append("cartId", cartId);
+                return cartId;
+            }
+            return HttpContext.Request.Cookies["cartId"];
+        }
+
+
+
+
 
 
         //[HttpGet("[controller]/{id}/image/{name}")]

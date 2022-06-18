@@ -27,6 +27,10 @@
     <dl class="row">
         <dt class = "col-sm-2"> @Resources.Коментар </dt>
         <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Text) </dd>
+        <dt class = "col-sm-2"> @Resources.Переваги </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Pros) </dd> 
+        <dt class = "col-sm-2"> @Resources.Недоліки </dt>
+        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Cons) </dd>
         <dt class = "col-sm-2">  @Resources.Дата </dt>   <dd class = "col-sm-10"> @Model.Date.ToString("dd/MM/yyyy") </dd>
         <dt class = "col-sm-2"> @Resources.Оцінка  </dt> <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Score) </dd>
         <dt class = "col-sm-2">  @Resources.Товар   </dt> <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Product.Label) </dd class>

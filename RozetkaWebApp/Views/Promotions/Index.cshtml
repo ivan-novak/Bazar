@@ -26,11 +26,15 @@
 @foreach (var item in Model) {
         <tr>
             <td> @Html.DisplayFor(modelItem => item.PromotionId)  </td>
-            <td> @Html.DisplayFor(modelItem => item.Label) </td>
+            <td>
+                <a asp-action= "Details" asp-route-id="@item.PromotionId">
+                   @Html.DisplayFor(modelItem => item.Label) 
+                </a> 
+            </td>
              <td> @Html.DisplayFor(modelItem => item.StartDate)</td>
             <td> @Html.DisplayFor(modelItem => item.EndDate)</td>
             <td class="text-right">
-                @*<a asp-action="Edit" asp-route-id="@item.PromotionId">Edit</a> <i class="fas fa-solid fa-folder"></i></a> |*@
+                <a asp-action="Details" asp-route-id="@item.PromotionId"> <i class="fas fa-solid fa-folder"></i></a> |
                 <a asp-action="Edit" asp-route-id="@item.PromotionId"><i class="fas fa-solid fa-pen-square"></i></a>  |
                 <a asp-action="Delete" asp-route-id="@item.PromotionId"><i class="fas fa-solid fa-trash"></i></a>
             </td>

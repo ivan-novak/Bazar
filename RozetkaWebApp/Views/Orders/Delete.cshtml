@@ -18,7 +18,7 @@
 <div>
     <dl class="row">
         <dt class = "col-sm-2">  @Resources.Номер_заказа </dt>             <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderId) </dd>
-        <dt class = "col-sm-2">  @Resources.Дата_заказ </dt>               <dd class = "col-sm-10">  @Html.DisplayFor(model => model.OrderDate)  </dd>
+        <dt class = "col-sm-2">  @Resources.Дата_заказ </dt>               <dd class = "col-sm-10">  @Model.OrderDate.ToString("dd/MM/yyyy")  </dd>
         <dt class = "col-sm-2">  @Resources.Адрес_доставки   </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryAddress) </dd>
         <dt class = "col-sm-2">  @Resources.Контактное_лицо  </dt>         <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryContact) </dd>
         <dt class = "col-sm-2">  @Resources.Электронный_адрес</dt>   <dd class = "col-sm-10">  @Html.DisplayFor(model => model.DeliveryEmail)  </dd>
@@ -50,7 +50,9 @@
     {
         <tr>        
             <td>
-                @Html.DisplayFor(modelItem => item.Product.Title)
+                <a asp-controller="Characteristics" asp-action= "Index" asp-route-id="@item.ProductId">
+                    @Html.DisplayFor(modelItem => item.Product.Title)
+                </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.Description)

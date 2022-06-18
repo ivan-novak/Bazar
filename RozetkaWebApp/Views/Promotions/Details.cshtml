@@ -6,57 +6,67 @@
     Html.RenderPartial((("_RootNavigator")));
 }
   
-<h1>@Resources.Детали0</h1>
+ <p>
+   <h4>Інформація про промоцію</h4>
+ <p>
 
-<div>
-    <h4>@Resources.Promotion</h4>
-    <hr />
+<div class="row">
+   <div class="col-md-8">
+      <div class="form-group">
+          <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.PromotionId"> @Resources.Изменить </a>
+          <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.PromotionId"> @Resources._Remove </a>     
+           <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>   
+           <hr />
+      </div>
+
+      <p></p>
+
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Label)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Label)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Attributes)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Attributes)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image.ImageId)
-        </dd>
+        <dt class = "col-sm-4">@Resources.Заголовок0</dt><dd class = "col-sm-6">@Html.DisplayFor(model => model.Title)</dd>
+        <dt class = "col-sm-4">@Resources.Этикетка</dt><dd class = "col-sm-6">@Html.DisplayFor(model => model.Label)</dd>
+        <dt class = "col-sm-4">@Resources.Описание</dt><dd class = "col-sm-6"> @Html.DisplayFor(model => model.Description)</dd>
+        <dt class = "col-sm-4">@Resources.Дата_начала</dt><dd class = "col-sm-6">@Model.StartDate.ToString("dd/MM/yyyy") </dd>
+        <dt class = "col-sm-4">@Resources.Дата_завершения </dt><dd class = "col-sm-6">@Model.EndDate.ToString("dd/MM/yyyy")</dd>
+        @*<dt class = "col-sm-4">@Resources.Атрибуты</dt><dd class = "col-sm-6">@Html.DisplayFor(model => model.Attributes)</dd>*@
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.PromotionId">Edit</a> |
-    <a asp-action="Index">@Resources.Back_to_List</a>
+<div class="col-md-4"> 
+         <img src="/Images/Index/@Model.ImageId" alt=@Model.Label width="100%" />        
 </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+             <th> @Resources.Заголовок0 </th>
+             <th> @Resources.Описание </th>
+             <th> @Resources.Цена </th>
+             <th> @Resources.Количество </th>
+@*             <th>  @Resources.Действия </th> *@
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (Product item in ViewBag.Lines) 
+    {
+        <tr>        
+            <td>
+                <a asp-controller="Products" asp-action= "Details" asp-route-id="@item.ProductId">
+                   @Html.DisplayFor(modelItem => item.Title) 
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+                        <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td> 
+@*            <td>
+                <a asp-controller="Products" asp-action= "Edit" asp-route-id="@item.ProductId"><i class="fas fa-solid fa-pen-square"></i></a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>

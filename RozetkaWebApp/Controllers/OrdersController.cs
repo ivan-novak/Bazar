@@ -66,7 +66,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewBag.User = _context.AspNetUsers.Find(order.UserId);
-            ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
+            ViewBag.Lines = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
         [Authorize(Roles = "Продавці")]

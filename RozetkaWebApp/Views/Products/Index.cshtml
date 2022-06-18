@@ -26,7 +26,7 @@
     @foreach (var item in Model) {
         <tr>
             <td>  @Html.DisplayFor(modelItem => item.ProductId)  </td>
-            <td>  <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.Label)</a> </td>
+            <td>  <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.Label)</a> </td>
             <td>  @Html.DisplayFor(modelItem => item.Price)   </td>
             <td>  @Html.DisplayFor(modelItem => item.Quantity)  </td>
             <td>  <a asp-controller = "ProductImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Image</a> </td>

@@ -99,9 +99,10 @@
     <tbody>
     @foreach (LineDetail item in ViewBag.Cart) 
     {
-        <tr>        
+ <tr>        
             <td>
-                @Html.DisplayFor(modelItem => item.Product.Title)
+                 <a asp-controller="Characteristics" asp-action= "Index" asp-route-id="@item.ProductId">
+                @Html.DisplayFor(modelItem => item.Product.Title) </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.Description)

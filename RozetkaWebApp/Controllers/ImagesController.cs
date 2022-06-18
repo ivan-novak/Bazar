@@ -50,38 +50,54 @@ namespace RozetkaWebApp.Controllers
         }
 
         [HttpGet("[controller]/products/{id}/{name}")]
-        public async Task<FileResult> Product(long? id, string name)
+        [HttpGet("[controller]/products/{id}/first")]
+        public async Task<FileResult> Product(long? id, string name = null)
         {
-            if (id == null || name == null) return null;
-            var productImage = await _context.ProductImages.Where(p => p.ProductId == id && p.Label == name).FirstOrDefaultAsync();
+            if (id == null) return null;
+            var productImage = await _context.ProductImages
+                .Where(p => p.ProductId == id)
+                .Where(p => p.Label == name || name == null)
+                .OrderBy(p => p.Label).FirstOrDefaultAsync();
             if (productImage == null) return null;
             return await Index(productImage.ImageId);
         }
 
         [HttpGet("[controller]/catalogs/{id}/{name}")]
-        public async Task<FileResult> Catalog(long? id, string name)
+        [HttpGet("[controller]/catalogs/{id}/first")]
+        public async Task<FileResult> Catalog(long? id, string name = null)
         {
             if (id == null || name == null) return null;
-            var catalogImage = await _context.CatalogImages.Where(p => p.CatalogId == id && p.Label == name).FirstOrDefaultAsync();
+            var catalogImage = await _context.CatalogImages
+                .Where(p => p.CatalogId == id)
+                .Where(p => p.Label == name || name == null)
+                .OrderBy(p => p.Label).FirstOrDefaultAsync();
             if (catalogImage == null) return null;
            return await Index(catalogImage.ImageId);
 
         }
 
         [HttpGet("[controller]/portals/{id}/{name}")]
+        [HttpGet("[controller]/portals/{id}/first")]
         public async Task<FileResult> Portal(long? id, string name)
         {
             if (id == null || name == null) return null;
-            var portalImage = await _context.PortalImages.Where(p => p.PortalId == id && p.Label == name).FirstOrDefaultAsync();
+            var portalImage = await _context.PortalImages
+                .Where(p => p.PortalId == id)
+                .Where(p=> p.Label == name || name == null)
+                .OrderBy(p=>p.Label).FirstOrDefaultAsync();
             if (portalImage == null) return null;
             return await Index(portalImage.ImageId);
 
         }
 
         [HttpGet("[controller]/root/{name}")]
+        [HttpGet("[controller]/root/first")]
         public async Task<FileResult> Root(string name)
         {
-            var rootImage = await _context.RootImages.Where(p => p.Label == name).FirstOrDefaultAsync();
+            var rootImage = await _context.RootImages
+                .Where(p => p.Label == name)
+                .Where(p => p.Label == name || name == null)
+                .OrderBy(p => p.Label).FirstOrDefaultAsync();
             if (rootImage == null) return null;
             return await Index(rootImage.ImageId);
 

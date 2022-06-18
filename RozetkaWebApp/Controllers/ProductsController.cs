@@ -47,12 +47,13 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id);
+            var product = await _context.Products
+                .Include(c => c.Catalog.Portal).Include(cs => cs.Characteristics).ThenInclude(cs => cs.Property)
+                .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
                 return NotFound();
             }
-
             return View(product);
         }
         [Authorize(Roles = "Маркетологи")]
@@ -157,13 +158,12 @@ namespace RozetkaWebApp.Controllers
             }
 
             var product = await _context.Products
-                .Include(p => p.Catalog.Portal)
+                .Include(c => c.Catalog.Portal).Include(cs => cs.Characteristics).ThenInclude(cs => cs.Property)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
                 return NotFound();
             }
-
             return View(product);
         }
         [Authorize(Roles = "Маркетологи")]

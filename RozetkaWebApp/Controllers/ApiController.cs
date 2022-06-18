@@ -343,13 +343,12 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/v1/products/{productId}/images/{label}")]
         [HttpGet("[controller]/v1/products/images")]
         [HttpGet("[controller]/v1/products/images/{productImageId}")]
-        public async Task<ApiResult<iProductImage>> ProductImages(string orderBy = "ProductImageId", string orderMode = "ASC", int page = 0, int pageSize = 50, string label = null, long? productId = null, long? productImageId = null)
+        public async Task<ApiResult<iProductImage>> ProductImages(string orderBy = "ProductImageId", string orderMode = "ASC", int page = 0, int pageSize = 50, long? productId = null, long? productImageId = null)
         {
             var query = _context.ProductImages.Select(x => x);
             orderBy = orderBy.ToUpper();
             if (productImageId != null) query = query.Where(x => x.ProductImageId == productImageId);
             if (productId != null) query = query.Where(x => x.ProductId == productId);
-            if (label != null) query = query.Where(x => x.Label ==label);
             if (orderBy == "LABEL") query = query.OrderBy(x => x.Label);
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else query = query.OrderBy(x => x.ProductImageId);

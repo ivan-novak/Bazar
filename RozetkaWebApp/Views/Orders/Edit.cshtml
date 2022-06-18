@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.Order
 
 @{
-    ViewBag.AddressesTab = (("active"));
+    ViewBag.OrdersTab = (("active"));
     Html.RenderPartial((("_ProfileNavigator")));
 }
 
@@ -100,9 +100,10 @@
     <tbody>
     @foreach (LineDetail item in ViewBag.Lines) 
     {
-        <tr>        
+ <tr>        
             <td>
-                @Html.DisplayFor(modelItem => item.Product.Title)
+                 <a asp-controller="Characteristics" asp-action= "Index" asp-route-id="@item.ProductId">
+                @Html.DisplayFor(modelItem => item.Product.Title) </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Product.Description)

@@ -56,7 +56,7 @@
                 @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderDate)
+                @item.OrderDate.ToString("dd/MM/yyyy")
             </td>
 @*            <td>
                 @Html.DisplayFor(modelItem => item.Status)

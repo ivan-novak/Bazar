@@ -52,7 +52,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewBag.Lines = _context.Products.Where(x => x.PromotionId == id).Select(x => x);
             return View(promotion);
         }
         [Authorize(Roles = "Маркетологи")]
@@ -178,7 +178,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            ViewBag.Lines = _context.Products.Where(x => x.PromotionId == id).Select(x => x);
             return View(promotion);
         }
         [Authorize(Roles = "Маркетологи")]

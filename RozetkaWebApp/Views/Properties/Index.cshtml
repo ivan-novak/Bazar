@@ -16,7 +16,7 @@
 
 
 
-<table class="table">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th> @Resources.ID </th>
@@ -34,9 +34,9 @@
             <td> <a asp-controller="Properties" asp-action="Edit" asp-route-id="@item.PropertyId">@Html.DisplayFor(modelItem => item.Label) </a> </td>
             <td> @Html.DisplayFor(modelItem => item.Format)  </td>
             <td>  @Html.DisplayFor(modelItem => item.Mask)  </td>
-            <td class="text-right">
-                <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> @Resources.res
-                @*<a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a> |*@
+            <td class="text-right small">
+                <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square"></i> </a> @Resources.res &nbsp
+                @*<a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a>*@
                 <a asp-action="Delete" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>
         </tr>

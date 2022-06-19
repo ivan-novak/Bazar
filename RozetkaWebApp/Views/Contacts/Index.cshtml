@@ -12,7 +12,7 @@
 @{  
     Html.RenderPartial(Resources._FilterNavigator);
 }
-<table class="table">
+<table class="table table-sm table-hover">
     <thead>
         <tr> 
             <th> @Resources.ID </th>     
@@ -46,9 +46,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Phone1)
             </td>          
-            <td class="text-right">
-                <a asp-action="Details" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-folder"></i></a> |
-                <a asp-action="Edit" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-pen-square"></i></a> |
+            <td class="text-right small">
+                <a asp-action="Details" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-folder"></i></a> &nbsp
+                <a asp-action="Edit" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
                 <a asp-action="Delete" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>

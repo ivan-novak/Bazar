@@ -25,15 +25,28 @@
                     </h5>
                 </a>
             </td>
-            <td >
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>                     
+                   
             <td class="text-right">
                 @item.Date.ToString("dd/MM/yyyy")
             </td>
             <td class="text-right">
-                <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
-                <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
+                <ul class="list-inline small"> 
+                    @for (int i = 1; i<=10; i++)
+                     {
+                        if (i <= item.Score)
+                        {
+                             <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        } 
+                        else
+                        {
+                              <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>              
+                        }
+                     }  
+                   &nbsp&nbsp&nbsp
+                   <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a> &nbsp
+                   <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
+               </ul>
+                
             </td>
         </tr>
        </tbody> </table>             

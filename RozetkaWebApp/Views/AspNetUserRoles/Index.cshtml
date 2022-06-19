@@ -13,7 +13,7 @@
     Html.RenderPartial((("_FilterNavigator")));
 }
 
-<table class="table">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th> @Resources.Имя_пользователя  </th>
@@ -30,7 +30,7 @@
                     @Html.DisplayFor(modelItem => item.User.UserName) 
                 </a>  
              </td>
-             <td class="text-right">  <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash"></i>  </a>  </td>
+             <td class="text-right small">  <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash"></i>  </a>  </td>
         </tr>
 }
     </tbody>

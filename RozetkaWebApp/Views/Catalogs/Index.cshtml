@@ -15,7 +15,7 @@
 @*     <p><a  class="btn btn-success" asp-action="Create" asp-route-id="@ViewBag.Portal.PortalId"> Добавить новый</a> </p>
 *@
 
-<table class="table">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th> @Resources.ID </th>
@@ -33,9 +33,9 @@
                 <a asp-controller = "CatalogImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Image</a> |
                 <a asp-controller = "Properties" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Фильтры</a> 
             </td>
-            <td class="text-right">
-                <a asp-controller = "Products" asp-action="Index" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-folder"></i> </a> |
-                <a asp-action="Edit" asp-route-id="@item.CatalogId">  <i class="fas fa-solid fa-pen-square"></i> </a> |
+            <td class="text-right small">
+                <a asp-controller = "Products" asp-action="Index" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-folder"></i> </a> &nbsp
+                <a asp-action="Edit" asp-route-id="@item.CatalogId">  <i class="fas fa-solid fa-pen-square"></i> </a> &nbsp
                 <a asp-action="Delete" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-trash"></i> </a>
             </td>
         </tr>}

@@ -13,7 +13,7 @@
     Html.RenderPartial((("_FilterNavigator")));
 }
 
-<table class="table">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th>  @Resources.Название_группы</th>
@@ -29,9 +29,9 @@
                     @Html.DisplayFor(modelItem => item.Name)
                </a>
             </td>          
-            <td class="text-right">
-                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-solid fa-pen-square"></i></a> |
-                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-solid fa-folder"></i></a> |
+            <td class="text-right small">
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-solid fa-folder"></i></a> &nbsp
                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>

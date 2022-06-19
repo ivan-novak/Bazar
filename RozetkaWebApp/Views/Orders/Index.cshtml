@@ -12,7 +12,7 @@
 }
 
 
-<table class="table">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th>
@@ -67,9 +67,9 @@
  @*               <td>
                 @Html.DisplayFor(modelItem => item.DeliveryPhone)
             </td>*@           
-            <td class="text-right">
-                <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res
-                <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res
+            <td class="text-right small">
+                <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res &nbsp
+                <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res &nbsp
                 <a asp-action="Delete" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-trash"></i></a>
             </td>
         </tr>

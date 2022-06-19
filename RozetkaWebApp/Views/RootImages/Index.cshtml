@@ -5,31 +5,28 @@
     ViewBag.ImagesTab = (("active"));
     Html.RenderPartial((("_RootNavigator")));
 }
- 
- 
+
      <p><h4> @Resources.Список_изображений </h4></p>
             
 @{  
     Html.RenderPartial((("_FilterNavigator")));
 }
- 
-         <hr />   
-
-
-    <div class=row>
+    <div class="row pt-3 mb-4">
         @foreach (var item in Model) 
         {
-          <div class="col-md-3">
-              <div class="col-12 text-truncate h6">              
-                    <a asp-action="Edit" asp-route-id="@item.RootImageId"> <i class="fas fa-solid fa-pen-square"></i> </a> 
-                    <a asp-action="Delete" asp-route-id="@item.RootImageId"> <i class="fas fa-solid fa-trash"></i> </a>
-                    @Html.DisplayFor(modelItem => item.Label)
-              </div>
-             <div class="thumbnail">   
-                   <img src="/images/Index/@item.ImageId" alt="item.Label" width = "100%">    
-             </div> 
-
-            <p></p>  
-         </div>    
+              <div class="col-lg-2 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch">
+                 <div class="card rounded shadow-sm border-1 p-3 mb-2">
+                    <div class="card-body p-0 m-0">
+                      <img src="/images/Index/@item.ImageId" alt="" class="w-100 img-fluid d-block mx-auto">
+                      <p></p>
+                      <h5 class ="m-0">@Html.DisplayFor(modelItem => item.Label)</h5>
+                      <p class="small text-muted">@Html.DisplayFor(modelItem => item.Title)</p>
+                   </div> 
+                   <ul class="list-inline small text-right mb-2">
+                        <li class="list-inline-item"><a asp-action="Edit"   asp-route-id="@item.RootImageId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li> 
+                        <li class="list-inline-item"><a asp-action="Delete" asp-route-id="@item.RootImageId"> <i class="fas fa-solid fa-trash"></i> </a></li>
+                   </ul>                
+                 </div> 
+              </div>  
         }
     </div>

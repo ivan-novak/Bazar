@@ -44,7 +44,7 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var portal = await _context.Portals
+            var portal = await _context.Portals.Include(m => m.Catalogs)
                 .FirstOrDefaultAsync(m => m.PortalId == id);
             if (portal == null)
             {

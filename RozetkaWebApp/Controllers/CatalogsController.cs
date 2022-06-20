@@ -64,7 +64,7 @@ namespace RozetkaWebApp
             }
 
             var catalog = await _context.Catalogs
-                .Include(c => c.Portal)
+                .Include(c => c.Portal).Include(cs => cs.Products)
                 .FirstOrDefaultAsync(m => m.CatalogId == id);
             if (catalog == null)
             {

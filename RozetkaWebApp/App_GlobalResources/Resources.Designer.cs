@@ -1663,7 +1663,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Інформація про товари.
+        ///   Looks up a localized string similar to Інформація про товар.
         /// </summary>
         public static string Информация_о_товаре {
             get {

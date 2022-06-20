@@ -18,15 +18,15 @@
         }
         <h1>  @ViewBag.Title</h1></div>
          <div class=" col-lg-1"> 
-             <a type="button" class="btn btn-warning  btn-sm" asp-controller = "Products" asp-action="AddToCart" asp-route-id = "@ViewBag.Product.ProductId"> 
-                В&nbspкошик
+             <a type="button" class="btn btn-warning  btn-sm font-weight-bold" asp-controller = "Products" asp-action="AddToCart" asp-route-id = "@ViewBag.Product.ProductId"> 
+                Купити
              </a>
         </div>
 </div>
 
    
      <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">@Resources.Детали0</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">Макет сторінки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.CharacteristicsTab" href="/Characteristics/Index/@ViewBag.Product.ProductId">@Resources.Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/ProductImages/Index/@ViewBag.Product.ProductId">@Resources.Image</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.CommentTab" href="/Comments/Index/@ViewBag.Product.ProductId">Відгуки</a> </li>

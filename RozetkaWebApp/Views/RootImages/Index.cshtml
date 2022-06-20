@@ -11,11 +11,20 @@
 @{  
     Html.RenderPartial((("_FilterNavigator")));
 }
+
+
+<style>
+  .card:hover {
+    transition: transform 0.2s ;
+    transform: scale(1.1);
+  }
+</style>
+
     <div class="row pt-3 mb-4">
         @foreach (var item in Model) 
         {
               <div class="col-lg-2 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch">
-                 <div class="card rounded shadow-sm border-1 p-3 mb-2">
+                 <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
                     <div class="card-body p-0 m-0">
                       <img src="/images/Index/@item.ImageId" alt="" class="w-100 img-fluid d-block mx-auto">
                       <p></p>
@@ -30,3 +39,4 @@
               </div>  
         }
     </div>
+

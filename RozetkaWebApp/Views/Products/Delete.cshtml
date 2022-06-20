@@ -58,7 +58,7 @@
            <td> @Html.DisplayFor(modelItem => item.Value)   </td>
            <td> @Html.DisplayFor(modelItem => item.Dimension)  </td>         
            <td class="text-right small">
-                <a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
+                <a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square"></i> </a>  &nbsp
                 <a asp-controller="Characteristics" asp-action="Delete" asp-route-id="@item.CharacteristicId"> <i class="fas fa-solid fa-trash"></i> </a>
            </td>
         </tr>

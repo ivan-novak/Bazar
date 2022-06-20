@@ -152,10 +152,6 @@
   <data name="ASPNETCORE_ENVIRONMENT" xml:space="preserve">
     <value>ASPNETCORE_ENVIRONMENT</value>
   </data>
-  <data name="AspNetUser" xml:space="preserve">
-    <value>Користувачі</value>
-    <comment>Previous text: AspNetUser</comment>
-  </data>
   <data name="AspNetUserRole" xml:space="preserve">
     <value>AspNetUserRole</value>
   </data>
@@ -605,7 +601,8 @@
     <comment>Previous text: Інформація о портале</comment>
   </data>
   <data name="Информация_о_товаре" xml:space="preserve">
-    <value>Інформація про товари</value>
+    <value>Інформація про товар</value>
+    <comment>Previous text: Інформація про товари</comment>
   </data>
   <data name="Информация_о_товаре_из_корзины" xml:space="preserve">
     <value>Інформація про товари в кошику?</value>
@@ -884,9 +881,6 @@
     <value>Перелік промоакцій</value>
     <comment>Previous text: Промоакції</comment>
   </data>
-  <data name="Промоакция" xml:space="preserve">
-    <value>Промоакція</value>
-  </data>
   <data name="Профиль" xml:space="preserve">
     <value>Профіль користувача</value>
     <comment>Previous text: Профіль</comment>
@@ -988,10 +982,6 @@
     <value>Перелік порталів</value>
     <comment>Previous text: Список порталів</comment>
   </data>
-  <data name="Список_промоакций" xml:space="preserve">
-    <value>Перелік промоакцій</value>
-    <comment>Previous text: Список промоакцій</comment>
-  </data>
   <data name="Список_товаров" xml:space="preserve">
     <value>Перелік товарів</value>
     <comment>Previous text: Список товарів</comment>
@@ -1024,9 +1014,6 @@
   </data>
   <data name="Сумма_заказа" xml:space="preserve">
     <value>Сума замовлення</value>
-  </data>
-  <data name="Текст" xml:space="preserve">
-    <value>Коментар</value>
   </data>
   <data name="Телефон" xml:space="preserve">
     <value>Телефон</value>
@@ -1174,6 +1161,20 @@
   </data>
   <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
     <value>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</value>
+  </data>
+  <data name="AspNetUser" xml:space="preserve">
+    <value>Користувачі</value>
+    <comment>Previous text: AspNetUser</comment>
+  </data>
+  <data name="Промоакция" xml:space="preserve">
+    <value>Промоакція</value>
+  </data>
+  <data name="Список_промоакций" xml:space="preserve">
+    <value>Перелік промоакцій</value>
+    <comment>Previous text: Список промоакцій</comment>
+  </data>
+  <data name="Текст" xml:space="preserve">
+    <value>Коментар</value>
   </data>
   <data name="CatalogImage" xml:space="preserve">
     <value>КаталогІмаж</value>

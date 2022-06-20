@@ -66,7 +66,7 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/catalogs/{id}/first")]
         public async Task<FileResult> Catalog(long? id, string name = null)
         {
-            if (id == null || name == null) return null;
+            if (id == null /*|| name == null*/) return null;
             var catalogImage = await _context.CatalogImages
                 .Where(p => p.CatalogId == id)
                 .Where(p => p.Label == name || name == null)
@@ -80,7 +80,7 @@ namespace RozetkaWebApp.Controllers
         [HttpGet("[controller]/portals/{id}/first")]
         public async Task<FileResult> Portal(long? id, string name)
         {
-            if (id == null || name == null) return null;
+            if (id == null) return null;
             var portalImage = await _context.PortalImages
                 .Where(p => p.PortalId == id)
                 .Where(p=> p.Label == name || name == null)

@@ -11,6 +11,13 @@
 @{  
     Html.RenderPartial((("_FilterNavigator")));
 }
+<style>
+  .card:hover {
+    transition: transform 0.2s ;
+    transform: scale(1.1);
+  }
+</style>
+
      <div class="row pt-3 mb-4">
         @foreach (var item in Model) 
         {

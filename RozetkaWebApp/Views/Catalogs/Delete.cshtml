@@ -2,38 +2,22 @@
 @model RozetkaWebApp.Models.Catalog
 
 @{
-         ViewBag.Catalog = Model;
-}
-
-@{
+    ViewBag.Catalog = Model;
     ViewBag.DelailTab = (("active"));
     Html.RenderPartial((("_CatologNavigator")));
+    
+    <div class="row pt-3">
+         <div class="form-group col-lg-4">
+             <h4>@Resources.Удалить_этот_каталог</h4>
+         </div> 
+         <div class="form-group col-lg-8" style="text-align: right"> 
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="@Model.CatalogId" />
+                <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
+                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+            </form>
+        </div> 
+    </div>  
+ 
+    Html.RenderPartial((("_CatalogMaket")));
 }
-
-
-<p>
-   <h4>@Resources.Удалить_этот_каталог</h4>
-</p>
-
-<div>  
-    <div>
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="CatalogId" />
-        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-           <hr />
-    </form> 
-    </div>
-    <dl class="row">
-        <dt class = "col-sm-2">  @Resources.Заголовок0  </dt>
-        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Title)  </dd>
-        <dt class = "col-sm-2">  @Resources.Этикетка </dt>
-        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Label)   </dd>
-        <dt class = "col-sm-2">  @Resources.Описание  </dt>
-        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description)  </dd>
-        <dt class = "col-sm-2">  @Resources.Атрибуты  </dt>
-        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Attributes) </dd>
-        <dt class = "col-sm-2">  @Resources.Портал  </dt>
-        <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Portal.Label) </dd>
-    </dl>
-</div>

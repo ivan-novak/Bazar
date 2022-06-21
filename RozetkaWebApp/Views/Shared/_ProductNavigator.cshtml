@@ -7,14 +7,25 @@
             <h1>@ViewBag.Title</h1>
         }
         else 
-        { 
-            ViewBag.Title= Resources.Товар+" - "+ViewBag.Product.Label;
-            <p> 
+        {   ViewBag.Title= Resources.Товар+" - "+ViewBag.Product.Label;
+            if (ViewBag.DetailsTab != null)
+            {
+                <p> 
+                    <a asp-controller = "Portals" asp-action="Index"> @Resources.Администрирование </a> @Resources.res0
+                    <a asp-controller = "Portals" asp-action="Details" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
+                    <a asp-controller = "Catalogs" asp-action="Details" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+                    <a asp-controller = "Products" asp-action="Details" asp-route-id="@ViewBag.Product.ProductId"> @ViewBag.Product.Label </a> 
+            </p>
+            } 
+            else
+            {
+                <p> 
                     <a asp-controller = "Portals" asp-action="Index"> @Resources.Администрирование </a> @Resources.res0
                     <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
-                    <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
-                    <a asp-controller = "Products" asp-action="Details" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Label </a> 
+                    <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+                    <a asp-controller = "Characteristics" asp-action="Index" asp-route-id="@ViewBag.Product.ProductId"> @ViewBag.Product.Label </a> 
             </p>
+            }
         }
         <h1>  @ViewBag.Title</h1></div>
          <div class=" col-lg-1"> 
@@ -26,9 +37,9 @@
 
    
      <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">Макет сторінки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.CharacteristicsTab" href="/Characteristics/Index/@ViewBag.Product.ProductId">@Resources.Характеристики</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/ProductImages/Index/@ViewBag.Product.ProductId">@Resources.Image</a> </li>
+            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">Макет сторінки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.CommentTab" href="/Comments/Index/@ViewBag.Product.ProductId">Відгуки</a> </li>
             <li class="nav-item">  <a class="nav-link @ViewBag.AudienceTab" href="/Comments/Index/@ViewBag.Product.ProductId">Цільова аудиторія</a> </li>
      </ul>       

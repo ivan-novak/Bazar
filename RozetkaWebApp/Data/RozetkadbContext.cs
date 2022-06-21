@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using RozetkaWebApp.Models;
 
 #nullable disable
@@ -499,7 +501,11 @@ namespace RozetkaWebApp.Data
 
                 entity.Property(e => e.CatalogId).HasColumnName("CatalogID");
 
-                entity.Property(e => e.ChioseData).HasColumnType("datetime");
+                entity.Property(e => e.ChoiceDate).HasColumnType("datetime");
+
+                entity.Property(e => e.InventoryId)
+                    .HasMaxLength(500)
+                    .HasColumnName("InventoryID");
 
                 entity.Property(e => e.Label)
                     .IsRequired()

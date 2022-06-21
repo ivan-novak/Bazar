@@ -58,6 +58,10 @@ namespace RozetkaWebApp.Models
         public decimal Price { get; set; }
         public decimal Quantity { get; set; }
         public long? PromotionId { get; set; }
+        public DateTime? ChoiceDate { get; set; }
+        public DateTime? ViewDate { get; set; }
+        public long? ViewCount { get; set; }
+        public long? ChoiceCount { get; set; }
 
     }
 

@@ -87,7 +87,10 @@ namespace RozetkaWebApp.Controllers
             else if (orderBy == "TITLE") query = query.OrderBy(x => x.Title);
             else if (orderBy == "PRICE") query = query.OrderBy(x => x.Price);
             else if (orderBy == "VIEWDATE") query = query.OrderBy(x => x.ViewDate);
-            else if (orderBy == "CHOISEDATA") query = query.OrderBy(x => x.ChioseData);
+            else if (orderBy == "CHOICEDATE") query = query.OrderBy(x => x.ChoiceDate);
+            else if (orderBy == "VIEWDATE") query = query.OrderBy(x => x.ViewDate);
+            else if (orderBy == "VIEWCOUNT") query = query.OrderBy(x => x.ViewCount);
+            else if (orderBy == "CHOICECOUNT") query = query.OrderBy(x => x.ChoiceCount);
             else query = query.OrderBy(x => x.ProductId);
             if (orderMode.ToUpper() == "DESC") query = query.Reverse();
             var totalCount = await query.CountAsync();

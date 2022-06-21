@@ -73,8 +73,9 @@ namespace RozetkaWebApp.Controllers
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
             var query = applicationDbContext.Where(x => Filter == null || x.Product.Label.Contains(Filter));
-            ViewBag.TotalCount = query.Count();
-            return View(await query.OrderBy(x => x.Product.Label).Skip(pageSize * page).Take(pageSize).Select(x => x.Product).ToListAsync());
+            var query1 = query.Select(x => x.Product).Distinct();
+            ViewBag.TotalCount = query1.Count();
+            return View(await query1.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         public async Task<IActionResult> Cart(string id, string Filter = null, int page = 0, int pageSize = 20)

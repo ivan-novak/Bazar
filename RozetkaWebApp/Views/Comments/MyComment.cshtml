@@ -10,6 +10,7 @@
 <p><h4>@Resources.Відгуки_про_товар</h4></p>
 
 @{
+    ViewData["DisableCreate"] = true;
     Html.RenderPartial((("_FilterNavigator")));
 }
 
@@ -25,16 +26,33 @@
                         <h5 class="text-primary">  @item.Product.Label  </h5>
                     </a>
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Score)
-                </td>
                 <td class="text-right">
                     @item.Date.ToString("dd/MM/yyyy")
                 </td>
-                <td class="text-right">
-                    <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
-                    <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
+
+
+                <td class="text-right small">
+                    <ul class="list-inline ">
+                        @for (int i = 1; i <= 10; i++)
+                        {
+                            if (i <= item.Score)
+                            {
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                            }
+                            else
+                            {
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
+                            }
+                        }
+                        <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square m-1 ml-4"></i> </a>
+                        <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
+                    </ul>
+
                 </td>
+
+
+
+
             </tr>
         </tbody>
     </table>

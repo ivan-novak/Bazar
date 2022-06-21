@@ -7,6 +7,7 @@
 
     <p><h4> @Resources.Список_товаров </h4></p>
 
+    ViewData["DisableCreate"] = true;
     Html.RenderPartial((("_FilterNavigator")));
 }
 
@@ -14,11 +15,11 @@
 <table class="table table-sm table-hover">
     <thead>
         <tr>
-            <th> @Resources.ID </th>
             <th> @Resources.Наименование_товара </th>
+            <th> @Resources.Описание </th>
             <th> @Resources.Цена  </th>
             <th> @Resources.Количество </th>
-            <th> @Resources.Ресурсы  </th>
+            <th>  @Resources.Сумма </th>
             <th class="text-right"> @Resources.Действия  </th>
         </tr>
     </thead>
@@ -26,15 +27,25 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>  @Html.DisplayFor(modelItem => item.OrderDatailId)  </td>
-                <td>  <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.Product.Label)</a> </td>
-                <td>  @Html.DisplayFor(modelItem => item.UnitCost)   </td>
-                <td>  @Html.DisplayFor(modelItem => item.Quantities)  </td>
-   @*             <td>  <a asp-controller="ProductImages" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Image</a> </td>*@
+                <td>
+                    <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">@Html.DisplayFor(modelItem => item.Product.Label)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantities)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LineTotal)
+                </td>
                 <td class="text-right  small">
-                    <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">   <i class="fas fa-solid fa-folder"></i> </a> &nbsp
-                    <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"> <i class="fas fa-solid fa-pen-square"></i> </a> &nbsp
-                    <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"> <i class="fas fa-solid fa-trash"></i> </a>
+                    <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">   <i class="fas fa-solid fa-folder m-1"></i> </a>
+                    <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"> <i class="fas fa-solid fa-pen-square m-1"></i> </a>
+                    <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
                     <i class="fa-solid fa-file-lines  text-dark"></i>
                 </td>
             </tr>

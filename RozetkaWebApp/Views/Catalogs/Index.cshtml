@@ -35,9 +35,9 @@
                     <a asp-controller="Properties" asp-action="Index" asp-route-id="@item.CatalogId">@Resources.Фильтры</a>
                 </td>
                 <td class="text-right small">
-                    <a asp-controller="Products" asp-action="Index" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-folder"></i> </a> &nbsp
-                    <a asp-action="Edit" asp-route-id="@item.CatalogId">  <i class="fas fa-solid fa-pen-square"></i> </a> &nbsp
-                    <a asp-action="Delete" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-trash"></i> </a>
+                    <a asp-controller="Products" asp-action="Index" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-folder m-1"></i> </a>  
+                    <a asp-action="Edit" asp-route-id="@item.CatalogId">  <i class="fas fa-solid fa-pen-square m-1"></i> </a>  
+                    <a asp-action="Delete" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
                 </td>
             </tr>
         }

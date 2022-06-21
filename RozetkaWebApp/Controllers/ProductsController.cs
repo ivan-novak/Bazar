@@ -41,14 +41,15 @@ namespace RozetkaWebApp.Controllers
         {
             ViewBag.Product = _context.Products.Where(c => c.ProductId == id).Include(c => c.Catalog).Include(c => c.Catalog.Portal).First();
             ViewBag.Catalog = ViewBag.Product.Catalog;
-            var applicationDbContext = _context.Views.Where(c => c.ProductId == id).Include(c => c.User);
+            var applicationDbContext = _context.Views.Where(c => c.ProductId == id).Where(c => c.UserId != null).Include(c => c.User);
 
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
             var query = applicationDbContext.Where(x => Filter == null || x.User.UserName.Contains(Filter));
-            ViewBag.TotalCount = query.Count();
-            return View(await query.OrderBy(x => x.User.UserName).Skip(pageSize * page).Take(pageSize).Select(x => x.User).ToListAsync());
+            var query1 = query.Select(x => x.User).Distinct();
+            ViewBag.TotalCount = query1.Count();
+            return View(await query1.OrderBy(x => x.UserName).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
         // GET: Products/Details/5

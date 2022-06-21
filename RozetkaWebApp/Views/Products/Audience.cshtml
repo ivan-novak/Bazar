@@ -2,7 +2,7 @@
 @model IEnumerable<RozetkaWebApp.Models.AspNetUser>
 
  @{
-    ViewBag.UsersTab = (("active"));
+    ViewBag.AudienceTab = (("active"));
     Html.RenderPartial((("_ProductNavigator")));
 }
 
@@ -28,18 +28,9 @@
         {
             <tr>
                 <td>
-                    @if (item.UserName == User.Identity.Name)
-                    {
-                        <a href="/Identity/Account/Manage">
-                            @Html.DisplayFor(modelItem => item.UserName)
-                        </a>
-                    }
-                    else
-                    {
-                        <a href="/Addresses/Index/@item.Id">
-                            @Html.DisplayFor(modelItem => item.UserName)
-                        </a>
-                    }
+                    <a href="/AspNetUsers/Preferences/@item.Id">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </a>
                 </td>
 
                 <td>
@@ -51,8 +42,8 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.LockoutEnabled)
                 <td class="text-right small">
-                    <a href="/Addresses/Index/@item.Id"><i class="fas fa-solid fa-folder"></i></a> &nbsp
-                    <a asp-controller="AspNetUsers" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
+                    <a href="/Addresses/Index/@item.Id"><i class="fas fa-solid fa-folder m-1"></i></a>
+                    <a asp-controller="AspNetUsers" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash m-1"></i></a>
                 </td>
             </tr>
         }

@@ -1,15 +1,12 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -25,11 +22,11 @@ namespace RozetkaWebApp.Controllers
         }
 
         // GET: PortalImages
-           public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
+        public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id != null) ViewBag.Portal = _context.Portals.Where(i => i.PortalId == id).First();
             var applicationDbContext = _context.PortalImages.Where(c => c.PortalId == id || id == null);
-            
+
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
@@ -91,7 +88,7 @@ namespace RozetkaWebApp.Controllers
                 _context.Add(portalImage);
                 await _context.SaveChangesAsync();
                 return Redirect($"/PortalImages/Index/" + portalImage.PortalId);
-               // return RedirectToAction(nameof(Index));
+                // return RedirectToAction(nameof(Index));
             }
             return View(portalImage);
         }

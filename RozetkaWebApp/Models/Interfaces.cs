@@ -6,7 +6,7 @@ namespace RozetkaWebApp.Models
 {
     public interface iFilter
     {
-        public int PropertyId { get; set; }    
+        public int PropertyId { get; set; }
         string Label { get; set; }
         string Value { get; set; }
 
@@ -15,8 +15,8 @@ namespace RozetkaWebApp.Models
     {
     }
 
-    public  interface iPortal
-    {     
+    public interface iPortal
+    {
         public int PortalId { get; set; }
         public string Title { get; set; }
         public string Label { get; set; }
@@ -49,7 +49,7 @@ namespace RozetkaWebApp.Models
     }
 
     public interface iProduct
-    {     
+    {
         public long ProductId { get; set; }
         public string Title { get; set; }
         public string Label { get; set; }
@@ -66,7 +66,7 @@ namespace RozetkaWebApp.Models
     }
 
     public interface iProperty
-    {      
+    {
         public int PropertyId { get; set; }
         public string Title { get; set; }
         public string Label { get; set; }
@@ -74,7 +74,7 @@ namespace RozetkaWebApp.Models
         public string Format { get; set; }
         public string Mask { get; set; }
         public bool? IsNumber { get; set; }
-        public string Description { get; set; }  
+        public string Description { get; set; }
     }
 
     public partial class Property : iProperty
@@ -95,7 +95,7 @@ namespace RozetkaWebApp.Models
     }
 
     public interface iImage
-    {      
+    {
         public long ImageId { get; set; }
         public string Title { get; set; }
     }
@@ -168,7 +168,7 @@ namespace RozetkaWebApp.Models
         public string UserId { get; set; }
     }
     public partial class Wallett : iWallett
-    { 
+    {
     }
 
 

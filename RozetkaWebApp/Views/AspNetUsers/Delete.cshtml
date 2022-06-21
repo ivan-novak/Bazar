@@ -5,50 +5,50 @@
     Html.RenderPartial((("_RootNavigator")));
 }
 
- <p> 
-        <h4>@Resources.Вы_хотиту_удалить_этот_аккаунт</h4>
-    </p>
+<p>
+    <h4>@Resources.Вы_хотиту_удалить_этот_аккаунт</h4>
+</p>
 
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-         <hr />
-    </form>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+    <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+    <hr />
+</form>
 <div>
 
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Имя_пользователя
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.UserName)
         </dd>
-      
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Resources.Адрес_электронной_почты
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-    
-       
-        <dt class = "col-sm-2">
+
+
+        <dt class="col-sm-2">
             @Resources.Телефон
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
-       
-       
-        <dt class = "col-sm-2">
+
+
+        <dt class="col-sm-2">
             @Resources.Блокировка
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.LockoutEnabled)
         </dd>
-       
+
     </dl>
-    
+
 </div>

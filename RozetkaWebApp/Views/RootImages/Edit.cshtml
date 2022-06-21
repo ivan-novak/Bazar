@@ -1,24 +1,24 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @model RozetkaWebApp.Models.RootImage
 
- @{
+@{
     ViewBag.ImagesTab = (("active"));
     Html.RenderPartial((("_RootNavigator")));
 }
-        
- <p>
-     <h4> @Resources.Изменить_изображение </h4>
- </p>
+
+<p>
+    <h4> @Resources.Изменить_изображение </h4>
+</p>
 
 <div class="row">
     <div class="col-md-8">
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
 
-              <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button> 
-                   <hr />
-             </div>
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="RootImageId" />
@@ -32,28 +32,30 @@
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
-            <div class="form-group"  style="display: none">
-                <label asp-for="ImageId" class="control-label " ></label>
+            <div class="form-group" style="display: none">
+                <label asp-for="ImageId" class="control-label "></label>
                 <select asp-for="ImageId" class="form-control" asp-items="ViewBag.ImageId"></select>
                 <span asp-validation-for="ImageId" class="text-danger"></span>
             </div>
-          
 
-                <div class="form-group" >
-                 <div class="editor-label">@Resources.Файл_изображения</div>
-                 <div class="editor-field">
+
+            <div class="form-group">
+                <div class="editor-label">@Resources.Файл_изображения</div>
+                <div class="editor-field">
                     <input type="file" name="uploadImage" accept="image/*" />
                 </div>
-            </div>    
+            </div>
 
         </form>
     </div>
-      <div class = "col-sm-4"> 
-          <img src="/Images/Index/@Model.ImageId" alt="@Model.Label" width="100%" />
-     </div>
+    <div class="col-sm-4">
+        <img src="/Images/Index/@Model.ImageId" alt="@Model.Label" width="100%" />
+    </div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+@{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

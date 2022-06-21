@@ -1,31 +1,39 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @model RozetkaWebApp.Models.Property
-    @{
-        ViewBag.FiltersTab = (("active"));
-        Html.RenderPartial((("_CatologNavigator")));
-    }
-   <p></p>
 
-<p>
-   <h4>@Resources.Удалить_этот_фильтр</h4>
-</p>
+@{
+    ViewBag.FiltersTab = (("active"));
+    Html.RenderPartial((("_CatologNavigator")));
+}
+
+<p></p>
+
+<p> <h4>@Resources.Удалить_этот_фильтр</h4> </p>
+
 <div>
     <form asp-action="Delete">
         <input type="hidden" asp-for="PropertyId" />
-        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+        <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
         <hr />
     </form>
     <p></p>
 
     <dl class="row">
-        <dt class = "col-sm-2"> @Resources.Каталог0  </dt>      <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Catalog.Label) </dd>
-        <dt class = "col-sm-2"> @Resources.Заголовок0  </dt>    <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Title) </dd>
-        <dt class = "col-sm-2"> @Resources.Этикетка </dt>      <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Label) </dd>
-        <dt class = "col-sm-2"> @Resources.Маска_ввода </dt>   <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Mask) </dd>
-        <dt class = "col-sm-2"> @Resources.Формат_вывода </dt> <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Format) </dd>
-        <dt class = "col-sm-2"> @Resources.Это_число </dt>    <dd class = "col-sm-10"> @Html.DisplayFor(model => model.IsNumber) </dd>
-        <dt class = "col-sm-2"> @Resources.Описание </dt>      <dd class = "col-sm-10"> @Html.DisplayFor(model => model.Description) </dd>
+        <dt class="col-sm-2"> @Resources.Каталог0  </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.Catalog.Label) </dd>
+        <dt class="col-sm-2"> @Resources.Заголовок0  </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.Title) </dd>
+        <dt class="col-sm-2"> @Resources.Этикетка </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.Label) </dd>
+        <dt class="col-sm-2"> @Resources.Маска_ввода </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.Mask) </dd>
+        <dt class="col-sm-2"> @Resources.Формат_вывода </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.Format) </dd>
+        <dt class="col-sm-2"> @Resources.Это_число </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.IsNumber) </dd>
+        <dt class="col-sm-2"> @Resources.Описание </dt>
+        <dd class="col-sm-10"> @Html.DisplayFor(model => model.Description) </dd>
     </dl>
 
 </div>

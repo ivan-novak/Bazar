@@ -7,18 +7,18 @@
 }
 
 
-<p> 
-        <h4>@Resources.Изменить_группу_безопасности</h4>
-</p>  
+<p>
+    <h4>@Resources.Изменить_группу_безопасности</h4>
+</p>
 <div class="row">
     <div class="col-md-4">
 
         <form asp-action="Edit">
-                      <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
                 <hr />
-            </div>  
+            </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -27,7 +27,7 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="NormalizedName" class="control-label">@Resources.Индикатор</label>
                 <input asp-for="NormalizedName" class="form-control" />
                 <span asp-validation-for="NormalizedName" class="text-danger"></span>
@@ -44,5 +44,7 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

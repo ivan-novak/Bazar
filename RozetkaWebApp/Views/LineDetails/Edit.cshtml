@@ -11,16 +11,16 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-                <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
                 <hr />
-            </div>  
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="OrderDatailId" />
             <div class="form-group" style="display: none">
                 <label asp-for="OrderId" class="control-label"></label>
-                <input asp-for="OrderId" class="form-control" ></input>
+                <input asp-for="OrderId" class="form-control"></input>
                 <span asp-validation-for="OrderId" class="text-danger"></span>
             </div>
             <div class="form-group" style="display: none">
@@ -33,7 +33,7 @@
                 <input asp-for="CartId" class="form-control" />
                 <span asp-validation-for="CartId" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="ProductId" class="control-label">@Resources.Товар</label>
                 <select ReadOnly="false" asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
                 <span asp-validation-for="ProductId" class="text-danger"></span>
@@ -63,12 +63,14 @@
                 <input asp-for="CreateDate" class="form-control" />
                 <span asp-validation-for="CreateDate" class="text-danger"></span>
             </div>
-            
+
         </form>
     </div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

@@ -1,14 +1,11 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp
 {
@@ -28,7 +25,7 @@ namespace RozetkaWebApp
         {
             var applicationDbContext = _context.Portals;
 
-           ViewBag.Filter = Filter;
+            ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
             var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));

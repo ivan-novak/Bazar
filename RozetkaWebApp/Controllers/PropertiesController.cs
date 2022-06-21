@@ -1,14 +1,12 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -77,7 +75,7 @@ namespace RozetkaWebApp.Controllers
                 _context.Add(@property);
                 await _context.SaveChangesAsync();
                 return Redirect($"/Properties/Index/" + @property.CatalogId);
-              //  return RedirectToAction(nameof(Index));
+                //  return RedirectToAction(nameof(Index));
             }
             ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);

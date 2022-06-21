@@ -1,15 +1,13 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -45,7 +43,6 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
             var aspNetUserRole = await _context.AspNetUserRoles
                 .Include(a => a.Role)
                 .Include(a => a.User)
@@ -54,12 +51,10 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
             return View(aspNetUserRole);
         }
-        [Authorize(Roles = "Адміністратори")]
 
-        // GET: AspNetUserRoles/Create
+        [Authorize(Roles = "Адміністратори")]
         public IActionResult Create(string Id)
         {
             ViewData["Role"] = _context.AspNetRoles.Find(Id);
@@ -67,11 +62,8 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "UserName");
             return View();
         }
-        [Authorize(Roles = "Адміністратори")]
 
-        // POST: AspNetUserRoles/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Адміністратори")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UserId,RoleId")] AspNetUserRole aspNetUserRole)
@@ -87,9 +79,8 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", aspNetUserRole.UserId);
             return Redirect($"/AspNetUserRoles/Index/" + aspNetUserRole.RoleId);
         }
-        [Authorize(Roles = "Адміністратори")]
 
-        // GET: AspNetUserRoles/Edit/5
+        [Authorize(Roles = "Адміністратори")]
         public async Task<IActionResult> Edit(string Id)
         {
             if (Id == null)
@@ -97,7 +88,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var aspNetUserRole = await _context.AspNetUserRoles.Where(a=>a.UserId+a.RoleId == Id).FirstOrDefaultAsync();
+            var aspNetUserRole = await _context.AspNetUserRoles.Where(a => a.UserId + a.RoleId == Id).FirstOrDefaultAsync();
             if (aspNetUserRole == null)
             {
                 return NotFound();
@@ -106,11 +97,8 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", aspNetUserRole.UserId);
             return View(aspNetUserRole);
         }
-        [Authorize(Roles = "Адміністратори")]
 
-        // POST: AspNetUserRoles/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Адміністратори")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("UserId,RoleId")] AspNetUserRole aspNetUserRole)
@@ -144,9 +132,8 @@ namespace RozetkaWebApp.Controllers
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", aspNetUserRole.UserId);
             return View(aspNetUserRole);
         }
-        [Authorize(Roles = "Адміністратори")]
 
-        // GET: AspNetUserRoles/Delete/5
+        [Authorize(Roles = "Адміністратори")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -165,9 +152,8 @@ namespace RozetkaWebApp.Controllers
             ViewData["Role"] = _context.AspNetRoles.Find(aspNetUserRole.RoleId);
             return View(aspNetUserRole);
         }
-        [Authorize(Roles = "Адміністратори")]
 
-        // POST: AspNetUserRoles/Delete/5
+        [Authorize(Roles = "Адміністратори")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

@@ -1,15 +1,13 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -26,7 +24,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Promotions
         public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
-            
+
             var applicationDbContext = _context.Promotions.Include(p => p.Image);
             ViewBag.Filter = Filter;
             ViewBag.Page = page;

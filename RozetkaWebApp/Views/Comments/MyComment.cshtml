@@ -9,47 +9,50 @@
 
 <p><h4>@Resources.Відгуки_про_товар</h4></p>
 
-@{  
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
- 
-@foreach (var item in Model) {
-   
-        <table style = "width:100%">
-            <hr /> <tbody> 
-                <tr>
-            <td> 
-                <a asp-controller="Products" asp-action= "Details" asp-route-id="@item.ProductId">
-                     <h5 class="text-primary">  @item.Product.Label  </h5>
-                </a>
-            </td>
-            <td >
-                @Html.DisplayFor(modelItem => item.Score)
-            </td>                     
-            <td class="text-right">
-                @item.Date.ToString("dd/MM/yyyy")
-            </td>
-            <td class="text-right">
-                <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
-                <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
-            </td>
-        </tr>
-       </tbody> </table>             
-                      @if (item.Text != null)
-                        {
-                            @item.Text
-                        }
-                        @if (item.Pros != null)
-                        {
-                            <h6 class="text-success">@Resources.Переваги0 </h6>
-                            <p class="text-secondary">@Html.DisplayFor(modelItem => item.Pros)</p>
-                        }
-                        @if (item.Cons != null)
-                        {
-                            <h6 class="text-warning">@Resources.Недоліки0 </h6>
-                            <p class="text-secondary">@Html.DisplayFor(modelItem => item.Cons)</p>
-                        }
-                    
+
+@foreach (var item in Model)
+{
+
+    <table style="width:100%">
+        <hr />
+        <tbody>
+            <tr>
+                <td>
+                    <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">
+                        <h5 class="text-primary">  @item.Product.Label  </h5>
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td class="text-right">
+                    @item.Date.ToString("dd/MM/yyyy")
+                </td>
+                <td class="text-right">
+                    <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a>   |
+                    <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @if (item.Text != null)
+    {
+        @item.Text
+    }
+    @if (item.Pros != null)
+    {
+        <h6 class="text-success">@Resources.Переваги0 </h6>
+        <p class="text-secondary">@Html.DisplayFor(modelItem => item.Pros)</p>
+    }
+    @if (item.Cons != null)
+    {
+        <h6 class="text-warning">@Resources.Недоліки0 </h6>
+        <p class="text-secondary">@Html.DisplayFor(modelItem => item.Cons)</p>
+    }
+
 }
-  
+
 

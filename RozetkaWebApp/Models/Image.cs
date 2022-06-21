@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 #nullable disable
 
@@ -20,7 +19,7 @@ namespace RozetkaWebApp.Models
         public long ImageId { get; set; }
         public string Title { get; set; }
         public byte[] Data { get; set; }
-        public string Url { get { return "/images/" + ImageId.ToString(); } } 
+        public string Url { get { return "/images/" + ImageId.ToString(); } }
         public virtual ICollection<CatalogImage> CatalogImages { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<PortalImage> PortalImages { get; set; }

@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.AspNetRole
 
 @{
-    ViewBag.Title= (("Удалить группу безопасности"));
+    ViewBag.Title = (("Удалить группу безопасности"));
 }
 
 @{
@@ -10,38 +10,38 @@
     Html.RenderPartial((("_RootNavigator")));
 }
 
-<p> 
+<p>
     <h4>@Resources.Вы_хотите_удалить_эту_группу</h4>
 </p>
 
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-         <hr />
-    </form>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+    <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+    <hr />
+</form>
 <div>
-   
+
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Заголовок0
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Индикатор
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NormalizedName)
         </dd>
         @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ConcurrencyStamp)
-        </dt>
-        <dd class = "col-sm-10">
+            </dt>
+            <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ConcurrencyStamp)
-        </dd>*@
+            </dd>*@
     </dl>
-    
-  
+
+
 </div>

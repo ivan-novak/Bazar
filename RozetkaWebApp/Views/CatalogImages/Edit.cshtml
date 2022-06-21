@@ -2,18 +2,18 @@
 @model RozetkaWebApp.Models.CatalogImage
 
     @{
-        ViewBag.ImagesTab = (("active"));
-        Html.RenderPartial((("_CatologNavigator")));
-    }
-    <p><h4>@Resources.Список_изображений</h4></p>                
+    ViewBag.ImagesTab = (("active"));
+    Html.RenderPartial((("_CatologNavigator")));
+}
+<p><h4>@Resources.Список_изображений</h4></p>
 
 <div class="row">
     <div class="col-md-8">
-        <form asp-action="Edit"  method="post" enctype="multipart/form-data"  >
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
-                <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />     
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button> 
+                <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div>
 
@@ -21,8 +21,8 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group" style="display: none">
                 <label asp-for="CatalogId" class="control-label"></label>
-            @*    <select asp-for="CatalogId" class="form-control" asp-items="ViewBag.Catalog.CatalogId"></select>*@
-              <input asp-for="CatalogId" class="form-control" value=@Model.CatalogId /> 
+                @*    <select asp-for="CatalogId" class="form-control" asp-items="ViewBag.Catalog.CatalogId"></select>*@
+                <input asp-for="CatalogId" class="form-control" value=@Model.CatalogId />
                 <span asp-validation-for="CatalogId" class="text-danger"></span>
             </div>
             <div class="form-group" style="display: none">
@@ -40,21 +40,23 @@
                 <input asp-for="Label" class="form-control" />
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
-            <div class="form-group" >
-                 <div class="editor-label">@Resources.Файл_изображения</div>
-                 <div class="editor-field">
+            <div class="form-group">
+                <div class="editor-label">@Resources.Файл_изображения</div>
+                <div class="editor-field">
                     <input type="file" name="uploadImage" accept="image/*" />
                 </div>
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
-        </form>  
-       
-    </div> 
-    <div class = "col-sm-4"> 
-             <img src="/Images/Index/@Model.ImageId" alt="@Model.Label" width="100%" />
+        </form>
+
+    </div>
+    <div class="col-sm-4">
+        <img src="/Images/Index/@Model.ImageId" alt="@Model.Label" width="100%" />
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

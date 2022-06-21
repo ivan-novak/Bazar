@@ -5,19 +5,19 @@
     ViewBag.Catalog = Model;
     ViewBag.DelailTab = (("active"));
     Html.RenderPartial((("_CatologNavigator")));
-    
+
     <div class="row pt-3">
-         <div class="form-group col-lg-4">
-             <h4>@Resources.Удалить_этот_каталог</h4>
-         </div> 
-         <div class="form-group col-lg-8" style="text-align: right"> 
+        <div class="form-group col-lg-4">
+            <h4>@Resources.Удалить_этот_каталог</h4>
+        </div>
+        <div class="form-group col-lg-8" style="text-align: right">
             <form asp-action="Delete">
                 <input type="hidden" asp-for="@Model.CatalogId" />
-                <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+                <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
             </form>
-        </div> 
-    </div>  
- 
+        </div>
+    </div>
+
     Html.RenderPartial((("_CatalogMaket")));
 }

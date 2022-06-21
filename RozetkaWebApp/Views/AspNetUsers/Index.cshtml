@@ -5,15 +5,15 @@
     ViewBag.UsersTab = (("active"));
     Html.RenderPartial((("_RootNavigator")));
 }
-  
+
 <p><h4>@Resources.Список_пользователей</h4></p>
-       
-@{  
+
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 
 <table class="table table-sm table-hover">
-       <thead>
+    <thead>
         <tr>
             <th> @Resources.Имя_пользователя </th>
             <th> @Resources.Адрес_электронной_почты </th>
@@ -24,36 +24,37 @@
     </thead>
 
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @if (item.UserName == User.Identity.Name) 
-                {
-                   <a href="/Identity/Account/Manage"> 
-                       @Html.DisplayFor(modelItem => item.UserName)
-                   </a>
-                }
-                else
-                {
-                   <a href="/Addresses/Index/@item.Id">                
-                      @Html.DisplayFor(modelItem => item.UserName)
-                   </a> 
-                }
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.UserName == User.Identity.Name)
+                    {
+                        <a href="/Identity/Account/Manage">
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/Addresses/Index/@item.Id">
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </a>
+                    }
+                </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>     
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LockoutEnabled)
-            <td class="text-right small">
-                <a href="/Addresses/Index/@item.Id" ><i class="fas fa-solid fa-folder"></i></a> &nbsp
-                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                <td class="text-right small">
+                    <a href="/Addresses/Index/@item.Id"><i class="fas fa-solid fa-folder"></i></a> &nbsp
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

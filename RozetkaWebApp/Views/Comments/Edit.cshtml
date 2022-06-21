@@ -11,28 +11,28 @@
 }
 
 
- <p>
-     <h4>Редагувати відгук</h4>
- </p>
+<p>
+    <h4>Редагувати відгук</h4>
+</p>
 
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">
 
-              <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button> 
-                   <hr />
-             </div>
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CommentId" />
-            <div class="form-group"  style="display: none">
+            <div class="form-group" style="display: none">
                 <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" ></input>
+                <input asp-for="UserId" class="form-control"></input>
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
-            <div class="form-group"  style="display: none">
+            <div class="form-group" style="display: none">
                 <label asp-for="ProductId" class="control-label"></label>
                 <input asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></input>
                 <span asp-validation-for="ProductId" class="text-danger"></span>
@@ -42,7 +42,7 @@
                 <input asp-for="Text" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
-           <div class="form-group">
+            <div class="form-group">
                 <label asp-for="Pros" class="control-label">@Resources.Переваги</label>
                 <input asp-for="Pros" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
@@ -52,26 +52,28 @@
                 <input asp-for="Cons" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
- @*           <div class="form-group"   style="display: none">
+            @*           <div class="form-group"   style="display: none">
                 <label asp-for="Date" class="control-label"></label>
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
-            </div>*@
+                </div>*@
             <div class="form-group">
                 <label asp-for="Score" class="control-label">@Resources.Оцінка</label>
                 <input asp-for="Score" class="form-control" />
                 <span asp-validation-for="Score" class="text-danger"></span>
             </div>
-            <div class="form-group"   style="display: none">
+            <div class="form-group" style="display: none">
                 <label asp-for="ImageId" class="control-label"></label>
                 <select asp-for="ImageId" class="form-control" asp-items="ViewBag.ImageId"></select>
                 <span asp-validation-for="ImageId" class="text-danger"></span>
-            </div>           
+            </div>
         </form>
     </div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

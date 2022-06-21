@@ -1,15 +1,12 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -29,7 +26,7 @@ namespace RozetkaWebApp.Controllers
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.User = _context.AspNetUsers.Find(id);
             var rozetkadbContext = _context.Walletts.Include(a => a.User).Where(a => a.UserId == id);
-            
+
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
@@ -42,7 +39,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Walletts/Details/5
         public async Task<IActionResult> Details(long? id)
         {
-           
+
             if (id == null)
             {
                 return NotFound();

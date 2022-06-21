@@ -7,9 +7,9 @@
 }
 
 <p><h4>@Resources.Члены_группы@ViewBag.Role.Name</h4></p>
-       
-       
-@{  
+
+
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 
@@ -21,17 +21,17 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) 
-    {
-         var id = item.UserId + item.RoleId;
-        <tr>
-             <td> 
-                <a asp-controller = "Addresses" asp-action="Index" asp-route-id="@item.User.Id"> 
-                    @Html.DisplayFor(modelItem => item.User.UserName) 
-                </a>  
-             </td>
-             <td class="text-right small">  <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash"></i>  </a>  </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            var id = item.UserId + item.RoleId;
+            <tr>
+                <td>
+                    <a asp-controller="Addresses" asp-action="Index" asp-route-id="@item.User.Id">
+                        @Html.DisplayFor(modelItem => item.User.UserName)
+                    </a>
+                </td>
+                <td class="text-right small">  <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash"></i>  </a>  </td>
+            </tr>
+        }
     </tbody>
 </table>

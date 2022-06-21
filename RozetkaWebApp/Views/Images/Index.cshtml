@@ -1,7 +1,9 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @model IEnumerable<RozetkaWebApp.Models.Image>
 
-@{ ViewBag.Title= (("Index"));}
+@{
+    ViewBag.Title = (("Index"));
+}
 
 <h1>@Resources.Index</h1>
 
@@ -18,7 +20,7 @@
         </tr>
     </thead>
 
-    <form asp-action="UploadImage" asp-controller="Images"  method="post" enctype="multipart/form-data">
+    <form asp-action="UploadImage" asp-controller="Images" method="post" enctype="multipart/form-data">
         <input type="file" id="file1" name="file1" multiple="multiple" />
         <button type="submit">@Resources.Занрузить_файл</button>
     </form>

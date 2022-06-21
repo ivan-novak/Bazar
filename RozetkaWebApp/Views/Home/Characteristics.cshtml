@@ -2,25 +2,26 @@
 @model IEnumerable<RozetkaWebApp.Models.Characteristic>
 
 @{
-    ViewBag.Title= Resources.Характеристики;
+    ViewBag.Title = Resources.Характеристики;
 }
 
 <h1> @Resources.Детально_о_товаре </h1>
 
- <p><a  class="btn btn-success" asp-controller = "Home" asp-action="AddToCart" asp-route-id = "@ViewBag.Product.ProductId" > @Resources.Купить </a>   </p>
+<p><a class="btn btn-success" asp-controller="Home" asp-action="AddToCart" asp-route-id="@ViewBag.Product.ProductId"> @Resources.Купить </a>   </p>
 
 
 <table class="table">
-     <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-               <p>@Html.DisplayFor(modelItem => item.Property.Label)</p>     
-               </td>
-                   <td>
-               <p>@Html.DisplayFor(modelItem => item.Value)</p>     
-               </td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <p>@Html.DisplayFor(modelItem => item.Property.Label)</p>
+                </td>
+                <td>
+                    <p>@Html.DisplayFor(modelItem => item.Value)</p>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

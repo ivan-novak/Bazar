@@ -5,40 +5,41 @@
     ViewBag.PromotionsTab = (("active"));
     Html.RenderPartial((("_RootNavigator")));
 }
-  
- <p><h4>@Resources.Промоакции</h4></p>
-       
- @{  
+
+<p><h4>@Resources.Промоакции</h4></p>
+
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 
 <table class="table table-sm table-hover">
-     <thead>
+    <thead>
         <tr>
             <th> @Resources.ID </th>
             <th> @Resources.Наименование_акции </th>
-            <th> @Resources.Дата_начала </th> 
+            <th> @Resources.Дата_начала </th>
             <th> @Resources.Дата_завершения </th>
             <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td> @Html.DisplayFor(modelItem => item.PromotionId)  </td>
-            <td>
-                <a asp-action= "Details" asp-route-id="@item.PromotionId">
-                   @Html.DisplayFor(modelItem => item.Label) 
-                </a> 
-            </td>
-             <td> @Html.DisplayFor(modelItem => item.StartDate)</td>
-            <td> @Html.DisplayFor(modelItem => item.EndDate)</td>
-            <td class="text-right  small">
-                <a asp-action="Details" asp-route-id="@item.PromotionId"> <i class="fas fa-solid fa-folder"></i></a> &nbsp
-                <a asp-action="Edit" asp-route-id="@item.PromotionId"><i class="fas fa-solid fa-pen-square"></i></a>  &nbsp
-                <a asp-action="Delete" asp-route-id="@item.PromotionId"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.PromotionId)  </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.PromotionId">
+                        @Html.DisplayFor(modelItem => item.Label)
+                    </a>
+                </td>
+                <td> @Html.DisplayFor(modelItem => item.StartDate)</td>
+                <td> @Html.DisplayFor(modelItem => item.EndDate)</td>
+                <td class="text-right  small">
+                    <a asp-action="Details" asp-route-id="@item.PromotionId"> <i class="fas fa-solid fa-folder"></i></a> &nbsp
+                    <a asp-action="Edit" asp-route-id="@item.PromotionId"><i class="fas fa-solid fa-pen-square"></i></a>  &nbsp
+                    <a asp-action="Delete" asp-route-id="@item.PromotionId"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

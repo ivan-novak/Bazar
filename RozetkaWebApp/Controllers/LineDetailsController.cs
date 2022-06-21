@@ -1,15 +1,14 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -44,7 +43,7 @@ namespace RozetkaWebApp.Controllers
                 .Include(l => l.Product)
                 .Where(l => l.OrderId == null)
                 .Where(l => l.CartId == CartId() || (l.UserId == userId));
-            ViewBag.User = await _context.AspNetUsers.FindAsync(userId);    
+            ViewBag.User = await _context.AspNetUsers.FindAsync(userId);
             return View(await rozetkadbContext.ToListAsync());
 
         }
@@ -52,7 +51,7 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> CopyCart()
         {
             var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "";
-            var lines = _context.LineDetails.Where(l => l.CartId == CartId() && (l.UserId == null)).Select(l=>l);
+            var lines = _context.LineDetails.Where(l => l.CartId == CartId() && (l.UserId == null)).Select(l => l);
             var views = _context.Views.Where(l => l.CartId == CartId() && (l.UserId == null)).Select(l => l);
 
             foreach (var i in lines)
@@ -132,7 +131,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-         //   ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
+            //   ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }

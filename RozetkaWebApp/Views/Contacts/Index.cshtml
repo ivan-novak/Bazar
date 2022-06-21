@@ -7,54 +7,55 @@
 }
 
 
- <p><h4>@Resources.Список_контактов</h4></p>
+<p><h4>@Resources.Список_контактов</h4></p>
 
-@{  
+@{
     Html.RenderPartial(Resources._FilterNavigator);
 }
 <table class="table table-sm table-hover">
     <thead>
-        <tr> 
-            <th> @Resources.ID </th>     
-            <th> @Resources.Полное_имя </th>        
-            <th> @Resources.Адрес_электронной_почты </th>    
-            <th> @Resources.Факс </th>          
-            <th> @Resources.Мобильный_телефон </th>          
+        <tr>
+            <th> @Resources.ID </th>
+            <th> @Resources.Полное_имя </th>
+            <th> @Resources.Адрес_электронной_почты </th>
+            <th> @Resources.Факс </th>
+            <th> @Resources.Мобильный_телефон </th>
             <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-             <td>
-                @Html.DisplayFor(modelItem => item.ContactId)
-            </td>
-            <td>
-                 <a asp-action="Details" asp-route-id="@item.ContactId">
-                     @Html.DisplayFor(modelItem => item.FirstName)
-                     @Html.DisplayFor(modelItem => item.MidName)
-                     @Html.DisplayFor(modelItem => item.LastName)
-                </a> 
-               
-            </td>                   
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>         
-            <td>
-                @Html.DisplayFor(modelItem => item.Fax)
-            </td>          
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone1)
-            </td>          
-            <td class="text-right small">
-                <a asp-action="Details" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-folder"></i></a> &nbsp
-                <a asp-action="Edit" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
-                <a asp-action="Delete" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactId)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ContactId">
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                        @Html.DisplayFor(modelItem => item.MidName)
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </a>
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fax)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone1)
+                </td>
+                <td class="text-right small">
+                    <a asp-action="Details" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-folder"></i></a> &nbsp
+                    <a asp-action="Edit" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
+                    <a asp-action="Delete" asp-route-id="@item.ContactId"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
- @{
-     Html.RenderPartial((("_PageNavigator")));
- }
+@{
+    Html.RenderPartial((("_PageNavigator")));
+}

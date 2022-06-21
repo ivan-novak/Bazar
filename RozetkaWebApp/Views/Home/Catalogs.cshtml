@@ -2,20 +2,21 @@
 @model IEnumerable<RozetkaWebApp.Models.Catalog>
 
 @{
-    ViewBag.Title= Resources.Каталог0;
+    ViewBag.Title = Resources.Каталог0;
 }
 
 <h1>@Resources.Каталоги</h1>
 
 
 <table class="table">
-     <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-controller = "Home" asp-action="Products" asp-route-id="@item.CatalogId">@Html.DisplayFor(modelItem => item.Title)</a> 
-            </td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Home" asp-action="Products" asp-route-id="@item.CatalogId">@Html.DisplayFor(modelItem => item.Title)</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

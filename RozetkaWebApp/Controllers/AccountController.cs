@@ -1,20 +1,15 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -59,15 +54,15 @@ namespace RozetkaWebApp.Controllers
         {
             var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Addresses.FindAsync(address.AddressId);
-            if (newItem == null || newItem.UserId != Id)   return NotFound();  
+            if (newItem == null || newItem.UserId != Id) return NotFound();
             newItem.AddressType = address.AddressType?.ToString();
             newItem.AddressLine1 = address.AddressLine1?.ToString();
             newItem.AddressLine2 = address.AddressLine2?.ToString();
-            newItem.AddressLine3 = address.AddressLine3?.ToString();  
+            newItem.AddressLine3 = address.AddressLine3?.ToString();
             newItem.UserId = Id;
-            newItem.City = address.City?.ToString();      
-            newItem.State = address.State?.ToString();        
-            newItem.PostalCode = address.PostalCode?.ToString();       
+            newItem.City = address.City?.ToString();
+            newItem.State = address.State?.ToString();
+            newItem.PostalCode = address.PostalCode?.ToString();
             newItem.Country = address.Country?.ToString();
             await _context.SaveChangesAsync();
             return NoContent();
@@ -145,8 +140,8 @@ namespace RozetkaWebApp.Controllers
         {
             var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Contacts.FindAsync(contact.ContactId);
-            if (newItem == null || newItem.UserId != Id)  return NotFound();
-            newItem.ContactType = contact.ContactType?.ToString(); 
+            if (newItem == null || newItem.UserId != Id) return NotFound();
+            newItem.ContactType = contact.ContactType?.ToString();
             newItem.DisplayName = contact.DisplayName?.ToString();
             newItem.FullName = contact.FullName?.ToString();
             newItem.Title = contact.Title?.ToString();
@@ -184,7 +179,7 @@ namespace RozetkaWebApp.Controllers
 
         [HttpGet("api/v1/account/contacts")]
         [HttpGet("api/v1/account/contacts/{Id}")]
-        public async Task<ApiResult<iContact>> Contacts(string orderMode = "ASC", string orderBy = "ContactId", int page = 0, int pageSize = 50,  long? Id = null)
+        public async Task<ApiResult<iContact>> Contacts(string orderMode = "ASC", string orderBy = "ContactId", int page = 0, int pageSize = 50, long? Id = null)
         {
             var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             orderBy = orderBy.ToUpper();
@@ -250,7 +245,7 @@ namespace RozetkaWebApp.Controllers
 
         [HttpGet("api/v1/account/wallets/")]
         [HttpGet("api/v1/account/wallets/{Id}")]
-        public async Task<ApiResult<iWallett>> Wallettes(string orderMode = "ASC", string orderBy = "WalletteId", int page = 0, int pageSize = 50,  long? Id = null)
+        public async Task<ApiResult<iWallett>> Wallettes(string orderMode = "ASC", string orderBy = "WalletteId", int page = 0, int pageSize = 50, long? Id = null)
         {
             var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             orderBy = orderBy.ToUpper();
@@ -268,7 +263,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         [HttpPost("api/v1/account/comments/")]
-        public async Task<ActionResult<iComment>> PostComment( [FromBody] Comment Comment)
+        public async Task<ActionResult<iComment>> PostComment([FromBody] Comment Comment)
         {
             var newItem = new Comment
             {
@@ -278,7 +273,7 @@ namespace RozetkaWebApp.Controllers
                 Score = Comment.Score,
                 ImageId = Comment.ImageId,
                 UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)
-        };
+            };
             _context.Comments.Add(newItem);
             await _context.SaveChangesAsync();
             return newItem;
@@ -290,7 +285,7 @@ namespace RozetkaWebApp.Controllers
         {
             var userId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.Comments.FindAsync(Comment.CommentId);
-            if (newItem == null || newItem.UserId != userId)  return NotFound();
+            if (newItem == null || newItem.UserId != userId) return NotFound();
             newItem.ProductId = Comment.ProductId;
             newItem.Text = Comment.Text?.ToString();
             newItem.Date = Comment.Date;
@@ -356,9 +351,9 @@ namespace RozetkaWebApp.Controllers
             public string PhoneNumber { get; set; }
             public bool? PhoneNumberConfirmed { get; set; }
             public bool? TwoFactorEnabled { get; set; }
-           public bool? RememberMe { get; set; }
+            public bool? RememberMe { get; set; }
         }
-   
+
 
         [HttpPost("api/v1/account/signon")]
         public async Task<ActionResult<UserModel>> PostAspNetUser([FromBody] UserModel Input)
@@ -385,7 +380,7 @@ namespace RozetkaWebApp.Controllers
             if (Input.TwoFactorEnabled != null) newItem.TwoFactorEnabled = (bool)Input.TwoFactorEnabled;
             if (Input.EmailConfirmed != null) newItem.TwoFactorEnabled = (bool)Input.EmailConfirmed;
             await _context.SaveChangesAsync();
-            if (Input.Password != null) 
+            if (Input.Password != null)
             {
                 var user = await _userManager.GetUserAsync(User);
                 await _userManager.RemovePasswordAsync(user);
@@ -410,7 +405,7 @@ namespace RozetkaWebApp.Controllers
         {
             var Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var newItem = await _context.AspNetUsers.FindAsync(Id);
-            if (newItem == null || newItem.Id != Id)return NotFound();
+            if (newItem == null || newItem.Id != Id) return NotFound();
             _context.AspNetUsers.Remove(newItem);
             await _context.SaveChangesAsync();
             return NoContent();
@@ -506,7 +501,7 @@ namespace RozetkaWebApp.Controllers
                 UserId = Id
             };
             var cart = _context.LineDetails.Where(a => (a.CartId == CartId() || a.UserId == Id) && a.OrderId == null).Include(a => a.Product).ToList();
-            if (cart.Count ==0) return NotFound();
+            if (cart.Count == 0) return NotFound();
             if (Order.Description == null) newItem.Description = String.Join(",", cart.Select(s => s.Product.Label));
             newItem.Total = cart.Sum(x => x.LineTotal);
             _context.Orders.Add(newItem);
@@ -523,7 +518,7 @@ namespace RozetkaWebApp.Controllers
 
         [HttpGet("api/v1/account/orders/")]
         [HttpGet("api/v1/account/orders/{Id}")]
-        public async Task<ApiResult<iOrder>> Orders(long? Id=null, int page = 0, int pageSize = 50)
+        public async Task<ApiResult<iOrder>> Orders(long? Id = null, int page = 0, int pageSize = 50)
         {
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var query = _context.Orders.Where(x => x.UserId == user_Id);
@@ -536,7 +531,7 @@ namespace RozetkaWebApp.Controllers
         }
 
         [HttpGet("api/v1/account/orders/{Id}/details")]
-        public async Task<ApiResult<iLineDetail>> OrderDetail(long? Id=null, int page = 0, int pageSize = 50)
+        public async Task<ApiResult<iLineDetail>> OrderDetail(long? Id = null, int page = 0, int pageSize = 50)
         {
             var user_Id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId != null && x.UserId == user_Id);

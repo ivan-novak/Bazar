@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.Image
 
 @{
-    ViewBag.Title= (("Edit"));
+    ViewBag.Title = (("Edit"));
 }
 
 <h1>@Resources.Изменить</h1>
@@ -36,5 +36,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

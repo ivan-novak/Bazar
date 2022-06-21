@@ -1,17 +1,14 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -53,7 +50,7 @@ namespace RozetkaWebApp.Controllers
         // GET: AspNetUsers
         public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
-          //  return View(await _context.AspNetUsers.ToListAsync());
+            //  return View(await _context.AspNetUsers.ToListAsync());
 
 
 

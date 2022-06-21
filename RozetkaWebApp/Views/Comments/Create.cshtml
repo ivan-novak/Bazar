@@ -7,26 +7,26 @@
     Html.RenderPartial((("_ProductNavigator")));
 }
 
-  <p>
-     <h4>Новий відгук </h4>
- </p>
+<p>
+    <h4>Новий відгук </h4>
+</p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
             <div class="form-group">
                 <input type="submit" value="@Resources.Create" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-                 <hr />
-             </div> 
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-@*            <div class="form-group">
+            @*            <div class="form-group">
                 <label asp-for="UserId" class="control-label"></label>
                 <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div>*@
-            <div class="form-group"  style="display: none">
+                </div>*@
+            <div class="form-group" style="display: none">
                 <label asp-for="ProductId" class="control-label"></label>
-                <input asp-for="ProductId" class ="form-control" value="@ViewBag.Product.ProductId" asp-items="ViewBag.ProductId"></input>
+                <input asp-for="ProductId" class="form-control" value="@ViewBag.Product.ProductId" asp-items="ViewBag.ProductId"></input>
             </div>
             <div class="form-group">
                 <label asp-for="Text" class="control-label">@Resources.Коментар</label>
@@ -43,25 +43,27 @@
                 <input asp-for="Cons" class="form-control" />
                 <span asp-validation-for="Text" class="text-danger"></span>
             </div>
-@*            <div class="form-group">
+            @*            <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
-            </div>*@
+                </div>*@
             <div class="form-group">
                 <label asp-for="Score" class="control-label">Оцінка</label>
                 <input asp-for="Score" class="form-control" />
                 <span asp-validation-for="Score" class="text-danger"></span>
             </div>
-@*            <div class="form-group">
+            @*            <div class="form-group">
                 <label asp-for="ImageId" class="control-label"></label>
                 <select asp-for="ImageId" class ="form-control" asp-items="ViewBag.ImageId"></select>
-            </div>*@
+                </div>*@
         </form>
     </div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

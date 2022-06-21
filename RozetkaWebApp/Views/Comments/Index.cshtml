@@ -6,65 +6,68 @@
     Html.RenderPartial((("_ProductNavigator")));
 }
 
-       <p><h4>@Resources.Відгуки_користувачів</h4></p>
-          @{  
+<p><h4>@Resources.Відгуки_користувачів</h4></p>
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 
 
- 
-@foreach (var item in Model) {
-   
-        <table style = "width:100%">
-            <hr /> <tbody> 
-                <tr>
-            <td>  
-                <a asp-controller="Addresses" asp-action= "Index" asp-route-id="@item.UserId">
-                    <h5 class="text-primary"> 
-                      @item.User.UserName.Split('@')[0]
-                    </h5>
-                </a>
-            </td>
-                   
-            <td class="text-right">
-                @item.Date.ToString("dd/MM/yyyy")
-            </td>
-            <td class="text-right">
-                <ul class="list-inline small"> 
-                    @for (int i = 1; i<=10; i++)
-                     {
-                        if (i <= item.Score)
+
+@foreach (var item in Model)
+{
+
+    <table style="width:100%">
+        <hr />
+        <tbody>
+            <tr>
+                <td>
+                    <a asp-controller="Addresses" asp-action="Index" asp-route-id="@item.UserId">
+                        <h5 class="text-primary">
+                            @item.User.UserName.Split('@')[0]
+                        </h5>
+                    </a>
+                </td>
+
+                <td class="text-right">
+                    @item.Date.ToString("dd/MM/yyyy")
+                </td>
+                <td class="text-right">
+                    <ul class="list-inline small">
+                        @for (int i = 1; i <= 10; i++)
                         {
-                             <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                        } 
-                        else
-                        {
-                              <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>              
+                            if (i <= item.Score)
+                            {
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                            }
+                            else
+                            {
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
+                            }
                         }
-                     }  
-                   &nbsp&nbsp&nbsp
-                   <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a> &nbsp
-                   <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
-               </ul>
-                
-            </td>
-        </tr>
-       </tbody> </table>             
-                      @if (item.Text != null)
-                        {
-                            @item.Text
-                        }
-                        @if (item.Pros != null)
-                        {
-                            <h6 class="text-success">@Resources.Переваги0 </h6>
-                            <p class="text-secondary">@Html.DisplayFor(modelItem => item.Pros)</p>
-                        }
-                        @if (item.Cons != null)
-                        {
-                            <h6 class="text-warning">@Resources.Недоліки0 </h6>
-                            <p class="text-secondary">@Html.DisplayFor(modelItem => item.Cons)</p>
-                        }
-                    
+                        &nbsp&nbsp&nbsp
+                        <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square"></i> </a> &nbsp
+                        <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash"></i> </a>
+                    </ul>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    @if (item.Text != null)
+    {
+        @item.Text
+    }
+    @if (item.Pros != null)
+    {
+        <h6 class="text-success">@Resources.Переваги0 </h6>
+        <p class="text-secondary">@Html.DisplayFor(modelItem => item.Pros)</p>
+    }
+    @if (item.Cons != null)
+    {
+        <h6 class="text-warning">@Resources.Недоліки0 </h6>
+        <p class="text-secondary">@Html.DisplayFor(modelItem => item.Cons)</p>
+    }
+
 }
-  
+
 

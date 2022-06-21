@@ -7,30 +7,32 @@
 }
 
 
-<p> 
-        <h4>@Resources.Изменить_пользователя</h4>
-</p>  
+<p>
+    <h4>@Resources.Изменить_пользователя</h4>
+</p>
 
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
                 <hr />
-            </div>  
+            </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="UserId" />
             <input type="hidden" asp-for="RoleId" />
-@*            <div class="form-group">
+            @*            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
-            </div>*@
+                </div>*@
 
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

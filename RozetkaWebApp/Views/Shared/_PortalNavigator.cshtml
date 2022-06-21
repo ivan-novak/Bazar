@@ -1,28 +1,28 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 @{
-    ViewBag.Title=Resources.Портал+" - "+ViewBag.Portal.Label;
+    ViewBag.Title = Resources.Портал + " - " + ViewBag.Portal.Label;
     var Method = "Index";
     if (ViewBag.DetailsTab != null)
     {
-        <p> 
-           <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
-           <a asp-controller = "Portals" asp-action="Details" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a> 
+        <p>
+            <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> >
+            <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a>
         </p>
-    } 
-    else 
+    }
+    else
     {
-        <p> 
-           <a asp-controller = "Portals" asp-action="Index" > @Resources.Администрирование </a> >
-           <a asp-controller = "Catalogs" asp-action="Index" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a> 
+        <p>
+            <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> >
+            <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a>
         </p>
     }
 }
 
-    <h1>@ViewBag.Title</h1>
+<h1>@ViewBag.Title</h1>
 
 
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.CatalogsTab" href="/Catalogs/Index/@ViewBag.Portal.PortalId">@Resources.Каталоги</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/PortalImages/Index/@ViewBag.Portal.PortalId">@Resources.Image</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Portals/Details/@ViewBag.Portal.PortalId">Макет сторінки</a> </li>
-        </ul>
+<ul class="nav nav-tabs">
+    <li class="nav-item">  <a class="nav-link @ViewBag.CatalogsTab" href="/Catalogs/Index/@ViewBag.Portal.PortalId">@Resources.Каталоги</a> </li>
+    <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/PortalImages/Index/@ViewBag.Portal.PortalId">@Resources.Image</a> </li>
+    <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Portals/Details/@ViewBag.Portal.PortalId">Макет сторінки</a> </li>
+</ul>

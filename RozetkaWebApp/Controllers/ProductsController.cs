@@ -1,15 +1,14 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -61,7 +60,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Products/Create
         public IActionResult Create(int? Id)
         {
-            var catalog = _context.Catalogs.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id); 
+            var catalog = _context.Catalogs.Include(c => c.Portal).FirstOrDefault(m => m.CatalogId == Id);
             ViewBag.Catalog = catalog;
             ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == catalog.PortalId), "CatalogId", "Label");
             ViewBag.PromotionId = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
@@ -98,7 +97,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.Include(c => c.Catalog).Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id); 
+            var product = await _context.Products.Include(c => c.Catalog).Include(c => c.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
                 return NotFound();
@@ -142,7 +141,7 @@ namespace RozetkaWebApp.Controllers
                 }
                 return Redirect($"/Products/Index/" + product.CatalogId);
             }
-         //   ViewBag.Catalog = _context.Catalogs.Find(product.CatalogId);
+            //   ViewBag.Catalog = _context.Catalogs.Find(product.CatalogId);
             ViewBag.CatalogId = new SelectList(_context.Catalogs.Where(i => i.PortalId == product.Catalog.PortalId), "CatalogId", "Label");
             ViewBag.PromotionId = new SelectList(_context.Promotions.Where(i => i.EndDate >= DateTime.Now), "PromotionId", "Label");
             return View(product);
@@ -176,7 +175,7 @@ namespace RozetkaWebApp.Controllers
             var product = await _context.Products.FindAsync(id);
             var CatalogId = product.CatalogId;
             _context.Products.Remove(product);
-              await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return Redirect($"/Products/Index/" + CatalogId);
         }
 

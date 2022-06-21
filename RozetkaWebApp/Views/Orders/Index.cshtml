@@ -5,9 +5,9 @@
     ViewBag.OrdersTab = (("active"));
     Html.RenderPartial((("_ProfileNavigator")));
 }
- <p><h4>@Resources.Список_заказов</h4></p>
+<p><h4>@Resources.Список_заказов</h4></p>
 
-@{  
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 
@@ -25,54 +25,56 @@
                 @Resources.Сумма
             </th>
             <th>
-               @Resources.Дата_заказ
+                @Resources.Дата_заказ
             </th>
-@*            <th>
+            @*            <th>
                 Статус
-            </th>  *@       
-          <th>
+                </th>  *@
+            <th>
                 @Resources.Адрес_доставки
             </th>
-           
-  @*            <th>
-               Телефон получателя
-            </th>  *@                    
+
+            @*            <th>
+                Телефон получателя
+                </th>  *@
             <th class="text-right">
                 @Resources.Действия
             </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderId)
-            </td>
-            <td>
-                 <a asp-action="Details" asp-route-id="@item.OrderId">
-                @Html.DisplayFor(modelItem => item.Description) </a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                @item.OrderDate.ToString("dd/MM/yyyy")
-            </td>
-@*            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>  *@       
-        <td>
-                @Html.DisplayFor(modelItem => item.DeliveryAddress)
-            </td>                   
- @*               <td>
-                @Html.DisplayFor(modelItem => item.DeliveryPhone)
-            </td>*@           
-            <td class="text-right small">
-                <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res &nbsp
-                <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res &nbsp
-                <a asp-action="Delete" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.OrderId">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @item.OrderDate.ToString("dd/MM/yyyy")
+                </td>
+                @*            <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                    </td>  *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeliveryAddress)
+                </td>
+                @*               <td>
+                    @Html.DisplayFor(modelItem => item.DeliveryPhone)
+                    </td>*@
+                <td class="text-right small">
+                    <a asp-action="Details" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res &nbsp
+                    <a asp-action="Edit" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res &nbsp
+                    <a asp-action="Delete" asp-route-id="@item.OrderId"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

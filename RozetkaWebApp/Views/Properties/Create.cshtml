@@ -6,23 +6,23 @@
     ViewBag.FiltersTab = (("active"));
     Html.RenderPartial((("_CatologNavigator")));
 }
-    
-  <p>
-     <h4> @Resources.Новый_фильтр </h4>
- </p>
+
+<p>
+    <h4> @Resources.Новый_фильтр </h4>
+</p>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
             <div class="form-group">
                 <input type="submit" value="@Resources.Create" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-                    <hr />
-            </div> 
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="display: none">
                 <label asp-for="CatalogId" class="control-label">@Resources.Каталог0</label>
-@*              <select asp-for="CatalogId" class ="form-control" asp-items="ViewBag.CatalogId"></select>*@
-                <input asp-for="CatalogId" class="form-control" value=@ViewBag.Catalog.CatalogId /> 
+                @*              <select asp-for="CatalogId" class ="form-control" asp-items="ViewBag.CatalogId"></select>*@
+                <input asp-for="CatalogId" class="form-control" value=@ViewBag.Catalog.CatalogId />
             </div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label">@Resources.Заголовок0</label>
@@ -60,12 +60,14 @@
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
-                </div>
+            </div>
         </form>
     </div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

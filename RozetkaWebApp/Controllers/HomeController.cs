@@ -1,20 +1,19 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
-      public class HomeController : Controller
+    public class HomeController : Controller
     {
         private readonly RozetkadbContext _context;
 
@@ -48,7 +47,7 @@ namespace RozetkaWebApp.Controllers
 
         public async Task<IActionResult> Catalogs(int? id)
         {
-            return View(await _context.Catalogs.Where(x=>x.PortalId ==id || id ==null).Include(x=> x.Portal).ToListAsync());
+            return View(await _context.Catalogs.Where(x => x.PortalId == id || id == null).Include(x => x.Portal).ToListAsync());
         }
 
         public async Task<IActionResult> Products(int? id)
@@ -99,9 +98,9 @@ namespace RozetkaWebApp.Controllers
             var query = _context.LineDetails.Include(x => x.Product).Where(x => x.OrderId == null);
             if (user_Id != null) query = query.Where(x => x.UserId == user_Id);
             else query = query.Where(x => x.CartId == cartId);
-            LineDetail lineDetail = query.Where(x=> x.ProductId == id).FirstOrDefault();
-           if (lineDetail == null)
-           {
+            LineDetail lineDetail = query.Where(x => x.ProductId == id).FirstOrDefault();
+            if (lineDetail == null)
+            {
                 lineDetail = new LineDetail();
                 lineDetail.CartId = CartId();
                 lineDetail.UserId = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);

@@ -1,35 +1,36 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
 
-@if (ViewBag.Catalog == null) 
+@if (ViewBag.Catalog == null)
 {
-    ViewBag.Title= Resources.Товары_каталога;
+    ViewBag.Title = Resources.Товары_каталога;
     <h1>@ViewBag.Title</h1>
 }
-else 
+else
 {
-    ViewBag.Title= Resources.Каталог0+" - "+ViewBag.Catalog.Label; 
-    if (ViewBag.DelailTab != null) 
+    ViewBag.Title = Resources.Каталог0 + " - " + ViewBag.Catalog.Label;
+    if (ViewBag.DelailTab != null)
     {
-        <p> 
-            <a asp-controller = "Portals"  asp-action="Index" > @Resources.Администрирование </a> >
-            <a asp-controller = "Portals"  asp-action="Details" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
-            <a asp-controller = "Catalogs" asp-action="Details" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
+        <p>
+            <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> >
+            <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
+            <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a>
         </p>
-    } 
+    }
     else
-    {   <p> 
-            <a asp-controller = "Portals"  asp-action="Index" > @Resources.Администрирование </a> >
-            <a asp-controller = "Catalogs"  asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
-            <a asp-controller = "Products" asp-action="Index" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a> 
-         </p>
+    {
+           <p>
+            <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> >
+            <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
+            <a asp-controller="Products" asp-action="Index" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a>
+        </p>
     }
 
-        <h1>  @ViewBag.Title</h1>  
+    <h1>  @ViewBag.Title</h1>
 
-        <ul class="nav nav-tabs">
-            <li class="nav-item">  <a class="nav-link @ViewBag.ProductsTab" href="/Products/Index/@ViewBag.Catalog.CatalogId">@Resources.Товары</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">@Resources.Image</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.FiltersTab" href="/Properties/Index/@ViewBag.Catalog.CatalogId">@Resources.Фильтры</a> </li>
-            <li class="nav-item">  <a class="nav-link @ViewBag.DelailTab" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Макет сторінки</a> </li>
-        </ul>   
+    <ul class="nav nav-tabs">
+        <li class="nav-item">  <a class="nav-link @ViewBag.ProductsTab" href="/Products/Index/@ViewBag.Catalog.CatalogId">@Resources.Товары</a> </li>
+        <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">@Resources.Image</a> </li>
+        <li class="nav-item">  <a class="nav-link @ViewBag.FiltersTab" href="/Properties/Index/@ViewBag.Catalog.CatalogId">@Resources.Фильтры</a> </li>
+        <li class="nav-item">  <a class="nav-link @ViewBag.DelailTab" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Макет сторінки</a> </li>
+    </ul>
 }

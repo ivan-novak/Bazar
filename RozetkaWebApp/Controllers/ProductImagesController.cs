@@ -1,15 +1,13 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -107,11 +105,11 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null) return NotFound();
-            
+
 
             var productImage = await _context.ProductImages.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductImageId == id);
             if (productImage == null) return NotFound();
-            
+
             ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
@@ -125,7 +123,7 @@ namespace RozetkaWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(long id, [Bind("ProductImageId,ProductId,Title,Label,ImageId")] ProductImage productImage)
         {
-            if (id != productImage.ProductImageId)return NotFound();
+            if (id != productImage.ProductImageId) return NotFound();
             foreach (var file in Request.Form.Files)
             {
                 MemoryStream ms = new MemoryStream();
@@ -146,8 +144,8 @@ namespace RozetkaWebApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductImageExists(productImage.ProductImageId)) return NotFound();                   
-                    else throw;                   
+                    if (!ProductImageExists(productImage.ProductImageId)) return NotFound();
+                    else throw;
                 }
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
             }
@@ -164,7 +162,7 @@ namespace RozetkaWebApp.Controllers
             var productImage = await _context.ProductImages
                 .Include(p => p.Image)
                 .Include(p => p.Product.Catalog.Portal)
-                .FirstOrDefaultAsync(m => m.ProductImageId == id);                          
+                .FirstOrDefaultAsync(m => m.ProductImageId == id);
             if (productImage == null) return NotFound();
             return View(productImage);
         }

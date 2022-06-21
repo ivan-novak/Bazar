@@ -3,20 +3,14 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RozetkaWebApp.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace RozetkaWebApp
 {
@@ -48,21 +42,21 @@ namespace RozetkaWebApp
                 });
 
             services.AddCors();
-            services.AddDbContext<RozetkadbContext>(options =>  
+            services.AddDbContext<RozetkadbContext>(options =>
                 options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
-                services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
 
             services.AddDbContext<IdentityDbContext>(options =>
                 options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
-                services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<IdentityDbContext>();
-                services.AddControllersWithViews();
+            services.AddControllersWithViews();
 
 
             services.AddAuthorization(options =>
@@ -77,18 +71,18 @@ namespace RozetkaWebApp
                             var User = httpContext.User.FindFirst(ClaimTypes.NameIdentifier);
                             if (User == null) return false;
                             var Id1 = User.Value;
-                            return Id.ToString() ==Id1.ToString() ;
+                            return Id.ToString() == Id1.ToString();
                         }
                         return false;
                     }));
-          
+
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-           // app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod());
+            // app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

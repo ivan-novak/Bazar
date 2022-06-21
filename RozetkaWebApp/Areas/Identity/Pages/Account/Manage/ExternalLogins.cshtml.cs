@@ -1,12 +1,12 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
 {
@@ -47,7 +47,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             ShowRemoveButton = user.PasswordHash != null || CurrentLogins.Count > 1;
             return Page();
         }
-      
+
         public async Task<IActionResult> OnPostRemoveLoginAsync(string loginProvider, string providerKey)
         {
             var user = await _userManager.GetUserAsync(User);

@@ -1,56 +1,57 @@
 ﻿<style>
-  .card:hover {
-    transition: transform 0.2s ;
-    transform: scale(1.1);
-  }
+    .card:hover {
+        transition: transform 0.2s;
+        transform: scale(1.1);
+    }
 </style>
 
-    <div class="row pt-3 mb-4">
-        @foreach (Product item in Model.Products) 
-        {  
-              <div class="col-lg-2 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch"
-              onclick="location.href='/products/Details/@item.ProductId';">             
- 
+<div class="row pt-3 mb-4">
+    @foreach (Product item in Model.Products)
+    {
+        <div class="col-lg-2 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch"
+         onclick="location.href='/products/Details/@item.ProductId';">
 
-              <div class="card rounded shadow-sm border-1 p-3 mb-2 "> 
-                 <div class="card-body p-0 m-0">
+
+            <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
+                <div class="card-body p-0 m-0">
                     @if (item.PromotionId == null)
                     {
-                        <h6 class="text-left rounded text-uppercase font-weight-bold bg-warning text-white small mb-3 p-1 pl-2" >ТОП ПРОДАЖІВ</h6>
-                    } 
+                        <h6 class="text-left rounded text-uppercase font-weight-bold bg-warning text-white small mb-3 p-1 pl-2">ТОП ПРОДАЖІВ</h6>
+                    }
                     else
                     {
-                        <a href="/promotions/Details/@item.PromotionId" style = "text-decoration: none">
-                        <h6 class="text-left rounded text-uppercase font-weight-bold bg-danger text-white small mb-3 p-1 pl-2" 
-                        >АКЦІЯ</h6> 
-                    </a>
+                        <a href="/promotions/Details/@item.PromotionId" style="text-decoration: none">
+                            <h6 class="text-left rounded text-uppercase font-weight-bold bg-danger text-white small mb-3 p-1 pl-2">
+                                АКЦІЯ
+                            </h6>
+                        </a>
                     }
                     <img src="/images/Products/@(item.ProductId)/First" alt="" class="w-100 img-fluid d-block mx-auto">
-                   </div> 
-                      <p></p>
-                      <p class="small text-muted m-0 p-0">@Html.DisplayFor(modelItem => item.Label)</p>
-                    <ul class="list-inline small m-0 p-0"> 
-                    @for (int i = 1; i<=5; i++)
-                     {
-                        if (i <= item.Price % 5 +1)
+                </div>
+                <p></p>
+                <p class="small text-muted m-0 p-0">@Html.DisplayFor(modelItem => item.Label)</p>
+                <ul class="list-inline small m-0 p-0">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i <= item.Price % 5 + 1)
                         {
-                             <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                        } 
+                            <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                        }
                         else
                         {
-                              <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>              
+                            <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
                         }
-                     }  
-                  </ul>
-                  <p></p>
-                  <h7 class ="text-danger   m-0">@Html.DisplayFor(modelItem => item.Price)</h7>
-                  <ul class="list-inline small text-right mb-2">
-                        <li class="list-inline-item"><a asp-controller="Products" asp-action="Edit"   asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li> 
-                        <li class="list-inline-item"><a asp-controller="Products" asp-action="Delete" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-trash"></i> </a></li>
-                   </ul>  
-                  
-                 </div> 
-              </div>  
-        }
-    </div>
+                    }
+                </ul>
+                <p></p>
+                <h7 class="text-danger   m-0">@Html.DisplayFor(modelItem => item.Price)</h7>
+                <ul class="list-inline small text-right mb-2">
+                    <li class="list-inline-item"><a asp-controller="Products" asp-action="Edit" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li>
+                    <li class="list-inline-item"><a asp-controller="Products" asp-action="Delete" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-trash"></i> </a></li>
+                </ul>
+
+            </div>
+        </div>
+    }
+</div>
 

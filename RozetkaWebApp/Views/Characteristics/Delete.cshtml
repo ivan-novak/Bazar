@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.Characteristic
 
 @{
-     ViewBag.Product = Model.Product;
+    ViewBag.Product = Model.Product;
 }
 
 @{
@@ -11,20 +11,23 @@
 }
 
 <p>
-   <h4>@Resources.Удалить_эту_характеристику</h4>
+    <h4>@Resources.Удалить_эту_характеристику</h4>
 </p>
 
-<div>  
+<div>
     <form asp-action="Delete">
         <input type="hidden" asp-for="CharacteristicId" />
-        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-           <hr />
+        <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+        <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+        <hr />
     </form>
     <p></p>
     <dl class="row">
-        <dt class = "col-sm-2">   @Resources.Заголовок0 </dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd> 
-        <dt class = "col-sm-2">   @Resources.Значание </dt>      <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
-        <dt class = "col-sm-2">   @Resources.Ед_измерения</dt>  <dd class = "col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
-    </dl>   
+        <dt class="col-sm-2">   @Resources.Заголовок0 </dt>
+        <dd class="col-sm-10">  @Html.DisplayFor(model => model.Property.Label)  </dd>
+        <dt class="col-sm-2">   @Resources.Значание </dt>
+        <dd class="col-sm-10">  @Html.DisplayFor(model => model.Value)  </dd>
+        <dt class="col-sm-2">   @Resources.Ед_измерения</dt>
+        <dd class="col-sm-10">  @Html.DisplayFor(model => model.Dimension)  </dd>
+    </dl>
 </div>

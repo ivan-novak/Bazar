@@ -1,15 +1,14 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -76,10 +75,10 @@ namespace RozetkaWebApp.Controllers
         {
             if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id");
-            ViewData["WalletId"] = new SelectList(_context.Walletts.Where(a=>a.UserId == id), "WalletId", "CardNumber");
+            ViewData["WalletId"] = new SelectList(_context.Walletts.Where(a => a.UserId == id), "WalletId", "CardNumber");
             ViewData["ContactId"] = new SelectList(_context.Contacts.Where(a => a.UserId == id), "ContactId", "FullName");
             ViewData["AddressId"] = new SelectList(_context.Addresses.Where(a => a.UserId == id), "AddressId", "FullAddress");
-            ViewData["Cart"] = _context.LineDetails.Where(a => a.UserId == id && a.OrderId == null).Include(x=>x.Product).ToList();
+            ViewData["Cart"] = _context.LineDetails.Where(a => a.UserId == id && a.OrderId == null).Include(x => x.Product).ToList();
             var a = ViewData["Cart"];
             ViewBag.User = _context.AspNetUsers.Find(id);
             return View();
@@ -110,14 +109,14 @@ namespace RozetkaWebApp.Controllers
                 order.DeliveryPhone = contact.Phone1.ToString();
                 order.CardNumber = wallet.CardNumber;
                 order.OrderDate = DateTime.Now;
-                var cart = _context.LineDetails.Where(a => (a.CartId == CartId() || a.UserId == order.UserId) && a.OrderId == null).Include(a=>a.Product).ToList();
+                var cart = _context.LineDetails.Where(a => (a.CartId == CartId() || a.UserId == order.UserId) && a.OrderId == null).Include(a => a.Product).ToList();
                 var description = String.Join(",", cart.Select(s => s.Product.Label));
-                order.Description = description; 
-                order.Total = cart.Sum(x => x.LineTotal);  
+                order.Description = description;
+                order.Total = cart.Sum(x => x.LineTotal);
                 _context.Orders.Add(order);
                 await _context.SaveChangesAsync();
 
-                foreach(var i in cart)
+                foreach (var i in cart)
                 {
                     i.OrderId = order.OrderId;
                     _context.Update(i);
@@ -147,7 +146,7 @@ namespace RozetkaWebApp.Controllers
 
             ViewData["UserId"] = new SelectList(_context.AspNetUsers, "Id", "Id", order.UserId);
             ViewBag.User = _context.AspNetUsers.Find(order.UserId);
-            ViewData["Lines"] = _context.LineDetails.Where(x=>x.OrderId==order.OrderId).Include(x=>x.Product).Select(x=>x);
+            ViewData["Lines"] = _context.LineDetails.Where(x => x.OrderId == order.OrderId).Include(x => x.Product).Select(x => x);
             return View(order);
         }
         [Authorize(Roles = "Продавці")]

@@ -5,14 +5,15 @@
 
 
 <table class="table">
-     <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-controller = "Home" asp-action="Catalogs" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Title)</a> 
-            </td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Home" asp-action="Catalogs" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Title)</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 

@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.Image
 
 @{
-    ViewBag.Title= (("Delete"));
+    ViewBag.Title = (("Delete"));
 }
 
 <h1>@Resources._Remove</h1>
@@ -12,20 +12,20 @@
     <h4>@Resources.Image</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Data)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Data)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="ImageId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> @Resources.res

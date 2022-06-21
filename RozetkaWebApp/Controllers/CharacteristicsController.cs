@@ -1,14 +1,12 @@
 ﻿//MLHIDEFILE
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
@@ -27,8 +25,8 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id != null) ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == id);
-            var applicationDbContext = _context.Characteristics.Include(c => c.Property).Where(c=>c.ProductId == id || id == null);
-            
+            var applicationDbContext = _context.Characteristics.Include(c => c.Property).Where(c => c.ProductId == id || id == null);
+
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
@@ -104,7 +102,7 @@ namespace RozetkaWebApp.Controllers
                 return NotFound();
             }
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
-            ViewBag.PropertyId = new SelectList(_context.Properties.Where(i=>i.CatalogId==characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
+            ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
             return View(characteristic);
         }
         [Authorize(Roles = "Маркетологи")]

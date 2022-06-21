@@ -2,7 +2,7 @@
 @model RozetkaWebApp.Models.Product
 
 @{
-         ViewBag.Product = Model;
+    ViewBag.Product = Model;
 }
 
 @{
@@ -11,20 +11,18 @@
 }
 
 
- <p>
-     <h4> @Resources.Изменить_информацию_о_товаре </h4>
- </p>
+<p>
+    <h4> @Resources.Изменить_информацию_о_товаре </h4>
+</p>
 
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">
-
-             <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>   
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
                 <hr />
             </div>
-
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProductId" />
             <div class="form-group" style="display: none">
@@ -44,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"> @Resources.Описание </label>
-                 <div>
+                <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
@@ -66,17 +64,19 @@
                 <input asp-for="Quantity" class="form-control" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="CatalogId" class="control-label"> @Resources.Promotion </label>
-                  <select asp-for="PromotionId" class ="form-control" asp-items="ViewBag.PromotionId">
-                         <option selected> </option>
-                   </select>
-                  <span asp-validation-for="PromotionId" class="text-danger"></span>
+                <select asp-for="PromotionId" class="form-control" asp-items="ViewBag.PromotionId">
+                    <option selected> </option>
+                </select>
+                <span asp-validation-for="PromotionId" class="text-danger"></span>
             </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

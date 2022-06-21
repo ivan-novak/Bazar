@@ -5,11 +5,11 @@
     ViewBag.ManagerTab = (("active"));
     Html.RenderPartial((("_RootNavigator")));
 }
-  
 
- <p><h4>@Resources.Список_групп_безопасности</h4></p>
-       
- @{  
+
+<p><h4>@Resources.Список_групп_безопасности</h4></p>
+
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 
@@ -21,20 +21,20 @@
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) 
-    {
-        <tr>
-            <td>
-               <a asp-controller="AspNetUserRoles" asp-action="Index" asp-route-id="@item.Id">
-                    @Html.DisplayFor(modelItem => item.Name)
-               </a>
-            </td>          
-            <td class="text-right small">
-                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
-                <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-solid fa-folder"></i></a> &nbsp
-                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="AspNetUserRoles" asp-action="Index" asp-route-id="@item.Id">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </a>
+                </td>
+                <td class="text-right small">
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-solid fa-folder"></i></a> &nbsp
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

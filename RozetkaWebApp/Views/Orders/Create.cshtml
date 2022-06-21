@@ -7,24 +7,24 @@
     Html.RenderPartial((("_ProfileNavigator")));
 }
 
-  <p>
-     <h4> @Resources.Новый_заказ </h4>
- </p>
+<p>
+    <h4> @Resources.Новый_заказ </h4>
+</p>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
 
             <div class="form-group">
                 <input type="submit" value="@Resources.Create" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-                   <hr />
-            </div> 
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="display: none">
                 <label asp-for="UserId" class="control-label"></label>
-                 <input asp-for="UserId" class="form-control" value=@ViewBag.User.Id />
-                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+                <input asp-for="UserId" class="form-control" value=@ViewBag.User.Id />
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
             </div>
             <div class="form-group" style="display: none">
                 <label asp-for="Description" class="control-label"></label>
@@ -33,14 +33,14 @@
             </div>
             <div class="form-group" style="display: none">
                 <label asp-for="Total" class="control-label"></label>
-                <input asp-for="Total" class="form-control" value= "0" />
+                <input asp-for="Total" class="form-control" value="0" />
                 <span asp-validation-for="Total" class="text-danger"></span>
             </div>
-@*            <div class="form-group" style="display: none">
+            @*            <div class="form-group" style="display: none">
                 <label asp-for="OrderDate" class="control-label"></label>
                 <input asp-for="OrderDate" class="form-control"/>
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
-            </div>*@
+                </div>*@
             <div class="form-group" style="display: none">
                 <label asp-for="Status" class="control-label"></label>
                 <input asp-for="Status" class="form-control" />
@@ -49,19 +49,19 @@
 
             <div class="form-group">
                 <label asp-for="DeliveryAddress" class="control-label">@Resources.Адрес_доставки</label>
-                <select asp-for="DeliveryAddress" class ="form-control" asp-items="ViewBag.AddressId"></select>
+                <select asp-for="DeliveryAddress" class="form-control" asp-items="ViewBag.AddressId"></select>
                 <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeliveryContact" class="control-label">@Resources.Контакты_заказчика</label>
-                <select asp-for="DeliveryContact" class ="form-control" asp-items="ViewBag.ContactId"></select>
+                <select asp-for="DeliveryContact" class="form-control" asp-items="ViewBag.ContactId"></select>
                 <span asp-validation-for="DeliveryContact" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="CardNumber" class="control-label">@Resources.Платежная_карта</label>
-                <select asp-for="CardNumber" class ="form-control" asp-items="ViewBag.WalletId"></select>
+                <select asp-for="CardNumber" class="form-control" asp-items="ViewBag.WalletId"></select>
                 <span asp-validation-for="CardNumber" class="text-danger"></span>
-            </div>            
+            </div>
             <div class="form-group" style="display: none">
                 <label asp-for="DeliveryEmail" class="control-label"></label>
                 <input asp-for="DeliveryEmail" class="form-control" />
@@ -87,49 +87,52 @@
 <table class="table">
     <thead>
         <tr>
-             <th> @Resources.Заголовок0 </th>
+            <th> @Resources.Заголовок0 </th>
             <th> @Resources.Описание </th>
-           <th> @Resources.Цена </th>
+            <th> @Resources.Цена </th>
             <th> @Resources.Количество  </th>
-    @*         <th> Дата  </th>  *@
-             <th>  @Resources.Сумма </th> 
- <th>  @Resources.Действия </th> 
+            @*         <th> Дата  </th>  *@
+            <th>  @Resources.Сумма </th>
+            <th>  @Resources.Действия </th>
         </tr>
     </thead>
     <tbody>
-    @foreach (LineDetail item in ViewBag.Cart) 
-    {
- <tr>        
-            <td>
-                 <a asp-controller="Characteristics" asp-action= "Index" asp-route-id="@item.ProductId">
-                @Html.DisplayFor(modelItem => item.Product.Title) </a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Description)
-            </td>
-           <td>
-                @Html.DisplayFor(modelItem => item.UnitCost)
-            </td>       
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantities)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LineTotal)
-            </td>
-@*             <td>
-                @(((DateTime)item.CreateDate).ToString("dd/MM/yyyy"))
-            </td>*@
-            <td>
-                <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res
-                <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res
-                <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (LineDetail item in ViewBag.Cart)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">
+                        @Html.DisplayFor(modelItem => item.Product.Title)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantities)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LineTotal)
+                </td>
+                @*             <td>
+                    @(((DateTime)item.CreateDate).ToString("dd/MM/yyyy"))
+                    </td>*@
+                <td>
+                    <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> @Resources.res
+                    <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> @Resources.res
+                    <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

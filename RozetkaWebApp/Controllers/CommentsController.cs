@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 
 namespace RozetkaWebApp.Controllers
@@ -41,7 +39,7 @@ namespace RozetkaWebApp.Controllers
             if (id != null) ViewBag.User = _context.AspNetUsers.Find(id);
 
             var rozetkadbContext = _context.Comments.Include(c => c.Image)
-                .Include(c => c.Product).Include(c => c.User).Where(c => c.UserId== id);
+                .Include(c => c.Product).Include(c => c.User).Where(c => c.UserId == id);
 
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
@@ -75,7 +73,7 @@ namespace RozetkaWebApp.Controllers
         // GET: Comments/Create
         public IActionResult Create(long? Id)
         {
-            ViewBag.Product=_context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
+            ViewBag.Product = _context.Products.Include(c => c.Catalog.Portal).FirstOrDefault(m => m.ProductId == Id);
             return View();
         }
 
@@ -89,7 +87,7 @@ namespace RozetkaWebApp.Controllers
             if (ModelState.IsValid && comment.Text != null)
             {
                 comment.Date = DateTime.Now;
-                comment.UserId=_context.AspNetUsers.Where(x=>x.Email == User.Identity.Name).First().Id;
+                comment.UserId = _context.AspNetUsers.Where(x => x.Email == User.Identity.Name).First().Id;
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
                 return Redirect($"/Comments/Index/" + comment.ProductId);
@@ -110,7 +108,7 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-            var comment = await _context.Comments.Include( x => x.Product).Include( x=> x.Product.Catalog).Include(x => x.Product.Catalog.Portal).FirstOrDefaultAsync(x => x.CommentId == id);
+            var comment = await _context.Comments.Include(x => x.Product).Include(x => x.Product.Catalog).Include(x => x.Product.Catalog.Portal).FirstOrDefaultAsync(x => x.CommentId == id);
 
             return View(comment);
         }
@@ -147,7 +145,7 @@ namespace RozetkaWebApp.Controllers
                     }
                 }
                 return Redirect($"/Comments/Index/" + comment.ProductId);
-             }
+            }
             return View(comment);
         }
 

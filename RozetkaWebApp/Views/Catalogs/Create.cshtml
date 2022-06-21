@@ -7,26 +7,26 @@
     ViewBag.CatalogsTab = (("active"));
     Html.RenderPartial((("_PortalNavigator")));
 }
- <p>
-     <h4> @Resources.Новый_каталог </h4>
- </p>
+<p>
+    <h4> @Resources.Новый_каталог </h4>
+</p>
 
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Create">
-           
+
             <div class="form-group">
                 <input type="submit" value="@Resources.Create" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-                   <hr />
-            </div> 
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
 
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="display: none">
                 <label asp-for="PortalId" class="control-label"></label>
                 @*<select asp-for="PortalId" class ="form-control" asp-items="ViewBag.PortalId" value=2>      </select>*@
-                <input asp-for="PortalId" class="form-control" value=@ViewBag.Portal.PortalId />           
+                <input asp-for="PortalId" class="form-control" value=@ViewBag.Portal.PortalId />
             </div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
@@ -40,20 +40,24 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-               <div>
+                <div>
                     <textarea asp-for="Description" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
-                </div></div>
+                </div>
+            </div>
             <div class="form-group">
                 <label asp-for="Attributes" class="control-label"></label>
-               <div>
+                <div>
                     <textarea asp-for="Attributes" rows="6" style="width:100%"></textarea>
                     <span asp-validation-for="Attributes" class="text-danger"></span>
-                </div> </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

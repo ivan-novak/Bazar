@@ -7,46 +7,46 @@
 }
 
 <p><h4>@Resources.Список_выбраных_товаров</h4></p>
-       
- <p><a  class="btn btn-success" asp-controller="Home" asp-action="NewOrder" > @Resources.Оформить_заказ </a>   </p>
+
+<p><a class="btn btn-success" asp-controller="Home" asp-action="NewOrder"> @Resources.Оформить_заказ </a>   </p>
 
 
 <table class="table">
     <thead>
         <tr>
-             <th> @Resources.Заголовок0 </th>
+            <th> @Resources.Заголовок0 </th>
             <th> @Resources.Описание </th>
-           <th> @Resources.Цена </th>
+            <th> @Resources.Цена </th>
             <th> @Resources.Количество  </th>
-             <th> @Resources.Дата  </th>  
-             <th>  @Resources.Действия </th> 
+            <th> @Resources.Дата  </th>
+            <th>  @Resources.Действия </th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) 
-    {
-        <tr>        
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Description)
-            </td>
-           <td>
-                @Html.DisplayFor(modelItem => item.UnitCost)
-            </td>       
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantities)
-            </td>
-             <td>
-                @(((DateTime)item.CreateDate).ToString((("dd/MM/yyyy"))))
-            </td>
-            <td>
-                <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> |
-                <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> |
-                <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantities)
+                </td>
+                <td>
+                    @(((DateTime)item.CreateDate).ToString((("dd/MM/yyyy"))))
+                </td>
+                <td>
+                    <a asp-controller="LineDetails" asp-action="Edit" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-pen-square"></i></a> |
+                    <a asp-controller="LineDetails" asp-action="Details" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-folder"></i></a> |
+                    <a asp-controller="LineDetails" asp-action="Delete" asp-route-id="@item.OrderDatailId"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

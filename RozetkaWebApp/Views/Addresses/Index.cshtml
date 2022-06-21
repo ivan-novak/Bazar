@@ -6,46 +6,49 @@
     Html.RenderPartial((("_ProfileNavigator")));
 }
 
- <p><h4>@Resources.Список_адресов_доставки</h4></p>
+<p><h4>@Resources.Список_адресов_доставки</h4></p>
 
-@{  
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 <table class="table table-sm table-hover">
     <thead>
-        <tr> 
-            <th> @Resources.ID </th>        
-            <th> @Resources.Улица_дом_квартира </th>        
+        <tr>
+            <th> @Resources.ID </th>
+            <th> @Resources.Улица_дом_квартира </th>
             <th> @Resources.Город </th>
             <th>@Resources.Почтовый_индекс </th>
             <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressId)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.AddressId">
-                    @Html.DisplayFor(modelItem => item.AddressLine1)
-                    @Html.DisplayFor(modelItem => item.AddressLine2)
-                    @Html.DisplayFor(modelItem => item.AddressLine3)
-                </a> 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostalCode)
-            </td>                      
-            <td class="text-right small">
-                <a asp-action="Details" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-folder"></i></a> &nbsp
-                <a asp-action="Edit" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
-                <a asp-action="Delete" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-trash"></i></a>
-            </td>
-        </tr>
-}
+                @foreach (var item in Model)
+
+               {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddressId)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.AddressId">
+                            @Html.DisplayFor(modelItem => item.AddressLine1)
+                            @Html.DisplayFor(modelItem => item.AddressLine2)
+                            @Html.DisplayFor(modelItem => item.AddressLine3)
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostalCode)
+                    </td>
+
+                <td class="text-right small">
+                        <a asp-action="Details" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-folder"></i></a> &nbsp
+                        <a asp-action="Edit" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-pen-square"></i></a> &nbsp
+                        <a asp-action="Delete" asp-route-id="@item.AddressId"><i class="fas fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+                }
     </tbody>
 </table>

@@ -6,18 +6,18 @@
     Html.RenderPartial((("_ProfileNavigator")));
 }
 
-  <p>
-     <h4> @Resources.Новый_адрес </h4>
- </p>
+<p>
+    <h4> @Resources.Новый_адрес </h4>
+</p>
 <div class="row">
     <div class="col-md-6">
         <form asp-action="Create">
 
-             <div class="form-group">
+            <div class="form-group">
                 <input type="submit" value="@Resources.Create" class="btn btn-success" />
-                <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-                    <hr />
-            </div> 
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger" style="display: none"></div>
             <div class="form-group" style="display: none">
                 <label asp-for="AddressType" class="control-label"></label>
@@ -40,8 +40,8 @@
                 <span asp-validation-for="AddressLine3" class="text-danger"></span>
             </div>
             <div class="form-group" style="display: none">
-                <label asp-for="UserId" class="control-label" ></label>
-                 <input asp-for="UserId" class="form-control" value=@ViewBag.User.Id />
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" value=@ViewBag.User.Id />
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label">@Resources.Город</label>
@@ -64,15 +64,17 @@
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
             <div class="form-group" style="display: none">
-                <label asp-for="ExtAddressId" class="control-label" ></label>
+                <label asp-for="ExtAddressId" class="control-label"></label>
                 <input asp-for="ExtAddressId" class="form-control" />
                 <span asp-validation-for="ExtAddressId" class="text-danger"></span>
             </div>
-      
+
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+}
 }

@@ -7,17 +7,17 @@
 }
 
 <p>
-     <h4> @Resources.Изменить_информацию_о_адресе </h4>
- </p>
+    <h4> @Resources.Изменить_информацию_о_адресе </h4>
+</p>
 
 <div class="row">
     <div class="col-md-6">
         <form asp-action="Edit">
-            
+
             <div class="form-group">
                 <input type="submit" value="@Resources.Сохранить" class="btn btn-success" />
-                 <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>   
-                    <hr />
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+                <hr />
             </div>
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -33,12 +33,12 @@
                 <span asp-validation-for="AddressLine1" class="text-danger"></span>
             </div>
             <div class="form-group">
- @*               <label asp-for="AddressLine2" class="control-label">Дом, номер квартиры</label>*@
+                               @*               <label asp-for="AddressLine2" class="control-label">Дом, номер квартиры</label>*@
                 <input asp-for="AddressLine2" class="form-control" />
                 <span asp-validation-for="AddressLine2" class="text-danger"></span>
             </div>
             <div class="form-group">
-@*                <label asp-for="AddressLine3" class="control-label">Дополнительно</label>*@
+                                @*                <label asp-for="AddressLine3" class="control-label">Дополнительно</label>*@
                 <input asp-for="AddressLine3" class="form-control" />
                 <span asp-validation-for="AddressLine3" class="text-danger"></span>
             </div>
@@ -78,5 +78,9 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync((("_ValidationScriptsPartial")));}
+    @{
+    
+    await Html.RenderPartialAsync((("_ValidationScriptsPartial")));
+
+}
 }

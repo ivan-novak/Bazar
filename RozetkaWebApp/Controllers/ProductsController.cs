@@ -37,6 +37,20 @@ namespace RozetkaWebApp.Controllers
             return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
+        public async Task<IActionResult> Audience(int? id, string Filter = null, int page = 0, int pageSize = 20)
+        {
+            ViewBag.Product = _context.Products.Where(c => c.ProductId == id).Include(c => c.Catalog).Include(c => c.Catalog.Portal).First();
+            ViewBag.Catalog = ViewBag.Product.Catalog;
+            var applicationDbContext = _context.Views.Where(c => c.ProductId == id).Include(c => c.User);
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.User.UserName.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.User.UserName).Skip(pageSize * page).Take(pageSize).Select(x => x.User).ToListAsync());
+        }
+
         // GET: Products/Details/5
         //[HttpGet("[controller]/getDetails")]
         public async Task<IActionResult> Details(long? id)
@@ -47,7 +61,10 @@ namespace RozetkaWebApp.Controllers
             }
 
             var product = await _context.Products
-                .Include(c => c.Catalog.Portal).Include(cs => cs.Characteristics).ThenInclude(cs => cs.Property)
+                .Include(c => c.Catalog.Portal) 
+                .Include(cs => cs.Promotion)
+                .Include(cs => cs.Characteristics)         
+                .ThenInclude(cs => cs.Property)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
@@ -157,7 +174,10 @@ namespace RozetkaWebApp.Controllers
             }
 
             var product = await _context.Products
-                .Include(c => c.Catalog.Portal).Include(cs => cs.Characteristics).ThenInclude(cs => cs.Property)
+                .Include(c => c.Catalog.Portal)
+                .Include(cs => cs.Promotion)
+                .Include(cs => cs.Characteristics)
+                .ThenInclude(cs => cs.Property)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {

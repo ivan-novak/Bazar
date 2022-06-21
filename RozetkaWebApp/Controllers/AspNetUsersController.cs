@@ -62,6 +62,37 @@ namespace RozetkaWebApp.Controllers
             return View(await query.OrderBy(x => x.UserName).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 
+        public async Task<IActionResult> Preferences(string id, string Filter = null, int page = 0, int pageSize = 20)
+        {
+            //ViewBag.Product = _context.Products.Where(c => c.ProductId == id).Include(c => c.Catalog).Include(c => c.Catalog.Portal).First();
+            //ViewBag.Catalog = ViewBag.Product.Catalog;
+            ViewBag.User = _context.AspNetUsers.Find(id);
+            var applicationDbContext = _context.Views.Where(c => c.UserId == id).Include(c => c.Product);
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Product.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Product.Label).Skip(pageSize * page).Take(pageSize).Select(x => x.Product).ToListAsync());
+        }
+
+        public async Task<IActionResult> Cart(string id, string Filter = null, int page = 0, int pageSize = 20)
+        {
+            //ViewBag.Product = _context.Products.Where(c => c.ProductId == id).Include(c => c.Catalog).Include(c => c.Catalog.Portal).First();
+            //ViewBag.Catalog = ViewBag.Product.Catalog;
+            ViewBag.User = _context.AspNetUsers.Find(id);
+            var applicationDbContext = _context.LineDetails.Where(c => c.UserId == id).Include(c => c.Product);
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Product.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            return View(await query.OrderBy(x => x.Product.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
+        }
+
+
         // GET: AspNetUsers/Details/5
         public async Task<IActionResult> Details(string id)
         {

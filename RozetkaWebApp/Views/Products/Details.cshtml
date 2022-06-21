@@ -7,7 +7,7 @@
     Html.RenderPartial((("_ProductNavigator")));
 }
 
-<p> <h4> @Resources.Информация_о_товаре</h4> </p>
+<p> <h4> Макет сторінки</h4> </p>
 
 <div class="row">
     <div class="col-md-8">
@@ -31,6 +31,13 @@
             <dd class="col-sm-10">  @Html.DisplayFor(model => model.Price)         </dd>
             <dt class="col-sm-2">   @Resources.Количество    </dt>
             <dd class="col-sm-10">  @Html.DisplayFor(model => model.Quantity)      </dd>
+            @if (Model.PromotionId != null)
+            {
+                <dt class="col-sm-2">   Промоція    </dt>
+                <dd class="col-sm-10">
+                    <a asp-controller="Promotions" asp-action="Details" asp-route-id="@Model.PromotionId"> @Html.DisplayFor(model => model.Promotion.Label) </a>
+                </dd>
+            }
         </dl>
     </div>
     <div class="col-md-4">

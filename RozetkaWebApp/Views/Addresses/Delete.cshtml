@@ -7,71 +7,71 @@
 }
 
 <p>
-   <h4>@Resources.Удалить_этот_адрес</h4>
+    <h4>@Resources.Удалить_этот_адрес</h4>
 </p>
 
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="AddressId" />
-        <input type="submit" value="@Resources._Remove" class="btn btn-danger" /> 
-        <button type="button" class="btn btn-primary"  onclick= "history.go(-1)">@Resources.Отменить</button>
-         <hr />
-    </form>
+<form asp-action="Delete">
+    <input type="hidden" asp-for="AddressId" />
+    <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+    <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+    <hr />
+</form>
 
 <div>
-    <dl class="row">      
-        <dt class = "col-sm-2">
-           @Resources.Адрес
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Resources.Адрес
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AddressLine1)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AddressLine2)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AddressLine3)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Город
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.City)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Область
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.State)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Почтовый_индекс
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PostalCode)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Resources.Страна
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Country)
         </dd>
-@*        <dt class = "col-sm-2">
+        @*        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ExtAddressId)
-        </dt>
-        <dd class = "col-sm-10">
+            </dt>
+            <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ExtAddressId)
-        </dd>
-        <dt class = "col-sm-2">
+            </dd>
+            <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
+            </dt>
+            <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.User.Id)
-        </dd class>*@
+            </dd class>*@
     </dl>
-    
-  
+
+
 </div>

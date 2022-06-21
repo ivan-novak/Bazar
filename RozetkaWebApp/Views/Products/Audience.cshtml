@@ -1,0 +1,60 @@
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.AspNetUser>
+
+ @{
+    ViewBag.UsersTab = (("active"));
+    Html.RenderPartial((("_ProductNavigator")));
+}
+
+<p><h4>Користувачи, що цікавились цим товаром</h4></p>
+
+@{
+    Html.RenderPartial((("_FilterNavigator")));
+}
+
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th> @Resources.Имя_пользователя </th>
+            <th> @Resources.Адрес_электронной_почты </th>
+            <th> @Resources.Телефон </th>
+            <th> @Resources.Блокировка </th>
+            <th class="text-right"> @Resources.Действия</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if (item.UserName == User.Identity.Name)
+                    {
+                        <a href="/Identity/Account/Manage">
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/Addresses/Index/@item.Id">
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </a>
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                <td class="text-right small">
+                    <a href="/Addresses/Index/@item.Id"><i class="fas fa-solid fa-folder"></i></a> &nbsp
+                    <a asp-controller="AspNetUsers" asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

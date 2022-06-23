@@ -47,13 +47,23 @@ namespace RozetkaWebApp
             return new FileStreamResult(oMemoryStream, "image/*");
         }
 
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id == null) return NotFound();
             var catalog = await _context.Catalogs
-                .Include(c => c.Portal).Include(c => c.Products)
+                .Include(c => c.Portal)
                 .FirstOrDefaultAsync(c => c.CatalogId == id);
             if (catalog == null) return NotFound();
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            ViewBag.Portal = catalog.Portal;
+            var products = _context.Products.
+                Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter))
+                .OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
+            ViewBag.TotalCount = products.Count();
+            ViewBag.Products = products.ToList();
+            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(catalog);
         }
 
@@ -118,14 +128,23 @@ namespace RozetkaWebApp
 
 
         [Authorize(Roles = "Маркетологи")]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             if (id == null) return NotFound();
             var catalog = await _context.Catalogs
                 .Include(c => c.Portal)
-                .Include(c => c.Products)
                 .FirstOrDefaultAsync(m => m.CatalogId == id);
             if (catalog == null) return NotFound();
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            ViewBag.Portal = catalog.Portal;
+            var products = _context.Products.
+                Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter))
+                .OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
+            ViewBag.TotalCount = products.Count();
+            ViewBag.Products = products.ToList();
+            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(catalog);
         }
 

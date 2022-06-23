@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -15,6 +16,7 @@ namespace RozetkaWebApp.Models
         public long OrderId { get; set; }
         public string UserId { get; set; }
         public string Description { get; set; }
+        [DisplayFormat(DataFormatString = "{0:F0}₴", ApplyFormatInEditMode = false)]
         public decimal Total { get; set; }
         public DateTime OrderDate { get; set; }
         public string Status { get; set; }

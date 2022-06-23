@@ -1,0 +1,41 @@
+﻿@using RozetkaWebApp.App_GlobalResources
+@model RozetkaWebApp.Models.Product
+
+<dl class="row">
+    <dt class="col-sm-2">   @Resources.Каталог0       </dt>
+    <dd class="col-sm-10">
+        <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@Model.CatalogId"> @Model.Catalog.Label </a>
+    </dd>
+    <dt class="col-sm-2">   @Resources.Заголовок0     </dt>
+    <dd class="col-sm-10">  @Model.Title         </dd>
+    <dt class="col-sm-2">   @Resources.Описание      </dt>
+    <dd class="col-sm-10">  @Model.Description   </dd>
+    <dt class="col-sm-2">   @Resources.Цена          </dt>
+     <dd class="col-sm-10"> @Html.DisplayFor(item => item.Price )   </dd>
+    <dt class="col-sm-2">   @Resources.Количество    </dt>
+    <dd class="col-sm-10">  @Html.DisplayFor(item => item.Quantity )   </dd>
+    @if (Model.PromotionId != null)
+    {
+        <dt class="col-sm-2">   Промоція    </dt>
+        <dd class="col-sm-10">
+            <a asp-controller="Promotions" asp-action="Details" asp-route-id="@Model.PromotionId" class="badge badge-danger"> @Model.Promotion.Label</a>
+        </dd>
+    }
+    <dt class="col-sm-2">   Рейтинг    </dt>
+    <dd class="col-sm-10">
+        <ul class="list-inline small m-0 p-0">
+            @for (int i = 1; i <= 10; i++)
+            {
+                if (i <= Model.Price % 10 + 1)
+                {
+                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                }
+                else
+                {
+                    <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
+                }
+            }
+        </ul>
+    </dd>
+
+</dl>

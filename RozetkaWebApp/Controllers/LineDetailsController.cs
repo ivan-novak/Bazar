@@ -121,17 +121,11 @@ namespace RozetkaWebApp.Controllers
         // GET: LineDetails/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null)  return NotFound();
+            var UserId = _context.LineDetails.Find(id).UserId;
+            ViewBag.User = _context.AspNetUsers.Find(UserId);
             var lineDetail = await _context.LineDetails.FindAsync(id);
-            if (lineDetail == null)
-            {
-                return NotFound();
-            }
-            //   ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
+            if (lineDetail == null) return NotFound();
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
             return View(lineDetail);
         }
@@ -167,7 +161,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect($"/AspNetUsers/Cart/" + lineDetail.UserId);
             }
             ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", lineDetail.ProductId);
@@ -182,7 +176,8 @@ namespace RozetkaWebApp.Controllers
             {
                 return NotFound();
             }
-
+            var UserId = _context.LineDetails.Find(id).UserId;
+            ViewBag.User = _context.AspNetUsers.Find(UserId);
             var lineDetail = await _context.LineDetails
                 .Include(l => l.Order)
                 .Include(l => l.Product)
@@ -204,7 +199,8 @@ namespace RozetkaWebApp.Controllers
             var lineDetail = await _context.LineDetails.FindAsync(id);
             _context.LineDetails.Remove(lineDetail);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/AspNetUsers/Cart/" + lineDetail.UserId);
+
         }
 
         private bool LineDetailExists(long id)

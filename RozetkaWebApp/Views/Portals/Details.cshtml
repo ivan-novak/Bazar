@@ -10,54 +10,16 @@
     Html.RenderPartial((("_PortalNavigator")));
 }
 <div class="row pt-3">
-    <div class="form-group col-lg-4">
+    <div class="form-group col-lg-6">
         <h4> Макет сторінки</h4>
     </div>
-    <div class="form-group col-lg-8" style="text-align: right">
+    <div class="form-group col-lg-6" style="text-align: right">
         <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.PortalId"> @Resources.Изменить </a>
         <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.PortalId"> @Resources._Remove </a>
         <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
     </div>
 </div>
 
-<div class="form-group">
-    <div class="card-body  rounded p-0 m-0">
-        <img src="/images/Portals/@(Model.PortalId)/First" alt="" class="w-100 img-fluid d-block mx-auto">
-        <p></p>
-    </div>
-</div>
-
-<style>
-    .card:hover {
-        transition: transform 0.2s;
-        transform: scale(1.1);
-    }
-</style>
-
-<div class="row pt-3 mb-4">
-    @foreach (var item in Model.Catalogs)
-    {
-        <div class="col-lg-3 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch"
-         onclick="location.href='/Catalogs/Details/@item.CatalogId';">
-            <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
-                <div class="card-body p-0 m-0">
-                    <img src="/images/Catalogs/@(item.CatalogId)/First" alt="" class="w-100 img-fluid d-block mx-auto">
-                    <p></p>
-                    <h5 class="m-0">@Html.DisplayFor(modelItem => item.Label)</h5>
-                </div>
-                <ul class="list-inline small text-right mb-2">
-                    <li class="list-inline-item"><a asp-controller="Catalogs" asp-action="Edit" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-pen-square m-1"></i> </a> </li>
-                    <li class="list-inline-item"><a asp-controller="Catalogs" asp-action="Delete" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-trash m-1"></i> </a></li>
-                </ul>
-
-            </div>
-        </div>
-    }
-
-</div>
-@if (Model.Description != null)
-{
-    <h5>@Model.Label</h5>
-    @Html.DisplayFor(model => model.Description)
+@{
+    Html.RenderPartial((("_MockupPortal")));
 }
-

@@ -1,14 +1,12 @@
 ﻿@using RozetkaWebApp.App_GlobalResources;
-@model RozetkaWebApp.Models.LineDetail
+@model RozetkaWebApp.Models.LineDetail;
 
 @{
-    ViewBag.ManagerTab = (("active"));
-    Html.RenderPartial((("_CartNavigator")));
-}
+    ViewBag.CartTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
 
-<p> 
-    <h4>@Resources.Вы_хотите_удалить_этот_товар_и</h4>
-</p>
+    <p><h4>@Resources.Вы_хотите_удалить_этот_товар_и</h4></p>
+}
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="OrderDatailId" />

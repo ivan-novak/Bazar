@@ -17,8 +17,12 @@
             <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
         </div>
     </div>
+    ViewBag.DisableBack = true;
+    ViewBag.DisableCreate = true;
 
-    Html.RenderPartial((("_CatalogMaket")));
+    Html.RenderPartial((("_FilterNavigator")), Model);
+    Html.RenderPartial((("_MockupCatalog")));
+
 }
 
 

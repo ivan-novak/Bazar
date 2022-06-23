@@ -2,11 +2,14 @@
 @model RozetkaWebApp.Models.LineDetail
 
 @{
-    ViewBag.ManagerTab = (("active"));
-    Html.RenderPartial((("_CartNavigator")));
+    ViewBag.CartTab = (("active"));
+    Html.RenderPartial((("_ProfileNavigator")));
+
+    <p><h4> @Resources.Изменить_количество_товара </h4></p>
 }
 
-<p><h4>@Resources.Изменить_количество_товара</h4></p>
+
+
 
 <div class="row">
     <div class="col-md-4">

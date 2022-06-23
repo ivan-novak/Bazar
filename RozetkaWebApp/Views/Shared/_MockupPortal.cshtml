@@ -1,0 +1,54 @@
+﻿
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="/images/Portals/@(Model.PortalId)/Advertising0" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="/images/Portals/@(Model.PortalId)/Advertising1" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="/images/Portals/@(Model.PortalId)/Advertising2" alt="Third slide">
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .card:hover {
+        transition: transform 0.2s;
+        transform: scale(1.1);
+    }
+</style>
+
+<div class="row pt-3 mb-4">
+
+    @foreach (Catalog item in Model.Catalogs)
+    {
+        <div class="col-lg-3 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch"
+         onclick="location.href='/Catalogs/Details/@item.CatalogId';">
+            <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
+                <div class="card-body p-0 m-0">
+                    <img src="/images/Catalogs/@(item.CatalogId)/First" alt="" class="w-100 img-fluid d-block mx-auto">
+                    <p></p>
+                    <h5 class="m-0">@Html.DisplayFor(modelItem => item.Label)</h5>
+                </div>
+                <ul class="list-inline small text-right mb-2">
+                    <li class="list-inline-item"><a asp-controller="Catalogs" asp-action="Edit" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li>
+                    <li class="list-inline-item"><a asp-controller="Catalogs" asp-action="Delete" asp-route-id="@item.CatalogId"> <i class="fas fa-solid fa-trash"></i> </a></li>
+                </ul>
+
+            </div>
+        </div>
+    }
+
+</div>
+@{
+    Html.RenderPartial((("_BlockAdvertising")));
+    if (Model.Description != null)
+    {
+        <h4 class="text-secondary  mt-16">@Model.Title</h4>
+        <p>@Model.Description</p>
+    }
+}
+

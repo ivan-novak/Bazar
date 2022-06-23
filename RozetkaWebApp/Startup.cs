@@ -37,8 +37,8 @@ namespace RozetkaWebApp
                 })
                 .AddGoogle(options =>
                 {
-                    options.ClientId = "616532040396-8a5g66ots6ombdmavimbvscvqi1qt5g3.apps.googleusercontent.com";
-                    options.ClientSecret = "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";
+                    options.ClientId = "363893018744-v3iue25f54a38iu96q1uiqctiag9asnu.apps.googleusercontent.com";
+                    options.ClientSecret = "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";
                 });
 
             services.AddCors();

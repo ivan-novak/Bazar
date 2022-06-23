@@ -47,7 +47,7 @@ namespace RozetkaWebApp
             {
                 return NotFound();
             }
-
+            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(portal);
         }
 
@@ -136,13 +136,13 @@ namespace RozetkaWebApp
                 return NotFound();
             }
 
-            var portal = await _context.Portals
+            var portal = await _context.Portals.Include(m => m.Catalogs)
                 .FirstOrDefaultAsync(m => m.PortalId == id);
             if (portal == null)
             {
                 return NotFound();
             }
-
+            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(portal);
         }
 

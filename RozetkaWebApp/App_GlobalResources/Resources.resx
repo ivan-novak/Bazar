@@ -330,7 +330,8 @@
     <value>Використовуйте цю сторінку, щоб деталізувати політику конфіденційності вашого сайту.</value>
   </data>
   <data name="You_do_not_have_access_to_this" xml:space="preserve">
-    <value>Ви не маєте доступу до цього ресурсу.</value>
+    <value>Ви не маєте доступу до цього ресурсу. Зверніться до Адміністратора</value>
+    <comment>Previous text: Ви не маєте доступу до цього ресурсу.</comment>
   </data>
   <data name="You_ve_successfully_authentica" xml:space="preserve">
     <value>Ви успішно пройшли автентифікацію за допомогою</value>
@@ -775,7 +776,8 @@
     <value>Опис</value>
   </data>
   <data name="Отказано_в_доступе" xml:space="preserve">
-    <value>Показано в доступе</value>
+    <value>Відмовлено в доступі</value>
+    <comment>Previous text: Показано в доступе</comment>
   </data>
   <data name="Отключение_2FA_не_изменяет_клю" xml:space="preserve">
     <value>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ  використовується в додатку для перевірки довжини, ви повинні</value>

@@ -19,5 +19,9 @@
         </div>
     </div>
 
-    Html.RenderPartial((("_CatalogMaket")));
+    ViewBag.DisableBack = true;
+    ViewBag.DisableCreate = true;
+
+    Html.RenderPartial((("_FilterNavigator")), Model);
+    Html.RenderPartial((("_MockupCatalog")));
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -22,9 +23,14 @@ namespace RozetkaWebApp.Models
         public string Label { get; set; }
         public string Description { get; set; }
         public string Attributes { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:F0}₴", ApplyFormatInEditMode = false)]
         public decimal Price { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:F0}", ApplyFormatInEditMode = false)]
         public decimal Quantity { get; set; }
         public long? PromotionId { get; set; }
+
         public DateTime? ChoiceDate { get; set; }
         public DateTime? ViewDate { get; set; }
         public string InventoryId { get; set; }

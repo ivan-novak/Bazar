@@ -296,6 +296,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>453</StringID>
+    <Comment>Previous text: Ви не маєте доступу до цього ресурсу.</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>454</StringID>
@@ -687,6 +688,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>593</StringID>
+    <Comment>Previous text: Показано в доступе</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>594</StringID>
@@ -3416,7 +3418,7 @@
     <StringID>453</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Ви не маєте доступу до цього ресурсу.</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>454</StringID>
@@ -3788,7 +3790,7 @@
     <StringID>593</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Показано в доступе</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>595</StringID>
@@ -4075,14 +4077,14 @@
   <GeneralTexts>
     <StringID>593</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Показано в доступе</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Відмовлено в доступі</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>453</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Ви не маєте доступу до цього ресурсу.</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Ви не маєте доступу до цього ресурсу. Зверніться до Адміністратора</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>606</StringID>
@@ -7758,7 +7760,7 @@
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>StatusHash</Name>
-    <TextValue>OCOJjrUVoGjpLryOVPoXGh71Wjg=</TextValue>
+    <TextValue>TxqpepjdxlTsKl0FWkXbSUPaMig=</TextValue>
     <NumValue>0</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>

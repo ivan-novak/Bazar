@@ -907,7 +907,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ви не маєте доступу до цього ресурсу..
+        ///   Looks up a localized string similar to Ви не маєте доступу до цього ресурсу. Зверніться до Адміністратора.
         /// </summary>
         public static string You_do_not_have_access_to_this {
             get {
@@ -2149,7 +2149,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Показано в доступе.
+        ///   Looks up a localized string similar to Відмовлено в доступі.
         /// </summary>
         public static string Отказано_в_доступе {
             get {

@@ -70,13 +70,21 @@
                             <p>
                                 @foreach (var provider in Model.ExternalLogins)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Войдите, используя свою @provider.DisplayName учетную запись">@provider.DisplayName</button>
+                                    <button type="submit" class="btn btn-primary btn-gplus" name="provider" value="@provider.Name" title="Войдите, используя свою @provider.DisplayName учетную запись">@provider.DisplayName</button>
                                 }
                             </p>
                         </div>
                     </form>
                 }
             }
+        </section>
+          <section>
+              <div class="alert alert-warning" role="alert"">
+              <h6>Для демо доступу до системи ввійдіть як: </h6>
+              <hr />
+              <div><a>Email:</a> <a class="text-primary">manager@bazar.com</a></div>
+             <div><a>пароль:</a> <a class="text-primary">Bazar-Demo-2022</a></div>   
+                         </div>
         </section>
     </div>
 </div>

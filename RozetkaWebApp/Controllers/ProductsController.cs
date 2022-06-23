@@ -56,21 +56,17 @@ namespace RozetkaWebApp.Controllers
         //[HttpGet("[controller]/getDetails")]
         public async Task<IActionResult> Details(long? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
             var product = await _context.Products
-                .Include(c => c.Catalog.Portal) 
-                .Include(cs => cs.Promotion)
-                .Include(cs => cs.Characteristics)         
+                .Include(c => c.Catalog.Portal)
+                .Include(p => p.Promotion)
+                .Include(cm => cm.Comments)
+                .ThenInclude(cs => cs.User)
+                .Include(cs => cs.Characteristics)
                 .ThenInclude(cs => cs.Property)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
+            if (product == null) return NotFound();
+            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(product);
         }
         [Authorize(Roles = "Маркетологи")]
@@ -169,21 +165,18 @@ namespace RozetkaWebApp.Controllers
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var product = await _context.Products
                 .Include(c => c.Catalog.Portal)
-                .Include(cs => cs.Promotion)
+                .Include(p => p.Promotion)
+                .Include(cm => cm.Comments)
+                .ThenInclude(cs => cs.User)
                 .Include(cs => cs.Characteristics)
                 .ThenInclude(cs => cs.Property)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
+            if (product == null) return NotFound();
+            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(product);
         }
         [Authorize(Roles = "Маркетологи")]

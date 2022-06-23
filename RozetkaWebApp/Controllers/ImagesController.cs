@@ -71,9 +71,9 @@ namespace RozetkaWebApp.Controllers
 
         }
 
-        [HttpGet("[controller]/portals/{id}/{name}")]
         [HttpGet("[controller]/portals/{id}/first")]
-        public async Task<FileResult> Portal(long? id, string name)
+        [HttpGet("[controller]/portals/{id}/{name}")]
+        public async Task<FileResult> Portal(long? id, string name =null)
         {
             if (id == null) return null;
             var portalImage = await _context.PortalImages

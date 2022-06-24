@@ -55,6 +55,7 @@ namespace RozetkaWebApp
                 .FirstOrDefaultAsync(c => c.CatalogId == id);
             if (catalog == null) return NotFound();
             ViewBag.Filter = Filter;
+            ViewBag.Selectors = _context.Filters.Where(c=>c.CatalogId == id).ToList();
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
             ViewBag.Portal = catalog.Portal;
@@ -135,6 +136,7 @@ namespace RozetkaWebApp
                 .Include(c => c.Portal)
                 .FirstOrDefaultAsync(m => m.CatalogId == id);
             if (catalog == null) return NotFound();
+            ViewBag.Selectors = _context.Filters.Where(c => c.CatalogId == id).ToList();
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;

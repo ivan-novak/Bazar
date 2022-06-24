@@ -58,6 +58,12 @@
                     <span asp-validation-for="Quantity" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label asp-for="InventoryId" class="control-label"> Інвентарний Номер </label>
+                    <input asp-for="InventoryId" class="form-control" />
+                    <span asp-validation-for="InventoryId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
                     <label asp-for="CatalogId" class="control-label"> @Resources.Promotion </label>
                     <select asp-for="PromotionId" class="form-control" asp-items="ViewBag.PromotionId">
                         <

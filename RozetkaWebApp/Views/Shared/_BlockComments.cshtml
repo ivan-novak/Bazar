@@ -2,62 +2,67 @@
 @using RozetkaWebApp.App_GlobalResources
 @model IEnumerable<RozetkaWebApp.Models.Comment>
 
-
-<h4 class="text-secondary  mt-16">Відгуки користувачів</h4>
-
-@foreach (Comment item in Model)
-{
-
-    <table style="width:100%">
-        <hr />
-        <tbody>
-            <tr>
-                <td>
-                    <a asp-controller="Addresses" asp-action="Index" asp-route-id="@item.UserId">
-                        <h5 class="text-primary">
-                            @CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.User.UserName.Split('@')[0].ToLower())
-                        </h5>
-                    </a>
-                </td>
-
-                <td class="text-right">
-                    @item.Date.ToString("dd/MM/yyyy")
-                </td>
-                <td class="text-right">
-                    <ul class="list-inline small">
-                        @for (int i = 1; i <= 10; i++)
-                        {
-                            if (i <= item.Score)
-                            {
-                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
-                            }
-                            else
-                            {
-                                <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
-                            }
-                        }
-                        <a asp-controller="Comments" asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square ml-4 m-1"></i> </a>
-                        <a asp-controller="Comments" asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
-                    </ul>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    @if (item.Text != null)
+@{
+    if (Model.Count() > 0)
     {
-        @item.Text
-    }
-    @if (item.Pros != null)
-    {
-        <h6 class="text-success">@Resources.Переваги0 </h6>
-        <p class="text-secondary">@Html.DisplayFor(modelItem => item.Pros)</p>
-    }
-    @if (item.Cons != null)
-    {
-        <h6 class="text-warning">@Resources.Недоліки0 </h6>
-        <p class="text-secondary">@Html.DisplayFor(modelItem => item.Cons)</p>
-    }
 
+        <h4 class="text-secondary  mt-16">Відгуки користувачів</h4>
+
+        foreach (Comment item in Model)
+        {
+
+            <table style="width:100%">
+                <hr />
+                <tbody>
+                    <tr>
+                        <td>
+                            <a asp-controller="Addresses" asp-action="Index" asp-route-id="@item.UserId">
+                                <h5 class="text-primary">
+                                    @CultureInfo.CurrentCulture.TextInfo.ToTitleCase(item.User.UserName.Split('@')[0].ToLower())
+                                </h5>
+                            </a>
+                        </td>
+
+                        <td class="text-right">
+                            @item.Date.ToString("dd/MM/yyyy")
+                        </td>
+                        <td class="text-right">
+                            <ul class="list-inline small">
+                                @for (int i = 1; i <= 10; i++)
+                                {
+                                    if (i <= item.Score)
+                                    {
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
+                                    }
+                                }
+                                <a asp-controller="Comments" asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square ml-4 m-1"></i> </a>
+                                <a asp-controller="Comments" asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
+                            </ul>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            @if (item.Text != null)
+            {
+                @item.Text
+            }
+            @if (item.Pros != null)
+            {
+                <h6 class="text-success">@Resources.Переваги0 </h6>
+                <p class="text-secondary">@Html.DisplayFor(modelItem => item.Pros)</p>
+            }
+            @if (item.Cons != null)
+            {
+                <h6 class="text-warning">@Resources.Недоліки0 </h6>
+                <p class="text-secondary">@Html.DisplayFor(modelItem => item.Cons)</p>
+            }
+
+        }
+    }
+    <hr />
 }
-<hr />

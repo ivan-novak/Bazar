@@ -2446,7 +2446,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Перелік промоакцій.
+        ///   Looks up a localized string similar to Промоції.
         /// </summary>
         public static string Промоакции {
             get {
@@ -3040,7 +3040,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Видалити цю функцію?.
+        ///   Looks up a localized string similar to Видалити цю характеристику?.
         /// </summary>
         public static string Удалить_эту_характеристику {
             get {

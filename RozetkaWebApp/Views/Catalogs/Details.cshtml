@@ -20,10 +20,24 @@
     ViewBag.DisableBack = true;
     ViewBag.DisableCreate = true;
 
-    Html.RenderPartial((("_FilterNavigator")), Model);
-    Html.RenderPartial((("_MockupCatalog")));
+
+    Html.RenderPartial((("_BlockPаges")), Model);
+
+    <div class="row m-0 p-0">
+        <div class="col-sm-2 m-0 p-0">
+            @{
+                Html.RenderPartial((("_BlockSelectors")));
+            }
+        </div>
+        <div class="col-sm-10 m-0 p-0">
+            @{
+                Html.RenderPartial((("_MockupCatalog")));
+            }
+        </div>
+    </div>
 
 }
+
 
 
 

@@ -880,8 +880,8 @@
     <comment>Previous text: Проверка кода відновлення</comment>
   </data>
   <data name="Промоакции" xml:space="preserve">
-    <value>Перелік промоакцій</value>
-    <comment>Previous text: Промоакції</comment>
+    <value>Промоції</value>
+    <comment>Previous text: Перелік промоакцій</comment>
   </data>
   <data name="Профиль" xml:space="preserve">
     <value>Профіль користувача</value>
@@ -1100,7 +1100,8 @@
     <value>Видалити цю акцію?</value>
   </data>
   <data name="Удалить_эту_характеристику" xml:space="preserve">
-    <value>Видалити цю функцію?</value>
+    <value>Видалити цю характеристику?</value>
+    <comment>Previous text: Видалити цю функцію?</comment>
   </data>
   <data name="Улица_дом_квартира" xml:space="preserve">
     <value>Вулиця, будинок, квартира</value>

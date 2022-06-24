@@ -770,7 +770,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>624</StringID>
-    <Comment>Previous text: Промоакції</Comment>
+    <Comment>Previous text: Перелік промоакцій</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>626</StringID>
@@ -981,6 +981,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>695</StringID>
+    <Comment>Previous text: Видалити цю функцію?</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>696</StringID>
@@ -1873,7 +1874,7 @@
   <GeneralTexts>
     <StringID>624</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Перелік промоакцій</LanguageText>
+    <LanguageText>Промоції</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -4018,7 +4019,7 @@
     <StringID>695</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Видалити цю функцію?</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>720</StringID>
@@ -4683,8 +4684,8 @@
   <GeneralTexts>
     <StringID>695</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Видалити цю функцію?</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Видалити цю характеристику?</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>547</StringID>
@@ -7760,7 +7761,7 @@
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>StatusHash</Name>
-    <TextValue>TxqpepjdxlTsKl0FWkXbSUPaMig=</TextValue>
+    <TextValue>nYOfphP8Ra/bp9RqYU7sYj3khlE=</TextValue>
     <NumValue>0</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>

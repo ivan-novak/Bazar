@@ -6,6 +6,7 @@ using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace RozetkaWebApp
 {
@@ -47,7 +48,7 @@ namespace RozetkaWebApp
             return new FileStreamResult(oMemoryStream, "image/*");
         }
 
-        public async Task<IActionResult> Details(int? id, string Filter = null, int page = 0, int pageSize = 20)
+        public async Task<IActionResult> Details(int? id, string Filter = null, int page = 0, int pageSize = 20, string chioces = null)
         {
             if (id == null) return NotFound();
             var catalog = await _context.Catalogs
@@ -55,13 +56,23 @@ namespace RozetkaWebApp
                 .FirstOrDefaultAsync(c => c.CatalogId == id);
             if (catalog == null) return NotFound();
             ViewBag.Filter = Filter;
-            ViewBag.Selectors = _context.Filters.Where(c=>c.CatalogId == id).ToList();
+            ViewBag.Selectors = _context.Filters.Where(c => c.CatalogId == id).ToList();
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
+            ViewBag.Chioces = chioces;
             ViewBag.Portal = catalog.Portal;
-            var products = _context.Products.
-                Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter))
-                .OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
+            var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
+            if (chioces != null)
+            {
+                var filterCount = chioces.Split('<').Select(x => x.Split("::")[0]).Where(x => x != "").Distinct().Count();
+                var IDs = _context.Characteristics.Select(x=> new { x.ProductId, x.PropertyId, x.Value }).Distinct()
+                    .Where(i => chioces.Contains("<" + i.PropertyId.ToString() + ("::" + i.Value+"")
+                    .Replace(" ","").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "") ))
+                    .GroupBy(x => x.ProductId).Select(g => new {productId = g.Key, count = g.Distinct().Count()})
+                    .Where(x => x.count >= filterCount).Select(x=>x.productId);
+                query = query.Where(x => IDs.Contains(x.ProductId));
+            }          
+            var  products = query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
             ViewBag.TotalCount = products.Count();
             ViewBag.Products = products.ToList();
             ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
@@ -129,7 +140,7 @@ namespace RozetkaWebApp
 
 
         [Authorize(Roles = "Маркетологи")]
-        public async Task<IActionResult> Delete(int? id, string Filter = null, int page = 0, int pageSize = 20)
+        public async Task<IActionResult> Delete(int? id, string Filter = null, int page = 0, int pageSize = 20, string chioces = null)
         {
             if (id == null) return NotFound();
             var catalog = await _context.Catalogs
@@ -141,9 +152,19 @@ namespace RozetkaWebApp
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
             ViewBag.Portal = catalog.Portal;
-            var products = _context.Products.
-                Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter))
-                .OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
+            ViewBag.Chioces = chioces;
+            var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
+            if (chioces != null)
+            {
+                var filterCount = chioces.Split('<').Select(x => x.Split("::")[0]).Where(x => x != "").Distinct().Count();
+                var IDs = _context.Characteristics.Select(x => new { x.ProductId, x.PropertyId, x.Value }).Distinct()
+                    .Where(i => chioces.Contains("<" + i.PropertyId.ToString() + ("::" + i.Value + "")
+                    .Replace(" ", "").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "")))
+                    .GroupBy(x => x.ProductId).Select(g => new { productId = g.Key, count = g.Distinct().Count() })
+                    .Where(x => x.count >= filterCount).Select(x => x.productId);
+                query = query.Where(x => IDs.Contains(x.ProductId));
+            }
+            var products = query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
             ViewBag.TotalCount = products.Count();
             ViewBag.Products = products.ToList();
             ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();

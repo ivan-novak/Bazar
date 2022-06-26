@@ -64,15 +64,21 @@ namespace RozetkaWebApp
             var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
             if (chioces != null)
             {
-                var filterCount = chioces.Split('|').Select(x => x.Split("=")[0]).Where(x => x != "").Distinct().Count();
-                var IDs = _context.Characteristics.Select(x=> new { x.ProductId, x.PropertyId, x.Value }).Distinct()
-                    .Where(i => chioces.Contains("|" + i.PropertyId.ToString() + "=" +( i.Value+"")
-                    .Replace("=", "").Replace(" ", "").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "")))
-                    .GroupBy(x => x.ProductId).Select(g => new {productId = g.Key, count = g.Distinct().Count()})
-                    .Where(x => x.count >= filterCount).Select(x=>x.productId);
-                query = query.Where(x => IDs.Contains(x.ProductId));
-            }          
-            var  products = query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
+                var chiocesList = chioces.Split('|').Select(x => new { group = x.Split("=") }).Where(x => x.group.Length == 2);
+                var filterSet = _context.Characteristics.Select(x => new
+                {
+                    ProductId = x.ProductId,
+                    PropertyId = x.PropertyId,
+                    Value = (x.Value+ x.Dimension).Replace("+","").Replace("&", "").Replace("?", "").Replace("=", "").Replace(" ","")
+                });
+                foreach (var propertyId in chiocesList.Select(x => x.group[0]).Distinct())
+                {
+                    var valueSet = chiocesList.Where(c => c.group[0] == propertyId).Select(x => x.group[1]);
+                    var productSet = filterSet.Where(x => (x.PropertyId.ToString() == propertyId && valueSet.Contains(x.Value))).Select(x => x.ProductId);
+                    query = query.Where(x => productSet.Contains(x.ProductId));
+                }
+            }
+            var products = query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
             ViewBag.TotalCount = products.Count();
             ViewBag.Products = products.ToList();
             ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
@@ -156,13 +162,19 @@ namespace RozetkaWebApp
             var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
             if (chioces != null)
             {
-                var filterCount = chioces.Split('|').Select(x => x.Split("=")[0]).Where(x => x != "").Distinct().Count();
-                var IDs = _context.Characteristics.Select(x => new { x.ProductId, x.PropertyId, Value=x.Value.Select(c=>c) }).Distinct()
-                    .Where(i => chioces.Contains("|" + i.PropertyId.ToString() + "=" + (i.Value + "")
-                    .Replace("=", "").Replace(" ", "").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "")))
-                    .GroupBy(x => x.ProductId).Select(g => new { productId = g.Key, count = g.Distinct().Count() })
-                    .Where(x => x.count >= filterCount).Select(x => x.productId);
-                query = query.Where(x => IDs.Contains(x.ProductId));
+                var chiocesList = chioces.Split('|').Select(x => new { group = x.Split("=") }).Where(x => x.group.Length == 2);
+                var filterSet = _context.Characteristics.Select(x => new
+                {
+                    ProductId = x.ProductId,
+                    PropertyId = x.PropertyId,
+                    Value = (x.Value + x.Dimension).Replace("+", "").Replace("&", "").Replace("?", "").Replace("=", "").Replace(" ", "")
+                });
+                foreach (var propertyId in chiocesList.Select(x => x.group[0]).Distinct())
+                {
+                    var valueSet = chiocesList.Where(c => c.group[0] == propertyId).Select(x => x.group[1]);
+                    var productSet = filterSet.Where(x => (x.PropertyId.ToString() == propertyId && valueSet.Contains(x.Value))).Select(x => x.ProductId);
+                    query = query.Where(x => productSet.Contains(x.ProductId));
+                }
             }
             var products = query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
             ViewBag.TotalCount = products.Count();

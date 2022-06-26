@@ -20,7 +20,7 @@
         @foreach (Characteristic item in Model)
         {
             <tr>
-                <td> <a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">@item.Property.Label)</a>   </td>
+                <td> <a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">@item.Property.Label</a>   </td>
                 <td> @item.Value   </td>
                 <td> @item.Dimension  </td>
                 <td class="text-right small">

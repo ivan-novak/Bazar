@@ -4,6 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-RozetkaWebApp-B36E9C14-75D3-4958-9D0A-7283CD6D2433</UserSecretsId>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <Copyright>Novak Ivan</Copyright>
+    <NeutralLanguage>uk-UA</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>

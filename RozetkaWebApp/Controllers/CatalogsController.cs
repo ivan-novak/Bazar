@@ -64,10 +64,10 @@ namespace RozetkaWebApp
             var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
             if (chioces != null)
             {
-                var filterCount = chioces.Split('<').Select(x => x.Split("::")[0]).Where(x => x != "").Distinct().Count();
+                var filterCount = chioces.Split('|').Select(x => x.Split("=")[0]).Where(x => x != "").Distinct().Count();
                 var IDs = _context.Characteristics.Select(x=> new { x.ProductId, x.PropertyId, x.Value }).Distinct()
-                    .Where(i => chioces.Contains("<" + i.PropertyId.ToString() + ("::" + i.Value+"")
-                    .Replace(" ","").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "") ))
+                    .Where(i => chioces.Contains("|" + i.PropertyId.ToString() + "=" +( i.Value+"")
+                    .Replace("=", "").Replace(" ", "").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "")))
                     .GroupBy(x => x.ProductId).Select(g => new {productId = g.Key, count = g.Distinct().Count()})
                     .Where(x => x.count >= filterCount).Select(x=>x.productId);
                 query = query.Where(x => IDs.Contains(x.ProductId));
@@ -156,10 +156,10 @@ namespace RozetkaWebApp
             var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
             if (chioces != null)
             {
-                var filterCount = chioces.Split('<').Select(x => x.Split("::")[0]).Where(x => x != "").Distinct().Count();
-                var IDs = _context.Characteristics.Select(x => new { x.ProductId, x.PropertyId, x.Value }).Distinct()
-                    .Where(i => chioces.Contains("<" + i.PropertyId.ToString() + ("::" + i.Value + "")
-                    .Replace(" ", "").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "")))
+                var filterCount = chioces.Split('|').Select(x => x.Split("=")[0]).Where(x => x != "").Distinct().Count();
+                var IDs = _context.Characteristics.Select(x => new { x.ProductId, x.PropertyId, Value=x.Value.Select(c=>c) }).Distinct()
+                    .Where(i => chioces.Contains("|" + i.PropertyId.ToString() + "=" + (i.Value + "")
+                    .Replace("=", "").Replace(" ", "").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", "")))
                     .GroupBy(x => x.ProductId).Select(g => new { productId = g.Key, count = g.Distinct().Count() })
                     .Where(x => x.count >= filterCount).Select(x => x.productId);
                 query = query.Where(x => IDs.Contains(x.ProductId));

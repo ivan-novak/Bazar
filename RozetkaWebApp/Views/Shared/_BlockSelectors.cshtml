@@ -1,17 +1,10 @@
 ﻿@using System.Text.RegularExpressions
 @{
 
-    ////<form asp-action="Edit">
-    //<div class="form-group">
-    //    <input type="submit" value="Застосувати" class="btn btn-success" />
-    //    <input type="text" id="result">
-    //    <hr />
-    //</div>
-    ////</form>
-    //<div>
-    //</div>
-
-    string path = "/Catalogs/Details/"+Model.CatalogId.ToString() + (("?Filter=")) + ViewBag.Filter + (("&pageSize=")) + ViewBag.PageSize + (("&page=")) + ViewBag.Page+'"' ;
+    string path = "/Catalogs/Details/"+Model.CatalogId.ToString() 
+    + (("?Filter=")) + ViewBag.Filter 
+    + (("&pageSize=")) + ViewBag.PageSize 
+    + (("&page=")) + ViewBag.Page ;
 
 
     foreach (Filter i in ViewBag.Selectors)
@@ -21,8 +14,8 @@
             <div class="form-check overflow-auto" style="max-height: 200px; scrollbar-width: thin;">
                 @foreach (string s in i.Value.Split(','))
                 {
-                    string chioceCode = "<" + (i.PropertyId.ToString()) + ("::" +s +"")
-                     .Replace(" ","").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", ""); 
+                    string chioceCode = "|" + (i.PropertyId.ToString()) + "=" + (s  +"")
+                     .Replace("=","").Replace(" ","").Replace("\"", "").Replace("+", "").Replace("-", "").Replace("&", ""); 
                     <div>
                         @if(ViewBag.Chioces != null && ViewBag.Chioces?.Contains(chioceCode))
                         {

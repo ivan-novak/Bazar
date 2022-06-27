@@ -1,0 +1,29 @@
+﻿@using RozetkaWebApp.App_GlobalResources
+@model string
+
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#@Model">
+     Видалити
+</button>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title " id="ModalLabel">Підтвердіть Ваші дії</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body "> 
+        <h6>Ви впевнені що хочите видалити</h6>
+        <h6>@ViewBag.Title ?</h6>
+      </div>
+      <div class="modal-footer">
+           <form action="#@Model">
+            <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
+           <button type="button" class="btn btn btn-primary" data-dismiss="modal">Скасувати</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

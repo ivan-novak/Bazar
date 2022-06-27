@@ -176,12 +176,14 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+     //   [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long id, string returnUrl = null)
         {
             var comment = await _context.Comments.FindAsync(id);
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
+
             return Redirect($"/Comments/Index/" + comment.ProductId);
         }
 

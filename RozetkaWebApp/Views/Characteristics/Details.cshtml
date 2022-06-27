@@ -18,7 +18,11 @@
     <p>
         <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
         <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.CharacteristicId">   @Resources.Изменить  </a>
-        <a class="btn btn-primary" asp-action="Delete" asp-route-id="@Model.CharacteristicId"> @Resources._Remove </a>
+           @{
+                ViewBag.returnUrl = "/Products/details/" + Model.ProductId.ToString();
+                string Path = "/Characteristics/delete/" + Model.CharacteristicId.ToString();
+                <partial name="_ButtonDeleteDetails" model="@Path" />
+            }
         <hr />
     </p>
     <dl class="row">

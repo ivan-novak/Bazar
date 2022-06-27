@@ -30,7 +30,12 @@
                         @Html.DisplayFor(modelItem => item.User.UserName)
                     </a>
                 </td>
-                <td class="text-right small">  <a asp-action="Delete" asp-route-id="@id"><i class="fas fa-solid fa-trash m-1"></i>  </a>  </td>
+                <td class="text-right small">
+                    @{
+                        string itemPath = "/AspNetUserRoles/delete/" + id.ToString();
+                        <partial name="_LinkDelete" model="@itemPath" />
+                    }
+                </td>
             </tr>
         }
     </tbody>

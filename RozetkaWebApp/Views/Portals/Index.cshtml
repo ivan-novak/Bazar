@@ -31,9 +31,11 @@
                 <td> <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Label)</a> </td>
                 <td> <a asp-controller="PortalImages" asp-action="Index" asp-route-id="@item.PortalId">@Resources.Image</a> </td>
                 <td class="text-right  small text-info">
-                    <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-folder m-1"></i></a> 
+                 
+                    <a asp-controller="Catalogs" deasp-action="Index" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-folder m-1"></i></a> 
                     <a asp-action="Edit" asp-route-id="@item.PortalId"><i class="fas fa-solid m-1 fa-pen-square"></i></a> 
-                    <a asp-action="Delete" asp-route-id="@item.PortalId"><i class="fas fa-solid fa-trash m-1"></i></a>
+                       @{string itemPath = "/portals/delete/"+item.PortalId.ToString();}
+                       <partial name="_LinkDelete" model="@itemPath" />
                 </td>
             </tr>
         }

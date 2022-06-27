@@ -131,17 +131,10 @@ namespace RozetkaWebApp
         // GET: Portals/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var portal = await _context.Portals.Include(m => m.Catalogs)
+            if (id == null)  return NotFound();
+             var portal = await _context.Portals.Include(m => m.Catalogs)
                 .FirstOrDefaultAsync(m => m.PortalId == id);
-            if (portal == null)
-            {
-                return NotFound();
-            }
+            if (portal == null) return NotFound();
             ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(portal);
         }
@@ -149,7 +142,8 @@ namespace RozetkaWebApp
         [Authorize(Roles = "Маркетологи")]
         // POST: Portals/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var portal = await _context.Portals.FindAsync(id);

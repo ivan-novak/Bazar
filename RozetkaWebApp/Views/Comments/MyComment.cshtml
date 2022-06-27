@@ -45,8 +45,10 @@
                             }
                         }
                         <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square m-1 ml-4"></i> </a>
-                        <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
-                    </ul>
+                    @{
+                        string itemPath = "/Comments/delete/" + item.CommentId.ToString();
+                        <partial name="_LinkDelete" model="@itemPath" />
+                    }                    </ul>
 
                 </td>
 

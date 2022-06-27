@@ -88,12 +88,13 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity,PromotionId,InventoryID")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity,PromotionId,InventoryID")] Product product, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/Products/Index/" + product.CatalogId);
             }
             ViewBag.Catalog = product.Catalog;
@@ -128,7 +129,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity,PromotionId,InventoryID")] Product product)
+        public async Task<IActionResult> Edit(long id, [Bind("ProductId,CatalogId,Title,Label,Description,Attributes,Price,Quantity,PromotionId,InventoryID")] Product product, string returnUrl = null)
         {
             if (id != product.ProductId)
             {
@@ -153,6 +154,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/Products/Index/" + product.CatalogId);
             }
             //   ViewBag.Catalog = _context.Catalogs.Find(product.CatalogId);
@@ -183,14 +185,15 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+      //  [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long id, string returnUrl = null)
         {
             var product = await _context.Products.FindAsync(id);
             var CatalogId = product.CatalogId;
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
-            return Redirect($"/Products/Index/" + CatalogId);
+            if (returnUrl != null) return Redirect(returnUrl);
+            return Redirect($"/Products/Index/" + product.CatalogId);
         }
 
         private bool ProductExists(long id)

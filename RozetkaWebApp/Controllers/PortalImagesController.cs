@@ -166,12 +166,13 @@ namespace RozetkaWebApp.Controllers
 
         // POST: PortalImages/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+   //     [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id, string returnUrl = null)
         {
             var portalImage = await _context.PortalImages.FindAsync(id);
             _context.PortalImages.Remove(portalImage);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/PortalImages/Index/" + portalImage.PortalId);
         }
 

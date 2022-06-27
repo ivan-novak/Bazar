@@ -163,12 +163,13 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+     //   [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id, string returnUrl = null)
         {
             var contact = await _context.Contacts.FindAsync(id);
             _context.Contacts.Remove(contact);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/Contacts/Index/" + contact.UserId);
         }
 

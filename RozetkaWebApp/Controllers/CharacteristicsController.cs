@@ -74,13 +74,14 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CharacteristicId,ProductId,PropertyId,Value,Dimension")] Characteristic characteristic)
+        public async Task<IActionResult> Create([Bind("CharacteristicId,ProductId,PropertyId,Value,Dimension")] Characteristic characteristic, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(characteristic);
                 await _context.SaveChangesAsync();
-                return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
+                if (returnUrl != null) return Redirect(returnUrl);
+                return Redirect($"/Characteristics/Index/" + characteristic.ProductId.ToString());
             }
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
             ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
@@ -112,7 +113,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("CharacteristicId,ProductId,PropertyId,Value,Dimension")] Characteristic characteristic)
+        public async Task<IActionResult> Edit(long id, [Bind("CharacteristicId,ProductId,PropertyId,Value,Dimension")] Characteristic characteristic, string returnUrl = null)
         {
             if (id != characteristic.CharacteristicId)
             {
@@ -137,7 +138,8 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return Redirect($"/Characteristics/Index/" + characteristic.ProductId);
+                if (returnUrl != null) return Redirect(returnUrl);
+                return Redirect($"/Characteristics/Index/" + id);
             }
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "Label", characteristic.ProductId);
             ViewBag.PropertyId = new SelectList(_context.Properties.Where(i => i.CatalogId == characteristic.Product.CatalogId), "PropertyId", "Label", characteristic.PropertyId);
@@ -165,15 +167,15 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Characteristics/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+     //   [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long id, string returnUrl = null)
         {
             var characteristic = await _context.Characteristics.FindAsync(id);
             id = characteristic.ProductId;
             _context.Characteristics.Remove(characteristic);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/Characteristics/Index/" + id);
-            return RedirectToAction(nameof(Index));
         }
 
         private bool CharacteristicExists(long id)

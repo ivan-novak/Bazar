@@ -183,7 +183,7 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Promotions/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+      //  [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var promotion = await _context.Promotions.FindAsync(id);

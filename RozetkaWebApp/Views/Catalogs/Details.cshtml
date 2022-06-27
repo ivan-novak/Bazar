@@ -4,6 +4,7 @@
 @{
     ViewBag.Catalog = Model;
     ViewBag.DelailTab = (("active"));
+    ViewBag.returnUrl = "/Portals/details/"+Model.PortalId.ToString();
     Html.RenderPartial((("_CatologNavigator")));
 
 
@@ -13,8 +14,9 @@
         </div>
         <div class="form-group col-lg-8" style="text-align: right">
             <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.CatalogId"> @Resources.Изменить </a>
-            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.CatalogId"> @Resources._Remove </a>
             <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+            @{ string Path = "/catalogs/delete/"+Model.CatalogId.ToString();}
+        <partial name="_ButtonDeleteDetails" model="@Path" />
         </div>
     </div>
     ViewBag.DisableBack = true;

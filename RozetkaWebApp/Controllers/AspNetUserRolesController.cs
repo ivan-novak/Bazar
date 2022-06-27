@@ -155,14 +155,15 @@ namespace RozetkaWebApp.Controllers
 
         [Authorize(Roles = "Адміністратори")]
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+    //    [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id, string returnUrl = null)
         {
             var aspNetUserRole = await _context.AspNetUserRoles.Where(a => a.UserId + a.RoleId == id).FirstOrDefaultAsync();
 
             ViewData["Role"] = _context.AspNetRoles.Find(aspNetUserRole.RoleId);
             _context.AspNetUserRoles.Remove(aspNetUserRole);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/AspNetUserRoles/Index/" + aspNetUserRole.RoleId);
         }
 

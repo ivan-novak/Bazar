@@ -170,12 +170,15 @@ namespace RozetkaWebApp.Controllers
 
         // POST: ProductImages/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+  //      [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> DeleteConfirmed(long id, string returnUrl = null)
         {
             var productImage = await _context.ProductImages.Where(m => m.ProductImageId == id).FirstAsync();
             _context.ProductImages.Remove(productImage);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
+
             return Redirect($"/ProductImages/Index/" + productImage.ProductId);
         }
 

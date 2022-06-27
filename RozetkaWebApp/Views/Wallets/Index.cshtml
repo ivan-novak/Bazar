@@ -6,48 +6,52 @@
     Html.RenderPartial((("_ProfileNavigator")));
 }
 
- <p><h4>@Resources.Список_платежных_карт</h4></p>
+<p><h4>@Resources.Список_платежных_карт</h4></p>
 
- @{  
+@{
     Html.RenderPartial((("_FilterNavigator")));
 }
 <table class="table">
     <thead>
-        <tr> 
-             <th> @Resources.Тип_карты </th>   
-            <th> @Resources.Номер_карты </th>        
-            <th> @Resources.Срок_действия </th>    
-            <th> @Resources.Имя_владельца </th>                    
+        <tr>
+            <th> @Resources.Тип_карты </th>
+            <th> @Resources.Номер_карты </th>
+            <th> @Resources.Срок_действия </th>
+            <th> @Resources.Имя_владельца </th>
             <th class="text-right"> @Resources.Действия</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CardType)
-            </td>
-            <td>
-                 <a asp-action="Details" asp-route-id="@item.WalletId">
-                      @Html.DisplayFor(modelItem => item.CardNumber)
-                </a> 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpiryDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cardholder)
-            </td>         
-            <td class="text-right small">
-                <a asp-action="Details" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-folder m-1"></i></a> 
-                <a asp-action="Edit" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-pen-square m-1"></i></a> 
-                <a asp-action="Delete" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-trash m-1"></i></a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CardType)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.WalletId">
+                        @Html.DisplayFor(modelItem => item.CardNumber)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpiryDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cardholder)
+                </td>
+                <td class="text-right small">
+                    <a asp-action="Details" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-folder m-1"></i></a>
+                    <a asp-action="Edit" asp-route-id="@item.WalletId"><i class="fas fa-solid fa-pen-square m-1"></i></a>
+                    @{
+                        string itemPath = "/Wallets/delete/" + item.WalletId.ToString();
+                        <partial name="_LinkDelete" model="@itemPath" />
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
- @{
-     Html.RenderPartial((("_PageNavigator")));
- }
+@{
+    Html.RenderPartial((("_PageNavigator")));
+}

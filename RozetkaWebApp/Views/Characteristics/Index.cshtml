@@ -35,7 +35,10 @@
                 <td> @Html.DisplayFor(modelItem => item.Dimension)  </td>
                 <td class="text-right small">
                     <a asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square m-1"></i> </a>  
-                    <a asp-action="Delete" asp-route-id="@item.CharacteristicId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
+                    @{
+                       string itemPath = "/Characteristics/delete/"+item.CharacteristicId.ToString();
+                       <partial name="_LinkDelete" model="@itemPath" />
+                      }
                 </td>
             </tr>
         }

@@ -21,12 +21,6 @@ namespace RozetkaWebApp
             _context = context;
         }
 
-        public RedirectResult RedirectBack(string Url)
-        {
-            return Redirect(Url);
-            if (ViewBag.returnUrl == null) return Redirect(Url);
-            return Redirect(ViewBag.returnUrl);
-        }
         public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             ViewBag.Portal = _context.Portals.Find(id);
@@ -96,13 +90,14 @@ namespace RozetkaWebApp
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CatalogId,PortalId,Title,Label,Description,Attributes")] Catalog catalog)
+        public async Task<IActionResult> Create([Bind("CatalogId,PortalId,Title,Label,Description,Attributes")] Catalog catalog,string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(catalog);
                 await _context.SaveChangesAsync();
-                return RedirectBack($"/Catalogs/Index/" + catalog.PortalId);
+                if (returnUrl != null) return Redirect(returnUrl);
+                return Redirect($"/Catalogs/Index/" + catalog.PortalId);
             }
             ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
@@ -123,7 +118,7 @@ namespace RozetkaWebApp
         [Authorize(Roles = "Маркетологи")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CatalogId,PortalId,Title,Label,Description,Attributes")] Catalog catalog)
+        public async Task<IActionResult> Edit(int id, [Bind("CatalogId,PortalId,Title,Label,Description,Attributes")] Catalog catalog, string returnUrl = null)
         {
             if (id != catalog.CatalogId) return NotFound();
             if (ModelState.IsValid)
@@ -138,7 +133,8 @@ namespace RozetkaWebApp
                     if (!CatalogExists(catalog.CatalogId)) return NotFound();
                     else throw;
                 }
-                return RedirectBack($"/Catalogs/Index/" + catalog.PortalId);
+                if (returnUrl != null) return Redirect(returnUrl);
+                return Redirect($"/Catalogs/Index/" + catalog.PortalId);
             }
             ViewBag.PortalId = new SelectList(_context.Portals, "PortalId", "Label", catalog.PortalId);
             return View(catalog);
@@ -186,14 +182,15 @@ namespace RozetkaWebApp
 
         [Authorize(Roles = "Маркетологи")]
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+    //    [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id, string returnUrl = null)
         {
             var catalog = await _context.Catalogs.FindAsync(id);
             var Id = catalog.PortalId;
             _context.Catalogs.Remove(catalog);
             await _context.SaveChangesAsync();
-            return RedirectBack($"/Catalogs/Details/" + Id);
+            if (returnUrl != null) return Redirect(returnUrl);
+            return Redirect($"/Catalogs/Index/" + catalog.PortalId);
         }
 
         private bool CatalogExists(int id)

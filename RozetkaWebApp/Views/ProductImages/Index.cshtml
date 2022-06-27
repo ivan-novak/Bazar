@@ -12,7 +12,7 @@
     Html.RenderPartial((("_FilterNavigator")));
 }
 <style>
-    .card:hover {
+    .card-body:hover {
         transition: transform 0.2s;
         transform: scale(1.1);
     }
@@ -31,7 +31,10 @@
                 </div>
                 <ul class="list-inline small text-right mb-2">
                     <li class="list-inline-item"><a asp-action="Edit" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-pen-square "></i> </a> </li>
-                    <li class="list-inline-item"><a asp-action="Delete" asp-route-id="@item.ProductImageId"> <i class="fas fa-solid fa-trash "></i> </a></li>
+                    @{
+                        string itemPath = "/ProductImages/delete/" + item.ProductImageId.ToString();
+                        <partial name="_LinkDelete" model="@itemPath" />
+                    }
                 </ul>
             </div>
         </div>

@@ -193,12 +193,13 @@ namespace RozetkaWebApp.Controllers
 
         // POST: LineDetails/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+      //  [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long id, string returnUrl = null)
         {
             var lineDetail = await _context.LineDetails.FindAsync(id);
             _context.LineDetails.Remove(lineDetail);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/AspNetUsers/Cart/" + lineDetail.UserId);
 
         }

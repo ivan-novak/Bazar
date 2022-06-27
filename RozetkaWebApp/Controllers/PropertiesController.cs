@@ -68,14 +68,14 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PropertyId,CatalogId,Title,Label,Format,IsNumber,Description")] Property @property)
+        public async Task<IActionResult> Create([Bind("PropertyId,CatalogId,Title,Label,Format,IsNumber,Description")] Property @property, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(@property);
                 await _context.SaveChangesAsync();
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/Properties/Index/" + @property.CatalogId);
-                //  return RedirectToAction(nameof(Index));
             }
             ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
@@ -106,7 +106,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,CatalogId,Title,Label, Category, Format, Mask, IsNumber,Description")] Property @property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyId,CatalogId,Title,Label, Category, Format, Mask, IsNumber,Description")] Property @property, string returnUrl = null)
         {
             if (id != @property.PropertyId)
             {
@@ -131,7 +131,8 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
-                return Redirect($"/Properties/Index/" + @property.CatalogId);
+                if (returnUrl != null) return Redirect(returnUrl);
+                 return Redirect($"/Properties/Index/" + @property.CatalogId);
             }
             ViewBag.CatalogId = new SelectList(_context.Catalogs, "CatalogId", "Label", @property.CatalogId);
             return View(@property);
@@ -160,15 +161,17 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Properties/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id, string returnUrl = null)
         {
             var @property = await _context.Properties.FindAsync(id);
             id = @property.CatalogId;
             _context.Properties.Remove(@property);
             await _context.SaveChangesAsync();
+
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/Properties/Index/" + id);
-            return RedirectToAction(nameof(Index));
+
         }
 
         private bool PropertyExists(int id)

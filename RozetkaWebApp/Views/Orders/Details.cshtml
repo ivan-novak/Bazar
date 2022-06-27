@@ -11,8 +11,12 @@
 <p>
     <div class="form-group">
         <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.OrderId"> @Resources.Изменить </a>
-        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.OrderId"> @Resources._Remove </a>
         <button type="button" class="btn btn-primary" onclick="history.go(-1)">@Resources.Отменить</button>
+           @{
+                ViewBag.returnUrl = "/Orders/Index/" + Model.UserId.ToString();
+                string Path = "/Orders/Delete/" + Model.OrderId.ToString();
+                <partial name="_ButtonDeleteDetails" model="@Path" />
+            }
         <hr />
     </div>
     <div>

@@ -13,7 +13,7 @@
 }
 
 <style>
-    .card:hover {
+    .card-body:hover {
         transition: transform 0.2s;
         transform: scale(1.1);
     }
@@ -32,8 +32,10 @@
                 <p class="small text-muted">@Html.DisplayFor(modelItem => item.Title)</p>
                 <ul class="list-inline small text-right mb-2">
                     <li class="list-inline-item"><a asp-action="Edit" asp-route-id="@item.RootImageId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li>
-                    <li class="list-inline-item"><a asp-action="Delete" asp-route-id="@item.RootImageId"> <i class="fas fa-solid fa-trash"></i> </a></li>
-                </ul>
+                    @{
+                        string itemPath = "/RootImages/delete/" + item.RootImageId.ToString();
+                        <partial name="_LinkDelete" model="@itemPath" />
+                    }                </ul>
             </div>
         </div>
     }

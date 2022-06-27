@@ -32,8 +32,10 @@
                 <td>  @Html.DisplayFor(modelItem => item.Mask)  </td>
                 <td class="text-right small">
                     <a asp-action="Edit" asp-route-id="@item.PropertyId">   <i class="fas fa-solid fa-pen-square m-1"></i> </a>  
-                    @*<a asp-action="Details" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-search-location"></i> </a>*@
-                    <a asp-action="Delete" asp-route-id="@item.PropertyId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
+                 @{
+                     string itemPath = "/properties/delete/"+item.PropertyId.ToString();
+                     <partial name="_LinkDelete" model="@itemPath" />
+                 }
                 </td>
             </tr>
         }

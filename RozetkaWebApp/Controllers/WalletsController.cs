@@ -160,12 +160,13 @@ namespace RozetkaWebApp.Controllers
 
         // POST: Walletts/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+   //     [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long id, string returnUrl = null)
         {
             var wallett = await _context.Walletts.FindAsync(id);
             _context.Walletts.Remove(wallett);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return Redirect($"/Wallets/Index/" + wallett.UserId);
         }
 

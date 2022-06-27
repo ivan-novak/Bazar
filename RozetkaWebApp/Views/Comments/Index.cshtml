@@ -44,11 +44,13 @@
                                 <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
                             }
                         }
-                           
-                        <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square ml-4 m-1"></i> </a> 
-                        <a asp-action="Delete" asp-route-id="@item.CommentId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
-                    </ul>
 
+                        <a asp-action="Edit" asp-route-id="@item.CommentId">   <i class="fas fa-solid fa-pen-square ml-4 m-1"></i> </a>
+                        @{
+                            string itemPath = "/comments/delete/" + item.CommentId.ToString();
+                            <partial name="_LinkDelete" model="@itemPath" />
+                        }
+                    </ul>
                 </td>
             </tr>
         </tbody>

@@ -151,12 +151,13 @@ namespace RozetkaWebApp.Controllers
 
         // POST: AspNetRoles/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
+   //     [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id, string returnUrl = null)
+           {
             var aspNetRole = await _context.AspNetRoles.FindAsync(id);
             _context.AspNetRoles.Remove(aspNetRole);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return RedirectToAction(nameof(Index));
         }
 

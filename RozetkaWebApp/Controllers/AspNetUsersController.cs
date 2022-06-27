@@ -51,9 +51,6 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)
         {
             //  return View(await _context.AspNetUsers.ToListAsync());
-
-
-
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
@@ -83,7 +80,8 @@ namespace RozetkaWebApp.Controllers
             //ViewBag.Product = _context.Products.Where(c => c.ProductId == id).Include(c => c.Catalog).Include(c => c.Catalog.Portal).First();
             //ViewBag.Catalog = ViewBag.Product.Catalog;
             ViewBag.User = _context.AspNetUsers.Find(id);
-            var applicationDbContext = _context.LineDetails.Where(c => c.UserId == id).Include(c => c.Product);
+            var applicationDbContext = _context.LineDetails.Where(c => c.OrderId == null)
+                .Where(c => c.UserId == id).Include(c => c.Product);
 
             ViewBag.Filter = Filter;
             ViewBag.Page = page;

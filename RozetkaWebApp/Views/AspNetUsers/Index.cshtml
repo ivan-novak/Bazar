@@ -51,8 +51,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.LockoutEnabled)
                 <td class="text-right small">
-                    <a href="/Addresses/Index/@item.Id"><i class="fas fa-solid fa-folder m-1"></i></a>  
-                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-solid fa-trash m-1"></i></a>
+                    <a href="/Addresses/Index/@item.Id"><i class="fas fa-solid fa-folder m-1"></i></a>
+                        @{
+                            string itemPath = "/AspNetUsers/delete/" + item.Id; 
+                            <partial name="_LinkDelete" model="@itemPath" />
+                        }
+                   
                 </td>
             </tr>
         }

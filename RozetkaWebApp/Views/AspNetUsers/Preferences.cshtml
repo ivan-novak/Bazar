@@ -36,8 +36,10 @@
                 <td class="text-right  small">
                     <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@item.ProductId">   <i class="fas fa-solid fa-folder m-1"></i> </a>
                     <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square m-1"></i> </a>
-                    <a asp-controller="Products" asp-action="Delete" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-trash m-1"></i> </a>
-                    <i class="fa-solid fa-file-lines  text-dark"></i>
+                        @{
+                            string itemPath = "/Products/delete/" + item.ProductId; 
+                            <partial name="_LinkDelete" model="@itemPath" />
+                        }                    <i class="fa-solid fa-file-lines  text-dark"></i>
                 </td>
             </tr>
         }

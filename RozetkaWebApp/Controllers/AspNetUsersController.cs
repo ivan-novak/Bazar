@@ -204,12 +204,13 @@ namespace RozetkaWebApp.Controllers
 
         // POST: AspNetUsers/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+    //    [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id, string returnUrl = null)
         {
             var aspNetUser = await _context.AspNetUsers.FindAsync(id);
             _context.AspNetUsers.Remove(aspNetUser);
             await _context.SaveChangesAsync();
+            if (returnUrl != null) return Redirect(returnUrl);
             return RedirectToAction(nameof(Index));
         }
 

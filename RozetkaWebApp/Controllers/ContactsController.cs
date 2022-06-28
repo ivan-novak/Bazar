@@ -108,7 +108,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ContactId,ContactType,FullName,DisplayName,Title,Salutation,Attention,FirstName,MidName,LastName,Email,WebSite,Fax,FaxType,Phone1,Phone1Type,Phone2,Phone2Type,Phone3,Phone3Type,DefAddressId,UserId,AssignDate,ExtAddressId")] Contact contact)
+        public async Task<IActionResult> Edit(int id, [Bind("ContactId,ContactType,FullName,DisplayName,Title,Salutation,Attention,FirstName,MidName,LastName,Email,WebSite,Fax,FaxType,Phone1,Phone1Type,Phone2,Phone2Type,Phone3,Phone3Type,DefAddressId,UserId,AssignDate,ExtAddressId")] Contact contact, string returnUrl = null)
         {
 
             if (id != contact.ContactId)
@@ -134,6 +134,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/Contacts/Index/" + contact.UserId);
             }
             return Redirect($"/Contacts/Index/" + contact.UserId);

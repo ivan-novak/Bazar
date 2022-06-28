@@ -106,7 +106,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("WalletId,CardNumber,ExpiryDate,Cardholder,CardType,VerificationCode,UserId")] Wallett wallett)
+        public async Task<IActionResult> Edit(long id, [Bind("WalletId,CardNumber,ExpiryDate,Cardholder,CardType,VerificationCode,UserId")] Wallett wallett, string returnUrl = null)
         {
             if (id != wallett.WalletId)
             {
@@ -131,6 +131,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/Wallets/Index/" + wallett.UserId);
             }
             return Redirect($"/Wallets/Index/" + wallett.UserId);

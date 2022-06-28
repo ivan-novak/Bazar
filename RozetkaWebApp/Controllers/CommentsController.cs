@@ -118,7 +118,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("CommentId,UserId,ProductId,Pros,Cons,Text,Date,Score,ImageId")] Comment comment)
+        public async Task<IActionResult> Edit(long id, [Bind("CommentId,UserId,ProductId,Pros,Cons,Text,Date,Score,ImageId")] Comment comment, string returnUrl = null)
         {
             if (id != comment.CommentId)
             {
@@ -144,6 +144,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/Comments/Index/" + comment.ProductId);
             }
             return View(comment);

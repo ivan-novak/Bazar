@@ -136,7 +136,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("OrderDatailId,OrderId,UserId,CartId,ProductId,Quantities,UnitCost,Status,ExtOrderDetailNbr,CreateDate")] LineDetail lineDetail)
+        public async Task<IActionResult> Edit(long id, [Bind("OrderDatailId,OrderId,UserId,CartId,ProductId,Quantities,UnitCost,Status,ExtOrderDetailNbr,CreateDate")] LineDetail lineDetail, string returnUrl = null)
         {
             if (id != lineDetail.OrderDatailId)
             {
@@ -161,6 +161,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/AspNetUsers/Cart/" + lineDetail.UserId);
             }
             ViewBag.OrderId = new SelectList(_context.Orders, "OrderId", "DeliveryAddress", lineDetail.OrderId);

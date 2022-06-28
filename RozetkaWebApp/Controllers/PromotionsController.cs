@@ -118,7 +118,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("PromotionId,Title,Label,Description,Attributes,StartDate,EndDate,ImageId")] Promotion promotion)
+        public async Task<IActionResult> Edit(long id, [Bind("PromotionId,Title,Label,Description,Attributes,StartDate,EndDate,ImageId")] Promotion promotion, string returnUrl = null)
         {
             if (id != promotion.PromotionId)
             {
@@ -154,6 +154,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return RedirectToAction(nameof(Index));
             }
             ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", promotion.ImageId);

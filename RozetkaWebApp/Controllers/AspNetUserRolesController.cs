@@ -101,7 +101,7 @@ namespace RozetkaWebApp.Controllers
         [Authorize(Roles = "Адміністратори")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("UserId,RoleId")] AspNetUserRole aspNetUserRole)
+        public async Task<IActionResult> Edit(string id, [Bind("UserId,RoleId")] AspNetUserRole aspNetUserRole, string returnUrl = null)
         {
             if (id != aspNetUserRole.UserId)
             {
@@ -126,6 +126,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return RedirectToAction(nameof(Index));
             }
             ViewData["RoleId"] = new SelectList(_context.AspNetRoles, "Id", "Id", aspNetUserRole.RoleId);

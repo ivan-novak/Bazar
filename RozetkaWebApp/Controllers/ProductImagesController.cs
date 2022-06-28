@@ -121,7 +121,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("ProductImageId,ProductId,Title,Label,ImageId")] ProductImage productImage)
+        public async Task<IActionResult> Edit(long id, [Bind("ProductImageId,ProductId,Title,Label,ImageId")] ProductImage productImage, string returnUrl = null)
         {
             if (id != productImage.ProductImageId) return NotFound();
             foreach (var file in Request.Form.Files)
@@ -147,6 +147,7 @@ namespace RozetkaWebApp.Controllers
                     if (!ProductImageExists(productImage.ProductImageId)) return NotFound();
                     else throw;
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
             }
             ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);

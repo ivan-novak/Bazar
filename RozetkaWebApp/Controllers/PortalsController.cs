@@ -97,7 +97,7 @@ namespace RozetkaWebApp
         [Authorize(Roles = "Маркетологи")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PortalId,Title,Label,Description,Attributes")] Portal portal)
+        public async Task<IActionResult> Edit(int id, [Bind("PortalId,Title,Label,Description,Attributes")] Portal portal, string returnUrl = null)
         {
             if (id != portal.PortalId)
             {
@@ -122,6 +122,7 @@ namespace RozetkaWebApp
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return RedirectToAction(nameof(Index));
             }
             return View(portal);

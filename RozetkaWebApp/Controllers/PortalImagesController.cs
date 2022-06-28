@@ -110,7 +110,7 @@ namespace RozetkaWebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PortalImageId,PortalId,Title,Label,ImageId")] PortalImage portalImage)
+        public async Task<IActionResult> Edit(int id, [Bind("PortalImageId,PortalId,Title,Label,ImageId")] PortalImage portalImage, string returnUrl = null)
         {
             if (id != portalImage.PortalImageId)
             {
@@ -146,6 +146,7 @@ namespace RozetkaWebApp.Controllers
                         throw;
                     }
                 }
+                if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/PortalImages/Index/" + portalImage.PortalId);
             }
             return View(portalImage);

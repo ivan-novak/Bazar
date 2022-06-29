@@ -42,7 +42,7 @@ namespace RozetkaWebApp
             return new FileStreamResult(oMemoryStream, "image/*");
         }
 
-        public async Task<IActionResult> Details(int? id, string Filter = null, int page = 0, int pageSize = 20, string chioces = null)
+        public async Task<IActionResult> Details(int? id, string Filter = null, int page = 0, int pageSize = 20, string chioces = null, string orderBy = null)
         {
             if (id == null) return NotFound();
             var catalog = await _context.Catalogs
@@ -55,7 +55,8 @@ namespace RozetkaWebApp
             ViewBag.PageSize = pageSize;
             ViewBag.Chioces = chioces;
             ViewBag.Portal = catalog.Portal;
-            var query = _context.Products.Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.OrderBy = orderBy;
+            var query = _context.Products.Include(x => x.Comments).Where(x => x.CatalogId == id).Where(x => Filter == null || x.Label.Contains(Filter));
             if (chioces != null)
             {
                 var chiocesList = chioces.Split('|').Select(x => new { group = x.Split("=") }).Where(x => x.group.Length == 2);
@@ -72,10 +73,29 @@ namespace RozetkaWebApp
                     query = query.Where(x => productSet.Contains(x.ProductId));
                 }
             }
-            var products = query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize);
+            if (orderBy?.ToUpper() == "PRICEDOWN")
+                query = query.OrderBy(x => x.Price);
+            else
+                if (orderBy?.ToUpper() == "PRICEUP")
+                query = query.OrderByDescending(x => x.Price);
+            else
+                if (orderBy?.ToUpper() == "RATING")
+                query = query.OrderByDescending(x => x.Comments.Average(x=>x.Score));
+            else
+                if (orderBy?.ToUpper() == "POPULARITY")
+                query = query.OrderByDescending(x => x.ViewCount);
+            else
+                 if (orderBy?.ToUpper() == "NOVILTY")
+                query = query.OrderByDescending(x => x.ProductId);
+            else
+                 if (orderBy?.ToUpper() == "PROMOTION")
+                query = query.OrderBy(x => x.Label).OrderByDescending(x => x.Promotion);
+            else
+                query = query.OrderBy(x => x.Label);
+            var products = query.Skip(pageSize * page).Take(pageSize);
             ViewBag.TotalCount = products.Count();
             ViewBag.Products = products.ToList();
-            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
+            ViewBag.Advertising = _context.Products.Include(x=> x.Comments).OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(catalog);
         }
 

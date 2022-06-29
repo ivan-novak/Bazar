@@ -12,7 +12,7 @@
             if (ViewBag.DetailsTab != null)
             {
                 <p>
-                    <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> @Resources.res0
+                    <a asp-controller="Portals" asp-action="Index">  Інтернет крамниця </a> @Resources.res0
                     <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
                     <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
                     <a asp-controller="Products" asp-action="Details" asp-route-id="@ViewBag.Product.ProductId"> @ViewBag.Product.Label </a>
@@ -41,7 +41,7 @@
 <ul class="nav nav-tabs">
     <li class="nav-item">  <a class="nav-link @ViewBag.CharacteristicsTab" href="/Characteristics/Index/@ViewBag.Product.ProductId">@Resources.Характеристики</a> </li>
     <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/ProductImages/Index/@ViewBag.Product.ProductId">@Resources.Image</a> </li>
-    <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">Перегляд</a> </li>
+    <li class="nav-item">  <a class="nav-link @ViewBag.DetailsTab" href="/Products/Details/@ViewBag.Product.ProductId">Макет</a> </li>
     <li class="nav-item">  <a class="nav-link @ViewBag.CommentTab" href="/Comments/Index/@ViewBag.Product.ProductId">Відгуки</a> </li>
     <li class="nav-item">  <a class="nav-link @ViewBag.AudienceTab" href="/Products/Audience/@ViewBag.Product.ProductId">Цільова аудиторія</a> </li>
 </ul>

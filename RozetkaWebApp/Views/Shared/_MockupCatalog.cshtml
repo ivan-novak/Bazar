@@ -32,12 +32,13 @@
                     </a>
                 </div>
                 <p></p>
-
-                <p class="small text-muted m-0 p-0">@Html.DisplayFor(modelItem => item.Label)</p>
+                <a href="/products/Details/@item.ProductId" style="text-decoration: none">
+                    <p class="small text-muted m-0 p-0">@Html.DisplayFor(modelItem => item.Label)</p>
+                </a>
                 <ul class="list-inline small m-0 p-0">
                     @for (int i = 1; i <= 5; i++)
                     {
-                        if (i <= item.Price % 5 + 1)
+                        if (i <= item.Comments.Average(c => c.Score)/2)
                         {
                             <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                         }

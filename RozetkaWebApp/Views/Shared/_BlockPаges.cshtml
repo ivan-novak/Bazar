@@ -13,10 +13,12 @@
                             int first = ViewBag.Page / size;
                             int last = first + size;
                             if (last > pagesCount) last = pagesCount;
+                            if (ViewBag.OrderBy == null || ViewBag.OrderBy.Trim() == "") ViewBag.OrderBy = "Label";
                             string path = Context.Request.Path 
                             + (("?Filter=")) + ViewBag.Filter 
                             + (("&pageSize=")) + ViewBag.PageSize 
-                             + (("&chioces=")) + ViewBag.Chioces 
+                            + (("&chioces=")) + ViewBag.Chioces 
+                            + (("&orderBy=")) + ViewBag.OrderBy 
                             + (("&page="));
                         }
                         @if (ViewData["DisableCreate"] == null)
@@ -58,6 +60,9 @@
                         <input type="hidden"
                                name="Chioces"
                                value="@ViewBag.Chioces" />
+                        <input type="hidden"
+                            name="OrderBy"
+                            value="@ViewBag.OrderBy" />
                         <input type="text"
                                class="form-control ml-1"
                                placeholder="Текст для пошуку"
@@ -68,6 +73,31 @@
                         <button class="btn btn-primary " type="submit" data-mdb-ripple-color="dark">
                             <i class="fas fa-search"></i>
                         </button>
+                        <div class="dropdown ">
+                            @{
+                                path = path + ViewBag.Page.ToString();
+                                string orderByTitle = "За назвами";
+                                if (ViewBag.OrderBy == "PRICEDOWN") orderByTitle = "Від дешевих до дорогих";
+                                if (ViewBag.OrderBy == "PRICEUP") orderByTitle = "Від дорогих до дешевих";
+                                if (ViewBag.OrderBy == "POPULARITY") orderByTitle = "Популярні";
+                                if (ViewBag.OrderBy == "RATING") orderByTitle = "За рейтингом";
+                                if (ViewBag.OrderBy == "PROMOTION") orderByTitle = "Акційні";
+                                if (ViewBag.OrderBy == "NOVILTY") orderByTitle = "Новинки";
+                            }
+                          <button class="btn btn-secondary dropdown-toggle ml-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @orderByTitle
+                          </button>
+                          <div class="dropdown-menu rounded shadow-sm border-1 p-1 mb-2" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "LABEL")">За назвами</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PRICEDOWN")">Від дешевих до дорогих</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PRICEUP")">Від дорогих до дешевих</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "POPULARITY")">Популярні</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "RATING")">За рейтингом</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PROMOTION")">Акційні</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "NOVILTY")">Новинки</a>
+
+                          </div>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -3,18 +3,19 @@
 
 
 <style>
-    .form-check-label:hover {
-        transition: transform 0.2s;
-        transform: scale(1.1);
+    .bar:hover {
+    background-color: WhiteSmoke;       
     }
 </style>
 
 @{
 
-    string path = "/Catalogs/Details/"+Model.CatalogId.ToString() 
-    + (("?Filter=")) + ViewBag.Filter 
-    + (("&pageSize=")) + ViewBag.PageSize 
-    + (("&page=")) + ViewBag.Page ;
+    string path = "/Catalogs/Details/" + Model.CatalogId.ToString()
+            + (("?Filter=")) + ViewBag.Filter
+            + (("&pageSize=")) + ViewBag.PageSize
+            + (("&page=")) + ViewBag.Page
+            + (("&orderBy=")) + ViewBag.OrderBy; 
+
 
 
     foreach (Filter i in ViewBag.Selectors)
@@ -25,20 +26,20 @@
                 @foreach (string s in i.Value.Split(','))
                 {
                     string chioceCode = "|" + (i.PropertyId.ToString()) + "=" + s.Replace("+","").Replace("&", "").Replace("?", "").Replace("=", "").Replace(" ",""); 
-                    <div>
+                    <div class="bar">
                         @if(ViewBag.Chioces != null && ViewBag.Chioces?.Contains(chioceCode))
                         {
                             string newChoice = ViewBag.Chioces.Replace(chioceCode, "");
                             string newPath = path+"&chioces="+newChoice;
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked onclick="location.href='@newPath';"> 
+                            <input class="form-check-input" type="checkbox" id="@chioceCode" checked onclick="location.href='@newPath';"> 
                         }
                         else
                         {
                             string newChoice = ViewBag.Chioces+chioceCode;
                             string newPath = path+"&chioces="+newChoice;
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="location.href='@newPath';">
+                            <input class="form-check-input" type="checkbox" id="@chioceCode" onclick="location.href='@newPath';">
                         }
-                        <label class="form-check-label" for="flexSwitchCheckDefault">@s</label>
+                        <label class="form-check-label" for="@chioceCode">@s</label>
                     </div>
                 }
             </div>

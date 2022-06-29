@@ -38,7 +38,7 @@
                 <ul class="list-inline small m-0 p-0">
                     @for (int i = 1; i <= 5; i++)
                     {
-                        if (i <= item.Price % 5 + 1)
+                        if (i <= item.Comments.Average(x=>x.Score)/2)
                         {
                             <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                         }

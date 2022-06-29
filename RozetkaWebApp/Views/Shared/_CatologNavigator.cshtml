@@ -11,7 +11,7 @@ else
     if (ViewBag.DelailTab != null)
     {
         <p>
-            <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> >
+            <a asp-controller="Portals" asp-action="Index"> Інтернет крамниця </a> >
             <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
             <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a>
         </p>
@@ -31,6 +31,6 @@ else
         <li class="nav-item">  <a class="nav-link @ViewBag.ProductsTab" href="/Products/Index/@ViewBag.Catalog.CatalogId">@Resources.Товары</a> </li>
         <li class="nav-item">  <a class="nav-link @ViewBag.ImagesTab" href="/CatalogImages/Index/@ViewBag.Catalog.CatalogId">@Resources.Image</a> </li>
         <li class="nav-item">  <a class="nav-link @ViewBag.FiltersTab" href="/Properties/Index/@ViewBag.Catalog.CatalogId">@Resources.Фильтры</a> </li>
-        <li class="nav-item">  <a class="nav-link @ViewBag.DelailTab" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Перегляд</a> </li>
+        <li class="nav-item">  <a class="nav-link @ViewBag.DelailTab" href="/Catalogs/Details/@ViewBag.Catalog.CatalogId">Макет</a> </li>
     </ul>
 }

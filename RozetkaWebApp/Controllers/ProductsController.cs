@@ -27,8 +27,10 @@ namespace RozetkaWebApp.Controllers
         public async Task<IActionResult> Index(int? id, string Filter = null, int page = 0, int pageSize = 20)
         {
             ViewBag.Catalog = _context.Catalogs.Include(c => c.Portal).First(i => i.CatalogId == id);
-            var applicationDbContext = _context.Products.Where(c => c.CatalogId == id || id == null).Include(c => c.Catalog);
-
+            var applicationDbContext = _context.Products
+                .Where(c => c.CatalogId == id || id == null)
+                .Include(c => c.Comments)
+                .Include(c => c.Catalog);
             ViewBag.Filter = Filter;
             ViewBag.Page = page;
             ViewBag.PageSize = pageSize;
@@ -66,7 +68,7 @@ namespace RozetkaWebApp.Controllers
                 .ThenInclude(cs => cs.Property)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null) return NotFound();
-            ViewBag.Advertising = _context.Products.OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
+            ViewBag.Advertising = _context.Products.Include(x => x.Comments).OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(product);
         }
         [Authorize(Roles = "Маркетологи")]

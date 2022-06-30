@@ -31,7 +31,7 @@ namespace RozetkaWebApp
             ViewBag.TotalCount = query.Count();
             //if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
             ViewBag.User = _context.AspNetUsers.Where(x=>x.UserName == User.Identity.Name).First();
-            ViewBag.Advertising = _context.Products.Include(x => x.Comments).OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
+            ViewBag.Advertising = _context.Products.Include(x => x.Comments).OrderByDescending(x => x.ChoiceCount).Take(4).ToList();
             return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
         }
 

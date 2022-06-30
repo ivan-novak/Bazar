@@ -1,0 +1,68 @@
+﻿@if (ViewBag.Advertising != null)
+{
+    @*   <style>
+        .card:hover {
+        transition: transform 0.2s;
+        transform: scale(1.1);
+        }
+        </style>*@
+    if (ViewBag.AdvertisingTitle == null) ViewBag.AdvertisingTitle = "Реклама";
+    <h4 class="text-secondary  mt-16">@ViewBag.AdvertisingTitle</h4>
+    <div class="row pt-3 mb-4">
+        @foreach (Product item in ViewBag.Advertising)
+        {
+            <div class="col-lg-3 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch">
+                <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
+                    <div class="card-body p-0 m-0 small">
+                        @if (item.PromotionId == null)
+                        {
+                            <a class="badge badge-warning text-left mb-3 p-1 ph-2 text-white rounded-pill small"
+                   href="/promotions/Details/@item.PromotionId" style="text-decoration: none">
+                                ТОП ПРОДАЖІВ
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="badge badge-danger text-left mb-3 p-1 ph-2 rounded-pill small" href="/promotions/Details/@item.PromotionId" style=" test text-decoration: none">
+                                АКЦІЯ
+                            </a>
+                        }
+
+                        <a href="/products/Details/@item.ProductId">
+                            <img src="/images/Products/@(item.ProductId)/First" alt="" class="w-100 img-fluid d-block mx-auto">
+                        </a>
+                    </div>
+                    <p></p>
+
+                    <p class="small text-muted m-0 p-0">@Html.DisplayFor(modelItem => item.Label)</p>
+                    <ul class="list-inline small m-0 p-0">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= item.Comments.Average(x => x.Score) / 2)
+                            {
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                            }
+                            else
+                            {
+                                <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
+                            }
+                        }
+                    </ul>
+                    <p></p>
+                    <a href="/products/Details/@item.ProductId" style="text-decoration: none">
+                        <h7 class="text-danger   m-0">@Html.DisplayFor(modelItem => item.Price)</h7>
+                    </a>
+                    <ul class="list-inline small text-right mb-2">
+                        <li class="list-inline-item"><a asp-controller="Products" asp-action="Edit" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li>
+                        @{
+                            string itemPath = "/Products/delete/" + item.ProductId.ToString();
+                        }
+                        <partial name="_LinkDelete" model="@itemPath" />
+
+                    </ul>
+
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,5 +1,6 @@
 //MLHIDEFILE
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,10 +31,17 @@ namespace RozetkaWebApp
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+
             })
                 .AddCookie(options =>
                 {
                     options.LoginPath = "/account/google-login";
+                })
+                .AddFacebook(options =>
+                {
+                    options.AppId = "1247207429440769";
+                    options.AppSecret = "80cfe74ca807966f174fd9c86a9c4f4b";
                 })
                 .AddGoogle(options =>
                 {

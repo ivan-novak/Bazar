@@ -5,17 +5,18 @@
     }
 </style>
 
+
 <div class="row pt-3 mb-4">
     @foreach (Product item in ViewBag.Products)
     {
         <div class="col-lg-3 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch">
 
             <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
-                <div class="card-body p-0 m-0 small">
+                <div class="card-body1 p-0 m-0 small">
                     @if (item.PromotionId == null)
                     {
                         <a class="badge badge-warning text-left mb-3 p-1 ph-2 text-white rounded-pill small"
-                   href="/promotions/Details/@item.PromotionId" style="text-decoration: none">
+                              href="/promotions/Details/@item.PromotionId" style="text-decoration: none">
                             ТОП ПРОДАЖІВ
                         </a>
                     }
@@ -25,6 +26,7 @@
                             АКЦІЯ
                         </a>
                     }
+                    <a href="/Products/AddToCart/@item.ProductId"><span><i class="fas fa-shopping-cart text-success" style="float: right;"></i></span></a>
                 </div>
                 <div class="card-body p-0 m-0">
                     <a href="/products/Details/@item.ProductId">
@@ -46,11 +48,12 @@
                         {
                             <li class="list-inline-item m-0"><i class="fa fa-star text-warning"></i></li>
                         }
-                    }
+                    } 
                 </ul>
                 <p></p>
                 <a href="/products/Details/@item.ProductId" style="text-decoration: none">
                     <h7 class="text-danger   m-0">@Html.DisplayFor(modelItem => item.Price)</h7>
+                   
                 </a>
                 <ul class="list-inline small text-right mb-2">
                     <li class="list-inline-item"><a asp-controller="Products" asp-action="Edit" asp-route-id="@item.ProductId"> <i class="fas fa-solid fa-pen-square"></i> </a> </li>

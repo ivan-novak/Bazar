@@ -11,7 +11,7 @@ else
     if (ViewBag.DelailTab != null)
     {
         <p>
-            <a asp-controller="Portals" asp-action="Index"> Інтернет крамниця </a> >
+            <a asp-controller="Portals" asp-action="Home"> Інтернет крамниця </a> >
             <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Catalog.PortalId"> @ViewBag.Catalog.Portal.Label </a> >
             <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@ViewBag.Catalog.CatalogId"> @ViewBag.Catalog.Label </a>
         </p>

@@ -12,7 +12,7 @@
             if (ViewBag.DetailsTab != null)
             {
                 <p>
-                    <a asp-controller="Portals" asp-action="Index">  Інтернет крамниця </a> @Resources.res0
+                    <a asp-controller="Portals" asp-action="Home">  Інтернет крамниця </a> @Resources.res0
                     <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
                     <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
                     <a asp-controller="Products" asp-action="Details" asp-route-id="@ViewBag.Product.ProductId"> @ViewBag.Product.Label </a>
@@ -32,7 +32,7 @@
     </div>
     <div class=" col-lg-1">
         <a type="button" class="btn btn-warning  btn-sm font-weight-bold" asp-controller="Products" asp-action="AddToCart" asp-route-id="@ViewBag.Product.ProductId">
-            Купити
+           <i class="fas fa-shopping-cart text-success text-dark"></i>
         </a>
     </div>
 </div>

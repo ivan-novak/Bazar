@@ -19,6 +19,22 @@ namespace RozetkaWebApp
             _context = context;
         }
 
+        [HttpGet("[controller]/Home")]
+        public async Task<IActionResult> Home(string Filter = null, int page = 0, int pageSize = 20)
+        {
+            var applicationDbContext = _context.Portals;
+
+            ViewBag.Filter = Filter;
+            ViewBag.Page = page;
+            ViewBag.PageSize = pageSize;
+            var query = applicationDbContext.Where(x => Filter == null || x.Label.Contains(Filter));
+            ViewBag.TotalCount = query.Count();
+            //if (id == null) id = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.User = _context.AspNetUsers.Where(x=>x.UserName == User.Identity.Name).First();
+            ViewBag.Advertising = _context.Products.Include(x => x.Comments).OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
+            return View(await query.OrderBy(x => x.Label).Skip(pageSize * page).Take(pageSize).ToListAsync());
+        }
+
         // GET: Portals
         [HttpGet("[controller]/Index")]
         public async Task<IActionResult> Index(string Filter = null, int page = 0, int pageSize = 20)

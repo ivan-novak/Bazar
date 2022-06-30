@@ -5,7 +5,7 @@
     if (ViewBag.DetailsTab != null)
     {
         <p>
-            <a asp-controller="Portals" asp-action="Index"> Інтернет крамниця </a> >
+            <a asp-controller="Portals" asp-action="Home"> Інтернет крамниця </a> >
             <a asp-controller="Portals" asp-action="Details" asp-route-id="@ViewBag.Portal.PortalId"> @ViewBag.Portal.Label </a>
         </p>
     }

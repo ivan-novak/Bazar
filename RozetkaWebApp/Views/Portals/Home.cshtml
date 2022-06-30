@@ -1,0 +1,84 @@
+﻿@using RozetkaWebApp.App_GlobalResources;
+@model IEnumerable<RozetkaWebApp.Models.Portal>
+
+
+ @{                      
+    ViewBag.Details = (("active"));
+    Html.RenderPartial((("_RootNavigator")));
+}
+
+<p><h4>@Resources.Список_порталов</h4></p>
+
+@{
+    Html.RenderPartial((("_FilterNavigator")));
+}
+
+
+
+
+<div class="row m-0 p-0">
+    <div class="col-sm-3 m-0 p-0">
+        @{
+            <ul class="list-group list-group-flush">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">
+                        <a asp-controller="Catalogs" asp-action="Details" asp-route-id="@item.PortalId">@Html.DisplayFor(modelItem => item.Label)</a>
+                    </li>
+                }
+
+            </ul>
+
+
+
+            <h6>
+                @ViewBag.User.UserName
+            </h6>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a asp-controller="AspNetUsers" asp-action="Cart" asp-route-id="@ViewBag.User.Id">Кошик</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Orders" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої замовлення</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Comments" asp-action="MyComment" asp-route-id="@ViewBag.User.Id">Мої відгуки</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="AspNetUsers" asp-action="Preferences" asp-route-id="@ViewBag.User.Id">Мої уподобання</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Contacts" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої контакти</a>
+                </li>
+                 <li class="list-group-item">
+                    <a asp-controller="Addresses" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої адреси</a>
+                </li>
+                
+            </ul>
+        }
+    </div>
+    <div class="col-sm-9 m-0 p-0">
+        @{
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/images/root/Banner0" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/root/Banner1" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/root/Banner2" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+
+            Html.RenderPartial((("_BlockAdvertising")));
+            Html.RenderPartial((("_BlockAdvertising")));
+        }
+
+
+    </div>
+</div>
+
+

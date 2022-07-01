@@ -257,12 +257,14 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>440</StringID>
+    <Comment>Previous text: Установлення пароля</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>441</StringID>
   </GeneralIds>
   <GeneralIds>
     <StringID>442</StringID>
+    <Comment>Previous text: Представити</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>443</StringID>
@@ -413,6 +415,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>493</StringID>
+    <Comment>Previous text: Двухфакторна авторизация</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>496</StringID>
@@ -627,7 +630,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>573</StringID>
-    <Comment>Previous text: Настроить додаток для перевірки довжини</Comment>
+    <Comment>Previous text: Налаштувати додаток для перевірки довжини</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>574</StringID>
@@ -720,6 +723,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>605</StringID>
+    <Comment>Previous text: Повторно відправляти підтвердження на електронну пошту</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>606</StringID>
@@ -766,7 +770,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>623</StringID>
-    <Comment>Previous text: Проверка кода відновлення</Comment>
+    <Comment>Previous text: Проверка коду відновлення</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>624</StringID>
@@ -1036,6 +1040,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>719</StringID>
+    <Comment>Previous text: Змінити електронний адрес</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>720</StringID>
@@ -1580,7 +1585,7 @@
   <GeneralTexts>
     <StringID>493</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Двухфакторная авторизация</LanguageText>
+    <LanguageText>Двухфакторна авторизація</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -1778,7 +1783,7 @@
   <GeneralTexts>
     <StringID>573</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Налаштувати додаток для перевірки довжини</LanguageText>
+    <LanguageText>Налаштувати додаток для перевірки програми-автентифікатора</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -1868,7 +1873,7 @@
   <GeneralTexts>
     <StringID>623</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Проверка коду відновлення</LanguageText>
+    <LanguageText>Перевірка коду відновлення</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -3365,13 +3370,13 @@
     <StringID>440</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Установлення пароля</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>442</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Представити</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>443</StringID>
@@ -3821,7 +3826,7 @@
     <StringID>605</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Повторно відправляти підтвердження на електронну пошту</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>606</StringID>
@@ -3911,7 +3916,7 @@
     <StringID>719</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Змінити електронний адрес</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>643</StringID>
@@ -4132,8 +4137,8 @@
   <GeneralTexts>
     <StringID>442</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Представити</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Надіслати</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>609</StringID>
@@ -4174,8 +4179,8 @@
   <GeneralTexts>
     <StringID>605</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Повторно відправляти підтвердження на електронну пошту</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Повторно відправити підтвердження на електронну пошту</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>549</StringID>
@@ -4312,8 +4317,8 @@
   <GeneralTexts>
     <StringID>719</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Змінити електронний адрес</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Змінити електронну адресу</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>699</StringID>
@@ -4366,8 +4371,8 @@
   <GeneralTexts>
     <StringID>440</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Установлення пароля</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Установити пароль</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>608</StringID>
@@ -7761,7 +7766,7 @@
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>StatusHash</Name>
-    <TextValue>nYOfphP8Ra/bp9RqYU7sYj3khlE=</TextValue>
+    <TextValue>CL5kzYdemniG1aI8gbjv9OArFbw=</TextValue>
     <NumValue>0</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>

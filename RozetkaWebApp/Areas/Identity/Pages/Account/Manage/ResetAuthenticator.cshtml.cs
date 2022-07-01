@@ -31,7 +31,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"Не вдалося завантажити користувача з ID '{_userManager.GetUserId(User)}'.");
             }
 
             return Page();
@@ -42,15 +42,15 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
-                return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+                return NotFound($"Не вдалося завантажити користувача з  ID '{_userManager.GetUserId(User)}'.");
             }
 
             await _userManager.SetTwoFactorEnabledAsync(user, false);
             await _userManager.ResetAuthenticatorKeyAsync(user);
-            _logger.LogInformation("User with ID '{UserId}' has reset their authentication app key.", user.Id);
+            _logger.LogInformation("Користувач з ідентифікатором { UserId} скинув ключ програми автентифікації.", user.Id);
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your authenticator app key has been reset, you will need to configure your authenticator app using the new key.";
+            StatusMessage = "Ваш ключ програми автентифікації скинуто, вам потрібно буде налаштувати програму автентифікації за допомогою нового ключа.";
 
             return RedirectToPage("./EnableAuthenticator");
         }

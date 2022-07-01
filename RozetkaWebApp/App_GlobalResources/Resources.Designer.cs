@@ -799,7 +799,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Установлення пароля.
+        ///   Looks up a localized string similar to Установити пароль.
         /// </summary>
         public static string Set_your_password {
             get {
@@ -817,7 +817,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Представити.
+        ///   Looks up a localized string similar to Надіслати.
         /// </summary>
         public static string Submit {
             get {
@@ -1267,7 +1267,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Двухфакторная авторизация.
+        ///   Looks up a localized string similar to Двухфакторна авторизація.
         /// </summary>
         public static string Двух_факторная_авторизаия {
             get {
@@ -1951,7 +1951,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Налаштувати додаток для перевірки довжини.
+        ///   Looks up a localized string similar to Налаштувати додаток для перевірки програми-автентифікатора.
         /// </summary>
         public static string Настроить_приложение_для_прове {
             get {
@@ -2284,7 +2284,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Повторно відправляти підтвердження на електронну пошту.
+        ///   Looks up a localized string similar to Повторно відправити підтвердження на електронну пошту.
         /// </summary>
         public static string Повторно_отправить_подтвержден {
             get {
@@ -2437,7 +2437,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Проверка коду відновлення.
+        ///   Looks up a localized string similar to Перевірка коду відновлення.
         /// </summary>
         public static string Проверка_кода_восстановления {
             get {
@@ -2572,7 +2572,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Змінити електронний адрес.
+        ///   Looks up a localized string similar to Змінити електронну адресу.
         /// </summary>
         public static string Сменить_электронный_адрес {
             get {

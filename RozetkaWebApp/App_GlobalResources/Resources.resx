@@ -294,13 +294,15 @@
     <value>Відскануйте QR-код або введіть цей ключ</value>
   </data>
   <data name="Set_your_password" xml:space="preserve">
-    <value>Установлення пароля</value>
+    <value>Установити пароль</value>
+    <comment>Previous text: Установлення пароля</comment>
   </data>
   <data name="Show_Latest_Image" xml:space="preserve">
     <value>Показати останнє зображення</value>
   </data>
   <data name="Submit" xml:space="preserve">
-    <value>Представити</value>
+    <value>Надіслати</value>
+    <comment>Previous text: Представити</comment>
   </data>
   <data name="success" xml:space="preserve">
     <value>успіх</value>
@@ -459,7 +461,8 @@
     <value>Дата початку</value>
   </data>
   <data name="Двух_факторная_авторизаия" xml:space="preserve">
-    <value>Двухфакторная авторизация</value>
+    <value>Двухфакторна авторизація</value>
+    <comment>Previous text: Двухфакторна авторизация</comment>
   </data>
   <data name="Действия" xml:space="preserve">
     <value>Дії</value>
@@ -706,8 +709,8 @@
     <comment>Previous text: Назва властивості</comment>
   </data>
   <data name="Настроить_приложение_для_прове" xml:space="preserve">
-    <value>Налаштувати додаток для перевірки довжини</value>
-    <comment>Previous text: Настроить додаток для перевірки довжини</comment>
+    <value>Налаштувати додаток для перевірки програми-автентифікатора</value>
+    <comment>Previous text: Налаштувати додаток для перевірки довжини</comment>
   </data>
   <data name="Недоліки" xml:space="preserve">
     <value>Недоліки</value>
@@ -824,7 +827,8 @@
     <value>Платіжні реквизиты</value>
   </data>
   <data name="Повторно_отправить_подтвержден" xml:space="preserve">
-    <value>Повторно відправляти підтвердження на електронну пошту</value>
+    <value>Повторно відправити підтвердження на електронну пошту</value>
+    <comment>Previous text: Повторно відправляти підтвердження на електронну пошту</comment>
   </data>
   <data name="Подтвеждение_электронного_адре" xml:space="preserve">
     <value>Підтвердження електронної адреси</value>
@@ -876,8 +880,8 @@
     <value>Додаток для аутентифікації</value>
   </data>
   <data name="Проверка_кода_восстановления" xml:space="preserve">
-    <value>Проверка коду відновлення</value>
-    <comment>Previous text: Проверка кода відновлення</comment>
+    <value>Перевірка коду відновлення</value>
+    <comment>Previous text: Проверка коду відновлення</comment>
   </data>
   <data name="Промоакции" xml:space="preserve">
     <value>Промоції</value>
@@ -924,7 +928,8 @@
     <value>Змінити пароль</value>
   </data>
   <data name="Сменить_электронный_адрес" xml:space="preserve">
-    <value>Змінити електронний адрес</value>
+    <value>Змінити електронну адресу</value>
+    <comment>Previous text: Змінити електронний адрес</comment>
   </data>
   <data name="Создание_кодов_восстановления_" xml:space="preserve">
     <value>Створення кодів відновлення двохфакторної аутентифікації (2FA)</value>

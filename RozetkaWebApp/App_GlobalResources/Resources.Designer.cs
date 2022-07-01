@@ -340,7 +340,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Настроювання програми-автентифікатора.
+        ///   Looks up a localized string similar to Налаштування програми-автентифікатора.
         /// </summary>
         public static string Configure_authenticator_app {
             get {
@@ -3238,7 +3238,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи..
+        ///   Looks up a localized string similar to Цей процес відключає 2FA до тих пір  доки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додату-аутентифікатора, ви можете втратити доступ до своєї обікового  запису..
         /// </summary>
         public static string Этот_процесс_отключает_2FA_до_ {
             get {

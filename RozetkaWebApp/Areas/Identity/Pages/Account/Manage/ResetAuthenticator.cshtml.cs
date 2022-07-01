@@ -28,12 +28,13 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
 
         public async Task<IActionResult> OnGet()
         {
+           
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
                 return NotFound($"Не вдалося завантажити користувача з ID '{_userManager.GetUserId(User)}'.");
             }
-
+            ViewData["User"] = user;
             return Page();
         }
 
@@ -51,7 +52,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Ваш ключ програми автентифікації скинуто, вам потрібно буде налаштувати програму автентифікації за допомогою нового ключа.";
-
+            ViewData["User"] = user;
             return RedirectToPage("./EnableAuthenticator");
         }
     }

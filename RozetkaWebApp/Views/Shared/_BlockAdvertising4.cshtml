@@ -2,7 +2,7 @@
 @if (ViewBag.Advertising != null)
 {
        <style>
-        .card-body1:hover {
+        .card-hover:hover {
         transition: transform 0.2s;
         transform: scale(1.1);
         }
@@ -14,7 +14,7 @@
         {
             <div class="col-lg-3 col-md-4 mb-4 mb-lg-2 d-flex align-items-stretch">
                 <div class="card rounded shadow-sm border-1 p-3 mb-2 ">
-                    <div class="card-body1 p-0 m-0 small">
+                    <div class="card-body card-hover p-0 m-0 small">
                         @if (item.PromotionId == null)
                         {
                             <a class="badge badge-warning text-left mb-3 p-1 ph-2 text-white rounded-pill small"

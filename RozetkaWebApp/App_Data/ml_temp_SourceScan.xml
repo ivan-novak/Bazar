@@ -30045,7 +30045,7 @@
     <LineNumber>4</LineNumber>
     <ColumnNumber>19</ColumnNumber>
     <StringID>396</StringID>
-    <OriginalText>Настроювання програми-автентифікатора</OriginalText>
+    <OriginalText>Налаштування програми-автентифікатора</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>-1</IndexOnLine>
     <StartOfStatement>4</StartOfStatement>
@@ -50502,7 +50502,7 @@
     <LineNumber>16</LineNumber>
     <ColumnNumber>8</ColumnNumber>
     <StringID>714</StringID>
-    <OriginalText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</OriginalText>
+    <OriginalText>Цей процес відключає 2FA до тих пір  доки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додату-аутентифікатора, ви можете втратити доступ до своєї обікового  запису.</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>-1</IndexOnLine>
     <StartOfStatement>16</StartOfStatement>
@@ -51320,7 +51320,7 @@
     <LineNumber>51</LineNumber>
     <ColumnNumber>90</ColumnNumber>
     <StringID>573</StringID>
-    <OriginalText>Налаштувати додаток для перевірки довжини</OriginalText>
+    <OriginalText>Налаштувати додаток для перевірки програми-автентифікатора</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>-1</IndexOnLine>
     <StartOfStatement>51</StartOfStatement>

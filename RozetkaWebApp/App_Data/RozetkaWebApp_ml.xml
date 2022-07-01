@@ -137,6 +137,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>396</StringID>
+    <Comment>Previous text: Настроювання програми-автентифікатора</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>397</StringID>
@@ -1033,6 +1034,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>714</StringID>
+    <Comment>Previous text: Цей процес відключає 2FA до тих пір  доки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додату для перевірки аутентифікатора, ви можете втратити доступ до своєї початкової записи.</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>718</StringID>
@@ -1327,8 +1329,8 @@
   <GeneralTexts>
     <StringID>396</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Настроювання програми-автентифікатора</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Налаштування програми-автентифікатора</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>397</StringID>
@@ -2155,7 +2157,7 @@
   <GeneralTexts>
     <StringID>714</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</LanguageText>
+    <LanguageText>Цей процес відключає 2FA до тих пір  доки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додату-аутентифікатора, ви можете втратити доступ до своєї обікового  запису.</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -2486,7 +2488,7 @@
     <StringID>714</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>680</StringID>

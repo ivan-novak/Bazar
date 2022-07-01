@@ -31,7 +31,7 @@ namespace RozetkaWebApp
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+              //  options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
 
             })
                 .AddCookie(options =>
@@ -47,7 +47,8 @@ namespace RozetkaWebApp
                 {
                     options.ClientId = "363893018744-v3iue25f54a38iu96q1uiqctiag9asnu.apps.googleusercontent.com";
                     options.ClientSecret = "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";
-                });
+                })
+                ;
 
             services.AddCors();
             services.AddDbContext<RozetkadbContext>(options =>

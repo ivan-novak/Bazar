@@ -22,7 +22,6 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group" style="display: none">
                 <label asp-for="CatalogId" class="control-label"></label>
-                @*    <select asp-for="CatalogId" class="form-control" asp-items="ViewBag.Catalog.CatalogId"></select>*@
                 <input asp-for="CatalogId" class="form-control" value=@Model.CatalogId />
                 <span asp-validation-for="CatalogId" class="text-danger"></span>
             </div>

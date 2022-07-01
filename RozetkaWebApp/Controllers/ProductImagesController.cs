@@ -95,8 +95,8 @@ namespace RozetkaWebApp.Controllers
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
                 // return RedirectToAction(nameof(Index));
             }
-            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
-            ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
+            //ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            //ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
         [Authorize(Roles = "Маркетологи")]
@@ -110,7 +110,7 @@ namespace RozetkaWebApp.Controllers
             var productImage = await _context.ProductImages.Include(c => c.Product.Catalog.Portal).FirstOrDefaultAsync(m => m.ProductImageId == id);
             if (productImage == null) return NotFound();
 
-            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            //ViewBag.ImageId = new SelectList(_context.Images.Where(x=> x.ImageId== productImage.ImageId), "ImageId", "ImageId", productImage.ImageId);
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }
@@ -150,7 +150,7 @@ namespace RozetkaWebApp.Controllers
                 if (returnUrl != null) return Redirect(returnUrl);
                 return Redirect($"/ProductImages/Index/" + productImage.ProductId);
             }
-            ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
+            //ViewBag.ImageId = new SelectList(_context.Images, "ImageId", "ImageId", productImage.ImageId);
             ViewBag.ProductId = new SelectList(_context.Products, "ProductId", "ProductId", productImage.ProductId);
             return View(productImage);
         }

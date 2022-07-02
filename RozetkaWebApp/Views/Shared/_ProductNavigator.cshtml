@@ -23,7 +23,7 @@
                 <p>
                     <a asp-controller="Portals" asp-action="Index"> @Resources.Администрирование </a> @Resources.res0
                     <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.Catalog.PortalId"> @ViewBag.Product.Catalog.Portal.Label </a> \
-                    <a asp-controller="Catalogs" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
+                    <a asp-controller="Products" asp-action="Index" asp-route-id="@ViewBag.Product.CatalogId"> @ViewBag.Product.Catalog.Label </a> \
                     <a asp-controller="Characteristics" asp-action="Index" asp-route-id="@ViewBag.Product.ProductId"> @ViewBag.Product.Label </a>
                 </p>
             }

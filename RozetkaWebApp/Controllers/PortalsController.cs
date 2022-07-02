@@ -64,7 +64,9 @@ namespace RozetkaWebApp
             {
                 return NotFound();
             }
-            ViewBag.Advertising = _context.Products.Include(x => x.Comments).OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
+            ViewBag.Advertising = _context.Products
+                .Include(x => x.Comments)
+                .OrderByDescending(x => x.ChoiceCount).Take(6).ToList();
             return View(portal);
         }
 

@@ -60,6 +60,7 @@ namespace RozetkaWebApp.Controllers
         {
             if (id == null) return NotFound();
             var product = await _context.Products
+                .Include(x => x.ProductImages)
                 .Include(c => c.Catalog.Portal)
                 .Include(p => p.Promotion)
                 .Include(cm => cm.Comments)

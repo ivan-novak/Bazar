@@ -79,9 +79,6 @@
     <StringID>254</StringID>
   </GeneralIds>
   <GeneralIds>
-    <StringID>278</StringID>
-  </GeneralIds>
-  <GeneralIds>
     <StringID>325</StringID>
   </GeneralIds>
   <GeneralIds>
@@ -1513,12 +1510,6 @@
     <StringID>254</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Пароль</LanguageText>
-    <Status>1</Status>
-  </GeneralTexts>
-  <GeneralTexts>
-    <StringID>278</StringID>
-    <LanguageID>25</LanguageID>
-    <LanguageText>.</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -7618,7 +7609,6 @@
   <Properties>
     <Component>Resources.resx</Component>
     <Name>res2</Name>
-    <StringID>278</StringID>
     <Selected>false</Selected>
     <ResourceName>res2</ResourceName>
     <Hidden>true</Hidden>

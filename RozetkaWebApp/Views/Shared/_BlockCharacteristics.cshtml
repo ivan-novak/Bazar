@@ -2,8 +2,6 @@
 @using RozetkaWebApp.App_GlobalResources
 @model IEnumerable<RozetkaWebApp.Models.Characteristic>
 
-
-
 <h4 class="text-secondary mt-16">@Resources.Характеристики_товару</h4>
 
 <table class="table table-striped table-sm">
@@ -25,7 +23,9 @@
                 <td> @item.Value   </td>
                 <td> @item.Dimension  </td>
                 <td class="text-right small">
-                    <a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">   <i class="fas fa-solid fa-pen-square m-1"></i> </a>
+                    <a asp-controller="Characteristics" asp-action="Edit" asp-route-id="@item.CharacteristicId">
+                        <i class="fas fa-solid fa-pen-square m-1"></i>
+                    </a>
                     @{
                         string itemPath = "/Characteristics/delete/" + item.CharacteristicId.ToString();
                         <partial name="_LinkDelete" model="@itemPath" />

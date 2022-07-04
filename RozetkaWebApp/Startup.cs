@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RozetkaWebApp.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Security.Claims;
+using RozetkaWebApp.Services;
 
 namespace RozetkaWebApp
 {
@@ -28,6 +30,7 @@ namespace RozetkaWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -67,6 +70,8 @@ namespace RozetkaWebApp
                 .AddEntityFrameworkStores<IdentityDbContext>();
             services.AddControllersWithViews();
 
+            services.AddTransient<IEmailSender, EmailSender>();
+            //services.Configure<AuthMessageSenderOptions>(Configuration);
 
             services.AddAuthorization(options =>
             {
@@ -103,6 +108,9 @@ namespace RozetkaWebApp
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();

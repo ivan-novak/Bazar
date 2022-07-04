@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
-    [Authorize(Roles = "Користувачі")]
+    [Authorize(Policy = "Owner", Roles = "Користувачі")]
     public class AddressesController : Controller
     {
         private readonly RozetkadbContext _context;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RozetkaWebApp.Data;
 using RozetkaWebApp.Models;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
+    [Authorize(Policy = "Owner", Roles = "Користувачі")]
     public class CommentsController : Controller
     {
         private readonly RozetkadbContext _context;

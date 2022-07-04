@@ -148,7 +148,7 @@ namespace RozetkaWebApp.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("RozetkaWebApp"),
+                _urlEncoder.Encode("Bazar"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

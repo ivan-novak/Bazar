@@ -36,7 +36,7 @@ namespace RozetkaWebApp.Services
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("bazarMarket@ukr.net", "Password Recovery"),
+                From = new EmailAddress("bazarMarket@ukr.net", "Помічник з керування паролями"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
@@ -48,8 +48,8 @@ namespace RozetkaWebApp.Services
             msg.SetClickTracking(false, false);
             var response = await client.SendEmailAsync(msg);
             _logger.LogInformation(response.IsSuccessStatusCode
-                                   ? $"Email to {toEmail} queued successfully!"
-                                   : $"Failure Email to {toEmail}");
+                                   ? $"Електронну пошту {toEmail} підтверджено успішно!"
+                                   : $"Помилка електронної адреси {toEmail}");
         }
     }
 }

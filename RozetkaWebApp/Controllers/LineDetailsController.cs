@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace RozetkaWebApp.Controllers
 {
-    [Authorize(Roles = "Користувачі")]
+    [Authorize(Policy = "Owner", Roles = "Користувачі")]
 
     public class LineDetailsController : Controller
     {

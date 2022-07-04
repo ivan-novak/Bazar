@@ -304,6 +304,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BAZAR™.
+        /// </summary>
+        public static string BAZAR {
+            get {
+                return ResourceManager.GetString("BAZAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BAZAR™ |.
         /// </summary>
         public static string BAZAR_nbsp {
@@ -970,6 +979,51 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Адреси доставки поточного користувача.
+        /// </summary>
+        public static string Адреси_доставки_поточного_кори {
+            get {
+                return ResourceManager.GetString("Адреси_доставки_поточного_кори", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Акційні.
+        /// </summary>
+        public static string Акційні {
+            get {
+                return ResourceManager.GetString("Акційні", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Акційні пропозиції.
+        /// </summary>
+        public static string Акційні_пропозиції {
+            get {
+                return ResourceManager.GetString("Акційні_пропозиції", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Акційні  товари.
+        /// </summary>
+        public static string Акційні_товари {
+            get {
+                return ResourceManager.GetString("Акційні_товари", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to АКЦІЯ.
+        /// </summary>
+        public static string АКЦІЯ {
+            get {
+                return ResourceManager.GetString("АКЦІЯ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Атрибути.
         /// </summary>
         public static string Атрибуты {
@@ -984,6 +1038,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Банковская_карта {
             get {
                 return ResourceManager.GetString("Банковская_карта", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Безготівкові платежі.
+        /// </summary>
+        public static string Безготівкові_платежі {
+            get {
+                return ResourceManager.GetString("Безготівкові_платежі", resourceCulture);
             }
         }
         
@@ -1051,11 +1114,119 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Видалити адресу доставки користувача.
+        /// </summary>
+        public static string Видалити_адресу_доставки_корис {
+            get {
+                return ResourceManager.GetString("Видалити_адресу_доставки_корис", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити відгук користувача.
+        /// </summary>
+        public static string Видалити_відгук_користувача {
+            get {
+                return ResourceManager.GetString("Видалити_відгук_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити гаманець користувача.
+        /// </summary>
+        public static string Видалити_гаманець_користувача {
+            get {
+                return ResourceManager.GetString("Видалити_гаманець_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити контакт користувача.
+        /// </summary>
+        public static string Видалити_контакт_користувача {
+            get {
+                return ResourceManager.GetString("Видалити_контакт_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити обліковий запис користувача.
+        /// </summary>
+        public static string Видалити_обліковий_запис_корис {
+            get {
+                return ResourceManager.GetString("Видалити_обліковий_запис_корис", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити цей об&apos;єкт і все що пов&apos;язано з ним ?.
+        /// </summary>
+        public static string Видалити_цей_об_єкт_і_все_що_п {
+            get {
+                return ResourceManager.GetString("Видалити_цей_об_єкт_і_все_що_п", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити цій відгук.
+        /// </summary>
+        public static string Видалити_цій_відгук {
+            get {
+                return ResourceManager.GetString("Видалити_цій_відгук", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вихід користувача.
+        /// </summary>
+        public static string Вихід_користувача {
+            get {
+                return ResourceManager.GetString("Вихід_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Від дешевих до дорогих.
+        /// </summary>
+        public static string Від_дешевих_до_дорогих {
+            get {
+                return ResourceManager.GetString("Від_дешевих_до_дорогих", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Від дорогих до дешевих.
+        /// </summary>
+        public static string Від_дорогих_до_дешевих {
+            get {
+                return ResourceManager.GetString("Від_дорогих_до_дешевих", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Відгуки.
+        /// </summary>
+        public static string Відгуки {
+            get {
+                return ResourceManager.GetString("Відгуки", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Відгуки користувачів.
         /// </summary>
         public static string Відгуки_користувачів {
             get {
                 return ResourceManager.GetString("Відгуки_користувачів", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Відгуки поточного користувача.
+        /// </summary>
+        public static string Відгуки_поточного_користувача {
+            get {
+                return ResourceManager.GetString("Відгуки_поточного_користувача", resourceCulture);
             }
         }
         
@@ -1069,11 +1240,29 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Відділи крамниці.
+        /// </summary>
+        public static string Відділи_крамниці {
+            get {
+                return ResourceManager.GetString("Відділи_крамниці", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Власник карти.
         /// </summary>
         public static string Владедец_карты {
             get {
                 return ResourceManager.GetString("Владедец_карты", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вхід користувача.
+        /// </summary>
+        public static string Вхід_користувача {
+            get {
+                return ResourceManager.GetString("Вхід_користувача", resourceCulture);
             }
         }
         
@@ -1204,6 +1393,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Гаманці поточного користувача.
+        /// </summary>
+        public static string Гаманці_поточного_користувача {
+            get {
+                return ResourceManager.GetString("Гаманці_поточного_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Генерація кодів відновлення.
         /// </summary>
         public static string Генерация_кодов_восстановления {
@@ -1303,6 +1501,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to До зустрічі в соцмережах.
+        /// </summary>
+        public static string До_зустрічі_в_соцмережах {
+            get {
+                return ResourceManager.GetString("До_зустрічі_в_соцмережах", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавити новий товар в кошик користувача.
+        /// </summary>
+        public static string Добавити_новий_товар_в_кошик_к {
+            get {
+                return ResourceManager.GetString("Добавити_новий_товар_в_кошик_к", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Додати.
         /// </summary>
         public static string Добавить_изображение {
@@ -1317,6 +1533,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Ед_измерения {
             get {
                 return ResourceManager.GetString("Ед_измерения", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Електронна адреса.
+        /// </summary>
+        public static string Електронна_адреса {
+            get {
+                return ResourceManager.GetString("Електронна_адреса", resourceCulture);
             }
         }
         
@@ -1344,6 +1569,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Если_вы_сбросите_свой_ключ_аут {
             get {
                 return ResourceManager.GetString("Если_вы_сбросите_свой_ключ_аут", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to За назвами.
+        /// </summary>
+        public static string За_назвами {
+            get {
+                return ResourceManager.GetString("За_назвами", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to За рейтингом.
+        /// </summary>
+        public static string За_рейтингом {
+            get {
+                return ResourceManager.GetString("За_рейтингом", resourceCulture);
             }
         }
         
@@ -1398,6 +1641,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Заказы {
             get {
                 return ResourceManager.GetString("Заказы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Залишилося.
+        /// </summary>
+        public static string Залишилося {
+            get {
+                return ResourceManager.GetString("Залишилося", resourceCulture);
             }
         }
         
@@ -1717,6 +1969,33 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Інвентарний Номер.
+        /// </summary>
+        public static string Інвентарний_Номер {
+            get {
+                return ResourceManager.GetString("Інвентарний_Номер", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Інформація про промоцію.
+        /// </summary>
+        public static string Інформація_про_промоцію {
+            get {
+                return ResourceManager.GetString("Інформація_про_промоцію", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кабінет покупця.
+        /// </summary>
+        public static string Кабінет_покупця {
+            get {
+                return ResourceManager.GetString("Кабінет_покупця", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to як налаштувати реального відправника електронної пошти.  Зазвичай це буде надіслано на електронну пошту:.
         /// </summary>
         public static string как_настроить_реального_отправ {
@@ -1753,6 +2032,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Код підтвердження.
+        /// </summary>
+        public static string Код_підтвердження {
+            get {
+                return ResourceManager.GetString("Код_підтвердження", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Коди відновлення.
         /// </summary>
         public static string Коды_восстановления {
@@ -1776,6 +2064,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Коментар {
             get {
                 return ResourceManager.GetString("Коментар", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Контакти поточного користувача.
+        /// </summary>
+        public static string Контакти_поточного_користувача {
+            get {
+                return ResourceManager.GetString("Контакти_поточного_користувача", resourceCulture);
             }
         }
         
@@ -1825,11 +2122,29 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Користувачи, що цікавились цим товаром.
+        /// </summary>
+        public static string Користувачи_що_цікавились_цим_ {
+            get {
+                return ResourceManager.GetString("Користувачи_що_цікавились_цим_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Гаманці.
         /// </summary>
         public static string Кошельки {
             get {
                 return ResourceManager.GetString("Кошельки", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кошик поточного користувача.
+        /// </summary>
+        public static string Кошик_поточного_користувача {
+            get {
+                return ResourceManager.GetString("Кошик_поточного_користувача", resourceCulture);
             }
         }
         
@@ -1848,6 +2163,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Магазин {
             get {
                 return ResourceManager.GetString("Магазин", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Макет.
+        /// </summary>
+        public static string Макет {
+            get {
+                return ResourceManager.GetString("Макет", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Макет сторінки.
+        /// </summary>
+        public static string Макет_сторінки {
+            get {
+                return ResourceManager.GetString("Макет_сторінки", resourceCulture);
             }
         }
         
@@ -1879,11 +2212,74 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Мої адреси.
+        /// </summary>
+        public static string Мої_адреси {
+            get {
+                return ResourceManager.GetString("Мої_адреси", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої відгуки.
+        /// </summary>
+        public static string Мої_відгуки {
+            get {
+                return ResourceManager.GetString("Мої_відгуки", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої гаманці.
+        /// </summary>
+        public static string Мої_гаманці {
+            get {
+                return ResourceManager.GetString("Мої_гаманці", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої замовлення.
+        /// </summary>
+        public static string Мої_замовлення {
+            get {
+                return ResourceManager.GetString("Мої_замовлення", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої контакти.
+        /// </summary>
+        public static string Мої_контакти {
+            get {
+                return ResourceManager.GetString("Мої_контакти", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої уподобання.
+        /// </summary>
+        public static string Мої_уподобання {
+            get {
+                return ResourceManager.GetString("Мої_уподобання", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to натисніть тут для входу.
         /// </summary>
         public static string нажмите_здесь_для_входа {
             get {
                 return ResourceManager.GetString("нажмите_здесь_для_входа", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Назад.
+        /// </summary>
+        public static string Назад {
+            get {
+                return ResourceManager.GetString("Назад", resourceCulture);
             }
         }
         
@@ -1978,6 +2374,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Нова адреса електронної пошти.
+        /// </summary>
+        public static string Нова_адреса_електронної_пошти {
+            get {
+                return ResourceManager.GetString("Нова_адреса_електронної_пошти", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Новая група безпеки.
         /// </summary>
         public static string Новая_группы_безопасности {
@@ -2010,6 +2415,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Новая_характеристика {
             get {
                 return ResourceManager.GetString("Новая_характеристика", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новий відгук.
+        /// </summary>
+        public static string Новий_відгук {
+            get {
+                return ResourceManager.GetString("Новий_відгук", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новинки.
+        /// </summary>
+        public static string Новинки {
+            get {
+                return ResourceManager.GetString("Новинки", resourceCulture);
             }
         }
         
@@ -2140,11 +2563,83 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Обліковий запис користувача.
+        /// </summary>
+        public static string Обліковий_запис_користувача {
+            get {
+                return ResourceManager.GetString("Обліковий_запис_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обновити обліковий запис поточного користувача.
+        /// </summary>
+        public static string Обновити_обліковий_запис_поточ {
+            get {
+                return ResourceManager.GetString("Обновити_обліковий_запис_поточ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оновити адресу доставки користувача.
+        /// </summary>
+        public static string Оновити_адресу_доставки_корист {
+            get {
+                return ResourceManager.GetString("Оновити_адресу_доставки_корист", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оновити відгук користувача.
+        /// </summary>
+        public static string Оновити_відгук_користувача {
+            get {
+                return ResourceManager.GetString("Оновити_відгук_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оновити гаманець користувача.
+        /// </summary>
+        public static string Оновити_гаманець_користувача {
+            get {
+                return ResourceManager.GetString("Оновити_гаманець_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оновити контакт користувача.
+        /// </summary>
+        public static string Оновити_контакт_користувача {
+            get {
+                return ResourceManager.GetString("Оновити_контакт_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оновити товар в кошику користувача.
+        /// </summary>
+        public static string Оновити_товар_в_кошику_користу {
+            get {
+                return ResourceManager.GetString("Оновити_товар_в_кошику_користу", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Опис.
         /// </summary>
         public static string Описание {
             get {
                 return ResourceManager.GetString("Описание", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Останні переглянуті товари.
+        /// </summary>
+        public static string Останні_переглянуті_товари {
+            get {
+                return ResourceManager.GetString("Останні_переглянуті_товари", resourceCulture);
             }
         }
         
@@ -2212,6 +2707,51 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Отримати перелік адрес доставки користувача.
+        /// </summary>
+        public static string Отримати_перелік_адрес_доставк {
+            get {
+                return ResourceManager.GetString("Отримати_перелік_адрес_доставк", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отримати перелік гаманців користувача.
+        /// </summary>
+        public static string Отримати_перелік_гаманців_кори {
+            get {
+                return ResourceManager.GetString("Отримати_перелік_гаманців_кори", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отримати перелік коментарів користувача.
+        /// </summary>
+        public static string Отримати_перелік_коментарів_ко {
+            get {
+                return ResourceManager.GetString("Отримати_перелік_коментарів_ко", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отримати перелік контактів користувача.
+        /// </summary>
+        public static string Отримати_перелік_контактів_кор {
+            get {
+                return ResourceManager.GetString("Отримати_перелік_контактів_кор", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отримати перелік товарів з кошика користувача.
+        /// </summary>
+        public static string Отримати_перелік_товарів_з_кош {
+            get {
+                return ResourceManager.GetString("Отримати_перелік_товарів_з_кош", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to По батькові.
         /// </summary>
         public static string Отчество {
@@ -2239,6 +2779,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Параметри запиту за замовчуванням.
+        /// </summary>
+        public static string Параметри_запиту_за_замовчуван {
+            get {
+                return ResourceManager.GetString("Параметри_запиту_за_замовчуван", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пароль.
         /// </summary>
         public static string Пароль {
@@ -2262,6 +2811,16 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Переваги0 {
             get {
                 return ResourceManager.GetString("Переваги0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Після того, як ви відскануєте QR-код або введете ключ вище, програма двофакторної автентифікації надасть вам
+        ///                 з унікальним кодом. Введіть код у полі підтвердження нижче..
+        /// </summary>
+        public static string Після_того_як_ви_відскануєте_Q {
+            get {
+                return ResourceManager.GetString("Після_того_як_ви_відскануєте_Q", resourceCulture);
             }
         }
         
@@ -2392,6 +2951,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Попередження.
+        /// </summary>
+        public static string Попередження {
+            get {
+                return ResourceManager.GetString("Попередження", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Популярні.
+        /// </summary>
+        public static string Популярні {
+            get {
+                return ResourceManager.GetString("Популярні", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Портал.
         /// </summary>
         public static string Портал {
@@ -2491,11 +3068,56 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Редагувати відгук.
+        /// </summary>
+        public static string Редагувати_відгук {
+            get {
+                return ResourceManager.GetString("Редагувати_відгук", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Результат.
+        /// </summary>
+        public static string Результат {
+            get {
+                return ResourceManager.GetString("Результат", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Рейтинг.
+        /// </summary>
+        public static string Рейтинг {
+            get {
+                return ResourceManager.GetString("Рейтинг", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Реклама.
+        /// </summary>
+        public static string Реклама {
+            get {
+                return ResourceManager.GetString("Реклама", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ресурси.
         /// </summary>
         public static string Ресурсы {
             get {
                 return ResourceManager.GetString("Ресурсы", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Робота з ERP системою.
+        /// </summary>
+        public static string Робота_з_ERP_системою {
+            get {
+                return ResourceManager.GetString("Робота_з_ERP_системою", resourceCulture);
             }
         }
         
@@ -2752,6 +3374,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Споживчі уподобання.
+        /// </summary>
+        public static string Споживчі_уподобання {
+            get {
+                return ResourceManager.GetString("Споживчі_уподобання", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Термін дії.
         /// </summary>
         public static string Срок_действия {
@@ -2784,6 +3415,51 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Стационарный_телефон {
             get {
                 return ResourceManager.GetString("Стационарный_телефон", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити адресу доставки користувача.
+        /// </summary>
+        public static string Створити_адресу_доставки_корис {
+            get {
+                return ResourceManager.GetString("Створити_адресу_доставки_корис", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити відгук користувача.
+        /// </summary>
+        public static string Створити_відгук_користувача {
+            get {
+                return ResourceManager.GetString("Створити_відгук_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити гаманець користувача.
+        /// </summary>
+        public static string Створити_гаманець_користувача {
+            get {
+                return ResourceManager.GetString("Створити_гаманець_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити контакт користувача.
+        /// </summary>
+        public static string Створити_контакт_користувача {
+            get {
+                return ResourceManager.GetString("Створити_контакт_користувача", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити обліковий запис користувача.
+        /// </summary>
+        public static string Створити_обліковий_запис_корис {
+            get {
+                return ResourceManager.GetString("Створити_обліковий_запис_корис", resourceCulture);
             }
         }
         
@@ -2869,6 +3545,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Тіло запиту.
+        /// </summary>
+        public static string Тіло_запиту {
+            get {
+                return ResourceManager.GetString("Тіло_запиту", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тіло запиту та його результат.
+        /// </summary>
+        public static string Тіло_запиту_та_його_результат {
+            get {
+                return ResourceManager.GetString("Тіло_запиту_та_його_результат", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Товар.
         /// </summary>
         public static string Товар {
@@ -2892,6 +3586,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Товары_каталога {
             get {
                 return ResourceManager.GetString("Товары_каталога", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ТОП ПРОДАЖІВ.
+        /// </summary>
+        public static string ТОП_ПРОДАЖІВ {
+            get {
+                return ResourceManager.GetString("ТОП_ПРОДАЖІВ", resourceCulture);
             }
         }
         
@@ -3076,6 +3779,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Управління веб контентом.
+        /// </summary>
+        public static string Управління_веб_контентом {
+            get {
+                return ResourceManager.GetString("Управління_веб_контентом", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Управління інтернет крамницею.
+        /// </summary>
+        public static string Управління_інтернет_крамницею {
+            get {
+                return ResourceManager.GetString("Управління_інтернет_крамницею", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Управляйте своїми зовнішніми логінами.
         /// </summary>
         public static string Управляйте_своими_внешними_лог {
@@ -3157,6 +3878,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Характеристики товару.
+        /// </summary>
+        public static string Характеристики_товару {
+            get {
+                return ResourceManager.GetString("Характеристики_товару", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Характеристики.
         /// </summary>
         public static string Характеритики {
@@ -3171,6 +3901,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Цена {
             get {
                 return ResourceManager.GetString("Цена", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Цільова аудиторія.
+        /// </summary>
+        public static string Цільова_аудиторія {
+            get {
+                return ResourceManager.GetString("Цільова_аудиторія", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Чекайте на наші додатки.
+        /// </summary>
+        public static string Чекайте_на_наші_додатки {
+            get {
+                return ResourceManager.GetString("Чекайте_на_наші_додатки", resourceCulture);
             }
         }
         

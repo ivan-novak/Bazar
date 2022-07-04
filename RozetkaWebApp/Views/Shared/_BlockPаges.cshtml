@@ -28,7 +28,7 @@
                         }
                         @if (ViewData["DisableBack"] == null)
                         {
-                            <button type="button" class="btn btn-primary mr-1" onclick="history.go(-1)"> Назад </button>
+                            <button type="button" class="btn btn-primary mr-1" onclick="history.go(-1)"> @Resources.Назад </button>
                         }
 
 
@@ -76,25 +76,25 @@
                         <div class="dropdown ">
                             @{
                                 path = path + ViewBag.Page.ToString();
-                                string orderByTitle = "За назвами";
-                                if (ViewBag.OrderBy == "PRICEDOWN") orderByTitle = "Від дешевих до дорогих";
-                                if (ViewBag.OrderBy == "PRICEUP") orderByTitle = "Від дорогих до дешевих";
-                                if (ViewBag.OrderBy == "POPULARITY") orderByTitle = "Популярні";
-                                if (ViewBag.OrderBy == "RATING") orderByTitle = "За рейтингом";
-                                if (ViewBag.OrderBy == "PROMOTION") orderByTitle = "Акційні";
-                                if (ViewBag.OrderBy == "NOVILTY") orderByTitle = "Новинки";
+                                string orderByTitle = Resources.За_назвами;
+                                if (ViewBag.OrderBy == "PRICEDOWN") orderByTitle = Resources.Від_дешевих_до_дорогих;
+                                if (ViewBag.OrderBy == "PRICEUP") orderByTitle = Resources.Від_дорогих_до_дешевих;
+                                if (ViewBag.OrderBy == "POPULARITY") orderByTitle = Resources.Популярні;
+                                if (ViewBag.OrderBy == "RATING") orderByTitle = Resources.За_рейтингом;
+                                if (ViewBag.OrderBy == "PROMOTION") orderByTitle = Resources.Акційні;
+                                if (ViewBag.OrderBy == "NOVILTY") orderByTitle = Resources.Новинки;
                             }
                           <button class="btn btn-secondary dropdown-toggle ml-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @orderByTitle
                           </button>
                           <div class="dropdown-menu rounded shadow-sm border-1 p-1 mb-2" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "LABEL")">За назвами</a>
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PRICEDOWN")">Від дешевих до дорогих</a>
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PRICEUP")">Від дорогих до дешевих</a>
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "POPULARITY")">Популярні</a>
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "RATING")">За рейтингом</a>
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PROMOTION")">Акційні</a>
-                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "NOVILTY")">Новинки</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "LABEL")">@Resources.За_назвами</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PRICEDOWN")">@Resources.Від_дешевих_до_дорогих</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PRICEUP")">@Resources.Від_дорогих_до_дешевих</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "POPULARITY")">@Resources.Популярні</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "RATING")">@Resources.За_рейтингом</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "PROMOTION")">@Resources.Акційні</a>
+                            <a class="dropdown-item" href="@path.Replace(ViewBag.OrderBy, "NOVILTY")">@Resources.Новинки</a>
 
                           </div>
                         </div>

@@ -161,6 +161,9 @@
   <data name="Back_to_List" xml:space="preserve">
     <value>Повернутися до списку</value>
   </data>
+  <data name="BAZAR" xml:space="preserve">
+    <value>BAZAR™</value>
+  </data>
   <data name="BAZAR_nbsp" xml:space="preserve">
     <value>BAZAR™ |</value>
   </data>
@@ -355,11 +358,29 @@
   <data name="Адрес_электронной_почты_заказч" xml:space="preserve">
     <value>Адреса електронної пошти замовника</value>
   </data>
+  <data name="Адреси_доставки_поточного_кори" xml:space="preserve">
+    <value>Адреси доставки поточного користувача</value>
+  </data>
+  <data name="Акційні" xml:space="preserve">
+    <value>Акційні</value>
+  </data>
+  <data name="Акційні_пропозиції" xml:space="preserve">
+    <value>Акційні пропозиції</value>
+  </data>
+  <data name="Акційні_товари" xml:space="preserve">
+    <value>Акційні  товари</value>
+  </data>
+  <data name="АКЦІЯ" xml:space="preserve">
+    <value>АКЦІЯ</value>
+  </data>
   <data name="Атрибуты" xml:space="preserve">
     <value>Атрибути</value>
   </data>
   <data name="Банковская_карта" xml:space="preserve">
     <value>Банківська картка</value>
+  </data>
+  <data name="Безготівкові_платежі" xml:space="preserve">
+    <value>Безготівкові платежі</value>
   </data>
   <data name="Блокировка" xml:space="preserve">
     <value>Блокування</value>
@@ -385,15 +406,57 @@
   <data name="Веб_сайт" xml:space="preserve">
     <value>Веб-сайт</value>
   </data>
+  <data name="Видалити_адресу_доставки_корис" xml:space="preserve">
+    <value>Видалити адресу доставки користувача</value>
+  </data>
+  <data name="Видалити_відгук_користувача" xml:space="preserve">
+    <value>Видалити відгук користувача</value>
+  </data>
+  <data name="Видалити_гаманець_користувача" xml:space="preserve">
+    <value>Видалити гаманець користувача</value>
+  </data>
+  <data name="Видалити_контакт_користувача" xml:space="preserve">
+    <value>Видалити контакт користувача</value>
+  </data>
+  <data name="Видалити_обліковий_запис_корис" xml:space="preserve">
+    <value>Видалити обліковий запис користувача</value>
+  </data>
+  <data name="Видалити_цей_об_єкт_і_все_що_п" xml:space="preserve">
+    <value>Видалити цей об'єкт і все що пов'язано з ним ?</value>
+  </data>
+  <data name="Видалити_цій_відгук" xml:space="preserve">
+    <value>Видалити цій відгук</value>
+  </data>
+  <data name="Вихід_користувача" xml:space="preserve">
+    <value>Вихід користувача</value>
+  </data>
+  <data name="Від_дешевих_до_дорогих" xml:space="preserve">
+    <value>Від дешевих до дорогих</value>
+  </data>
+  <data name="Від_дорогих_до_дешевих" xml:space="preserve">
+    <value>Від дорогих до дешевих</value>
+  </data>
+  <data name="Відгуки" xml:space="preserve">
+    <value>Відгуки</value>
+  </data>
   <data name="Відгуки_користувачів" xml:space="preserve">
     <value>Відгуки користувачів</value>
+  </data>
+  <data name="Відгуки_поточного_користувача" xml:space="preserve">
+    <value>Відгуки поточного користувача</value>
   </data>
   <data name="Відгуки_про_товар" xml:space="preserve">
     <value>Відгуки про товар</value>
   </data>
+  <data name="Відділи_крамниці" xml:space="preserve">
+    <value>Відділи крамниці</value>
+  </data>
   <data name="Владедец_карты" xml:space="preserve">
     <value>Власник карти</value>
     <comment>Previous text: Владелец карти</comment>
+  </data>
+  <data name="Вхід_користувача" xml:space="preserve">
+    <value>Вхід користувача</value>
   </data>
   <data name="Вход" xml:space="preserve">
     <value>Вхід</value>
@@ -440,6 +503,9 @@
   <data name="Выход" xml:space="preserve">
     <value>Вихід</value>
   </data>
+  <data name="Гаманці_поточного_користувача" xml:space="preserve">
+    <value>Гаманці поточного користувача</value>
+  </data>
   <data name="Генерация_кодов_восстановления" xml:space="preserve">
     <value>Генерація кодів відновлення</value>
   </data>
@@ -474,12 +540,21 @@
   <data name="Детально_о_товаре" xml:space="preserve">
     <value>Детально про товар</value>
   </data>
+  <data name="До_зустрічі_в_соцмережах" xml:space="preserve">
+    <value>До зустрічі в соцмережах</value>
+  </data>
+  <data name="Добавити_новий_товар_в_кошик_к" xml:space="preserve">
+    <value>Добавити новий товар в кошик користувача</value>
+  </data>
   <data name="Добавить_изображение" xml:space="preserve">
     <value>Додати</value>
   </data>
   <data name="Ед_измерения" xml:space="preserve">
     <value>Од. вимірювання</value>
     <comment>Previous text: Ед. вимірювання</comment>
+  </data>
+  <data name="Електронна_адреса" xml:space="preserve">
+    <value>Електронна адреса</value>
   </data>
   <data name="Електронная_почта" xml:space="preserve">
     <value>Електронна пошта</value>
@@ -491,6 +566,12 @@
   <data name="Если_вы_сбросите_свой_ключ_аут" xml:space="preserve">
     <value>Якщо ви скинете свій ключ аутентифікатора, ваше додаток аутентифікатора не буде працювати, поки ви не переналаштуєте його.</value>
     <comment>Previous text: Якщо ви сбросите свій ключ аутентифікатора, ваше додаток аутентифікатора не буде працювати, поки ви не перенастроите його.</comment>
+  </data>
+  <data name="За_назвами" xml:space="preserve">
+    <value>За назвами</value>
+  </data>
+  <data name="За_рейтингом" xml:space="preserve">
+    <value>За рейтингом</value>
   </data>
   <data name="Заблокировано" xml:space="preserve">
     <value>Заблоковано</value>
@@ -506,6 +587,9 @@
   </data>
   <data name="Загрузить" xml:space="preserve">
     <value>Завантажити</value>
+  </data>
+  <data name="Залишилося" xml:space="preserve">
+    <value>Залишилося</value>
   </data>
   <data name="Занрузить_файл" xml:space="preserve">
     <value>Завантажити файли</value>
@@ -626,6 +710,15 @@
     <value>Використовуйте локальний обліковий запис для входу.</value>
     <comment>Previous text: Використовуйте локальну учетну запис для входу.</comment>
   </data>
+  <data name="Інвентарний_Номер" xml:space="preserve">
+    <value>Інвентарний Номер</value>
+  </data>
+  <data name="Інформація_про_промоцію" xml:space="preserve">
+    <value>Інформація про промоцію</value>
+  </data>
+  <data name="Кабінет_покупця" xml:space="preserve">
+    <value>Кабінет покупця</value>
+  </data>
   <data name="как_настроить_реального_отправ" xml:space="preserve">
     <value>як налаштувати реального відправника електронної пошти.  Зазвичай це буде надіслано на електронну пошту:</value>
   </data>
@@ -638,6 +731,9 @@
   <data name="Категория" xml:space="preserve">
     <value>Категорія</value>
   </data>
+  <data name="Код_підтвердження" xml:space="preserve">
+    <value>Код підтвердження</value>
+  </data>
   <data name="Коды_восстановления" xml:space="preserve">
     <value>Коди відновлення</value>
     <comment>Previous text: Коды відновлення</comment>
@@ -647,6 +743,9 @@
   </data>
   <data name="Коментар" xml:space="preserve">
     <value>Коментар</value>
+  </data>
+  <data name="Контакти_поточного_користувача" xml:space="preserve">
+    <value>Контакти поточного користувача</value>
   </data>
   <data name="Контактное_лицо" xml:space="preserve">
     <value>Контакт</value>
@@ -663,8 +762,14 @@
   <data name="Користувач" xml:space="preserve">
     <value>Користувач</value>
   </data>
+  <data name="Користувачи_що_цікавились_цим_" xml:space="preserve">
+    <value>Користувачи, що цікавились цим товаром</value>
+  </data>
   <data name="Кошельки" xml:space="preserve">
     <value>Гаманці</value>
+  </data>
+  <data name="Кошик_поточного_користувача" xml:space="preserve">
+    <value>Кошик поточного користувача</value>
   </data>
   <data name="Купить" xml:space="preserve">
     <value>Купити</value>
@@ -672,6 +777,12 @@
   <data name="Магазин" xml:space="preserve">
     <value>Інтернет крамниця</value>
     <comment>Previous text: Интернет крамниця</comment>
+  </data>
+  <data name="Макет" xml:space="preserve">
+    <value>Макет</value>
+  </data>
+  <data name="Макет_сторінки" xml:space="preserve">
+    <value>Макет сторінки</value>
   </data>
   <data name="Маска_ввода" xml:space="preserve">
     <value>Маска вводу</value>
@@ -682,8 +793,29 @@
   <data name="Мой_профиль" xml:space="preserve">
     <value>Мій профіль</value>
   </data>
+  <data name="Мої_адреси" xml:space="preserve">
+    <value>Мої адреси</value>
+  </data>
+  <data name="Мої_відгуки" xml:space="preserve">
+    <value>Мої відгуки</value>
+  </data>
+  <data name="Мої_гаманці" xml:space="preserve">
+    <value>Мої гаманці</value>
+  </data>
+  <data name="Мої_замовлення" xml:space="preserve">
+    <value>Мої замовлення</value>
+  </data>
+  <data name="Мої_контакти" xml:space="preserve">
+    <value>Мої контакти</value>
+  </data>
+  <data name="Мої_уподобання" xml:space="preserve">
+    <value>Мої уподобання</value>
+  </data>
   <data name="нажмите_здесь_для_входа" xml:space="preserve">
     <value>натисніть тут для входу</value>
+  </data>
+  <data name="Назад" xml:space="preserve">
+    <value>Назад</value>
   </data>
   <data name="Название_группы" xml:space="preserve">
     <value>Назва групи</value>
@@ -719,6 +851,9 @@
   <data name="Недоліки0" xml:space="preserve">
     <value>Недоліки:</value>
   </data>
+  <data name="Нова_адреса_електронної_пошти" xml:space="preserve">
+    <value>Нова адреса електронної пошти</value>
+  </data>
   <data name="Новая_группы_безопасности" xml:space="preserve">
     <value>Новая група безпеки</value>
   </data>
@@ -731,6 +866,12 @@
   <data name="Новая_характеристика" xml:space="preserve">
     <value>Нова характеристика</value>
     <comment>Previous text: Нова властивость</comment>
+  </data>
+  <data name="Новий_відгук" xml:space="preserve">
+    <value>Новий відгук</value>
+  </data>
+  <data name="Новинки" xml:space="preserve">
+    <value>Новинки</value>
   </data>
   <data name="Новое_изображение" xml:space="preserve">
     <value>Новое зображення</value>
@@ -776,8 +917,32 @@
   <data name="Область" xml:space="preserve">
     <value>Область</value>
   </data>
+  <data name="Обліковий_запис_користувача" xml:space="preserve">
+    <value>Обліковий запис користувача</value>
+  </data>
+  <data name="Обновити_обліковий_запис_поточ" xml:space="preserve">
+    <value>Обновити обліковий запис поточного користувача</value>
+  </data>
+  <data name="Оновити_адресу_доставки_корист" xml:space="preserve">
+    <value>Оновити адресу доставки користувача</value>
+  </data>
+  <data name="Оновити_відгук_користувача" xml:space="preserve">
+    <value>Оновити відгук користувача</value>
+  </data>
+  <data name="Оновити_гаманець_користувача" xml:space="preserve">
+    <value>Оновити гаманець користувача</value>
+  </data>
+  <data name="Оновити_контакт_користувача" xml:space="preserve">
+    <value>Оновити контакт користувача</value>
+  </data>
+  <data name="Оновити_товар_в_кошику_користу" xml:space="preserve">
+    <value>Оновити товар в кошику користувача</value>
+  </data>
   <data name="Описание" xml:space="preserve">
     <value>Опис</value>
+  </data>
+  <data name="Останні_переглянуті_товари" xml:space="preserve">
+    <value>Останні переглянуті товари</value>
   </data>
   <data name="Отказано_в_доступе" xml:space="preserve">
     <value>Відмовлено в доступі</value>
@@ -803,6 +968,21 @@
     <value>Відправити лист з підтвердженням</value>
     <comment>Previous text: Відправити письмо з підтвердженням</comment>
   </data>
+  <data name="Отримати_перелік_адрес_доставк" xml:space="preserve">
+    <value>Отримати перелік адрес доставки користувача</value>
+  </data>
+  <data name="Отримати_перелік_гаманців_кори" xml:space="preserve">
+    <value>Отримати перелік гаманців користувача</value>
+  </data>
+  <data name="Отримати_перелік_коментарів_ко" xml:space="preserve">
+    <value>Отримати перелік коментарів користувача</value>
+  </data>
+  <data name="Отримати_перелік_контактів_кор" xml:space="preserve">
+    <value>Отримати перелік контактів користувача</value>
+  </data>
+  <data name="Отримати_перелік_товарів_з_кош" xml:space="preserve">
+    <value>Отримати перелік товарів з кошика користувача</value>
+  </data>
   <data name="Отчество" xml:space="preserve">
     <value>По батькові</value>
   </data>
@@ -812,6 +992,9 @@
   <data name="Оцінка" xml:space="preserve">
     <value>Оцінка</value>
   </data>
+  <data name="Параметри_запиту_за_замовчуван" xml:space="preserve">
+    <value>Параметри запиту за замовчуванням</value>
+  </data>
   <data name="Пароль" xml:space="preserve">
     <value>Пароль</value>
   </data>
@@ -820,6 +1003,10 @@
   </data>
   <data name="Переваги0" xml:space="preserve">
     <value>Переваги:</value>
+  </data>
+  <data name="Після_того_як_ви_відскануєте_Q" xml:space="preserve">
+    <value>Після того, як ви відскануєте QR-код або введете ключ вище, програма двофакторної автентифікації надасть вам
+                 з унікальним кодом. Введіть код у полі підтвердження нижче.</value>
   </data>
   <data name="Платежная_карта" xml:space="preserve">
     <value>Платіжна картка</value>
@@ -865,6 +1052,12 @@
   <data name="Поместите_эти_коды_в_безопасно" xml:space="preserve">
     <value>Помістіть ці коди в безпечне місце.</value>
   </data>
+  <data name="Попередження" xml:space="preserve">
+    <value>Попередження</value>
+  </data>
+  <data name="Популярні" xml:space="preserve">
+    <value>Популярні</value>
+  </data>
   <data name="Портал" xml:space="preserve">
     <value>Портал</value>
   </data>
@@ -898,8 +1091,23 @@
   <data name="Регистрация" xml:space="preserve">
     <value>Реєстрація</value>
   </data>
+  <data name="Редагувати_відгук" xml:space="preserve">
+    <value>Редагувати відгук</value>
+  </data>
+  <data name="Результат" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="Рейтинг" xml:space="preserve">
+    <value>Рейтинг</value>
+  </data>
+  <data name="Реклама" xml:space="preserve">
+    <value>Реклама</value>
+  </data>
   <data name="Ресурсы" xml:space="preserve">
     <value>Ресурси</value>
+  </data>
+  <data name="Робота_з_ERP_системою" xml:space="preserve">
+    <value>Робота з ERP системою</value>
   </data>
   <data name="Сбросить" xml:space="preserve">
     <value>Скинути</value>
@@ -1002,6 +1210,9 @@
     <value>Споживчі характеристики</value>
     <comment>Previous text: Споживчі властивості</comment>
   </data>
+  <data name="Споживчі_уподобання" xml:space="preserve">
+    <value>Споживчі уподобання</value>
+  </data>
   <data name="Срок_действия" xml:space="preserve">
     <value>Термін дії</value>
   </data>
@@ -1013,6 +1224,21 @@
   </data>
   <data name="Стационарный_телефон" xml:space="preserve">
     <value>Стаціонарний телефон</value>
+  </data>
+  <data name="Створити_адресу_доставки_корис" xml:space="preserve">
+    <value>Створити адресу доставки користувача</value>
+  </data>
+  <data name="Створити_відгук_користувача" xml:space="preserve">
+    <value>Створити відгук користувача</value>
+  </data>
+  <data name="Створити_гаманець_користувача" xml:space="preserve">
+    <value>Створити гаманець користувача</value>
+  </data>
+  <data name="Створити_контакт_користувача" xml:space="preserve">
+    <value>Створити контакт користувача</value>
+  </data>
+  <data name="Створити_обліковий_запис_корис" xml:space="preserve">
+    <value>Створити обліковий запис користувача</value>
   </data>
   <data name="Страна" xml:space="preserve">
     <value>Країна</value>
@@ -1038,6 +1264,12 @@
   <data name="Тип_факса" xml:space="preserve">
     <value>Тип факсу</value>
   </data>
+  <data name="Тіло_запиту" xml:space="preserve">
+    <value>Тіло запиту</value>
+  </data>
+  <data name="Тіло_запиту_та_його_результат" xml:space="preserve">
+    <value>Тіло запиту та його результат</value>
+  </data>
   <data name="Товар" xml:space="preserve">
     <value>Товар</value>
     <comment>Previous text: Продукт</comment>
@@ -1048,6 +1280,9 @@
   <data name="Товары_каталога" xml:space="preserve">
     <value>Каталог товарів</value>
     <comment>Previous text: Каталог продукції</comment>
+  </data>
+  <data name="ТОП_ПРОДАЖІВ" xml:space="preserve">
+    <value>ТОП ПРОДАЖІВ</value>
   </data>
   <data name="У_вас_не_осталось_кодов_восста" xml:space="preserve">
     <value>У вас не залишилося кодів відновлення.</value>
@@ -1118,6 +1353,12 @@
   <data name="Управление_элетронным_адресом" xml:space="preserve">
     <value>Управління електронними адресами</value>
   </data>
+  <data name="Управління_веб_контентом" xml:space="preserve">
+    <value>Управління веб контентом</value>
+  </data>
+  <data name="Управління_інтернет_крамницею" xml:space="preserve">
+    <value>Управління інтернет крамницею</value>
+  </data>
   <data name="Управляйте_своими_внешними_лог" xml:space="preserve">
     <value>Управляйте своїми зовнішніми логінами</value>
   </data>
@@ -1146,8 +1387,17 @@
   <data name="Характеристики" xml:space="preserve">
     <value>Характеристики</value>
   </data>
+  <data name="Характеристики_товару" xml:space="preserve">
+    <value>Характеристики товару</value>
+  </data>
   <data name="Цена" xml:space="preserve">
     <value>Ціна</value>
+  </data>
+  <data name="Цільова_аудиторія" xml:space="preserve">
+    <value>Цільова аудиторія</value>
+  </data>
+  <data name="Чекайте_на_наші_додатки" xml:space="preserve">
+    <value>Чекайте на наші додатки</value>
   </data>
   <data name="Члены_группы" xml:space="preserve">
     <value>Члени групи </value>

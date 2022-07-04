@@ -21,14 +21,14 @@
     {
         <div class="alert alert-danger">
             <strong>@Resources.У_вас_остался_1_код_восстановл</strong>
-            <p>@Resources.Вы_можете<a asp-page="./GenerateRecoveryCodes"> @Resources.создать_новый_набор_кодов_восс</a>@Resources.res2</p>
+            <p>@Resources.Вы_можете<a asp-page="./GenerateRecoveryCodes"> @Resources.создать_новый_набор_кодов_восс</a>.</p>
         </div>
     }
     else if (Model.RecoveryCodesLeft <= 3)
     {
         <div class="alert alert-warning">
             <strong>@Resources.Вы_имеете @Model.RecoveryCodesLeft оставшихся кодов восстановления.</strong>
-            <p>@Resources.Вам_следует <a asp-page="./GenerateRecoveryCodes">@Resources.создать_новый_набор_кодов_восс</a>@Resources.res2</p>
+            <p>@Resources.Вам_следует <a asp-page="./GenerateRecoveryCodes">@Resources.создать_новый_набор_кодов_восс</a>.</p>
         </div>
     }
 

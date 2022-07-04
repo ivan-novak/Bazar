@@ -1,4 +1,5 @@
-﻿<style>
+﻿@using RozetkaWebApp.App_GlobalResources;
+<style>
     .card-body:hover {
         transition: transform 0.2s;
         transform: scale(1.1);
@@ -17,13 +18,13 @@
                     {
                         <a class="badge badge-warning text-left mb-3 p-1 ph-2 text-white rounded-pill small"
                               href="/promotions/Details/@item.PromotionId" style="text-decoration: none">
-                            ТОП ПРОДАЖІВ
+                            @Resources.ТОП_ПРОДАЖІВ
                         </a>
                     }
                     else
                     {
                         <a class="badge badge-danger text-left mb-3 p-1 ph-2 rounded-pill small" href="/promotions/Details/@item.PromotionId" style=" test text-decoration: none">
-                            АКЦІЯ
+                            @Resources.АКЦІЯ
                         </a>
                     }
                     <a href="/Products/AddToCart/@item.ProductId"><span><i class="fas fa-shopping-cart text-success" style="float: right;"></i></span></a>

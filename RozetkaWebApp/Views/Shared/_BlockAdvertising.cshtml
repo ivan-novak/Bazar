@@ -1,4 +1,5 @@
-﻿@if (ViewBag.Advertising != null)
+﻿@using RozetkaWebApp.App_GlobalResources;
+@if (ViewBag.Advertising != null)
 {
        <style>
         .card-hover:hover {
@@ -7,7 +8,7 @@
         }
         </style>
 
-    <h4 class="text-secondary  mt-16">Реклама</h4>
+    <h4 class="text-secondary  mt-16">@Resources.Реклама</h4>
     <div class="row pt-3 mb-4">
         @foreach (Product item in ViewBag.Advertising)
         {
@@ -18,13 +19,13 @@
                     {
                         <a class="badge badge-warning text-left mb-3 p-1 ph-2 text-white rounded-pill small"
                    href="/promotions/Details/@item.PromotionId" style="text-decoration: none">
-                            ТОП ПРОДАЖІВ
+                            @Resources.ТОП_ПРОДАЖІВ
                         </a>
                     }
                     else
                     {
                         <a class="badge badge-danger text-left mb-3 p-1 ph-2 rounded-pill small" href="/promotions/Details/@item.PromotionId" style=" test text-decoration: none">
-                            АКЦІЯ
+                            @Resources.АКЦІЯ
                         </a>
                     }
 

@@ -28,18 +28,17 @@
         </li>
         <li>
             <p>
-                Після того, як ви відскануєте QR-код або введете ключ вище, програма двофакторної автентифікації надасть вам
-                 з унікальним кодом. Введіть код у полі підтвердження нижче.
+                @Resources.Після_того_як_ви_відскануєте_Q
             </p>
             <div class="row">
                 <div class="col-md-6">
                     <form id="send-code" method="post">
                         <div class="form-group">
-                            <label asp-for="Input.Code" class="control-label">Код підтвердження</label>
+                            <label asp-for="Input.Code" class="control-label">@Resources.Код_підтвердження</label>
                             <input asp-for="Input.Code" class="form-control" autocomplete="off" />
                             <span asp-validation-for="Input.Code" class="text-danger"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Підтвердити</button>
+                        <button type="submit" class="btn btn-primary">@Resources.Подтвердить</button>
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     </form>
                 </div>

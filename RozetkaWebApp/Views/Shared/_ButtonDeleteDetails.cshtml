@@ -1,4 +1,5 @@
-﻿
+﻿@using RozetkaWebApp.App_GlobalResources;
+
 @using RozetkaWebApp.App_GlobalResources
 @model string
 
@@ -14,18 +15,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content ">
       <div class="modal-header  text-start text-body">
-        <h5>Попередження</h5>
+        <h5>@Resources.Попередження</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body  text-center text-body ">
-        <p>Видалити цей об'єкт і все що пов'язано з ним ?</p>
+        <p>@Resources.Видалити_цей_об_єкт_і_все_що_п</p>
       </div>
         <form  class="modal-footer" action="@Model" method="post">
            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" /> 
            <input type="submit" value="@Resources._Remove" class="btn btn-danger" />
-           <button type="button" class="btn btn btn-primary" data-dismiss="modal">Скасувати</button>
+           <button type="button" class="btn btn btn-primary" data-dismiss="modal">@Resources.Отменить</button>
         </form>
     </div>
   </div>

@@ -7,7 +7,7 @@
     Html.RenderPartial((("_RootNavigator")));
 }
 
-<p><h5>Макет сторінки</h5></p><p></p>
+<p><h5>@Resources.Макет_сторінки</h5></p><p></p>
 
 <p></p>
 <div class="row m-0 p-0">
@@ -15,7 +15,7 @@
         @{
             <div class="card mr-3 mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Відділи крамниці</h5>
+                    <h5 class="card-title">@Resources.Відділи_крамниці</h5>
                     @foreach (var item in Model)
                     {
                         <div class="card-subtitle mb-2 text-muted">
@@ -28,36 +28,36 @@
             <div class="card mr-3  mb-3">
                 <div class="card-body">
                     <h5>
-                        Кабінет покупця 
+                        @Resources.Кабінет_покупця
                     </h5>
 
                     <div>
-                        <a asp-controller="AspNetUsers" asp-action="Cart" asp-route-id="@ViewBag.User.Id">Кошик</a>
+                        <a asp-controller="AspNetUsers" asp-action="Cart" asp-route-id="@ViewBag.User.Id">@Resources.Корзина</a>
                     </div>
                     <div>
-                        <a asp-controller="Orders" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої замовлення</a>
+                        <a asp-controller="Orders" asp-action="Index" asp-route-id="@ViewBag.User.Id">@Resources.Мої_замовлення</a>
                     </div>
                     <div>
-                        <a asp-controller="Comments" asp-action="MyComment" asp-route-id="@ViewBag.User.Id">Мої відгуки</a>
+                        <a asp-controller="Comments" asp-action="MyComment" asp-route-id="@ViewBag.User.Id">@Resources.Мої_відгуки</a>
                     </div>
                     <div>
-                        <a asp-controller="AspNetUsers" asp-action="Preferences" asp-route-id="@ViewBag.User.Id">Мої уподобання</a>
+                        <a asp-controller="AspNetUsers" asp-action="Preferences" asp-route-id="@ViewBag.User.Id">@Resources.Мої_уподобання</a>
                     </div>
                     <div>
-                        <a asp-controller="Contacts" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої контакти</a>
+                        <a asp-controller="Contacts" asp-action="Index" asp-route-id="@ViewBag.User.Id">@Resources.Мої_контакти</a>
                     </div>
                     <div>
-                        <a asp-controller="Addresses" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої адреси</a>
+                        <a asp-controller="Addresses" asp-action="Index" asp-route-id="@ViewBag.User.Id">@Resources.Мої_адреси</a>
                     </div>
                     <div>
-                        <a asp-controller="Wallets" asp-action="Index" asp-route-id="@ViewBag.User.Id">Мої гаманці</a>
+                        <a asp-controller="Wallets" asp-action="Index" asp-route-id="@ViewBag.User.Id">@Resources.Мої_гаманці</a>
                     </div>
                 </div>
             </div>
             <div class="card mr-3 mb-3">
                 <div class="card-body ">
 
-                    <h5 class="card-title">Чекайте на наші додатки</h5>
+                    <h5 class="card-title">@Resources.Чекайте_на_наші_додатки</h5>
                     <table class="table table-borderless m-0 p-0">
                         <td class="m-0 p-1"><img class=" w-100" src="/images/root/AppStore" alt="First slide"></td>
                         <td class="m-0 p-1"> <img class=" w-100" src="/images/root/GooglePlay" alt="First slide"></td>
@@ -68,7 +68,7 @@
             </div>
             <div class="card mr-3 mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">До зустрічі в соцмережах</h5>
+                    <h5 class="card-title">@Resources.До_зустрічі_в_соцмережах</h5>
                     <table class="table table-borderless m-0 p-0">
                         <td class="m-0 p-1"><img class=" w-100" src="/images/root/Instagram" alt="First slide"></td>
                         <td class="m-0 p-1"> <img class=" w-100" src="/images/root/Facebook" alt="First slide"></td>
@@ -82,7 +82,7 @@
                         <div class="card mr-3 mb-3">
                 <div class="card-body ">
 
-                    <h5 class="card-title">Безготівкові платежі</h5>
+                    <h5 class="card-title">@Resources.Безготівкові_платежі</h5>
                     <table class="table table-borderless m-0 p-0">
                         <td class="m-0 p-1"><img class=" w-90" src="/images/root/Mastercard" alt="First slide"></td>
                         <td class="m-0 p-1"> <img class=" w-90" src="/images/root/Visacard" alt="First slide"></td>
@@ -112,9 +112,9 @@
                     </div>
                 </div>
             </div>
-            ViewBag.AdvertisingTitle = "Останні переглянуті товари";
+            ViewBag.AdvertisingTitle = Resources.Останні_переглянуті_товари;
             Html.RenderPartial((("_BlockAdvertising4")));
-            ViewBag.AdvertisingTitle = "Акційні пропозиції";
+            ViewBag.AdvertisingTitle = Resources.Акційні_пропозиції;
             ViewBag.Advertising = ViewBag.Advertising1;
             Html.RenderPartial((("_BlockAdvertising4")));
         }

@@ -149,10 +149,6 @@
   <data name="Are_you_sure_you_want_to_delet" xml:space="preserve">
     <value>Справді видалити це?</value>
   </data>
-  <data name="AspNetUser" xml:space="preserve">
-    <value>Користувач</value>
-    <comment>Previous text: AspNetUser</comment>
-  </data>
   <data name="Associate_your" xml:space="preserve">
     <value>Зв'яжіть свій</value>
   </data>
@@ -164,6 +160,7 @@
   </data>
   <data name="Configure_authenticator_app" xml:space="preserve">
     <value>Настроювання програми-автентифікатора</value>
+    <comment>Previous text: Настроювання програми-автентифікатора</comment>
   </data>
   <data name="Create" xml:space="preserve">
     <value>Творити</value>
@@ -278,12 +275,14 @@
   </data>
   <data name="Set_your_password" xml:space="preserve">
     <value>Установлення пароля</value>
+    <comment>Previous text: Установлення пароля</comment>
   </data>
   <data name="Show_Latest_Image" xml:space="preserve">
     <value>Показати останнє зображення</value>
   </data>
   <data name="Submit" xml:space="preserve">
     <value>Представити</value>
+    <comment>Previous text: Представити</comment>
   </data>
   <data name="success" xml:space="preserve">
     <value>успіх</value>
@@ -314,6 +313,7 @@
   </data>
   <data name="You_do_not_have_access_to_this" xml:space="preserve">
     <value>Ви не маєте доступу до цього ресурсу.</value>
+    <comment>Previous text: Ви не маєте доступу до цього ресурсу.</comment>
   </data>
   <data name="You_ve_successfully_authentica" xml:space="preserve">
     <value>Ви успішно пройшли автентифікацію за допомогою</value>
@@ -431,6 +431,7 @@
   </data>
   <data name="Двух_факторная_авторизаия" xml:space="preserve">
     <value>Двофакторний дозвіл</value>
+    <comment>Previous text: Двухфакторна авторизация</comment>
   </data>
   <data name="Действия" xml:space="preserve">
     <value>Дії</value>
@@ -577,6 +578,7 @@
   </data>
   <data name="Информация_о_товаре" xml:space="preserve">
     <value>Інформація про товари</value>
+    <comment>Previous text: Інформація про товари</comment>
   </data>
   <data name="Информация_о_товаре_из_корзины" xml:space="preserve">
     <value>Інформація про товари з корзини?</value>
@@ -669,7 +671,7 @@
   </data>
   <data name="Настроить_приложение_для_прове" xml:space="preserve">
     <value>Настроить додаток для перевірки довжини</value>
-    <comment>Previous text: Настроить додаток для перевірки довжини</comment>
+    <comment>Previous text: Налаштувати додаток для перевірки довжини</comment>
   </data>
   <data name="Новая_группы_безопасности" xml:space="preserve">
     <value>Новая група безпеки</value>
@@ -730,6 +732,7 @@
   </data>
   <data name="Отказано_в_доступе" xml:space="preserve">
     <value>Показано в доступе</value>
+    <comment>Previous text: Показано в доступе</comment>
   </data>
   <data name="Отключение_2FA_не_изменяет_клю" xml:space="preserve">
     <value>Відключення 2FA не змінює ключі, які використовуються в додатках для аутентифікації. Якщо ви хочете змінити ключ
@@ -766,6 +769,7 @@
   </data>
   <data name="Повторно_отправить_подтвержден" xml:space="preserve">
     <value>Повторно відправляти підтвердження на електронну пошту</value>
+    <comment>Previous text: Повторно відправляти підтвердження на електронну пошту</comment>
   </data>
   <data name="Подтвеждение_электронного_адре" xml:space="preserve">
     <value>Підтвердження електронної адреси</value>
@@ -818,14 +822,11 @@
   </data>
   <data name="Проверка_кода_восстановления" xml:space="preserve">
     <value>Проверка кода відновлення</value>
-    <comment>Previous text: Проверка кода відновлення</comment>
+    <comment>Previous text: Проверка коду відновлення</comment>
   </data>
   <data name="Промоакции" xml:space="preserve">
     <value>Промоакції</value>
-    <comment>Previous text: Промоакції</comment>
-  </data>
-  <data name="Промоакция" xml:space="preserve">
-    <value>Промоакція</value>
+    <comment>Previous text: Перелік промоакцій</comment>
   </data>
   <data name="Профиль" xml:space="preserve">
     <value>Профіль</value>
@@ -869,6 +870,7 @@
   </data>
   <data name="Сменить_электронный_адрес" xml:space="preserve">
     <value>Змінити електронний адрес</value>
+    <comment>Previous text: Змінити електронний адрес</comment>
   </data>
   <data name="Создание_кодов_восстановления_" xml:space="preserve">
     <value>Створення кодів відновлення двохфакторної аутентифікації (2FA)</value>
@@ -928,10 +930,6 @@
   <data name="Список_порталов" xml:space="preserve">
     <value>Список порталів</value>
     <comment>Previous text: Список порталів</comment>
-  </data>
-  <data name="Список_промоакций" xml:space="preserve">
-    <value>Список промоакцій</value>
-    <comment>Previous text: Список промоакцій</comment>
   </data>
   <data name="Список_товаров" xml:space="preserve">
     <value>Список товарів</value>
@@ -1048,6 +1046,7 @@
   </data>
   <data name="Удалить_эту_характеристику" xml:space="preserve">
     <value>Видалити цю функцію?</value>
+    <comment>Previous text: Видалити цю функцію?</comment>
   </data>
   <data name="Улица_дом_квартира" xml:space="preserve">
     <value>Вулиця, будинок, квартира</value>
@@ -1104,5 +1103,6 @@
   </data>
   <data name="Этот_процесс_отключает_2FA_до_" xml:space="preserve">
     <value>Цей процес відключає 2FA до тех пор, поки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додатків для перевірки довжини, ви можете втратити доступ до своєї початкової записи.</value>
+    <comment>Previous text: Цей процес відключає 2FA до тих пір  доки ви не підтвердите свій додаток-аутентифікатор.  Якщо ви не завершили настройку додату для перевірки аутентифікатора, ви можете втратити доступ до своєї початкової записи.</comment>
   </data>
 </root>

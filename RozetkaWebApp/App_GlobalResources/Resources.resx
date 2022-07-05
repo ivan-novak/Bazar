@@ -243,6 +243,12 @@
   <data name="iOS" xml:space="preserve">
     <value>iOS</value>
   </data>
+  <data name="IS_Електронну_пошту_0_підтверд" xml:space="preserve">
+    <value>Електронну пошту {0} підтверджено успішно!</value>
+  </data>
+  <data name="IS_Помилка_електронної_адреси_" xml:space="preserve">
+    <value>Помилка електронної адреси {0}</value>
+  </data>
   <data name="It_can_result_in_displaying_se" xml:space="preserve">
     <value>Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.  Для локального налагодження увімкніть</value>
   </data>
@@ -357,6 +363,9 @@
   </data>
   <data name="Адрес_электронной_почты_заказч" xml:space="preserve">
     <value>Адреса електронної пошти замовника</value>
+  </data>
+  <data name="Адреса_електроної_пошти" xml:space="preserve">
+    <value>Адреса електроної пошти</value>
   </data>
   <data name="Адреси_доставки_поточного_кори" xml:space="preserve">
     <value>Адреси доставки поточного користувача</value>
@@ -641,7 +650,8 @@
     <value>Змінити портал</value>
   </data>
   <data name="Изменить_промоакцию" xml:space="preserve">
-    <value>Змінити промоакцию</value>
+    <value>Змінити промоцію</value>
+    <comment>Previous text: Змінити промоакцию</comment>
   </data>
   <data name="Изменить_фильтр" xml:space="preserve">
     <value>Змінити властивість</value>
@@ -861,7 +871,8 @@
     <value>Нова карта</value>
   </data>
   <data name="Новая_промоакция" xml:space="preserve">
-    <value>Новая промоакція</value>
+    <value>Нова промоція</value>
+    <comment>Previous text: Новая промоакція</comment>
   </data>
   <data name="Новая_характеристика" xml:space="preserve">
     <value>Нова характеристика</value>
@@ -1051,6 +1062,9 @@
   </data>
   <data name="Поместите_эти_коды_в_безопасно" xml:space="preserve">
     <value>Помістіть ці коди в безпечне місце.</value>
+  </data>
+  <data name="Помічник_з_керування_паролями" xml:space="preserve">
+    <value>Помічник з керування паролями</value>
   </data>
   <data name="Попередження" xml:space="preserve">
     <value>Попередження</value>

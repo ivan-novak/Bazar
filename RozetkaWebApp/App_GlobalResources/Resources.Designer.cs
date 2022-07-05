@@ -574,6 +574,24 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Електронну пошту {0} підтверджено успішно!.
+        /// </summary>
+        public static string IS_Електронну_пошту_0_підтверд {
+            get {
+                return ResourceManager.GetString("IS_Електронну_пошту_0_підтверд", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помилка електронної адреси {0}.
+        /// </summary>
+        public static string IS_Помилка_електронної_адреси_ {
+            get {
+                return ResourceManager.GetString("IS_Помилка_електронної_адреси_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Це може призвести до відображення конфіденційної інформації від винятків для кінцевих користувачів.  Для локального налагодження увімкніть.
         /// </summary>
         public static string It_can_result_in_displaying_se {
@@ -975,6 +993,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Адрес_электронной_почты_заказч {
             get {
                 return ResourceManager.GetString("Адрес_электронной_почты_заказч", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Адреса електроної пошти.
+        /// </summary>
+        public static string Адреса_електроної_пошти {
+            get {
+                return ResourceManager.GetString("Адреса_електроної_пошти", resourceCulture);
             }
         }
         
@@ -1789,7 +1816,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Змінити промоакцию.
+        ///   Looks up a localized string similar to Змінити промоцію.
         /// </summary>
         public static string Изменить_промоакцию {
             get {
@@ -2401,7 +2428,7 @@ namespace RozetkaWebApp.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Новая промоакція.
+        ///   Looks up a localized string similar to Нова промоція.
         /// </summary>
         public static string Новая_промоакция {
             get {
@@ -2947,6 +2974,15 @@ namespace RozetkaWebApp.App_GlobalResources {
         public static string Поместите_эти_коды_в_безопасно {
             get {
                 return ResourceManager.GetString("Поместите_эти_коды_в_безопасно", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помічник з керування паролями.
+        /// </summary>
+        public static string Помічник_з_керування_паролями {
+            get {
+                return ResourceManager.GetString("Помічник_з_керування_паролями", resourceCulture);
             }
         }
         

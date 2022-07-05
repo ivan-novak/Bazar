@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.UI.Services;
+﻿using RozetkaWebApp.App_GlobalResources;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SendGrid;
@@ -36,7 +37,7 @@ namespace RozetkaWebApp.Services
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("bazarMarket@ukr.net", "Помічник з керування паролями"),
+                From = new EmailAddress("bazarMarket@ukr.net", Resources.Помічник_з_керування_паролями),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
@@ -48,8 +49,8 @@ namespace RozetkaWebApp.Services
             msg.SetClickTracking(false, false);
             var response = await client.SendEmailAsync(msg);
             _logger.LogInformation(response.IsSuccessStatusCode
-                                   ? $"Електронну пошту {toEmail} підтверджено успішно!"
-                                   : $"Помилка електронної адреси {toEmail}");
+                                   ? String.Format(Resources.IS_Електронну_пошту_0_підтверд,toEmail)
+                                   : String.Format(Resources.IS_Помилка_електронної_адреси_,toEmail));
         }
     }
 }

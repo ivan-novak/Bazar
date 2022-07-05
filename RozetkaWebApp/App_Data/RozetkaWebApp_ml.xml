@@ -499,6 +499,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>530</StringID>
+    <Comment>Previous text: Змінити промоакцию</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>531</StringID>
@@ -638,6 +639,7 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>576</StringID>
+    <Comment>Previous text: Новая промоакція</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>577</StringID>
@@ -1344,6 +1346,18 @@
   <GeneralIds>
     <StringID>823</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>824</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>825</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>826</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>827</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>34</LanguageID>
     <LanguageName>Ukrainian</LanguageName>
@@ -2031,8 +2045,8 @@
   <GeneralTexts>
     <StringID>576</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Новая промоакція</LanguageText>
-    <Status>7</Status>
+    <LanguageText>Нова промоція</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>577</StringID>
@@ -3846,7 +3860,7 @@
     <StringID>530</StringID>
     <LanguageID>34</LanguageID>
     <LanguageText>Змінити промоакцию</LanguageText>
-    <Status>6</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>532</StringID>
@@ -5117,8 +5131,8 @@
   <GeneralTexts>
     <StringID>530</StringID>
     <LanguageID>25</LanguageID>
-    <LanguageText>Змінити промоакцию</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Змінити промоцію</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>553</StringID>
@@ -5683,6 +5697,30 @@
     <StringID>823</StringID>
     <LanguageID>25</LanguageID>
     <LanguageText>Акційні  товари</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>824</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Адреса електроної пошти</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>825</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Помічник з керування паролями</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>826</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Електронну пошту {0} підтверджено успішно!</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>827</StringID>
+    <LanguageID>25</LanguageID>
+    <LanguageText>Помилка електронної адреси {0}</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
   <Properties>
@@ -9163,6 +9201,38 @@
     <ResourceName>Акційні_товари</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Адреса_електроної_пошти</Name>
+    <StringID>824</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Адреса_електроної_пошти</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Помічник_з_керування_паролями</Name>
+    <StringID>825</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Помічник_з_керування_паролями</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>IS_Електронну_пошту_0_підтверд</Name>
+    <StringID>826</StringID>
+    <Selected>true</Selected>
+    <ResourceName>IS_Електронну_пошту_0_підтверд</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>IS_Помилка_електронної_адреси_</Name>
+    <StringID>827</StringID>
+    <Selected>true</Selected>
+    <ResourceName>IS_Помилка_електронної_адреси_</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
   <GeneralAttributes>
     <Name>XmlDatabaseVersion</Name>
     <TextValue>1</TextValue>
@@ -9170,7 +9240,7 @@
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>StatusHash</Name>
-    <TextValue>CL5kzYdemniG1aI8gbjv9OArFbw=</TextValue>
+    <TextValue>LuW9O1UHykWzJZBlf7WteBGXSk8=</TextValue>
     <NumValue>0</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>

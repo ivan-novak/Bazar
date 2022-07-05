@@ -22,8 +22,8 @@
         </li>
         <li>
             <p>@Resources.Scan_the_QR_Code_or_enter_this <kbd>@Model.SharedKey</kbd> у вашу програму двофакторної автентифікації. Пробіли та корпус не мають значення.</p>
-            <div class="alert alert-info">@Resources.Learn_how_to <a href="https://go.microsoft.com/fwlink/?Linkid=852423">@Resources.enable_QR_code_generation</a>.</div>
-            <div id="qrCode"></div>
+@*            <div class="alert alert-info">@Resources.Learn_how_to <a href="https://go.microsoft.com/fwlink/?Linkid=852423">@Resources.enable_QR_code_generation</a>.</div>
+*@            <div id="qrCode"></div>
             <div id="qrCodeData" data-url="@Html.Raw(@Model.AuthenticatorUri)"></div>
         </li>
         <li>
@@ -49,4 +49,7 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+     <script type="text/javascript" src="~/lib/qrcode.js"></script>
+    <script type="text/javascript" src="~/js/qr.js"></script>
 }
